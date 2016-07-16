@@ -28,8 +28,6 @@ Rectangle {
 
 	property int pixelRatio: Screen.devicePixelRatio
 
-	onInfoTextChanged: infolingcanvas.requestPaint();
-
 	Canvas {
 		id: infolingcanvas
 		anchors.top: parent.top
@@ -68,7 +66,11 @@ Rectangle {
 		}
 	}
 
-	onInfoBackgroundChanged: {
+	onInfoTextChanged: infolingcanvas.requestPaint();
+	onInfoBackgroundChanged: infolingcanvas.requestPaint();
+
+	function redraw()
+	{
 		infolingcanvas.requestPaint();
 	}
 

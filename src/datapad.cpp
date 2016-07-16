@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
 	QCoreApplication::setOrganizationName("Fringer");
 	QCoreApplication::setOrganizationDomain("fringer.space");
-	QCoreApplication::setApplicationName("Fringer's Datapad");
+	QCoreApplication::setApplicationName("Datapad");
 
 	DataAccess::init();
 

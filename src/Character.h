@@ -202,6 +202,7 @@ public:
 	Q_PROPERTY(QString itemStrain READ itemStrain WRITE setItemStrain NOTIFY itemStrainChanged)
 	Q_PROPERTY(int itemCritPlus READ itemCritPlus WRITE setItemCritPlus NOTIFY itemCritPlusChanged)
 	Q_PROPERTY(int itemPierce READ itemPierce WRITE setItemPierce NOTIFY itemPierceChanged)
+	Q_PROPERTY(int imageProviderCount READ imageProviderCount WRITE setImageProviderCount NOTIFY imageProviderCountChanged)
 	Q_PROPERTY(int locked READ locked WRITE setLocked NOTIFY lockedChanged)
 
 	Q_PROPERTY(int hideAutoTalents READ hideAutoTalents WRITE setHideCodedTalents NOTIFY hideCodedTalentsChanged)
@@ -328,6 +329,7 @@ public:
 	QString itemStrain();
 	int itemCritPlus();
 	int itemPierce();
+	int imageProviderCount();
 	int locked();
 	int hideAutoTalents();
 
@@ -413,6 +415,7 @@ public:
 	Q_INVOKABLE void setItemStrain(const QString& t);
 	Q_INVOKABLE void setItemCritPlus(int t);
 	Q_INVOKABLE void setItemPierce(int t);
+	Q_INVOKABLE void setImageProviderCount(int t);
 	Q_INVOKABLE void setLocked(int t);
 	Q_INVOKABLE void setHideCodedTalents(int t);
 
@@ -490,6 +493,7 @@ signals:
 	void itemStrainChanged(const QString& value);
 	void itemCritPlusChanged(int value);
 	void itemPierceChanged(int value);
+	void imageProviderCountChanged(int value);
 	void lockedChanged(int value);
 	void hideCodedTalentsChanged(bool value);
 
@@ -569,6 +573,7 @@ private:
 	QString iItemAttachments;
 	int iItemCritPlus;
 	int iItemPierce;
+	int iImageProviderCount;
 	QString iChangeDicePool;
 	QString iModDicePool;
 	int iModItemDamage;

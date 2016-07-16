@@ -20,9 +20,12 @@ Rectangle {
 	property int partraitWidth: character.height * 0.6
 	property int partraitFrame: 16
 
+	property int imageProviderCount: characterData.imageProviderCount
+
 	Image {
-		id: portraitData
+		id: portrait
 		visible: false;
+		asynchronous: false
 		source: {
 			if (charImage.length > 0)
 				return "image://datapad-images/"+charImage;
@@ -40,24 +43,17 @@ Rectangle {
 
 			Draw.enter(ctx, ctx.canvas.width, ctx.canvas.height);
 			Draw.bevelRect(ctx, 0, 0, character.width, character.height, lineSize, 13, charLineColor, charSelected ? Constant.LIGHT_GRAY : "white");
-			Draw.drawBox(ctx, partraitFrame, partraitFrame, partraitWidth, character.height-partraitFrame*2, 2, charLineColor, portraitData);
+			Draw.drawBox(ctx, partraitFrame, partraitFrame, partraitWidth, character.height-partraitFrame*2, 2, charLineColor, portrait);
 			Draw.exit(ctx);
 		}
 	}
 
-	onCharSelectedChanged: {
-		characterCanvas.requestPaint();
-	}
+	onCharSelectedChanged: characterCanvas.requestPaint()
 
-	onCharImageChanged: {
-		characterCanvas.requestPaint();
-	}
-
-	onVisibleChanged: {
-		characterCanvas.requestPaint();
-	}
+	onCharImageChanged: characterCanvas.requestPaint()
 
 	InfoLine {
+		id: line1
 		width: character.width - (partraitWidth + partraitFrame*3)
 		height: 40
 		x: partraitWidth + partraitFrame*2
@@ -70,6 +66,7 @@ Rectangle {
 	}
 
 	InfoLine {
+		id: line2
 		width: character.width - (partraitWidth + partraitFrame*3)
 		height: 30
 		x: partraitWidth + partraitFrame*2
@@ -82,6 +79,7 @@ Rectangle {
 	}
 
 	InfoLine {
+		id: line3
 		width: character.width - (partraitWidth + partraitFrame*3)
 		height: 30
 		x: partraitWidth + partraitFrame*2
@@ -94,6 +92,7 @@ Rectangle {
 	}
 
 	InfoLine {
+		id: line4
 		width: character.width - (partraitWidth + partraitFrame*3)
 		height: 30
 		x: partraitWidth + partraitFrame*2
@@ -105,15 +104,22 @@ Rectangle {
 		infoBackground: charSelected ? Constant.LIGHT_GRAY : "white"
 	}
 
+	onImageProviderCountChanged: {
+		// Seems like an overkill, but I just cannot get this list to
+		// update and display EVERYTHING correctly if I dont redraw
+		// all the time!
+		line1.redraw();
+		line2.redraw();
+		line3.redraw();
+		line4.redraw();
+		characterCanvas.requestPaint();
+	}
+
 	MouseArea {
 		anchors.fill: parent
 		onClicked: {
 			characterData.file = charFile;
 			gc();
 		}
-	}
-
-	Component.onCompleted: {
-		characterCanvas.requestPaint();
 	}
 }

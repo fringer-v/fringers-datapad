@@ -11,7 +11,12 @@ Window {
 	width: Constant.SCREEN_WIDTH
 	height: Constant.SCREEN_HEIGHT
 
-	property bool landscape: width > height
+	property bool landscape: {
+		var v;
+
+		v = width > height;
+		return v;
+	}
 	property bool loadError: true
 
 	DatCurrentDataList {
@@ -82,24 +87,34 @@ Window {
 			source: "qrc:/images/nightsky.png"
 		}
 
-		Text {
-			id: welcome
-			y: (parent.height - (welcome.height + subtitle.height)) / 2
-			x: (parent.width - welcome.width) / 2
-			font.pixelSize: 40
-			font.family: "Arial"
-			color: "white"
-			text: "Welcome to Fringers's Datapad"
-		}
+		Rectangle {
+			anchors.horizontalCenter: parent.horizontalCenter
+			anchors.verticalCenter: parent.verticalCenter
+			width: subtitle.width
+			height: welcome.height + subtitle.height
+			color: "transparent"
 
-		Text {
-			id: subtitle
-			x: (parent.width - subtitle.width) / 2
-			anchors.top: welcome.bottom
-			font.pixelSize: 36
-			font.family: "Arial"
-			color: "white"
-			text: "a Character Sheet for the Star Wars EotE, AoR and F&D Role Playing Games"
+			Column {
+				Text {
+					id: welcome
+					anchors.horizontalCenter: parent.horizontalCenter
+					font.pixelSize: 40
+					font.family: "Arial"
+					color: "white"
+					text: "Welcome to Fringers's Datapad"
+				}
+
+				Vspacer { size: 20 }
+
+				Text {
+					id: subtitle
+					anchors.horizontalCenter: parent.horizontalCenter
+					font.pixelSize: 24
+					font.family: "Arial"
+					color: "white"
+					text: "a Character Sheet for the Star Wars\u2122 EotE, AoR and F&D Role Playing Games"
+				}
+			}
 		}
 	}
 
@@ -160,7 +175,8 @@ Window {
 
 	function setOrientation()
 	{
-		if (landscape) {
+		var local_landscape = width > height;
+		if (local_landscape) {
 			controllerLoader.transform = [ norot, notra ];
 			scrollArea.contentY = 0;
 		}

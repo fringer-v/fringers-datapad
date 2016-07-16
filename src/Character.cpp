@@ -222,6 +222,7 @@ void Character::clear(bool signal)
 	iItemAttachments.clear();
 	iItemCritPlus = 0;
 	iItemPierce = 0;
+	iImageProviderCount = 0;
 	iChangeDicePool.clear();
 	iModDicePool.clear();
 	iModItemDamage = 0;
@@ -719,6 +720,11 @@ int Character::itemCritPlus()
 int Character::itemPierce()
 {
 	return iItemPierce;
+}
+
+int Character::imageProviderCount()
+{
+	return iImageProviderCount;
 }
 
 int Character::locked()
@@ -1350,6 +1356,14 @@ void Character::setItemPierce(int t)
 		iItemPierce = t;
 		emit itemDamageChanged(itemDamage());
 		emit itemPierceChanged(t);
+	}
+}
+
+void Character::setImageProviderCount(int t)
+{
+	if (iImageProviderCount != t) {
+		iImageProviderCount = t;
+		emit imageProviderCountChanged(t);
 	}
 }
 
