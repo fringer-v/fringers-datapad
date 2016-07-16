@@ -1,0 +1,362 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/Data/Armor.xml</file>
+        <file>resources/Data/Characteristics.xml</file>
+        <file>resources/Data/Classes.xml</file>
+        <file>resources/Data/CoreSources.xml</file>
+        <file>resources/Data/Duty.xml</file>
+        <file>resources/Data/Force Abilities.xml</file>
+        <file>resources/Data/Gear.xml</file>
+        <file>resources/Data/Hooks.xml</file>
+        <file>resources/Data/ItemAttachments.xml</file>
+        <file>resources/Data/ItemDescriptors.xml</file>
+        <file>resources/Data/Moralities.xml</file>
+        <file>resources/Data/Motivations.xml</file>
+        <file>resources/Data/Obligations.xml</file>
+        <file>resources/Data/SigAbilityNodes.xml</file>
+        <file>resources/Data/Skills.xml</file>
+        <file>resources/Data/Talents.xml</file>
+        <file>resources/Data/VehActions.xml</file>
+        <file>resources/Data/VehPositions.xml</file>
+        <file>resources/Data/Weapons.xml</file>
+        <file>resources/Data/Careers/Ace.xml</file>
+        <file>resources/Data/Careers/Bounty Hunter.xml</file>
+        <file>resources/Data/Careers/Colonist.xml</file>
+        <file>resources/Data/Careers/Commander.xml</file>
+        <file>resources/Data/Careers/Consular.xml</file>
+        <file>resources/Data/Careers/Diplomat.xml</file>
+        <file>resources/Data/Careers/Engineer.xml</file>
+        <file>resources/Data/Careers/Explorer.xml</file>
+        <file>resources/Data/Careers/Guardian.xml</file>
+        <file>resources/Data/Careers/Hired Gun.xml</file>
+        <file>resources/Data/Careers/Mystic.xml</file>
+        <file>resources/Data/Careers/Seeker.xml</file>
+        <file>resources/Data/Careers/Sentinel.xml</file>
+        <file>resources/Data/Careers/Smuggler.xml</file>
+        <file>resources/Data/Careers/Soldier.xml</file>
+        <file>resources/Data/Careers/Spy.xml</file>
+        <file>resources/Data/Careers/Technician.xml</file>
+        <file>resources/Data/Careers/Warrior.xml</file>
+        <file>resources/Data/Force Powers/Battle Meditation.xml</file>
+        <file>resources/Data/Force Powers/Bind.xml</file>
+        <file>resources/Data/Force Powers/Enhance.xml</file>
+        <file>resources/Data/Force Powers/Forsee.xml</file>
+        <file>resources/Data/Force Powers/Heal_Harm.xml</file>
+        <file>resources/Data/Force Powers/Influence.xml</file>
+        <file>resources/Data/Force Powers/Misdirect.xml</file>
+        <file>resources/Data/Force Powers/Move.xml</file>
+        <file>resources/Data/Force Powers/Protect_Unleash.xml</file>
+        <file>resources/Data/Force Powers/Seek.xml</file>
+        <file>resources/Data/Force Powers/Sense.xml</file>
+        <file>resources/Data/SigAbilities/Insightful Revelation.xml</file>
+        <file>resources/Data/SigAbilities/Last One Standing.xml</file>
+        <file>resources/Data/SigAbilities/Sudden Discovery.xml</file>
+        <file>resources/Data/SigAbilities/Unmatched Expertise.xml</file>
+        <file>resources/Data/SigAbilities/Unmatched Mobility.xml</file>
+        <file>resources/Data/SigAbilities/Unmatched Protection.xml</file>
+        <file>resources/Data/Specializations/Force Sensitive Exile.xml</file>
+        <file>resources/Data/Specializations/Advisor.xml</file>
+        <file>resources/Data/Specializations/Aggressor.xml</file>
+        <file>resources/Data/Specializations/Agitator.xml</file>
+        <file>resources/Data/Specializations/Ambassador.xml</file>
+        <file>resources/Data/Specializations/Archaeologist.xml</file>
+        <file>resources/Data/Specializations/Artisan.xml</file>
+        <file>resources/Data/Specializations/Assassin.xml</file>
+        <file>resources/Data/Specializations/Ataru Striker.xml</file>
+        <file>resources/Data/Specializations/Big-Game Hunter.xml</file>
+        <file>resources/Data/Specializations/Bodyguard.xml</file>
+        <file>resources/Data/Specializations/Commando.xml</file>
+        <file>resources/Data/Specializations/Commodore.xml</file>
+        <file>resources/Data/Specializations/Demolitionist.xml</file>
+        <file>resources/Data/Specializations/Doctor.xml</file>
+        <file>resources/Data/Specializations/Driver.xml</file>
+        <file>resources/Data/Specializations/Enforcer.xml</file>
+        <file>resources/Data/Specializations/Entrepreneur.xml</file>
+        <file>resources/Data/Specializations/Force Sensitive Emergent.xml</file>
+        <file>resources/Data/Specializations/Fringer.xml</file>
+        <file>resources/Data/Specializations/Gadgeteer.xml</file>
+        <file>resources/Data/Specializations/Gunner.xml</file>
+        <file>resources/Data/Specializations/Healer.xml</file>
+        <file>resources/Data/Specializations/Heavy.xml</file>
+        <file>resources/Data/Specializations/Hunter.xml</file>
+        <file>resources/Data/Specializations/Inflitrator.xml</file>
+        <file>resources/Data/Specializations/Makashi Duelist.xml</file>
+        <file>resources/Data/Specializations/Marauder.xml</file>
+        <file>resources/Data/Specializations/Marshal.xml</file>
+        <file>resources/Data/Specializations/Mechanic.xml</file>
+        <file>resources/Data/Specializations/Medic.xml</file>
+        <file>resources/Data/Specializations/Mercenary Soldier.xml</file>
+        <file>resources/Data/Specializations/Niman Disciple.xml</file>
+        <file>resources/Data/Specializations/Outlaw Tech.xml</file>
+        <file>resources/Data/Specializations/Pathfinder.xml</file>
+        <file>resources/Data/Specializations/Peacekeeper.xml</file>
+        <file>resources/Data/Specializations/Performer.xml</file>
+        <file>resources/Data/Specializations/Pilot.xml</file>
+        <file>resources/Data/Specializations/Politico.xml</file>
+        <file>resources/Data/Specializations/Protector.xml</file>
+        <file>resources/Data/Specializations/Quartermaster.xml</file>
+        <file>resources/Data/Specializations/Recruit.xml</file>
+        <file>resources/Data/Specializations/Saboteur.xml</file>
+        <file>resources/Data/Specializations/Sage.xml</file>
+        <file>resources/Data/Specializations/Scholar.xml</file>
+        <file>resources/Data/Specializations/Scientist.xml</file>
+        <file>resources/Data/Specializations/Scoundrel.xml</file>
+        <file>resources/Data/Specializations/Scout.xml</file>
+        <file>resources/Data/Specializations/Seer.xml</file>
+        <file>resources/Data/Specializations/Shadow.xml</file>
+        <file>resources/Data/Specializations/Sharpshooter.xml</file>
+        <file>resources/Data/Specializations/Shien Expert.xml</file>
+        <file>resources/Data/Specializations/Shii-Cho Knight.xml</file>
+        <file>resources/Data/Specializations/Slicer.xml</file>
+        <file>resources/Data/Specializations/Soresu Defender.xml</file>
+        <file>resources/Data/Specializations/Squadron Leader.xml</file>
+        <file>resources/Data/Specializations/Starfighter Ace.xml</file>
+        <file>resources/Data/Specializations/Survivalist.xml</file>
+        <file>resources/Data/Specializations/Tactician.xml</file>
+        <file>resources/Data/Specializations/Thief.xml</file>
+        <file>resources/Data/Specializations/Trader.xml</file>
+        <file>resources/Data/Species/Aqualish.xml</file>
+        <file>resources/Data/Species/Arcona.xml</file>
+        <file>resources/Data/Species/Arkanian Offshoot.xml</file>
+        <file>resources/Data/Species/Arkanian.xml</file>
+        <file>resources/Data/Species/Barabel.xml</file>
+        <file>resources/Data/Species/Besalisk.xml</file>
+        <file>resources/Data/Species/Bith.xml</file>
+        <file>resources/Data/Species/Bothan.xml</file>
+        <file>resources/Data/Species/Caamasi.xml</file>
+        <file>resources/Data/Species/Cathar.xml</file>
+        <file>resources/Data/Species/Cerean.xml</file>
+        <file>resources/Data/Species/Chadra-Fan.xml</file>
+        <file>resources/Data/Species/Chevin.xml</file>
+        <file>resources/Data/Species/Chiss.xml</file>
+        <file>resources/Data/Species/Clawdite.xml</file>
+        <file>resources/Data/Species/Corellian Human.xml</file>
+        <file>resources/Data/Species/Dashade.xml</file>
+        <file>resources/Data/Species/Defel.xml</file>
+        <file>resources/Data/Species/Devaronian.xml</file>
+        <file>resources/Data/Species/Drall.xml</file>
+        <file>resources/Data/Species/Dressellian.xml</file>
+        <file>resources/Data/Species/Droid.xml</file>
+        <file>resources/Data/Species/Dug.xml</file>
+        <file>resources/Data/Species/Duros.xml</file>
+        <file>resources/Data/Species/Ewok.xml</file>
+        <file>resources/Data/Species/Falleen.xml</file>
+        <file>resources/Data/Species/Farghul.xml</file>
+        <file>resources/Data/Species/Gamorrean.xml</file>
+        <file>resources/Data/Species/Gand.xml</file>
+        <file>resources/Data/Species/Givin.xml</file>
+        <file>resources/Data/Species/Gotal.xml</file>
+        <file>resources/Data/Species/Gran.xml</file>
+        <file>resources/Data/Species/Gungan.xml</file>
+        <file>resources/Data/Species/Herglic.xml</file>
+        <file>resources/Data/Species/Human.xml</file>
+        <file>resources/Data/Species/Ithorian.xml</file>
+        <file>resources/Data/Species/Jawa.xml</file>
+        <file>resources/Data/Species/Kel Dor.xml</file>
+        <file>resources/Data/Species/Klatooinian.xml</file>
+        <file>resources/Data/Species/Kubaz.xml</file>
+        <file>resources/Data/Species/Lepi.xml</file>
+        <file>resources/Data/Species/Mirialan.xml</file>
+        <file>resources/Data/Species/Mon Calamari.xml</file>
+        <file>resources/Data/Species/Nagai.xml</file>
+        <file>resources/Data/Species/Nautolan.xml</file>
+        <file>resources/Data/Species/Neimoidian.xml</file>
+        <file>resources/Data/Species/Nikto.xml</file>
+        <file>resources/Data/Species/Noghri.xml</file>
+        <file>resources/Data/Species/Ortolan.xml</file>
+        <file>resources/Data/Species/Pau'an.xml</file>
+        <file>resources/Data/Species/Quarren.xml</file>
+        <file>resources/Data/Species/Rodian.xml</file>
+        <file>resources/Data/Species/Ryn.xml</file>
+        <file>resources/Data/Species/Selkath.xml</file>
+        <file>resources/Data/Species/Selonian.xml</file>
+        <file>resources/Data/Species/Shistavanen.xml</file>
+        <file>resources/Data/Species/Sluissi.xml</file>
+        <file>resources/Data/Species/Snivvian.xml</file>
+        <file>resources/Data/Species/Squib.xml</file>
+        <file>resources/Data/Species/Sullustan.xml</file>
+        <file>resources/Data/Species/Talz.xml</file>
+        <file>resources/Data/Species/Thakwaash.xml</file>
+        <file>resources/Data/Species/Togorian.xml</file>
+        <file>resources/Data/Species/Togruta.xml</file>
+        <file>resources/Data/Species/Toydarians.xml</file>
+        <file>resources/Data/Species/Trandoshan.xml</file>
+        <file>resources/Data/Species/Twi'lek.xml</file>
+        <file>resources/Data/Species/Ubese.xml</file>
+        <file>resources/Data/Species/Ugnaught.xml</file>
+        <file>resources/Data/Species/Verpine.xml</file>
+        <file>resources/Data/Species/Weequay.xml</file>
+        <file>resources/Data/Species/Whiphid.xml</file>
+        <file>resources/Data/Species/Wookiee.xml</file>
+        <file>resources/Data/Species/Zabrak.xml</file>
+        <file>resources/Data/Species/Zeltron.xml</file>
+        <file>resources/Data/Species/Zygerrian.xml</file>
+        <file>resources/Data/Vehicles/4R3 Light Assault Transport.xml</file>
+        <file>resources/Data/Vehicles/85-XS Odyssey Heavy Speeder Bike.xml</file>
+        <file>resources/Data/Vehicles/A-7 Hunter Interceptor.xml</file>
+        <file>resources/Data/Vehicles/A-11 Model III _Burrower_.xml</file>
+        <file>resources/Data/Vehicles/A-19 _Iron Crawler_ Armored Transport.xml</file>
+        <file>resources/Data/Vehicles/A-24 Sleuth-class Scout Ship.xml</file>
+        <file>resources/Data/Vehicles/A-36 Pathfinder-class Force Recon Vessel.xml</file>
+        <file>resources/Data/Vehicles/A-A3 Dray Light Speeder Truck.xml</file>
+        <file>resources/Data/Vehicles/A-Type Stiletto.xml</file>
+        <file>resources/Data/Vehicles/Action VI Bulk Transport.xml</file>
+        <file>resources/Data/Vehicles/ADZ-Class Destroyer.xml</file>
+        <file>resources/Data/Vehicles/Airspeeder.xml</file>
+        <file>resources/Data/Vehicles/All Terrain Armored Transport.xml</file>
+        <file>resources/Data/Vehicles/All Terrain Riot Control Transport.xml</file>
+        <file>resources/Data/Vehicles/All Terrain Scout Transport.xml</file>
+        <file>resources/Data/Vehicles/All-Terrain Personal Transport.xml</file>
+        <file>resources/Data/Vehicles/Alliance T-47 Airspeeder.xml</file>
+        <file>resources/Data/Vehicles/Aratech 57-D Speeder Bike.xml</file>
+        <file>resources/Data/Vehicles/Aratech 74-Z Speeder Bike.xml</file>
+        <file>resources/Data/Vehicles/Armos Modular Transport.xml</file>
+        <file>resources/Data/Vehicles/Arrow 7 Airspeeder.xml</file>
+        <file>resources/Data/Vehicles/ASF-01 B-Wing Heavy Fast Attack Starfighter.xml</file>
+        <file>resources/Data/Vehicles/AT-EST Exploration and Survey Walker.xml</file>
+        <file>resources/Data/Vehicles/AT-HCT.xml</file>
+        <file>resources/Data/Vehicles/BFF-1 Series Bulk Freighter.xml</file>
+        <file>resources/Data/Vehicles/BTL-A4 Y-Wing Attack Starfighter.xml</file>
+        <file>resources/Data/Vehicles/BTL-S3 Y-Wing Attack Starfighter.xml</file>
+        <file>resources/Data/Vehicles/CAV-11 _Condor_ Airspeeder.xml</file>
+        <file>resources/Data/Vehicles/Civilian Pathfinder Scout Ship.xml</file>
+        <file>resources/Data/Vehicles/CL-1c Lancet Interceptor.xml</file>
+        <file>resources/Data/Vehicles/Cloakshape Fighter.xml</file>
+        <file>resources/Data/Vehicles/CMC Digger Crawler.xml</file>
+        <file>resources/Data/Vehicles/Coneship.xml</file>
+        <file>resources/Data/Vehicles/Conqueror-class Assault Ship.xml</file>
+        <file>resources/Data/Vehicles/Consular-Class Light Assault Cruiser.xml</file>
+        <file>resources/Data/Vehicles/Courier-Class Yacht.xml</file>
+        <file>resources/Data/Vehicles/CR90 Corvette.xml</file>
+        <file>resources/Data/Vehicles/CR92a Assassin-Class Corvette.xml</file>
+        <file>resources/Data/Vehicles/CSS-1 Corellian Star Shuttle.xml</file>
+        <file>resources/Data/Vehicles/D-Type Stealth Freighter.xml</file>
+        <file>resources/Data/Vehicles/Delta-6 System Defense Starfighter.xml</file>
+        <file>resources/Data/Vehicles/Delta-7_7B Aethersprite Light Interceptor.xml</file>
+        <file>resources/Data/Vehicles/Delta-12 Skysprite.xml</file>
+        <file>resources/Data/Vehicles/DP20 Gunship.xml</file>
+        <file>resources/Data/Vehicles/Dreadnought-Class Heavy Cruiser.xml</file>
+        <file>resources/Data/Vehicles/EF76 Nebulon-B Escort Frigate.xml</file>
+        <file>resources/Data/Vehicles/Firespray Patrol Craft.xml</file>
+        <file>resources/Data/Vehicles/G1-M4-C Dunelizard.xml</file>
+        <file>resources/Data/Vehicles/G9 Rigger Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/G35 _Silver Cloud_ Airspeeder.xml</file>
+        <file>resources/Data/Vehicles/Gallis-Tech 48 Roller.xml</file>
+        <file>resources/Data/Vehicles/GAT-12H Skipray Blastboat.xml</file>
+        <file>resources/Data/Vehicles/Ghtroc 720 Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/Gozanti-Class Armed Transport.xml</file>
+        <file>resources/Data/Vehicles/GR-75 Medium Transport.xml</file>
+        <file>resources/Data/Vehicles/Groundcar.xml</file>
+        <file>resources/Data/Vehicles/Guardian 5E Personal Defense Speeder.xml</file>
+        <file>resources/Data/Vehicles/Guardian E2 Escape Speeder Bike.xml</file>
+        <file>resources/Data/Vehicles/HLAF-500 Starfighter.xml</file>
+        <file>resources/Data/Vehicles/HT-2200 Medium Freighter.xml</file>
+        <file>resources/Data/Vehicles/Hunchback Construction Strider.xml</file>
+        <file>resources/Data/Vehicles/HWK-290 Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/I-C2 Civil-Industrial Droid.xml</file>
+        <file>resources/Data/Vehicles/ILH-KK Citadel-Class Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/Immobilizer 418 Cruiser.xml</file>
+        <file>resources/Data/Vehicles/Imperial I-Class Star Destroyer.xml</file>
+        <file>resources/Data/Vehicles/Incom T-16 Skyhopper.xml</file>
+        <file>resources/Data/Vehicles/Incom T-47 Airspeeder.xml</file>
+        <file>resources/Data/Vehicles/Indulgent-class Luxury Starliner.xml</file>
+        <file>resources/Data/Vehicles/Interdictor-Class Heavy Cruiser.xml</file>
+        <file>resources/Data/Vehicles/Invader AA-9 Assault Airspeeder.xml</file>
+        <file>resources/Data/Vehicles/IPV-1 System Patrol Craft.xml</file>
+        <file>resources/Data/Vehicles/IR-3F-Class Light Frigate.xml</file>
+        <file>resources/Data/Vehicles/J-Type Star Skiff.xml</file>
+        <file>resources/Data/Vehicles/Jawa Salvage Skiff.xml</file>
+        <file>resources/Data/Vehicles/JM-5000 Jumpmaster Long Range Scout.xml</file>
+        <file>resources/Data/Vehicles/Keldabe-class Battleship.xml</file>
+        <file>resources/Data/Vehicles/KV Swoop.xml</file>
+        <file>resources/Data/Vehicles/LAF-250 Starfighter.xml</file>
+        <file>resources/Data/Vehicles/Lamda-Class T-4A Long Range Shuttle.xml</file>
+        <file>resources/Data/Vehicles/Lancer-Class Frigate.xml</file>
+        <file>resources/Data/Vehicles/Loronar E-9 Explorer-class Long Range Scout.xml</file>
+        <file>resources/Data/Vehicles/Luxurious-class Yacht.xml</file>
+        <file>resources/Data/Vehicles/Marauder-Class Assault Corvette.xml</file>
+        <file>resources/Data/Vehicles/Mauler Tactical Responder.xml</file>
+        <file>resources/Data/Vehicles/MC-2 Moble Command Speeder.xml</file>
+        <file>resources/Data/Vehicles/MC80 Liberty Type Star Cruiser.xml</file>
+        <file>resources/Data/Vehicles/MEV2 _Dug Digger_.xml</file>
+        <file>resources/Data/Vehicles/Mobquet Flare-S Swoop.xml</file>
+        <file>resources/Data/Vehicles/Ne-4 Cloud Car Interceptor.xml</file>
+        <file>resources/Data/Vehicles/Neutron Star-Class Bulk Cruiser.xml</file>
+        <file>resources/Data/Vehicles/Panther Police Interceptor.xml</file>
+        <file>resources/Data/Vehicles/Passenger Landspeeder.xml</file>
+        <file>resources/Data/Vehicles/PB-950 Patrol Boat.xml</file>
+        <file>resources/Data/Vehicles/Personnel Carrier.xml</file>
+        <file>resources/Data/Vehicles/PPB Pocket Patrol Boat.xml</file>
+        <file>resources/Data/Vehicles/Praetor II-Class Star Battlecruiser.xml</file>
+        <file>resources/Data/Vehicles/Preybird-class Starfighter.xml</file>
+        <file>resources/Data/Vehicles/Regulator-class Patrol-Vessel.xml</file>
+        <file>resources/Data/Vehicles/Rush Troop Transport Speeder.xml</file>
+        <file>resources/Data/Vehicles/RZ-1 A-Wing Light Interceptor.xml</file>
+        <file>resources/Data/Vehicles/S-5 _Flashfury_ Swoop.xml</file>
+        <file>resources/Data/Vehicles/S-Type Racing Sloop.xml</file>
+        <file>resources/Data/Vehicles/Sentinel-Class Landing Shuttle.xml</file>
+        <file>resources/Data/Vehicles/Seraph _Flash Speeder_.xml</file>
+        <file>resources/Data/Vehicles/Simiyiar Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/Skywatcher-Class Deep Space Scout Ship.xml</file>
+        <file>resources/Data/Vehicles/SoroSuub Luxury 3000 Space Yacht.xml</file>
+        <file>resources/Data/Vehicles/Space Master Medium Transport.xml</file>
+        <file>resources/Data/Vehicles/Star Galleon Armed Transport.xml</file>
+        <file>resources/Data/Vehicles/Starbolt Assault Carrier.xml</file>
+        <file>resources/Data/Vehicles/Starwind Pleasure Yacht.xml</file>
+        <file>resources/Data/Vehicles/Storm IV Cloud Car.xml</file>
+        <file>resources/Data/Vehicles/Superflare_Modified Flare-S Swoop.xml</file>
+        <file>resources/Data/Vehicles/Superhaul Model II Cargo Skiff.xml</file>
+        <file>resources/Data/Vehicles/T-65B X-Wing Starfighter.xml</file>
+        <file>resources/Data/Vehicles/Talon I Combat Cloud Car.xml</file>
+        <file>resources/Data/Vehicles/TIE-D _Defender_ Multi-Role Starfighter.xml</file>
+        <file>resources/Data/Vehicles/TIE-IN Interceptor.xml</file>
+        <file>resources/Data/Vehicles/TIE-LN Starfighter.xml</file>
+        <file>resources/Data/Vehicles/TIE-SA Tactical Bomber.xml</file>
+        <file>resources/Data/Vehicles/Trast A-A5 Heavy Speeder Truck.xml</file>
+        <file>resources/Data/Vehicles/V-35 Courier Landspeeder.xml</file>
+        <file>resources/Data/Vehicles/V5 Medium Cargo Floater.xml</file>
+        <file>resources/Data/Vehicles/Victory-Class Star Destroyer.xml</file>
+        <file>resources/Data/Vehicles/Vigil-Class Corvette.xml</file>
+        <file>resources/Data/Vehicles/Vindicator-Class Heavy Cruiser.xml</file>
+        <file>resources/Data/Vehicles/Wayfarer-Class Medium Freighter.xml</file>
+        <file>resources/Data/Vehicles/X-34 Landspeeder.xml</file>
+        <file>resources/Data/Vehicles/Xanter-class Deep-Space Exploration Frigate.xml</file>
+        <file>resources/Data/Vehicles/Xiytiar-class Heavy Transport.xml</file>
+        <file>resources/Data/Vehicles/YG-4210 Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/YG-4400 Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/YKL-37R Nova Courier.xml</file>
+        <file>resources/Data/Vehicles/YQ-400 Monitor-Class System Patrol Ship.xml</file>
+        <file>resources/Data/Vehicles/YT-1000 Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/YT-1200 Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/YT-1210 Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/YT-1300 Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/YT-1760 Small Transport.xml</file>
+        <file>resources/Data/Vehicles/YT-2400 Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/YV-560 Light Freighter.xml</file>
+        <file>resources/Data/Vehicles/YV-929 Armored Transport.xml</file>
+        <file>resources/Data/Vehicles/YZ-775 Medium Transport.xml</file>
+        <file>resources/Data/Vehicles/Z-95-AF4 Headhunter.xml</file>
+        <file>resources/Data/Vehicles/Zephyr-G Swoop.xml</file>
+        <file>resources/Data/Vehicles/ZH-25 Questor Light Freighter.xml</file>
+        <file>resources/Data/BaseFoci.xml</file>
+        <file>resources/Data/BaseOfOperations.xml</file>
+        <file>resources/Data/BaseUpgrades.xml</file>
+        <file>resources/Data/SigAbilities/This One is Mine.xml</file>
+        <file>resources/Data/SigAbilities/Umatched Survivability.xml</file>
+        <file>resources/Data/Specializations/Beast Rider.xml</file>
+        <file>resources/Data/Specializations/Hotshot.xml</file>
+        <file>resources/Data/Specializations/Rigger.xml</file>
+        <file>resources/Data/Species/Gank.xml</file>
+        <file>resources/Data/Species/Hutt.xml</file>
+        <file>resources/Data/Species/Sakiyan.xml</file>
+        <file>resources/Data/Species/Xexto.xml</file>
+        <file>resources/Data/Species/Gossam.xml</file>
+        <file>resources/Data/Specializations/Advocate.xml</file>
+        <file>resources/Data/Specializations/Analyst.xml</file>
+        <file>resources/Data/Specializations/Charmer.xml</file>
+        <file>resources/Data/Specializations/Gambler.xml</file>
+        <file>resources/Data/Specializations/Gunslinger.xml</file>
+        <file>resources/Data/Specializations/Propagandist.xml</file>
+        <file>resources/Data/SpecificMotivations.xml</file>
+    </qresource>
+</RCC>

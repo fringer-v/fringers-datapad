@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>js/drawing.js</file>
+        <file>js/constants.js</file>
+        <file>js/utilities.js</file>
+    </qresource>
+</RCC>
