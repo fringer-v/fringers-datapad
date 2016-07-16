@@ -44,13 +44,11 @@ public:
 			pixmap = drawSymbols(DatUtil::lastRight(id, "/"));
 		}
 		else {
-qDebug() << "----->> " << id;
 			pixmap.loadFromData(iImages[id]);
 			if (size)
 				*size = pixmap.size();
 			if (requestedSize.isValid() && requestedSize.width() > 0 && requestedSize.height() > 0)
 				pixmap = pixmap.scaled(requestedSize);
-qDebug() << "----->> " << pixmap.size().height() << pixmap.size().width();
 
 			// This crazy "ping" is requried so that the CharacterBox is refreshed
 			// after each call to this function. For some reason,
@@ -68,7 +66,6 @@ qDebug() << "----->> " << pixmap.size().height() << pixmap.size().width();
 	}
 
 	static void setImage(const QString &id, const QByteArray& b) {
-		qDebug() << "SET <<-----" << id << b.length();
 		iImages[id] = b;
 	}
 
