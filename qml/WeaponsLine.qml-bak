@@ -1,0 +1,125 @@
+import QtQuick 2.0
+import "../js/drawing.js" as Draw
+import "../js/constants.js" as Constant
+
+Rectangle {
+	id: weaponsLine
+	width: parent.width
+	height: Math.max(weaponText.height, specialText.height) + topMargin + bottomMargin
+
+	property real lineWidth: 1
+	property int lineFontSize: 15
+	property int descFontSize: 13
+	property string lineColor: (index % 2) == 1 ? Constant.LIST_LINE_GRAY : "white"
+
+	property int topMargin: 4
+	property int bottomMargin: 3
+
+	Row {
+		Hspacer { size: listIndent; color: lineColor }
+
+		Rectangle {
+			width: weaponColWidth
+			height: weaponsLine.height
+			color: lineColor
+
+			Text {
+				id: weaponText
+				width: parent.width
+				anchors.verticalCenter: parent.verticalCenter
+				font.pixelSize: lineFontSize
+				font.family: "Arial"
+				font.bold: true
+				horizontalAlignment: Text.AlignLeft
+				text: weapon
+			}
+		}
+
+		Rectangle {
+			width: skillColWidth
+			height: weaponsLine.height
+			color: lineColor
+
+			Text {
+				width: parent.width
+				anchors.verticalCenter: parent.verticalCenter
+				font.pixelSize: lineFontSize
+				font.family: "Arial"
+				horizontalAlignment: Text.AlignLeft
+				text: skill
+			}
+		}
+
+		Rectangle {
+			width: rangeColWidth
+			height: weaponsLine.height
+			color: lineColor
+
+			Text {
+				width: parent.width
+				anchors.verticalCenter: parent.verticalCenter
+				font.pixelSize: lineFontSize
+				font.family: "Arial"
+				horizontalAlignment: Text.AlignHCenter
+				text: range
+			}
+		}
+
+		Rectangle {
+			width: damageColWidth
+			height: weaponsLine.height
+			color: lineColor
+
+			Text {
+				width: parent.width
+				anchors.verticalCenter: parent.verticalCenter
+				font.pixelSize: lineFontSize
+				font.family: "Arial"
+				font.bold: true
+				horizontalAlignment: Text.AlignHCenter
+				text: damage
+			}
+		}
+
+		Rectangle {
+			width: criticalColWidth
+			height: weaponsLine.height
+			color: lineColor
+
+			Text {
+				width: parent.width
+				anchors.verticalCenter: parent.verticalCenter
+				font.pixelSize: lineFontSize
+				font.family: "Arial"
+				horizontalAlignment: Text.AlignHCenter
+				text: critical
+			}
+		}
+
+		DicePool {
+			width: dicePoolColWidth
+			height: weaponsLine.height
+			color: lineColor
+			pool: dicePool
+		}
+
+		Rectangle {
+			width: specialColWidth
+			height: weaponsLine.height
+			color: lineColor
+
+			Text {
+				id: specialText
+				width: parent.width
+				anchors.verticalCenter: parent.verticalCenter
+				font.pixelSize: descFontSize
+				font.family: "Arial"
+				horizontalAlignment: Text.AlignLeft
+				wrapMode: Text.Wrap
+				text: special
+			}
+		}
+
+		Hspacer { size: listIndent; color: lineColor }
+	}
+}

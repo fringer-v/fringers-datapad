@@ -1,0 +1,118 @@
+import QtQuick 2.0
+import "../js/drawing.js" as Draw
+import "../js/constants.js" as Constant
+import "../js/utilities.js" as Util
+
+Rectangle {
+	id: talentList
+	width: 500
+
+	property int headerHeight: Constant.LIST_HEADER_HEIGHT
+	property string headerColor: Constant.LIST_HEADER_COLOR
+	property int listIndent: 2
+	property int weaponColWidth: 231
+	property int skillColWidth: 123
+	property int rangeColWidth: 93
+	property int damageColWidth: 46
+	property int criticalColWidth: 119
+	property int dicePoolColWidth: 143
+	property int specialColWidth: talentList.width - listIndent*2 - weaponColWidth - skillColWidth - rangeColWidth - damageColWidth - criticalColWidth - dicePoolColWidth
+	property int fadeFooterHeight: 8
+
+	Rectangle {
+		anchors.top: parent.top
+		anchors.left: parent.left
+		anchors.right: parent.right
+		height: headerHeight
+		color: headerColor
+	}
+
+	ListView {
+		id: list
+		anchors.fill: parent
+		clip: true
+
+		model: weaponData
+		delegate: WeaponsLine { }
+		header: headerFadeSpace
+		footer: footerFadeSpace
+	}
+
+	Rectangle {
+		anchors.bottom: parent.bottom
+		anchors.left: parent.left
+		anchors.right: parent.right
+		height: fadeFooterHeight
+		gradient: Gradient {
+			GradientStop { position: 0.0; color: "#00FFFFFF" }
+			GradientStop { position: 1.0; color: "#FFFFFFFF" }
+		}
+	}
+
+	Component {
+		id: headerFadeSpace
+
+		Rectangle {
+			width: list.width
+			height: headerHeight
+			color: "transparent"
+		}
+	}
+
+	Component {
+		id: footerFadeSpace
+
+		Rectangle {
+			width: list.width
+			height: fadeFooterHeight
+			color: "transparent"
+		}
+	}
+
+	ListHeader {
+		width: list.width
+		height: headerHeight
+		headerIndent: listIndent
+		backgroundColor: headerColor
+		titles: [ "WEAPON", "SKILL", "RANGE", "DAM", "CRITICAL", "DICE POOL", "DESCRIPTION" ]
+		widths: [ weaponColWidth, skillColWidth, rangeColWidth, damageColWidth, criticalColWidth, dicePoolColWidth, specialColWidth ]
+	}
+
+	ListModel {
+		id: weaponData
+
+		ListElement {
+			weapon: "Heavy Blaster Pistol"
+			odd: false
+			skill: "Ranged - Light"
+			range: "Medium"
+			damage: 7
+			critical: 3
+			dicePool: "aaaaaa"
+			special: "Stun Setting"
+			quantity: 1
+			encumberance: 2
+			held: true
+			equipped: true
+			retricted: false
+			attachments: ""
+		}
+		ListElement {
+			weapon: "Geonosian Blaster Rifle"
+			odd: true
+			skill: "Ranged - Heavy"
+			range: "Long"
+			damage: 15
+			critical: 2
+			dicePool: "pppppabbcd"
+			special: "Stun Setting"
+			quantity: 1
+			encumberance: 4
+			held: false
+			equipped: false
+			retricted: true
+			attachments: "Augmented Spin Barrel (1 Damage +1 Mod, Add [] to allMechanics checks when performing maintenance on this weapon.)"
+		}
+	}
+
+}
