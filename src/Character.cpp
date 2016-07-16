@@ -222,7 +222,8 @@ void Character::clear(bool signal)
 	iItemAttachments.clear();
 	iItemCritPlus = 0;
 	iItemPierce = 0;
-	iImageProviderCount = 0;
+	if (!signal)
+		iImageProviderCount = 0;
 	iChangeDicePool.clear();
 	iModDicePool.clear();
 	iModItemDamage = 0;
