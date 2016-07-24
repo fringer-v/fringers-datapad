@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <Specialization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Key>GUNSLINGER</Key>
   <Name>Gunslinger</Name>
@@ -6,7 +6,7 @@
     [H4]Gunslinger - The Quick Draw[h4]
     Please see page 30 of the Fly Casual Sourcebook for details.
   </Description>
-  <Source>Fly Casual</Source>
+  <Source Page="30">Fly Casual</Source>
   <Sources />
   <CareerSkills>
     <Key>COERC</Key>

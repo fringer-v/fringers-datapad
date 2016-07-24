@@ -5,7 +5,7 @@
   <Description>[H3]M12-L Kimogila Heavy Starfighter[h3]
 Please see page 60 of the Keeping the Peace sourcebook for details.
 [P][I]Note: Proton torpedo can be swapped with a concussive missile launcher.[i]</Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="60">Keeping the Peace</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

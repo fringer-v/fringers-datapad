@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>FORCESENSITIVEEXILE</Key>
   <Name>Force Sensitive Exile</Name>
@@ -6,7 +6,7 @@
     [H4]Force Sensitive Exile[h4]
     Please see page 276 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="276">Edge of the Empire Core Rulebook</Source>
   <Universal>true</Universal>
   <Attributes>
     <ForceRating>1</ForceRating>

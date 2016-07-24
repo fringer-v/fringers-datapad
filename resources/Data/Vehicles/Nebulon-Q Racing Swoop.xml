@@ -4,7 +4,7 @@
   <Name>Nebulon-Q Racing Swoop</Name>
   <Description>[H3]Nebulon-Q Racing Swoop[h3]
 Please see page 51 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="51">Stay on Target</Source>
   <Type>Swoop</Type>
   <Categories>
     <Category>Air Vehicle</Category>

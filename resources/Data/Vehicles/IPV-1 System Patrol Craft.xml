@@ -6,7 +6,7 @@
     [H3]IPV-1 System Patrol Craft[h3]
     Please see page 93 of the Beyond the Rim Adventure Module for details.
 </Description>
-  <Source>Beyond the Rim</Source>
+  <Source Page="93">Beyond the Rim</Source>
   <Type>Frigate</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

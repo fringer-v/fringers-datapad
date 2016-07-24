@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>ENFORCER</Key>
   <Name>Enforcer</Name>
   <Description>
-    [H4]Enforcer &#8212; Ruthless Thugs[h4]
+    [H4]Enforcer — Ruthless Thugs[h4]
     Please see page 26 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="26">Dangerous Covenants</Source>
   <CareerSkills>
     <Key>BRAWL</Key>
     <Key>COERC</Key>

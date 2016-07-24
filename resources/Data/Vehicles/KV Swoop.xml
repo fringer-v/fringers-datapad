@@ -6,7 +6,7 @@
     [H3]KV Swoop[h3]
     Please see page 58 of the Enter the Unknown Sourcebook for details.
   </Description>
-  <Source>Enter the Unknown</Source>
+  <Source Page="58">Enter the Unknown</Source>
   <Type>Swoop</Type>
   <Categories>
     <Category>Land Vehicle</Category>

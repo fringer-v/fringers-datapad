@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Gears>
   <Gear>
     <Key>COMLINKH</Key>
@@ -7,6 +7,11 @@
       [H3]Comlink (handheld)[h3]
       Please see page 171 of the Edge of the Empire Core Rulebook, page 186 of the Age of Rebellion Core Rulebook, or page 180 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="171">Edge of the Empire Core Rulebook</Source>
+      <Source Page="186">Age of Rebellion Core Rulebook</Source>
+      <Source Page="180">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Short>A small handheld communications device</Short>
     <Encumbrance>0</Encumbrance>
     <Price>25</Price>
@@ -20,7 +25,11 @@
       [H3]Comlink (long range)[h3]
       Please see page 171 of the Edge of the Empire Core Rulebook, page 186 of the Age of Rebellion Core Rulebook, or page 180 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short>A large long range communications device</Short>
+    <Sources>
+      <Source Page="171">Edge of the Empire Core Rulebook</Source>
+      <Source Page="186">Age of Rebellion Core Rulebook</Source>
+      <Source Page="180">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Encumbrance>2</Encumbrance>
     <Price>200</Price>
     <Rarity>1</Rarity>
@@ -33,7 +42,11 @@
       [H3]Holo-messenger[h3]
       Please see page 171 of the Edge of the Empire Core Rulebook, page 186 of the Age of Rebellion Core Rulebook, or page 181 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short>Handheld holographic projection device</Short>
+    <Sources>
+      <Source Page="171">Edge of the Empire Core Rulebook</Source>
+      <Source Page="186">Age of Rebellion Core Rulebook</Source>
+      <Source Page="181">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Encumbrance>0</Encumbrance>
     <Price>250</Price>
     <Rarity>4</Rarity>
@@ -46,7 +59,7 @@
       [H3]Pioneer Long-Range Hypertransceiver[h3]
       Please see page 100 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="100">Suns of Fortune</Source>
     <Encumbrance>5</Encumbrance>
     <Price>1000</Price>
     <Rarity>3</Rarity>
@@ -59,7 +72,7 @@
       [H3]Whistler Encryption Module[h3]
       Please see page 100 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="100">Suns of Fortune</Source>
     <Price>1250</Price>
     <Encumbrance>3</Encumbrance>
     <Rarity>6</Rarity>
@@ -72,7 +85,7 @@
       [H3]Remote DVI Activator (Short Range)[h3]
       Please see page 100 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="100">Suns of Fortune</Source>
     <Price>300</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>4</Rarity>
@@ -85,14 +98,12 @@
       [H3]Remote DVI Activator (Long Range)[h3]
       Please see page 100 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="100">Suns of Fortune</Source>
     <Price>1500</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>7</Rarity>
     <Type>Communications</Type>
   </Gear>
-
-
   <Gear>
     <Key>COMLINKHARD</Key>
     <Name>Shockhold Hardened Comlink</Name>
@@ -100,7 +111,7 @@
       [H3]Shockhold Hardened Comlink[h3]
       Please see page 56 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="56">Dangerous Covenants</Source>
     <Type>Communications</Type>
     <Categories />
     <Encumbrance>3</Encumbrance>
@@ -115,7 +126,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>COLLARAMP</Key>
     <Name>Collar-Amp</Name>
@@ -123,8 +133,7 @@
       [H3]Collar-Amp[h3]
       Please see page 45 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="45">Far Horizons</Source>
     <Type>Communications</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -141,8 +150,7 @@
       [H3]Collar-Amp (Upgraded)[h3]
       Please see page 45 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="45">Far Horizons</Source>
     <Type>Communications</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -159,8 +167,7 @@
       [H3]X-500 Portable HoloNet Relay[h3]
       Please see page 45 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="45">Far Horizons</Source>
     <Type>Communications</Type>
     <Categories />
     <Encumbrance>15</Encumbrance>
@@ -177,7 +184,7 @@
       [H3]Communications Media Manipulator[h3]
       Please see page 50 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="50">Desperate Allies</Source>
     <Price>400</Price>
     <Encumbrance>6</Encumbrance>
     <Rarity>6</Rarity>
@@ -193,7 +200,7 @@
       [H3]Integrated Public Address System[h3]
       Please see page 52 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="52">Desperate Allies</Source>
     <Price>200</Price>
     <Encumbrance>4</Encumbrance>
     <Rarity>4</Rarity>
@@ -209,7 +216,7 @@
       [H3]False Voice Transmitter[h3]
       Please see page 111 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="111">Strongholds of Resistance</Source>
     <Price>1400</Price>
     <Encumbrance>4</Encumbrance>
     <Rarity>6</Rarity>
@@ -229,7 +236,7 @@
       [H3]Polis Masson Voicebox[h3]
       Please see page 111 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="111">Strongholds of Resistance</Source>
     <Price>50</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>6</Rarity>
@@ -245,7 +252,7 @@
       [H3]PTP Link[h3]
       Please see page 111 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="111">Strongholds of Resistance</Source>
     <Price>100</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>7</Rarity>
@@ -261,7 +268,7 @@
       [H3]Verpine Comlink[h3]
       Please see page 112 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="112">Strongholds of Resistance</Source>
     <Price>250</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>6</Rarity>
@@ -270,11 +277,6 @@
     <BaseMods>
     </BaseMods>
   </Gear>
-
-
-
-
-
   <Gear>
     <Key>SSNT</Key>
     <Name>Synthetic Standard Neurotoxin</Name>
@@ -282,6 +284,11 @@
       [H3]Synthetic Standard Neurotoxin[h3]
       Please see page 172 of the Edge of the Empire Core Rulebook, page 188 of the Age of Rebellion Core Rulebook, or page 181 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="172">Edge of the Empire Core Rulebook</Source>
+      <Source Page="188">Age of Rebellion Core Rulebook</Source>
+      <Source Page="181">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Encumbrance>0</Encumbrance>
     <Price>50</Price>
     <Rarity>6</Rarity>
@@ -302,6 +309,11 @@
       Please see page 172 of the Edge of the Empire Core Rulebook, page 188 of the Age of Rebellion Core Rulebook, or page 181 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Encumbrance>0</Encumbrance>
+    <Sources>
+      <Source Page="172">Edge of the Empire Core Rulebook</Source>
+      <Source Page="188">Age of Rebellion Core Rulebook</Source>
+      <Source Page="181">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>35</Price>
     <Rarity>4</Rarity>
     <Type>Poisons</Type>
@@ -319,6 +331,11 @@
       [H3]Synthetic Standard Neuroparalytic[h3]
       Please see page 172 of the Edge of the Empire Core Rulebook, page 188 of the Age of Rebellion Core Rulebook, or page 181 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="172">Edge of the Empire Core Rulebook</Source>
+      <Source Page="188">Age of Rebellion Core Rulebook</Source>
+      <Source Page="181">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Encumbrance>0</Encumbrance>
     <Price>75</Price>
     <Rarity>6</Rarity>
@@ -338,7 +355,7 @@
       [H3]Dendriton Toxin[h3]
       Please see page 109 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="109">Lords of Nal Hutta</Source>
     <Encumbrance>0</Encumbrance>
     <Price>125</Price>
     <Rarity>7</Rarity>
@@ -358,7 +375,7 @@
       [H3]Dioxis Gas[h3]
       Please see page 109 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="109">Lords of Nal Hutta</Source>
     <Encumbrance>0</Encumbrance>
     <Price>100</Price>
     <Rarity>6</Rarity>
@@ -378,7 +395,7 @@
       [H3]Raquor Venom[h3]
       Please see page 109 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="109">Lords of Nal Hutta</Source>
     <Encumbrance>0</Encumbrance>
     <Price>150</Price>
     <Rarity>7</Rarity>
@@ -398,7 +415,7 @@
       [H3]Bearsloth Venom[h3]
       Please see page 22 of the Chronicles of the Gatekeeper Adventure for details.
     </Description>
-    <Source>Chronicles of the Gatekeeper</Source>
+    <Source Page="22">Chronicles of the Gatekeeper</Source>
     <Encumbrance>0</Encumbrance>
     <Price>150</Price>
     <Rarity>3</Rarity>
@@ -418,7 +435,7 @@
       [H3]Bearsloth Antivenom[h3]
       Please see page 23 of the Chronicles of the Gatekeeper Adventure for details.
     </Description>
-    <Source>Chronicles of the Gatekeeper</Source>
+    <Source Page="23">Chronicles of the Gatekeeper</Source>
     <Encumbrance>0</Encumbrance>
     <Price>100</Price>
     <Rarity>3</Rarity>
@@ -438,7 +455,7 @@
       [H3]Antidote Set[h3]
       Please see page 50 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="50">Desperate Allies</Source>
     <Encumbrance>1</Encumbrance>
     <Price>250</Price>
     <Rarity>5</Rarity>
@@ -451,8 +468,9 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
+  
+    
+    <!-- Cybernetics -->
   <Gear>
     <Key>CYARMV</Key>
     <Name>Cybernetic Arms (Mod V)</Name>
@@ -460,7 +478,11 @@
       [H3]Cybernetic Arms (Mod V)[h3]
       Please see page 173 of the Edge of the Empire Core Rulebook, page 189 of the Age of Rebellion Core Rulebook, or page 182 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="173">Edge of the Empire Core Rulebook</Source>
+      <Source Page="189">Age of Rebellion Core Rulebook</Source>
+      <Source Page="182">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>10000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -479,7 +501,11 @@
       [H3]Cybernetic Arms (Mod VI)[h3]
       Please see page 173 of the Edge of the Empire Core Rulebook, page 189 of the Age of Rebellion Core Rulebook, or page 182 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="173">Edge of the Empire Core Rulebook</Source>
+      <Source Page="189">Age of Rebellion Core Rulebook</Source>
+      <Source Page="182">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>10000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -498,7 +524,11 @@
       [H3]Cybernetic Brain Implant[h3]
       Please see page 174 of the Edge of the Empire Core Rulebook, page 189 of the Age of Rebellion Core Rulebook, or page 183 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="174">Edge of the Empire Core Rulebook</Source>
+      <Source Page="189">Age of Rebellion Core Rulebook</Source>
+      <Source Page="183">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>10000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -517,7 +547,11 @@
       [H3]Cybernetic Eyes[h3]
       Please see page 174 of the Edge of the Empire Core Rulebook, page 189 of the Age of Rebellion Core Rulebook, or page 183 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="174">Edge of the Empire Core Rulebook</Source>
+      <Source Page="189">Age of Rebellion Core Rulebook</Source>
+      <Source Page="183">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>7500</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -540,7 +574,11 @@
       [H3]Cybernetic Leg (Mod II)[h3]
       Please see page 173 of the Edge of the Empire Core Rulebook, page 189 of the Age of Rebellion Core Rulebook, or page 183 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="173">Edge of the Empire Core Rulebook</Source>
+      <Source Page="189">Age of Rebellion Core Rulebook</Source>
+      <Source Page="183">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>10000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -559,7 +597,11 @@
       [H3]Cybernetic Leg (Mod III)[h3]
       Please see page 173 of the Edge of the Empire Core Rulebook, page 189 of the Age of Rebellion Core Rulebook, or page 183 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="173">Edge of the Empire Core Rulebook</Source>
+      <Source Page="189">Age of Rebellion Core Rulebook</Source>
+      <Source Page="183">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>10000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -578,7 +620,11 @@
       [H3]Cyberscanner Limb[h3]
       Please see page 174 of the Edge of the Empire Core Rulebook, page 190 of the Age of Rebellion Core Rulebook, or page 184 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="174">Edge of the Empire Core Rulebook</Source>
+      <Source Page="190">Age of Rebellion Core Rulebook</Source>
+      <Source Page="184">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>4000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>7</Rarity>
@@ -594,10 +640,11 @@
       Please see page 174 of the Edge of the Empire Core Rulebook, or page 190 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="174">Edge of the Empire Core Rulebook</Source>
+      <Source Page="190">Age of Rebellion Core Rulebook</Source>
     </Sources>
-    <Short></Short>
+    <Short>
+    </Short>
     <Price>5000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -617,10 +664,11 @@
       Please see page 174 of the Edge of the Empire Core Rulebook, or page 190 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="174">Edge of the Empire Core Rulebook</Source>
+      <Source Page="190">Age of Rebellion Core Rulebook</Source>
     </Sources>
-    <Short></Short>
+    <Short>
+    </Short>
     <Price>7500</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -639,7 +687,11 @@
       [H3]Repli-Limb Prosthetic (limb)[h3]
       Please see page 174 of the Edge of the Empire Core Rulebook, page 190 of the Age of Rebellion Core Rulebook, or page 184 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="174">Edge of the Empire Core Rulebook</Source>
+      <Source Page="190">Age of Rebellion Core Rulebook</Source>
+      <Source Page="184">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>2000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>4</Rarity>
@@ -654,7 +706,11 @@
       [H3]Repli-Limb Prosthetic (organ)[h3]
       Please see page 174 of the Edge of the Empire Core Rulebook, page 190 of the Age of Rebellion Core Rulebook, or page 184 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="174">Edge of the Empire Core Rulebook</Source>
+      <Source Page="190">Age of Rebellion Core Rulebook</Source>
+      <Source Page="184">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>1000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>4</Rarity>
@@ -670,8 +726,8 @@
       Please see page 174 of the Edge of the Empire Core Rulebook, or page 190 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="174">Edge of the Empire Core Rulebook</Source>
+      <Source Page="190">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Cybernetics</Type>
     <Categories />
@@ -705,7 +761,6 @@
       </WeaponModifier>
     </WeaponModifiers>
   </Gear>
-
   <Gear>
     <Key>CYAVIONCAAF2</Key>
     <Name>CAAF-2 Avionics Interface</Name>
@@ -713,7 +768,7 @@
       [H3]CAAF-2 Avionics Interface[h3]
       Please see page 101 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="101">Suns of Fortune</Source>
     <Price>8000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -730,7 +785,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>CYREPULSORFIST</Key>
     <Name>Repulsor Fist</Name>
@@ -738,7 +792,7 @@
       [H3]Repulsor Fist[h3]
       Please see page 107 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="107">Lords of Nal Hutta</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -787,7 +841,7 @@
       [H3]Adrenal Implant[h3]
       Please see page 106 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="106">Lords of Nal Hutta</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -810,7 +864,7 @@
       [H3]Cybernetic Reflexes[h3]
       Please see page 106 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="106">Lords of Nal Hutta</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -833,7 +887,7 @@
       [H3]Cybernetic Respirator[h3]
       Please see page 107 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="107">Lords of Nal Hutta</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -860,7 +914,7 @@
       [H3]Gank Comm Implant[h3]
       Please see page 107 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="107">Lords of Nal Hutta</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -878,7 +932,7 @@
       [H3]Implanted Cyberjack[h3]
       Please see page 107 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="107">Lords of Nal Hutta</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -901,7 +955,7 @@
       [H3]Neuromachine Interface[h3]
       Please see page 107 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="107">Lords of Nal Hutta</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -924,7 +978,7 @@
       [H3]Q-22 Retinal Tracker[h3]
       Please see page 107 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="107">Lords of Nal Hutta</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -950,7 +1004,6 @@
     </BaseMods>
     <WeaponModifiers />
   </Gear>
-
   <Gear>
     <Key>CYDROIDINTF</Key>
     <Name>Cyborg/Droid Interface</Name>
@@ -958,7 +1011,7 @@
       [H3]Neuro-Saav Cyborg/Droid Interface[h3]
       Please see page 112 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="112">Strongholds of Resistance</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -985,7 +1038,7 @@
       [H3]Cratala's Vision Cycling Implant[h3]
       Please see page 66 of the Beyond the Rim Adventure for details.
     </Description>
-    <Source>Beyond the Rim</Source>
+    <Source Page="66">Beyond the Rim</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -1014,7 +1067,7 @@
       [H3]Cratala's Leg Enhancement Implant[h3]
       Please see page 66 of the Beyond the Rim Adventure for details.
     </Description>
-    <Source>Beyond the Rim</Source>
+    <Source Page="66">Beyond the Rim</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -1039,7 +1092,7 @@
       [H3]Cratala's Arm Enhancement Implant[h3]
       Please see page 66 of the Beyond the Rim Adventure for details.
     </Description>
-    <Source>Beyond the Rim</Source>
+    <Source Page="66">Beyond the Rim</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -1057,7 +1110,6 @@
     </BaseMods>
     <WeaponModifiers />
   </Gear>
-
   <Gear>
     <Key>78BCOUR</Key>
     <Name>Swift 78B Vessel Courier System</Name>
@@ -1065,7 +1117,7 @@
       [H3]Swift 78B Vessel Courier System[h3]
       Please see page 112 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="112">Strongholds of Resistance</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -1077,7 +1129,148 @@
     </BaseMods>
     <WeaponModifiers />
   </Gear>
-
+  
+    
+  <Gear>
+    <Key>BIOFEEDREG</Key>
+    <Name>Biofeedback Regulator</Name>
+    <Description>
+      [H3]Biofeedback Regulator[h3]
+      Please see page 49 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="49">Special Modifications</Source>
+    <Type>Cybernetics</Type>
+    <Categories />
+    <Price>5000</Price>
+    <Encumbrance>0</Encumbrance>
+    <Rarity>8</Rarity>
+    <HP>0</HP>
+    <Restricted>false</Restricted>
+    <BaseMods>
+      <Mod>
+        <Key>CYBERADD</Key>
+        <Count>2</Count>
+      </Mod>
+      <Mod>
+        <Key>CYBERNONE</Key>
+      </Mod>
+      <Mod>
+        <MiscDesc>Cannot be installed on droids.</MiscDesc>
+      </Mod>
+      <Mod>
+        <MiscDesc>May only install a single biofeedback regulator.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <WeaponModifiers />
+  </Gear>
+  <Gear>
+    <Key>ESCCIR</Key>
+    <Name>Escape Circuit</Name>
+    <Description>
+      [H3]Escape Circuit[h3]
+      Please see page 49 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="49">Special Modifications</Source>
+    <Type>Cybernetics</Type>
+    <Categories />
+    <Price>1000</Price>
+    <Encumbrance>0</Encumbrance>
+    <Rarity>6</Rarity>
+    <HP>0</HP>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Can only be installed on droids.</MiscDesc>
+      </Mod>
+      <Mod>
+        <MiscDesc>Can resist restraining bolts with an [B]Easy ([DI]) Discipline check[b]  May spend [AD][AD] to overload restraining bolt, rendering it useless.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <WeaponModifiers />
+  </Gear>
+  <Gear>
+    <Key>NETUPLINK</Key>
+    <Name>Networked Slicing Uplink</Name>
+    <Description>
+      [H3]Networked Slicing Uplink[h3]
+      Please see page 50 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="50">Special Modifications</Source>
+    <Type>Cybernetics</Type>
+    <Categories />
+    <Price>1250</Price>
+    <Encumbrance>0</Encumbrance>
+    <Rarity>7</Rarity>
+    <HP>0</HP>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Can only be installed on droids.</MiscDesc>
+      </Mod>
+      <Mod>
+        <MiscDesc>Counts as having slicer gear.</MiscDesc>
+      </Mod>
+      <Mod>
+        <MiscDesc>When droid is slicing or assisting in slicing, add [SE] to [B]Computers checks[b] to identify slicer (e.g., the Trace User action).</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <WeaponModifiers />
+  </Gear>
+  <Gear>
+    <Key>NEURALREC</Key>
+    <Name>Neural Recorder</Name>
+    <Description>
+      [H3]Neural Recorder[h3]
+      Please see page 50 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="50">Special Modifications</Source>
+    <Type>Cybernetics</Type>
+    <Categories />
+    <Price>250</Price>
+    <Encumbrance>0</Encumbrance>
+    <Rarity>8</Rarity>
+    <HP>0</HP>
+    <Restricted>false</Restricted>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Make an [B]Easy ([DI]) Discipline check[b] to recall any information experienced while recorder was running.</MiscDesc>
+      </Mod>
+      <Mod>
+        <MiscDesc>Can copy recordings to common types of external storage devices.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <WeaponModifiers />
+  </Gear>
+  <Gear>
+    <Key>SURGESWITCH</Key>
+    <Name>Surge Override Switch</Name>
+    <Description>
+      [H3]Surge Override Switch[h3]
+      Please see page 50 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="50">Special Modifications</Source>
+    <Type>Cybernetics</Type>
+    <Categories />
+    <Price>1000</Price>
+    <Encumbrance>0</Encumbrance>
+    <Rarity>6</Rarity>
+    <HP>0</HP>
+    <Restricted>false</Restricted>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Once per encounter as an action, may make an [B]Average ([DI][DI]) Discipline check[b].  If successful, may reactivate any overloaded cybernetic implants, such as from the Ion quality or similar effects, by suffering 2 strain per overloaded implant reactivated.</MiscDesc>
+      </Mod>
+      <Mod>
+        <MiscDesc>Cannot be overloaded by the Ion quality or similar effects.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <WeaponModifiers />
+  </Gear>
+  
+    
+    
+    
+      
   <Gear>
     <Key>EBIN</Key>
     <Name>Electrobinoculars</Name>
@@ -1085,7 +1278,11 @@
       [H3]Electrobinoculars[h3]
       Please see page 175 of the Edge of the Empire Core Rulebook, page 190 of the Age of Rebellion Core Rulebook, or page 184 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="175">Edge of the Empire Core Rulebook</Source>
+      <Source Page="190">Age of Rebellion Core Rulebook</Source>
+      <Source Page="184">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>250</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>1</Rarity>
@@ -1098,7 +1295,11 @@
       [H3]General Purpose Scanner[h3]
       Please see page 175 of the Edge of the Empire Core Rulebook, page 191 of the Age of Rebellion Core Rulebook, or page 185 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="175">Edge of the Empire Core Rulebook</Source>
+      <Source Page="191">Age of Rebellion Core Rulebook</Source>
+      <Source Page="185">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>500</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>3</Rarity>
@@ -1111,7 +1312,11 @@
       [H3]Hand Scanner[h3]
       Please see page 176 of the Edge of the Empire Core Rulebook, page 191 of the Age of Rebellion Core Rulebook, or page 185 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="176">Edge of the Empire Core Rulebook</Source>
+      <Source Page="191">Age of Rebellion Core Rulebook</Source>
+      <Source Page="185">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>100</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>2</Rarity>
@@ -1124,7 +1329,11 @@
       [H3]Macrobinoculars[h3]
       Please see page 175 of the Edge of the Empire Core Rulebook, page 191 of the Age of Rebellion Core Rulebook, or page 185 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="175">Edge of the Empire Core Rulebook</Source>
+      <Source Page="191">Age of Rebellion Core Rulebook</Source>
+      <Source Page="185">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>75</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>2</Rarity>
@@ -1137,7 +1346,11 @@
       [H3]Scanner Goggles[h3]
       Please see page 175 of the Edge of the Empire Core Rulebook, page 191 of the Age of Rebellion Core Rulebook, or page 185 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="175">Edge of the Empire Core Rulebook</Source>
+      <Source Page="191">Age of Rebellion Core Rulebook</Source>
+      <Source Page="185">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>150</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>3</Rarity>
@@ -1156,7 +1369,6 @@
       light sensitivity trait.
     </Description>
     <Source>Unofficial Species Menagerie</Source>
-    <Short></Short>
     <Price>100</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>2</Rarity>
@@ -1170,17 +1382,17 @@
       Please see page 176 of the Edge of the Empire Core Rulebook, or page 191 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="176">Edge of the Empire Core Rulebook</Source>
+      <Source Page="191">Age of Rebellion Core Rulebook</Source>
     </Sources>
-    <Short></Short>
+    <Short>
+    </Short>
     <Price>175</Price>
     <Restricted>true</Restricted>
     <Encumbrance>0</Encumbrance>
     <Rarity>4</Rarity>
     <Type>Detection/Surveillance Devices</Type>
   </Gear>
-
   <Gear>
     <Key>LNGRNGSCNR</Key>
     <Name>Long Range Terrain Scanner</Name>
@@ -1188,7 +1400,7 @@
       [H3]Long Range Terrain Scanner[h3]
       Please see page 47 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="47">Enter the Unknown</Source>
     <Type>Detection/Surveillance Devices</Type>
     <Categories />
     <Encumbrance>6</Encumbrance>
@@ -1204,7 +1416,7 @@
       [H3]Ground-Penetrating Sensor Pack[h3]
       Please see page 47 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="47">Enter the Unknown</Source>
     <Type>Detection/Surveillance Devices</Type>
     <Categories />
     <Encumbrance>5</Encumbrance>
@@ -1220,7 +1432,7 @@
       [H3]ILF-6500 Life Form Scanner[h3]
       Please see page 47 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="47">Enter the Unknown</Source>
     <Type>Detection/Surveillance Devices</Type>
     <Categories />
     <Encumbrance>4</Encumbrance>
@@ -1236,7 +1448,7 @@
       [H3]Hunting Goggles[h3]
       Please see page 48 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="48">Enter the Unknown</Source>
     <Type>Detection/Surveillance Devices</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -1261,7 +1473,7 @@
       [H3]HSI-280 Hyperwave Signal Interceptor[h3]
       Please see page 101 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="101">Suns of Fortune</Source>
     <Price>10500</Price>
     <Encumbrance>5</Encumbrance>
     <Rarity>8</Rarity>
@@ -1274,7 +1486,7 @@
       [H3]Weapon Detection Goggles[h3]
       Please see page 101 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="101">Suns of Fortune</Source>
     <Price>750</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>5</Rarity>
@@ -1286,8 +1498,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
   <Gear>
     <Key>SCANCOMBAT</Key>
     <Name>Mark 6  Combat Scanner</Name>
@@ -1295,7 +1505,7 @@
       [H3]Mark 6 Combat scanner[h3]
       Please see page 56 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="56">Dangerous Covenants</Source>
     <Type>Detection/Surveillance Devices</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -1309,7 +1519,6 @@
         <Count>1</Count>
         <Index>0</Index>
         <MiscDesc>Can see normally in dark, track motion, heat, and metal, and adds [SETBACK][SETBACK] to attempts to decode transmissions to/from combat scanners.</MiscDesc>
-
         <DefZone />
       </Mod>
     </BaseMods>
@@ -1321,7 +1530,7 @@
       [H3]Mark 10 Demolitions Scanner[h3]
       Please see page 57 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="57">Dangerous Covenants</Source>
     <Type>Detection/Surveillance Devices</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -1335,7 +1544,6 @@
         <Count>1</Count>
         <Index>0</Index>
         <MiscDesc>Adds [BOOST] to attempts to detect explosive devices.</MiscDesc>
-
         <DefZone />
       </Mod>
     </BaseMods>
@@ -1347,8 +1555,8 @@
       [H3]Recon Remote[h3]
       Please see page 57 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
-    <Type>Detection/Surveillance Devices</Type>
+    <Source Page="57">Dangerous Covenants</Source>
+    <Type>Remotes</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
     <HP>0</HP>
@@ -1357,7 +1565,6 @@
     <Restricted>false</Restricted>
     <BaseMods />
   </Gear>
-
   <Gear>
     <Key>PX7HEATSENSOR</Key>
     <Name>PX-7 Heat Sensor</Name>
@@ -1365,7 +1572,7 @@
       [H3]PX-7 Heat Sensor[h3]
       Please see page 50 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="50">Keeping the Peace</Source>
     <Type>Detection/Surveillance Devices</Type>
     <Categories />
     <Encumbrance>3</Encumbrance>
@@ -1392,7 +1599,7 @@
       [H3]Veridicator 200[h3]
       Please see page 51 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="51">Keeping the Peace</Source>
     <Type>Detection/Surveillance Devices</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -1412,9 +1619,6 @@
     </BaseMods>
     <WeaponModifiers />
   </Gear>
-
-
-
   <Gear>
     <Key>DROIDCAM</Key>
     <Name>Cam Droid</Name>
@@ -1422,7 +1626,7 @@
       [H3]Hologlide J57 Cam Droid[h3]
       Please see page 102 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>  
+    <Source Page="102">Suns of Fortune</Source>
     <Price>800</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>3</Rarity>
@@ -1435,13 +1639,12 @@
       [H3]Fire Suppression Droid[h3]
       Please see page 102 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="102">Suns of Fortune</Source>
     <Price>8000</Price>
     <Encumbrance>10</Encumbrance>
     <Rarity>4</Rarity>
     <Type>Droids</Type>
   </Gear>
-
   <Gear>
     <Key>DROIDR7</Key>
     <Name>R7-Series Astromech Droid</Name>
@@ -1449,7 +1652,7 @@
       [H3]R7-Series Astromech Droid[h3]
       Please see page 46 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="46">Stay on Target</Source>
     <Price>11000</Price>
     <Encumbrance>10</Encumbrance>
     <Rarity>6</Rarity>
@@ -1462,13 +1665,12 @@
       [H3]Q7-Series Astromech Droid[h3]
       Please see page 47 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="47">Stay on Target</Source>
     <Price>6500</Price>
     <Encumbrance>10</Encumbrance>
     <Rarity>8</Rarity>
     <Type>Droids</Type>
   </Gear>
-
   <Gear>
     <Key>DROIDACLAW</Key>
     <Name>AC Law Enforcement Droid</Name>
@@ -1476,13 +1678,12 @@
       [H3]AC Law Enforcement Droid[h3]
       Please see page 49 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="49">Far Horizons</Source>
     <Price>9600</Price>
     <Rarity>5</Rarity>
     <Restricted>true</Restricted>
     <Type>Droids</Type>
   </Gear>
-
   <Gear>
     <Key>DROIDDZ70</Key>
     <Name>DZ-70 Fugitive Tracker Droid</Name>
@@ -1490,41 +1691,38 @@
       [H3]DZ-70 Fugitive Tracker Droid[h3]
       Please see page 49 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="49">Far Horizons</Source>
     <Price>9800</Price>
     <Rarity>4</Rarity>
     <Restricted>true</Restricted>
     <Type>Droids</Type>
   </Gear>
-
-    <Gear>
+  <Gear>
     <Key>DROIDMINIMED</Key>
     <Name>Mini-Med Droid</Name>
     <Description>
       [H3]Mini-Med Droid[h3]
       Please see page 49 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="49">Far Horizons</Source>
     <Price>900</Price>
     <Rarity>3</Rarity>
     <Restricted>false</Restricted>
     <Type>Droids</Type>
   </Gear>
-
-    <Gear>
+  <Gear>
     <Key>DROIDGYRO</Key>
     <Name>Gyrowheel 1.42.08 Recycling Droid</Name>
     <Description>
       [H3]Gyrowheel 1.42.08 Recycling Droid[h3]
       Please see page 50 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="50">Far Horizons</Source>
     <Price>6500</Price>
     <Rarity>4</Rarity>
     <Restricted>false</Restricted>
     <Type>Droids</Type>
   </Gear>
-
   <Gear>
     <Key>DROIDSDMN</Key>
     <Name>SDMN-Series Session Droid</Name>
@@ -1532,14 +1730,12 @@
       [H3]SDMN-Series Session Droid[h3]
       Please see page 50 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="50">Far Horizons</Source>
     <Price>4000</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
     <Type>Droids</Type>
   </Gear>
-
-
   <Gear>
     <Key>DROIDANTBAT</Key>
     <Name>Antiquated Battle Droid</Name>
@@ -1547,7 +1743,7 @@
       [H3]Antiquated Battle Droid (Various Models)[h3]
       Please see page 409 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="409">Edge of the Empire Core Rulebook</Source>
     <Price>6500</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
@@ -1560,7 +1756,7 @@
       [H3]IG-Series Assassin Droid[h3]
       Please see page 409 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="409">Edge of the Empire Core Rulebook</Source>
     <Price>65000</Price>
     <Rarity>8</Rarity>
     <Restricted>true</Restricted>
@@ -1573,7 +1769,7 @@
       [H3]Astromech Droid (Various Models)[h3]
       Please see page 409 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="409">Edge of the Empire Core Rulebook</Source>
     <Price>8250</Price>
     <Rarity>3</Rarity>
     <Restricted>false</Restricted>
@@ -1587,8 +1783,8 @@
       Please see page 409 of the Edge of the Empire Core Rulebook, or page 410 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="409">Edge of the Empire Core Rulebook</Source>
+      <Source Page="410">Force and Destiny Core Rulebook</Source>
     </Sources>
     <Price>8000</Price>
     <Rarity>5</Rarity>
@@ -1602,7 +1798,7 @@
       [H3]Maintenance Droid (Various Models)[h3]
       Please see page 409 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="409">Edge of the Empire Core Rulebook</Source>
     <Price>7500</Price>
     <Rarity>3</Rarity>
     <Restricted>false</Restricted>
@@ -1615,7 +1811,7 @@
       [H3]Security Droid[h3]
       Please see page 409 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="409">Edge of the Empire Core Rulebook</Source>
     <Price>9600</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
@@ -1629,8 +1825,8 @@
       Please see page 409 of the Edge of the Empire Core Rulebook, or page 410 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="409">Edge of the Empire Core Rulebook</Source>
+      <Source Page="410">Force and Destiny Core Rulebook</Source>
     </Sources>
     <Price>12000</Price>
     <Rarity>4</Rarity>
@@ -1644,7 +1840,7 @@
       [H3]Analysis Droid (Various Models)[h3]
       Please see page 409 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="409">Force and Destiny Core Rulebook</Source>
     <Price>7500</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
@@ -1657,7 +1853,7 @@
       [H3]IG-100 Magnaguard Droid[h3]
       Please see page 409 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="409">Force and Destiny Core Rulebook</Source>
     <Price>90000</Price>
     <Rarity>10</Rarity>
     <Restricted>true</Restricted>
@@ -1670,7 +1866,7 @@
       [H3]Interrogation Droid[h3]
       Please see page 410 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="410">Force and Destiny Core Rulebook</Source>
     <Price>9600</Price>
     <Rarity>8</Rarity>
     <Restricted>true</Restricted>
@@ -1683,7 +1879,7 @@
       [H3]Viper Probe Droid[h3]
       Please see page 410 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="410">Force and Destiny Core Rulebook</Source>
     <Price>13700</Price>
     <Rarity>7</Rarity>
     <Restricted>true</Restricted>
@@ -1696,7 +1892,7 @@
       [H3]3PX-Series Protocol Droid[h3]
       Please see page 54 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="54">Desperate Allies</Source>
     <Price>7750</Price>
     <Rarity>4</Rarity>
     <Restricted>false</Restricted>
@@ -1709,7 +1905,7 @@
       [H3]5YQ-Series Protocol Droid[h3]
       Please see page 55 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="55">Desperate Allies</Source>
     <Price>5500</Price>
     <Rarity>3</Rarity>
     <Restricted>false</Restricted>
@@ -1722,7 +1918,7 @@
       [H3]CZ-Series Communications/Business Droid[h3]
       Please see page 55 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="55">Desperate Allies</Source>
     <Price>9000</Price>
     <Rarity>4</Rarity>
     <Restricted>false</Restricted>
@@ -1735,7 +1931,7 @@
       [H3]TC-Series Protocol Droid[h3]
       Please see page 55 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="55">Desperate Allies</Source>
     <Price>10000</Price>
     <Rarity>4</Rarity>
     <Restricted>false</Restricted>
@@ -1748,7 +1944,7 @@
       [H3]M-3PO-Series Military Protocol Droid[h3]
       Please see page 56 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="56">Desperate Allies</Source>
     <Price>12000</Price>
     <Rarity>5</Rarity>
     <Restricted>true</Restricted>
@@ -1761,7 +1957,7 @@
       [H3]LRD-Series Envoy Droid[h3]
       Please see page 57 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="57">Desperate Allies</Source>
     <Price>15000</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
@@ -1774,7 +1970,7 @@
       [H3]LOM-Series Protocol Droid[h3]
       Please see page 58 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="58">Desperate Allies</Source>
     <Price>8500</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
@@ -1787,7 +1983,7 @@
       [H3]Cybot Galactica K-9 Series Hunting Droid[h3]
       Please see page 54 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="54">Enter the Unknown</Source>
     <Price>7500</Price>
     <Rarity>6</Rarity>
     <Restricted>false</Restricted>
@@ -1800,7 +1996,7 @@
       [H3]Cybot Galactica/KDY All-Terrain Exploration Droid[h3]
       Please see page 55 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="55">Enter the Unknown</Source>
     <Price>8900</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
@@ -1813,7 +2009,7 @@
       [H3]Industrial Automation JC Series Pilot Droid[h3]
       Please see page 56 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="56">Enter the Unknown</Source>
     <Price>15000</Price>
     <Rarity>7</Rarity>
     <Restricted>false</Restricted>
@@ -1826,7 +2022,7 @@
       [H3]MerenData KLC Series Exchequer Droid[h3]
       Please see page 56 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="56">Enter the Unknown</Source>
     <Price>10000</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
@@ -1839,7 +2035,7 @@
       [H3]SoroSuub Corporation 87-RM Scout Collector Droid[h3]
       Please see page 57 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="57">Enter the Unknown</Source>
     <Price>6000</Price>
     <Rarity>6</Rarity>
     <Restricted>false</Restricted>
@@ -1852,7 +2048,7 @@
       [H3]SoroSuub Corporation 87-RM Scout Surveyor Droid[h3]
       Please see page 57 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="57">Enter the Unknown</Source>
     <Price>2500</Price>
     <Rarity>6</Rarity>
     <Restricted>false</Restricted>
@@ -1865,7 +2061,7 @@
       [H3]Polis Massa Pria Assemblage CT-4 Medical Droid[h3]
       Please see page 112 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="112">Strongholds of Resistance</Source>
     <Price>20000</Price>
     <Rarity>8</Rarity>
     <Restricted>false</Restricted>
@@ -1878,7 +2074,7 @@
       [H3]Quarren Industrial Q4 Borer Droid[h3]
       Please see page 113 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="113">Strongholds of Resistance</Source>
     <Price>2000</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
@@ -1891,7 +2087,7 @@
       [H3]Roche J9 Worker Drone[h3]
       Please see page 113 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="113">Strongholds of Resistance</Source>
     <Price>7000</Price>
     <Rarity>3</Rarity>
     <Restricted>false</Restricted>
@@ -1904,7 +2100,7 @@
       [H3]Roche Siak-Series Protocol Droid[h3]
       Please see page 113 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="113">Strongholds of Resistance</Source>
     <Price>10000</Price>
     <Rarity>4</Rarity>
     <Restricted>false</Restricted>
@@ -1917,7 +2113,7 @@
       [H3]SoroSuub G2 Repair Droid[h3]
       Please see page 113 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="113">Strongholds of Resistance</Source>
     <Price>6000</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
@@ -1930,13 +2126,12 @@
       [H3]SoroSuub Wanderer Scout Survey Droid[h3]
       Please see page 113 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="113">Strongholds of Resistance</Source>
     <Price>2500</Price>
     <Rarity>6</Rarity>
     <Restricted>false</Restricted>
     <Type>Droids</Type>
   </Gear>
-
   <Gear>
     <Key>GV3SERIES</Key>
     <Name>GV/3-series Guardian Droid</Name>
@@ -1944,7 +2139,7 @@
       [H3]GV/3-series Guardian Droid[h3]
       Please see page 49 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="49">Keeping the Peace</Source>
     <Type>Droids</Type>
     <Categories />
     <Encumbrance>10</Encumbrance>
@@ -1962,8 +2157,8 @@
       [H3]Marksman-H Combat Training Remote[h3]
       Please see page 49 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
-    <Type>Droids</Type>
+    <Source Page="49">Keeping the Peace</Source>
+    <Type>Remotes</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
     <HP>0</HP>
@@ -1980,7 +2175,7 @@
       [H3]RMD-20 "Eye in the Sky"[h3]
       Please see page 50 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="50">Keeping the Peace</Source>
     <Type>Droids</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -1991,7 +2186,6 @@
     <BaseMods />
     <WeaponModifiers />
   </Gear>
-
   <Gear>
     <Key>DROIDTSERIES</Key>
     <Name>T-Series Tactical Droid</Name>
@@ -1999,7 +2193,7 @@
       [H3]T-Series Tactical Droid[h3]
       Please see page 45 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="45">Lead by Example</Source>
     <Type>Droids</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -2010,7 +2204,6 @@
     <BaseMods />
     <WeaponModifiers />
   </Gear>
-
   <Gear>
     <Key>BEASTAIWHA</Key>
     <Name>Aiwha Riding Beast</Name>
@@ -2018,7 +2211,7 @@
       [H3]Aiwha Riding Beast[h3]
       Please see page 83 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="83">Stay on Target</Source>
     <Price>25000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>8</Rarity>
@@ -2031,7 +2224,7 @@
       [H3]Bantha Riding Beast[h3]
       Please see page 83 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="83">Stay on Target</Source>
     <Price>2500</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>1</Rarity>
@@ -2044,7 +2237,7 @@
       [H3]Cracian Thumper Riding Beast[h3]
       Please see page 84 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="84">Stay on Target</Source>
     <Price>7500</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>2</Rarity>
@@ -2057,7 +2250,7 @@
       [H3]Dalgo Riding Beast[h3]
       Please see page 84 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="84">Stay on Target</Source>
     <Price>15000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>5</Rarity>
@@ -2070,7 +2263,7 @@
       [H3]Dewback Riding Beast[h3]
       Please see page 85 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="85">Stay on Target</Source>
     <Price>6500</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>3</Rarity>
@@ -2083,7 +2276,7 @@
       [H3]Eopie (Cameloid) Riding Beast[h3]
       Please see page 85 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="85">Stay on Target</Source>
     <Price>6500</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>3</Rarity>
@@ -2096,13 +2289,12 @@
       [H3]Horse (Equinoid) Riding Beast[h3]
       Please see page 85 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="85">Stay on Target</Source>
     <Price>5000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>1</Rarity>
     <Type>Riding Beasts</Type>
   </Gear>
-
   <Gear>
     <Key>BEASTFAMBAA</Key>
     <Name>Fambaa Riding Beast</Name>
@@ -2110,7 +2302,7 @@
       [H3]Fambaa Riding Beast[h3]
       Please see page 86 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="86">Stay on Target</Source>
     <Price>60000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>4</Rarity>
@@ -2123,7 +2315,7 @@
       [H3]Kaadu Riding Beast[h3]
       Please see page 86 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="86">Stay on Target</Source>
     <Price>8000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>7</Rarity>
@@ -2137,7 +2329,7 @@
       [H3]Kybuck Riding Beast[h3]
       Please see page 86 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="86">Stay on Target</Source>
     <Price>10000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -2151,7 +2343,7 @@
       [H3]Mustafarian Lava Flea Riding Beast[h3]
       Please see page 87 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="87">Stay on Target</Source>
     <Price>15000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>8</Rarity>
@@ -2165,7 +2357,7 @@
       [H3]Narglatch[h3]
       Please see page 87 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="87">Stay on Target</Source>
     <Price>9000</Price>
     <Rarity>4</Rarity>
     <Restricted>false</Restricted>
@@ -2178,7 +2370,7 @@
       [H3]Ronto[h3]
       Please see page 87 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="87">Stay on Target</Source>
     <Price>4500</Price>
     <Rarity>3</Rarity>
     <Restricted>false</Restricted>
@@ -2191,7 +2383,7 @@
       [H3]Ruping[h3]
       Please see page 88 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="88">Stay on Target</Source>
     <Price>16000</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
@@ -2204,7 +2396,7 @@
       [H3]Tauntaun[h3]
       Please see page 88 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="88">Stay on Target</Source>
     <Price>10000</Price>
     <Rarity>10</Rarity>
     <Restricted>false</Restricted>
@@ -2217,7 +2409,7 @@
       [H3]Thranta[h3]
       Please see page 88 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="88">Stay on Target</Source>
     <Price>120000</Price>
     <Rarity>9</Rarity>
     <Restricted>true</Restricted>
@@ -2230,13 +2422,12 @@
       [H3]Varactyl[h3]
       Please see page 89 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="89">Stay on Target</Source>
     <Price>35000</Price>
     <Rarity>4</Rarity>
     <Restricted>false</Restricted>
     <Type>Riding Beasts</Type>
   </Gear>
-
   <Gear>
     <Key>CORWHISKEY</Key>
     <Name>Corellian Whiskey (Bottle)</Name>
@@ -2244,7 +2435,7 @@
       [H3]Corellian Whiskey (Bottle)[h3]
       Please see page 102 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="102">Suns of Fortune</Source>
     <Price>25</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>2</Rarity>
@@ -2257,7 +2448,7 @@
       [H3]Corellian Whiskey (25 Bottle Case)[h3]
       Please see page 102 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="102">Suns of Fortune</Source>
     <Price>500</Price>
     <Encumbrance>20</Encumbrance>
     <Rarity>2</Rarity>
@@ -2270,7 +2461,7 @@
       [H3]Whyren's Reserve Corellian Whiskey (Bottle)[h3]
       Please see page 102 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="102">Suns of Fortune</Source>
     <Price>100</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>4</Rarity>
@@ -2283,7 +2474,7 @@
       [H3]Whyren's Reserve Corellian Whiskey (20 Bottle Case)[h3]
       Please see page 102 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="102">Suns of Fortune</Source>
     <Price>1500</Price>
     <Encumbrance>10</Encumbrance>
     <Rarity>5</Rarity>
@@ -2296,7 +2487,7 @@
       [H3]Ji Rikknit (Dose)[h3]
       Please see page 103 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="103">Suns of Fortune</Source>
     <Price>50</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -2309,7 +2500,7 @@
       [H3]Ji Rikknit (100 Dose Cargo Container)[h3]
       Please see page 103 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="103">Suns of Fortune</Source>
     <Price>3000</Price>
     <Encumbrance>5</Encumbrance>
     <Rarity>7</Rarity>
@@ -2322,7 +2513,7 @@
       [H3]Nannarium Root (Dose)[h3]
       Please see page 103 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="103">Suns of Fortune</Source>
     <Price>300</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>2</Rarity>
@@ -2335,13 +2526,12 @@
       [H3]Ryshcate (Cake)[h3]
       Please see page 103 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="103">Suns of Fortune</Source>
     <Price>10</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>2</Rarity>
     <Type>Drugs and Consumables</Type>
   </Gear>
-
   <Gear>
     <Key>NALAFROG</Key>
     <Name>Nala Tree Frog</Name>
@@ -2349,7 +2539,7 @@
       [H3]Nala Tree Frog[h3]
       Please see page 110 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="110">Lords of Nal Hutta</Source>
     <Price>15</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>5</Rarity>
@@ -2362,7 +2552,7 @@
       [H3]Marcan Herb (1 dose)[h3]
       Please see page 110 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="110">Lords of Nal Hutta</Source>
     <Price>20</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>4</Rarity>
@@ -2375,7 +2565,7 @@
       [H3]Marcan Herb (100 doses)[h3]
       Please see page 110 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="110">Lords of Nal Hutta</Source>
     <Price>1750</Price>
     <Encumbrance>25</Encumbrance>
     <Rarity>5</Rarity>
@@ -2388,7 +2578,7 @@
       [H3]Ryll (1 dose)[h3]
       Please see page 110 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="110">Lords of Nal Hutta</Source>
     <Price>50</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>4</Rarity>
@@ -2408,7 +2598,7 @@
       [H3]Ryll (100 doses)[h3]
       Please see page 110 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="110">Lords of Nal Hutta</Source>
     <Price>4500</Price>
     <Encumbrance>25</Encumbrance>
     <Rarity>5</Rarity>
@@ -2428,7 +2618,7 @@
       [H3]Gunjack Spice (1 dose)[h3]
       Please see page 110 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="110">Lords of Nal Hutta</Source>
     <Price>75</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>5</Rarity>
@@ -2448,7 +2638,7 @@
       [H3]Gunjack Spice (100 doses)[h3]
       Please see page 110 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="110">Lords of Nal Hutta</Source>
     <Price>7000</Price>
     <Encumbrance>25</Encumbrance>
     <Rarity>6</Rarity>
@@ -2468,7 +2658,7 @@
       [H3]Neutron Pixie (1 dose)[h3]
       Please see page 111 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="111">Lords of Nal Hutta</Source>
     <Price>100</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>6</Rarity>
@@ -2488,7 +2678,7 @@
       [H3]Neutron Pixie (100 doses)[h3]
       Please see page 111 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="111">Lords of Nal Hutta</Source>
     <Price>8500</Price>
     <Encumbrance>25</Encumbrance>
     <Rarity>7</Rarity>
@@ -2501,7 +2691,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>FRANGFP1</Key>
     <Name>Frangawl Force Powder (1 dose)</Name>
@@ -2509,7 +2698,7 @@
       [H3]Frangawl Force Powder[h3]
       Please see page 105 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="105">Nexus of Power</Source>
     <Price>2000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>10</Rarity>
@@ -2529,7 +2718,7 @@
       [H3]Longsight[h3]
       Please see page 105 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="105">Nexus of Power</Source>
     <Price>650</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>8</Rarity>
@@ -2549,7 +2738,7 @@
       [H3]Sulfur Inhaler[h3]
       Please see page 105 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="105">Nexus of Power</Source>
     <Price>120</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>3</Rarity>
@@ -2562,11 +2751,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
-
-
-
   <Gear>
     <Key>BACTAL</Key>
     <Name>Bacta (liter)</Name>
@@ -2574,7 +2758,11 @@
       [H3]Bacta (liter)[h3]
       Please see page 176 of the Edge of the Empire Core Rulebook, page 192 of the Age of Rebellion Core Rulebook, or page 185 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="176">Edge of the Empire Core Rulebook</Source>
+      <Source Page="192">Age of Rebellion Core Rulebook</Source>
+      <Source Page="185">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>20</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>1</Rarity>
@@ -2587,7 +2775,11 @@
       [H3]Bacta (full tank)[h3]
       Please see page 176 of the Edge of the Empire Core Rulebook, page 192 of the Age of Rebellion Core Rulebook, or page 185 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="176">Edge of the Empire Core Rulebook</Source>
+      <Source Page="192">Age of Rebellion Core Rulebook</Source>
+      <Source Page="185">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>4000</Price>
     <Encumbrance>12</Encumbrance>
     <Rarity>1</Rarity>
@@ -2600,8 +2792,9 @@
       [H3]Portable Healing Kit[h3]
       Please see page 129 of the Force and Destiny Beta Rulebook for details.
     </Description>
-    <Source>Force and Destiny Beta Rulebook</Source>
-    <Short></Short>
+    <Source Page="129">Force and Destiny Beta Rulebook</Source>
+    <Short>
+    </Short>
     <Price>100</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>1</Rarity>
@@ -2615,8 +2808,10 @@
       Please see page 176 of the Edge of the Empire Core Rulebook, page 192 of the Age of Rebellion Core Rulebook, or page 185 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
+      <Source Page="176">Edge of the Empire Core Rulebook</Source>
+      <Source Page="192">Age of Rebellion Core Rulebook</Source>
+      <Source Page="185">Force and Destiny Core Rulebook</Source>
     </Sources>
-    <Short></Short>
     <Price>100</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>1</Rarity>
@@ -2630,10 +2825,11 @@
       Please see page 177 of the Edge of the Empire Core Rulebook, or page 192 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="177">Edge of the Empire Core Rulebook</Source>
+      <Source Page="192">Age of Rebellion Core Rulebook</Source>
     </Sources>
-    <Short></Short>
+    <Short>
+    </Short>
     <Price>400</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>2</Rarity>
@@ -2658,8 +2854,7 @@
       [H3]Physician's Kit[h3]
       Please see page 186 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="186">Force and Destiny Core Rulebook</Source>
     <Price>400</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>2</Rarity>
@@ -2685,7 +2880,11 @@
       [H3]Stimpack[h3]
       Please see page 177 of the Edge of the Empire Core Rulebook, page 193 of the Age of Rebellion Core Rulebook, or page 186 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="177">Edge of the Empire Core Rulebook</Source>
+      <Source Page="193">Age of Rebellion Core Rulebook</Source>
+      <Source Page="186">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>25</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>1</Rarity>
@@ -2704,16 +2903,16 @@
       [H3]Synthskin/Synthflesh[h3]
       Please see page 177 of the Edge of the Empire Core Rulebook, page 193 of the Age of Rebellion Core Rulebook, or page 186 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="177">Edge of the Empire Core Rulebook</Source>
+      <Source Page="193">Age of Rebellion Core Rulebook</Source>
+      <Source Page="186">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>10</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>1</Rarity>
     <Type>Medical</Type>
   </Gear>
-
-
-
-
   <Gear>
     <Key>MEDBCKPCK</Key>
     <Name>ECM-598 Medical Backpack</Name>
@@ -2721,7 +2920,7 @@
       [H3]ECM-598 Medical Backpack[h3]
       Please see page 48 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="48">Enter the Unknown</Source>
     <Type>Medical</Type>
     <Categories />
     <Encumbrance>2</Encumbrance>
@@ -2754,7 +2953,7 @@
       [H3]Syntherope[h3]
       Please see page 49 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="49">Enter the Unknown</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -2763,7 +2962,6 @@
     <Rarity>1</Rarity>
     <BaseMods />
   </Gear>
-
   <Gear>
     <Key>CERESTAB</Key>
     <Name>IRAPS Cerebral Stabilizer</Name>
@@ -2771,7 +2969,7 @@
       [H3]IRAPS Cerebral Stabilizer[h3]
       Please see page 57 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="57">Dangerous Covenants</Source>
     <Type>Medical</Type>
     <Categories />
     <Encumbrance>3</Encumbrance>
@@ -2788,7 +2986,7 @@
       [H3]Military Medpac[h3]
       Please see page 57 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="57">Dangerous Covenants</Source>
     <Type>Medical</Type>
     <Categories />
     <Encumbrance>2</Encumbrance>
@@ -2802,12 +3000,10 @@
         <Count>1</Count>
         <Index>0</Index>
         <MiscDesc>Counts as having 1 rank in Medicine if user has none.</MiscDesc>
-
         <DefZone />
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>XV38</Key>
     <Name>XV-38 Veterinary Kit</Name>
@@ -2815,7 +3011,7 @@
       [H3]XV-38 Portable Large Animal Veterinary Kit[h3]
       Please see page 44 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="44">Stay on Target</Source>
     <Type>Medical</Type>
     <Categories />
     <Price>600</Price>
@@ -2829,7 +3025,6 @@
         <Count>1</Count>
         <Index>0</Index>
         <MiscDesc>Adds [BOOST] to all Medicine, Survival, and Xenology skill checks made to analyze or treat large beasts.</MiscDesc>
-
         <DefZone />
       </Mod>
     </BaseMods>
@@ -2841,7 +3036,7 @@
       [H3]XV-09 Chemical Restraint Harness[h3]
       Please see page 44 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="44">Stay on Target</Source>
     <Type>Medical</Type>
     <Categories />
     <Price>1200</Price>
@@ -2856,9 +3051,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
-  
   <Gear>
     <Key>BLOODSCAN</Key>
     <Name>Blood Scanner</Name>
@@ -2866,7 +3058,7 @@
       [H3]Blood Scanner[h3]
       Please see page 51 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="51">Keeping the Peace</Source>
     <Type>Medical</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -2888,7 +3080,7 @@
       [H3]Med-Aid Patch[h3]
       Please see page 51 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="51">Keeping the Peace</Source>
     <Type>Medical</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -2903,8 +3095,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
   <Gear>
     <Key>CHCUBE</Key>
     <Name>Chance Cube</Name>
@@ -2912,8 +3102,9 @@
       [H3]Chance Cube[h3]
       Please see page 182 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="182">Edge of the Empire Core Rulebook</Source>
+    <Short>
+    </Short>
     <Price>1</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>0</Rarity>
@@ -2926,8 +3117,9 @@
       [H3]Dejarik Table[h3]
       Please see page 182 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="182">Edge of the Empire Core Rulebook</Source>
+    <Short>
+    </Short>
     <Price>350</Price>
     <Encumbrance>10</Encumbrance>
     <Rarity>1</Rarity>
@@ -2940,8 +3132,9 @@
       [H3]Sabacc Deck[h3]
       Please see page 182 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="182">Edge of the Empire Core Rulebook</Source>
+    <Short>
+    </Short>
     <Price>40</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>0</Rarity>
@@ -2954,8 +3147,7 @@
       [H3]Marked Sabacc Deck[h3]
       Please see page 108 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
-    <Short></Short>
+    <Source Page="108">Lords of Nal Hutta</Source>
     <Price>500</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>6</Rarity>
@@ -2975,8 +3167,7 @@
       [H3]Loaded Chance Cube[h3]
       Please see page 108 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
-    <Short></Short>
+    <Source Page="108">Lords of Nal Hutta</Source>
     <Price>100</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>5</Rarity>
@@ -2996,7 +3187,11 @@
       [H3]Binders[h3]
       Please see page 178 of the Edge of the Empire Core Rulebook, page 193 of the Age of Rebellion Core Rulebook, or page 187 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="178">Edge of the Empire Core Rulebook</Source>
+      <Source Page="193">Age of Rebellion Core Rulebook</Source>
+      <Source Page="187">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>25</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>1</Rarity>
@@ -3010,10 +3205,9 @@
       Please see page 178 of the Edge of the Empire Core Rulebook, or page 194 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="178">Edge of the Empire Core Rulebook</Source>
+      <Source Page="194">Age of Rebellion Core Rulebook</Source>
     </Sources>
-    <Short></Short>
     <Price>400</Price>
     <Encumbrance>4</Encumbrance>
     <Rarity>3</Rarity>
@@ -3027,10 +3221,11 @@
       Please see page 178 of the Edge of the Empire Core Rulebook, or page 194 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="178">Edge of the Empire Core Rulebook</Source>
+      <Source Page="194">Age of Rebellion Core Rulebook</Source>
     </Sources>
-    <Short></Short>
+    <Short>
+    </Short>
     <Price>1000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>5</Rarity>
@@ -3043,7 +3238,11 @@
       [H3]Disguise Kit[h3]
       Please see page 178 of the Edge of the Empire Core Rulebook, page 194 of the Age of Rebellion Core Rulebook, or page 187 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="178">Edge of the Empire Core Rulebook</Source>
+      <Source Page="194">Age of Rebellion Core Rulebook</Source>
+      <Source Page="187">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>100</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>4</Rarity>
@@ -3056,7 +3255,11 @@
       [H3]Electronic Lock Breaker[h3]
       Please see page 178 of the Edge of the Empire Core Rulebook, page 194 of the Age of Rebellion Core Rulebook, or page 187 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="178">Edge of the Empire Core Rulebook</Source>
+      <Source Page="194">Age of Rebellion Core Rulebook</Source>
+      <Source Page="187">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>1000</Price>
     <Restricted>true</Restricted>
     <Encumbrance>1</Encumbrance>
@@ -3070,7 +3273,11 @@
       [H3]Restraining Bolt[h3]
       Please see page 178 of the Edge of the Empire Core Rulebook, page 194 of the Age of Rebellion Core Rulebook, or page 187 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="178">Edge of the Empire Core Rulebook</Source>
+      <Source Page="194">Age of Rebellion Core Rulebook</Source>
+      <Source Page="187">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>35</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>0</Rarity>
@@ -3084,14 +3291,15 @@
       Please see page 179 of the Edge of the Empire Core Rulebook, or page 195 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="179">Edge of the Empire Core Rulebook</Source>
+      <Source Page="195">Age of Rebellion Core Rulebook</Source>
     </Sources>
-    <Short></Short>
+    <Short>
+    </Short>
     <Price>500</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>4</Rarity>
-    <Type>Security/Espionage</Type>
+    <Type>Slicing Tools</Type>
   </Gear>
   <Gear>
     <Key>MAGNACUFF</Key>
@@ -3100,8 +3308,7 @@
       [H3]MC-100 Magnacuffs[h3]
       Please see page 46 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="46">Far Horizons</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -3118,8 +3325,7 @@
       [H3]Forensics Investigation Kit[h3]
       Please see page 46 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="46">Far Horizons</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>4</Encumbrance>
@@ -3142,8 +3348,7 @@
       [H3]Thalassian Security Collar[h3]
       Please see page 108 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
-
+    <Source Page="108">Lords of Nal Hutta</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -3166,7 +3371,7 @@
       [H3]Explosive Shackles[h3]
       Please see page 109 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="109">Lords of Nal Hutta</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>2</Encumbrance>
@@ -3189,7 +3394,7 @@
       [H3]Authentication Tools[h3]
       Please see page 50 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="50">Desperate Allies</Source>
     <Encumbrance>1</Encumbrance>
     <Price>100</Price>
     <Rarity>5</Rarity>
@@ -3209,7 +3414,7 @@
       [H3]Concealed Recorder[h3]
       Please see page 50 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="50">Desperate Allies</Source>
     <Encumbrance>0</Encumbrance>
     <Price>175</Price>
     <Rarity>5</Rarity>
@@ -3229,7 +3434,7 @@
       [H3]Data Dead Drop[h3]
       Please see page 50 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="50">Desperate Allies</Source>
     <Price>150</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>7</Rarity>
@@ -3249,7 +3454,7 @@
       [H3]Diplomatic Authorizationp[h3]
       Please see page 51 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="51">Desperate Allies</Source>
     <Price>10000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>8</Rarity>
@@ -3269,7 +3474,7 @@
       [H3]Falsified Credentials[h3]
       Please see page 51 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="51">Desperate Allies</Source>
     <Price>800</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>7</Rarity>
@@ -3289,7 +3494,7 @@
       [H3]Forgery Tools[h3]
       Please see page 51 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="51">Desperate Allies</Source>
     <Price>650</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>8</Rarity>
@@ -3305,7 +3510,7 @@
       [H3]"Knack" Restraining Bolt[h3]
       Please see page 52 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="52">Desperate Allies</Source>
     <Price>750</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>8</Rarity>
@@ -3321,7 +3526,7 @@
       [H3]Poisoner's Ring[h3]
       Please see page 52 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="52">Desperate Allies</Source>
     <Price>500</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>7</Rarity>
@@ -3345,7 +3550,7 @@
       [H3]Security Sweeper[h3]
       Please see page 53 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="53">Desperate Allies</Source>
     <Price>400</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>6</Rarity>
@@ -3362,7 +3567,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>SOUNDDAMP</Key>
     <Name>Sound Dampener</Name>
@@ -3370,7 +3574,7 @@
       [H3]Sound Dampener[h3]
       Please see page 53 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="53">Desperate Allies</Source>
     <Price>600</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>7</Rarity>
@@ -3383,7 +3587,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>ALDR8GRAVBIND</Key>
     <Name>AL-DR8 Grav-Binders</Name>
@@ -3391,7 +3594,7 @@
       [H3]AL-DR8 Grav-Binders[h3]
       Please see page 51 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="51">Keeping the Peace</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -3413,7 +3616,7 @@
       [H3]Personal Transponder[h3]
       Please see page 51 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="51">Keeping the Peace</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -3435,7 +3638,7 @@
       [H3]Stun Cuffs[h3]
       Please see page 52 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="52">Keeping the Peace</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -3450,8 +3653,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
   <Gear>
     <Key>CRASH</Key>
     <Name>Crash Survival Kit</Name>
@@ -3459,7 +3660,10 @@
       [H3]Crash Survival Kit[h3]
       Please see page 180 of the Edge of the Empire Core Rulebook, or page 195 of the Age of Rebellion Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="180">Edge of the Empire Core Rulebook</Source>
+      <Source Page="195">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Price>300</Price>
     <Encumbrance>5</Encumbrance>
     <Rarity>2</Rarity>
@@ -3472,7 +3676,11 @@
       [H3]Ration Pack[h3]
       Please see page 179 of the Edge of the Empire Core Rulebook, page 196 of the Age of Rebellion Core Rulebook, or page 188 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="179">Edge of the Empire Core Rulebook</Source>
+      <Source Page="196">Age of Rebellion Core Rulebook</Source>
+      <Source Page="188">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>5</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>0</Rarity>
@@ -3485,7 +3693,11 @@
       [H3]Breath Mask[h3]
       Please see page 179 of the Edge of the Empire Core Rulebook, page 195 of the Age of Rebellion Core Rulebook, or page 188 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="179">Edge of the Empire Core Rulebook</Source>
+      <Source Page="195">Age of Rebellion Core Rulebook</Source>
+      <Source Page="188">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>25</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>1</Rarity>
@@ -3498,7 +3710,11 @@
       [H3]Space Suit[h3]
       Please see page 179 of the Edge of the Empire Core Rulebook, page 196 of the Age of Rebellion Core Rulebook, or page 188 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="179">Edge of the Empire Core Rulebook</Source>
+      <Source Page="196">Age of Rebellion Core Rulebook</Source>
+      <Source Page="188">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>100</Price>
     <Encumbrance>4</Encumbrance>
     <Rarity>1</Rarity>
@@ -3512,10 +3728,11 @@
       Please see page 196 of the Age of Rebellion Core Rulebook, or page 188 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Age of Rebellion Core Rulebook</Source>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="196">Age of Rebellion Core Rulebook</Source>
+      <Source Page="188">Force and Destiny Core Rulebook</Source>
     </Sources>
-    <Short></Short>
+    <Short>
+    </Short>
     <Price>350</Price>
     <Encumbrance>5</Encumbrance>
     <Rarity>2</Rarity>
@@ -3528,7 +3745,11 @@
       [H3]Tent[h3]
       Please see page 180 of the Edge of the Empire Core Rulebook, page 196 of the Age of Rebellion Core Rulebook, or page 188 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="180">Edge of the Empire Core Rulebook</Source>
+      <Source Page="196">Age of Rebellion Core Rulebook</Source>
+      <Source Page="188">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>100</Price>
     <Encumbrance>4</Encumbrance>
     <Rarity>1</Rarity>
@@ -3541,7 +3762,11 @@
       [H3]Thermal Cloak[h3]
       Please see page 180 of the Edge of the Empire Core Rulebook, page 196 of the Age of Rebellion Core Rulebook, or page 188 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="180">Edge of the Empire Core Rulebook</Source>
+      <Source Page="196">Age of Rebellion Core Rulebook</Source>
+      <Source Page="188">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>200</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>1</Rarity>
@@ -3553,11 +3778,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
-
-
-
   <Gear>
     <Key>SYNTHEROPE</Key>
     <Name>Syntherope</Name>
@@ -3565,7 +3785,7 @@
       [H3]Syntherope[h3]
       Please see page 49 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="49">Enter the Unknown</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -3581,7 +3801,7 @@
       [H3]Electro-Snare[h3]
       Please see page 49 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="49">Enter the Unknown</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -3597,7 +3817,7 @@
       [H3]Portable Survival Shelter[h3]
       Please see page 49 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="49">Enter the Unknown</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>2</Encumbrance>
@@ -3613,7 +3833,7 @@
       [H3]Electric Perimeter Fence[h3]
       Please see page 49 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="49">Enter the Unknown</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>6</Encumbrance>
@@ -3629,7 +3849,7 @@
       [H3]PED-21 Personal Distress Beacon[h3]
       Please see page 50 of Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="50">Enter the Unknown</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -3650,7 +3870,7 @@
       [H3]Field Kitchen[h3]
       Please see page 50 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="50">Enter the Unknown</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>5</Encumbrance>
@@ -3671,7 +3891,7 @@
       [H3]Viscera Field Dressing Kit[h3]
       Please see page 51 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="51">Enter the Unknown</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>3</Encumbrance>
@@ -3685,9 +3905,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
-
   <Gear>
     <Key>FIELDGOGG</Key>
     <Name>Scout 5 Field Goggles</Name>
@@ -3695,7 +3912,7 @@
       [H3]Scout 5 Field Goggles[h3]
       Please see page 58 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="58">Dangerous Covenants</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -3712,7 +3929,7 @@
       [H3]Field Rations[h3]
       Please see page 58 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="58">Dangerous Covenants</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -3729,7 +3946,7 @@
       [H3]Fire Paste[h3]
       Please see page 58 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="58">Dangerous Covenants</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -3746,7 +3963,7 @@
       [H3]Food Preparation System[h3]
       Please see page 58 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="58">Dangerous Covenants</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>3</Encumbrance>
@@ -3763,7 +3980,7 @@
       [H3]Tauntaun Pup Tent[h3]
       Please see page 58 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="58">Dangerous Covenants</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>3</Encumbrance>
@@ -3780,7 +3997,7 @@
       [H3]CN-15 Camouflage Netting (Roll)[h3]
       Please see page 57 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="57">Dangerous Covenants</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>4</Encumbrance>
@@ -3794,7 +4011,6 @@
         <Count>1</Count>
         <Index>0</Index>
         <MiscDesc>Adds [FAILURE][FAILURE] to all checks made to detect items hidden by netting.</MiscDesc>
-
         <DefZone />
       </Mod>
     </BaseMods>
@@ -3806,7 +4022,7 @@
       [H3]CN-21 Camouflage Paint[h3]
       Please see page 58 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="58">Dangerous Covenants</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -3820,7 +4036,6 @@
         <Count>1</Count>
         <Index>0</Index>
         <MiscDesc>Adds [FAILURE] to all checks made to detect items hidden by paint.</MiscDesc>
-
         <DefZone />
       </Mod>
     </BaseMods>
@@ -3832,7 +4047,7 @@
       [H3]Canteen[h3]
       Please see page 58 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="58">Dangerous Covenants</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -3849,7 +4064,7 @@
       [H3]CX-2000 Holographic Ghillie Suit[h3]
       Please see page 58 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="58">Dangerous Covenants</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -3871,8 +4086,7 @@
       [H3]A99 Custom Biome Generator[h3]
       Please see page 46 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="46">Far Horizons</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>45</Encumbrance>
@@ -3889,8 +4103,7 @@
       [H3]GX-8 Water Vaporator[h3]
       Please see page 47 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="47">Far Horizons</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>12</Encumbrance>
@@ -3907,8 +4120,7 @@
       [H3]Elysium Atmospheric Processor[h3]
       Please see page 46 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="46">Far Horizons</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>10000</Encumbrance>
@@ -3925,8 +4137,7 @@
       [H3]FasClean Atmospheric Reactive Damper[h3]
       Please see page 47 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="47">Far Horizons</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>500</Encumbrance>
@@ -3936,7 +4147,6 @@
     <Restricted>false</Restricted>
     <BaseMods />
   </Gear>
-
   <Gear>
     <Key>A99AQUABREATH</Key>
     <Name>A99 Aquata Breather</Name>
@@ -3944,7 +4154,7 @@
       [H3]A99 Aquata Breather[h3]
       Please see page 52 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="52">Keeping the Peace</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -3962,7 +4172,7 @@
       [H3]InstaMist Generator[h3]
       Please see page 52 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="52">Keeping the Peace</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>5</Encumbrance>
@@ -3984,7 +4194,7 @@
       [H3]Jedi Utility Belt[h3]
       Please see page 52 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="52">Keeping the Peace</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -4006,7 +4216,7 @@
       [H3]Luma Flare[h3]
       Please see page 52 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="52">Keeping the Peace</Source>
     <Type>Survival</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4021,9 +4231,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
-
   <Gear>
     <Key>BACKPACK</Key>
     <Name>Backpack</Name>
@@ -4031,7 +4238,11 @@
       [H3]Backpack[h3]
       Please see page 180 of the Edge of the Empire Core Rulebook, page 198 of the Age of Rebellion Core Rulebook, or page 188 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="180">Edge of the Empire Core Rulebook</Source>
+      <Source Page="198">Age of Rebellion Core Rulebook</Source>
+      <Source Page="188">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>50</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>1</Rarity>
@@ -4050,7 +4261,11 @@
       [H3]Climbing Gear[h3]
       Please see page 180 of the Edge of the Empire Core Rulebook, page 196 of the Age of Rebellion Core Rulebook, or page 188 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="180">Edge of the Empire Core Rulebook</Source>
+      <Source Page="196">Age of Rebellion Core Rulebook</Source>
+      <Source Page="188">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>50</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>2</Rarity>
@@ -4063,7 +4278,11 @@
       [H3]Datapad[h3]
       Please see page 181 of the Edge of the Empire Core Rulebook, page 196 of the Age of Rebellion Core Rulebook, or page 189 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="181">Edge of the Empire Core Rulebook</Source>
+      <Source Page="196">Age of Rebellion Core Rulebook</Source>
+      <Source Page="189">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>75</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>1</Rarity>
@@ -4077,10 +4296,11 @@
       Please see page 182 of the Edge of the Empire Core Rulebook, or page 197 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="182">Edge of the Empire Core Rulebook</Source>
+      <Source Page="197">Age of Rebellion Core Rulebook</Source>
     </Sources>
-    <Short></Short>
+    <Short>
+    </Short>
     <Price>25</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>2</Rarity>
@@ -4099,7 +4319,11 @@
       [H3]Extra Reload[h3]
       Please see page 181 of the Edge of the Empire Core Rulebook, page 197 of the Age of Rebellion Core Rulebook, or page 189 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="181">Edge of the Empire Core Rulebook</Source>
+      <Source Page="197">Age of Rebellion Core Rulebook</Source>
+      <Source Page="189">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>25</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>1</Rarity>
@@ -4112,8 +4336,7 @@
       [H3]Extra Reload (Model 38 Detonator Rounds)[h3]
       Please see page 41 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
-    <Short></Short>
+    <Source Page="41">Enter the Unknown</Source>
     <Price>450</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>7</Rarity>
@@ -4126,8 +4349,7 @@
       [H3]Extra Reloads (Model 77 SmartTranq Rounds)[h3]
       Please see page 40 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
-    <Short></Short>
+    <Source Page="40">Enter the Unknown</Source>
     <Price>500</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>6</Rarity>
@@ -4140,8 +4362,7 @@
       [H3]Explosive Tipped Arrow (Corellian Compound Bow)[h3]
       Please see page 97 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
-    <Short></Short>
+    <Source Page="97">Suns of Fortune</Source>
     <Price>50</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -4154,8 +4375,7 @@
       [H3]Stun Arrow (Corellian Compound Bow)[h3]
       Please see page 97 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
-    <Short></Short>
+    <Source Page="97">Suns of Fortune</Source>
     <Price>60</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
@@ -4168,7 +4388,11 @@
       [H3]Fusion Lantern[h3]
       Please see page 181 of the Edge of the Empire Core Rulebook, page 197 of the Age of Rebellion Core Rulebook, or page 189 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="181">Edge of the Empire Core Rulebook</Source>
+      <Source Page="197">Age of Rebellion Core Rulebook</Source>
+      <Source Page="189">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>150</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>2</Rarity>
@@ -4181,7 +4405,11 @@
       [H3]Glow Rod[h3]
       Please see page 181 of the Edge of the Empire Core Rulebook, page 197 of the Age of Rebellion Core Rulebook, or page 189 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="181">Edge of the Empire Core Rulebook</Source>
+      <Source Page="197">Age of Rebellion Core Rulebook</Source>
+      <Source Page="189">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>10</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>0</Rarity>
@@ -4194,8 +4422,7 @@
       [H3]Jet Pack[h3]
       Please see page 181 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="181">Edge of the Empire Core Rulebook</Source>
     <Price>4500</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>7</Rarity>
@@ -4208,7 +4435,11 @@
       [H3]Tool Kit[h3]
       Please see page 181 of the Edge of the Empire Core Rulebook, page 198 of the Age of Rebellion Core Rulebook, or page 189 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="181">Edge of the Empire Core Rulebook</Source>
+      <Source Page="198">Age of Rebellion Core Rulebook</Source>
+      <Source Page="189">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>350</Price>
     <Encumbrance>4</Encumbrance>
     <Rarity>2</Rarity>
@@ -4221,7 +4452,11 @@
       [H3]Utility Belt[h3]
       Please see page 183 of the Edge of the Empire Core Rulebook, page 198 of the Age of Rebellion Core Rulebook, or page 189 of the Force and Destiny Core Rulebook, for details.
     </Description>
-    <Short></Short>
+    <Sources>
+      <Source Page="183">Edge of the Empire Core Rulebook</Source>
+      <Source Page="198">Age of Rebellion Core Rulebook</Source>
+      <Source Page="189">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Price>25</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>0</Rarity>
@@ -4239,19 +4474,18 @@
     <Description>[H3]Military Field Manual[h3]
       Please see page 197 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="197">Age of Rebellion Core Rulebook</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
     <HP>0</HP>
     <Price>25</Price>
     <Rarity>4</Rarity>
-      <Mod>
-        <MiscDesc>Once per scene, may gain [BOOST] to any task at the GM's discretion</MiscDesc>
-        <Count>1</Count>
-      </Mod>
-    </Gear>
-
+    <Mod>
+      <MiscDesc>Once per scene, may gain [BOOST] to any task at the GM's discretion</MiscDesc>
+      <Count>1</Count>
+    </Mod>
+  </Gear>
   <Gear>
     <Key>DATAPADMERCH</Key>
     <Name>Mercantiler Datapad</Name>
@@ -4259,8 +4493,7 @@
       [H3]Mercantiler Datapad[h3]
       Please see page 48 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="48">Far Horizons</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4277,8 +4510,7 @@
       [H3]Thunderhead Portable Entertainment System[h3]
       Please see page 48 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="48">Far Horizons</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>10</Encumbrance>
@@ -4295,8 +4527,7 @@
       [H3]Musical Instrument (Common)[h3]
       Please see page 48 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="48">Far Horizons</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4313,8 +4544,7 @@
       [H3]Musical Instrument (High Quality)[h3]
       Please see page 48 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="48">Far Horizons</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4331,8 +4561,7 @@
       [H3]Musical Instrument (Legendary)[h3]
       Please see page 48 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
-
+    <Source Page="48">Far Horizons</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4349,7 +4578,7 @@
       [H3]Cultural Etiquette Manual[h3]
       Please see page 50 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="50">Desperate Allies</Source>
     <Price>35</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>3</Rarity>
@@ -4369,7 +4598,7 @@
       [H3]Insider's Guide[h3]
       Please see page 52 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="52">Desperate Allies</Source>
     <Price>25</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>3</Rarity>
@@ -4389,7 +4618,7 @@
       [H3]Merr-Sonn "Rider" Ascension Pistol[h3]
       Please see page 52 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="52">Desperate Allies</Source>
     <Price>275</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>4</Rarity>
@@ -4413,7 +4642,7 @@
       [H3]Species Database[h3]
       Please see page 53 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="53">Desperate Allies</Source>
     <Price>150</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>2</Rarity>
@@ -4434,7 +4663,7 @@
       Please see page 115 of the Strongholds of Resistance Sourcebook for details.
       [P][I]Uses the Aratech R82 Jump Boots vehicle profile[i]
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="115">Strongholds of Resistance</Source>
     <Price>2000</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>6</Rarity>
@@ -4450,7 +4679,7 @@
       [H3]Mon Calamari Organic Gill[h3]
       Please see page 115 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="115">Strongholds of Resistance</Source>
     <Price>200</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>5</Rarity>
@@ -4470,7 +4699,7 @@
       [H3]Verpine Bond Gauntlets[h3]
       Please see page 115 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="115">Strongholds of Resistance</Source>
     <Price>250</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>6</Rarity>
@@ -4490,7 +4719,7 @@
       [H3]Verpine Bond Gauntlets[h3]
       Please see page 115 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="115">Strongholds of Resistance</Source>
     <Price>500</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>6</Rarity>
@@ -4503,7 +4732,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>JEDIMULTITOOL</Key>
     <Name>Jedi Multi-Tool</Name>
@@ -4511,7 +4739,7 @@
       [H3]Jedi Multi-Tool (Lightsaber Maintenance Kit)[h3]
       Please see page 53 of the Keeping the Peace Sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="53">Keeping the Peace</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>2</Encumbrance>
@@ -4533,7 +4761,7 @@
       [H3]WJ-880 Blinding Helmet[h3]
       Please see page 53 of the Keeping the Peace Sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="53">Keeping the Peace</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>3</Encumbrance>
@@ -4555,7 +4783,7 @@
       [H3]Bardottan Chronoscanner[h3]
       Please see page 105 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="105">Nexus of Power</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -4573,7 +4801,7 @@
       [H3]Thermal Cutter[h3]
       Please see page 105 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="105">Nexus of Power</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>2</Encumbrance>
@@ -4591,7 +4819,7 @@
       [H3]Sporting Macrobinoculars[h3]
       Please see page 105 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="105">Nexus of Power</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4612,7 +4840,7 @@
       [H3]Vergence Starchart[h3]
       Please see page 106 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="106">Nexus of Power</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -4633,7 +4861,7 @@
       [H3]Wizard Pouch[h3]
       Please see page 106 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="106">Nexus of Power</Source>
     <Type>Carrying/Storage</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -4647,16 +4875,12 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
-
-
   <Gear>
     <Key>LOADBEAR</Key>
     <Name>Load-Bearing Gear</Name>
     <Description>[H3]Load-Bearing Gear[h3]
       Please see page 198 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="198">Age of Rebellion Core Rulebook</Source>
     <Type>Carrying/Storage</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -4670,7 +4894,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>SURVEYBAG</Key>
     <Name>Surveyor's Bag</Name>
@@ -4678,7 +4901,7 @@
       [H3]Surveyor's Bag[h3]
       Please see page 53 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="53">Enter the Unknown</Source>
     <Type>Carrying/Storage</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -4699,7 +4922,7 @@
       [H3]Spacer's Duffel[h3]
       Please see page 44 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="44">Enter the Unknown</Source>
     <Type>Carrying/Storage</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -4724,7 +4947,7 @@
       [H3]Holo V Audio/Visual Translator[h3]
       Please see page 54 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="54">Enter the Unknown</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4738,8 +4961,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
   <Gear>
     <Key>MODPACK</Key>
     <Name>Mk. VI Modular Backpack</Name>
@@ -4748,7 +4969,7 @@
       Please see page 51 of the Enter the Unknown Sourcebook for details.
       [P][B]Note:[b] To purchase accessory pouches for the modular backpack, select the backpack in your inventory and click the "Attachments" button.  An "attachment" will be available for adding the pouches to the backpack.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="51">Enter the Unknown</Source>
     <Type>Carrying/Storage</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -4769,7 +4990,7 @@
       [H3]Beast Call[h3]
       Please see page 51 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="51">Enter the Unknown</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4785,7 +5006,7 @@
       [H3]"Quickflash" Burning Gel[h3]
       Please see page 52 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="52">Enter the Unknown</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4801,7 +5022,7 @@
       [H3]Chem Lure[h3]
       Please see page 52 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="52">Enter the Unknown</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4817,7 +5038,7 @@
       [H3]Excavator's Precision Tool Kit[h3]
       Please see page 52 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="52">Enter the Unknown</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>5</Encumbrance>
@@ -4833,7 +5054,7 @@
       [H3]Specimen Container, Tiny[h3]
       Please see page 52 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="52">Enter the Unknown</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -4849,7 +5070,7 @@
       [H3]Specimen Container, Small[h3]
       Please see page 52 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="52">Enter the Unknown</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4865,7 +5086,7 @@
       [H3]Specimen Container, Medium[h3]
       Please see page 52 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="52">Enter the Unknown</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>3</Encumbrance>
@@ -4881,7 +5102,7 @@
       [H3]Speciman Container, Large[h3]
       Please see page 52 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="52">Enter the Unknown</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>5</Encumbrance>
@@ -4890,7 +5111,6 @@
     <Rarity>3</Rarity>
     <BaseMods />
   </Gear>
-
   <Gear>
     <Key>ANTIGRAVCHUTESAV</Key>
     <Name>Savior Anti-Grav Chute</Name>
@@ -4898,7 +5118,7 @@
       [H3]Savior Anti-Grav Chute[h3]
       Please see page 103 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="103">Suns of Fortune</Source>
     <Price>450</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>5</Rarity>
@@ -4917,7 +5137,7 @@
       [H3]EVA Power Suit[h3]
       Please see page 103 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="103">Suns of Fortune</Source>
     <Price>1500</Price>
     <Encumbrance>12</Encumbrance>
     <Rarity>5</Rarity>
@@ -4936,14 +5156,12 @@
       [H3]Gravity Belt[h3]
       Please see page 103 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="103">Suns of Fortune</Source>
     <Price>500</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>6</Rarity>
     <Type>Tools/Electronics</Type>
   </Gear>
-
-
   <Gear>
     <Key>ENTTOOL</Key>
     <Name>Entrenching Tool</Name>
@@ -4951,7 +5169,7 @@
       [H3]Entrenching Tool[h3]
       Please see page 59 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="59">Dangerous Covenants</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -4968,7 +5186,7 @@
       [H3]Military Belt Pouch[h3]
       Please see page 59 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="59">Dangerous Covenants</Source>
     <Type>Carrying/Storage</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -4990,7 +5208,7 @@
       [H3]Model 58 Concealment Holster[h3]
       Please see page 59 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="59">Dangerous Covenants</Source>
     <Type>Carrying/Storage</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -5004,7 +5222,6 @@
         <Count>1</Count>
         <Index>0</Index>
         <MiscDesc>Adds [SETBACK] to all Perception checks to discover concealed weapon.  Only usable for light and holdout blaster pistols.</MiscDesc>
-
         <DefZone />
       </Mod>
     </BaseMods>
@@ -5016,7 +5233,7 @@
       [H3]Military Pack[h3]
       Please see page 59 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="59">Dangerous Covenants</Source>
     <Type>Carrying/Storage</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -5045,7 +5262,7 @@
       [H3]Sleight Box[h3]
       Please see page 53 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="53">Desperate Allies</Source>
     <Price>400</Price>
     <Encumbrance>20</Encumbrance>
     <Rarity>6</Rarity>
@@ -5069,7 +5286,7 @@
       [H3]Sleight Box[h3]
       Please see page 53 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="53">Desperate Allies</Source>
     <Price>400</Price>
     <Encumbrance>16</Encumbrance>
     <Rarity>6</Rarity>
@@ -5093,7 +5310,7 @@
       [H3]Sleight Box[h3]
       Please see page 53 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="53">Desperate Allies</Source>
     <Price>400</Price>
     <Encumbrance>10</Encumbrance>
     <Rarity>6</Rarity>
@@ -5117,7 +5334,7 @@
       [H3]Sleight Box[h3]
       Please see page 53 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="53">Desperate Allies</Source>
     <Price>400</Price>
     <Encumbrance>6</Encumbrance>
     <Rarity>6</Rarity>
@@ -5141,7 +5358,7 @@
       [H3]Sleight Box[h3]
       Please see page 53 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="53">Desperate Allies</Source>
     <Price>400</Price>
     <Encumbrance>2</Encumbrance>
     <Rarity>6</Rarity>
@@ -5158,7 +5375,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>CUSTTOOL</Key>
     <Name>Custom Tool Kit</Name>
@@ -5166,7 +5382,7 @@
       [H3]Journeyman Tools Custom Tool Kit[h3]
       Please see page 45 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="45">Stay on Target</Source>
     <Price>700</Price>
     <Encumbrance>5</Encumbrance>
     <Rarity>5</Rarity>
@@ -5185,7 +5401,7 @@
       [H3]Fabritech AG/L Mk. III Targeting Goggles[h3]
       Please see page 45 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="45">Stay on Target</Source>
     <Price>1000</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>5</Rarity>
@@ -5204,7 +5420,7 @@
       [H3]Chiles-Zraii Foreman-Series Owner's Workshop Manual[h3]
       Please see page 46 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="46">Stay on Target</Source>
     <Price>100</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>1</Rarity>
@@ -5216,7 +5432,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>ARDOS</Key>
     <Name>Ardos Disk</Name>
@@ -5224,7 +5439,7 @@
       [H3]Ardos Disk[h3]
       Please see page 111 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="111">Lords of Nal Hutta</Source>
     <Price>10000</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>5</Rarity>
@@ -5244,7 +5459,7 @@
       [H3]Credit Cleaner[h3]
       Please see page 111 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="111">Lords of Nal Hutta</Source>
     <Price>2500</Price>
     <Encumbrance>12</Encumbrance>
     <Rarity>7</Rarity>
@@ -5264,7 +5479,7 @@
       [H3]MicroData P-2 Pocket Attaché[h3]
       Please see page 111 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="111">Lords of Nal Hutta</Source>
     <Price>800</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>6</Rarity>
@@ -5277,10 +5492,7 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
   <!-- Black Market-->
-
   <Gear>
     <Key>AVASPDOSE</Key>
     <Name>Avabush Spice (dose)</Name>
@@ -5288,8 +5500,7 @@
       [H3]Avabush Spice[h3]
       Please see page 183 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="183">Edge of the Empire Core Rulebook</Source>
     <Price>25</Price>
     <Restricted>true</Restricted>
     <Encumbrance>0</Encumbrance>
@@ -5303,8 +5514,7 @@
       [H3]Avabush Spice[h3]
       Please see page 183 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="183">Edge of the Empire Core Rulebook</Source>
     <Price>2000</Price>
     <Restricted>true</Restricted>
     <Encumbrance>3</Encumbrance>
@@ -5318,8 +5528,7 @@
       [H3]Booster Blue[h3]
       Please see page 184 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="184">Edge of the Empire Core Rulebook</Source>
     <Price>10</Price>
     <Restricted>true</Restricted>
     <Encumbrance>0</Encumbrance>
@@ -5333,8 +5542,7 @@
       [H3]Booster Blue[h3]
       Please see page 184 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="184">Edge of the Empire Core Rulebook</Source>
     <Price>750</Price>
     <Restricted>true</Restricted>
     <Encumbrance>3</Encumbrance>
@@ -5348,8 +5556,7 @@
       [H3]Glitterstim[h3]
       Please see page 184 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="184">Edge of the Empire Core Rulebook</Source>
     <Price>100</Price>
     <Restricted>true</Restricted>
     <Encumbrance>0</Encumbrance>
@@ -5363,8 +5570,7 @@
       [H3]Glitterstim[h3]
       Please see page 184 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="184">Edge of the Empire Core Rulebook</Source>
     <Price>5000</Price>
     <Restricted>true</Restricted>
     <Encumbrance>5</Encumbrance>
@@ -5378,8 +5584,7 @@
       [H3]Lesai[h3]
       Please see page 184 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="184">Edge of the Empire Core Rulebook</Source>
     <Price>500</Price>
     <Restricted>true</Restricted>
     <Encumbrance>0</Encumbrance>
@@ -5393,8 +5598,7 @@
       [H3]Lesai[h3]
       Please see page 184 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="184">Edge of the Empire Core Rulebook</Source>
     <Price>7500</Price>
     <Restricted>true</Restricted>
     <Encumbrance>2</Encumbrance>
@@ -5408,8 +5612,7 @@
       [H3]Yarrock[h3]
       Please see page 185 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="185">Edge of the Empire Core Rulebook</Source>
     <Price>350</Price>
     <Restricted>true</Restricted>
     <Encumbrance>0</Encumbrance>
@@ -5423,8 +5626,7 @@
       [H3]Yarrock[h3]
       Please see page 185 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="185">Edge of the Empire Core Rulebook</Source>
     <Price>20000</Price>
     <Restricted>true</Restricted>
     <Encumbrance>3</Encumbrance>
@@ -5438,8 +5640,7 @@
       [H3]Death Sticks[h3]
       Please see page 185 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="185">Edge of the Empire Core Rulebook</Source>
     <Price>5</Price>
     <Restricted>true</Restricted>
     <Encumbrance>0</Encumbrance>
@@ -5453,8 +5654,7 @@
       [H3]Death Sticks[h3]
       Please see page 185 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="185">Edge of the Empire Core Rulebook</Source>
     <Price>250</Price>
     <Restricted>true</Restricted>
     <Encumbrance>3</Encumbrance>
@@ -5465,16 +5665,15 @@
     <Key>DATABR</Key>
     <Name>Data Breaker</Name>
     <Description>
-      [H3]Data Breaker[h3]
+      [H3]Outlaw Tech Data Breaker[h3]
       Please see page 186 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="186">Edge of the Empire Core Rulebook</Source>
     <Price>1000</Price>
     <Restricted>true</Restricted>
     <Encumbrance>1</Encumbrance>
     <Rarity>6</Rarity>
-    <Type>Security/Espionage</Type>
+    <Type>Slicing Tools</Type>
     <BaseMods>
       <Mod>
         <MiscDesc>Adds [BOOST][BOOST] to any Computers check made to slice computers</MiscDesc>
@@ -5489,14 +5688,13 @@
       [H3]Blackops Data Breaker[h3]
       Please see page 193 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
-    <Short></Short>
+    <Source Page="193">Age of Rebellion Core Rulebook</Source>
     <Price>1000</Price>
     <Restricted>true</Restricted>
     <Encumbrance>1</Encumbrance>
     <Rarity>6</Rarity>
     <Restricted>true</Restricted>
-    <Type>Security/Espionage</Type>
+    <Type>Slicing Tools</Type>
     <BaseMods>
       <Mod>
         <MiscDesc>Adds [BOOST][BOOST] to any Computers check made to slice computers</MiscDesc>
@@ -5516,10 +5714,9 @@
       Please see page 186 of the Edge of the Empire Core Rulebook, or page 193 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="186">Edge of the Empire Core Rulebook</Source>
+      <Source Page="193">Age of Rebellion Core Rulebook</Source>
     </Sources>
-    <Short></Short>
     <Price>2500</Price>
     <Restricted>true</Restricted>
     <Encumbrance>1</Encumbrance>
@@ -5534,10 +5731,9 @@
       Please see page 186 of the Edge of the Empire Core Rulebook, or page 195 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="186">Edge of the Empire Core Rulebook</Source>
+      <Source Page="195">Age of Rebellion Core Rulebook</Source>
     </Sources>
-    <Short></Short>
     <Price>20000</Price>
     <Restricted>true</Restricted>
     <Encumbrance>1</Encumbrance>
@@ -5552,6 +5748,78 @@
       </Mod>
     </BaseMods>
   </Gear>
+  
+    
+  <Gear>
+    <Key>DATASPIKE</Key>
+    <Name>Dataspike</Name>
+    <Description>
+      [H3]Dataspike[h3]
+      Please see page 51 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="51">Special Modifications</Source>
+    <Price>100</Price>
+    <Encumbrance>1</Encumbrance>
+    <Rarity>3</Rarity>
+    <Restricted>true</Restricted>
+    <Type>Slicing Tools</Type>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Adds [BOOST][BOOST] to any Computers check made to slice computers</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <MiscDesc>Adds [BOOST] to any attempt  to locate the use of a data breaker in a computer system</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+  </Gear>
+    
+  <Gear>
+    <Key>A212TRACECONS</Key>
+    <Name>Tracing Console</Name>
+    <Description>
+      [H3]Ealewon A-212 Tracing Console[h3]
+      Please see page 51 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="51">Special Modifications</Source>
+    <Price>3000</Price>
+    <Encumbrance>12</Encumbrance>
+    <Rarity>6</Rarity>
+    <Restricted>false</Restricted>
+    <Type>Slicing Tools</Type>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Add [SE] on attempts to slice a system protected by a tracing console.</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <MiscDesc>Adds [BOOST][BOOST] to Computers checks to defend a system protected by a tracing console, or to identify intruder (e.g., Trace User action).</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+  </Gear>
+  <Gear>
+    <Key>SIGMODPAD</Key>
+    <Name>Signature Modulation Pad</Name>
+    <Description>
+      [H3]Signature Modulation Pad[h3]
+      Please see page 51 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="51">Special Modifications</Source>
+    <Price>250</Price>
+    <Encumbrance>2</Encumbrance>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <Type>Slicing Tools</Type>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Add [SE][SE] on attempts to acquire user's slicing signature (e.g., Trace User action).</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+  </Gear>
+    
   <Gear>
     <Key>DEMONMASK</Key>
     <Name>Demon Mask</Name>
@@ -5559,10 +5827,10 @@
       [H3]Demon Mask[h3]
       Please see page 190 of the Force and Destiny Core Rulebook for details.
     </Description>
+    <Source Page="190">Force and Destiny Core Rulebook</Source>
     <Sources>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="190">Force and Destiny Core Rulebook</Source>
     </Sources>
-    <Short></Short>
     <Price>4000</Price>
     <Restricted>true</Restricted>
     <Encumbrance>1</Encumbrance>
@@ -5588,10 +5856,10 @@
       [H3]Meditation Focus[h3]
       Please see page 190 of the Force and Destiny Core Rulebook for details.
     </Description>
+    <Source Page="190">Force and Destiny Core Rulebook</Source>
     <Sources>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="190">Force and Destiny Core Rulebook</Source>
     </Sources>
-    <Short></Short>
     <Price>4000</Price>
     <Restricted>true</Restricted>
     <Encumbrance>1</Encumbrance>
@@ -5610,10 +5878,10 @@
       [H3]Talisman of Iron Fists[h3]
       Please see page 190 of the Force and Destiny Core Rulebook for details.
     </Description>
+    <Source Page="190">Force and Destiny Core Rulebook</Source>
     <Sources>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="190">Force and Destiny Core Rulebook</Source>
     </Sources>
-    <Short></Short>
     <Price>8000</Price>
     <Restricted>true</Restricted>
     <Encumbrance>1</Encumbrance>
@@ -5625,7 +5893,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>TALISBARDOTSPH</Key>
     <Name>Bardottan Sphere</Name>
@@ -5633,8 +5900,9 @@
       [H3]Bardottan Sphere[h3]
       Please see page 109 of the Nexus of Power Sourcebook for details.
     </Description>
+    <Source Page="109">Nexus of Power Sourcebook</Source>
     <Sources>
-      <Source>Nexus of Power</Source>
+      <Source Page="109">Nexus of Power</Source>
     </Sources>
     <Price>50000</Price>
     <Restricted>false</Restricted>
@@ -5655,8 +5923,9 @@
       [H3]Crown of Verity[h3]
       Please see page 110 of the Nexus of Power Sourcebook for details.
     </Description>
+    <Source Page="110">Nexus of Power Sourcebook</Source>
     <Sources>
-      <Source>Nexus of Power</Source>
+      <Source Page="110">Nexus of Power</Source>
     </Sources>
     <Price>6000</Price>
     <Restricted>false</Restricted>
@@ -5676,8 +5945,9 @@
       [H3]Dram of Orphne[h3]
       Please see page 111 of the Nexus of Power Sourcebook for details.
     </Description>
+    <Source Page="111">Nexus of Power Sourcebook</Source>
     <Sources>
-      <Source>Nexus of Power</Source>
+      <Source Page="111">Nexus of Power</Source>
     </Sources>
     <Price>9000</Price>
     <Restricted>false</Restricted>
@@ -5703,8 +5973,9 @@
       [H3]Dolina Ring Seeds[h3]
       Please see page 113 of the Nexus of Power Sourcebook for details.
     </Description>
+    <Source Page="113">Nexus of Power Sourcebook</Source>
     <Sources>
-      <Source>Nexus of Power</Source>
+      <Source Page="113">Nexus of Power</Source>
     </Sources>
     <Price>18000</Price>
     <Restricted>false</Restricted>
@@ -5724,8 +5995,9 @@
       [H3]Eyes of Laqasa[h3]
       Please see page 108 of the Nexus of Power Sourcebook for details.
     </Description>
+    <Source Page="108">Nexus of Power Sourcebook</Source>
     <Sources>
-      <Source>Nexus of Power</Source>
+      <Source Page="108">Nexus of Power</Source>
     </Sources>
     <Price>2000</Price>
     <Restricted>false</Restricted>
@@ -5748,8 +6020,9 @@
       [H3]Grimoire of Syclos the Lame[h3]
       Please see page 107 of the Nexus of Power Sourcebook for details.
     </Description>
+    <Source Page="107">Nexus of Power Sourcebook</Source>
     <Sources>
-      <Source>Nexus of Power</Source>
+      <Source Page="107">Nexus of Power</Source>
     </Sources>
     <Price>4000</Price>
     <Restricted>false</Restricted>
@@ -5772,8 +6045,9 @@
       [H3]Herder's Gauntlet[h3]
       Please see page 110 of the Nexus of Power Sourcebook for details.
     </Description>
+    <Source Page="110">Nexus of Power Sourcebook</Source>
     <Sources>
-      <Source>Nexus of Power</Source>
+      <Source Page="110">Nexus of Power</Source>
     </Sources>
     <Price>8000</Price>
     <Restricted>false</Restricted>
@@ -5787,7 +6061,7 @@
       </Mod>
     </BaseMods>
   </Gear>
-<!--  <Gear>
+  <!--  <Gear>
     <Key>TALISLODLIGHT</Key>
     <Name>Master Lodaka's Lightsaber</Name>
     <Description>
@@ -5846,8 +6120,9 @@
       [H3]Taradon's Helm[h3]
       Please see page 112 of the Nexus of Power Sourcebook for details.
     </Description>
+    <Source Page="112">Nexus of Power Sourcebook</Source>
     <Sources>
-      <Source>Nexus of Power</Source>
+      <Source Page="112">Nexus of Power</Source>
     </Sources>
     <Price>11000</Price>
     <Restricted>false</Restricted>
@@ -5867,8 +6142,10 @@
       [H3]Tear of the Elders[h3]
       Please see page 107 of the Nexus of Power Sourcebook for details.
     </Description>
+    <Source Page="107">Elders[h3]
+      Please see page 107 of the Nexus of Power Sourcebook</Source>
     <Sources>
-      <Source>Nexus of Power</Source>
+      <Source Page="107">Nexus of Power</Source>
     </Sources>
     <Price>7500</Price>
     <Restricted>false</Restricted>
@@ -5881,10 +6158,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
-
-
   <Gear>
     <Key>HOLOCRONSAMP1</Key>
     <Name>Sample Holocron</Name>
@@ -5898,10 +6171,11 @@
       &lt;/ul&gt;
       Please see page 190 of the Force and Destiny Core Rulebook for more details.
     </Description>
+    <Source Page="190">Force and Destiny Core Rulebook for more details.
+    </Source>
     <Sources>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="190">Force and Destiny Core Rulebook</Source>
     </Sources>
-    <Short></Short>
     <Price>100000</Price>
     <Restricted>true</Restricted>
     <Encumbrance>1</Encumbrance>
@@ -5928,7 +6202,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>HOLOCRONORPS</Key>
     <Name>Holocron of Outer Rim and  Piloting Space</Name>
@@ -5936,7 +6209,7 @@
       [H3]Holocron of Outer Rim and  Piloting Space[h3]
       See [B]Table 2-7: Holocron Skills[b] on page 109 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="109">Force and Destiny Core Rulebook</Source>
     <Sources />
     <Type>Holocrons</Type>
     <Categories />
@@ -5963,8 +6236,7 @@
       [H3]Holocron of Brawl and Streetwise[h3]
       See [B]Table 2-7: Holocron Skills[b] on page 109 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
-    <Sources />
+    <Source Page="109">Force and Destiny Core Rulebook</Source>
     <Type>Holocrons</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -5990,7 +6262,7 @@
       [H3]Holocron of Computers and Perception[h3]
       See [B]Table 2-7: Holocron Skills[b] on page 109 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="109">Force and Destiny Core Rulebook</Source>
     <Sources />
     <Type>Holocrons</Type>
     <Categories />
@@ -6017,7 +6289,7 @@
       [H3]Holocron of Mechanics and Ranged Light[h3]
       See [B]Table 2-7: Holocron Skills[b] on page 109 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="109">Force and Destiny Core Rulebook</Source>
     <Sources />
     <Type>Holocrons</Type>
     <Categories />
@@ -6044,7 +6316,7 @@
       [H3]Holocron of Astrogation and Gunnery[h3]
       See [B]Table 2-7: Holocron Skills[b] on page 109 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="109">Force and Destiny Core Rulebook</Source>
     <Sources />
     <Type>Holocrons</Type>
     <Categories />
@@ -6071,7 +6343,7 @@
       [H3]Holocron of Discipline and Medicine[h3]
       See [B]Table 2-7: Holocron Skills[b] on page 109 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="109">Force and Destiny Core Rulebook</Source>
     <Sources />
     <Type>Holocrons</Type>
     <Categories />
@@ -6098,7 +6370,7 @@
       [H3]Holocron of Lore and Lightsaber[h3]
       See [B]Table 2-7: Holocron Skills[b] on page 109 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="109">Force and Destiny Core Rulebook</Source>
     <Sources />
     <Type>Holocrons</Type>
     <Categories />
@@ -6125,7 +6397,7 @@
       [H3]Holocron of Cool and Coordination[h3]
       See [B]Table 2-7: Holocron Skills[b] on page 109 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="109">Force and Destiny Core Rulebook</Source>
     <Sources />
     <Type>Holocrons</Type>
     <Categories />
@@ -6152,7 +6424,7 @@
       [H3]Holocron of Skulduggery and Vigilance[h3]
       See [B]Table 2-7: Holocron Skills[b] on page 109 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="109">Force and Destiny Core Rulebook</Source>
     <Sources />
     <Type>Holocrons</Type>
     <Categories />
@@ -6179,7 +6451,7 @@
       [H3]Holocron of Xenology and Survival[h3]
       See [B]Table 2-7: Holocron Skills[b] on page 109 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="109">Force and Destiny Core Rulebook</Source>
     <Sources />
     <Type>Holocrons</Type>
     <Categories />
@@ -6199,7 +6471,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>HOLOCRONWARDE</Key>
     <Name>Suljo Warde's Holocron</Name>
@@ -6207,7 +6478,7 @@
       [H3]Suljo Warde's Holocron[h3]
       See page 19 of the Chronicles of the Gatekeeper adventure module for details.
     </Description>
-    <Source>Chronicles of the Gatekeeper</Source>
+    <Source Page="19">Chronicles of the Gatekeeper</Source>
     <Sources />
     <Type>Holocrons</Type>
     <Categories />
@@ -6227,10 +6498,7 @@
       </Mod>
     </BaseMods>
   </Gear>
-
-
   <!-- Generic Items -->
-
   <Gear>
     <Key>GENERIC0</Key>
     <Name>Incidental Item</Name>
@@ -6239,7 +6507,6 @@
       Use this item to represent any incidental (Encumbrance 0) item.  Use the "Rename" button to give it a name, and the "Notes" button
       to describe the item.  If the item is purchased, be sure to deduct the cost from your credit total.
     </Description>
-    <Short></Short>
     <Price>0</Price>
     <Restricted>false</Restricted>
     <Encumbrance>0</Encumbrance>
@@ -6254,7 +6521,6 @@
       Use this item to represent any very small (Encumbrance 1) item.  Use the "Rename" button to give it a name, and the "Notes" button
       to describe the item.  If the item is purchased, be sure to deduct the cost from your credit total.
     </Description>
-    <Short></Short>
     <Price>0</Price>
     <Restricted>false</Restricted>
     <Encumbrance>1</Encumbrance>
@@ -6269,7 +6535,6 @@
       Use this item to represent any small (Encumbrance 2) item.  Use the "Rename" button to give it a name, and the "Notes" button
       to describe the item.  If the item is purchased, be sure to deduct the cost from your credit total.
     </Description>
-    <Short></Short>
     <Price>0</Price>
     <Restricted>false</Restricted>
     <Encumbrance>2</Encumbrance>
@@ -6284,7 +6549,6 @@
       Use this item to represent any medium (Encumbrance 3) item.  Use the "Rename" button to give it a name, and the "Notes" button
       to describe the item.  If the item is purchased, be sure to deduct the cost from your credit total.
     </Description>
-    <Short></Short>
     <Price>0</Price>
     <Restricted>false</Restricted>
     <Encumbrance>3</Encumbrance>
@@ -6299,7 +6563,6 @@
       Use this item to represent any medium-large (Encumbrance 4) item.  Use the "Rename" button to give it a name, and the "Notes" button
       to describe the item.  If the item is purchased, be sure to deduct the cost from your credit total.
     </Description>
-    <Short></Short>
     <Price>0</Price>
     <Restricted>false</Restricted>
     <Encumbrance>4</Encumbrance>
@@ -6314,7 +6577,6 @@
       Use this item to represent any large (Encumbrance 5) item.  Use the "Rename" button to give it a name, and the "Notes" button
       to describe the item.  If the item is purchased, be sure to deduct the cost from your credit total.
     </Description>
-    <Short></Short>
     <Price>0</Price>
     <Restricted>false</Restricted>
     <Encumbrance>5</Encumbrance>
@@ -6329,18 +6591,13 @@
       Use this item to represent any very large (Encumbrance 6) item.  Use the "Rename" button to give it a name, and the "Notes" button
       to describe the item.  If the item is purchased, be sure to deduct the cost from your credit total.
     </Description>
-    <Short></Short>
     <Price>0</Price>
     <Restricted>false</Restricted>
     <Encumbrance>6</Encumbrance>
     <Rarity>0</Rarity>
     <Type>Generic</Type>
   </Gear>
-
-  
-  
   <!-- Fly Casual -->
-
   <Gear>
     <Key>APPRAISERSEYE</Key>
     <Name>Appraiser's Eye</Name>
@@ -6348,7 +6605,7 @@
       [H3]Appraiser's Eye[h3]
       Please see page 48 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="48">Fly Casual</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -6370,7 +6627,7 @@
       [H3]Cybernetic Cavity[h3]
       Please see page 48 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="48">Fly Casual</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -6392,7 +6649,7 @@
       [H3]Digital Lockpick[h3]
       Please see page 48 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="48">Fly Casual</Source>
     <Type>Cybernetics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -6414,7 +6671,7 @@
       [H3]Holoscanner (10 Encumbrance)[h3]
       Please see page 48 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="48">Fly Casual</Source>
     <Type>Detection/Surveillance Devices</Type>
     <Categories />
     <Encumbrance>10</Encumbrance>
@@ -6436,7 +6693,7 @@
       [H3]Holoscanner (100 Encumbrance)[h3]
       Please see page 48 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="48">Fly Casual</Source>
     <Type>Detection/Surveillance Devices</Type>
     <Categories />
     <Encumbrance>100</Encumbrance>
@@ -6460,7 +6717,7 @@
       [H3]Lockpicking Tools[h3]
       Please see page 49 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="49">Fly Casual</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -6477,7 +6734,7 @@
       [H3]Shift Coffer[h3]
       Please see page 49 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="49">Fly Casual</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>5</Encumbrance>
@@ -6505,7 +6762,7 @@
       [H3]Magna-Lock Safe[h3]
       Please see page 49 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="49">Fly Casual</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>12</Encumbrance>
@@ -6529,7 +6786,7 @@
       [H3]Shadowcloak[h3]
       Please see page 49 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="49">Fly Casual</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>2</Encumbrance>
@@ -6553,7 +6810,7 @@
       [H3]Fingerprint Masque[h3]
       Please see page 50 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="50">Fly Casual</Source>
     <Type>Security/Espionage</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -6577,7 +6834,7 @@
       [H3]False Credentials[h3]
       Please see page 50 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="50">Fly Casual</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -6601,7 +6858,7 @@
       [H3]Skifter[h3]
       Please see page 50 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="50">Fly Casual</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -6625,7 +6882,7 @@
       [H3]Cargo Scanner[h3]
       Please see page 50 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="50">Fly Casual</Source>
     <Type>Tools/Electronics</Type>
     <Categories />
     <Encumbrance>1</Encumbrance>
@@ -6649,7 +6906,7 @@
       [H3]Impact (Dose)[h3]
       Please see page 50 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="50">Fly Casual</Source>
     <Type>Drugs and Consumables</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -6671,7 +6928,7 @@
       [H3]Impact (100 dose cargo container)[h3]
       Please see page 50 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="50">Fly Casual</Source>
     <Type>Drugs and Consumables</Type>
     <Categories />
     <Encumbrance>5</Encumbrance>
@@ -6693,7 +6950,7 @@
       [H3]Muon Gold (Dose)[h3]
       Please see page 51 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="51">Fly Casual</Source>
     <Type>Drugs and Consumables</Type>
     <Categories />
     <Encumbrance>0</Encumbrance>
@@ -6715,7 +6972,7 @@
       [H3]Muon Gold (100 dose cargo container)[h3]
       Please see page 51 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="51">Fly Casual</Source>
     <Type>Drugs and Consumables</Type>
     <Categories />
     <Encumbrance>3</Encumbrance>
@@ -6730,7 +6987,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-  
   <!-- Luxury Items -->
   <Gear>
     <Key>EXPJEWELRY</Key>
@@ -6739,7 +6995,7 @@
       [H3]Expensive Jewelry[h3]
       Please see page 51 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="51">Desperate Allies</Source>
     <Price>2000</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>7</Rarity>
@@ -6763,7 +7019,7 @@
       [H3]Signet Ring[h3]
       Please see page 53 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="53">Desperate Allies</Source>
     <Price>750</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>7</Rarity>
@@ -6783,7 +7039,7 @@
       [H3]Adamite Signet Ring[h3]
       Please see page 105 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="105">Nexus of Power</Source>
     <Price>500</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>8</Rarity>
@@ -6792,7 +7048,6 @@
     <BaseMods>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>CASCADER</Key>
     <Name>BPEA-1A Cascader</Name>
@@ -6800,7 +7055,7 @@
       [H3]BPEA-1A Cascader[h3]
       Please see page 44 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="44">Lead by Example</Source>
     <Price>1800</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>8</Rarity>
@@ -6827,7 +7082,6 @@
       </Mod>
     </BaseMods>
   </Gear>
-
   <Gear>
     <Key>DRESSUNI</Key>
     <Name>Dress Uniform</Name>
@@ -6835,7 +7089,7 @@
       [H3]Dress Uniform[h3]
       Please see page 44 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="44">Lead by Example</Source>
     <Price>100</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>5</Rarity>
@@ -6849,7 +7103,7 @@
       [H3]Ribbon Rack[h3]
       Please see page 44 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="44">Lead by Example</Source>
     <Price>15</Price>
     <Encumbrance>0</Encumbrance>
     <Rarity>4</Rarity>
@@ -6863,7 +7117,7 @@
       [H3]Symbol of Command[h3]
       Please see page 44 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="44">Lead by Example</Source>
     <Price>100</Price>
     <Encumbrance>1</Encumbrance>
     <Rarity>3</Rarity>
@@ -6877,5 +7131,183 @@
     </BaseMods>
   </Gear>
 
+  <Gear>
+    <Key>CZ88ARM</Key>
+    <Name>CZ-88 Heavy Loader Arm</Name>
+    <Description>
+      [H3]CZ-88 Heavy Loader Arm[h3]
+      Please see page 51 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="51">Special Modifications</Source>
+    <Price>1500</Price>
+    <Encumbrance>30</Encumbrance>
+    <Rarity>3</Rarity>
+    <Restricted>false</Restricted>
+    <Type>Construction/Salvage Tools</Type>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Droid brain: Brawn 5, Athletics 1 ([PR][AB][AB][AB][AB]).</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+  </Gear>
+  <Gear>
+    <Key>MECHDIAG</Key>
+    <Name>Mechanical Dianoga</Name>
+    <Description>
+      [H3]Mechanical Dianoga[h3]
+      Please see page 52 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="52">Special Modifications</Source>
+    <Price>225</Price>
+    <Encumbrance>4</Encumbrance>
+    <Rarity>4</Rarity>
+    <Restricted>false</Restricted>
+    <Type>Construction/Salvage Tools</Type>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Removes [SE][SE] from checks to remove system strain from starships and vehicles.</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+  </Gear>
+  <Gear>
+    <Key>INTTOOL</Key>
+    <Name>VX-A Intelligent Toolbox</Name>
+    <Description>
+      [H3]Merr-Son VX-A Intelligent Toolbox[h3]
+      Please see page 52 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="52">Special Modifications</Source>
+    <Price>2500</Price>
+    <Encumbrance>3</Encumbrance>
+    <Rarity>8</Rarity>
+    <Restricted>false</Restricted>
+    <Type>Construction/Salvage Tools</Type>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Counts as a tool kit.</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <MiscDesc>Reduces time for repairs, crafting, or other Mechanics-related tasks by 50%.</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+  </Gear>
+  <Gear>
+    <Key>ORRECSTA</Key>
+    <Name>OR-Series Tech Recycling Station</Name>
+    <Description>
+      [H3]OR-Series Tech Recycling Station[h3]
+      Please see page 52 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="52">Special Modifications</Source>
+    <Price>1500</Price>
+    <Encumbrance>10</Encumbrance>
+    <Rarity>5</Rarity>
+    <Restricted>false</Restricted>
+    <Type>Construction/Salvage Tools</Type>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Add [BO][BO] to Perception and Mechanics checks to scavenge parts or raw materials.  Checks can be completed in half the time (or a quarter of the time with the Utinni! talent).</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <MiscDesc>May recover supplies worth half of the Material Price from any failed crafting check.</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+  </Gear>
+  <Gear>
+    <Key>REPCLAMP</Key>
+    <Name>Repulsor Clamp</Name>
+    <Description>
+      [H3]Repulsor Clamp[h3]
+      Please see page 52 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="52">Special Modifications</Source>
+    <Price>250</Price>
+    <Encumbrance>3</Encumbrance>
+    <Rarity>1</Rarity>
+    <Restricted>false</Restricted>
+    <Type>Construction/Salvage Tools</Type>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Can hold a single object of 10 encumbrance or less aloft.</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <MiscDesc>Removes [SE] from checks to repair hull trauma and Critical Hits on starships and vehicles.</MiscDesc>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+  </Gear>
+
+
+  <Gear>
+    <Key>GENREMOTE</Key>
+    <Name>Generic Remote</Name>
+    <Description>
+      [H3]Generic Remote[h3]
+      Please see page 53 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="53">Special Modifications</Source>
+    <Price>400</Price>
+    <Encumbrance>0</Encumbrance>
+    <Rarity>2</Rarity>
+    <Restricted>false</Restricted>
+    <Type>Remotes</Type>
+    <BaseMods>
+    </BaseMods>
+  </Gear>
+  <Gear>
+    <Key>BUTBUGREMOTE</Key>
+    <Name>Butterbug Remote</Name>
+    <Description>
+      [H3]Butterbug Remote[h3]
+      Please see page 53 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="53">Special Modifications</Source>
+    <Price>700</Price>
+    <Encumbrance>0</Encumbrance>
+    <Rarity>4</Rarity>
+    <Restricted>false</Restricted>
+    <Type>Remotes</Type>
+    <BaseMods>
+    </BaseMods>
+  </Gear>
+  <Gear>
+    <Key>SERVPATREMOTE</Key>
+    <Name>Service Patch Remote</Name>
+    <Description>
+      [H3]Service Patch Remote[h3]
+      Please see page 53 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="53">Special Modifications</Source>
+    <Price>900</Price>
+    <Encumbrance>0</Encumbrance>
+    <Rarity>3</Rarity>
+    <Restricted>false</Restricted>
+    <Type>Remotes</Type>
+    <BaseMods>
+    </BaseMods>
+  </Gear>
+  <Gear>
+    <Key>SHIELDREMOTE</Key>
+    <Name>Shield Remote</Name>
+    <Description>
+      [H3]Shield Remote[h3]
+      Please see page 53 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="53">Special Modifications</Source>
+    <Price>1100</Price>
+    <Encumbrance>0</Encumbrance>
+    <Rarity>5</Rarity>
+    <Restricted>false</Restricted>
+    <Type>Remotes</Type>
+    <BaseMods>
+    </BaseMods>
+  </Gear>
 
 </Gears>

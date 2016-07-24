@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>DRIVER</Key>
   <Name>Driver</Name>
@@ -7,8 +7,8 @@
     Please see page 67 of the Age of Rebellion Core Rulebook, or page 29 of the Enter the Unknown Sourcebook, for details.
   </Description>
   <Sources>
-    <Source>Age of Rebellion Core Rulebook</Source>
-    <Source>Enter the Unknown</Source>
+    <Source Page="67">Age of Rebellion Core Rulebook</Source>
+    <Source Page="29">Enter the Unknown Sourcebook</Source>
   </Sources>
   <CareerSkills>
     <Key>COOL</Key>
@@ -57,10 +57,10 @@
         <Direction>
           <Down>true</Down>
           <Left>true</Left>
-		  <Right>true</Right>
+          <Right>true</Right>
         </Direction>
         <Direction>
-		  <Left>true</Left>
+          <Left>true</Left>
           <Right>true</Right>
         </Direction>
         <Direction>
@@ -114,10 +114,10 @@
         </Direction>
         <Direction>
           <Left>true</Left>
-		  <Right>true</Right>
+          <Right>true</Right>
         </Direction>
         <Direction>
-		  <Left>true</Left>
+          <Left>true</Left>
         </Direction>
         <Direction>
           <Down>true</Down>

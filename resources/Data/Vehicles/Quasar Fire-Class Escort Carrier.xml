@@ -4,7 +4,7 @@
   <Name>Quasar Fire-Class Escort Carrier</Name>
   <Description>[H3]Quasar Fire-Class Escort Carrier[h3]
 Please see page 63 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="63">Stay on Target</Source>
   <Type>Carrier</Type>
   <Categories>
     <Category>Capital Ship</Category>

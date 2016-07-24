@@ -14,7 +14,7 @@ if (isset($_POST["field3"])) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Character Sheet Login</title>
+<title>Fringer's Datapad - Login</title>
 <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 
@@ -25,7 +25,8 @@ if (isset($_POST["field3"])) {
 <tr><td align="center">
 
 <table border="0" width="80%">
-<tr><td class="main-text" align="center" colspan="2"><font size="+2">Jabberwookiee's Star Wars&trade; Character Sheet</font></td></tr>
+<tr><td class="main-text" align="center" colspan="2"><font size="+2">Fringer's Datapad</font></td></tr>
+<tr><td class="main-text" align="center" colspan="2"><font size="+1">a Character Sheet for the Star Wars&trade; EotE, AoR and F&D Role Playing Games</font></td></tr>
 <tr><td colspan="2"><img src="space.gif" width="1" height="1" border="0"/></td></tr>
 <tr><td height="1" colspan="2"><hr width="100%" /></td></tr>
 <tr><td colspan="2"><img src="space.gif" width="1" height="20" border="0"/></td></tr>
@@ -52,7 +53,7 @@ if (isset($_POST["field3"])) {
 <tr><td colspan="2"><img src="space.gif" width="1" height="15" border="0"/></td></tr>
 <tr><td colspan="2" class="comic-text" align="center"><font color="red"><?php print $error;?></font></td></tr>
 <tr><td colspan="2"><img src="space.gif" width="1" height="5" border="0"/></td></tr>
-<td class="comic-text" align="center" colspan="2"><a href="register.php">Register...</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="lost-pwd.php">Forgot password...</a></td>
+<td class="comic-text" align="center" colspan="2"><a href="register.php">Register...</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="lost-pwd.php">Lost/Change password...</a></td>
 <tr><td colspan="2"><img src="space.gif" width="1" height="10" border="0"/></td></tr>
 </table>
 
@@ -64,7 +65,7 @@ if (isset($_POST["field3"])) {
 <table border="0" width="520">
 <tr><td class="comic-text" align="center">If you have not already done so, <a href="register.php"><u>register</u></a> and upload your character created using
   <a href="https://community.fantasyflightgames.com/topic/89135-another-character-generator/"><u><i>OggDude's Star Wars
-  Character Generator</i></u></a>.<p>This can then be viewed using Jabberwookiee's Datapad App,
+  Character Generator</i></u></a>.<p>This can then be viewed using Fringer's Datapad App,
   on an Apple iPad. Custom "Data Sets" created with the <i>SW Data Editor</i>, can also be
   uploaded and used by the App.
   </td></tr>

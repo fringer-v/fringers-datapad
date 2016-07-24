@@ -4,7 +4,7 @@
   <Name>Niman Disciple</Name>
   <Description>[H4]Niman Disciple[h4]
 Please see page 70 of the Force and Destiny Core Rulebook for details.</Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="70">Force and Destiny Core Rulebook</Source>
   <CareerSkills>
     <Key>DISC</Key>
     <Key>LEAD</Key>

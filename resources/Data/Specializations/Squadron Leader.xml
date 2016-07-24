@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>SQUADLEADER</Key>
   <Name>Squadron Leader</Name>
@@ -6,7 +6,7 @@
     [H4]Squadron Leader - Ship-to-Ship[h4]
     Please see page 74 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="74">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>GUNN</Key>
     <Key>MECH</Key>
@@ -108,13 +108,13 @@
         <Direction>
           <Down>true</Down>
           <Up>true</Up>
-		  <Right>true</Right>
+          <Right>true</Right>
         </Direction>
         <Direction>
           <Right>true</Right>
-		  <Left>true</Left>
+          <Left>true</Left>
           <Up>true</Up>
-		  <Down>true</Down>
+          <Down>true</Down>
         </Direction>
         <Direction>
           <Up>true</Up>

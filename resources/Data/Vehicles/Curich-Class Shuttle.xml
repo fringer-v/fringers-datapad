@@ -4,7 +4,7 @@
   <Name>Curich-Class Shuttle</Name>
   <Description>[H3][I]Curich[i]-Class Shuttle[h3]
 Please see page 61 of the Desperate Allies Sourcebook for details.-</Description>
-  <Source>Desperate Allies</Source>
+  <Source Page="61">Desperate Allies</Source>
   <Sources />
   <Type>Shuttle</Type>
   <Categories>

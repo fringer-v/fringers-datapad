@@ -4,8 +4,7 @@
   <Name>I-C2 Civil-Industrial Droid</Name>
   <Description>[H3]I-C2 Civil-Industrial Droid[h3]
 Please see page 53 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="53">Far Horizons</Source>
   <Type>Groundcar</Type>
   <Categories>
     <Category>Wheeled Vehicle</Category>

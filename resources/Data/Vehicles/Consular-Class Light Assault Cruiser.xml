@@ -6,7 +6,7 @@
     [H3]Consular-Class Light Assault Cruiser[h3]
     Please see page 276 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="276">Age of Rebellion Core Rulebook</Source>
   <Type>Cruiser</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

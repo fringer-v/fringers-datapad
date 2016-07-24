@@ -14,19 +14,19 @@ Because of Ojom's harsh environment, large cities were never developed on the wo
 Ojom is a frozen ocean planet located within the Deep Core and the homeworld of the Besalisk. Largely inhospitable, several space stations hang in orbit so as to accommodate other species less acclimated to the cold.
 [P][B]Language:[b]
 Besalisk, or Ojom, is the language used by the Besalisk species on their native world Ojom. Spoken Besalisk includes barks, growls and grunts as their main features. There is a written form of Besalisk, that used a simple phonological transcription of their phonemes. Words on written form tend to be short. Besalisks learn to speak but not write Basic from a young age.</Description>
-  <Source>Unofficial Species Menagerie</Source>
+  <Source Page="20">Special Modifications</Source>
   <StartingChars>
     <Brawn>3</Brawn>
     <Agility>1</Agility>
     <Intellect>2</Intellect>
-    <Cunning>2</Cunning>
+    <Cunning>1</Cunning>
     <Willpower>2</Willpower>
     <Presence>2</Presence>
   </StartingChars>
   <StartingAttrs>
     <WoundThreshold>12</WoundThreshold>
-    <StrainThreshold>10</StrainThreshold>
-    <Experience>90</Experience>
+    <StrainThreshold>7</StrainThreshold>
+    <Experience>85</Experience>
   </StartingAttrs>
   <SkillModifiers>
     <SkillModifier>
@@ -36,31 +36,17 @@ Besalisk, or Ojom, is the language used by the Besalisk species on their native 
       <RankLimit>0</RankLimit>
       <isCareer>false</isCareer>
     </SkillModifier>
-  </SkillModifiers>
+  </SkillModifiers>     
   <TalentModifiers />
   <OptionChoices>
     <OptionChoice>
       <Key>BESALISKCH1</Key>
-      <Name>Environment</Name>
-      <Options>
-        <Option>
-          <Key>BESALISKCH1OP1</Key>
-          <Name>Cold Conditions</Name>
-          <Description>When making skill checks, Besalisks may remove [SETBACK] imposed due to arctic or cold environmental conditions.</Description>
-        </Option>
-      </Options>
-    </OptionChoice>
-    <OptionChoice>
-      <Key>BESALISKCH2</Key>
       <Name>Combat</Name>
       <Options>
         <Option>
           <Key>BESALISKCH2OP1</Key>
-          <Name>Extra Limbs</Name>
-          <Description>
-            Besalisks may spend [ADVANTAGE][ADVANTAGE] on a successful Brawl attack to hit a second target engaged with it,
-            dealing the same damage as dealt to the original target.
-          </Description>
+          <Name>Additional Limbs</Name>
+          <Description>Besalisks have four arms and gain an additional free maneuver per turn.  They still may not perform more than two maneuvers per turn, however.</Description>
         </Option>
       </Options>
     </OptionChoice>

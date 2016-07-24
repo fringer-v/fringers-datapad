@@ -4,7 +4,7 @@
   <Name>Minstrel-Class Space Yacht</Name>
   <Description>[H3]Ubrikkian Industries Modified Minstrel-Class Space Yacht[h3]
 Please see page 116 of the Lords of Nal Hutta Sourcebook for details.</Description>
-  <Source>Lords of Nal Hutta</Source>
+  <Source Page="116">Lords of Nal Hutta</Source>
   <Sources />
   <Type>Yacht</Type>
   <Categories>

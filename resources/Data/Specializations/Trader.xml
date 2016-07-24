@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>TRADER</Key>
   <Name>Trader</Name>
   <Description>
-    [H4]Trader &#8212; Discovering New Markets[h4]
+    [H4]Trader — Discovering New Markets[h4]
     Please see page 73 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="73">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>DECEP</Key>
     <Key>CORE</Key>

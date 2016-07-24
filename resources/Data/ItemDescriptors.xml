@@ -200,7 +200,17 @@
     </Description>
     <Type>Weapon</Type>
     <ModDesc>Add [SETBACK] to all attack checks when using this weapon</ModDesc>
-    <QualDesc>Add [SETBACK] to all attack checks when using this weapon</QualDesc>
+    <QualDesc>Add {0} [SETBACK] to all attack checks when using this weapon</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>SETBACKSUB</Key>
+    <Name>Remove Setback Mod</Name>
+    <Description>
+      Remove [SETBACK] from all attack checks when using this weapon
+    </Description>
+    <Type>Weapon</Type>
+    <ModDesc>Remove [SETBACK] from all attack checks when using this weapon</ModDesc>
+    <QualDesc>Remove {0} [SETBACK] from all attack checks when using this weapon</QualDesc>
   </ItemDescriptor>
   <ItemDescriptor>
     <Key>BOOSTADD</Key>
@@ -281,7 +291,7 @@
     <ModDesc>Add Additional Crystal with no HP Cost</ModDesc>
     <QualDesc>Add {0} Additional Crystal(s) with no HP Cost</QualDesc>
   </ItemDescriptor>
-
+  
   <!-- Nexus of Power -->
   
   <ItemDescriptor>
@@ -292,6 +302,16 @@
     <ModDesc>Armor is Sealable</ModDesc>
     <QualDesc>Armor is Sealable</QualDesc>
   </ItemDescriptor>
+
+  <ItemDescriptor>
+    <Key>SEALED</Key>
+    <Name>Sealed Mod</Name>
+    <Description>Armor is Sealed</Description>
+    <Type>Armor</Type>
+    <ModDesc>Armor is Sealed</ModDesc>
+    <QualDesc>Armor is Sealed</QualDesc>
+  </ItemDescriptor>
+
 
   <ItemDescriptor>
     <Key>SPEMBCHARM</Key>
@@ -447,6 +467,25 @@
     <ModDesc>Subtract 1 from Cybernetics Cap</ModDesc>
     <QualDesc>Subtract {0} from Cybernetics Cap</QualDesc>
   </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>CYBERNONE</Key>
+    <Name>Does not count toward Cybernetics Cap Mod</Name>
+    <Description></Description>
+    <ModDesc>Does not count toward Cybernetics Cap</ModDesc>
+    <QualDesc>Does not count toward Cybernetics Cap</QualDesc>
+    <IsBoolean>true</IsBoolean>
+  </ItemDescriptor>
+  
+  <!-- Special Modifications -->
+  <ItemDescriptor>
+    <Key>JURYADD</Key>
+    <Name>May Select Additional Jury Rigged Option Mod</Name>
+    <Description></Description>
+    <Type>Weapon</Type>
+    <ModDesc>May select 1 additional Jury Rigged option</ModDesc>
+    <QualDesc>May select {0} additional Jury Rigged option(s)</QualDesc>
+  </ItemDescriptor>
+
 
   <!--Vehicles-->
   
@@ -562,6 +601,28 @@
     <QualDesc>Decreases Hyperdrive Class by {0}, to a minimum of .5</QualDesc>
   </ItemDescriptor>
   <ItemDescriptor>
+    <Key>HYPERDRIVEADD8</Key>
+    <Name>Add Class 8 Hyperdrive Mod</Name>
+    <Description>
+      Add Class 8 Hyperdrive
+    </Description>
+    <Type>Vehicle</Type>
+    <ModDesc>Add Class 8 Hyperdrive</ModDesc>
+    <QualDesc>Add Class 8 Hyperdrive</QualDesc>
+    <IsBoolean>true</IsBoolean>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>HYPERDRIVEADD4</Key>
+    <Name>Add Class 4 Hyperdrive Mod</Name>
+    <Description>
+      Add Class 4 Hyperdrive
+    </Description>
+    <Type>Vehicle</Type>
+    <ModDesc>Add Class 4 Hyperdrive</ModDesc>
+    <QualDesc>Add Class 4 Hyperdrive</QualDesc>
+    <IsBoolean>true</IsBoolean>
+  </ItemDescriptor>
+  <ItemDescriptor>
     <Key>MASSIVESET</Key>
     <Name>Change Massive Mod</Name>
     <Description></Description>
@@ -655,6 +716,16 @@
     <QualDesc>Increases Passenger Capacity by {0}</QualDesc>
   </ItemDescriptor>
   <ItemDescriptor>
+    <Key>PASSADD2</Key>
+    <Name>Increase Passenger Capacity by 2 Mod</Name>
+    <Description>
+      Increase Passenger Capacity by 2
+    </Description>
+    <Type>Vehicle</Type>
+    <ModDesc>Increase Passenger Capacity by 2</ModDesc>
+    <QualDesc>Increases Passenger Capacity by 2</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
     <Key>PASSSUB</Key>
     <Name>Decrease Passenger Capacity Mod</Name>
     <Description>
@@ -729,6 +800,11 @@
     <Key>ACCURATE</Key>
     <Name>Accurate Quality</Name>
     <Description></Description>
+    <Sources>
+      <Source>Edge of the Empire Core Rulebook</Source>
+      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source>Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Weapon</Type>
     <ModDesc>Accurate {0}</ModDesc>
     <QualDesc>Accurate {0}</QualDesc>

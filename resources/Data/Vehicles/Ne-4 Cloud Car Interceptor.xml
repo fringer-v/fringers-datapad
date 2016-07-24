@@ -6,7 +6,7 @@
     [H3]Needle Ne-4 Cloud Car Interceptor[h3]
     Please see page 64 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="64">Dangerous Covenants</Source>
   <Type>Cloud Car</Type>
   <Categories>
     <Category>Air Vehicle</Category>

@@ -4,6 +4,7 @@
   <Name>HWK-1000 Light Freighter</Name>
   <Description>[H3]CEC HWK-1000 Light Freighter[h3]
 Please see page 59 of the Fly Casual Sourcebook for details.</Description>
+  <Source Page="59">Fly Casual Sourcebook</Source>
   <Sources>
     <Source>Fly Casual</Source>
   </Sources>

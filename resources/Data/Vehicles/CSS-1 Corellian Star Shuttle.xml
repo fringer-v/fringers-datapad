@@ -6,7 +6,7 @@
     [H3]CSS-1 Corellian Star Shuttle[h3]
     Please see page 110 of the Suns of Fortune Sourcebook for details.
   </Description>
-  <Source>Suns of Fortune</Source>
+  <Source Page="110">Suns of Fortune</Source>
   <Type>Shuttle</Type>
   <Categories>
     <Category>Starship</Category>

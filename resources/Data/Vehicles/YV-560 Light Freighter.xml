@@ -6,7 +6,7 @@
     [H3]YV-560 Light Freighter[h3]
     Please see page 66 of the Enter the Unknown Sourcebook for details.
   </Description>
-  <Source>Enter the Unknown</Source>
+  <Source Page="66">Enter the Unknown</Source>
   <Type>Freighter</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

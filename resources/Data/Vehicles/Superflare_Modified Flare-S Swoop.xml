@@ -6,7 +6,7 @@
     [H3]Superflare/Modified Flare-S Swoop[h3]
     Please see page 65 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="65">Dangerous Covenants</Source>
   <Type>Swoop</Type>
   <Categories>
     <Category>Air Vehicle</Category>

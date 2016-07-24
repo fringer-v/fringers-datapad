@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Career>
   <Key>DIPLOMAT</Key>
   <Name>Diplomat</Name>
@@ -6,7 +6,7 @@
     [H4]Diplomat[h4]
     Please see page 76 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="76">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>CHARM</Key>
     <Key>DECEP</Key>

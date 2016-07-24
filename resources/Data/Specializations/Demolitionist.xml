@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>DEMOLITIONIST</Key>
   <Name>Demolitionist</Name>
   <Description>
-    [H4]Demolitionist &#8212; Force of Destruction[h4]
+    [H4]Demolitionist — Force of Destruction[h4]
     Please see page 28 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="28">Dangerous Covenants</Source>
   <CareerSkills>
     <Key>COMP</Key>
     <Key>COOL</Key>

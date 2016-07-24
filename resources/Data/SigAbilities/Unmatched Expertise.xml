@@ -6,7 +6,7 @@
     [H4]Colonist Signature Ability: Unmatched Expertise[h4]
     See page 37 of the Far Horizons Sourcebook for details.
   </Description>
-  <Source>Far Horizons</Source>
+  <Source Page="37">Far Horizons</Source>
   <AbilityRows>
     <AbilityRow>
       <Index>0</Index>

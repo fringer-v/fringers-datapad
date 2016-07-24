@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>SURV</Key>
   <Name>Survivalist</Name>
   <Description>
-    [H4]Survivalist &#8212; Master of the Wild[h4]
+    [H4]Survivalist — Master of the Wild[h4]
     Please see page 61 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="61">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>XEN</Key>
     <Key>PERC</Key>

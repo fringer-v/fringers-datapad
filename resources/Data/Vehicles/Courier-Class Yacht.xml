@@ -6,7 +6,7 @@
     [H3]Courier-Class Yacht[h3]
     Please see page 91 of The Jewel of Yavin Adventure Module for details.
   </Description>
-  <Source>Jewel of Yavin</Source>
+  <Source Page="91">Jewel of Yavin</Source>
   <Type>Yacht</Type>
   <Categories>
     <Category>Starship</Category>

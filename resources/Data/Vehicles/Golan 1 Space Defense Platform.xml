@@ -4,7 +4,7 @@
   <Name>Golan 1 Space Defense Platform</Name>
   <Description>[H3]Golan 1 Space Defense Platform[h3]
       Please see page 61 of the Fly Casual Sourcebook for details.</Description>
-  <Source>Fly Casual</Source>
+  <Source Page="61">Fly Casual</Source>
   <Type>Space Station</Type>
   <Categories>
     <Category>Capital Ship</Category>

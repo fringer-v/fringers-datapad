@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>GUNNER</Key>
   <Name>Gunner</Name>
@@ -6,7 +6,7 @@
     [H4]Gunner - Always on Target[h4]
     Please see page 68 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="68">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>DISC</Key>
     <Key>GUNN</Key>
@@ -59,11 +59,11 @@
         <Direction>
           <Down>true</Down>
           <Up>true</Up>
-		      <Left>true</Left>
+          <Left>true</Left>
         </Direction>
         <Direction>
           <Up>true</Up>
-		      <Down>true</Down>
+          <Down>true</Down>
         </Direction>
       </Directions>
     </TalentRow>
@@ -107,13 +107,13 @@
       <Directions>
         <Direction>
           <Up>true</Up>
-		      <Right>true</Right>
-		      <Down>true</Down>
+          <Right>true</Right>
+          <Down>true</Down>
         </Direction>
         <Direction>
           <Down>true</Down>
-		      <Right>true</Right>
-		      <Left>true</Left>
+          <Right>true</Right>
+          <Left>true</Left>
         </Direction>
         <Direction>
           <Left>true</Left>
@@ -137,7 +137,7 @@
       <Directions>
         <Direction>
           <Right>true</Right>
-		      <Up>true</Up>
+          <Up>true</Up>
         </Direction>
         <Direction>
           <Right>true</Right>

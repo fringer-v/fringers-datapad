@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Species>
   <Key>TRAND</Key>
   <Name>Trandoshan</Name>
@@ -7,7 +7,7 @@
     Please see page 50 of the Edge of the Empire Core Rulebook for details.
 
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="50">Edge of the Empire Core Rulebook</Source>
   <StartingChars>
     <Brawn>3</Brawn>
     <Agility>1</Agility>

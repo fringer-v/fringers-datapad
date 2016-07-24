@@ -6,7 +6,7 @@
     [H3]CEC D-22 "Screamer" Speeder Bike[h3]
     Please see page 104 of the Suns of Fortune Sourcebook for details.
   </Description>
-  <Source>Suns of Fortune</Source>
+  <Source Page="104">Suns of Fortune</Source>
   <Type>Speeder Bike</Type>
   <Categories>
     <Category>Land Vehicle</Category>

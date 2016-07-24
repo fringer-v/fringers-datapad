@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <SpecificMotivations>
   <SpecificMotivation>
     <Key>AMBFRIEND</Key>
@@ -7,7 +7,7 @@
       [H4]Friendship[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -17,7 +17,7 @@
       [H4]Love[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -27,7 +27,7 @@
       [H4]Freedom[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -37,7 +37,7 @@
       [H4]Fame[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -47,7 +47,7 @@
       [H4]Greed[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -57,7 +57,7 @@
       [H4]Status[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -68,8 +68,8 @@
       Please see page 95 of the Edge of the Empire Core Rulebook, and page 106 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="95">Edge of the Empire Core Rulebook</Source>
+      <Source Page="106">Force and Destiny Core Rulebook</Source>
     </Sources>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
@@ -80,7 +80,7 @@
       [H4]Wanderlust/Novelty[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -91,8 +91,8 @@
       Please see page 95 of the Edge of the Empire Core Rulebook, or page 106 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="95">Edge of the Empire Core Rulebook</Source>
+      <Source Page="106">Force and Destiny Core Rulebook</Source>
     </Sources>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
@@ -103,7 +103,7 @@
       [H4]Religion/Spirituality[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -113,7 +113,7 @@
       [H4]Revenge[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -123,7 +123,7 @@
       [H4]Wealth[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -133,7 +133,7 @@
       [H4]Become a Jedi[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -143,7 +143,7 @@
       [H4]Survival[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -153,7 +153,7 @@
       [H4]Glory[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -163,7 +163,7 @@
       [H4]Destroy the Sith[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -173,7 +173,7 @@
       [H4]Enlightenment[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -183,7 +183,7 @@
       [H4]Discovery[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Ambition</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -193,7 +193,7 @@
       [H4]Religion/Spirituality[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -203,7 +203,7 @@
       [H4]The Weak/Charity[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -213,7 +213,7 @@
       [H4]Non-Human Rights[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -223,7 +223,7 @@
       [H4]Local Politics[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -233,7 +233,7 @@
       [H4]Overthrow the Empire[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -243,7 +243,7 @@
       [H4]Crime[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -253,7 +253,7 @@
       [H4]Emancipation[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -263,7 +263,7 @@
       [H4]Droid Rights[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -273,7 +273,7 @@
       [H4]Capitalism[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -283,7 +283,7 @@
       [H4]Support the Empire[h4]
       Please see page 95 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="95">Edge of the Empire Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -293,7 +293,7 @@
       [H4]Freedom[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -303,7 +303,7 @@
       [H4]Restore the Jedi[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -313,7 +313,7 @@
       [H4]Galactic Peace[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -323,7 +323,7 @@
       [H4]Justice[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -333,7 +333,7 @@
       [H4]Stop the Rebellion[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -343,7 +343,7 @@
       [H4]Equality[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -353,7 +353,7 @@
       [H4]Help the Helpless[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -363,7 +363,7 @@
       [H4]Free Enterprise[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -373,7 +373,7 @@
       [H4]Overthrow the Empire[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -383,7 +383,7 @@
       [H4]Knowledge[h4]
       Please see page 106 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="106">Force and Destiny Core Rulebook</Source>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -393,7 +393,7 @@
       [H4]Place of Origin[h4]
       Please see page 96 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <Motivation>Relationship</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -403,7 +403,7 @@
       [H4]Pet[h4]
       Please see page 96 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <Motivation>Relationship</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -413,7 +413,7 @@
       [H4]Childhood Friend[h4]
       Please see page 96 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <Motivation>Relationship</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -423,7 +423,7 @@
       [H4]Comrades[h4]
       Please see page 96 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <Motivation>Relationship</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -433,7 +433,7 @@
       [H4]Sibling/Siblings[h4]
       Please see page 96 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <Motivation>Relationship</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -443,7 +443,7 @@
       [H4]Mentor[h4]
       Please see page 96 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <Motivation>Relationship</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -453,7 +453,7 @@
       [H4]Parents[h4]
       Please see page 96 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <Motivation>Relationship</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -463,7 +463,7 @@
       [H4]Extended Family/Clan[h4]
       Please see page 96 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <Motivation>Relationship</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -473,7 +473,7 @@
       [H4]Droid Companion[h4]
       Please see page 96 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <Motivation>Relationship</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -483,7 +483,7 @@
       [H4]Former Nemesis[h4]
       Please see page 96 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <Motivation>Relationship</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -493,7 +493,7 @@
       [H4]The Republic[h4]
       Please see page 105 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="105">Age of Rebellion Core Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -503,7 +503,7 @@
       [H4]Honor[h4]
       Please see page 105 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="105">Age of Rebellion Core Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -513,7 +513,7 @@
       [H4]Free Enterprise[h4]
       Please see page 68 of the Age of Rebellion Beta Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Beta Rulebook</Source>
+    <Source Page="68">Age of Rebellion Beta Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -523,17 +523,17 @@
       [H4]The Jedi[h4]
       Please see page 105 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="105">Age of Rebellion Core Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
     <Key>BELJUSTICE</Key>
-   	<Name>Justice</Name>
+    <Name>Justice</Name>
     <Description>
       [H4]Justice[h4]
       Please see page 105 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="105">Age of Rebellion Core Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -543,7 +543,7 @@
       [H4]Species Rights[h4]
       Please see page 105 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="105">Age of Rebellion Core Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -553,7 +553,7 @@
       [H4]Peace[h4]
       Please see page 105 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="105">Age of Rebellion Core Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -563,7 +563,7 @@
       [H4]Religion/Philosophy[h4]
       Please see page 105 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="105">Age of Rebellion Core Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -573,7 +573,7 @@
       [H4]Liberty[h4]
       Please see page 68 of the Age of Rebellion Beta Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Beta Rulebook</Source>
+    <Source Page="68">Age of Rebellion Beta Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -583,7 +583,7 @@
       [H4]Freedom[h4]
       Please see page 105 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="105">Age of Rebellion Core Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -593,7 +593,7 @@
       [H4]Order[h4]
       Please see page 68 of the Age of Rebellion Beta Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Beta Rulebook</Source>
+    <Source Page="68">Age of Rebellion Beta Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -603,7 +603,7 @@
       [H4]Progress[h4]
       Please see page 105 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="105">Age of Rebellion Core Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -613,7 +613,7 @@
       [H4]The Force[h4]
       Please see page 68 of the Age of Rebellion Beta Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Beta Rulebook</Source>
+    <Source Page="68">Age of Rebellion Beta Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -623,7 +623,7 @@
       [H4]Crime[h4]
       Please see page 105 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="105">Age of Rebellion Core Rulebook</Source>
     <Motivation>Belief</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -633,7 +633,7 @@
       [H4]Political[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Connections</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -643,7 +643,7 @@
       [H4]Family[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Connections</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -653,7 +653,7 @@
       [H4]Military[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Connections</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -663,7 +663,7 @@
       [H4]Intelligence[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Connections</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -673,7 +673,7 @@
       [H4]Friends[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Connections</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -683,7 +683,7 @@
       [H4]The Underworld[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Connections</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -694,7 +694,7 @@
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
     <Motivation>Connections</Motivation>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
   </SpecificMotivation>
   <SpecificMotivation>
     <Key>CONRIVAL</Key>
@@ -703,7 +703,7 @@
       [H4]Rival[h4]
       Please see page 69 of the Age of Rebellion Beta Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Beta Rulebook</Source>
+    <Source Page="69">Age of Rebellion Beta Rulebook</Source>
     <Motivation>Connections</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -713,7 +713,7 @@
       [H4]No One[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Connections</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -723,7 +723,7 @@
       [H4]Rescuer[h4]
       Please see page 69 of the Age of Rebellion Beta Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Beta Rulebook</Source>
+    <Source Page="69">Age of Rebellion Beta Rulebook</Source>
     <Motivation>Connections</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -733,7 +733,7 @@
       [H4]The Empire[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Connections</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -743,7 +743,7 @@
       [H4]Love Interest[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Connections</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -753,7 +753,7 @@
       [H4]Redemption[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Quest</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -763,7 +763,7 @@
       [H4]Glory[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Quest</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -773,7 +773,7 @@
       [H4]Vengeance[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Quest</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -784,7 +784,7 @@
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
     <Motivation>Quest</Motivation>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
   </SpecificMotivation>
   <SpecificMotivation>
     <Key>QUERESCUE</Key>
@@ -793,7 +793,7 @@
       [H4]Rescue[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Quest</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -803,7 +803,7 @@
       [H4]The Jedi[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Quest</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -813,7 +813,7 @@
       [H4]Freedom[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Quest</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -823,7 +823,7 @@
       [H4]Lost Treasure[h4]
       Please see page 69 of the Age of Rebellion Beta Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Beta Rulebook</Source>
+    <Source Page="69">Age of Rebellion Beta Rulebook</Source>
     <Motivation>Quest</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -833,7 +833,7 @@
       [H4]Thrill[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Quest</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -843,7 +843,7 @@
       [H4]Purpose[h4]
       Please see page 69 of the Age of Rebellion Beta Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Beta Rulebook</Source>
+    <Source Page="69">Age of Rebellion Beta Rulebook</Source>
     <Motivation>Quest</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -853,7 +853,7 @@
       [H4]Riches[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Quest</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -863,7 +863,7 @@
       [H4]The Sith[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <Motivation>Quest</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -873,7 +873,7 @@
       [H4]Self[h4]
       Please see page 32 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="32">Enter the Unknown</Source>
     <Motivation>Discovery</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -883,7 +883,7 @@
       [H4]Civilization[h4]
       Please see page 32 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="32">Enter the Unknown</Source>
     <Motivation>Discovery</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -893,7 +893,7 @@
       [H4]Planets[h4]
       Please see page 32 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="32">Enter the Unknown</Source>
     <Motivation>Discovery</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -903,7 +903,7 @@
       [H4]Treasures[h4]
       Please see page 32 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="32">Enter the Unknown</Source>
     <Motivation>Discovery</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -913,7 +913,7 @@
       [H4]Secrets[h4]
       Please see page 32 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="32">Enter the Unknown</Source>
     <Motivation>Discovery</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -923,7 +923,7 @@
       [H4]Knowledge[h4]
       Please see page 32 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="32">Enter the Unknown</Source>
     <Motivation>Discovery</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -933,7 +933,7 @@
       [H4]Resources[h4]
       Please see page 32 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="32">Enter the Unknown</Source>
     <Motivation>Discovery</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -943,7 +943,7 @@
       [H4]Technology[h4]
       Please see page 32 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="32">Enter the Unknown</Source>
     <Motivation>Discovery</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -953,7 +953,7 @@
       [H4]The Lost[h4]
       Please see page 32 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="32">Enter the Unknown</Source>
     <Motivation>Discovery</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -963,7 +963,7 @@
       [H4]"Anywhere But Here!"[h4]
       Please see page 32 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="32">Enter the Unknown</Source>
     <Motivation>Discovery</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -974,8 +974,7 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source>Dangerous Covenants</Source>
-      <Source>Stay on Target</Source>
+      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -987,8 +986,7 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source>Dangerous Covenants</Source>
-      <Source>Stay on Target</Source>
+      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -999,7 +997,7 @@
       [H4]Squadmates[h4]
       Please see page 34 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="34">Dangerous Covenants</Source>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1009,7 +1007,7 @@
       [H4]Blood Money[h4]
       Please see page 34 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="34">Dangerous Covenants</Source>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1020,8 +1018,7 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source>Dangerous Covenants</Source>
-      <Source>Stay on Target</Source>
+      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -1032,7 +1029,7 @@
       [H4]Best in the Field[h4]
       Please see page 34 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="34">Dangerous Covenants</Source>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1043,8 +1040,7 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source>Dangerous Covenants</Source>
-      <Source>Stay on Target</Source>
+      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -1055,7 +1051,7 @@
       [H4]Out of the Game[h4]
       Please see page 34 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="34">Dangerous Covenants</Source>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1066,8 +1062,7 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source>Dangerous Covenants</Source>
-      <Source>Stay on Target</Source>
+      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -1079,8 +1074,7 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source>Dangerous Covenants</Source>
-      <Source>Stay on Target</Source>
+      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -1091,7 +1085,7 @@
       [H4]Squadron[h4]
       Please see page 34 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="34">Stay on Target</Source>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1101,7 +1095,7 @@
       [H4]Professional[h4]
       Please see page 34 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="34">Stay on Target</Source>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1111,7 +1105,7 @@
       [H4]Best of the Best[h4]
       Please see page 34 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="34">Stay on Target</Source>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1121,7 +1115,7 @@
       [H4]Retirement[h4]
       Please see page 34 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="34">Stay on Target</Source>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1130,7 +1124,7 @@
     <Description>
       [H4]Society[h4]
       Please see page 34 of the Far Horizons Sourcebook for details.</Description>
-    <Source>Far Horizons</Source>
+    <Source Page="34">Far Horizons</Source>
     <Motivation>Creations</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1139,7 +1133,7 @@
     <Description>
       [H4]Homestead[h4]
       Please see page 34 of the Far Horizons Sourcebook for details.</Description>
-    <Source>Far Horizons</Source>
+    <Source Page="34">Far Horizons</Source>
     <Motivation>Creations</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1148,7 +1142,7 @@
     <Description>
       [H4]Legacy[h4]
       Please see page 34 of the Far Horizons Sourcebook for details.</Description>
-    <Source>Far Horizons</Source>
+    <Source Page="34">Far Horizons</Source>
     <Motivation>Creations</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1157,7 +1151,7 @@
     <Description>
       [H4]Family[h4]
       Please see page 34 of the Far Horizons Sourcebook for details.</Description>
-    <Source>Far Horizons</Source>
+    <Source Page="34">Far Horizons</Source>
     <Motivation>Creations</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1166,7 +1160,7 @@
     <Description>
       [H4]Art[h4]
       Please see page 34 of the Far Horizons Sourcebook for details.</Description>
-    <Source>Far Horizons</Source>
+    <Source Page="34">Far Horizons</Source>
     <Motivation>Creations</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1175,7 +1169,7 @@
     <Description>
       [H4]Cure[h4]
       Please see page 34 of the Far Horizons Sourcebook for details.</Description>
-    <Source>Far Horizons</Source>
+    <Source Page="34">Far Horizons</Source>
     <Motivation>Creations</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1184,7 +1178,7 @@
     <Description>
       [H4]Understanding[h4]
       Please see page 34 of the Far Horizons Sourcebook for details.</Description>
-    <Source>Far Horizons</Source>
+    <Source Page="34">Far Horizons</Source>
     <Motivation>Creations</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1193,7 +1187,7 @@
     <Description>
       [H4]Business[h4]
       Please see page 34 of the Far Horizons Sourcebook for details.</Description>
-    <Source>Far Horizons</Source>
+    <Source Page="34">Far Horizons</Source>
     <Motivation>Creations</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1203,7 +1197,7 @@
       [H4]Natural World[h4]
       Please see page 107 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="107">Force and Destiny Core Rulebook</Source>
     <Motivation>Faith</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1213,7 +1207,7 @@
       [H4]Goodness of People[h4]
       Please see page 107 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="107">Force and Destiny Core Rulebook</Source>
     <Motivation>Faith</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1223,7 +1217,7 @@
       [H4]Friends and Family[h4]
       Please see page 107 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="107">Force and Destiny Core Rulebook</Source>
     <Motivation>Faith</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1233,7 +1227,7 @@
       [H4]The Cosmic Force[h4]
       Please see page 107 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="107">Force and Destiny Core Rulebook</Source>
     <Motivation>Faith</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1243,7 +1237,7 @@
       [H4]Science and Reason[h4]
       Please see page 107 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="107">Force and Destiny Core Rulebook</Source>
     <Motivation>Faith</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1253,7 +1247,7 @@
       [H4]The Jedi Code[h4]
       Please see page 107 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="107">Force and Destiny Core Rulebook</Source>
     <Motivation>Faith</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1263,7 +1257,7 @@
       [H4]Imperial Rule[h4]
       Please see page 107 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="107">Force and Destiny Core Rulebook</Source>
     <Motivation>Faith</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1273,7 +1267,7 @@
       [H4]The Rebellion[h4]
       Please see page 107 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="107">Force and Destiny Core Rulebook</Source>
     <Motivation>Faith</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1283,7 +1277,7 @@
       [H4]Religious Code[h4]
       Please see page 107 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="107">Force and Destiny Core Rulebook</Source>
     <Motivation>Faith</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1293,7 +1287,7 @@
       [H4]Nothing[h4]
       Please see page 107 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="107">Force and Destiny Core Rulebook</Source>
     <Motivation>Faith</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1303,7 +1297,7 @@
       [H4]Credits[h4]
       Please see page 35 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="35">Fly Casual</Source>
     <Motivation>Reward</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1313,7 +1307,7 @@
       [H4]Power[h4]
       Please see page 35 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="35">Fly Casual</Source>
     <Motivation>Reward</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1323,7 +1317,7 @@
       [H4]Victory[h4]
       Please see page 35 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="35">Fly Casual</Source>
     <Motivation>Reward</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1333,7 +1327,7 @@
       [H4]Beating the Odds[h4]
       Please see page 35 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="35">Fly Casual</Source>
     <Motivation>Reward</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1343,7 +1337,7 @@
       [H4]Fame[h4]
       Please see page 35 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="35">Fly Casual</Source>
     <Motivation>Reward</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1353,7 +1347,7 @@
       [H4]Esteem[h4]
       Please see page 35 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="35">Fly Casual</Source>
     <Motivation>Reward</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1363,7 +1357,7 @@
       [H4]Experience[h4]
       Please see page 35 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="35">Fly Casual</Source>
     <Motivation>Reward</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1373,7 +1367,7 @@
       [H4]Moral[h4]
       Please see page 35 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="35">Fly Casual</Source>
     <Motivation>Reward</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1383,7 +1377,7 @@
       [H4]Excitement[h4]
       Please see page 35 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="35">Fly Casual</Source>
     <Motivation>Reward</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1393,7 +1387,7 @@
       [H4]Independence[h4]
       Please see page 35 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="35">Fly Casual</Source>
     <Motivation>Reward</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1403,7 +1397,7 @@
       [H4]Power Corrupts[h4]
       Please see page 36 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="36">Desperate Allies</Source>
     <Motivation>Creed</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1413,7 +1407,7 @@
       [H4]Strive for Excellence[h4]
       Please see page 36 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="36">Desperate Allies</Source>
     <Motivation>Creed</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1423,7 +1417,7 @@
       [H4]The Body Needs a Head[h4]
       Please see page 36 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="36">Desperate Allies</Source>
     <Motivation>Creed</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1433,7 +1427,7 @@
       [H4]Order from Chaos[h4]
       Please see page 36 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="36">Desperate Allies</Source>
     <Motivation>Creed</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1443,7 +1437,7 @@
       [H4]Never Alone[h4]
       Please see page 36 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="36">Desperate Allies</Source>
     <Motivation>Creed</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1453,7 +1447,7 @@
       [H4]Return the Favor[h4]
       Please see page 36 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="36">Desperate Allies</Source>
     <Motivation>Creed</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1463,7 +1457,7 @@
       [H4]Be Unique[h4]
       Please see page 36 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="36">Desperate Allies</Source>
     <Motivation>Creed</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1473,7 +1467,7 @@
       [H4]People Are Counting on Me[h4]
       Please see page 36 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="36">Desperate Allies</Source>
     <Motivation>Creed</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1483,7 +1477,7 @@
       [H4]Balance Must Be Restored[h4]
       Please see page 36 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="36">Desperate Allies</Source>
     <Motivation>Creed</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1493,12 +1487,10 @@
       [H4]Living Memory[h4]
       Please see page 36 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="36">Desperate Allies</Source>
     <Motivation>Creed</Motivation>
   </SpecificMotivation>
-  
   <!-- Keeping the Peace -->
-
   <SpecificMotivation>
     <Key>OATHJUSTICE</Key>
     <Name>Justice</Name>
@@ -1506,7 +1498,7 @@
       [H4]Justice[h4]
       Please see page 33 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="33">Keeping the Peace</Source>
     <Motivation>Oath</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1516,7 +1508,7 @@
       [H4]Artistic Legacy[h4]
       Please see page 33 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="33">Keeping the Peace</Source>
     <Motivation>Oath</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1526,7 +1518,7 @@
       [H4]Life Itself[h4]
       Please see page 33 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="33">Keeping the Peace</Source>
     <Motivation>Oath</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1536,7 +1528,7 @@
       [H4]The Republic[h4]
       Please see page 33 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="33">Keeping the Peace</Source>
     <Motivation>Oath</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1546,7 +1538,7 @@
       [H4]Balance of the Force[h4]
       Please see page 33 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="33">Keeping the Peace</Source>
     <Motivation>Oath</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1556,7 +1548,7 @@
       [H4]Love[h4]
       Please see page 33 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="33">Keeping the Peace</Source>
     <Motivation>Oath</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1566,7 +1558,7 @@
       [H4]Homeland[h4]
       Please see page 33 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="33">Keeping the Peace</Source>
     <Motivation>Oath</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1576,7 +1568,7 @@
       [H4]Departed[h4]
       Please see page 33 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="33">Keeping the Peace</Source>
     <Motivation>Oath</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1586,7 +1578,7 @@
       [H4]Species[h4]
       Please see page 33 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="33">Keeping the Peace</Source>
     <Motivation>Oath</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1596,12 +1588,10 @@
       [H4]Ward[h4]
       Please see page 33 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="33">Keeping the Peace</Source>
     <Motivation>Oath</Motivation>
   </SpecificMotivation>
-
   <!-- Lead by Example -->
-
   <SpecificMotivation>
     <Key>DRIVEGUILT</Key>
     <Name>Guilt</Name>
@@ -1609,7 +1599,7 @@
       [H4]Guilt[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="37">Lead by Example</Source>
     <Motivation>Drive</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1619,7 +1609,7 @@
       [H4]The Mission[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="37">Lead by Example</Source>
     <Motivation>Drive</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1629,7 +1619,7 @@
       [H4]At All Costs[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="37">Lead by Example</Source>
     <Motivation>Drive</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1639,7 +1629,7 @@
       [H4]The Republic[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="37">Lead by Example</Source>
     <Motivation>Drive</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1649,7 +1639,7 @@
       [H4]Subordinates[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="37">Lead by Example</Source>
     <Motivation>Drive</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1659,7 +1649,7 @@
       [H4]Redemption[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="37">Lead by Example</Source>
     <Motivation>Drive</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1669,7 +1659,7 @@
       [H4]The Game[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="37">Lead by Example</Source>
     <Motivation>Drive</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1679,7 +1669,7 @@
       [H4]Ego[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="37">Lead by Example</Source>
     <Motivation>Drive</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1689,7 +1679,7 @@
       [H4]Retirement[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="37">Lead by Example</Source>
     <Motivation>Drive</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1699,11 +1689,9 @@
       [H4]Spirit[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="37">Lead by Example</Source>
     <Motivation>Drive</Motivation>
   </SpecificMotivation>
-
-
   <SpecificMotivation>
     <Key>LOCALEENENAM</Key>
     <Name>Enamored of the Kindalo</Name>
@@ -1711,7 +1699,7 @@
       [H4]Enamored of the Kindalo[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Aleen</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1721,7 +1709,7 @@
       [H4]Follower of Orphne[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Aleen</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1731,7 +1719,7 @@
       [H4]Isolationist[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Auratera</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1741,7 +1729,7 @@
       [H4]Study of the Past[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Auratera</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1751,7 +1739,7 @@
       [H4]Preservationist[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Bardotta</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1761,7 +1749,7 @@
       [H4]Mendicant[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Bardotta</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1771,7 +1759,7 @@
       [H4]Frangawl Sympathizer[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Bardotta</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1781,7 +1769,7 @@
       [H4]Matriarch[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Devaron</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1791,7 +1779,7 @@
       [H4]Visions of the Future[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Iktotch</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1801,7 +1789,7 @@
       [H4]Exile[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Iktotch</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1811,7 +1799,7 @@
       [H4]Collaborator[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Iktotch</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1821,7 +1809,7 @@
       [H4]Up from Poverty[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Lothal</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1831,7 +1819,7 @@
       [H4]Revolutionary[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Lothal</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1841,7 +1829,7 @@
       [H4]War Profiteer[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Lothal</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1851,7 +1839,7 @@
       [H4]Envoy[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Naboo</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1861,7 +1849,7 @@
       [H4]Poet[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Naboo</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1871,7 +1859,7 @@
       [H4]Gungan Rights[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Naboo</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1881,7 +1869,7 @@
       [H4]Archaeologist[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Ossus</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1891,7 +1879,7 @@
       [H4]Plunderer[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Ossus</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1901,7 +1889,7 @@
       [H4]Force-Reverent[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Weik</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1911,7 +1899,7 @@
       [H4]Caste Member[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Weik</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -1921,8 +1909,107 @@
       [H4]Wide-Eyed Wanderer[h4]
       Please see page 115 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="115">Nexus of Power</Source>
     <Motivation>Location: Weik</Motivation>
   </SpecificMotivation>
-
+  <SpecificMotivation>
+    <Key>INNOVFAB</Key>
+    <Name>Fabrication</Name>
+    <Description>
+      [H4]Fabrication[h4]
+      Please see page 37 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="37">Special Modifications</Source>
+    <Motivation>Innovation</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INNOVINV</Key>
+    <Name>Invention</Name>
+    <Description>
+      [H4]Invention[h4]
+      Please see page 37 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="37">Special Modifications</Source>
+    <Motivation>Innovation</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INNOVMOD</Key>
+    <Name>Modification</Name>
+    <Description>
+      [H4]Modification[h4]
+      Please see page 37 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="37">Special Modifications</Source>
+    <Motivation>Innovation</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INNOVIMP</Key>
+    <Name>Personal Improvement</Name>
+    <Description>
+      [H4]Personal Improvement[h4]
+      Please see page 37 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="37">Special Modifications</Source>
+    <Motivation>Innovation</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INNOVWASTE</Key>
+    <Name>Waste Not, Want Not</Name>
+    <Description>
+      [H4]Waste Not, Want Not[h4]
+      Please see page 37 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="37">Special Modifications</Source>
+    <Motivation>Innovation</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INNOVTECHFASC</Key>
+    <Name>Technological Fascination</Name>
+    <Description>
+      [H4]Technological Fascination[h4]
+      Please see page 37 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="37">Special Modifications</Source>
+    <Motivation>Innovation</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INNOVTECHBUS</Key>
+    <Name>Technical Business Interests</Name>
+    <Description>
+      [H4]Technical Business Interests[h4]
+      Please see page 37 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="37">Special Modifications</Source>
+    <Motivation>Innovation</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INNOVTECHHIST</Key>
+    <Name>Technological Historian</Name>
+    <Description>
+      [H4]Technological Historian[h4]
+      Please see page 37 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="37">Special Modifications</Source>
+    <Motivation>Innovation</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INNOVTECHNECESS</Key>
+    <Name>Technological Necessity</Name>
+    <Description>
+      [H4]Technological Necessity[h4]
+      Please see page 37 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="37">Special Modifications</Source>
+    <Motivation>Innovation</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INNOVTECHRIVAL</Key>
+    <Name>Technical Rival</Name>
+    <Description>
+      [H4]Technical Rival[h4]
+      Please see page 37 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="37">Special Modifications</Source>
+    <Motivation>Innovation</Motivation>
+  </SpecificMotivation>
 </SpecificMotivations>

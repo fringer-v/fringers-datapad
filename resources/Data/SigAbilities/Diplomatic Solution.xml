@@ -6,7 +6,7 @@
     [H4]Diplomat Signature Ability: Diplomatic Solution[h4]
     Please see page 38 of the Desperate Allies Sourcebook for details.
 </Description>
-  <Source>Desperate Allies</Source>
+  <Source Page="38">Desperate Allies</Source>
   <Sources />
   <AbilityRows>
     <AbilityRow>

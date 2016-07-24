@@ -6,7 +6,7 @@
     [H3]YKL-37R Nova Courier (Customized)[h3]
     Please see page 37 of the Long Arm of the Hutt Bonus Adventure for details.
   </Description>
-  <Source>Long Arm of the Hutt</Source>
+  <Source Page="37">Long Arm of the Hutt</Source>
   <Type>Light Freighter</Type>
   <Categories>
     <Category>Starship</Category>

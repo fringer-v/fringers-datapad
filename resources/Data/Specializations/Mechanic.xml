@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>MECHANIC</Key>
   <Name>Mechanic</Name>
   <Description>
-    [H4]Mechanic &#8212; Making Stuff Work[h4]
+    [H4]Mechanic — Making Stuff Work[h4]
     Please see page 89 of the Edge of the Empire Core Rulebook, or page 85 of the Age of Rebellion Core Rulebook, for details.
   </Description>
   <Sources>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="89">Edge of the Empire Core Rulebook</Source>
+    <Source Page="85">Age of Rebellion Core Rulebook</Source>
   </Sources>
   <CareerSkills>
     <Key>BRAWL</Key>

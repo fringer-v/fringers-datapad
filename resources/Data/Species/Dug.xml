@@ -53,18 +53,18 @@
     [P]Although many Dugs are forced to learn Gran, most of them decide not to learn Basic, hoping to 
     force others to learn Dug language, thus acknowledging their society.
   </Description>
-  <Source>Unofficial Species Menagerie</Source>
+  <Source Page="22">Special Modifications</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>3</Agility>
     <Intellect>2</Intellect>
     <Cunning>2</Cunning>
-    <Willpower>1</Willpower>
-    <Presence>2</Presence>
+    <Willpower>2</Willpower>
+    <Presence>1</Presence>
   </StartingChars>
   <StartingAttrs>
-    <WoundThreshold>10</WoundThreshold>
-    <StrainThreshold>10</StrainThreshold>
+    <WoundThreshold>9</WoundThreshold>
+    <StrainThreshold>8</StrainThreshold>
     <Experience>90</Experience>
   </StartingAttrs>
   <SkillModifiers>
@@ -75,35 +75,11 @@
     </SkillModifier>
   </SkillModifiers>
   <TalentModifiers>
+    <TalentModifier>
+      <Key>DEFDRI</Key>
+      <RankAdd>1</RankAdd>
+    </TalentModifier>
   </TalentModifiers>
   <OptionChoices>
-    <OptionChoice>
-      <Key>DUGAB1</Key>
-      <Name>Coordination</Name>
-      <Options>
-        <Option>
-          <Key>DUGAB1COO</Key>
-          <Name>Ombidexterous</Name>
-          <Description>
-            Dugs add [BOOST] to all
-            Coordination checks and to combat checks
-            when attacking with two weapons.
-          </Description>
-        </Option>
-      </Options>
-    </OptionChoice>
-    <OptionChoice>
-      <Key>DUGAB2</Key>
-      <Name>Size</Name>
-      <Options>
-        <Option>
-          <Key>DUGAB2PER</Key>
-          <Name>Reduced Silouette</Name>
-          <Description>
-            Dugs have a Silhouette of 0.
-          </Description>
-        </Option>
-      </Options>
-    </OptionChoice>
   </OptionChoices>
 </Species>

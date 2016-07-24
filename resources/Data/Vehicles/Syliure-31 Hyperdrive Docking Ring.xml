@@ -6,7 +6,7 @@
     [H3]Syliure-31 Hyperdrive Ring[h3]
     Please see sidebar on page 259 of the Force and Destiny Core Rulebook for details.
   </Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="259">Force and Destiny Core Rulebook</Source>
   <Sources />
   <Type>Hyperdrive Docking Ring</Type>
   <Categories />
@@ -25,7 +25,8 @@
   <Crew>One R1- or R2-Series Astromech</Crew>
   <EncumbranceCapacity>0</EncumbranceCapacity>
   <Passengers>0</Passengers>
-  <Consumables></Consumables>
+  <Consumables>
+  </Consumables>
   <Silhouette>3</Silhouette>
   <Speed>4</Speed>
   <Handling>0</Handling>

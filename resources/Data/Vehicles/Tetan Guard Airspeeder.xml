@@ -4,7 +4,7 @@
   <Name>Tetan Guard Airspeeder</Name>
   <Description>[H3]SEC-22m Tetan Guard Airspeeder[h3]
 Please see page 124 of the Nexus of Power Sourcebook for details.</Description>
-  <Source>Nexus of Power</Source>
+  <Source Page="124">Nexus of Power</Source>
   <Sources />
   <Type>Airspeeder</Type>
   <Categories>

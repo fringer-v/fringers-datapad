@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Obligations>
   <Obligation>
     <Key>ADD</Key>
@@ -8,7 +8,7 @@
       Please see page 39 of the Edge of the Empire Core Rulebook for details.
 
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="39">Edge of the Empire Core Rulebook</Source>
   </Obligation>
   <Obligation>
     <Key>BET</Key>
@@ -18,8 +18,8 @@
       Please see page 39 of the Edge of the Empire Core Rulebook, or page 17 of the Fly Casual Sourcebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Fly Casual</Source>
+      <Source Page="39">Edge of the Empire Core Rulebook</Source>
+      <Source Page="17">Fly Casual Sourcebook</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -30,7 +30,7 @@
       Please see page 39 of the Edge of the Empire Core Rulebook for details.
 
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="39">Edge of the Empire Core Rulebook</Source>
   </Obligation>
   <Obligation>
     <Key>BOU</Key>
@@ -40,9 +40,9 @@
       Please see page 39 of the Edge of the Empire Core Rulebook, page 17 of the Far Horizons Sourcebook, or page 17 of the Fly Casual Sourcebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Far Horizons</Source>
-      <Source>Fly Casual</Source>
+      <Source Page="39">Edge of the Empire Core Rulebook</Source>
+      <Source Page="17">Far Horizons Sourcebook</Source>
+      <Source Page="17">Fly Casual Sourcebook</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -53,8 +53,8 @@
       Please see page 39 of the Edge of the Empire Core Rulebook, or page 17 of the Fly Casual Sourcebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Fly Casual</Source>
+      <Source Page="39">Edge of the Empire Core Rulebook</Source>
+      <Source Page="17">Fly Casual Sourcebook</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -65,9 +65,9 @@
       Please see page 39 of the Edge of the Empire Core Rulebook,  page 17 of the Far Horizons Sourcebook, or page 17 of the Fly Casual Sourcebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Far Horizons</Source>
-      <Source>Fly Casual</Source>
+      <Source Page="39">Edge of the Empire Core Rulebook</Source>
+      <Source Page="17">Far Horizons Sourcebook</Source>
+      <Source Page="17">Fly Casual Sourcebook</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -77,7 +77,7 @@
       [H4]Dutybound:[h4]
       Please see page 39 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="39">Edge of the Empire Core Rulebook</Source>
   </Obligation>
   <Obligation>
     <Key>FAM</Key>
@@ -87,9 +87,9 @@
       Please see page 39 of the Edge of the Empire Core Rulebook, page 17 of the Far Horizons Sourcebook, or page 17 of the Fly Casual Sourcebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Far Horizons</Source>
-      <Source>Fly Casual</Source>
+      <Source Page="39">Edge of the Empire Core Rulebook</Source>
+      <Source Page="17">Far Horizons Sourcebook</Source>
+      <Source Page="17">Fly Casual Sourcebook</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -100,9 +100,9 @@
       Please see page 39 of the Edge of the Empire Core Rulebook, page 17 of the Far Horizons Sourcebook, or page 17 of the Fly Casual Sourcebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Far Horizons</Source>
-      <Source>Fly Casual</Source>
+      <Source Page="39">Edge of the Empire Core Rulebook</Source>
+      <Source Page="17">Far Horizons Sourcebook</Source>
+      <Source Page="17">Fly Casual Sourcebook</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -112,7 +112,7 @@
       [H4]Oath[h4]
       Please see page 39 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="39">Edge of the Empire Core Rulebook</Source>
   </Obligation>
   <Obligation>
     <Key>OBS</Key>
@@ -122,7 +122,7 @@
       Please see page 39 of the Edge of the Empire Core Rulebook for details.
 
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="39">Edge of the Empire Core Rulebook</Source>
   </Obligation>
   <Obligation>
     <Key>RESP</Key>
@@ -132,8 +132,8 @@
       Please see page 39 of the Edge of the Empire Core Rulebook, or page 17 of the Far Horizons Sourcebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Far Horizons</Source>
+      <Source Page="39">Edge of the Empire Core Rulebook</Source>
+      <Source Page="17">Far Horizons Sourcebook</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -143,15 +143,16 @@
       [H4]Sponsorship[h4]
       Please see page 19 of Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="19">Enter the Unknown</Source>
   </Obligation>
   <Obligation>
     <Key>FERV</Key>
     <Name>Fervor</Name>
     <Description>
       [H4]Fervor[h4]
+      Please see page 19 of Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="19">Enter the Unknown</Source>
   </Obligation>
   <Obligation>
     <Key>ADRENALINE</Key>
@@ -160,7 +161,7 @@
       [H4]Adrenaline Rush[h4]
       Please see page 17 of Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="17">Dangerous Covenants</Source>
   </Obligation>
   <Obligation>
     <Key>COLLATERAL</Key>
@@ -169,7 +170,7 @@
       [H4]Collateral Accountability[h4]
       Please see page 17 of Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="17">Dangerous Covenants</Source>
   </Obligation>
   <Obligation>
     <Key>SCORE</Key>
@@ -178,7 +179,7 @@
       [H4]A Score to Settle[h4]
       Please see page 17 of Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="17">Dangerous Covenants</Source>
   </Obligation>
   <Obligation>
     <Key>PRICENAME</Key>
@@ -187,7 +188,7 @@
       [H4]The Price of a Name[h4]
       Please see page 17 of Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="17">Dangerous Covenants</Source>
   </Obligation>
   <Obligation>
     <Key>DISGRACED</Key>
@@ -196,7 +197,7 @@
       [H4]Disgraced[h4]
       Please see page 17 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="17">Far Horizons</Source>
   </Obligation>
   <Obligation>
     <Key>PHILAND</Key>
@@ -205,7 +206,7 @@
       [H4]Philanderer[h4]
       Please see page 17 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="17">Far Horizons</Source>
   </Obligation>
   <Obligation>
     <Key>EXILED</Key>
@@ -214,7 +215,7 @@
       [H4]Exiled[h4]
       Please see page 17 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="17">Far Horizons</Source>
   </Obligation>
   <Obligation>
     <Key>CONTRACTED</Key>
@@ -223,7 +224,7 @@
       [H4]Contracted[h4]
       Please see page 17 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="17">Far Horizons</Source>
   </Obligation>
   <Obligation>
     <Key>WITNESS</Key>
@@ -232,7 +233,7 @@
       [H4]Witness Protection[h4]
       Please see page 17 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="17">Far Horizons</Source>
   </Obligation>
   <Obligation>
     <Key>PACIFIST</Key>
@@ -241,7 +242,7 @@
       [H4]Pacifist[h4]
       Please see page 17 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="17">Far Horizons</Source>
   </Obligation>
   <Obligation>
     <Key>FRONTIER</Key>
@@ -250,7 +251,7 @@
       [H4]Frontier Justice[h4]
       Please see page 17 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="17">Far Horizons</Source>
   </Obligation>
   <Obligation>
     <Key>BASE</Key>
@@ -259,7 +260,7 @@
       [H4]Base of Operation[h4]
       Please see page 82 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="82">Far Horizons</Source>
   </Obligation>
   <Obligation>
     <Key>ANTAG</Key>
@@ -268,7 +269,7 @@
       [H4]Antagonist[h4]
       Please see page 17 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="17">Fly Casual</Source>
   </Obligation>
   <Obligation>
     <Key>BADREP</Key>
@@ -277,7 +278,7 @@
       [H4]Bad Reputation[h4]
       Please see page 17 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="17">Fly Casual</Source>
   </Obligation>
   <Obligation>
     <Key>NOTORIETY</Key>
@@ -286,7 +287,7 @@
       [H4]Notoriety[h4]
       Please see page 17 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="17">Fly Casual</Source>
   </Obligation>
   <Obligation>
     <Key>HIGHRISK</Key>
@@ -295,7 +296,7 @@
       [H4]High Risk[h4]
       Please see page 17 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="17">Fly Casual</Source>
   </Obligation>
   <Obligation>
     <Key>SERVITUDE</Key>
@@ -304,7 +305,7 @@
       [H4]Servitude[h4]
       Please see page 17 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="17">Fly Casual</Source>
   </Obligation>
   <Obligation>
     <Key>UNDERCONTRACT</Key>
@@ -313,6 +314,42 @@
       [H4]Under Contract[h4]
       Please see page 17 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="17">Fly Casual</Source>
+  </Obligation>
+  <Obligation>
+    <Key>CREW</Key>
+    <Name>Crew</Name>
+    <Description>
+      [H4]Crew[h4]
+      Please see page 18 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="18">Special Modifications</Source>
+  </Obligation>
+  <Obligation>
+    <Key>CONTRACT</Key>
+    <Name>Contract</Name>
+    <Description>
+      [H4]Contract[h4]
+      Please see page 18 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="18">Special Modifications</Source>
+  </Obligation>
+  <Obligation>
+    <Key>FAILEDREP</Key>
+    <Name>Failed Installation/Repair</Name>
+    <Description>
+      [H4]Failed Installation/Repair[h4]
+      Please see page 18 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="18">Special Modifications</Source>
+  </Obligation>
+  <Obligation>
+    <Key>UNFINBUS</Key>
+    <Name>Unfinished Business</Name>
+    <Description>
+      [H4]Unfinished Business[h4]
+      Please see page 18 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="18">Special Modifications</Source>
   </Obligation>
 </Obligations>

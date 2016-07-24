@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Species>
   <Key>SAKIYAN</Key>
   <Name>Sakiyan</Name>
@@ -6,7 +6,7 @@
     [H4]Sakiyan[h4]
     Please see page 98 of the Lords of Nal Hutta Sourcebook for details.
   </Description>
-  <Source>Lords of Nal Hutta</Source>
+  <Source Page="98">Lords of Nal Hutta</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>2</Agility>

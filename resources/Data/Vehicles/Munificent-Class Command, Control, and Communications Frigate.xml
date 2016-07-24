@@ -4,7 +4,7 @@
   <Name>Munificent-Class Command, Control, and Communications Frigate</Name>
   <Description>[H3][I]Munificent[i]-Class Command, Control, and Communications Frigate[h3]
 Please see page 52 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="52">Lead by Example</Source>
   <Type>Frigate</Type>
   <Categories>
     <Category>Capital Ship</Category>

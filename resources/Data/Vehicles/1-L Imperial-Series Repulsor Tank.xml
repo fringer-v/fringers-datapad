@@ -4,7 +4,7 @@
   <Name>1-L Imperial-Series Repulsor Tank</Name>
   <Description>[H3]1-L Imperial-Series Repulsor Tank[h3]
 Please see page 50 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="50">Stay on Target</Source>
   <Type>Landspeeder</Type>
   <Categories>
     <Category>Land Vehicle</Category>

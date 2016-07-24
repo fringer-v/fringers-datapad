@@ -4,7 +4,7 @@
   <Name>Z-95-AF4-H "Heavy-95" Multi-Role Starfighter</Name>
   <Description>[H3]Z-95-AF4-H "Heavy-95" Multi-Role Starfighter[h3]
 Please see page 56 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="56">Stay on Target</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

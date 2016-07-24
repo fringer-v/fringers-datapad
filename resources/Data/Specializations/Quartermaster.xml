@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>QUARTERMASTER</Key>
   <Name>Quartermaster</Name>
@@ -6,7 +6,7 @@
     [H4]Quartermaster - Managing the Resources[h4]
     Please see page 81 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="81">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>COMP</Key>
     <Key>NEG</Key>
@@ -32,7 +32,7 @@
         <Direction>
         </Direction>
         <Direction>
-		  <Down>true</Down>
+          <Down>true</Down>
         </Direction>
       </Directions>
     </TalentRow>
@@ -60,7 +60,7 @@
         </Direction>
         <Direction>
           <Down>true</Down>
-		  <Up>true</Up>
+          <Up>true</Up>
         </Direction>
       </Directions>
     </TalentRow>
@@ -81,16 +81,16 @@
         <Direction>
           <Right>true</Right>
           <Up>true</Up>
-		  <Down>true</Down>
+          <Down>true</Down>
         </Direction>
         <Direction>
           <Up>true</Up>
-		  <Down>true</Down>
+          <Down>true</Down>
           <Left>true</Left>
         </Direction>
         <Direction>
           <Up>true</Up>
-		  <Down>true</Down>
+          <Down>true</Down>
         </Direction>
       </Directions>
     </TalentRow>
@@ -112,7 +112,7 @@
         <Direction>
           <Right>true</Right>
           <Left>true</Left>
-		  <Up>true</Up>
+          <Up>true</Up>
         </Direction>
         <Direction>
           <Up>true</Up>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Career>
   <Key>EXPLORER</Key>
   <Name>Explorer</Name>
@@ -6,7 +6,7 @@
     [H4]Explorer[h4]
     Please see page 67 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="67">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>ASTRO</Key>
     <Key>COOL</Key>

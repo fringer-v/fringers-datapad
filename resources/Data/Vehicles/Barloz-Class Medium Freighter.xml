@@ -4,7 +4,7 @@
   <Name>Barloz-Class Medium Freighter</Name>
   <Description>[H3][I]Barloz[i] -Class Medium Freighter[h3]
 Please see page 61 of the Keeping the Peace sourcebook for details.</Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="61">Keeping the Peace</Source>
   <Type>Freighter</Type>
   <Categories>
     <Category>Starship</Category>

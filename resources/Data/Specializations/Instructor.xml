@@ -4,7 +4,7 @@
   <Name>Instructor</Name>
   <Description>[H4]Instructor[h4]
 Please see page 30 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="30">Lead by Example</Source>
   <CareerSkills>
     <Key>DISC</Key>
     <Key>EDU</Key>

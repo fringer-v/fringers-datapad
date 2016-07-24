@@ -5,7 +5,7 @@
   <Description>[H4]Corellian Human[h4]
 Please see page 93 of the Suns of Fortune Sourcebook for details.
 </Description>
-  <Source>Suns of Fortune</Source>
+  <Source Page="93">Suns of Fortune</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>2</Agility>

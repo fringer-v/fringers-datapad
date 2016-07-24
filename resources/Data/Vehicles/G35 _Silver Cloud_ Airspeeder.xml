@@ -6,7 +6,7 @@
     [H3]G35 "Silver Cloud" Airspeeder[h3]
     Please see page 104 of the Suns of Fortune Sourcebook for details.
   </Description>
-  <Source>Suns of Fortune</Source>
+  <Source Page="104">Suns of Fortune</Source>
   <Type>Airspeeder</Type>
   <Categories>
     <Category>Air Vehicle</Category>

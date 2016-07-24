@@ -21,8 +21,8 @@ Dac, as it is called in Mon Calamarian, Quarrenese, and Basic, also known as Mon
 Quarren, also refererred to as Quarrenese, is the official language of the Quarren species.
 [P]Quarrens are mostly bilingual in both Quarrenese and Basic, although many of them also learn Mon Calamarian. Converesly, many Mon Calamari learn Mon Calamarian, Basic and Quarrenese. Quarrenese is also extended in planets with notable colonies of Quarrens.</Description>
   <Sources>
-    <Source>Fly Casual</Source>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="23">Fly Casual</Source>
+    <Source Page="100">Strongholds of Resistance</Source>
   </Sources>
   <StartingChars>
     <Brawn>2</Brawn>

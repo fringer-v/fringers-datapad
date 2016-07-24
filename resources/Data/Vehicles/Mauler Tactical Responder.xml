@@ -4,8 +4,7 @@
   <Name>Mauler Tactical Responder</Name>
   <Description>[H3]Mauler Tactical Responder[h3]
 Please see page 51 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="51">Far Horizons</Source>
   <Type>Airspeeder</Type>
   <Categories>
     <Category>Air Vehicle</Category>

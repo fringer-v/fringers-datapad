@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Career>
   <Key>ENGINEER</Key>
   <Name>Engineer</Name>
@@ -6,7 +6,7 @@
     [H4]Engineer[h4]
     Please see page 82 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="82">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>ATHL</Key>
     <Key>COMP</Key>

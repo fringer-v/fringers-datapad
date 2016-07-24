@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>SCOUND</Key>
   <Name>Scoundrel</Name>
   <Description>
-    [H4]Scoundrel &#8212; A Galaxy of Marks[h4]
+    [H4]Scoundrel — A Galaxy of Marks[h4]
     Please see page 84 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="84">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>CHARM</Key>
     <Key>COOL</Key>

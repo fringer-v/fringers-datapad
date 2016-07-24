@@ -4,7 +4,7 @@
   <Name>Chagrian</Name>
   <Description>[H4]Chagrian[h4]
 See page 19 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="19">Lead by Example</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>1</Agility>

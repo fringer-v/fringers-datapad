@@ -5,8 +5,8 @@
   <Description>[H3]HT-2200 Medium Freighter[h3]
 Please see page 56 of the Far Horizons Sourcebook, or page 264 of the Force and Destiny Core Rulebook, for details.</Description>
   <Sources>
-    <Source>Far Horizons</Source>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="56">Far Horizons Sourcebook</Source>
+    <Source Page="264">Force and Destiny Core Rulebook</Source>
   </Sources>
   <Type>Freighter</Type>
   <Categories>

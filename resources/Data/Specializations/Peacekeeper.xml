@@ -4,7 +4,7 @@
   <Name>Peacekeeper</Name>
   <Description>[H4]Peacekeeper[h4]
 Please see page 75 of the Force and Destiny Core Rulebook for details.</Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="75">Force and Destiny Core Rulebook</Source>
   <CareerSkills>
     <Key>DISC</Key>
     <Key>LEAD</Key>

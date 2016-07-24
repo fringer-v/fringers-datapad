@@ -6,7 +6,7 @@
     [H3]Sentinel-Class Landing Shuttle[h3]
     Please see page 273 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="273">Age of Rebellion Core Rulebook</Source>
   <Type>Shuttle</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

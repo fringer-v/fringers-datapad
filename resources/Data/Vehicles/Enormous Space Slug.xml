@@ -4,7 +4,7 @@
   <Name>Enormous Space Slug</Name>
   <Description>[H3]Enormous Space Slug[h3]
 Please see page 51 of the Strongholds of Resistance sourcebook for details.</Description>
-  <Source>Strongholds of Resistance</Source>
+  <Source Page="51">Strongholds of Resistance</Source>
   <Type>Space-dwelling Creature</Type>
   <Categories />
   <Encumbrance>0</Encumbrance>

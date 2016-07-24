@@ -4,7 +4,7 @@
   <Name>Kossak-Class Frigate</Name>
   <Description>[H3]Ubrikkian Industries Kossak-Class Frigate[h3]
 Please see page 117 of the Lords of Nal Hutta Sourcebook for details.</Description>
-  <Source>Lords of Nal Hutta</Source>
+  <Source Page="117">Lords of Nal Hutta</Source>
   <Sources />
   <Type>Frigate</Type>
   <Categories>

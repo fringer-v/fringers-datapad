@@ -4,7 +4,7 @@
   <Name>HSP-10 Pursuit Airspeeder</Name>
   <Description>[H3]HSP-10 Pursuit Airspeeder[h3]
       Please see page 52 of the Fly Casual Sourcebook for details.</Description>
-  <Source>Fly Casual</Source>
+  <Source Page="52">Fly Casual</Source>
   <Type>Airspeeder</Type>
   <Categories>
     <Category>Air Vehicle</Category>

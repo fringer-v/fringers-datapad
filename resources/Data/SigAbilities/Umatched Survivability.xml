@@ -6,7 +6,7 @@
     [H4]Ace Signature Ability: Umatched Survivability[h4]
     Please see page 37 of the Stay on Target Sourcebook for details.
   </Description>
-  <Source>Stay on Target</Source>
+  <Source Page="37">Stay on Target</Source>
   <Sources />
   <AbilityRows>
     <AbilityRow>

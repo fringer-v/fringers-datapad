@@ -4,7 +4,7 @@
   <Name>Cutlass-9 Patrol fighter</Name>
   <Description>[H3][I]Cutlass-9[i] Patrol fighter[h3]
 Please see page 78 of the Mask of the Pirate Queen adventure module for details.</Description>
-  <Source>Mask of the Pirate Queen</Source>
+  <Source Page="78">Mask of the Pirate Queen</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

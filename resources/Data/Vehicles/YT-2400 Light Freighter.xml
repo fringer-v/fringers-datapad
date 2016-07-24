@@ -1,11 +1,11 @@
-﻿<Vehicle>
+<Vehicle>
   <Key>YT2400</Key>
   <Name>YT-2400 Light Freighter</Name>
   <Description>
     [H3]YT-2400 Light Freighter[h3]
     Please see page 265 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="265">Edge of the Empire Core Rulebook</Source>
   <HyperdrivePrimary>2</HyperdrivePrimary>
   <HyperdriveBackup>12</HyperdriveBackup>
   <NaviComputer>true</NaviComputer>

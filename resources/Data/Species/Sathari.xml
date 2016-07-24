@@ -5,7 +5,7 @@
   <Description>[H4]Sathari[h4]
 Please see page 15 of the Chronicles of the Gatekeeper adventure module for details.
 </Description>
-  <Source>Chronicles of the Gatekeeper</Source>
+  <Source Page="15">Chronicles of the Gatekeeper</Source>
   <Sources />
   <StartingChars>
     <Brawn>1</Brawn>

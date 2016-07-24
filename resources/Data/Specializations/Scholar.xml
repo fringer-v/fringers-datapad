@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>SCHOLAR</Key>
   <Name>Scholar</Name>
   <Description>
-    [H4]Scholar &#8212; The Gift of Knowledge[h4]
+    [H4]Scholar — The Gift of Knowledge[h4]
     Please see page 67 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="67">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>OUT</Key>
     <Key>UND</Key>

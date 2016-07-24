@@ -66,7 +66,7 @@
     Basic with a remarkable accent due to the influence of Devaronese. Strangely, male Devaronians 
     usually do not read Basic, while female Devaronians can read and write Basic.
   </Description>
-  <Source>Nexus of Power</Source>
+  <Source Page="100">Nexus of Power</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>2</Agility>

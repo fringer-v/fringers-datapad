@@ -4,7 +4,7 @@
   <Name>TIE/PH "Phantom" Multi-Role Stealth Starfighter</Name>
   <Description>[H3]TIE/PH "Phantom" Multi-Role Stealth Starfighter[h3]
 Please see page 60 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="60">Stay on Target</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

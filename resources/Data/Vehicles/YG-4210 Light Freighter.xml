@@ -6,7 +6,7 @@
     [H3]YG-4210 Light Freighter[h3]
     Please see page 64 of the Enter the Unknown Sourcebook for details.
   </Description>
-  <Source>Enter the Unknown</Source>
+  <Source Page="64">Enter the Unknown</Source>
   <Type>Freighter</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

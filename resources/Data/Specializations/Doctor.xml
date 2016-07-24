@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>DOCTOR</Key>
   <Name>Doctor</Name>
   <Description>
-    [H4]Doctor &#8212; The Gift of Healing[h4]
+    [H4]Doctor — The Gift of Healing[h4]
     Please see page 65 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="65">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>COOL</Key>
     <Key>EDU</Key>

@@ -5,7 +5,7 @@
   <Description>[H3]MSP100 Pteropter Hover Pod[h3]
   Please see page 54 of the Onslaught at Arda I Adventure Module for details.
 </Description>
-  <Source>Onslaught at Arda I</Source>
+  <Source Page="54">Onslaught at Arda I</Source>
   <Sources />
   <Type>Airspeeder</Type>
   <Categories>

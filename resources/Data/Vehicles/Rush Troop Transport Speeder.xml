@@ -6,7 +6,7 @@
     [H3]Rush Troop Transport Speeder[h3]
     Please see page 63 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="63">Dangerous Covenants</Source>
   <Type>Airspeeder</Type>
   <Categories>
     <Category>Air Vehicle</Category>

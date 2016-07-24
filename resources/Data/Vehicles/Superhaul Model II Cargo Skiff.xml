@@ -4,8 +4,7 @@
   <Name>Superhaul Model II Cargo Skiff</Name>
   <Description>[H3]Superhaul Model II Cargo Skiff[h3]
 Please see page 52 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="52">Far Horizons</Source>
   <Type>Landspeeder</Type>
   <Categories>
     <Category>Air Vehicle</Category>

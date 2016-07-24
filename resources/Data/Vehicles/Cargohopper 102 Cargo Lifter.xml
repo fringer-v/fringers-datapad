@@ -4,7 +4,7 @@
   <Name>Cargohopper 102 Cargo Lifter</Name>
   <Description>[H3]Taggeco. Cargohopper 102 Cargo Lifter[h3]
       Please see page 52 of the Fly Casual Sourcebook for details.</Description>
-  <Source>Fly Casual</Source>
+  <Source Page="52">Fly Casual</Source>
   <Type>Airspeeder</Type>
   <Categories>
     <Category>Air Vehicle</Category>

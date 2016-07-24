@@ -6,7 +6,7 @@
     [H3]Simiyiar Light Freighter[h3]
     Please see page 264 of the Force and Destiny Core Rulebook for details.
   </Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="264">Force and Destiny Core Rulebook</Source>
   <Type>Freighter</Type>
   <Categories>
     <Category>Starship</Category>

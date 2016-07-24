@@ -6,7 +6,7 @@
     [H3]Arrow 7 Airspeeder[h3]
     Please see page 87 of the Jewel of Yavin Adventure Module for details.
 </Description>
-  <Source>Jewel of Yavin</Source>
+  <Source Page="87">Jewel of Yavin</Source>
   <Type>Airspeeder</Type>
   <Categories>
     <Category>Air Vehicle</Category>

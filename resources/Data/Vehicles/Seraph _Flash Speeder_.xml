@@ -6,7 +6,7 @@
     [H3]Seraph "Flash Speeder"[h3]
     Please see page 105 of the Suns of Fortune Sourcebook for details.
   </Description>
-  <Source>Suns of Fortune</Source>
+  <Source Page="105">Suns of Fortune</Source>
   <Type>Landspeeder</Type>
   <Categories>
     <Category>Land Vehicle</Category>

@@ -4,8 +4,7 @@
   <Name>Regulator-class Patrol-Vessel</Name>
   <Description>[H3]Regulator-class Patrol-Vessel[h3]
 Please see page 55 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="55">Far Horizons</Source>
   <Type>Patrol Boat</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

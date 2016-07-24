@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>AGITATOR</Key>
   <Name>Agitator</Name>
@@ -6,7 +6,7 @@
     [H4]Agitator - Rousing the Masses[h4]
     Please see page 80 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="80">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>COERC</Key>
     <Key>DECEP</Key>
@@ -50,12 +50,12 @@
           <Down>true</Down>
         </Direction>
         <Direction>
-		  <Up>true</Up>
+          <Up>true</Up>
           <Down>true</Down>
         </Direction>
         <Direction>
           <Down>true</Down>
-		  <Up>true</Up>
+          <Up>true</Up>
         </Direction>
         <Direction>
           <Down>true</Down>
@@ -85,7 +85,7 @@
         <Direction>
           <Right>true</Right>
           <Up>true</Up>
-		  <Down>true</Down>
+          <Down>true</Down>
           <Left>true</Left>
         </Direction>
         <Direction>

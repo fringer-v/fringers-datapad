@@ -74,8 +74,8 @@
     such as the Dugs, learn Gran language.
   </Description>
   <Sources>
-    <Source>Age of Rebellion Core Rulebook</Source>
-    <Source>Far Horizons</Source>
+    <Source Page="56">Age of Rebellion Core Rulebook</Source>
+    <Source Page="22">Far Horizons</Source>
   </Sources>
   <StartingChars>
     <Brawn>2</Brawn>

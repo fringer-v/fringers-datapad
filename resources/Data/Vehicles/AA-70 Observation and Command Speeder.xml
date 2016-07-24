@@ -4,7 +4,7 @@
   <Name>AA-70 Observation and Command Speeder</Name>
   <Description>[H3]AA-70 Observation and Command Speeder[h3]
 Please see page 50 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="50">Keeping the Peace</Source>
   <Type>Landspeeder</Type>
   <Categories>
     <Category>Land Vehicle</Category>

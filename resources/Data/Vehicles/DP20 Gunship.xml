@@ -1,11 +1,11 @@
-﻿<Vehicle>
+<Vehicle>
   <Key>DP20</Key>
   <Name>DP20 Gunship</Name>
   <Description>
     [H3]DP20 Gunship[h3]
     Please see page 266 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="266">Edge of the Empire Core Rulebook</Source>
   <HyperdrivePrimary>2</HyperdrivePrimary>
   <HyperdriveBackup>16</HyperdriveBackup>
   <NaviComputer>true</NaviComputer>

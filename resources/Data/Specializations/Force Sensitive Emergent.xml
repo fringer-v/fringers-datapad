@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>FORCESENSITIVEEMERGENT</Key>
   <Name>Force Sensitive Emergent</Name>
@@ -6,7 +6,7 @@
     [H4]Force Sensitive Emergent[h4]
     Please see page 292 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="292">Age of Rebellion Core Rulebook</Source>
   <Universal>true</Universal>
   <Attributes>
     <ForceRating>1</ForceRating>
@@ -27,10 +27,10 @@
         <Direction>
         </Direction>
         <Direction>
-		  <Down>true</Down>
+          <Down>true</Down>
         </Direction>
         <Direction>
-		  <Down>true</Down>
+          <Down>true</Down>
         </Direction>
         <Direction>
         </Direction>
@@ -50,11 +50,11 @@
           <Down>true</Down>
         </Direction>
         <Direction>
-		  <Up>true</Up>
+          <Up>true</Up>
           <Down>true</Down>
         </Direction>
         <Direction>
-		  <Up>true</Up>
+          <Up>true</Up>
           <Down>true</Down>
         </Direction>
         <Direction>

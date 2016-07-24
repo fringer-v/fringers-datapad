@@ -4,7 +4,7 @@
   <Name>Ataru Striker</Name>
   <Description>[H4]Ataru Striker[h4]
 Please see page 87 of the Force and Destiny Core Rulebook for details.</Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="87">Force and Destiny Core Rulebook</Source>
   <CareerSkills>
     <Key>ATHL</Key>
     <Key>COORD</Key>

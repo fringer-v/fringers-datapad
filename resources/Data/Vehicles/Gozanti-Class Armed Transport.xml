@@ -7,8 +7,8 @@
     Please see page 277 of the Age of Rebellion Core Rulebook, or page 58 of the Fly Casual Sourcebook, for details.
   </Description>
   <Sources>
-    <Source>Age of Rebellion Core Rulebook</Source>
-    <Source>Fly Casual</Source>
+    <Source Page="277">Age of Rebellion Core Rulebook</Source>
+    <Source Page="58">Fly Casual Sourcebook</Source>
   </Sources>
   <Type>Transport</Type>
   <Categories>

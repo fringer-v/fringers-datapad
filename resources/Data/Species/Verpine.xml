@@ -22,7 +22,7 @@ Verpine is the native language of the Verpine species from Roche asteroid field.
 [P]Although Verpine language is usually spoken, Verpine can also use radio waves to communicate with other Verpine in their language.
 [P]Most Verpine are fluent in both Verpine language and Basic, although they are only literate in their own language.
 </Description>
-  <Source>Strongholds of Resistance</Source>
+  <Source Page="102">Strongholds of Resistance</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>3</Agility>

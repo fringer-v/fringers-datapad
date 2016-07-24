@@ -1,8 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ItemAttachments>
-  
   <!-- Jury Rigged -->
-
   <ItemAttachment>
     <Key>JURYRIGGEDW</Key>
     <Name>Jury Rigged (Weapon)</Name>
@@ -10,6 +8,10 @@
       [H3]Jury Rigged (Weapon)[h3]
       Please see page 138 of the Edge of the Empire Core Rulebook, or page 150 of the Age of Rebellion Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
     </ItemLimit>
@@ -31,15 +33,12 @@
         <Key>ENCSUB2</Key>
         <Count>1</Count>
       </Mod>
-
       <Mod>
         <Key>QUALADVSUB</Key>
         <Count>1</Count>
       </Mod>
-
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>JURYRIGGEDA</Key>
     <Name>Jury Rigged (Armor)</Name>
@@ -48,8 +47,8 @@
       Please see page 138 of the Edge of the Empire Core Rulebook, or page 150 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Armor</Type>
     <ItemLimit>
@@ -75,7 +74,6 @@
     </AddedMods>
   </ItemAttachment>
   <!-- Weapon Attachments-->
-  
   <ItemAttachment>
     <Key>AUGSPIN</Key>
     <Name>Augmented Spin Barrel</Name>
@@ -85,8 +83,8 @@
     </Description>
     <Type>Weapon</Type>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="188">Edge of the Empire Core Rulebook</Source>
+      <Source Page="200">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <ItemLimit>
     </ItemLimit>
@@ -133,8 +131,8 @@
       Please see page 188 of the Edge of the Empire Core Rulebook, or page 200 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="188">Edge of the Empire Core Rulebook</Source>
+      <Source Page="200">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <TypeLimit>
@@ -168,8 +166,8 @@
       Please see page 188 of the Edge of the Empire Core Rulebook, or page 200 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="188">Edge of the Empire Core Rulebook</Source>
+      <Source Page="200">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
@@ -209,6 +207,11 @@
       [H3]Bipod Mount[h3]
       Please see page 188 of the Edge of the Empire Core Rulebook, page 200 of the Age of Rebellion Core Rulebook, or page 192 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="188">Edge of the Empire Core Rulebook</Source>
+      <Source Page="200">Age of Rebellion Core Rulebook</Source>
+      <Source Page="192">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
       <Key>BLASTLTREP</Key>
@@ -235,7 +238,7 @@
       [H3]Bowcaster Re-Cocker[h3]
       Please see page 189 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="189">Edge of the Empire Core Rulebook</Source>
     <Type>Weapon</Type>
     <CategoryLimit>
       <Category>Bowcaster</Category>
@@ -265,7 +268,7 @@
       [H3]Bowcaster Accellerator Enhancement[h3]
       Please see page 189 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="189">Edge of the Empire Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit>
     </ItemLimit>
@@ -292,7 +295,6 @@
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>FFS</Key>
     <Name>Filed Front Sight</Name>
@@ -301,8 +303,8 @@
       Please see page 190 of the Edge of the Empire Core Rulebook, or page 201 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="190">Edge of the Empire Core Rulebook</Source>
+      <Source Page="201">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
@@ -339,8 +341,8 @@
       Please see page 190 of the Edge of the Empire Core Rulebook, or page 201 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="190">Edge of the Empire Core Rulebook</Source>
+      <Source Page="201">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
@@ -381,8 +383,8 @@
       Please see page 190 of the Edge of the Empire Core Rulebook, or page 202 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="190">Edge of the Empire Core Rulebook</Source>
+      <Source Page="202">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <CategoryLimit>
@@ -412,7 +414,6 @@
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>MME</Key>
     <Name>Mono-Molecular Edge</Name>
@@ -420,6 +421,11 @@
       [H3]Mono-Molecular Edge[h3]
       Please see page 190 of the Edge of the Empire Core Rulebook, page 202 of the Age of Rebellion Core Rulebook, or page 194 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="190">Edge of the Empire Core Rulebook</Source>
+      <Source Page="202">Age of Rebellion Core Rulebook</Source>
+      <Source Page="194">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
     </ItemLimit>
@@ -450,8 +456,8 @@
       Please see page 191 of the Edge of the Empire Core Rulebook, or page 202 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="191">Edge of the Empire Core Rulebook</Source>
+      <Source Page="202">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
@@ -479,7 +485,6 @@
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>SB</Key>
     <Name>Spread Barrel</Name>
@@ -488,8 +493,8 @@
       Please see page 191 of the Edge of the Empire Core Rulebook, or page 203 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="191">Edge of the Empire Core Rulebook</Source>
+      <Source Page="203">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
@@ -518,7 +523,6 @@
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>SE</Key>
     <Name>Serrated Edge</Name>
@@ -526,6 +530,11 @@
       [H3]Serrated Edge[h3]
       Please see page 191 of the Edge of the Empire Core Rulebook, page 203 of the Age of Rebellion Core Rulebook, or page 194 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="191">Edge of the Empire Core Rulebook</Source>
+      <Source Page="203">Age of Rebellion Core Rulebook</Source>
+      <Source Page="194">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
     </ItemLimit>
@@ -551,6 +560,11 @@
       [H3]Superior Weapon Customization[h3]
       Please see page 191 of the Edge of the Empire Core Rulebook, page 203 of the Age of Rebellion Core Rulebook, or page 194 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="191">Edge of the Empire Core Rulebook</Source>
+      <Source Page="203">Age of Rebellion Core Rulebook</Source>
+      <Source Page="194">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
     </ItemLimit>
@@ -573,8 +587,8 @@
       Please see page 191 of the Edge of the Empire Core Rulebook, or page 203 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="191">Edge of the Empire Core Rulebook</Source>
+      <Source Page="203">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
@@ -612,8 +626,8 @@
       Please see page 191 of the Edge of the Empire Core Rulebook, or page 205 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="191">Edge of the Empire Core Rulebook</Source>
+      <Source Page="205">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
@@ -662,8 +676,8 @@
       Please see page 192 of the Edge of the Empire Core Rulebook, or page 204 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="192">Edge of the Empire Core Rulebook</Source>
+      <Source Page="204">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
@@ -722,6 +736,11 @@
       [H3]Telescopic Optical Sight[h3]
       Please see page 192 of the Edge of the Empire Core Rulebook, page 203 of the Age of Rebellion Core Rulebook, or page 195 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="192">Edge of the Empire Core Rulebook</Source>
+      <Source Page="203">Age of Rebellion Core Rulebook</Source>
+      <Source Page="195">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
     </ItemLimit>
@@ -747,6 +766,11 @@
       [H3]Tripod Mount[h3]
       Please see page 193 of the Edge of the Empire Core Rulebook, page 204 of the Age of Rebellion Core Rulebook, or page 195 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="193">Edge of the Empire Core Rulebook</Source>
+      <Source Page="204">Age of Rebellion Core Rulebook</Source>
+      <Source Page="195">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
       <Key>BLASTLTREP</Key>
@@ -771,7 +795,6 @@
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>WEPSLING</Key>
     <Name>Weapon Sling</Name>
@@ -779,6 +802,11 @@
       [H3]Weapon Sling[h3]
       Please see page 193 of the Edge of the Empire Core Rulebook, page 205 of the Age of Rebellion Core Rulebook, or page 195 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="193">Edge of the Empire Core Rulebook</Source>
+      <Source Page="205">Age of Rebellion Core Rulebook</Source>
+      <Source Page="195">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
     </ItemLimit>
@@ -799,7 +827,6 @@
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>WEPHARN</Key>
     <Name>Weapon Harness</Name>
@@ -808,8 +835,8 @@
       Please see page 193 of the Edge of the Empire Core Rulebook, or page 205 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="193">Edge of the Empire Core Rulebook</Source>
+      <Source Page="205">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
@@ -834,7 +861,6 @@
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>WEIGHTHEAD</Key>
     <Name>Weighted Head</Name>
@@ -842,6 +868,11 @@
       [H3]Weighted Head[h3]
       Please see page 193 of the Edge of the Empire Core Rulebook, page 205 of the Age of Rebellion Core Rulebook, or page 195 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="193">Edge of the Empire Core Rulebook</Source>
+      <Source Page="205">Age of Rebellion Core Rulebook</Source>
+      <Source Page="195">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Weapon</Type>
     <ItemLimit>
     </ItemLimit>
@@ -876,7 +907,7 @@
       [H3]SmartTranq[h3]
       Please see page 40 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="40">Enter the Unknown</Source>
     <Type>Weapon</Type>
     <ItemLimit>
       <Key>MODEL77</Key>
@@ -885,27 +916,17 @@
     <TypeLimit />
     <CategoryLimit />
     <Price>500</Price>
-    <ModPrice>0</ModPrice>
     <HP>0</HP>
     <JuryRigged>false</JuryRigged>
     <BaseMods>
       <Mod>
         <Key />
         <Count>1</Count>
-        <Index>0</Index>
         <MiscDesc>Upon hit, target must make [B]Average ([DIFFICULTY][DIFFICULTY]) Resilience check[b].  If fail, target takes 5 strain, plus 2 strain per [THREAT].  GM may use [DESPAIR] to make target check again next round at increased difficulty.</MiscDesc>
-        <DefZone />
       </Mod>
     </BaseMods>
     <AddedMods />
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
-
-
   <ItemAttachment>
     <Key>GENELOCK</Key>
     <Name>Gene Lock</Name>
@@ -913,7 +934,7 @@
       [H3]Gene Lock[h3]
       See page 51 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="51">Dangerous Covenants</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -924,30 +945,20 @@
     <Restricted>false</Restricted>
     <ModPrice>0</ModPrice>
     <HP>1</HP>
-    <JuryRigged>false</JuryRigged>
     <BaseMods>
       <Mod>
         <Key />
         <Count>1</Count>
-        <Index>0</Index>
         <MiscDesc>Weapon functions only in the hands of its authorized user.</MiscDesc>
-        <DefZone />
       </Mod>
     </BaseMods>
     <AddedMods>
       <Mod>
         <Key />
         <Count>1</Count>
-        <Index>0</Index>
         <MiscDesc>Self-Destruct.  Inflicts one critical hit if unauthorized user tries to use locked weapon.  Weapon is destroyed.</MiscDesc>
-        <DefZone />
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
   <ItemAttachment>
     <Key>LASERSIGHT</Key>
@@ -956,7 +967,7 @@
       [H3]"Bantha's Eye" Laser Sight[h3]
       See page 52 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="52">Dangerous Covenants</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit>
@@ -975,16 +986,9 @@
       <Mod>
         <Key>ADVADD</Key>
         <Count>1</Count>
-        <Index>0</Index>
-        <DefZone />
       </Mod>
     </BaseMods>
     <AddedMods />
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
   <ItemAttachment>
     <Key>PISTOLGRIP</Key>
@@ -993,7 +997,7 @@
       [H3]H9 Pistol Grip[h3]
       See page 52 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="52">Dangerous Covenants</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1012,31 +1016,17 @@
       <Mod>
         <Key>USERANGLT</Key>
         <Count>1</Count>
-        <Index>0</Index>
-        <MiscDesc />
-        <DefZone />
       </Mod>
       <Mod>
-        <Key />
         <Count>1</Count>
-        <Index>0</Index>
         <MiscDesc>Add [SETBACK] to any combat check made when firing one-handed.</MiscDesc>
-        <DefZone />
       </Mod>
       <Mod>
         <Key>RANGEREDMED</Key>
         <Count>1</Count>
-        <Index>0</Index>
-        <MiscDesc />
-        <DefZone />
       </Mod>
     </BaseMods>
     <AddedMods />
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
   <ItemAttachment>
     <Key>MISSILESYS</Key>
@@ -1045,7 +1035,7 @@
       [H3]"Final Word" Secondary Missile System[h3]
       See page 52 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="52">Dangerous Covenants</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1062,33 +1052,19 @@
     <JuryRigged>false</JuryRigged>
     <BaseMods>
       <Mod>
-        <Key />
         <Count>1</Count>
-        <Index>0</Index>
         <MiscDesc>Enables weapon to fire rockets, using missile's profile.</MiscDesc>
-        <DefZone />
       </Mod>
       <Mod>
         <Key>CUMBERSOME</Key>
         <Count>2</Count>
-        <Index>0</Index>
-        <MiscDesc />
-        <DefZone />
       </Mod>
       <Mod>
         <Key>ENCADD</Key>
         <Count>3</Count>
-        <Index>0</Index>
-        <MiscDesc />
-        <DefZone />
       </Mod>
     </BaseMods>
     <AddedMods />
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
   <ItemAttachment>
     <Key>WRISTMOUNT</Key>
@@ -1097,7 +1073,7 @@
       [H3]Model 2 Wrist Mount[h3]
       See page 52 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="52">Dangerous Covenants</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit>
@@ -1114,21 +1090,12 @@
     <JuryRigged>false</JuryRigged>
     <BaseMods>
       <Mod>
-        <Key />
         <Count>1</Count>
-        <Index>0</Index>
         <MiscDesc>Weapon can be worn on the wrist, freeing user's hands.</MiscDesc>
-        <DefZone />
       </Mod>
     </BaseMods>
     <AddedMods />
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>BLASTDAMP</Key>
     <Name>Blaster Energy Dampener</Name>
@@ -1136,7 +1103,7 @@
       [H3]Blaster Energy Dampener[h3]
       See page 194 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="194">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1152,36 +1119,21 @@
     <JuryRigged>false</JuryRigged>
     <BaseMods>
       <Mod>
-        <Key />
         <Count>1</Count>
-        <Index>0</Index>
         <MiscDesc>Increases the difficulty of checks made to detect this weapon's fire by one</MiscDesc>
-        <DefZone />
       </Mod>
       <Mod>
         <Key>DAMSUB</Key>
         <Count>2</Count>
-        <Index>0</Index>
-        <MiscDesc />
-        <DefZone />
       </Mod>
     </BaseMods>
     <AddedMods>
       <Mod>
-        <Key />
         <Count>1</Count>
-        <Index>0</Index>
         <MiscDesc>Add 1 setback die to checks made to detect this weapon's fire</MiscDesc>
-        <DefZone />
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>NIGHTSCOPE</Key>
     <Name>Night Vision Scope</Name>
@@ -1189,7 +1141,7 @@
       [H3]Night Vision Scope[h3]
       See page 194 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="194">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1205,22 +1157,13 @@
     <JuryRigged>false</JuryRigged>
     <BaseMods>
       <Mod>
-        <Key />
         <Count>1</Count>
-        <Index>0</Index>
         <MiscDesc>Remove up to [SETBACK][SETBACK] on any checks to use this weapon due to darkness</MiscDesc>
-        <DefZone />
       </Mod>
     </BaseMods>
     <AddedMods>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>SHADOWSHEATH</Key>
     <Name>Shadowsheath</Name>
@@ -1228,7 +1171,7 @@
       [H3]Shadowsheath[h3]
       See page 194 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="194">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1251,13 +1194,7 @@
     </BaseMods>
     <AddedMods>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>STUNPULSE</Key>
     <Name>Stun Pulse</Name>
@@ -1265,7 +1202,7 @@
       [H3]Stun Pulse[h3]
       See page 194 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="194">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1285,21 +1222,14 @@
       <Mod>
         <Key>STUN</Key>
         <Count>2</Count>
-        <MiscDesc/>
       </Mod>
     </BaseMods>
     <AddedMods>
       <Mod>
         <Key>STUN</Key>
         <Count>3</Count>
-        <MiscDesc/>
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
   <ItemAttachment>
     <Key>SIGRED</Key>
@@ -1308,7 +1238,7 @@
       [H3]Weapon Signature Reduction[h3]
       See page 110 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="110">Strongholds of Resistance</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1340,7 +1270,7 @@
       [H3]Electronic Sighting System[h3]
       See page 110 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="110">Strongholds of Resistance</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1368,9 +1298,6 @@
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
-
-
   <ItemAttachment>
     <Key>GIMMELSTEALTH</Key>
     <Name>Gimmellian Stealth Device</Name>
@@ -1379,7 +1306,7 @@
       Please see page 118 of the Strongholds of Resistance Sourcebook for details.
       [P][I]This is an optional no-cost attachment for the Tallanx-Class Stealth Fighter and the Darvro-Class Light Freighter.[i]
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="118">Strongholds of Resistance</Source>
     <Type>Vehicle</Type>
     <ItemLimit>
       <Key>TALLANX</Key>
@@ -1412,7 +1339,7 @@
       Please see page 118 of the Strongholds of Resistance Sourcebook for details.
       [P][I]This is an optional no-cost attachment for the Tallanx-Class Stealth Fighter and the Darvro-Class Light Freighter.[i]
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="118">Strongholds of Resistance</Source>
     <Type>Vehicle</Type>
     <ItemLimit>
       <Key>TALLANX</Key>
@@ -1434,10 +1361,7 @@
       </Mod>
     </BaseMods>
     <AddedMods />
-  </ItemAttachment>  
-  
-  
-
+  </ItemAttachment>
   <!-- Gear Attachments -->
   <ItemAttachment>
     <Key>MODBKACCPOUCH</Key>
@@ -1446,7 +1370,7 @@
       [H3]Modular Backpack Accessory Pouch[h3]
       Please see page 51 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="51">Enter the Unknown</Source>
     <Type>Gear</Type>
     <ItemLimit>
       <Key>MODPACK</Key>
@@ -1467,9 +1391,7 @@
       </Mod>
     </AddedMods>
   </ItemAttachment>
-  
   <!-- Armor Attachments -->
-
   <ItemAttachment>
     <Key>CW</Key>
     <Name>Cortosis Weave</Name>
@@ -1477,6 +1399,10 @@
       [H3]Cortosis Weave[h3]
       Please see page 194 of the Edge of the Empire Core Rulebook, or page 205 of the Age of Rebellion Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="194">Edge of the Empire Core Rulebook</Source>
+      <Source Page="205">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Type>Armor</Type>
     <Price>10000</Price>
     <Rarity>8</Rarity>
@@ -1496,6 +1422,11 @@
       [H3]Thermal Shielding System[h3]
       Please see page 194 of the Edge of the Empire Core Rulebook, page 207 of the Age of Rebellion Core Rulebook, or page 201 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="194">Edge of the Empire Core Rulebook</Source>
+      <Source Page="207">Age of Rebellion Core Rulebook</Source>
+      <Source Page="201">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Armor</Type>
     <CategoryLimit>
       <Category>Sealed</Category>
@@ -1522,6 +1453,11 @@
       [H3]Heating System[h3]
       Please see page 194 of the Edge of the Empire Core Rulebook, page 206 of the Age of Rebellion Core Rulebook, or page 201 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="194">Edge of the Empire Core Rulebook</Source>
+      <Source Page="206">Age of Rebellion Core Rulebook</Source>
+      <Source Page="201">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Armor</Type>
     <CategoryLimit>
       <Category>Sealed</Category>
@@ -1548,6 +1484,10 @@
       [H3]Enhanced Optics Suite[h3]
       Please see page 194 of the Edge of the Empire Core Rulebook, or page 206 of the Age of Rebellion Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="194">Edge of the Empire Core Rulebook</Source>
+      <Source Page="206">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Type>Armor</Type>
     <Price>1000</Price>
     <Rarity>3</Rarity>
@@ -1577,6 +1517,10 @@
       [H3]Strength Enhancing System[h3]
       Please see page 194 of the Edge of the Empire Core Rulebook, or page 206 of the Age of Rebellion Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="194">Edge of the Empire Core Rulebook</Source>
+      <Source Page="206">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Type>Armor</Type>
     <ItemLimit>
     </ItemLimit>
@@ -1610,6 +1554,10 @@
       [H3]Optical Camouflage System[h3]
       Please see page 195 of the Edge of the Empire Core Rulebook, or page 206 of the Age of Rebellion Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="195">Edge of the Empire Core Rulebook</Source>
+      <Source Page="206">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Type>Armor</Type>
     <ItemLimit>
     </ItemLimit>
@@ -1649,6 +1597,11 @@
       [H3]Superior Armor Customization[h3]
       Please see page 195 of the Edge of the Empire Core Rulebook, page 206 of the Age of Rebellion Core Rulebook, or page 201 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="195">Edge of the Empire Core Rulebook</Source>
+      <Source Page="206">Age of Rebellion Core Rulebook</Source>
+      <Source Page="201">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Armor</Type>
     <ItemLimit>
     </ItemLimit>
@@ -1672,9 +1625,9 @@
       Please see page 195 of the Edge of the Empire Core Rulebook, page 207 of the Age of Rebellion Core Rulebook, or page 57 of the Keeping the Peace sourcebook for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
-      <Source>Keeping the Peace</Source>
+      <Source Page="195">Edge of the Empire Core Rulebook</Source>
+      <Source Page="207">Age of Rebellion Core Rulebook</Source>
+      <Source Page="57">Keeping the Peace sourcebook</Source>
     </Sources>
     <Type>Armor</Type>
     <ItemLimit>
@@ -1693,11 +1646,14 @@
           for up to 10 minutes.
         </MiscDesc>
       </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>SEALED</Key>
+      </Mod>
     </BaseMods>
     <AddedMods>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>INTMEDSYS</Key>
     <Name>SmartMed 2000 Integrated Med-Systems</Name>
@@ -1705,7 +1661,7 @@
       [H3]SmartMed 2000 Integrated Med-Systems[h3]
       Please see page 53 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="53">Dangerous Covenants</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1748,7 +1704,7 @@
       [H3]VX Hands-Free Weapon[h3]
       Please see page 53 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="53">Dangerous Covenants</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1775,7 +1731,7 @@
       [H3]Multi-Band Comlink[h3]
       Please see page 53 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="53">Dangerous Covenants</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1802,7 +1758,7 @@
       [H3]OmniScan 3 Integrated Scanner[h3]
       Please see page 54 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="54">Dangerous Covenants</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1838,7 +1794,7 @@
       [H3]MB-7 "Ranger" Range Finder[h3]
       Please see page 54 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="54">Dangerous Covenants</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1870,7 +1826,7 @@
       [H3]"Accu-Strike" Integrated Targeting Computer[h3]
       Please see page 54 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="54">Dangerous Covenants</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1893,17 +1849,14 @@
       </Mod>
     </AddedMods>
   </ItemAttachment>
-  
-  
-  
-  
-    <ItemAttachment>
+  <ItemAttachment>
     <Key>BARABLS</Key>
     <Name>Barab Ingot</Name>
-    <Description>[H3]Barab Ingot[h3]
-Please see page 136 of the Force and Destiny Core Rulebook for details.
-</Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Description>
+      [H3]Barab Ingot[h3]
+      Please see page 136 of the Force and Destiny Core Rulebook for details.
+    </Description>
+    <Source Page="136">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -1917,8 +1870,8 @@ Please see page 136 of the Force and Destiny Core Rulebook for details.
     <ModPrice>0</ModPrice>
     <HP>2</HP>
     <JuryRigged>false</JuryRigged>
-      <IsCrystal>true</IsCrystal>
-      <BaseMods>
+    <IsCrystal>true</IsCrystal>
+    <BaseMods>
       <Mod>
         <Key>DAMSET</Key>
         <Count>8</Count>
@@ -1958,7 +1911,7 @@ Please see page 136 of the Force and Destiny Core Rulebook for details.
     <Description>[H3]Dantari Crystal[h3]
 Please see page 196 of the Force and Destiny Core Rulebook for details.
 </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="196">Force and Destiny Core Rulebook</Source>
     <Sources />
     <Type>Weapon</Type>
     <ItemLimit />
@@ -2015,7 +1968,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Dragite Gem[h3]
       Please see page 196 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="196">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2075,7 +2028,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Krayt Dragon Pearl[h3]
       Please see page 199 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="199">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2130,7 +2083,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Lorrdian Gemstone[h3]
       Please see page 199 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="199">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2186,7 +2139,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Mephite Crystal[h3]
       Please see page 200 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="200">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2246,7 +2199,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Ilum Crystal[h3]
       Please see page 197 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="197">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2301,7 +2254,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Sapith Gem[h3]
       Please see page 200 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="200">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2348,18 +2301,16 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <Count>1</Count>
       </Mod>
     </AddedMods>
-  </ItemAttachment> 
-
+  </ItemAttachment>
   <!-- Keeping the Peace -->
-  
-    <ItemAttachment>
+  <ItemAttachment>
     <Key>KIMBER</Key>
     <Name>Kimber Stone</Name>
     <Description>
       [H3]Kimber Stone[h3]
       Please see page 55 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="55">Keeping the Peace</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2401,8 +2352,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <Count>2</Count>
       </Mod>
     </AddedMods>
-  </ItemAttachment> 
-
+  </ItemAttachment>
   <ItemAttachment>
     <Key>SORIAN</Key>
     <Name>Sorian Crystal</Name>
@@ -2410,7 +2360,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Sorian Crystal[h3]
       Please see page 55 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="55">Keeping the Peace</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2461,8 +2411,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
-
   <ItemAttachment>
     <Key>CCARRAY</Key>
     <Name>Cyclic Crystal Array</Name>
@@ -2470,7 +2418,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Cyclic Crystal Array[h3]
       Please see page 53 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="53">Keeping the Peace</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2501,7 +2449,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>EOVERSET</Key>
     <Name>Energy Overclock Setting</Name>
@@ -2509,7 +2456,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Energy Overclock Setting[h3]
       Please see page 53 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="53">Keeping the Peace</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2541,7 +2488,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>FORRESON</Key>
     <Name>Force-Attuned Resonator</Name>
@@ -2549,7 +2495,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Force-Attuned Resonator[h3]
       Please see page 54 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="54">Keeping the Peace</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2580,7 +2526,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>INTILL</Key>
     <Name>Integrated Illuminator</Name>
@@ -2588,7 +2533,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Integrated Illuminator[h3]
       Please see page 54 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="54">Keeping the Peace</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2620,7 +2565,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>MAGTETH</Key>
     <Name>Magnetic Weapon Tether</Name>
@@ -2628,7 +2572,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Magnetic Weapon Tether[h3]
       Please see page 54 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="54">Keeping the Peace</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2655,7 +2599,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>SHDISCH</Key>
     <Name>Shield Discharge Pack</Name>
@@ -2663,7 +2606,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Shield Discharge Pack[h3]
       Please see page 54 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="54">Keeping the Peace</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2695,7 +2638,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>ARMSPIKE</Key>
     <Name>Armor Spikes</Name>
@@ -2703,7 +2645,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Armor Spikes[h3]
       Please see page 56 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="56">Keeping the Peace</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2740,7 +2682,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>HARDENED</Key>
     <Name>Hardened</Name>
@@ -2748,7 +2689,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Hardened[h3]
       Please see page 56 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="56">Keeping the Peace</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2772,7 +2713,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
     <AddedMods>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>KIIRCOAT</Key>
     <Name>Kiirium Coating</Name>
@@ -2780,7 +2720,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Kiirium Coating[h3]
       Please see page 56 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="56">Keeping the Peace</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2809,7 +2749,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-  
   <ItemAttachment>
     <Key>LOWFRIC</Key>
     <Name>Low-Friction Coating</Name>
@@ -2817,7 +2756,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Low-Friction Coating[h3]
       Please see page 56 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="56">Keeping the Peace</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2850,7 +2789,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>QUICKSHED</Key>
     <Name>Quick Shed</Name>
@@ -2858,7 +2796,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Quick Shed[h3]
       Please see page 57 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="57">Keeping the Peace</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2882,7 +2820,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
     <AddedMods>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>REACPLAT</Key>
     <Name>Reactive Plating</Name>
@@ -2890,7 +2827,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Reactive Plating[h3]
       Please see page 57 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="57">Keeping the Peace</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2922,7 +2859,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>REFSHAD</Key>
     <Name>Reflec Shadowskin</Name>
@@ -2930,7 +2866,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Reflec Shadowskin[h3]
       Please see page 57 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="57">Keeping the Peace</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -2968,7 +2904,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>STUNMAT</Key>
     <Name>Stun Matrix</Name>
@@ -2976,7 +2911,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Stun Matrix[h3]
       Please see page 57 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="57">Keeping the Peace</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3011,8 +2946,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-  
-    
   <ItemAttachment>
     <Key>CURVEDHILT</Key>
     <Name>Curved Hilt</Name>
@@ -3020,7 +2953,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Curved Hilt[h3]
       Please see page 196 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="196">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3056,7 +2989,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Dual-Phase Modification[h3]
       Please see page 197 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="197">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3086,7 +3019,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Extended Hilt[h3]
       Please see page 197 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="197">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3120,7 +3053,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Superior Hilt Personalization[h3]
       Please see page 200 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="200">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3148,7 +3081,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Training Lightsaber Emitter[h3]
       Please see page 200 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="200">Force and Destiny Core Rulebook</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3185,7 +3118,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       Use this attachment to reflect the results of a lightsaber hilt construction check, as required.[P]
       Please see page 23 of the Force and Destiny Game Master's Kit Adventure Module for details.
     </Description>
-    <Source>Force and Destiny Game Master's Kit</Source>
+    <Source Page="23">Force and Destiny Game Master's Kit</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3220,9 +3153,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-  
-    
-    
   <ItemAttachment>
     <Key>BIOFEED</Key>
     <Name>Biofeedback System</Name>
@@ -3230,7 +3160,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Biofeedback System[h3]
       Please see page 200 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="200">Force and Destiny Core Rulebook</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3264,7 +3194,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Energy Dispersion System[h3]
       Please see page 201 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="201">Force and Destiny Core Rulebook</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3283,7 +3213,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
     </BaseMods>
     <AddedMods />
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>HELMETCOM</Key>
     <Name>Helmet Comlink</Name>
@@ -3291,7 +3220,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Helmet Comlink[h3]
       Please see page 140 of the Force and Destiny Beta Rulebook for details.
     </Description>
-    <Source>Force and Destiny Beta Rulebook</Source>
+    <Source Page="140">Force and Destiny Beta Rulebook</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3312,7 +3241,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
     </BaseMods>
     <AddedMods />
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>HELMETSCAN</Key>
     <Name>In-Helmet Scanner</Name>
@@ -3320,7 +3248,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]In-Helmet Scanner[h3]
       Please see page 201 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="201">Force and Destiny Core Rulebook</Source>
     <Type>Armor</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3348,12 +3276,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
     </BaseMods>
     <AddedMods />
   </ItemAttachment>
-
-
-
-
   <!-- Vehicle Attachments -->
-
   <ItemAttachment>
     <Key>ATA</Key>
     <Name>Advanced Targeting Array</Name>
@@ -3361,6 +3284,11 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Advanced Targeting Array[h3]
       Please see page 269 of the Edge of the Empire Core Rulebook, page 286 of the Age of Rebellion Core Rulebook, or page 269 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="269">Edge of the Empire Core Rulebook</Source>
+      <Source Page="286">Age of Rebellion Core Rulebook</Source>
+      <Source Page="269">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Vehicle</Type>
     <ItemLimit>
     </ItemLimit>
@@ -3395,6 +3323,11 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Enhanced Carbon-Durasteel Armor[h3]
       Please see page 269 of the Edge of the Empire Core Rulebook, or page 286 of the Age of Rebellion Core Rulebook, or page 269 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="269">Edge of the Empire Core Rulebook</Source>
+      <Source Page="286">Age of Rebellion Core Rulebook</Source>
+      <Source Page="269">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Vehicle</Type>
     <ItemLimit>
     </ItemLimit>
@@ -3422,6 +3355,11 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Electronic Countermeasures Suite[h3]
       Please see page 269 of the Edge of the Empire Core Rulebook, page 286 of the Age of Rebellion Core Rulebook, or page 269 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="269">Edge of the Empire Core Rulebook</Source>
+      <Source Page="286">Age of Rebellion Core Rulebook</Source>
+      <Source Page="269">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Vehicle</Type>
     <ItemLimit>
     </ItemLimit>
@@ -3450,6 +3388,11 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Hydraulic Control Circuits[h3]
       Please see page 270 of the Edge of the Empire Core Rulebook, page 286 of the Age of Rebellion Core Rulebook, or page 270 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="270">Edge of the Empire Core Rulebook</Source>
+      <Source Page="286">Age of Rebellion Core Rulebook</Source>
+      <Source Page="270">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Vehicle</Type>
     <CategoryLimit>
       <Category>Non-Fighter Starship</Category>
@@ -3489,6 +3432,11 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Reinforced Shield Generator[h3]
       Please see page 270 of the Edge of the Empire Core Rulebook, page 287 of the Age of Rebellion Core Rulebook, or page 270 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="270">Edge of the Empire Core Rulebook</Source>
+      <Source Page="287">Age of Rebellion Core Rulebook</Source>
+      <Source Page="270">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Vehicle</Type>
     <ItemLimit>
     </ItemLimit>
@@ -3516,8 +3464,8 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       Please see page 270 of the Edge of the Empire Core Rulebook, or page 271 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="270">Edge of the Empire Core Rulebook</Source>
+      <Source Page="271">Force and Destiny Core Rulebook</Source>
     </Sources>
     <Type>Vehicle</Type>
     <ItemLimit>
@@ -3547,6 +3495,11 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Retrofitted Hangar Bay[h3]
       Please see page 271 of the Edge of the Empire Core Rulebook, page 287 of the Age of Rebellion Core Rulebook, or page 270 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="271">Edge of the Empire Core Rulebook</Source>
+      <Source Page="287">Age of Rebellion Core Rulebook</Source>
+      <Source Page="270">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Vehicle</Type>
     <ItemLimit>
     </ItemLimit>
@@ -3575,6 +3528,11 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Hyperdrive Generator[h3]
       Please see page 271 of the Edge of the Empire Core Rulebook, page 286 of the Age of Rebellion Core Rulebook, or page 270 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="271">Edge of the Empire Core Rulebook</Source>
+      <Source Page="286">Age of Rebellion Core Rulebook</Source>
+      <Source Page="270">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Vehicle</Type>
     <ItemLimit>
     </ItemLimit>
@@ -3602,6 +3560,11 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]High-Output Ion Turbine[h3]
       Please see page 271 of the Edge of the Empire Core Rulebook, page 286 of the Age of Rebellion Core Rulebook, or page 269 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="271">Edge of the Empire Core Rulebook</Source>
+      <Source Page="286">Age of Rebellion Core Rulebook</Source>
+      <Source Page="269">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Type>Vehicle</Type>
     <ItemLimit>
     </ItemLimit>
@@ -3633,8 +3596,8 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       Please see page 287 of the Age of Rebellion Core Rulebook, or page 271 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Age of Rebellion Core Rulebook</Source>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="287">Age of Rebellion Core Rulebook</Source>
+      <Source Page="271">Force and Destiny Core Rulebook</Source>
     </Sources>
     <Type>Vehicle</Type>
     <ItemLimit>
@@ -3694,7 +3657,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Predictive Targeting Array[h3]
       Please see page 143 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="143">Suns of Fortune</Source>
     <Type>Vehicle</Type>
     <ItemLimit>
     </ItemLimit>
@@ -3711,7 +3674,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
     <AddedMods>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>OEWM</Key>
     <Name>Oversized External Weapons Mount</Name>
@@ -3719,7 +3681,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Oversized External Weapons Mount[h3]
       Please see page 60 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="60">Dangerous Covenants</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3737,7 +3699,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <Count>1</Count>
         <Index>0</Index>
         <MiscDesc />
-
         <DefZone />
       </Mod>
       <Mod>
@@ -3745,7 +3706,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <Count>1</Count>
         <Index>0</Index>
         <MiscDesc />
-
         <DefZone />
       </Mod>
       <Mod>
@@ -3753,7 +3713,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <Count>4</Count>
         <Index>0</Index>
         <MiscDesc />
-
         <DefZone />
       </Mod>
     </BaseMods>
@@ -3771,7 +3730,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]T9 Stinger Assault Boarding Tube[h3]
       Please see page 61 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="61">Dangerous Covenants</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3789,7 +3748,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <Count>1</Count>
         <Index>0</Index>
         <MiscDesc>May cut a hole in a docked craft's hull or airlock.</MiscDesc>
-
         <DefZone />
       </Mod>
     </BaseMods>
@@ -3799,7 +3757,6 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <Count>4</Count>
         <Index>0</Index>
         <MiscDesc />
-
         <DefZone />
       </Mod>
     </AddedMods>
@@ -3816,7 +3773,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Fogger Smoke Generator[h3]
       Please see page 61 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="61">Dangerous Covenants</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3840,18 +3797,11 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <Count>1</Count>
         <Index>0</Index>
         <MiscDesc>Provides concealment that adds [SETBACK][SETBACK][SETBACK].</MiscDesc>
-
         <DefZone />
       </Mod>
     </BaseMods>
     <AddedMods />
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>AUGBUFF</Key>
     <Name>Augmented Buffer</Name>
@@ -3859,7 +3809,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Augmented Buffer[h3]
       Please see page 47 of The Jewel of Yavin Adventure Module for details.
     </Description>
-    <Source>Jewel of Yavin</Source>
+    <Source Page="47">Jewel of Yavin</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3876,32 +3826,16 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       <Mod>
         <Key>SSTRAINADD</Key>
         <Count>1</Count>
-        <Index>0</Index>
-        <MiscDesc />
-        <DefZone />
-        <VehicleWeaponUpgrades />
-        <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
-        <DieModifiers />
       </Mod>
     </BaseMods>
     <AddedMods>
       <Mod>
         <Key>SSTRAINADD</Key>
         <Count>2</Count>
-        <Index>0</Index>
-        <MiscDesc />
-        <DefZone />
-        <VehicleWeaponUpgrades />
-        <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
-        <DieModifiers />
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
     <MinSize>0</MinSize>
     <MaxSize>2</MaxSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
   <ItemAttachment>
     <Key>REPENH</Key>
@@ -3910,7 +3844,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Repulsorlift Enhancement[h3]
       Please see page 47 of The Jewel of Yavin Adventure Module for details.
     </Description>
-    <Source>Jewel of Yavin</Source>
+    <Source Page="47">Jewel of Yavin</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3924,23 +3858,12 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
     <JuryRigged>false</JuryRigged>
     <BaseMods>
       <Mod>
-        <Key />
         <Count>1</Count>
-        <Index>0</Index>
         <MiscDesc>As a maneuver, suffer 1 system strain to add +1 maximum speed for one round.</MiscDesc>
-        <DefZone />
-        <VehicleWeaponUpgrades />
-        <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
-        <DieModifiers />
       </Mod>
     </BaseMods>
     <AddedMods />
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
     <MaxSize>2</MaxSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
   <ItemAttachment>
     <Key>UPGFIRE</Key>
@@ -3949,7 +3872,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Upgraded Firepower[h3]
       Please see page 48 of The Jewel of Yavin Adventure Module for details.
     </Description>
-    <Source>Jewel of Yavin</Source>
+    <Source Page="48">Jewel of Yavin</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -3965,21 +3888,10 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       <Mod>
         <Key>DAMWEAPSYSADD</Key>
         <Count>1</Count>
-        <Index>0</Index>
-        <MiscDesc />
-        <DefZone />
-        <VehicleWeaponUpgrades />
-        <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
-        <DieModifiers />
       </Mod>
     </BaseMods>
     <AddedMods />
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
     <MaxSize>2</MaxSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
   <ItemAttachment>
     <Key>MANTHRUST</Key>
@@ -3988,7 +3900,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Maneuvering Thrusters[h3]
       Please see page 47 of The Jewel of Yavin Adventure Module for details.
     </Description>
-    <Source>Jewel of Yavin</Source>
+    <Source Page="47">Jewel of Yavin</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4004,24 +3916,11 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       <Mod>
         <Key>HANDLINGADD</Key>
         <Count>1</Count>
-        <Index>0</Index>
-        <MiscDesc />
-        <DefZone />
-        <VehicleWeaponUpgrades />
-        <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
-        <DieModifiers />
       </Mod>
     </BaseMods>
     <AddedMods />
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
     <MaxSize>2</MaxSize>
-    <PriceSizeMult>true</PriceSizeMult>
   </ItemAttachment>
-
-
   <ItemAttachment>
     <Key>ASTROMECH</Key>
     <Name>Astromech Droid Socket</Name>
@@ -4029,7 +3928,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Astromech Droid Socket[h3]
       Please see page 63 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="63">Stay on Target</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4053,14 +3952,8 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <MiscDesc>Automated droid ejection system</MiscDesc>
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
     <MaxSize>10</MaxSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>GRAVMINE</Key>
     <Name>Gravity Mine Launcher</Name>
@@ -4068,7 +3961,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Gravity Mine Launcher[h3]
       Please see page 64 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="64">Stay on Target</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4092,14 +3985,8 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <MiscDesc>Increase deployable range to short</MiscDesc>
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
     <MaxSize>10</MaxSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>HARDCIRC</Key>
     <Name>Hardened Circuits</Name>
@@ -4107,7 +3994,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Hardened Circuits[h3]
       Please see page 64 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="64">Stay on Target</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4131,14 +4018,8 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <Key>SSTRAINADD</Key>
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
     <MaxSize>10</MaxSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>HULLREINF</Key>
     <Name>Hull/Keel Reinforcement</Name>
@@ -4146,7 +4027,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Hull/Keel Reinforcement[h3]
       Please see page 64 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="64">Stay on Target</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4170,14 +4051,8 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <Key>HULLADD</Key>
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
     <MaxSize>10</MaxSize>
-    <PriceSizeMult>true</PriceSizeMult>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>PHYSCOUNT</Key>
     <Name>Physical Countermeasures</Name>
@@ -4185,7 +4060,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Physical Countermeasures[h3]
       Please see page 64 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="64">Stay on Target</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4213,14 +4088,8 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <MiscDesc>Increase difficulty by 1 when making checks triggered by the Guided quality.</MiscDesc>
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
     <MaxSize>10</MaxSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>RAM</Key>
     <Name>Ram Attachment</Name>
@@ -4228,7 +4097,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Ram Attachment[h3]
       Please see page 65 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="65">Stay on Target</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4252,12 +4121,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <MiscDesc>Add 1 more defense when instigating a collision.</MiscDesc>
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
     <MaxSize>10</MaxSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
   <ItemAttachment>
     <Key>SLAVECIRC</Key>
@@ -4266,7 +4130,7 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
       [H3]Slave Circuit[h3]
       Please see page 65 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="65">Stay on Target</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4294,20 +4158,15 @@ Please see page 196 of the Force and Destiny Core Rulebook for details.
         <MiscDesc>Allows ship or vehicle to autonomously use its weapon systems using owner's appropriate skill.</MiscDesc>
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
     <MaxSize>10</MaxSize>
-    <PriceSizeMult>false</PriceSizeMult>
   </ItemAttachment>
-    <ItemAttachment>
+  <ItemAttachment>
     <Key>POISONRES</Key>
     <Name>Poison Reservoir</Name>
     <Description>[H3]Poison Reservoir[h3]
 Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
 </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="105">Lords of Nal Hutta</Source>
     <Sources />
     <Type>Weapon</Type>
     <ItemLimit />
@@ -4336,14 +4195,6 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
         <Count>4</Count>
       </Mod>
     </AddedMods>
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <MaxSize>0</MaxSize>
-    <PriceSizeMult>false</PriceSizeMult>
-    <MinEnc>0</MinEnc>
-    <MaxEnc>0</MaxEnc>
   </ItemAttachment>
   <ItemAttachment>
     <Key>BLASTSUPP</Key>
@@ -4353,8 +4204,8 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       Please see page 106 of the Lords of Nal Hutta Sourcebook, and page 110 of the Strongholds of Resistance Sourcebook, for details.
     </Description>
     <Sources>
-      <Source>Lords of Nal Hutta</Source>
-      <Source>Strongholds of Resistance</Source>
+      <Source Page="106">Lords of Nal Hutta Sourcebook</Source>
+      <Source Page="110">Strongholds of Resistance Sourcebook</Source>
     </Sources>
     <Type>Weapon</Type>
     <CategoryLimit>
@@ -4379,7 +4230,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Threat Monitor[h3]
       Please see page 106 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="106">Lords of Nal Hutta</Source>
     <Type>Armor</Type>
     <Price>750</Price>
     <Rarity>4</Rarity>
@@ -4402,7 +4253,6 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>ASTROBRAIN</Key>
     <Name>Astrogation Droid Brain</Name>
@@ -4410,7 +4260,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Astrogation Droid Brain[h3]
       Please see page 62 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="62">Fly Casual</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4458,7 +4308,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Autopilot Droid Brain[h3]
       Please see page 62 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="62">Fly Casual</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4512,14 +4362,13 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
-    <ItemAttachment>
+  <ItemAttachment>
     <Key>AX108BUZZER</Key>
     <Name>AX-108 "Ground Buzzer" Surface-Defense Blaster Cannon</Name>
     <Description>[H3]AX-108 "Ground Buzzer" Surface-Defense Blaster Cannon[h3]
       Please see page 62 of the Fly Casual Sourcebook for details.
 </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="62">Fly Casual</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4607,8 +4456,9 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Cloaked Smuggling Compartments[h3]
       Please see page 63 of the Fly Casual Sourcebook, for details.
     </Description>
+    <Source Page="63">Fly Casual Sourcebook</Source>
     <Sources>
-      <Source>Fly Casual</Source>
+      <Source Page="63">Fly Casual</Source>
     </Sources>
     <Type>Vehicle</Type>
     <ItemLimit />
@@ -4648,7 +4498,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Set Trigger[h3]
       Please see page 51 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="51">Fly Casual</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit>
@@ -4683,7 +4533,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Overcharge Valve[h3]
       Please see page 51 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="51">Fly Casual</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4712,7 +4562,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Paired Weapons[h3]
       Please see page 51 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="51">Fly Casual</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit>
@@ -4744,7 +4594,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Underslung Scattergun[h3]
       Please see page 51 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="51">Fly Casual</Source>
     <Type>Weapon</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4804,7 +4654,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Starhawk Sidecar[h3]
       Please see page 53 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="53">Fly Casual</Source>
     <Type>Vehicle</Type>
     <ItemLimit>
       <Key>STARHAWKSPEED</Key>
@@ -4837,7 +4687,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Interior Broadcast Suite[h3]
       Please see page 63 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="63">Fly Casual</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4864,7 +4714,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Nightshadow Coating[h3]
       Please see page 63 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="63">Fly Casual</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4896,7 +4746,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Onboard Amenities Unit[h3]
       Please see page 63 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="63">Fly Casual</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4923,7 +4773,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Rapid Cargo Evacuation Chute[h3]
       Please see page 63 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="63">Fly Casual</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4955,7 +4805,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Whisperthrust Engine[h3]
       Please see page 63 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="63">Fly Casual</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -4975,7 +4825,6 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
     </BaseMods>
     <AddedMods />
   </ItemAttachment>
-
   <!-- Desperate Allies -->
   <ItemAttachment>
     <Key>ASEA</Key>
@@ -4984,7 +4833,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Advanced Subspace Encryption Array[h3]
       Please see page 65 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="65">Desperate Allies</Source>
     <Sources />
     <Type>Vehicle</Type>
     <ItemLimit />
@@ -5029,7 +4878,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Luxury Passenger Compartments[h3]
       Please see page 65 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="65">Desperate Allies</Source>
     <Sources />
     <Type>Vehicle</Type>
     <ItemLimit />
@@ -5059,7 +4908,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Holonet Pirate Array[h3]
       Please see page 65 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="65">Desperate Allies</Source>
     <Sources />
     <Type>Vehicle</Type>
     <ItemLimit />
@@ -5099,7 +4948,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Environmental Simulators[h3]
       Please see page 64 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="64">Desperate Allies</Source>
     <Sources />
     <Type>Vehicle</Type>
     <ItemLimit />
@@ -5127,7 +4976,6 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
   <ItemAttachment>
     <Key>ENGACCESS</Key>
     <Name>Engineering Access</Name>
@@ -5135,7 +4983,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Engineering Access[h3]
       Please see page 61 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="61">Enter the Unknown</Source>
     <Sources />
     <Type>Vehicle</Type>
     <ItemLimit>
@@ -5169,7 +5017,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]ANQ 3.6 Tracking Computer[h3]
       Please see page 60 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="60">Enter the Unknown</Source>
     <Sources />
     <Type>Vehicle</Type>
     <ItemLimit>
@@ -5203,7 +5051,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Engine Ring Stabilizer[h3]
       Please see page 82 of the [B]Mask of the Pirate Queen[b] adventure module for details.
     </Description>
-    <Source>Mask of the Pirate Queen</Source>
+    <Source Page="82">Mask of the Pirate Queen</Source>
     <Type>Vehicle</Type>
     <ItemLimit />
     <SkillLimit />
@@ -5262,24 +5110,12 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       </Mod>
     </BaseMods>
     <AddedMods />
-    <MustHaveHyperdrive>false</MustHaveHyperdrive>
-    <MustBeStarship>false</MustBeStarship>
-    <MinEncumCap>0</MinEncumCap>
-    <MinSize>0</MinSize>
-    <MaxSize>0</MaxSize>
-    <PriceSizeMult>false</PriceSizeMult>
-    <MinEnc>0</MinEnc>
-    <MaxEnc>0</MaxEnc>
     <WeaponModifiers>
       <WeaponModifier>
-        <Unarmed>false</Unarmed>
         <UnarmedName>Insatiable Maw</UnarmedName>
         <SkillKey>COORD</SkillKey>
-        <AllSkillKey />
         <Damage>12</Damage>
-        <DamageAdd>0</DamageAdd>
         <Crit>3</Crit>
-        <CritSub>0</CritSub>
         <Qualities>
           <Quality>
             <Key>BREACH</Key>
@@ -5305,9 +5141,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       </WeaponModifier>
     </WeaponModifiers>
   </ItemAttachment>
-
   <!-- Lead by Example -->
-
   <ItemAttachment>
     <Key>BRAUD</Key>
     <Name>Briefing Auditorium</Name>
@@ -5315,7 +5149,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Briefing Auditorium[h3]
       Please see page 58 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="58">Lead by Example</Source>
     <Type>Vehicle</Type>
     <Price>2500</Price>
     <Rarity>0</Rarity>
@@ -5343,7 +5177,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Electronic Counter-Countermeasures Suite[h3]
       Please see page 59 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="59">Lead by Example</Source>
     <Type>Vehicle</Type>
     <Price>3500</Price>
     <Rarity>6</Rarity>
@@ -5369,7 +5203,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Holo-Tank[h3]
       Please see page 59 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="59">Lead by Example</Source>
     <Type>Vehicle</Type>
     <Price>5000</Price>
     <Rarity>4</Rarity>
@@ -5398,7 +5232,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Tactical Command, Control, and Communications Suite[h3]
       Please see page 59 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="59">Lead by Example</Source>
     <Type>Vehicle</Type>
     <Price>4200</Price>
     <Rarity>6</Rarity>
@@ -5427,7 +5261,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       [H3]Theater Command and Control System[h3]
       Please see page 59 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="59">Lead by Example</Source>
     <Type>Vehicle</Type>
     <Price>8500</Price>
     <Rarity>6</Rarity>
@@ -5449,8 +5283,6 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       </Mod>
     </AddedMods>
   </ItemAttachment>
-
-
   <ItemAttachment>
     <Key>ARMCRAFT</Key>
     <Name>Craft</Name>
@@ -5459,7 +5291,7 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
       Please see page 90 of the Keeping the Peace Sourcebook for details.[P]
       [I]Note: Use this attachment to create the construction effects of crafted armor.[i]
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="90">Keeping the Peace</Source>
     <TypeLimit>
       <Type>Template</Type>
     </TypeLimit>
@@ -5518,8 +5350,6 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
         <Count>1</Count>
         <MiscDesc>Unexpected Flaw:  GM may spend one Destiny Point to cause armor to fail.  Armor suffers major damage and is unusable.</MiscDesc>
       </Mod>
-
-
       <Mod>
         <Count>1</Count>
         <Key>SPEMBCHARM</Key>
@@ -5544,7 +5374,6 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
         <Count>1</Count>
         <Key>SPEMBSTEAL</Key>
       </Mod>
-
       <Mod>
         <Count>1</Count>
         <Key>RESTARMATHL</Key>
@@ -5565,11 +5394,1513 @@ Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
         <Count>1</Count>
         <Key>RESTARMVIGIL</Key>
       </Mod>
-
-
     </AddedMods>
   </ItemAttachment>
-
-
+  <ItemAttachment>
+    <Key>BMWEAPCRAFT</Key>
+    <Name>Craft</Name>
+    <Description>
+      [H3]Crafted Brawl or Melee Weapon[h3]
+      Please see page 77 of the Special Modifications Sourcebook for details.[P]
+      [I]Note: Use this attachment to create the construction effects of crafted brawl and melee weapons.[i]
+    </Description>
+    <Source Page="77">Special Modifications</Source>
+    <CategoryLimit>
+      <Category>Template (Brawl and Melee)</Category>
+    </CategoryLimit>
+    <Type>Weapon</Type>
+    <Price>0</Price>
+    <Rarity>0</Rarity>
+    <HP>0</HP>
+    <BaseMods>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>2</Count>
+        <Key>DAMADD</Key>
+      </Mod>
+      <Mod>
+        <Count>2</Count>
+        <Key>ENCADD</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>ENCSUB</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>KNOCKDOWN</Key>
+      </Mod>
+      <Mod>
+        <Count>3</Count>
+        <Key>DEFENSIVE</Key>
+      </Mod>
+      <Mod>
+        <Count>4</Count>
+        <Key>HPADD</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>PIERCE</Key>
+      </Mod>
+      <Mod>
+        <Count>5</Count>
+        <Key>VICIOUS</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>STUN</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>ENSNARE</Key>
+      </Mod>
+      <Mod>
+        <Count>3</Count>
+        <Key>DEFLECTION</Key>
+      </Mod>
+      <Mod>
+        <Count>3</Count>
+        <Key>ACCURATE</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>CRITSUB</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>SUNDER</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>CONCUSSIVE</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Two-Handed:  Requires two hands to wield.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>ENCADD</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>CUMBERSOME</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>INACCURATE</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Hard to Modify:  Increaese difficulty of checks to modify attachments by 1.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Difficult to Repair:  Increase difficulty of checks to repair by 1.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Brittle: On a Despair from a combat check using this weapon, it becomes damaged one level.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Hidden Flaw:  GM may spend one Destiny Point to cause weapon to fracture or break.  Weapon suffers major damage and is unusable.</MiscDesc>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>RWEAPCRAFT</Key>
+    <Name>Craft</Name>
+    <Description>
+      [H3]Crafted Ranged Weapon[h3]
+      Please see page 79 of the Special Modifications Sourcebook for details.[P]
+      [I]Note: Use this attachment to create the construction effects of crafted ranged weapons.[i]
+    </Description>
+    <Source Page="79">Special Modifications</Source>
+    <CategoryLimit>
+      <Category>Template (Ranged)</Category>
+    </CategoryLimit>
+    <Type>Weapon</Type>
+    <Price>0</Price>
+    <Rarity>0</Rarity>
+    <HP>0</HP>
+    <BaseMods>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>1</Count>
+        <Key>ION</Key>
+      </Mod>
+      <Mod>
+        <Count>3</Count>
+        <Key>ENCADD</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>ENCSUB</Key>
+      </Mod>
+      <Mod>
+        <Count>5</Count>
+        <Key>DISORIENT</Key>
+      </Mod>
+      <Mod>
+        <Count>5</Count>
+        <Key>LIMITEDAMMO</Key>
+      </Mod>
+      <Mod>
+        <Count>2</Count>
+        <Key>HPADD</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>RANGEADD</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>KNOCKDOWN</Key>
+      </Mod>
+      <Mod>
+        <Count>5</Count>
+        <Key>VICIOUS</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>STUNSETTING</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>DAMADD</Key>
+      </Mod>
+      <Mod>
+        <Count>5</Count>
+        <Key>ENSNARE</Key>
+      </Mod>
+      <Mod>
+        <Count>6</Count>
+        <Key>STUN</Key>
+      </Mod>
+      <Mod>
+        <Count>5</Count>
+        <Key>PIERCE</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>AUTOFIRE</Key>
+      </Mod>
+      <Mod>
+        <Count>6</Count>
+        <Key>BURN</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>CRITSUB</Key>
+      </Mod>
+      <Mod>
+        <Count>3</Count>
+        <Key>ACCURATE</Key>
+      </Mod>
+      <Mod>
+        <Count>8</Count>
+        <Key>BLAST</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>CONCUSSIVE</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Two-Handed:  Requires two hands to wield.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>ENCADD</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <Key>CUMBERSOME</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Hard to Modify:  Increaese difficulty of checks to modify attachments by 1.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Difficult to Repair:  Increase difficulty of checks to repair by 1.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>4</Count>
+        <Key>PREPARE</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Ammunition Inefficient: During combat, the GM may make this weapon run out of ammo by spending 3 threat.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>4</Count>
+        <Key>INACCURATE</Key>
+      </Mod>
+      <Mod>
+        <Count>4</Count>
+        <Key>SLOWFIRING</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Dangerously Volatile:  GM may spend one Destiny Point to cause weapon to explode.  Weapon is destroyed.  User and each engaged character suffers 10 damage.</MiscDesc>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>IONTHRUSTSHAPEDNOZ</Key>
+    <Name>Shaped Nozzle</Name>
+    <Description>[H3]Shaped Nozzle[h3]
+Please see page 45 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="45">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <Price>75</Price>
+    <Rarity>1</Rarity>
+    <BaseMods>
+      <Mod>
+        <Key>REMQUALION</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>PIERCE</Key>
+        <Count>5</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>MULTIGOOGASCART</Key>
+    <Name>Pressurized Gas Cartridge</Name>
+    <Description>[H3]Pressurized Gas Cartridge[h3]
+Please see page 45 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="45">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <ItemLimit>
+      <Key>MULTIGOO</Key>
+    </ItemLimit>
+    <Price>100</Price>
+    <Rarity>2</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Key>DAMSET</Key>
+        <Count>5</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>BURN</Key>
+        <Count>2</Count>
+      </Mod>
+      <Mod>
+        <Key>DISORIENT</Key>
+        <Count>2</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>RIVETGUNTOPLOAD</Key>
+    <Name>Top-Loading Magazine</Name>
+    <Description>[H3]Top-Loading Magazine[h3]
+Please see page 46 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="46">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <ItemLimit>
+      <Key>RIVETGUN</Key>
+    </ItemLimit>
+    <Price>50</Price>
+    <Rarity>1</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Key>REMQUALLIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>RIVETGUNBALBAR</Key>
+    <Name>Balanced Barrel</Name>
+    <Description>[H3]Balanced Barrel[h3]
+Please see page 46 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="46">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <ItemLimit>
+      <Key>RIVETGUN</Key>
+    </ItemLimit>
+    <Price>150</Price>
+    <Rarity>3</Rarity>
+    <HP>1</HP>
+    <Encumbrance>1</Encumbrance>
+    <BaseMods>
+      <Mod>
+        <Key>RANGEADD</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>SUBQUALINACCURATE</Key>
+        <Count>2</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>CUSTGRIP</Key>
+    <Name>Custom Grip</Name>
+    <Description>[H3]Custom Grip[h3]
+Please see page 54 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="54">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <CategoryLimit>
+      <Category>Pistol</Category>
+      <Category>Rifle</Category>
+      <Category>Carbine</Category>
+      <Category>Bowcaster</Category>
+      <Category>Lightsaber</Category>
+      <Category>Lightsaber Hilt</Category>
+      <Category>Cutting Edge Melee</Category>
+      <Category>Bludgeoning Melee</Category>
+      <Category>Shield</Category>
+      <Category>Portable Gunnery</Category>
+    </CategoryLimit>
+    <Price>500</Price>
+    <Rarity>6</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Key>SETBACKSUB</Key>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Anyone other than owner adds [SE][SE] to combat checks using this weapon.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>ACCURATE</Key>
+        <Count>1</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>USERATTACH2</Key>
+    <Name>Enhanced XCiter</Name>
+    <Description>[H3]Enhanced XCiter[h3]
+Please see page 54 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="54">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <CategoryLimit>
+      <Category>Blaster</Category>
+    </CategoryLimit>
+    <Price>1500</Price>
+    <Rarity>6</Rarity>
+    <Restricted>true</Restricted>
+    <HP>2</HP>
+    <BaseMods>
+      <Mod>
+        <Key>CRITSUB</Key>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>GM may spend [DE][DE] to cause blaster to explode, destroying blaster and inflicting automatic Critical Injury on wielder.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>PIERCE</Key>
+        <Count>3</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>GYROSTAB</Key>
+    <Name>Gyrostabilizer</Name>
+    <Description>[H3]Gyrostabilizer[h3]
+Please see page 54 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="54">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <SkillLimit>
+      <Key>RANGHVY</Key>
+      <Key>GUNN</Key>
+    </SkillLimit>
+    <Price>1000</Price>
+    <Rarity>6</Rarity>
+    <HP>2</HP>
+    <BaseMods>
+      <Mod>
+        <Key>SUBQUALCUMBERSOME</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>SUBQUALCUMBERSOME</Key>
+        <Count>3</Count>
+      </Mod>
+      <Mod>
+        <Key>BAR</Key>
+        <Count>1</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>INTSCAN2</Key>
+    <Name>Integrated Scanner</Name>
+    <Description>[H3]Integrated Scanner[h3]
+Please see page 54 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="54">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <SkillLimit>
+      <Key>RANGHVY</Key>
+    </SkillLimit>
+    <Price>675</Price>
+    <Rarity>5</Rarity>
+    <HP>2</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Weapon incorporates a general-purpose scanner.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Wielder adds automatic [AD][AD] to Initiative checks while weapon is drawn.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>2</Count>
+        <MiscDesc>Remove 1 setback die from Initiative checks</MiscDesc>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>OPTENERGCELL</Key>
+    <Name>Optimized Energy Cell</Name>
+    <Description>[H3]Optimized Energy Cell[h3]
+Please see page 54 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="54">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <TypeLimit>
+      <Type>Energy Weapon</Type>
+    </TypeLimit>
+    <Price>100</Price>
+    <Rarity>5</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Wne GM spends [DE] or [TH] to cause the weapon to run out of ammo, it requires an additional [TH].</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>OVERACTMOD</Key>
+    <Name>Overcharged Actuating Module</Name>
+    <Description>[H3]Overcharged Actuating Module[h3]
+Please see page 55 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="55">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <CategoryLimit>
+      <Category>Blaster Pistol</Category>
+      <Category>Carbine</Category>
+    </CategoryLimit>
+    <Price>650</Price>
+    <Rarity>7</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Key>DAMADD</Key>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>GM may spend [TH][TH] to damage weapon by one step.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>DAMADD</Key>
+        <Count>1</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>RAPRECXC</Key>
+    <Name>Rapid-Recharge XCiter</Name>
+    <Description>[H3]Rapid-Recharge XCiter[h3]
+Please see page 55 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="55">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <CategoryLimit>
+      <Category>Blaster</Category>
+    </CategoryLimit>
+    <Price>750</Price>
+    <Rarity>7</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Key>AUTOFIRE</Key>
+      </Mod>
+      <Mod>
+        <Key>INACCURATE</Key>
+        <Count>3</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>SUBQUALINACCURATE</Key>
+        <Count>2</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>REMSAFFEAT</Key>
+    <Name>Removed Safety Features</Name>
+    <Description>[H3]Removed Safety Features[h3]
+Please see page 55 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="55">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <SkillLimit>
+      <Key>RANGHVY</Key>
+      <Key>RANGLT</Key>
+    </SkillLimit>
+    <Price>250</Price>
+    <Rarity>2</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Adds [BO] to first combat check during an encounter.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>GM may spend [TH][TH] to cause misfire.  Weapon runs out of ammo and inflicts 4 strain on wielder.</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>IONBLAST</Key>
+    <Name>Secondary Ion Blaster</Name>
+    <Description>[H3]Secondary Ion Blaster[h3]
+Please see page 56 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="56">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <SkillLimit>
+      <Key>RANGHVY</Key>
+    </SkillLimit>
+    <Price>400</Price>
+    <Rarity>6</Rarity>
+    <HP>2</HP>
+    <Encumbrance>2</Encumbrance>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Adds an ion blaster to the weapon.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Key>CUMBERSOME</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>DAMADD</Key>
+        <Count>2</Count>
+        <WeaponModifierIndex>0</WeaponModifierIndex>
+      </Mod>
+    </AddedMods>
+    <WeaponModifiers>
+      <WeaponModifier>
+        <UnarmedName>Secondary Ion Blaster</UnarmedName>
+        <SkillKey>RANGHVY</SkillKey>
+        <Damage>10</Damage>
+        <Crit>5</Crit>
+        <Qualities>
+          <Quality>
+            <Key>DISORIENT</Key>
+            <Count>5</Count>
+          </Quality>
+          <Quality>
+            <Key>ION</Key>
+          </Quality>
+        </Qualities>
+        <RangeValue>wrShort</RangeValue>
+        <Range>Short</Range>
+      </WeaponModifier>
+    </WeaponModifiers>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>SONICSCOPE</Key>
+    <Name>Sonic Scope</Name>
+    <Description>[H3]Sonic Scope[h3]
+Please see page 56 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="56">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <SkillLimit>
+      <Key>RANGHVY</Key>
+    </SkillLimit>
+    <Price>1500</Price>
+    <Rarity>8</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>May observe and target enemies who are completely hidden by solid objects.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>COOL</Key>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <Key>VIGIL</Key>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <Key>PRECAIM</Key>
+        <Count>2</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>STRIPDOWN</Key>
+    <Name>Stripped Down</Name>
+    <Description>[H3]Stripped Down[h3]
+Please see page 56 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="56">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <SkillLimit>
+      <Key>RANGHVY</Key>
+      <Key>RANGLT</Key>
+    </SkillLimit>
+    <Price>250</Price>
+    <Rarity>4</Rarity>
+    <HP>3</HP>
+    <BaseMods>
+      <Mod>
+        <Key>ENCSUB</Key>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Add [SE] to Perception checks to find the weapon when hidden.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>ENCSUB</Key>
+        <Count>2</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>GRAPNEL</Key>
+    <Name>Under-Barrel Grapnel Launcher</Name>
+    <Description>[H3]Under-Barrel Grapnel Launcher[h3]
+Please see page 56 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="56">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <SkillLimit>
+      <Key>RANGHVY</Key>
+      <Key>RANGLT</Key>
+    </SkillLimit>
+    <Price>500</Price>
+    <Rarity>3</Rarity>
+    <HP>2</HP>
+    <Encumbrance>2</Encumbrance>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>As an action, may make an [B]Average ([DI][DI]) Ranged (Light) check[b] to secure grappling hook to an object within medium range and reel in cord.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>May pull another character aloft by making an [B]Average ([DI][DI]) Athletics check[b].</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>VIBBAY</Key>
+    <Name>Vibro-Bayonet</Name>
+    <Description>[H3]Vibro-Bayonet[h3]
+Please see page 56 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="56">Special Modifications</Source>
+    <Type>Weapon</Type>
+    <SkillLimit>
+      <Key>RANGHVY</Key>
+    </SkillLimit>
+    <Price>500</Price>
+    <Rarity>3</Rarity>
+    <HP>1</HP>
+    <Encumbrance>1</Encumbrance>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Adds a vibro-bayonet to the weapon</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>DAMADD</Key>
+        <Count>2</Count>
+      </Mod>
+    </AddedMods>
+    <WeaponModifiers>
+      <WeaponModifier>
+        <UnarmedName>Vibro-Bayonet</UnarmedName>
+        <SkillKey>MELEE</SkillKey>
+        <DamageAdd>1</DamageAdd>
+        <Crit>2</Crit>
+        <Qualities>
+          <Quality>
+            <Key>INACCURATE</Key>
+            <Count>1</Count>
+          </Quality>
+          <Quality>
+            <Key>PIERCE</Key>
+            <Count>2</Count>
+          </Quality>
+          <Quality>
+            <Key>VICIOUS</Key>
+            <Count>1</Count>
+          </Quality>
+        </Qualities>
+        <Range>Engaged</Range>
+      </WeaponModifier>
+    </WeaponModifiers>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>AMPHMOD</Key>
+    <Name>Amphibious Modification</Name>
+    <Description>[H3]Amphibious Modification[h3]
+Please see page 57 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="57">Special Modifications</Source>
+    <Type>Armor</Type>
+    <CategoryLimit>
+      <Category>Sealable</Category>
+      <Category>Sealed</Category>
+    </CategoryLimit>
+    <Price>500</Price>
+    <Rarity>4</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Provides up to five hours of oxegen in submersive or airless environments.  Does not protect against vacuum.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Removes [SE] from physical checks due to underwater conditions.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>2</Count>
+        <MiscDesc>Increase oxegen supply by two hours</MiscDesc>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>CUSTOMFIT</Key>
+    <Name>Custom Fit</Name>
+    <Description>[H3]Custom Fit[h3]
+Please see page 57 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="57">Special Modifications</Source>
+    <Type>Armor</Type>
+    <Price>400</Price>
+    <Rarity>3</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Removes [SE] from Athletics and Stealth checks.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>2</Count>
+        <MiscDesc>Remove an additional setback from Athletics and Stealth checks</MiscDesc>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>INTASCGEAR</Key>
+    <Name>Integrated Ascension Gear</Name>
+    <Description>[H3]Integrated Ascension Gear[h3]
+Please see page 57 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="57">Special Modifications</Source>
+    <Type>Armor</Type>
+    <Price>350</Price>
+    <Rarity>3</Rarity>
+    <HP>2</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>As an action, may make an [B]Average ([DI][DI]) Ranged (Light) check[b] to secure grappling hook to an object within medium range and reel in cord.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>May pull another character aloft by making an [B]Easy ([DI]) Athletics check[b].</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>INTSLICGEAR</Key>
+    <Name>Integrated Slicer Gear</Name>
+    <Description>[H3]Integrated Slicer Gear[h3]
+Please see page 58 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="58">Special Modifications</Source>
+    <Type>Armor</Type>
+    <Price>750</Price>
+    <Rarity>6</Rarity>
+    <HP>3</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Counts as having Slicer Gear.  Can be controlled by gesture or voice.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>TECHAPT</Key>
+        <Count>1</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>IONSHIELD</Key>
+    <Name>Ion Shielding</Name>
+    <Description>[H3]Ion Shielding[h3]
+Please see page 58 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="58">Special Modifications</Source>
+    <Type>Armor</Type>
+    <Price>2000</Price>
+    <Rarity>7</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Increase soak by 3 against weapons with Ion quality.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Increase ranged and melee defense by 1 against weapons with Ion quality</MiscDesc>
+      </Mod>
+    </AddedMods>
+    <MinSoak>2</MinSoak>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>RADSHIELD</Key>
+    <Name>Radiation Shielding</Name>
+    <Description>[H3]Radiation Shielding[h3]
+Please see page 58 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="58">Special Modifications</Source>
+    <Type>Armor</Type>
+    <CategoryLimit>
+      <Category>Sealable</Category>
+      <Category>Sealed</Category>
+    </CategoryLimit>
+    <Price>500</Price>
+    <Rarity>3</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Add [BO][BO] to Resilience checks to resist radiation.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>2</Count>
+        <MiscDesc>Increase armor's soak by 1 against damage caused by radiation</MiscDesc>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>REINFGAUNT</Key>
+    <Name>Reinforced Gauntlets</Name>
+    <Description>[H3]Reinforced Gauntlets[h3]
+Please see page 58 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="58">Special Modifications</Source>
+    <Type>Armor</Type>
+    <Price>250</Price>
+    <Rarity>2</Rarity>
+    <HP>2</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>May use gauntlets as a melee weapon.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>DURA</Key>
+        <Count>1</Count>
+      </Mod>
+    </AddedMods>
+    <WeaponModifiers>
+      <WeaponModifier>
+        <UnarmedName>Reinforced Gauntlets</UnarmedName>
+        <SkillKey>MELEE</SkillKey>
+        <DamageAdd>1</DamageAdd>
+        <Crit>4</Crit>
+        <Qualities>
+          <Quality>
+            <Key>DISORIENT</Key>
+            <Count>3</Count>
+          </Quality>
+        </Qualities>
+        <Range>Engaged</Range>
+      </WeaponModifier>
+    </WeaponModifiers>
+    <MinSoak>2</MinSoak>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>SELFREPSYS</Key>
+    <Name>Self-Repair Systems</Name>
+    <Description>[H3]Self-Repair Systems[h3]
+Please see page 58 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="58">Special Modifications</Source>
+    <Type>Armor</Type>
+    <Price>3000</Price>
+    <Rarity>6</Rarity>
+    <HP>2</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Once per encounter as a maneuver, can have armor attempt to repair itself or assist in a repair.  Counts as Intellect 2 and Mechanics 2 ([PR][PR]).</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>There is no cost to repair armor, whether using the automatic feature, or personally repairing.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <MinDefense>1</MinDefense>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>AD15CARGOPOS</Key>
+    <Name>(AD-15) Cargo Pod</Name>
+    <Description>[H3]Cargo Pod for AD-15[h3]
+Please see page 62 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="62">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <ItemLimit>
+      <Key>AD15MOD</Key>
+    </ItemLimit>
+    <Price>1400</Price>
+    <Rarity>2</Rarity>
+    <HP>2</HP>
+    <BaseMods>
+      <Mod>
+        <Key>ENCCADD</Key>
+        <Count>50</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>PASSADD2</Key>
+        <Count>3</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>AD15MICROTHRUST</Key>
+    <Name>(AD-15) Fine-Tuned Microthrusters</Name>
+    <Description>[H3]Fine-Tuned Microthrusters for AD-15[h3]
+Please see page 63 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="63">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <ItemLimit>
+      <Key>AD15MOD</Key>
+    </ItemLimit>
+    <Price>3000</Price>
+    <Rarity>6</Rarity>
+    <HP>2</HP>
+    <BaseMods>
+      <Mod>
+        <Key>HANDLINGADD</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>HANDLINGADD</Key>
+        <Count>1</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>AD15HYPER</Key>
+    <Name>(AD-15) Hyperdrive Class 8 Module</Name>
+    <Description>[H3]Hyperdrive Class 8 Module for AD-15[h3]
+Please see page 63 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="63">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <ItemLimit>
+      <Key>AD15MOD</Key>
+    </ItemLimit>
+    <Price>3000</Price>
+    <Rarity>6</Rarity>
+    <HP>4</HP>
+    <BaseMods>
+      <Mod>
+        <Key>HYPERDRIVEADD8</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Add astromech droid socket.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>HYPERDRIVESUB5</Key>
+        <Count>4</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>USERATTACH3</Key>
+    <Name>(AD-15) Hyperdrive Class 4 Module</Name>
+    <Description>[H3]Hyperdrive Class 4 Module for AD-15[h3]
+Please see page 63 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="63">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <ItemLimit>
+      <Key>AD15MOD</Key>
+    </ItemLimit>
+    <Price>5000</Price>
+    <Rarity>9</Rarity>
+    <HP>4</HP>
+    <BaseMods>
+      <Mod>
+        <Key>HYPERDRIVEADD4</Key>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Add astromech droid socket.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>HYPERDRIVESUB5</Key>
+        <Count>4</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>AD15SHIELD</Key>
+    <Name>(AD-15) Shield Generator Module</Name>
+    <Description>[H3]Shield Generator Module  forAD-15[h3]
+Please see page 63 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="63">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <ItemLimit>
+      <Key>AD15MOD</Key>
+    </ItemLimit>
+    <Price>8000</Price>
+    <Rarity>6</Rarity>
+    <HP>3</HP>
+    <BaseMods>
+      <Mod>
+        <Key>DEFZONEADD</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>DEFZONEADD</Key>
+        <Count>2</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>AD15BOOSTTHRUST</Key>
+    <Name>(AD-15) Sublight Boost Thrusters</Name>
+    <Description>[H3]Sublight Boost Thrusters for AD-15[h3]
+Please see page 63 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="63">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <ItemLimit>
+      <Key>AD15MOD</Key>
+    </ItemLimit>
+    <Price>9000</Price>
+    <Rarity>7</Rarity>
+    <HP>2</HP>
+    <BaseMods>
+      <Mod>
+        <Key>SPEEDADD</Key>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <Key>HANDLINGSUB</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>SPEEDADD</Key>
+        <Count>1</Count>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>ALLTERLEGS</Key>
+    <Name>All-Terrain Legs</Name>
+    <Description>[H3]All-Terrain Legs[h3]
+Please see page 65 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="65">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <CategoryLimit>
+      <Category>Air Vehicle</Category>
+      <Category>Starship</Category>
+    </CategoryLimit>
+    <Price>3000</Price>
+    <Rarity>5</Rarity>
+    <HP>2</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>As a maneuver, pilot may shift in or out of walker mode.  In walker mode, pilot uses Piloting (Planetary) and speed is reduced to 2.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>2</Count>
+        <MiscDesc>Remove setback from Piloting (Planetary) checks due to difficult terrain</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>2</Count>
+        <MiscDesc>Remove setback from Gunnery checks due to cover or terrain</MiscDesc>
+      </Mod>
+    </AddedMods>
+    <MaxSize>6</MaxSize>
+    <PriceSizeMult>true</PriceSizeMult>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>AMPHIBMOD</Key>
+    <Name>Amphibious Modification</Name>
+    <Description>[H3]Amphibious Modification[h3]
+Please see page 65 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="65">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <CategoryLimit>
+      <Category>Air Vehicle</Category>
+      <Category>Starship</Category>
+    </CategoryLimit>
+    <Price>1000</Price>
+    <Rarity>5</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Vehicle can operate underwater without penalty.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <MaxSize>6</MaxSize>
+    <PriceSizeMult>true</PriceSizeMult>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>DECOYBUOY</Key>
+    <Name>Decoy Buoy</Name>
+    <Description>[H3]Decoy Buoy[h3]
+Please see page 65 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="65">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <Price>5000</Price>
+    <Rarity>5</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Buoy may be jettisoned as an action.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc> Buoy can be programmed with a specific transponder code with a [B]Hard ([DI][DI][DI]) Computers check[b].</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Buoy can be set to transmit a distress signal or other data.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>A character operating ship sensors must make a [B]Hard ([DI][DI][DI]) Computers check[b] to identify that the buoy is not an actual ship.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>After being jettisoned, buoy no longer counts as being attached to the ship until it is reattached.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>2</Count>
+        <MiscDesc>Add setback to Computers checks to identify the buoy</MiscDesc>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>ENCRYCOMP</Key>
+    <Name>Encrypted Computer</Name>
+    <Description>[H3]Encrypted Computer[h3]
+Please see page 65 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="65">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <Price>1000</Price>
+    <Rarity>6</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Upgrade difficulty of all Computers checks made to slice the ship's computer system once.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>2</Count>
+        <MiscDesc>Add setback to Computers checks made to slice the ship's computer systems</MiscDesc>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>ENHREPULS</Key>
+    <Name>Enhanced Repulsorlift</Name>
+    <Description>[H3]Enhanced Repulsorlift[h3]
+Please see page 65 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="65">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <TypeLimit>
+      <Type>Airspeeder</Type>
+      <Type>Landspeeder</Type>
+    </TypeLimit>
+    <Price>1000</Price>
+    <Rarity>3</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Key>SPEEDADD</Key>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <Key>HANDLINGSUB</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>DEFDRI</Key>
+        <Count>1</Count>
+      </Mod>
+    </AddedMods>
+    <PriceSizeMult>true</PriceSizeMult>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>GUNNBRAIN</Key>
+    <Name>Gunnery Droid Brain</Name>
+    <Description>[H3]Gunnery Droid Brain[h3]
+Please see page 66 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="66">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <Price>7000</Price>
+    <Rarity>6</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Add a droid brain with Gunnery 2 and Agility 0.</MiscDesc>
+        <InnateSkills>
+          <InnateSkill>
+            <SkillKey>GUNN</SkillKey>
+            <SkillRank>2</SkillRank>
+          </InnateSkill>
+        </InnateSkills>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>2</Count>
+        <MiscDesc>Increase the droid brain's Gunnery skill by 1</MiscDesc>
+        <InnateSkills>
+          <InnateSkill>
+            <SkillKey>GUNN</SkillKey>
+            <SkillRank>1</SkillRank>
+          </InnateSkill>
+        </InnateSkills>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>LASFOCUS</Key>
+    <Name>Laser Focusing Array</Name>
+    <Description>[H3]Laser Focusing Array[h3]
+Please see page 66 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="66">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <Price>3000</Price>
+    <Rarity>6</Rarity>
+    <HP>2</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Add automatic [AD] to combat checks made with the ship's laser cannons and turbolasers.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <MustBeStarship>true</MustBeStarship>
+    <PriceWeponCatMult>Laser</PriceWeponCatMult>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>OVERCHIONENG</Key>
+    <Name>Overcharged Ion Engines</Name>
+    <Description>[H3]Overcharged Ion Engines[h3]
+Please see page 66 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="66">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <Price>9500</Price>
+    <Rarity>4</Rarity>
+    <HP>3</HP>
+    <BaseMods>
+      <Mod>
+        <Key>SPEEDADD</Key>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <Key>HANDLINGSUB</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>SHORTCUT</Key>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <Key>TRICK</Key>
+      </Mod>
+    </AddedMods>
+    <MustBeStarship>true</MustBeStarship>
+    <MaxSize>3</MaxSize>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>PSEUDCLOAK</Key>
+    <Name>Pseudo-Cloaking Device</Name>
+    <Description>[H3]Pseudo-Cloaking Device[h3]
+Please see page 66 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="66">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <Price>12000</Price>
+    <Rarity>8</Rarity>
+    <Restricted>true</Restricted>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Increase the difficulty of checks to detect the ship with sensors by two.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Upgrade the difficulty of all combat checks once against the ship at Short range or further.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>2</Count>
+        <MiscDesc>Add setback to combat checks targetting ship at Short range or further</MiscDesc>
+      </Mod>
+    </AddedMods>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>SECTRANSP</Key>
+    <Name>Secondary Transponder</Name>
+    <Description>[H3]Secondary Transponder[h3]
+Please see page 67 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="67">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <Price>20000</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Crew can switch to the secondary transponder as an action, making an [B]Average ([DI][DI]) Computers check[b].</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>An observer who scans the ship can detect discrepancies indicating the presence of a secondary transponder with a [B]Daunting ([DI][DI][DI][DI]) Computers check[b].</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Activate secondary transponder as a maneuver</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>3</Count>
+        <MiscDesc>Add one additional ship identity</MiscDesc>
+      </Mod>
+    </AddedMods>
+    <MustBeStarship>true</MustBeStarship>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>SECMEAS</Key>
+    <Name>Security Measures</Name>
+    <Description>[H3]Security Measures[h3]
+Please see page 67 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="67">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <Price>500</Price>
+    <Rarity>4</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Upgrade the difficulty Computers and Skulduggery checks made to gain unauthorized access to the ship twice.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Count>2</Count>
+        <MiscDesc>Add setback to Computers and Skulduggery checks made to gain unauthorized access to thei ship</MiscDesc>
+      </Mod>
+    </AddedMods>
+    <PriceSizeMult>true</PriceSizeMult>
+  </ItemAttachment>
+  <ItemAttachment>
+    <Key>SLICCOMP</Key>
+    <Name>Slicing Computer</Name>
+    <Description>[H3]Slicing Computer[h3]
+Please see page 67 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="67">Special Modifications</Source>
+    <Type>Vehicle</Type>
+    <Price>5000</Price>
+    <Rarity>6</Rarity>
+    <HP>1</HP>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Counts as slicer gear that can be used by one passenger.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Add automatic [AD] to Computers checks made to slice enemy ships' systems.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <AddedMods>
+      <Mod>
+        <Key>COD</Key>
+        <Count>1</Count>
+      </Mod>
+      <Mod>
+        <Key>DEFSLI</Key>
+        <Count>1</Count>
+      </Mod>
+    </AddedMods>
+    <MustBeStarship>true</MustBeStarship>
+  </ItemAttachment>
 </ItemAttachments>
-

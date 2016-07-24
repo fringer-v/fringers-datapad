@@ -5,7 +5,7 @@
   <Description>[H4]Iktotchi[h4]
   Please see page 18 of the Keeping the Peace sourcebook for details.
 </Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="18">Keeping the Peace</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>2</Agility>

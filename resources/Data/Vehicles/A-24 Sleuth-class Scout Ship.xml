@@ -5,7 +5,7 @@
   <Description>
     [H3]A-24 Sleuth-class Scout Ship[h3]
     Please see page 60 of the Enter the Unknown Sourcebook for details.</Description>
-  <Source>Enter the Unknown</Source>
+  <Source Page="60">Enter the Unknown</Source>
   <Type>Patrol Boat</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

@@ -6,7 +6,7 @@
     [H3]MEV2 "Dug Digger"[h3]
     Please see page 107 of the Suns of Fortune Sourcebook for details.
   </Description>
-  <Source>Suns of Fortune</Source>
+  <Source Page="107">Suns of Fortune</Source>
   <Type>Walker</Type>
   <Categories>
     <Category>Land Vehicle</Category>

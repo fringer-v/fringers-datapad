@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>HEAVY</Key>
   <Name>Heavy</Name>
   <Description>
-    [H4]Heavy &#8212; Overwhelming Firepower[h4]
+    [H4]Heavy — Overwhelming Firepower[h4]
     Please see page 30 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="30">Dangerous Covenants</Source>
   <CareerSkills>
     <Key>GUNN</Key>
     <Key>PERC</Key>

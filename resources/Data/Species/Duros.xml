@@ -33,8 +33,8 @@
     The Duros language is Durese, which is a [I]lingua franca[i] of sorts amongst spacers.
   </Description>
   <Sources>
-    <Source>Age of Rebellion Core Rulebook</Source>
-    <Source>Enter the Unknown</Source>
+    <Source Page="55">Age of Rebellion Core Rulebook</Source>
+    <Source Page="21">Enter the Unknown</Source>
   </Sources>
   <StartingChars>
     <Brawn>1</Brawn>

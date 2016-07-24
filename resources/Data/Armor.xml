@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Armors>
   <Armor>
     <Key>AEG</Key>
@@ -7,6 +7,11 @@
       [H3]Adverse Environmental Gear[h3]
       Please see page 169 of the Edge of the Empire Core Rulebook, page 184 of the Age of Rebellion Core Rulebook, or page 178 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="169">Edge of the Empire Core Rulebook</Source>
+      <Source Page="184">Age of Rebellion Core Rulebook</Source>
+      <Source Page="178">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Defense>0</Defense>
     <Soak>1</Soak>
     <Price>500</Price>
@@ -25,6 +30,11 @@
       [H3]Armored Clothing[h3]
       Please see page 169 of the Edge of the Empire Core Rulebook, page 184 of the Age of Rebellion Core Rulebook, or page 178 of the Force and Destiny Core Rulebook, for details.
     </Description>
+    <Sources>
+      <Source Page="169">Edge of the Empire Core Rulebook</Source>
+      <Source Page="184">Age of Rebellion Core Rulebook</Source>
+      <Source Page="178">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Defense>1</Defense>
     <Soak>1</Soak>
     <Price>1000</Price>
@@ -43,11 +53,11 @@
       [H3]Armored Robes[h3]
       Please see page 179 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="179">Force and Destiny Core Rulebook</Source>
     <Defense>1</Defense>
     <Soak>2</Soak>
     <Price>4500</Price>
-	  <Restricted>true</Restricted>
+    <Restricted>true</Restricted>
     <Encumbrance>3</Encumbrance>
     <HP>2</HP>
     <Rarity>8</Rarity>
@@ -64,7 +74,7 @@
       [H3]Concealing Robes[h3]
       Please see page 179 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="179">Force and Destiny Core Rulebook</Source>
     <Defense>0</Defense>
     <Soak>1</Soak>
     <Price>150</Price>
@@ -91,9 +101,9 @@
       Please see page 170 of the Edge of the Empire Core Rulebook, page 184 of the Age of Rebellion Core Rulebook, or page 47 of the Keeping the Peace sourcebook for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
-      <Source>Keeping the Peace</Source>
+      <Source Page="170">Edge of the Empire Core Rulebook</Source>
+      <Source Page="184">Age of Rebellion Core Rulebook</Source>
+      <Source Page="47">Keeping the Peace sourcebook</Source>
     </Sources>
     <Categories>
       <Category>Sealable</Category>
@@ -118,6 +128,11 @@
       [H3]Heavy Clothing[h3]
       Please see page 169 of the Edge of the Empire Core Rulebook, page 185 of the Age of Rebellion Core Rulebook, or page 180 of the Force and Destiny Core Rulebook for details.
     </Description>
+    <Sources>
+      <Source Page="169">Edge of the Empire Core Rulebook</Source>
+      <Source Page="185">Age of Rebellion Core Rulebook</Source>
+      <Source Page="180">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Defense>0</Defense>
     <Soak>1</Soak>
     <Price>50</Price>
@@ -136,8 +151,8 @@
       Please see page 169 of the Edge of the Empire Core Rulebook, or page 185 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="169">Edge of the Empire Core Rulebook</Source>
+      <Source Page="185">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Categories>
       <Category>Sealable</Category>
@@ -162,8 +177,8 @@
       Please see page 170 of the Edge of the Empire Core Rulebook, or page 185 of the Age of Rebellion Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Age of Rebellion Core Rulebook</Source>
+      <Source Page="170">Edge of the Empire Core Rulebook</Source>
+      <Source Page="185">Age of Rebellion Core Rulebook</Source>
     </Sources>
     <Defense>2</Defense>
     <Soak>0</Soak>
@@ -182,6 +197,11 @@
       [H3]Padded Armor[h3]
       Please see page 169 of the Edge of the Empire Core Rulebook, page 185 of the Age of Rebellion Core Rulebook, or page 180 of the Force and Destiny Core Rulebook for details.
     </Description>
+    <Sources>
+      <Source Page="169">Edge of the Empire Core Rulebook</Source>
+      <Source Page="185">Age of Rebellion Core Rulebook</Source>
+      <Source Page="180">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Defense>0</Defense>
     <Soak>2</Soak>
     <Price>500</Price>
@@ -204,7 +224,7 @@
       <Category>Full Body</Category>
       <Category>Resistant</Category>
     </Categories>
-    <Source>Enter the Unknown</Source>
+    <Source Page="44">Enter the Unknown</Source>
     <Defense>0</Defense>
     <Soak>2</Soak>
     <Price>750</Price>
@@ -226,8 +246,8 @@
       Please see page 45 of the Enter the Unknown Sourcebook, or page 42 of the Stay on Target Sourcebook, for details.
     </Description>
     <Sources>
-      <Source>Enter the Unknown</Source>
-      <Source>Stay on Target</Source>
+      <Source Page="45">Enter the Unknown Sourcebook</Source>
+      <Source Page="42">Stay on Target Sourcebook</Source>
     </Sources>
     <Defense>0</Defense>
     <Soak>2</Soak>
@@ -257,7 +277,7 @@
       [H3]A/KT Tracker Utility Vest[h3]
       Please see page 45 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="45">Enter the Unknown</Source>
     <Defense>0</Defense>
     <Soak>0</Soak>
     <Price>100</Price>
@@ -278,7 +298,7 @@
       [H3]A/KT Mountaineer Armor[h3]
       Please see page 45 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="45">Enter the Unknown</Source>
     <Defense>1</Defense>
     <Soak>1</Soak>
     <Price>1800</Price>
@@ -303,7 +323,7 @@
       [H3]Catch Vest[h3]
       Please see page 99 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="99">Suns of Fortune</Source>
     <Defense>0</Defense>
     <Soak>1</Soak>
     <Price>300</Price>
@@ -324,7 +344,7 @@
       [H3]Nomad Greatcoat[h3]
       Please see page 99 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="99">Suns of Fortune</Source>
     <Defense>0</Defense>
     <Soak>1</Soak>
     <Price>100</Price>
@@ -352,7 +372,7 @@
       [H3]Type III "Berethron" Personal Modular Armor[h3]
       Please see page 99 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="99">Suns of Fortune</Source>
     <Defense>1</Defense>
     <Soak>1</Soak>
     <Price>1250</Price>
@@ -371,7 +391,7 @@
       [H3]TX-3 Combat Flight Suit[h3]
       Please see page 99 of the Suns of Fortune Sourcebook for details.
     </Description>
-    <Source>Suns of Fortune</Source>
+    <Source Page="99">Suns of Fortune</Source>
     <Categories>
       <Category>Sealed</Category>
       <Category>Full Body</Category>
@@ -385,7 +405,6 @@
     <HP>2</HP>
     <Rarity>6</Rarity>
   </Armor>
-  
   <!-- Dangerous Covenants -->
   <Armor>
     <Key>BEASTHIDE</Key>
@@ -394,10 +413,10 @@
       [H3]Beast-Hide Armor[h3]
       Please see page 49 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="49">Dangerous Covenants</Source>
     <Type />
     <Categories>
-       <Category>Heavy</Category>
+      <Category>Heavy</Category>
     </Categories>
     <Encumbrance>3</Encumbrance>
     <HP>0</HP>
@@ -420,7 +439,7 @@
       [H3]Corellian Arms "Storm" Charge Suit[h3]
       Please see page 50 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="50">Dangerous Covenants</Source>
     <Type />
     <Categories>
       <Category>Heavy</Category>
@@ -471,7 +490,7 @@
       [H3]Mk. III Flak Vest[h3]
       Please see page 49 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="49">Dangerous Covenants</Source>
     <Type />
     <Categories>
       <Category>Heavy</Category>
@@ -497,7 +516,7 @@
       [H3]Taggeco Protector 1 Combat Armor[h3]
       Please see page 49 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="49">Dangerous Covenants</Source>
     <Type />
     <Categories>
       <Category>Sealed</Category>
@@ -523,7 +542,7 @@
       [H3]Loronar Coporation Mk.II "Steelskin" Anti-Concussive Armor[h3]
       Please see page 49 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="49">Dangerous Covenants</Source>
     <Type />
     <Categories>
       <Category>Full Body</Category>
@@ -557,7 +576,7 @@
       [H3]Arakyd Industries PX-11 "Battlement" Powered Armor[h3]
       Please see page 51 of the Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="51">Dangerous Covenants</Source>
     <Type />
     <Categories>
       <Category>Sealed</Category>
@@ -597,7 +616,7 @@
       [H3]Tailored Armored Jacket[h3]
       Please see page 44 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="44">Far Horizons</Source>
     <Type />
     <Categories>
       <Category>Resistant</Category>
@@ -623,7 +642,7 @@
       [H3]Reinforced Environment Gear[h3]
       Please see page 44 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="44">Far Horizons</Source>
     <Categories>
       <Category>Full Body</Category>
     </Categories>
@@ -652,7 +671,7 @@
       [H3]Creshaldyne Mk.IV Riot Armor[h3]
       Please see page 44 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="44">Far Horizons</Source>
     <Categories>
       <Category>Full Body</Category>
       <Category>Hard</Category>
@@ -684,7 +703,7 @@
       [H3]A/KT Wing Commander Armored Flight Suit[h3]
       Please see page 42 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="42">Stay on Target</Source>
     <Type />
     <Categories>
       <Category>Sealed</Category>
@@ -716,7 +735,7 @@
       [H3]Caballerin-Series Riding Tack[h3]
       Please see page 42 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="42">Stay on Target</Source>
     <Type />
     <Categories>
     </Categories>
@@ -745,7 +764,7 @@
       [H3]Capari-Series Padded Beast Armor[h3]
       Please see page 43 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="43">Stay on Target</Source>
     <Type />
     <Categories>
       <Category>Half Body</Category>
@@ -777,7 +796,7 @@
       [H3]Destri-Series Laminated Beast Armor[h3]
       Please see page 43 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="43">Stay on Target</Source>
     <Type />
     <Categories>
       <Category>Heavy</Category>
@@ -812,7 +831,7 @@
       [H3]H-Series Megafauna Carriage[h3]
       Please see page 43 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="43">Stay on Target</Source>
     <Type />
     <Categories>
       <Category>Heavy</Category>
@@ -846,7 +865,7 @@
       [H3]Hutt Shell Armor[h3]
       Please see page 104 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="104">Lords of Nal Hutta</Source>
     <Type />
     <Categories>
       <Category>Sealable</Category>
@@ -890,7 +909,7 @@
       [H3]Sakiyan Shadowsuit[h3]
       Please see page 105 of the Lords of Nal Hutta Sourcebook for details.
     </Description>
-    <Source>Lords of Nal Hutta</Source>
+    <Source Page="105">Lords of Nal Hutta</Source>
     <Type />
     <Categories>
     </Categories>
@@ -917,9 +936,6 @@
       </Mod>
     </BaseMods>
   </Armor>
-
-
-
   <Armor>
     <Key>BLASTVEST</Key>
     <Name>Blast Vest</Name>
@@ -927,7 +943,7 @@
       [H3]Blast Vest[h3]
       Please see page 47 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="47">Fly Casual</Source>
     <Type />
     <Categories>
       <Category>Heavy</Category>
@@ -953,7 +969,7 @@
       [H3]Mimetic Suit[h3]
       Please see page 47 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="47">Fly Casual</Source>
     <Type />
     <Categories />
     <Encumbrance>2</Encumbrance>
@@ -986,7 +1002,7 @@
       [H3]Smuggler's Trenchcoat[h3]
       Please see page 47 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="47">Fly Casual</Source>
     <Type />
     <Encumbrance>3</Encumbrance>
     <HP>0</HP>
@@ -1010,9 +1026,7 @@
     <Defense>1</Defense>
     <Soak>1</Soak>
   </Armor>
-  
   <!--Desperate Allies-->
-
   <Armor>
     <Key>BANAL</Key>
     <Name>Banal Apparel</Name>
@@ -1020,7 +1034,7 @@
       [H3]Banal Apparel[h3]
       Please see page 47 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="47">Desperate Allies</Source>
     <Type />
     <Categories>
     </Categories>
@@ -1045,7 +1059,7 @@
       [H3]Cargo Apparel[h3]
       Please see page 47 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="47">Desperate Allies</Source>
     <Type />
     <Categories>
     </Categories>
@@ -1070,7 +1084,7 @@
       [H3]Diplomat's Robes[h3]
       Please see page 47 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="47">Desperate Allies</Source>
     <Type />
     <Categories>
     </Categories>
@@ -1098,7 +1112,7 @@
       [H3]Flare Jacket[h3]
       Please see page 48 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="48">Desperate Allies</Source>
     <Type />
     <Categories>
       <Category>Heavy</Category>
@@ -1124,7 +1138,7 @@
       [H3]Hauling Harness[h3]
       Please see page 48 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="48">Desperate Allies</Source>
     <Type />
     <Categories>
       <Category>Heavy</Category>
@@ -1154,7 +1168,7 @@
       [H3]Holographic Costume[h3]
       Please see page 48 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="48">Desperate Allies</Source>
     <Type />
     <Categories>
     </Categories>
@@ -1182,7 +1196,7 @@
       [H3]Lector's Outfit[h3]
       Please see page 48 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="48">Desperate Allies</Source>
     <Type />
     <Categories>
     </Categories>
@@ -1211,7 +1225,7 @@
       [H3]Noble Regalia[h3]
       Please see page 49 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="49">Desperate Allies</Source>
     <Type />
     <Categories>
       <Category>Half Body</Category>
@@ -1237,7 +1251,7 @@
       [H3]Performer's Attire[h3]
       Please see page 49 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="49">Desperate Allies</Source>
     <Type />
     <Categories>
     </Categories>
@@ -1262,7 +1276,7 @@
       [H3]Powered Capacitive Armor[h3]
       Please see page 49 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="49">Desperate Allies</Source>
     <Type />
     <Defense>1</Defense>
     <Soak>1</Soak>
@@ -1290,7 +1304,7 @@
       [H3]Resplendent Robes[h3]
       Please see page 49 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="49">Desperate Allies</Source>
     <Type />
     <Defense>0</Defense>
     <Soak>1</Soak>
@@ -1316,7 +1330,7 @@
       [H3]Second Skin Armor[h3]
       Please see page 49 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="49">Desperate Allies</Source>
     <Type />
     <Defense>1</Defense>
     <Soak>1</Soak>
@@ -1342,7 +1356,7 @@
       [H3]Polis Masson Bodysuit[h3]
       Please see page 109 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="109">Strongholds of Resistance</Source>
     <Type />
     <Defense>0</Defense>
     <Soak>1</Soak>
@@ -1372,7 +1386,7 @@
       [H3]Leviathan Power Armor[h3]
       Please see page 109 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="109">Strongholds of Resistance</Source>
     <Type />
     <Categories>
       <Category>Sealed</Category>
@@ -1502,7 +1516,7 @@
       [H3]Verpine Fiber Ultramesh Armor[h3]
       Please see page 109 of the Strongholds of Resistance Sourcebook for details.
     </Description>
-    <Source>Strongholds of Resistance</Source>
+    <Source Page="109">Strongholds of Resistance</Source>
     <Type />
     <Defense>0</Defense>
     <Soak>1</Soak>
@@ -1522,9 +1536,7 @@
       </Mod>
     </BaseMods>
   </Armor>
-
   <!-- Keeping the Peace -->
-
   <Armor>
     <Key>CRESHARMOR</Key>
     <Name>Cresh "Luck" Armor</Name>
@@ -1532,7 +1544,7 @@
       [H3]Cresh "Luck" Armor[h3]
       Please see page 47 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="47">Keeping the Peace</Source>
     <Type />
     <Encumbrance>4</Encumbrance>
     <HP>1</HP>
@@ -1568,7 +1580,7 @@
       [H3]Jedi Battle Armor[h3]
       Please see page 47 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="47">Keeping the Peace</Source>
     <Type />
     <Categories>
       <Category>Sealable</Category>
@@ -1603,7 +1615,7 @@
       [H3]Jedi Temple Guard Armor[h3]
       Please see page 48 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="48">Keeping the Peace</Source>
     <Type />
     <Encumbrance>4</Encumbrance>
     <HP>3</HP>
@@ -1635,7 +1647,7 @@
       [H3]Jedi Training Suit (Weighted)[h3]
       Please see page 48 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="48">Keeping the Peace</Source>
     <Type />
     <Encumbrance>6</Encumbrance>
     <HP>0</HP>
@@ -1664,7 +1676,7 @@
       [H3]Jedi Training Suit (Unweighted)[h3]
       Please see page 48 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="48">Keeping the Peace</Source>
     <Type />
     <Categories>
       <Category>Half Body</Category>
@@ -1688,7 +1700,7 @@
       [H3]Kav-Dann Power Armor[h3]
       Please see page 48 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="48">Keeping the Peace</Source>
     <Type />
     <Categories>
       <Category>Sealed</Category>
@@ -1730,7 +1742,7 @@
       [H3]Koromondian Half-Vest[h3]
       Please see page 49 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="49">Keeping the Peace</Source>
     <Type />
     <Categories>
       <Category>Heavy</Category>
@@ -1756,7 +1768,7 @@
       [H3]Riot Armor[h3]
       Please see page 49 of the Keeping the Peace sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="49">Keeping the Peace</Source>
     <Type />
     <Categories>
       <Category>Half Body</Category>
@@ -1773,7 +1785,6 @@
     <Defense>0</Defense>
     <Soak>2</Soak>
   </Armor>
-
   <!-- Armor Templates from Keeping the Peace -->
   <Armor>
     <Key>ARMTEMP1</Key>
@@ -1783,7 +1794,7 @@
       Please see page 90 of the Keeping the Peace sourcebook for details.[P]
       [I]Note: This is a template.  When crafting armor from it, please use the "Craft" attachment to use your [B]Mechanics or Survival check[b] after construction.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="90">Keeping the Peace</Source>
     <Type>Template</Type>
     <Categories>
       <Category>Half Body</Category>
@@ -1806,7 +1817,7 @@
       Please see page 90 of the Keeping the Peace sourcebook for details.[P]
       [I]Note: This is a template.  When crafting armor from it, please use the "Craft" attachment to use your [B]Mechanics or Survival check[b] after construction.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="90">Keeping the Peace</Source>
     <Type>Template</Type>
     <Categories>
       <Category>Half Body</Category>
@@ -1829,7 +1840,7 @@
       Please see page 90 of the Keeping the Peace sourcebook for details.[P]
       [I]Note: This is a template.  When crafting armor from it, please use the "Craft" attachment to use your [B]Mechanics check[b] after construction.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="90">Keeping the Peace</Source>
     <Type>Template</Type>
     <Categories>
       <Category>Full Body</Category>
@@ -1852,7 +1863,7 @@
       Please see page 90 of the Keeping the Peace sourcebook for details.[P]
       [I]Note: This is a template.  When crafting armor from it, please use the "Craft" attachment to use your [B]Mechanics check[b] after construction.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="90">Keeping the Peace</Source>
     <Type>Template</Type>
     <Categories>
       <Category>Half Body</Category>
@@ -1876,7 +1887,7 @@
       Please see page 90 of the Keeping the Peace sourcebook for details.[P]
       [I]Note: This is a template.  When crafting armor from it, please use the "Craft" attachment to use your [B]Mechanics check[b] after construction.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="90">Keeping the Peace</Source>
     <Type>Template</Type>
     <Categories>
       <Category>Full Body</Category>
@@ -1900,7 +1911,7 @@
       Please see page 90 of the Keeping the Peace sourcebook for details.[P]
       [I]Note: This is a template.  When crafting armor from it, please use the "Craft" attachment to use your [B]Mechanics check[b] after construction.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="90">Keeping the Peace</Source>
     <Type>Template</Type>
     <Categories>
       <Category>Full Body</Category>
@@ -1927,7 +1938,7 @@
       Please see page 90 of the Keeping the Peace sourcebook for details.[P]
       [I]Note: This is a template.  When crafting armor from it, please use the "Craft" attachment to use your [B]Mechanics check[b] after construction.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="90">Keeping the Peace</Source>
     <Type>Template</Type>
     <Categories>
       <Category>Full Body</Category>
@@ -1946,7 +1957,141 @@
     <Defense>2</Defense>
     <Soak>2</Soak>
   </Armor>
-
-
-
+  
+  <!-- Special Modifications -->
+  <Armor>
+    <Key>CLOAKCOAT</Key>
+    <Name>Cloaking Coat</Name>
+    <Description>
+      [H3]Cloaking Coat[h3]
+      Please see page 47 of the Special Modifications sourcebook for details.
+    </Description>
+    <Source Page="47">Special Modifications</Source>
+    <Type />
+    <Categories>
+      <Category>Full Body</Category>
+    </Categories>
+    <Defense>0</Defense>
+    <Soak>1</Soak>
+    <Price>550</Price>
+    <Encumbrance>4</Encumbrance>
+    <HP>1</HP>
+    <Rarity>8</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Upgrade difficulty of checks to detect an individual wearing a cloaking coat using sensors or electronics twice.  Droids with Intellect less than wearer's ranks in Computers are similarly affected.</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </Armor>
+  <Armor>
+    <Key>MECHUTILSUIT</Key>
+    <Name>Mechanic's Utility Suit</Name>
+    <Description>
+      [H3]Mechanic's Utility Suit[h3]
+      Please see page 48 of the Special Modifications sourcebook for details.
+    </Description>
+    <Source Page="48">Special Modifications</Source>
+    <Type />
+    <Categories>
+      <Category>Full Body</Category>
+    </Categories>
+    <Defense>0</Defense>
+    <Soak>2</Soak>
+    <Price>1175</Price>
+    <Encumbrance>5</Encumbrance>
+    <HP>1</HP>
+    <Rarity>3</Rarity>
+    <Restricted>false</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Counts as having a tool kit.</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </Armor>
+  <Armor>
+    <Key>N57</Key>
+    <Name>N-57 Armor</Name>
+    <Description>
+      [H3]Merr-Sonn N-57 Armor[h3]
+      Please see page 48 of the Special Modifications sourcebook for details.
+    </Description>
+    <Source Page="48">Special Modifications</Source>
+    <Type />
+    <Categories>
+      <Category>Sealable</Category>
+      <Category>Full Body</Category>
+      <Category>Hard Full Body</Category>
+      <Category>Hard</Category>
+      <Category>Heavy</Category>
+      <Category>Resistant</Category>
+      <Category>Powered</Category>
+    </Categories>
+    <Defense>0</Defense>
+    <Soak>2</Soak>
+    <Price>3000</Price>
+    <Encumbrance>5</Encumbrance>
+    <HP>5</HP>
+    <Rarity>6</Rarity>
+    <Restricted>false</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>As a maneuver, may recharge energy weapon that has run out of ammo.</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </Armor>
+  <Armor>
+    <Key>P14</Key>
+    <Name>P-14 Hazardous Industry Suit</Name>
+    <Description>
+      [H3]SoroSuub P-14 Hazardous Industry Suit[h3]
+      Please see page 48 of the Special Modifications sourcebook for details.
+    </Description>
+    <Source Page="48">Special Modifications</Source>
+    <Type />
+    <Categories>
+      <Category>Full Body</Category>
+      <Category>Heavy</Category>
+      <Category>Resistant</Category>
+      <Category>Sealed</Category>
+    </Categories>
+    <Defense>0</Defense>
+    <Soak>2</Soak>
+    <Price>1000</Price>
+    <Encumbrance>7</Encumbrance>
+    <HP>2</HP>
+    <Rarity>4</Rarity>
+    <Restricted>false</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Counts as wearing a breath mask.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Add [BO][BO] to [B]Resilience checks[b] to resist heat, cold, radiation, or other hostile environmental conditions.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Wearer does not suffer effects of Burn or Disorient qualities.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>When suffering strain to take an extra maneuver, suffer 1 additional strain.</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </Armor>
 </Armors>
+      <!--<Category>Sealable</Category>
+      <Category>Full Body</Category>
+      <Category>Hard Full Body</Category>
+      <Category>Hard</Category>
+      <Category>Heavy</Category>
+      <Category>Half Body</Category>
+      <Category>Powered</Category>
+      <Category>Sealable</Category>
+      <Category>Sealed</Category>
+      <Category>Resistant</Category>-->

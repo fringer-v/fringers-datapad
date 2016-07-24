@@ -4,8 +4,7 @@
   <Name>Luxurious-class Yacht</Name>
   <Description>[H3]Luxurious-class Yacht[h3]
 Please see page 58 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="58">Far Horizons</Source>
   <Type>Yacht</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

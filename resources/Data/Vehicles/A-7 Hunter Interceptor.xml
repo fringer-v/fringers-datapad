@@ -6,7 +6,7 @@
     [H3]A-7 Hunter Interceptor[h3]
     Please see page 65 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="65">Dangerous Covenants</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

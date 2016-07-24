@@ -4,7 +4,7 @@
   <Name>PTB-625 Heavy Bomber</Name>
   <Description>[H3]PTB-625 Heavy Bomber[h3]
 Please see page 51 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="51">Stay on Target</Source>
   <Type>Airspeeder</Type>
   <Categories>
     <Category>Air Vehicle</Category>

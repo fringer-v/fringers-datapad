@@ -16,7 +16,7 @@ Toydaria is a large, muddy planet located in the Toydaria system of Hutt Space, 
 Toydarian language is the native language of the Toydarian species from Toydaria.
 [P]Most Toydarians are fluent in both Toydarian language and Basic, although they are only literate in their own language. However, they would rather converse in Toydarian. Many Toydarians are fluent in Huttese instead of Basic, as the species has a long commercial history with the Hutts.
 </Description>
-  <Source>Enter the Unknown</Source>
+  <Source Page="22">Enter the Unknown</Source>
   <StartingChars>
     <Brawn>1</Brawn>
     <Agility>1</Agility>

@@ -4,7 +4,7 @@
   <Name>Tallanx-Class Stealth Fighter</Name>
   <Description>[H3]Tallanx-Class Stealth Fighter[h3]
 Please see page 117 of the Strongholds of Resistance Sourcebook for details.</Description>
-  <Source>Strongholds of Resistance</Source>
+  <Source Page="117">Strongholds of Resistance</Source>
   <Sources />
   <Type>Starfighter</Type>
   <Categories>

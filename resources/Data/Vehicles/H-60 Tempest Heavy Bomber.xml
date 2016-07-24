@@ -4,7 +4,7 @@
   <Name>H-60 Tempest Heavy Bomber</Name>
   <Description>[H3]H-60 Tempest Heavy Bomber[h3]
 Please see page 53 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="53">Stay on Target</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

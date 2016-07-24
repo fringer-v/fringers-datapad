@@ -6,8 +6,8 @@
   Please see page 20 of the Keeping the Peace sourcebook, or page 23 of the Lead by Example sourcebook, for details.
 </Description>
   <Sources>
-    <Source>Keeping the Peace</Source>
-    <Source>Lead by Example</Source>
+    <Source Page="20">Keeping the Peace sourcebook</Source>
+    <Source Page="23">Lead by Example sourcebook</Source>
   </Sources>
   <StartingChars>
     <Brawn>2</Brawn>

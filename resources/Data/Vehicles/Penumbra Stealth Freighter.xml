@@ -4,7 +4,7 @@
   <Name>Penumbra Stealth Freighter</Name>
   <Description>[H3][I]Penumbra[i] Stealth Freighter[h3]
 Please see page 62 of the Keeping the Peace sourcebook for details.</Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="62">Keeping the Peace</Source>
   <Type>Freighter</Type>
   <Categories>
     <Category>Starship</Category>

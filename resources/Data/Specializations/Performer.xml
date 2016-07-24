@@ -2,10 +2,9 @@
 <Specialization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Key>PERFORMER</Key>
   <Name>Performer</Name>
-  <Description>[H4]Performer &#8212; The Burden of Art[h4]
+  <Description>[H4]Performer — The Burden of Art[h4]
 Please see page 30 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="30">Far Horizons</Source>
   <CareerSkills>
     <Key>CHARM</Key>
     <Key>COORD</Key>

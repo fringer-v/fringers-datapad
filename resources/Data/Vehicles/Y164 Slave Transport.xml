@@ -4,7 +4,7 @@
   <Name>Y164 Slave Transport</Name>
   <Description>[H3]Y164 Slave Transport[h3]
 Please see page 115 of the Lords of Nal Hutta Sourcebook for details.</Description>
-  <Source>Lords of Nal Hutta</Source>
+  <Source Page="115">Lords of Nal Hutta</Source>
   <Sources />
   <Type>Transport</Type>
   <Categories>

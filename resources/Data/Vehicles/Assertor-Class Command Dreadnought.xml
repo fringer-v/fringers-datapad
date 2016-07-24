@@ -4,7 +4,7 @@
   <Name>Assertor-Class Command Dreadnought</Name>
   <Description>[H3][I]Assertor[i]-Class Command Dreadnought[h3]
 Please see page 56 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="56">Lead by Example</Source>
   <Type>Dreadnought</Type>
   <Categories>
     <Category>Capital Ship</Category>

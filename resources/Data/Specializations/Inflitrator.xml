@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>INFILTRATOR</Key>
   <Name>Infiltrator</Name>
@@ -6,7 +6,7 @@
     [H4]Infiltrator - Finding the Secrets[h4]
     Please see page 97 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="97">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>DECEP</Key>
     <Key>MELEE</Key>
@@ -48,14 +48,14 @@
       <Directions>
         <Direction>
           <Right>true</Right>
-		  <Down>true</Down>
+          <Down>true</Down>
         </Direction>
         <Direction>
           <Left>true</Left>
           <Right>true</Right>
         </Direction>
         <Direction>
-		  <Up>true</Up>
+          <Up>true</Up>
           <Left>true</Left>
         </Direction>
         <Direction>
@@ -76,7 +76,7 @@
       <Directions>
         <Direction>
           <Right>true</Right>
-		  <Up>true</Up>
+          <Up>true</Up>
         </Direction>
         <Direction>
           <Right>true</Right>
@@ -84,7 +84,7 @@
         </Direction>
         <Direction>
           <Left>true</Left>
-		  <Down>true</Down>
+          <Down>true</Down>
         </Direction>
         <Direction>
           <Down>true</Down>
@@ -104,7 +104,7 @@
       <Directions>
         <Direction>
           <Right>true</Right>
-		      <Down>true</Down>
+          <Down>true</Down>
         </Direction>
         <Direction>
           <Left>true</Left>
@@ -112,7 +112,7 @@
         </Direction>
         <Direction>
           <Left>true</Left>
-		  <Up>true</Up>
+          <Up>true</Up>
         </Direction>
         <Direction>
           <Down>true</Down>
@@ -132,7 +132,7 @@
       <Directions>
         <Direction>
           <Right>true</Right>
-		      <Up>true</Up>
+          <Up>true</Up>
         </Direction>
         <Direction>
           <Left>true</Left>
@@ -140,11 +140,11 @@
         </Direction>
         <Direction>
           <Left>true</Left>
-		  <Right>true</Right>
+          <Right>true</Right>
         </Direction>
         <Direction>
           <Up>true</Up>
-		  <Left>true</Left>
+          <Left>true</Left>
         </Direction>
       </Directions>
     </TalentRow>

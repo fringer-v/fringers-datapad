@@ -4,7 +4,7 @@
   <Name>J-Type Diplomatic Barge</Name>
   <Description>[H3][I]J[i]-Type Diplomatic Barge[h3]
 Please see page 62 of the Desperate Allies Sourcebook for details.</Description>
-  <Source>Desperate Allies</Source>
+  <Source Page="62">Desperate Allies</Source>
   <Sources />
   <Type>Barge</Type>
   <Categories>

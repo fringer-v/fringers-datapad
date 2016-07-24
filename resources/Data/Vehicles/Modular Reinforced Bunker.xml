@@ -5,7 +5,7 @@
   <Description>[H3]BKR B-70 Modular Reinforced Bunker[h3]
 Please see page 48 of the Lead by Example Sourcebook for details.
 [P][I]Disclaimer: This is a piece of field equipment found in the Lead by Example Sourcebook.  It is created as a stationary "vehicle" because it is the most appropriate format.  While any mods or benefits are per the official source, the actual vehicle stats are an interpretation only and are not official.  Feel free to modify them if you think any changes are required.[i]</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="48">Lead by Example</Source>
   <Type>Field Equipment</Type>
   <Categories />
   <Encumbrance>0</Encumbrance>

@@ -4,7 +4,7 @@
   <Name>Explorer Submersible</Name>
   <Description>[H3]Hydrospeare Corp Explorer Submersible[h3]
 Please see page 116 of the Strongholds of Resistance Sourcebook for details.</Description>
-  <Source>Strongholds of Resistance</Source>
+  <Source Page="116">Strongholds of Resistance</Source>
   <Sources />
   <Type>Submersible</Type>
   <Categories>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>SHARPSHOOTER</Key>
   <Name>Sharpshooter</Name>
@@ -6,7 +6,7 @@
     [H4]Sharpshooter - Take the Shot[h4]
     Please see page 93 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="93">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>COOL</Key>
     <Key>PERC</Key>
@@ -90,7 +90,7 @@
         </Direction>
         <Direction>
           <Down>true</Down>
-		  <Left>true</Left>
+          <Left>true</Left>
           <Up>true</Up>
         </Direction>
       </Directions>
@@ -115,7 +115,7 @@
           <Right>true</Right>
         </Direction>
         <Direction>
-		  <Left>true</Left>
+          <Left>true</Left>
           <Down>true</Down>
         </Direction>
         <Direction>
@@ -139,7 +139,7 @@
         </Direction>
         <Direction>
           <Up>true</Up>
-		  <Left>true</Left>
+          <Left>true</Left>
         </Direction>
         <Direction>
           <Up>true</Up>

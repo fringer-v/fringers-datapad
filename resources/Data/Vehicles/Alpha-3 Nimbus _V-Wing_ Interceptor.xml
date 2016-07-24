@@ -4,7 +4,7 @@
   <Name>Alpha-3 Nimbus "V-Wing" Interceptor</Name>
   <Description>[H3]Alpha-3 Nimbus "V-Wing" Interceptor[h3]
 Please see page 57 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="57">Stay on Target</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

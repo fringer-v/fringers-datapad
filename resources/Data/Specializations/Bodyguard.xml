@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>BODYGUARD</Key>
   <Name>Bodyguard</Name>
   <Description>
-    [H4]Bodyguard &#8212; Personal Defender[h4]
+    [H4]Bodyguard — Personal Defender[h4]
     Please see page 77 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="77">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>GUNN</Key>
     <Key>PERC</Key>

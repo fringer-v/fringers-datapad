@@ -4,7 +4,7 @@
   <Name>Blade-32 Superiority Fighter</Name>
   <Description>[H3]Blade-32 Superiority Fighter[h3]
 Please see page 60 of the Keeping the Peace sourcebook for details.</Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="60">Keeping the Peace</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

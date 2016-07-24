@@ -4,8 +4,7 @@
   <Name>Indulgent-class Luxury Starliner</Name>
   <Description>[H3]Indulgent-class Luxury Starliner[h3]
 Please see page 59 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="59">Far Horizons</Source>
   <Type>Yacht</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

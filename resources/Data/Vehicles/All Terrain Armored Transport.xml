@@ -6,7 +6,7 @@
     [H3]All Terrain Armored Transport[h3]
     Please see page 264 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="264">Age of Rebellion Core Rulebook</Source>
   <Type>Walker</Type>
   <Categories>
     <Category>Walker</Category>

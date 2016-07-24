@@ -6,7 +6,7 @@
     [H3]YZ-775 Medium Transport[h3]
     Please see page 68 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="68">Dangerous Covenants</Source>
   <Type>Transport</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

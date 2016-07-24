@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>THIEF</Key>
   <Name>Thief</Name>
   <Description>
-    [H4]Thief &#8212; A Galaxy of Treasures[h4]
+    [H4]Thief — A Galaxy of Treasures[h4]
     Please see page 85 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="85">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>COMP</Key>
     <Key>SKUL</Key>

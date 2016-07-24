@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <Specialization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Key>BGMHUNTER</Key>
   <Name>Big-Game Hunter</Name>
@@ -6,7 +6,7 @@
     [H4]Big-Game Hunter[h4]
     Please see page 27 of the Enter the Unknown Sourcebook for details.
   </Description>
-  <Source>Enter the Unknown</Source>
+  <Source Page="27">Enter the Unknown</Source>
   <CareerSkills>
     <Key>RANGHVY</Key>
     <Key>STEAL</Key>

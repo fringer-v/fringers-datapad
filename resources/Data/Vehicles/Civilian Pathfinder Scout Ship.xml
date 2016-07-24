@@ -6,8 +6,8 @@
     [H3]Civilian Pathfinder Scout Ship[h3]
     Please see page 260 of the Force and Destiny Core Rulebook for details.
   </Description>
-  <Source>Force and Destiny Core Rulebook</Source>
- <Type>Scout Ship</Type>
+  <Source Page="260">Force and Destiny Core Rulebook</Source>
+  <Type>Scout Ship</Type>
   <Categories>
     <Category>Starship</Category>
     <Category>Non-Fighter Starship</Category>

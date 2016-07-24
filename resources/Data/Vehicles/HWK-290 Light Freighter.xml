@@ -7,8 +7,8 @@
   Please see page 56 of the Far Horizons Sourcebook, and page 263 of the Force and Destiny Core Rulebook, for details.
   </Description>
   <Sources>
-    <Source>Force and Destiny Core Rulebook</Source>
-    <Source>Far Horizons</Source>
+    <Source Page="56">Far Horizons Sourcebook</Source>
+    <Source Page="263">Force and Destiny Core Rulebook</Source>
   </Sources>
   <Type>Light Freighter</Type>
   <Categories>

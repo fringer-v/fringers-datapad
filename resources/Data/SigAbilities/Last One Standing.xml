@@ -6,7 +6,7 @@
     [H4]Hired Gun Signature Ability: Last One Standing[h4]
     Please see page 36 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="36">Dangerous Covenants</Source>
   <AbilityRows>
     <AbilityRow>
       <Index>0</Index>

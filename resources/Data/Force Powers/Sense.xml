@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ForcePower>
   <Key>SENSE</Key>
   <Name>Sense</Name>
@@ -7,8 +7,8 @@
     Please see page 279 of the Edge of the Empire Core Rulebook, or page 304 of the Force and Destiny Core Rulebook, for details.
   </Description>
   <Sources>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="279">Edge of the Empire Core Rulebook</Source>
+    <Source Page="304">Force and Destiny Core Rulebook</Source>
   </Sources>
   <MinForceRating>1</MinForceRating>
   <AbilityRows>

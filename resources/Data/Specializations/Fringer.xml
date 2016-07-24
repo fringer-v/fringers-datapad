@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>FRINGER</Key>
   <Name>Fringer</Name>
   <Description>
-    [H4]Fringer &#8212; Discovering Possibilities[h4]
+    [H4]Fringer — Discovering Possibilities[h4]
     Please see page 71 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="71">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>ASTRO</Key>
     <Key>COORD</Key>

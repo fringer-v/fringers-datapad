@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Species>
   <Key>DROID</Key>
   <Name>Droid</Name>
@@ -7,8 +7,8 @@
     Please see page 45 of the Edge of the Empire Core Rulebook, or page 53 of the Age of Rebellion Core Rulebook, for details.
   </Description>
   <Sources>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="45">Edge of the Empire Core Rulebook</Source>
+    <Source Page="53">Age of Rebellion Core Rulebook</Source>
   </Sources>
   <StartingChars>
     <Brawn>1</Brawn>
@@ -164,4 +164,4 @@
     </SubSpecies>
   </SubSpeciesList>
   <NoForceAbilities>true</NoForceAbilities>
-  </Species>
+</Species>

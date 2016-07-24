@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ForcePower>
   <Key>MOVE</Key>
   <Name>Move</Name>
@@ -6,6 +6,11 @@
     [H4]Force Power: Move[h4]
     Please see page 283 of the Edge of the Empire Core Rulebook, page 296 of the Age of Rebellion Core Rulebook, or page 298 of the Force and Destiny Core Rulebook, for details.
   </Description>
+  <Sources>
+    <Source Page="283">Edge of the Empire Core Rulebook</Source>
+    <Source Page="296">Age of Rebellion Core Rulebook</Source>
+    <Source Page="298">Force and Destiny Core Rulebook</Source>
+  </Sources>
   <MinForceRating>1</MinForceRating>
   <AbilityRows>
     <AbilityRow>

@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>MERCENARY</Key>
   <Name>Mercenary Soldier</Name>
   <Description>
-    [H4]Mercenary Soldier&#8212; Master of War[h4]
+    [H4]Mercenary Soldier— Master of War[h4]
     Please see page 79 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="79">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>DISC</Key>
     <Key>GUNN</Key>

@@ -5,7 +5,7 @@
   <Description>[H4]Armorer[h4]
   Please see page 24 of the Keeping the Peace sourcebook for details.
 </Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="24">Keeping the Peace</Source>
   <CareerSkills>
     <Key>LTSABER</Key>
     <Key>MECH</Key>

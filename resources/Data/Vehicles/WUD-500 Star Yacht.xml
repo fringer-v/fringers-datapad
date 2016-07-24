@@ -4,7 +4,7 @@
   <Name>WUD-500 Star Yacht</Name>
   <Description>[H3]CEC WUD-500 Star Yacht[h3]
       Please see page 55 of the Fly Casual Sourcebook for details.</Description>
-  <Source>Fly Casual</Source>
+  <Source Page="55">Fly Casual</Source>
   <Type>Yacht</Type>
   <Categories>
     <Category>Starship</Category>

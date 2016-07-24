@@ -4,7 +4,7 @@
   <Name>TIE Hunter</Name>
   <Description>[H3]TIE Hunter[h3]
 See page 42 of the Onslaught at Arda I adventure book.</Description>
-  <Source>Onslaught at Arda I</Source>
+  <Source Page="42">Onslaught at Arda I</Source>
   <Sources />
   <Type>Starfighter</Type>
   <Categories>

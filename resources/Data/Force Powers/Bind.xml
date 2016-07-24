@@ -6,7 +6,7 @@
     [H4]Force Power: Bind[h4]
     Please see page 286 of the Force and Destiny Core Rulebook for details.
   </Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="286">Force and Destiny Core Rulebook</Source>
   <AbilityRows>
     <AbilityRow>
       <Index>0</Index>

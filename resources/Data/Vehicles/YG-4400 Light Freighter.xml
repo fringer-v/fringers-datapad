@@ -6,7 +6,7 @@
     [H3]YG-4400 Light Freighter[h3]
     Please see page 112 of the Suns of Fortune Sourcebook for details.
   </Description>
-  <Source>Suns of Fortune</Source>
+  <Source Page="112">Suns of Fortune</Source>
   <Type>Freighter</Type>
   <Categories>
     <Category>Starship</Category>

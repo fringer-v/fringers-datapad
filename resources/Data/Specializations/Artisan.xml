@@ -4,7 +4,7 @@
   <Name>Artisan</Name>
   <Description>[H4]Artisan[h4]
 Please see page 93 of the Force and Destiny Core Rulebook for details.</Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="93">Force and Destiny Core Rulebook</Source>
   <CareerSkills>
     <Key>ASTRO</Key>
     <Key>COMP</Key>

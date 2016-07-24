@@ -4,7 +4,7 @@
   <Name>D-4 Mobile Defense Platform</Name>
   <Description>[H3]D-4 Mobile Defense Platform[h3]
 Please see page 58 of the Keeping the Peace sourcebook for details.</Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="58">Keeping the Peace</Source>
   <Type>Heavy Landspeeder</Type>
   <Categories>
     <Category>Land Vehicle</Category>

@@ -4,7 +4,7 @@
   <Name>Hutt Repulsorsled</Name>
   <Description>[H3]SakTek HF-2 Hutt Repulsorsled (Hutt Floater)[h3]
 Please see page 113 of the Lords of Nal Hutta Sourcebook for details.</Description>
-  <Source>Lords of Nal Hutta</Source>
+  <Source Page="113">Lords of Nal Hutta</Source>
   <Sources />
   <Type>Repulsorsled</Type>
   <Categories>

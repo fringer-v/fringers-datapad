@@ -4,7 +4,7 @@
   <Name>DF.11 Anti-Infantry Battery</Name>
   <Description>[H3]DF.11 Anti-Infantry Battery[h3]
 Please see page 48 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="48">Lead by Example</Source>
   <Type>Field Equipment</Type>
   <Categories />
   <Encumbrance>0</Encumbrance>

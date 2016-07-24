@@ -19,7 +19,7 @@ Togruti is the native language of the Togruta from planet Shili. Most Togruta ar
 [P]Togruti is an ornate language using trills and long vowel sounds, which are modified by subtle tremors in the Togruta's head-tails.
 [P]This language is heavily influenced by Basic, but also incorporates some native idioms, which cause Basic-speaking Togruta to use strange expressions.
 </Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="60">Force and Destiny Core Rulebook</Source>
   <StartingChars>
     <Brawn>1</Brawn>
     <Agility>2</Agility>

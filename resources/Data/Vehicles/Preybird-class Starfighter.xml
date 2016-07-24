@@ -6,7 +6,7 @@
     [H3]Preybird-class Starfighter[h3]
     Please see page 66 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="66">Dangerous Covenants</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <SigAbility xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Key>NARROWESCAPE</Key>
   <Name>Narrow Escape</Name>
@@ -7,7 +7,7 @@
     Please see page 37 of the Fly Casual Sourcebook for details.
 
   </Description>
-  <Source>Fly Casual</Source>
+  <Source Page="37">Fly Casual</Source>
   <Sources />
   <AbilityRows>
     <AbilityRow>

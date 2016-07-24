@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>TACTICIAN</Key>
   <Name>Tactician</Name>
@@ -6,7 +6,7 @@
     [H4]Tactician - On the Ground[h4]
     Please see page 75 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="75">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>BRAWL</Key>
     <Key>DISC</Key>
@@ -28,7 +28,7 @@
           <Down>true</Down>
         </Direction>
         <Direction>
-		  <Down>true</Down>
+          <Down>true</Down>
         </Direction>
         <Direction>
         </Direction>
@@ -53,7 +53,7 @@
         </Direction>
         <Direction>
           <Down>true</Down>
-		  <Up>true</Up>
+          <Up>true</Up>
         </Direction>
         <Direction>
           <Right>true</Right>
@@ -61,7 +61,7 @@
         <Direction>
           <Up>true</Up>
           <Left>true</Left>
-		  <Down>true</Down>
+          <Down>true</Down>
         </Direction>
       </Directions>
     </TalentRow>
@@ -81,16 +81,16 @@
         <Direction>
           <Up>true</Up>
           <Down>true</Down>
-		  <Right>true</Right>
+          <Right>true</Right>
         </Direction>
         <Direction>
-		  <Left>true</Left>
-		  <Right>true</Right>
+          <Left>true</Left>
+          <Right>true</Right>
         </Direction>
         <Direction>
           <Up>true</Up>
           <Down>true</Down>
-		  <Left>true</Left>
+          <Left>true</Left>
         </Direction>
       </Directions>
     </TalentRow>
@@ -110,12 +110,12 @@
         <Direction>
           <Down>true</Down>
           <Up>true</Up>
-		  <Right>true</Right>
-		  <Left>true</Left>
+          <Right>true</Right>
+          <Left>true</Left>
         </Direction>
         <Direction>
-		  <Left>true</Left>
-		  <Down>true</Down>
+          <Left>true</Left>
+          <Down>true</Down>
         </Direction>
         <Direction>
           <Up>true</Up>

@@ -4,7 +4,7 @@
   <Name>HH-87 Starhopper Starfighter</Name>
   <Description>[H3]HH-87 Starhopper Starfighter[h3]
 Please see page 114 of the Lords of Nal Hutta Sourcebook for details.</Description>
-  <Source>Lords of Nal Hutta</Source>
+  <Source Page="114">Lords of Nal Hutta</Source>
   <Sources />
   <Type>Starfighter</Type>
   <Categories>

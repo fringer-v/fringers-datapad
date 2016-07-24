@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Career>
   <Key>THEACE</Key>
   <Name>Ace</Name>
@@ -6,14 +6,14 @@
     [H4]Ace [h4]
     Please see page 64 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="64">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>ASTRO</Key>
     <Key>COOL</Key>
     <Key>GUNN</Key>
     <Key>MECH</Key>
     <Key>PERC</Key>
-	<Key>PILOTPL</Key>
+    <Key>PILOTPL</Key>
     <Key>PILOTSP</Key>
     <Key>RANGLT</Key>
   </CareerSkills>

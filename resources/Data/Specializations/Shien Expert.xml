@@ -4,7 +4,7 @@
   <Name>Shien Expert</Name>
   <Description>[H4]Shien Expert[h4]
 Please see page 95 of the Force and Destiny Core Rulebook for details.</Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="95">Force and Destiny Core Rulebook</Source>
   <CareerSkills>
     <Key>ATHL</Key>
     <Key>LTSABER</Key>

@@ -4,8 +4,7 @@
   <Name>YQ-400 Monitor-Class System Patrol Ship</Name>
   <Description>[H3]YQ-400 Monitor-Class System Patrol Ship[h3]
 Please see page 55 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="55">Far Horizons</Source>
   <Type>Patrol Boat</Type>
   <Categories>
     <Category>Starship</Category>

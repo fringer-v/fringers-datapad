@@ -5,7 +5,7 @@
   <Description>
     [H3]All-Terrain Anti-Aircraft (Missiles)[h3]
     Please see page 49 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="49">Stay on Target</Source>
   <Sources />
   <Type>Walker</Type>
   <Categories>

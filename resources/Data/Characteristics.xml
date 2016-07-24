@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Characteristics>
   <Characteristic>
     <Key>BR</Key>
@@ -7,8 +6,13 @@
     <Abbrev>Br</Abbrev>
     <Description>
       [H4]Brawn[h4]
-      Please see page 16 of the Core Rulebook for details.
+      Please see page 16 of the Edge of the Empire Core Rulebook, page 23 of the Age of Rebellion Core Rulebook, or page 24 of the Force and Destiny Core Rulebook for details.
     </Description>
+    <Sources>
+      <Source Page="16">Edge of the Empire Core Rulebook</Source>
+      <Source Page="23">Age of Rebellion Core Rulebook</Source>
+      <Source Page="24">Force and Destiny Core Rulebook</Source>
+    </Sources>
   </Characteristic>
   <Characteristic>
     <Key>AG</Key>
@@ -16,8 +20,13 @@
     <Abbrev>Ag</Abbrev>
     <Description>
       [H4]Agility[h4]
-      Please see page 15 of the Core Rulebook for details.
+      Please see page 15 of the Edge of the Empire Core Rulebook, page 23 of the Age of Rebellion Core Rulebook, or page 24 of the Force and Destiny Core Rulebook for details.
     </Description>
+    <Sources>
+      <Source Page="15">Edge of the Empire Core Rulebook</Source>
+      <Source Page="23">Age of Rebellion Core Rulebook</Source>
+      <Source Page="24">Force and Destiny Core Rulebook</Source>
+    </Sources>
   </Characteristic>
   <Characteristic>
     <Key>INT</Key>
@@ -25,8 +34,13 @@
     <Abbrev>Int</Abbrev>
     <Description>
       [H4]Intellect[h4]
-      Please see page 16 of the Core Rulebook for details.
+      Please see page 16 of the Edge of the Empire Core Rulebook, page 23 of the Age of Rebellion Core Rulebook, or page 25 of the Force and Destiny Core Rulebook for details.
     </Description>
+    <Sources>
+      <Source Page="16">Edge of the Empire Core Rulebook</Source>
+      <Source Page="23">Age of Rebellion Core Rulebook</Source>
+      <Source Page="25">Force and Destiny Core Rulebook</Source>
+    </Sources>
   </Characteristic>
   <Characteristic>
     <Key>CUN</Key>
@@ -34,8 +48,13 @@
     <Abbrev>Cun</Abbrev>
     <Description>
       [H4]Cunning[h4]
-      Please see page 16 of the Core Rulebook for details.
+      Please see page 16 of the Edge of the Empire Core Rulebook, page 23 of the Age of Rebellion Core Rulebook, or page 24 of the Force and Destiny Core Rulebook for details.
     </Description>
+    <Sources>
+      <Source Page="16">Edge of the Empire Core Rulebook</Source>
+      <Source Page="23">Age of Rebellion Core Rulebook</Source>
+      <Source Page="24">Force and Destiny Core Rulebook</Source>
+    </Sources>
   </Characteristic>
   <Characteristic>
     <Key>WIL</Key>
@@ -43,8 +62,13 @@
     <Abbrev>Wil</Abbrev>
     <Description>
       [H4]Willpower[h4]
-      Please see page 16 of the Core Rulebook for details.
+      Please see page 16 of the Edge of the Empire Core Rulebook, page 23 of the Age of Rebellion Core Rulebook, or page 25 of the Force and Destiny Core Rulebook for details.
     </Description>
+    <Sources>
+      <Source Page="16">Edge of the Empire Core Rulebook</Source>
+      <Source Page="23">Age of Rebellion Core Rulebook</Source>
+      <Source Page="25">Force and Destiny Core Rulebook</Source>
+    </Sources>
   </Characteristic>
   <Characteristic>
     <Key>PR</Key>
@@ -52,9 +76,12 @@
     <Abbrev>Pr</Abbrev>
     <Description>
       [H4]Presence[h4]
-      Please see page 16 of the Core Rulebook for details.
+      Please see page 16 of the Edge of the Empire Core Rulebook, page 23 of the Age of Rebellion Core Rulebook, or page 25 of the Force and Destiny Core Rulebook for details.
     </Description>
+    <Sources>
+      <Source Page="16">Edge of the Empire Core Rulebook</Source>
+      <Source Page="23">Age of Rebellion Core Rulebook</Source>
+      <Source Page="25">Force and Destiny Core Rulebook</Source>
+    </Sources>
   </Characteristic>
 </Characteristics>
-
-

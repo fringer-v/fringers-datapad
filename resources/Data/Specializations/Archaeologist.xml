@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <Specialization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Key>ARCHEOLOGIST</Key>
   <Name>Archaeologist</Name>
@@ -6,7 +6,7 @@
     [H4]Archaeologist[h4]
     Please see page 25 of the Enter the Unknown Sourcebook for details.
   </Description>
-  <Source>Enter the Unknown</Source>
+  <Source Page="25">Enter the Unknown</Source>
   <CareerSkills>
     <Key>ATHL</Key>
     <Key>DISC</Key>

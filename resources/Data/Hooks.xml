@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Hooks>
   <Hook>
     <Key>OPP</Key>
@@ -7,8 +7,9 @@
       [H4]Opportunity Knocks[h4]
       Please see page 37 of the Edge of the Empire Core Rulebook for details.
     </Description>
+    <Source Page="37">Edge of the Empire Core Rulebook</Source>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
+      <Source Page="37">Edge of the Empire Core Rulebook</Source>
     </Sources>
   </Hook>
   <Hook>
@@ -18,8 +19,9 @@
       [H4]A Higher Calling[h4]
       Please see page 37 of the Edge of the Empire Core Rulebook for details.
     </Description>
+    <Source Page="37">Edge of the Empire Core Rulebook</Source>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
+      <Source Page="37">Edge of the Empire Core Rulebook</Source>
     </Sources>
   </Hook>
   <Hook>
@@ -29,8 +31,9 @@
       [H4]Enemies and Antagonists[h4]
       Please see page 38 of the Edge of the Empire Core Rulebook for details.
     </Description>
+    <Source Page="38">Edge of the Empire Core Rulebook</Source>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
+      <Source Page="38">Edge of the Empire Core Rulebook</Source>
     </Sources>
   </Hook>
   <Hook>
@@ -40,8 +43,9 @@
       [H4]A Failure of Character[h4]
       Please see page 38 of the Edge of the Empire Core Rulebook for details.
     </Description>
+    <Source Page="38">Edge of the Empire Core Rulebook</Source>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
+      <Source Page="38">Edge of the Empire Core Rulebook</Source>
     </Sources>
   </Hook>
   <Hook>
@@ -51,8 +55,9 @@
       [H4]Wrong Place, Wrong Time[h4]
       Please see page 38 of the Edge of the Empire Core Rulebook for details.
     </Description>
+    <Source Page="38">Edge of the Empire Core Rulebook</Source>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
+      <Source Page="38">Edge of the Empire Core Rulebook</Source>
     </Sources>
   </Hook>
   <Hook>
@@ -62,7 +67,7 @@
       [H4]The New Recruit[h4]
       Please see page 44 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="44">Age of Rebellion Core Rulebook</Source>
   </Hook>
   <Hook>
     <Key>SEARCHINS</Key>
@@ -71,7 +76,7 @@
       [H4]The Searching Insurgent[h4]
       Please see page 45 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="45">Age of Rebellion Core Rulebook</Source>
   </Hook>
   <Hook>
     <Key>ACCREB</Key>
@@ -80,9 +85,8 @@
       [H4]The Accidental Rebel[h4]
       Please see page 45 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="45">Age of Rebellion Core Rulebook</Source>
   </Hook>
-
   <Hook>
     <Key>FLEEEMP</Key>
     <Name>Fleeing the Empire</Name>
@@ -90,7 +94,7 @@
       [H4]Fleeing the Empire[h4]
       Please see page 47 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="47">Force and Destiny Core Rulebook</Source>
   </Hook>
   <Hook>
     <Key>DESUND</Key>
@@ -99,7 +103,7 @@
       [H4]Desire for Understanding[h4]
       Please see page 47 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="47">Force and Destiny Core Rulebook</Source>
   </Hook>
   <Hook>
     <Key>GREATPOW</Key>
@@ -108,7 +112,7 @@
       [H4]With Great Power...[h4]
       Please see page 47 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="47">Force and Destiny Core Rulebook</Source>
   </Hook>
   <Hook>
     <Key>ULTAB</Key>
@@ -117,12 +121,8 @@
       [H4]Ultimate Abilities[h4]
       Please see page 47 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="47">Force and Destiny Core Rulebook</Source>
   </Hook>
-
-
-
-
   <Hook>
     <Key>ACADEMIC</Key>
     <Name>Academic</Name>
@@ -130,7 +130,7 @@
       [H4]Academic[h4]
       Please see page 13 of Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="13">Enter the Unknown</Source>
   </Hook>
   <Hook>
     <Key>CRIMINAL</Key>
@@ -140,8 +140,7 @@
       Please see page 13 of Enter the Unknown Sourcebook, or page 17 of the Stay on Target Sourcebook, for details.
     </Description>
     <Sources>
-      <Source>Enter the Unknown</Source>
-      <Source>Stay on Target</Source>
+      <Source Page="13">Stay on Target Sourcebook</Source>
     </Sources>
   </Hook>
   <Hook>
@@ -151,7 +150,7 @@
       [H4]Entrepreneur[h4]
       Please see page 15 of Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="15">Enter the Unknown</Source>
   </Hook>
   <Hook>
     <Key>EXIMP</Key>
@@ -160,7 +159,7 @@
       [H4]Ex-Imperial Operator[h4]
       Please see page 16 of Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="16">Enter the Unknown</Source>
   </Hook>
   <Hook>
     <Key>FALLENNOBLE</Key>
@@ -169,7 +168,7 @@
       [H4]Fallen Noble[h4]
       Please see page 16 of Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="16">Enter the Unknown</Source>
   </Hook>
   <Hook>
     <Key>WANDERER</Key>
@@ -178,7 +177,7 @@
       [H4]Wanderer[h4]
       Please see page 18 of Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="18">Enter the Unknown</Source>
   </Hook>
   <Hook>
     <Key>YESTERDAYSHERO</Key>
@@ -187,7 +186,7 @@
       [H4]Yesterday's Hero[h4]
       Please see page 13 of Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="13">Dangerous Covenants</Source>
   </Hook>
   <Hook>
     <Key>EXMILITARY</Key>
@@ -197,8 +196,7 @@
       Please see page 13 of Dangerous Covenants Sourcebook, or page 14 of the Fly Casual Sourcebook, for details.
     </Description>
     <Sources>
-      <Source>Dangerous Covenants</Source>
-      <Source>Fly Casual</Source>
+      <Source Page="13">Fly Casual Sourcebook</Source>
     </Sources>
   </Hook>
   <Hook>
@@ -208,7 +206,7 @@
       [H4]The Avenger[h4]
       Please see page 14 of Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="14">Dangerous Covenants</Source>
   </Hook>
   <Hook>
     <Key>SCIONOFALEGACY</Key>
@@ -217,7 +215,7 @@
       [H4]Scion of a Legacy[h4]
       Please see page 15 of Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="15">Dangerous Covenants</Source>
   </Hook>
   <Hook>
     <Key>PEACETURNEDTOWAR</Key>
@@ -226,7 +224,7 @@
       [H4]Peace Turned To War[h4]
       Please see page 15 of Dangerous Covenants Sourcebook for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="15">Dangerous Covenants</Source>
   </Hook>
   <Hook>
     <Key>OPPOR</Key>
@@ -235,7 +233,7 @@
       [H4]The Opportunist[h4]
       Please see page 11 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="11">Far Horizons</Source>
   </Hook>
   <Hook>
     <Key>GRIZZ</Key>
@@ -244,7 +242,7 @@
       [H4]The Grizzled Settler[h4]
       Please see page 12 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="12">Far Horizons</Source>
   </Hook>
   <Hook>
     <Key>FUGITIVE</Key>
@@ -253,7 +251,7 @@
       [H4]The Fugitive[h4]
       Please see page 13 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="13">Far Horizons</Source>
   </Hook>
   <Hook>
     <Key>LOCLEAD</Key>
@@ -262,7 +260,7 @@
       [H4]The Local Leader[h4]
       Please see page 14 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="14">Far Horizons</Source>
   </Hook>
   <Hook>
     <Key>IDEALIST</Key>
@@ -271,7 +269,7 @@
       [H4]The Idealist[h4]
       Please see page 15 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="15">Far Horizons</Source>
   </Hook>
   <Hook>
     <Key>SOTENTERTAINER</Key>
@@ -280,7 +278,7 @@
       [H4]Entertainer[h4]
       Please see page 13 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="13">Stay on Target</Source>
   </Hook>
   <Hook>
     <Key>SOTPROTOTYPE</Key>
@@ -289,7 +287,7 @@
       [H4]Prototype Tester[h4]
       Please see page 14 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="14">Stay on Target</Source>
   </Hook>
   <Hook>
     <Key>SOTBUSH</Key>
@@ -298,7 +296,7 @@
       [H4]Bush Pilot[h4]
       Please see page 14 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="14">Stay on Target</Source>
   </Hook>
   <Hook>
     <Key>SOTCLONEWARS</Key>
@@ -307,7 +305,7 @@
       [H4]Clone Wars Veteran[h4]
       Please see page 15 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="15">Stay on Target</Source>
   </Hook>
   <Hook>
     <Key>SOTIMPDEF</Key>
@@ -316,9 +314,8 @@
       [H4]Imperial Defector[h4]
       Please see page 16 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="16">Stay on Target</Source>
   </Hook>
-
   <Hook>
     <Key>DISADV</Key>
     <Name>Disadvantaged</Name>
@@ -326,7 +323,7 @@
       [H4]Disadvantaged[h4]
       Please see page 13 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="13">Fly Casual</Source>
   </Hook>
   <Hook>
     <Key>PRIV</Key>
@@ -335,7 +332,7 @@
       [H4]Privileged[h4]
       Please see page 13 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="13">Fly Casual</Source>
   </Hook>
   <Hook>
     <Key>RESPECT</Key>
@@ -344,7 +341,7 @@
       [H4]Respectable[h4]
       Please see page 14 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="14">Fly Casual</Source>
   </Hook>
   <Hook>
     <Key>CYNIC</Key>
@@ -353,7 +350,7 @@
       [H4]Cynical[h4]
       Please see page 14 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="14">Fly Casual</Source>
   </Hook>
   <Hook>
     <Key>BORNNBRED</Key>
@@ -362,7 +359,7 @@
       [H4]Born and Bred[h4]
       Please see page 15 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="15">Fly Casual</Source>
   </Hook>
   <Hook>
     <Key>IMPOUT</Key>
@@ -371,7 +368,7 @@
       [H4]Imperial Outcast[h4]
       Please see page 12 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="12">Desperate Allies</Source>
   </Hook>
   <Hook>
     <Key>MINVOICE</Key>
@@ -380,7 +377,7 @@
       [H4]Minority Voice[h4]
       Please see page 13 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="13">Desperate Allies</Source>
   </Hook>
   <Hook>
     <Key>INDUST</Key>
@@ -389,7 +386,7 @@
       [H4]Industrialist[h4]
       Please see page 14 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="14">Desperate Allies</Source>
   </Hook>
   <Hook>
     <Key>DISSART</Key>
@@ -398,49 +395,46 @@
       [H4]Dissident Artist[h4]
       Please see page 15 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="15">Desperate Allies</Source>
   </Hook>
-
   <!-- Keeping the Peace -->
-<Hook>
-  <Key>ANCIENTORDER</Key>
-  <Name>Ancient Order</Name>
-  <Description>
+  <Hook>
+    <Key>ANCIENTORDER</Key>
+    <Name>Ancient Order</Name>
+    <Description>
     [H4]Ancient Order[h4]
     Please see page 12 of the Keeping the Peace sourcebook for details.
   </Description>
-  <Source>Keeping the Peace</Source>
-</Hook>
-<Hook>
-  <Key>BATTLEADER</Key>
-  <Name>Battlefield Leader</Name>
-  <Description>
+    <Source Page="12">Keeping the Peace</Source>
+  </Hook>
+  <Hook>
+    <Key>BATTLEADER</Key>
+    <Name>Battlefield Leader</Name>
+    <Description>
     [H4]Battlefield Leader[h4]
     Please see page 14 of the Keeping the Peace sourcebook for details.
   </Description>
-  <Source>Keeping the Peace</Source>
-</Hook>
-<Hook>
-  <Key>OUTAGENT</Key>
-  <Name>Outlaw Agent</Name>
-  <Description>
+    <Source Page="14">Keeping the Peace</Source>
+  </Hook>
+  <Hook>
+    <Key>OUTAGENT</Key>
+    <Name>Outlaw Agent</Name>
+    <Description>
     [H4]Outlaw Agent[h4]
     Please see page 14 of the Keeping the Peace sourcebook for details.
   </Description>
-  <Source>Keeping the Peace</Source>
-</Hook>
-<Hook>
-  <Key>WAYFARER</Key>
-  <Name>Wayfarer</Name>
-  <Description>
+    <Source Page="14">Keeping the Peace</Source>
+  </Hook>
+  <Hook>
+    <Key>WAYFARER</Key>
+    <Name>Wayfarer</Name>
+    <Description>
     [H4]Wayfarer[h4]
     Please see page 15 of the Keeping the Peace sourcebook for details.
   </Description>
-  <Source>Keeping the Peace</Source>
-</Hook>
-  
+    <Source Page="15">Keeping the Peace</Source>
+  </Hook>
   <!-- Lead by Example -->
-  
   <Hook>
     <Key>DEFECTOR</Key>
     <Name>Defector</Name>
@@ -448,7 +442,7 @@
       [H4]Defector[h4]
       See page 13 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="13">Lead by Example</Source>
   </Hook>
   <Hook>
     <Key>CITSOLD</Key>
@@ -457,7 +451,7 @@
       [H4]Citizen Soldier[h4]
       See page 14 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="14">Lead by Example</Source>
   </Hook>
   <Hook>
     <Key>FAILLEAD</Key>
@@ -466,6 +460,42 @@
       [H4]The Failed Leader[h4]
       See page 15 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="15">Lead by Example</Source>
+  </Hook>
+  <Hook>
+    <Key>ANTIQ</Key>
+    <Name>Antiquarian</Name>
+    <Description>
+      [H4]Antiquarian[h4]
+      See page 13 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="13">Special Modifications</Source>
+  </Hook>
+  <Hook>
+    <Key>BORNENG</Key>
+    <Name>Born Engineer</Name>
+    <Description>
+      [H4]Born Engineer[h4]
+      See page 14 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="14">Special Modifications</Source>
+  </Hook>
+  <Hook>
+    <Key>TECHDES</Key>
+    <Name>Tech Designer</Name>
+    <Description>
+      [H4]Tech Designer[h4]
+      See page 15 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="15">Special Modifications</Source>
+  </Hook>
+  <Hook>
+    <Key>UNDTECH</Key>
+    <Name>Underworld Tech Expert</Name>
+    <Description>
+      [H4]Underworld Tech Expert[h4]
+      See page 16 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="16">Special Modifications</Source>
   </Hook>
 </Hooks>

@@ -6,7 +6,7 @@
     [H4]Diplomat Signature Ability: Unmatched Insight[h4]
     Please see page 40 of the Desperate Allies Sourcebook for details.
   </Description>
-  <Source>Desperate Allies</Source>
+  <Source Page="40">Desperate Allies</Source>
   <Sources />
   <AbilityRows>
     <AbilityRow>

@@ -57,7 +57,7 @@
     The Chadra-Fan language sounds quite different from Basic. This is noticed because Chadra-Fans who 
     learned to speak Basic sound very nasal and squeaky.
   </Description>
-  <Source>Stay on Target</Source>
+  <Source Page="20">Stay on Target</Source>
   <StartingChars>
     <Brawn>1</Brawn>
     <Agility>3</Agility>

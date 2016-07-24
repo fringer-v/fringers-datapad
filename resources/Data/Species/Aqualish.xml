@@ -60,7 +60,7 @@
     which usually means they have been forced to leave 
     their homeworld.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="19">Dangerous Covenants</Source>
   <StartingChars>
     <Brawn>3</Brawn>
     <Agility>2</Agility>

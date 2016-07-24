@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Classes>
   <Class>
     <Key>LOW</Key>
@@ -7,8 +7,9 @@
       [H4]The Down and Out[h4]
       Please see page 36 of the Edge of the Empire Core Rulebook for details.
     </Description>
+    <Source Page="36">Edge of the Empire Core Rulebook</Source>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
+      <Source Page="36">Edge of the Empire Core Rulebook</Source>
     </Sources>
   </Class>
   <Class>
@@ -18,8 +19,9 @@
       [H4]Middle Class Struggles[h4]
       Please see page 37 of the Edge of the Empire Core Rulebook for details.
     </Description>
+    <Source Page="37">Edge of the Empire Core Rulebook</Source>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
+      <Source Page="37">Edge of the Empire Core Rulebook</Source>
     </Sources>
   </Class>
   <Class>
@@ -29,8 +31,9 @@
       [H4]The High and Mighty[h4]
       Please see page 37 of the Edge of the Empire Core Rulebook for details.
     </Description>
+    <Source Page="37">Edge of the Empire Core Rulebook</Source>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
+      <Source Page="37">Edge of the Empire Core Rulebook</Source>
     </Sources>
   </Class>
   <Class>
@@ -40,8 +43,9 @@
       [H4]The Outsider[h4]
       Please see page 37 of the Edge of the Empire Core Rulebook for details.
     </Description>
+    <Source Page="37">Edge of the Empire Core Rulebook</Source>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
+      <Source Page="37">Edge of the Empire Core Rulebook</Source>
     </Sources>
   </Class>
   <Class>
@@ -51,7 +55,7 @@
       [H4]Comfortable Beneficiaries[h4]
       Please see page 43 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="43">Age of Rebellion Core Rulebook</Source>
   </Class>
   <Class>
     <Key>VISOPP</Key>
@@ -60,7 +64,7 @@
       [H4]Visionary Opportunists[h4]
       Please see page 43 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="43">Age of Rebellion Core Rulebook</Source>
   </Class>
   <Class>
     <Key>JUSTAV</Key>
@@ -69,7 +73,7 @@
       [H4]Justified Avengers[h4]
       Please see page 44 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="44">Age of Rebellion Core Rulebook</Source>
   </Class>
   <Class>
     <Key>COMFTECH</Key>
@@ -78,7 +82,7 @@
       [H4]Comfortable with Tech[h4]
       Please see page 45 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="45">Force and Destiny Core Rulebook</Source>
   </Class>
   <Class>
     <Key>PRIMBACK</Key>
@@ -87,7 +91,7 @@
       [H4]Primitive Backwater[h4]
       Please see page 45 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="45">Force and Destiny Core Rulebook</Source>
   </Class>
   <Class>
     <Key>PRIVFEW</Key>
@@ -96,7 +100,7 @@
       [H4]The Privileged Few[h4]
       Please see page 45 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="45">Force and Destiny Core Rulebook</Source>
   </Class>
   <Class>
     <Key>POORHUNG</Key>
@@ -105,6 +109,6 @@
       [H4]The Poor and Hungry[h4]
       Please see page 46 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="46">Force and Destiny Core Rulebook</Source>
   </Class>
 </Classes>

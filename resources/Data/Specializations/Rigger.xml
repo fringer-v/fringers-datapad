@@ -4,7 +4,7 @@
   <Name>Rigger</Name>
   <Description>[H4]Rigger[h4]
 Please see page 30 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="30">Stay on Target</Source>
   <CareerSkills>
     <Key>GUNN</Key>
     <Key>MECH</Key>

@@ -4,7 +4,7 @@
   <Name>Starhawk Speeder Bike</Name>
   <Description>[H3]Starhawk Speeder Bike[h3]
       Please see page 53 of the Fly Casual Sourcebook for details.</Description>
-  <Source>Fly Casual</Source>
+  <Source Page="53">Fly Casual</Source>
   <Type>Landspeeder</Type>
   <Categories>
     <Category>Land Vehicle</Category>

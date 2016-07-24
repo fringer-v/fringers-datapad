@@ -6,7 +6,7 @@
     [H3]Aratech 57-D Speeder Bike[h3]
     Please see page 58 of the Enter the Unknown Sourcebook for details.
   </Description>
-  <Source>Enter the Unknown</Source>
+  <Source Page="58">Enter the Unknown</Source>
   <Type>Speeder Bike</Type>
   <Categories>
     <Category>Land Vehicle</Category>

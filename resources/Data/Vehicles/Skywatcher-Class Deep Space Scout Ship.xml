@@ -6,7 +6,7 @@
     [H3]Skywatcher-Class Deep Space Scout Ship[h3]
     Please see page 70 of the Beyond the Rim Adventure Module for details.
   </Description>
-  <Source>Beyond the Rim</Source>
+  <Source Page="70">Beyond the Rim</Source>
   <Type>Scout Ship</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

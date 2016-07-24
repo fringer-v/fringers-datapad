@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Career>
   <Key>BOUNT</Key>
   <Name>Bounty Hunter</Name>
@@ -6,7 +6,7 @@
     [H4]Bounty Hunter[h4]
     Please see page 56 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="56">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>ATHL</Key>
     <Key>BRAWL</Key>

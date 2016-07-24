@@ -5,7 +5,7 @@
   <Description>[H3][I]Home One[i]-Class Heavy Star Cruiser[h3]
   Please see page 60 of the Strongholds of Resistance sourcebook for details.
 </Description>
-  <Source>Strongholds of Resistance</Source>
+  <Source Page="60">Strongholds of Resistance</Source>
   <Type>Heavy Star Cruiser</Type>
   <Categories>
     <Category>Capital Ship</Category>

@@ -4,7 +4,7 @@
   <Name>MC-18 Light Freighter</Name>
   <Description>[H3]MC-18 Light Freighter[h3]
 Please see page 62 of the Desperate Allies Sourcebook for details.</Description>
-  <Source>Desperate Allies</Source>
+  <Source Page="62">Desperate Allies</Source>
   <Sources />
   <Type>Light Freighter</Type>
   <Categories>

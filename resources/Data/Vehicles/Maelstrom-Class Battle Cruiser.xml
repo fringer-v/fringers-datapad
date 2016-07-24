@@ -4,7 +4,7 @@
   <Name>Maelstrom-Class Battle Cruiser</Name>
   <Description>[H3][I]Maelstrom[i] -Class Battle Cruiser[h3]
 Please see page 57 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="57">Lead by Example</Source>
   <Type>Battlecruiser</Type>
   <Categories>
     <Category>Capital Ship</Category>

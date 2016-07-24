@@ -1,11 +1,11 @@
-﻿<Vehicle>
+<Vehicle>
   <Key>STARGALLEON</Key>
   <Name>Star Galleon Armed Transport</Name>
   <Description>
     [H3]Star Galleon Armed Transport[h3]
     Please see page 265 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="265">Edge of the Empire Core Rulebook</Source>
   <HyperdrivePrimary>2</HyperdrivePrimary>
   <HyperdriveBackup>15</HyperdriveBackup>
   <NaviComputer>true</NaviComputer>

@@ -57,7 +57,7 @@
     [P]"Chu'unthor" is the Cerean word for "academy," and the word "Barsen'thor" translates 
     to "Warden of the Order."
   </Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="54">Force and Destiny Core Rulebook</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>1</Agility>

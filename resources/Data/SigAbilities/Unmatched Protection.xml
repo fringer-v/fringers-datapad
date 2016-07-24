@@ -6,7 +6,7 @@
     [H4]Hired Gun Signature Ability: Unmatched Protection[h4]
     Please see page 37 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="37">Dangerous Covenants</Source>
   <AbilityRows>
     <AbilityRow>
       <Index>0</Index>

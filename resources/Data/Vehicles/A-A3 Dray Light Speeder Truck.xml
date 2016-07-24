@@ -6,7 +6,7 @@
     [H3]A-A3 Dray Light Speeder Truck[h3]
     Please see page 255 of the Force and Destiny Core Rulebook for details.
   </Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="255">Force and Destiny Core Rulebook</Source>
   <Type>Speeder Truck</Type>
   <Categories>
     <Category>Land Vehicle</Category>

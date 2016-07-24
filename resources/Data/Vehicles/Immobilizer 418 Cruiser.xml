@@ -6,7 +6,7 @@
     [H3]Immobilizer 418 Cruiser[h3]
     Please see page 186 of the Age of Rebellion Beta Rulebook for details.
 </Description>
-  <Source>Age of Rebellion Beta Rulebook</Source>
+  <Source Page="186">Age of Rebellion Beta Rulebook</Source>
   <Type>Heavy Cruiser</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

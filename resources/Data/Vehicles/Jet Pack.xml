@@ -5,7 +5,7 @@
   <Description>[H3]Jet Pack[h3]
 Please see page 181 of the Edge of the Empire Core Rulebook for details.
 </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="181">Edge of the Empire Core Rulebook</Source>
   <Type>Jet Pack</Type>
   <Categories>
     <Category>Air Vehicle</Category>

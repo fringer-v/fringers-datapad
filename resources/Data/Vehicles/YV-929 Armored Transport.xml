@@ -6,7 +6,7 @@
     [H3]YV-929 Armored Transport[h3]
     Please see page 275 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="275">Age of Rebellion Core Rulebook</Source>
   <Type>Freighter</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

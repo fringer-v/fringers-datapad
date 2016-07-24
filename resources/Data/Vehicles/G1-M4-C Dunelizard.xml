@@ -6,7 +6,7 @@
     [H3]G1-M4-C Dunelizard[h3]
     Please see page 12 of the Long Arm of the Hutt Bonus Adventure for details.
   </Description>
-  <Source>Long Arm of the Hutt</Source>
+  <Source Page="12">Long Arm of the Hutt</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

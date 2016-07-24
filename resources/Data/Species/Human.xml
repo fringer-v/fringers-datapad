@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Species>
   <Key>HUMAN</Key>
   <Name>Human</Name>
@@ -7,6 +7,11 @@
     Please see page 48 of the Edge of the Empire Core Rulebook, page 57 of the Age of Rebellion Core Rulebook, or page 55 of the Force and Destiny Core Rulebook, for details.
 
   </Description>
+  <Sources>
+    <Source Page="48">Edge of the Empire Core Rulebook</Source>
+    <Source Page="57">Age of Rebellion Core Rulebook</Source>
+    <Source Page="55">Force and Destiny Core Rulebook</Source>
+  </Sources>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>2</Agility>

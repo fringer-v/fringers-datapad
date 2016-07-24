@@ -4,7 +4,7 @@
   <Name>Interceptor IV-Class Frigate</Name>
   <Description>[H3][I]Interceptor IV[i]-Class Frigate[h3]
 Please see page 81 of the Mask of the Pirate Queen adventure module for details.</Description>
-  <Source>Mask of the Pirate Queen</Source>
+  <Source Page="81">Mask of the Pirate Queen</Source>
   <Type>Frigate</Type>
   <Categories>
     <Category>Capital Ship</Category>

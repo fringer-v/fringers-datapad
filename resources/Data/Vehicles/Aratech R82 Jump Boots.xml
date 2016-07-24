@@ -4,7 +4,7 @@
   <Name>Aratech R82 Jump Boots</Name>
   <Description>[H3]Aratech R82 Jump Boots[h3]
 Please see page 115 of the Strongholds of Resistance Sourcebook for details.</Description>
-  <Source>Strongholds of Resistance</Source>
+  <Source Page="115">Strongholds of Resistance</Source>
   <Sources />
   <Type>Jump Boots</Type>
   <Categories>

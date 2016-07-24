@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>OUTLAW</Key>
   <Name>Outlaw Tech</Name>
   <Description>
-    [H4]Outlaw Tech &#8212; Making Things Better[h4]
+    [H4]Outlaw Tech — Making Things Better[h4]
     Please see page 90 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="90">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>EDU</Key>
     <Key>UND</Key>

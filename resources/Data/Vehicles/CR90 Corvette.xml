@@ -1,10 +1,15 @@
-﻿<Vehicle>
+<Vehicle>
   <Key>CR90</Key>
   <Name>CR90 Corvette</Name>
   <Description>
     [H3]CR90 Corvette[h3]
     Please see page 266 of the Edge of the Empire Core Rulebook, page 274 of the  Age of Rebellion Core Rulebook, or page 266 of the Force and Destiny Core Rulebook, for details.
   </Description>
+  <Sources>
+    <Source Page="266">Edge of the Empire Core Rulebook</Source>
+    <Source Page="274"> Age of Rebellion Core Rulebook</Source>
+    <Source Page="266">Force and Destiny Core Rulebook</Source>
+  </Sources>
   <HyperdrivePrimary>2</HyperdrivePrimary>
   <HyperdriveBackup>0</HyperdriveBackup>
   <NaviComputer>true</NaviComputer>

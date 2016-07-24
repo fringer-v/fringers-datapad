@@ -4,7 +4,7 @@
   <Name>Analyst</Name>
   <Description>[H4]Analyst[h4]
 Please see page 28 of the Desperate Allies Sourcebook for details.</Description>
-  <Source>Desperate Allies</Source>
+  <Source Page="28">Desperate Allies</Source>
   <Sources />
   <CareerSkills>
     <Key>COMP</Key>

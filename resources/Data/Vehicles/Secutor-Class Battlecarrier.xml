@@ -4,7 +4,7 @@
   <Name>Secutor-Class Battlecarrier</Name>
   <Description>[H3]Secutor-Class Battlecarrier[h3]
 Please see page 62 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="62">Stay on Target</Source>
   <Type>Battlecruiser</Type>
   <Categories>
     <Category>Capital Ship</Category>

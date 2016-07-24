@@ -5,7 +5,7 @@
   <Description>[H4]Drall[h4]
 Please see page 90 of the Suns of Fortune Sourcebook for details.
 </Description>
-  <Source>Suns of Fortune</Source>
+  <Source Page="90">Suns of Fortune</Source>
   <StartingChars>
     <Brawn>1</Brawn>
     <Agility>1</Agility>

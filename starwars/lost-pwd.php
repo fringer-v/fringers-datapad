@@ -20,7 +20,7 @@ if (isset($_POST["field6"])) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Character Sheet Register</title>
+<title>Fringer's Datapad - Lost/Change Password</title>
 <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 
@@ -30,7 +30,8 @@ if (isset($_POST["field6"])) {
 <tr><td align="center">
 
 <table border="0" width="80%">
-<tr><td class="main-text" align="center" colspan="2"><font size="+2">Jabberwookiee's Star Wars&trade; Character Sheet</font></td></tr>
+<tr><td class="main-text" align="center" colspan="2"><font size="+2">Fringer's Datapad</font></td></tr>
+<tr><td class="main-text" align="center" colspan="2"><font size="+1">a Character Sheet for the Star Wars&trade; EotE, AoR and F&D Role Playing Games</font></td></tr>
 <tr><td colspan="2"><img src="space.gif" width="1" height="1" border="0"/></td></tr>
 <tr><td height="1" colspan="2"><hr width="100%" /></td></tr>
 <tr><td colspan="2"><img src="space.gif" width="1" height="20" border="0"/></td></tr>
@@ -39,7 +40,7 @@ if (isset($_POST["field6"])) {
 
 <table border="0" width="340">
 
-<tr><td colspan="2" class="main-text"><font size="+1">Lost Password...</font></td></tr>
+<tr><td colspan="2" class="main-text"><font size="+1">Lost/Change Password...</font></td></tr>
 <tr><td colspan="2"><hr width="100%" /></td></tr>
 
 <tr>

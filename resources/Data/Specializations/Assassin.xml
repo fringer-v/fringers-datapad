@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>ASSAS</Key>
   <Name>Assassin</Name>
   <Description>
-    [H4]Assassin &#8212; Instrument of Policy[h4]
+    [H4]Assassin — Instrument of Policy[h4]
     Please see page 59 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="59">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>MELEE</Key>
     <Key>RANGHVY</Key>

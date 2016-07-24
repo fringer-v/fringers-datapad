@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>GADG</Key>
   <Name>Gadgeteer</Name>
   <Description>
-    [H4]Gadgeteer &#8212; Connoisseur of Tech[h4]
+    [H4]Gadgeteer — Connoisseur of Tech[h4]
     Please see page 60 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="60">Edge of the Empire Core Rulebook</Source>
   <CareerSkills>
     <Key>BRAWL</Key>
     <Key>COERC</Key>

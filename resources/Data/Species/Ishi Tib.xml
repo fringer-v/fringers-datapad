@@ -4,7 +4,7 @@
   <Name>Ishi Tib</Name>
   <Description>[H4]Ishi Tib[h4]
 See page 21 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="21">Lead by Example</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>2</Agility>

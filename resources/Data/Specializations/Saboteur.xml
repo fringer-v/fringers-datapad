@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>SABOTEUR</Key>
   <Name>Saboteur</Name>
@@ -6,7 +6,7 @@
     [H4]Saboteur - Making Thing Stop[h4]
     Please see page 86 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="86">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>COORD</Key>
     <Key>MECH</Key>
@@ -53,12 +53,12 @@
         <Direction>
           <Down>true</Down>
           <Right>true</Right>
-		      <Left>true</Left>
+          <Left>true</Left>
         </Direction>
         <Direction>
           <Down>true</Down>
           <Left>true</Left>
-		      <Right>true</Right>
+          <Right>true</Right>
         </Direction>
         <Direction>
           <Up>true</Up>

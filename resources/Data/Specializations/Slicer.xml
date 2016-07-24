@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>SLICER</Key>
   <Name>Slicer</Name>
   <Description>
-    [H4]Slicer &#8212; Making the Data Flow[h4]
+    [H4]Slicer — Making the Data Flow[h4]
     Please see page 91 of the Edge of the Empire Core Rulebook, or page 99 of the Age of Rebellion Core Rulebook, for details.
   </Description>
   <Sources>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="91">Edge of the Empire Core Rulebook</Source>
+    <Source Page="99">Age of Rebellion Core Rulebook</Source>
   </Sources>
   <CareerSkills>
     <Key>COMP</Key>

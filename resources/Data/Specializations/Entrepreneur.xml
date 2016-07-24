@@ -2,10 +2,9 @@
 <Specialization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Key>ENTREPRENEUR</Key>
   <Name>Entrepreneur</Name>
-  <Description>[H4]Entrepreneur &#8212; The Burden of Vision[h4]
+  <Description>[H4]Entrepreneur — The Burden of Vision[h4]
 Please see page 26 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="26">Far Horizons</Source>
   <CareerSkills>
     <Key>DISC</Key>
     <Key>EDU</Key>

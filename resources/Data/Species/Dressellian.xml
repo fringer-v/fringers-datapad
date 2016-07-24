@@ -13,7 +13,7 @@ The only planet in the Dressel system, Dressel is one of the more idyllic planet
 [P]The planet was originally discovered by the Bothan Askarr clan around two hundred years ago, who decided to leave the Dresselians alone. With many small settlements, the Dresselians were never taken seriously by the rest of the galaxy as they were believed to be a primitive, undeveloped race. Only the Jedi scouts who came to the planet centuries ago saw the great potential in the Dresselians and the Dresselians bestowed great honour upon them. They followed the Jedi into larger galactic affairs and the Dresselians that were later trained to be Jedi were known for their proficiency with the Force.
 [P][B]Language:[b]
 The Dresselian language, Dresselese, has been described by galactic linguists as being somewhat primitive. Due to the fact that they have had a considerable amount of interaction with the Bothans, who initially discovered the Dresselians around 200 years before the Galactic Civil War began, Dresselians speak using many borrowed words from Bothese. Most of the borrowed words are for items which are considered more technologically advanced than those the Dresselians had created themselves.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="22">Stay on Target</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>2</Agility>

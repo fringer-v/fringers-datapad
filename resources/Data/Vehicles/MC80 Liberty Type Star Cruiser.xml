@@ -6,7 +6,7 @@
     [H3]MC80 Liberty Type Star Cruiser[h3]
     Please see page 284 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="284">Age of Rebellion Core Rulebook</Source>
   <Type>Heavy Star Cruiser</Type>
   <Categories>
     <Category>Capital Ship</Category>

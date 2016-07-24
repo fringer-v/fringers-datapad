@@ -3,7 +3,7 @@
   <Key>POLISMASSAN</Key>
   <Name>Polis Massan</Name>
   <Description>Please see page 98 of the Strongholds of Resistance source book for details</Description>
-  <Source>Strongholds of Resistance</Source>
+  <Source Page="98">Strongholds of Resistance</Source>
   <StartingChars>
     <Brawn>1</Brawn>
     <Agility>2</Agility>

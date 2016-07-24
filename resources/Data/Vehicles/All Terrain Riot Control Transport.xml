@@ -4,8 +4,7 @@
   <Name>All Terrain Riot Control Transport</Name>
   <Description>[H3]All Terrain Riot Control Transport[h3]
 Please see page 53 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="53">Far Horizons</Source>
   <Type>Walker</Type>
   <Categories>
     <Category>Walker</Category>

@@ -6,7 +6,7 @@
     [H3]MC-2 Moble Command Speeder[h3]
     Please see page 64 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="64">Dangerous Covenants</Source>
   <Type>Airspeeder</Type>
   <Categories>
     <Category>Air Vehicle</Category>

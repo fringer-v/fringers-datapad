@@ -6,7 +6,7 @@
     [H3]Starbolt Assault Carrier[h3]
     Please see page 70 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="70">Dangerous Covenants</Source>
   <Type>Frigate</Type>
   <Categories>
     <Category>Capital Ship</Category>

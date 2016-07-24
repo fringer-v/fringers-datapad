@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Motivations>
   <Motivation>
     <Key>AMB</Key>
@@ -8,8 +8,8 @@
       Please see page 95 of the Edge of the Empire Core Rulebook, or page 105 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="95">Edge of the Empire Core Rulebook</Source>
+      <Source Page="105">Force and Destiny Core Rulebook</Source>
     </Sources>
     <SpecificMotivations>
       <Key>AMBFRIEND</Key>
@@ -40,8 +40,8 @@
       Please see page 96 of the Edge of the Empire Core Rulebook, or page 105 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Edge of the Empire Core Rulebook</Source>
-      <Source>Force and Destiny Core Rulebook</Source>
+      <Source Page="96">Edge of the Empire Core Rulebook</Source>
+      <Source Page="105">Force and Destiny Core Rulebook</Source>
     </Sources>
     <SpecificMotivations>
       <Key>CAURELIGION</Key>
@@ -72,7 +72,7 @@
     <Description>
       Please see page 96 of the Edge of the Empire Core Rulebook for details.
     </Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <SpecificMotivations>
       <Key>RELORIGIN</Key>
       <Key>RELPET</Key>
@@ -86,14 +86,14 @@
       <Key>RELNEMESIS</Key>
     </SpecificMotivations>
   </Motivation>
-    <Motivation>
+  <Motivation>
     <Key>BELIEF</Key>
     <Name>Belief</Name>
     <Description>
 		[H4]Belief[h4]
     Please see page 105 of the Age of Rebellion Core Rulebook for details.
 	  </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="105">Age of Rebellion Core Rulebook</Source>
     <SpecificMotivations>
       <Key>BELREPUBLIC</Key>
       <Key>BELHONOR</Key>
@@ -111,14 +111,14 @@
       <Key>BELCRIME</Key>
     </SpecificMotivations>
   </Motivation>
-    <Motivation>
+  <Motivation>
     <Key>CONNECT</Key>
     <Name>Connections</Name>
     <Description>
       [H4]Connections[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <SpecificMotivations>
       <Key>CONPOLITICAL</Key>
       <Key>CONFAMILY</Key>
@@ -134,14 +134,14 @@
       <Key>CONLOVE</Key>
     </SpecificMotivations>
   </Motivation>
-    <Motivation>
+  <Motivation>
     <Key>QUEST</Key>
     <Name>Quest</Name>
     <Description>
       [H4]Quest[h4]
       Please see page 106 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="106">Age of Rebellion Core Rulebook</Source>
     <SpecificMotivations>
       <Key>QUEREDEM</Key>
       <Key>QUEGLORY</Key>
@@ -165,7 +165,7 @@
       [H4]Discovery[h4]
       Please see page 31 of the Enter the Unknown Sourcebook for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="31">Enter the Unknown</Source>
     <SpecificMotivations>
       <Key>DISCOVERYSM1</Key>
       <Key>DISCOVERYSM2</Key>
@@ -188,8 +188,7 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source>Dangerous Covenants</Source>
-      <Source>Stay on Target</Source>
+      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
     </Sources>
     <SpecificMotivations>
       <Key>CONFLICT1</Key>
@@ -215,7 +214,7 @@
       [H4]Creations[h4]
       Please see page 34 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="34">Far Horizons</Source>
     <SpecificMotivations>
       <Key>CREATIONSM1</Key>
       <Key>CREATIONSM2</Key>
@@ -227,7 +226,6 @@
       <Key>CREATIONSM8</Key>
     </SpecificMotivations>
   </Motivation>
-  
   <!-- Force and Destiny -->
   <Motivation>
     <Key>FAITH</Key>
@@ -236,7 +234,7 @@
       [H4]Faith[h4]
       Please see page 105 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="105">Force and Destiny Core Rulebook</Source>
     <SpecificMotivations>
       <Key>FAINAT</Key>
       <Key>FAIGOODPEOP</Key>
@@ -257,7 +255,7 @@
       [H4]Reward[h4]
       Please see page 34 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="34">Fly Casual</Source>
     <SpecificMotivations>
       <Key>REWARDSM1</Key>
       <Key>REWARDSM2</Key>
@@ -278,7 +276,7 @@
       [H4]Creed[h4]
       Please see page 36 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="36">Desperate Allies</Source>
     <SpecificMotivations>
       <Key>CREEDSM1</Key>
       <Key>CREEDSM2</Key>
@@ -299,7 +297,7 @@
       [H4]Oath[h4]
       Please see page 32 of the Keeping the Peace Sourcebook for details.
     </Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="32">Keeping the Peace</Source>
     <SpecificMotivations>
       <Key>OATHJUSTICE</Key>
       <Key>OATHLEGACY</Key>
@@ -320,7 +318,7 @@
       [H4]Drive[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="37">Lead by Example</Source>
     <SpecificMotivations>
       <Key>DRIVEGUILT</Key>
       <Key>DRIVEMISSION</Key>
@@ -341,7 +339,7 @@
       [H4]Location: Aleen[h4]
       Please see page 114 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="114">Nexus of Power</Source>
     <SpecificMotivations>
       <Key>LOCALEENENAM</Key>
       <Key>LOCALEENFOLL</Key>
@@ -354,7 +352,7 @@
       [H4]Location: Auratera[h4]
       Please see page 114 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="114">Nexus of Power</Source>
     <SpecificMotivations>
       <Key>LOCAURAISO</Key>
       <Key>LOCAURASTUD</Key>
@@ -367,7 +365,7 @@
       [H4]Location: Bardotta[h4]
       Please see page 114 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="114">Nexus of Power</Source>
     <SpecificMotivations>
       <Key>LOCBARDPRES</Key>
       <Key>LOCBARDMEND</Key>
@@ -381,7 +379,7 @@
       [H4]Location: Devaron[h4]
       Please see page 114 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="114">Nexus of Power</Source>
     <SpecificMotivations>
       <Key>LOCDEVMAT</Key>
     </SpecificMotivations>
@@ -393,7 +391,7 @@
       [H4]Location: Iktotch[h4]
       Please see page 114 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="114">Nexus of Power</Source>
     <SpecificMotivations>
       <Key>LOCIKTOVIS</Key>
       <Key>LOCIKTOEXILE</Key>
@@ -407,7 +405,7 @@
       [H4]Location: Lothal[h4]
       Please see page 114 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="114">Nexus of Power</Source>
     <SpecificMotivations>
       <Key>LOCLOTHUPPOV</Key>
       <Key>LOCLOTHREV</Key>
@@ -421,7 +419,7 @@
       [H4]Location: Naboo[h4]
       Please see page 114 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="114">Nexus of Power</Source>
     <SpecificMotivations>
       <Key>LOCNABOOENVOY</Key>
       <Key>LOCNABOOPOET</Key>
@@ -435,7 +433,7 @@
       [H4]Location: Ossus[h4]
       Please see page 114 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="114">Nexus of Power</Source>
     <SpecificMotivations>
       <Key>LOCOSSUSARCH</Key>
       <Key>LOCOSSUSPLUND</Key>
@@ -448,14 +446,32 @@
       [H4]Location: Weik[h4]
       Please see page 114 of the Nexus of Power Sourcebook for details.
     </Description>
-    <Source>Nexus of Power</Source>
+    <Source Page="114">Nexus of Power</Source>
     <SpecificMotivations>
       <Key>LOCWEIKFORREV</Key>
       <Key>LOCWEIKCAST</Key>
       <Key>LOCWEIKWIDE</Key>
     </SpecificMotivations>
   </Motivation>
+  <Motivation>
+    <Key>INNOV</Key>
+    <Name>Innovation</Name>
+    <Description>
+      [H4]Innovation[h4]
+      Please see page 36 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="36">Special Modifications</Source>
+    <SpecificMotivations>
+      <Key>INNOVFAB</Key>
+      <Key>INNOVINV</Key>
+      <Key>INNOVMOD</Key>
+      <Key>INNOVIMP</Key>
+      <Key>INNOVWASTE</Key>
+      <Key>INNOVTECHFASC</Key>
+      <Key>INNOVTECHBUS</Key>
+      <Key>INNOVTECHHIST</Key>
+      <Key>INNOVTECHNECESS</Key>
+      <Key>INNOVTECHRIVAL</Key>
+    </SpecificMotivations>
+  </Motivation>
 </Motivations>
-
-
-

@@ -51,7 +51,7 @@
     Falleen is the native language of the Falleen species from the planet Falleen.
     [P]Falleens leaving their home planet learn to speak Basic as well.
   </Description>
-  <Source>Fly Casual</Source>
+  <Source Page="18">Fly Casual</Source>
   <StartingChars>
     <Brawn>1</Brawn>
     <Agility>2</Agility>

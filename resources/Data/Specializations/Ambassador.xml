@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>AMBASSADOR</Key>
   <Name>Ambassador</Name>
@@ -6,7 +6,7 @@
     [H4]Ambassador - Courting Support[h4]
     Please see page 79 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="79">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>CHARM</Key>
     <Key>DISC</Key>
@@ -51,13 +51,13 @@
           <Right>true</Right>
         </Direction>
         <Direction>
-		  <Up>true</Up>
+          <Up>true</Up>
           <Down>true</Down>
           <Left>true</Left>
         </Direction>
         <Direction>
           <Down>true</Down>
-		  <Up>true</Up>
+          <Up>true</Up>
         </Direction>
         <Direction>
           <Down>true</Down>

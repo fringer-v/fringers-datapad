@@ -6,7 +6,7 @@
     [H3]HLAF-500 Starfighter[h3]
     Please see page 108 of the Suns of Fortune Sourcebook for details.
 </Description>
-  <Source>Suns of Fortune</Source>
+  <Source Page="108">Suns of Fortune</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

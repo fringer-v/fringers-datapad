@@ -4,7 +4,7 @@
   <Name>Tsmeu-6 Personal Wheel Bike</Name>
   <Description>[H3]Tsmeu-6 Personal Wheel Bike[h3]
 Please see page 59 of the Keeping the Peace sourcebook for details.</Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="59">Keeping the Peace</Source>
   <Type>Wheel Bike</Type>
   <Categories>
     <Category>Land Vehicle</Category>

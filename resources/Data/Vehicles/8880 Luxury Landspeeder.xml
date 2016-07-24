@@ -4,7 +4,7 @@
   <Name>8880 Luxury Landspeeder</Name>
   <Description>[H3]8880 Luxury Landspeeder[h3]
 Please see page 59 of the Desperate Allies Sourcebook for details.</Description>
-  <Source>Desperate Allies</Source>
+  <Source Page="59">Desperate Allies</Source>
   <Sources />
   <Type>Landspeeder</Type>
   <Categories>

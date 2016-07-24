@@ -4,7 +4,7 @@
   <Name>Pongeeta-Class Swamp Speeder</Name>
   <Description>[H3]Ubrikkian Industries Pongeeta-Class Swamp Speeder[h3]
 Please see page 113 of the Lords of Nal Hutta Sourcebook for details.</Description>
-  <Source>Lords of Nal Hutta</Source>
+  <Source Page="113">Lords of Nal Hutta</Source>
   <Sources />
   <Type>Swamp Speeder</Type>
   <Categories>

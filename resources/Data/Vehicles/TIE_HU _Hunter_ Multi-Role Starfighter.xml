@@ -4,7 +4,7 @@
   <Name>TIE/HU "Hunter" Multi-Role Starfighter</Name>
   <Description>[H3]TIE/HU "Hunter" Multi-Role Starfighter[h3]
 Please see page 58 of the Stay on Target Sourcebook for details.</Description>
-  <Source>Stay on Target</Source>
+  <Source Page="58">Stay on Target</Source>
   <Type>Starfighter</Type>
   <Categories>
     <Category>Starship</Category>

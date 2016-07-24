@@ -4,7 +4,7 @@
   <Name>Syliure-25 Hyperdrive Sled</Name>
   <Description>[H3]Syliure-25 Hyperdrive Sled[h3]
 Please see sidebar on page 255 of the Edge of the Empire Core Rulebook for details.</Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="255">Edge of the Empire Core Rulebook</Source>
   <Sources />
   <Type>Hyperdrive Sled</Type>
   <Categories />
@@ -23,7 +23,8 @@ Please see sidebar on page 255 of the Edge of the Empire Core Rulebook for detai
   <Crew>One R1- or R2-Series Astromech</Crew>
   <EncumbranceCapacity>0</EncumbranceCapacity>
   <Passengers>0</Passengers>
-  <Consumables></Consumables>
+  <Consumables>
+  </Consumables>
   <Silhouette>3</Silhouette>
   <Speed>0</Speed>
   <Handling>0</Handling>

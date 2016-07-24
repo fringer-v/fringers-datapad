@@ -4,7 +4,7 @@
   <Name>Unmatched Authority</Name>
   <Description>Please see page 40 of the Lead by Example Sourcebook for details.
 </Description>
-  <Source>Lead by Example</Source>
+  <Source Page="40">Lead by Example</Source>
   <AbilityRows>
     <AbilityRow>
       <Index>0</Index>

@@ -4,7 +4,7 @@
   <Name>Keelkana-Class Attack Submersible</Name>
   <Description>[H3]Mon Calamari Keelkana-Class Attack Submersible[h3]
 Please see page 117 of the Strongholds of Resistance Sourcebook for details.</Description>
-  <Source>Strongholds of Resistance</Source>
+  <Source Page="117">Strongholds of Resistance</Source>
   <Sources />
   <Type>Submersible</Type>
   <Categories />

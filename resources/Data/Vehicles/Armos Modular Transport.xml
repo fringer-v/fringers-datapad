@@ -4,8 +4,7 @@
   <Name>Armos Modular Transport</Name>
   <Description>[H3]Armos Modular Transport[h3]
 Please see page 59 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="59">Far Horizons</Source>
   <Type>Transport</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

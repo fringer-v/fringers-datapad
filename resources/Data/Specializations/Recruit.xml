@@ -6,7 +6,7 @@
     [H4]Recruit[h4]
     Please see page 100 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="100">Age of Rebellion Core Rulebook</Source>
   <CareerSkills>
     <Key>ATHL</Key>
     <Key>DISC</Key>

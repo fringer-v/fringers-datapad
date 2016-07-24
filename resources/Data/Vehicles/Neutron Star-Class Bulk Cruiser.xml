@@ -6,7 +6,7 @@
     [H3]Neutron Star-Class Bulk Cruiser[h3]
     Please see page 69 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="69">Dangerous Covenants</Source>
   <Type>Bulk Cruiser</Type>
   <Categories>
     <Category>Capital Ship</Category>

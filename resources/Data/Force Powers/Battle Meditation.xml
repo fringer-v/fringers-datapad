@@ -6,7 +6,7 @@
     [H4]Force Power: Battle Meditation[h4]
     Please see page 284 of the Force and Destiny Core Rulebook for details.
   </Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="284">Force and Destiny Core Rulebook</Source>
   <AbilityRows>
     <AbilityRow>
       <Index>0</Index>

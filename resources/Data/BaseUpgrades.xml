@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <BaseUpgrades>
   <!-- Homesteads -->
   <BaseUpgrade>
@@ -8,7 +8,7 @@
       [H4]Increase Core Focus[h4]
       Please see page 83 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="83">Far Horizons</Source>
     <MonthlyProfit>100</MonthlyProfit>
     <ProfitPerPC>true</ProfitPerPC>
     <PurchaseCount>5</PurchaseCount>
@@ -26,7 +26,7 @@
       [H4]Improve Security[h4]
       Please see page 83 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="83">Far Horizons</Source>
     <PurchaseCount>3</PurchaseCount>
     <Cost>
       <Credits>10000</Credits>
@@ -116,7 +116,7 @@
                 </Rank>
               </CharSkill>
             </Skills>
-            <Experience/>
+            <Experience />
             <Attributes>
               <SoakValue>
                 <CharRanks>2</CharRanks>
@@ -211,7 +211,7 @@
       [H4]NPC Ally[h4]
       Please see page 83 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="83">Far Horizons</Source>
     <PurchaseCount>4</PurchaseCount>
     <Cost>
       <Credits>2000</Credits>
@@ -296,7 +296,7 @@
                 </Rank>
               </CharSkill>
             </Skills>
-            <Experience/>
+            <Experience />
             <Attributes>
               <SoakValue>
               </SoakValue>
@@ -398,7 +398,7 @@
                 </Rank>
               </CharSkill>
             </Skills>
-            <Experience/>
+            <Experience />
             <Attributes>
               <SoakValue>
               </SoakValue>
@@ -517,7 +517,7 @@
                 </Rank>
               </CharSkill>
             </Skills>
-            <Experience/>
+            <Experience />
             <Attributes>
               <SoakValue>
               </SoakValue>
@@ -557,7 +557,7 @@
             <Type>Rival</Type>
           </Adversary>
         </NPCs>
-    </Option>
+      </Option>
       <Option>
         <Key>HOMENPC4</Key>
         <Name>Pilot NPC</Name>
@@ -641,7 +641,7 @@
                 </Rank>
               </CharSkill>
             </Skills>
-            <Experience/>
+            <Experience />
             <Attributes>
               <SoakValue>
               </SoakValue>
@@ -681,7 +681,7 @@
       [H4]Infirmary[h4]
       Please see page 83 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="83">Far Horizons</Source>
     <PurchaseCount>1</PurchaseCount>
     <Cost>
       <Credits>5000</Credits>
@@ -697,7 +697,7 @@
       [H4]Mechanic's Garage[h4]
       Please see page 83 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="83">Far Horizons</Source>
     <PurchaseCount>1</PurchaseCount>
     <Cost>
       <Credits>5000</Credits>
@@ -713,6 +713,7 @@
       [H4]Landing Bay[h4]
       Please see page 83 of the Far Horizons Sourcebook for details.
     </Description>
+    <Source Page="83">Far Horizons</Source>
     <PurchaseCount>3</PurchaseCount>
     <Cost>
       <Credits>3000</Credits>
@@ -721,7 +722,6 @@
     <Options>
     </Options>
   </BaseUpgrade>
-  
   <!-- Businesses -->
   <BaseUpgrade>
     <Key>BUSCORE</Key>
@@ -730,7 +730,7 @@
       [H4]Increase Core Focus[h4]
       Please see page 85 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="85">Far Horizons</Source>
     <MonthlyProfit>200</MonthlyProfit>
     <PurchaseCount>5</PurchaseCount>
     <PerPC>true</PerPC>
@@ -748,7 +748,7 @@
       [H4]Improve Security[h4]
       Please see page 85 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="85">Far Horizons</Source>
     <PurchaseCount>4</PurchaseCount>
     <Cost>
       <Credits>10000</Credits>
@@ -838,7 +838,7 @@
                 </Rank>
               </CharSkill>
             </Skills>
-            <Experience/>
+            <Experience />
             <Attributes>
               <SoakValue>
                 <CharRanks>2</CharRanks>
@@ -934,7 +934,7 @@
       [H4]Special Orders[h4]
       Please see page 85 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="85">Far Horizons</Source>
     <PurchaseCount>1</PurchaseCount>
     <Cost>
       <Credits>2000</Credits>
@@ -950,7 +950,7 @@
       [H4]Wholesale Prices[h4]
       Please see page 85 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="85">Far Horizons</Source>
     <PurchaseCount>1</PurchaseCount>
     <Cost>
       <Credits>1000</Credits>
@@ -966,7 +966,7 @@
       [H4]Specialized License[h4]
       Please see page 85 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="85">Far Horizons</Source>
     <PurchaseCount>0</PurchaseCount>
     <Cost>
       <Credits>2500</Credits>
@@ -975,8 +975,6 @@
     <Options>
     </Options>
   </BaseUpgrade>
-  
-  
   <!-- Rebel Base -->
   <BaseUpgrade>
     <Key>REBELCORE</Key>
@@ -985,7 +983,7 @@
       [H4]Increase Core Focus[h4]
       Please see page 88 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="88">Desperate Allies</Source>
     <MonthlyProfit>0</MonthlyProfit>
     <ProfitPerPC>false</ProfitPerPC>
     <PurchaseCount>5</PurchaseCount>
@@ -1004,7 +1002,7 @@
       [H4]Enhanced Security[h4]
       Please see page 88 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="88">Desperate Allies</Source>
     <PurchaseCount>3</PurchaseCount>
     <Cost>
       <Credits>10000</Credits>
@@ -1164,7 +1162,7 @@
       [H4]NPC Ally[h4]
       Please see page 89 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="89">Desperate Allies</Source>
     <PurchaseCount>3</PurchaseCount>
     <Cost>
       <Credits>2000</Credits>
@@ -1242,7 +1240,7 @@
                 </Rank>
               </CharSkill>
             </Skills>
-            <Experience/>
+            <Experience />
             <Attributes>
               <SoakValue>
               </SoakValue>
@@ -1360,7 +1358,7 @@
                 </Rank>
               </CharSkill>
             </Skills>
-            <Experience/>
+            <Experience />
             <Attributes>
               <SoakValue>
               </SoakValue>
@@ -1400,7 +1398,7 @@
             <Type>Rival</Type>
           </Adversary>
         </NPCs>
-    </Option>
+      </Option>
       <Option>
         <Key>HOMENPC3</Key>
         <Name>Pilot NPC</Name>
@@ -1484,7 +1482,7 @@
                 </Rank>
               </CharSkill>
             </Skills>
-            <Experience/>
+            <Experience />
             <Attributes>
               <SoakValue>
               </SoakValue>
@@ -1524,7 +1522,7 @@
       [H4]Medical Facility[h4]
       Please see page 89 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="89">Desperate Allies</Source>
     <PurchaseCount>3</PurchaseCount>
     <Cost>
       <Credits>6000</Credits>
@@ -1540,7 +1538,7 @@
       [H4]Hangar and Repair Bay[h4]
       Please see page 89 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="89">Desperate Allies</Source>
     <PurchaseCount>3</PurchaseCount>
     <Cost>
       <Credits>8500</Credits>
@@ -1556,7 +1554,7 @@
       [H4]Armory[h4]
       Please see page 89 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="89">Desperate Allies</Source>
     <PurchaseCount>1</PurchaseCount>
     <MonthlyProfit>0</MonthlyProfit>
     <ProfitPerPC>false</ProfitPerPC>
@@ -1573,7 +1571,7 @@
       [H4]Training Facility[h4]
       Please see page 89 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="89">Desperate Allies</Source>
     <PurchaseCount>1</PurchaseCount>
     <MonthlyProfit>0</MonthlyProfit>
     <ProfitPerPC>false</ProfitPerPC>
@@ -1590,7 +1588,7 @@
       <Key>RANGLT</Key>
       <Key>RANGHVY</Key>
     </CareerSkillKeys>
-    </BaseUpgrade>
+  </BaseUpgrade>
   <BaseUpgrade>
     <Key>REBELLAB</Key>
     <Name>Laboratory</Name>
@@ -1598,7 +1596,7 @@
       [H4]Laboratory[h4]
       Please see page 89 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="89">Desperate Allies</Source>
     <PurchaseCount>1</PurchaseCount>
     <MonthlyProfit>0</MonthlyProfit>
     <ProfitPerPC>false</ProfitPerPC>
@@ -1615,7 +1613,7 @@
       [H4]Command and Control[h4]
       Please see page 89 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="89">Desperate Allies</Source>
     <PurchaseCount>1</PurchaseCount>
     <MonthlyProfit>0</MonthlyProfit>
     <ProfitPerPC>false</ProfitPerPC>
@@ -1632,12 +1630,132 @@
       [H4]Research Library[h4]
       Please see page 89 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="89">Desperate Allies</Source>
     <PurchaseCount>1</PurchaseCount>
     <MonthlyProfit>0</MonthlyProfit>
     <ProfitPerPC>false</ProfitPerPC>
     <Cost>
       <Credits>3000</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <Options />
+  </BaseUpgrade>
+  <BaseUpgrade>
+    <Key>WORKSPACE</Key>
+    <Name>Additional Workspace</Name>
+    <Description>
+      [H4]Additional Workspace[h4]
+      Please see page 95 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="95">Special Modifications</Source>
+    <PurchaseCount>0</PurchaseCount>
+    <MonthlyProfit>0</MonthlyProfit>
+    <ProfitPerPC>false</ProfitPerPC>
+    <Cost>
+      <Credits>0</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <Options />
+  </BaseUpgrade>
+  <BaseUpgrade>
+    <Key>WORKHOME</Key>
+    <Name>Comforts of Home</Name>
+    <Description>
+      [H4]Comforts of Home[h4]
+      Please see page 95 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="95">Special Modifications</Source>
+    <PurchaseCount>0</PurchaseCount>
+    <MonthlyProfit>0</MonthlyProfit>
+    <ProfitPerPC>false</ProfitPerPC>
+    <Cost>
+      <Credits>0</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <Options />
+  </BaseUpgrade>
+  <BaseUpgrade>
+    <Key>WORKCONT</Key>
+    <Name>Emergency Containment Measures</Name>
+    <Description>
+      [H4]Emergency Containment Measures[h4]
+      Please see page 95 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="95">Special Modifications</Source>
+    <PurchaseCount>1</PurchaseCount>
+    <MonthlyProfit>0</MonthlyProfit>
+    <ProfitPerPC>false</ProfitPerPC>
+    <Cost>
+      <Credits>0</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <Options />
+  </BaseUpgrade>
+  <BaseUpgrade>
+    <Key>WORKRECLAM</Key>
+    <Name>Reclamation Equipment</Name>
+    <Description>
+      [H4]Reclamation Equipment[h4]
+      Please see page 95 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="95">Special Modifications</Source>
+    <PurchaseCount>1</PurchaseCount>
+    <MonthlyProfit>0</MonthlyProfit>
+    <ProfitPerPC>false</ProfitPerPC>
+    <Cost>
+      <Credits>0</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <Options />
+  </BaseUpgrade>
+  <BaseUpgrade>
+    <Key>WORKRES</Key>
+    <Name>Research Records</Name>
+    <Description>
+      [H4]Reclamation Equipment[h4]
+      Please see page 95 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="95">Special Modifications</Source>
+    <PurchaseCount>1</PurchaseCount>
+    <MonthlyProfit>0</MonthlyProfit>
+    <ProfitPerPC>false</ProfitPerPC>
+    <Cost>
+      <Credits>0</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <Options />
+  </BaseUpgrade>
+  <BaseUpgrade>
+    <Key>WORKSPARE</Key>
+    <Name>Spare Parts Bin</Name>
+    <Description>
+      [H4]Spare Parts Bin[h4]
+      Please see page 95 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="95">Special Modifications</Source>
+    <PurchaseCount>0</PurchaseCount>
+    <MonthlyProfit>0</MonthlyProfit>
+    <ProfitPerPC>false</ProfitPerPC>
+    <RarityDecrease>1</RarityDecrease>
+    <Cost>
+      <Credits>0</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <Options />
+  </BaseUpgrade>
+  <BaseUpgrade>
+    <Key>WORKLOWGRAV</Key>
+    <Name>Low-Grav Workspace</Name>
+    <Description>
+      [H4]Low-Grav Workspace[h4]
+      Please see page 95 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="95">Special Modifications</Source>
+    <PurchaseCount>1</PurchaseCount>
+    <MonthlyProfit>0</MonthlyProfit>
+    <ProfitPerPC>false</ProfitPerPC>
+    <Cost>
+      <Credits>0</Credits>
       <Obligation>0</Obligation>
     </Cost>
     <Options />

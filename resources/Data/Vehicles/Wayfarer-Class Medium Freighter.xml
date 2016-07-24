@@ -1,11 +1,11 @@
-﻿<Vehicle>
+<Vehicle>
   <Key>WAYFARER</Key>
   <Name>Wayfarer-Class Medium Freighter</Name>
   <Description>
     [H3]Wayfarer-Class Medium Freighter[h3]
     Please see page 263 of the Edge of the Empire Core Rulebook for details.
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="263">Edge of the Empire Core Rulebook</Source>
   <HyperdrivePrimary>2</HyperdrivePrimary>
   <HyperdriveBackup>14</HyperdriveBackup>
   <NaviComputer>true</NaviComputer>

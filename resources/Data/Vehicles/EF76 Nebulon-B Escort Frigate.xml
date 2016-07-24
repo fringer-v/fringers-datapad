@@ -1,4 +1,4 @@
-﻿<Vehicle>
+<Vehicle>
   <Key>EF76</Key>
   <Name>EF76 Nebulon-B Escort Frigate</Name>
   <Description>
@@ -6,8 +6,8 @@
     Please see page 268 of the Edge of the Empire Core Rulebook, or page 278 of the  Age of Rebellion Core Rulebook, for details.
   </Description>
   <Sources>
-    <Source>Age of Rebellion Core Rulebook</Source>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="268">Edge of the Empire Core Rulebook</Source>
+    <Source Page="278"> Age of Rebellion Core Rulebook</Source>
   </Sources>
   <HyperdrivePrimary>2</HyperdrivePrimary>
   <HyperdriveBackup>12</HyperdriveBackup>

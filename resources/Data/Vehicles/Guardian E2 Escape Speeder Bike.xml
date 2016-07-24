@@ -6,7 +6,7 @@
     [H3]Guardian E2 Escape Speeder Bike[h3]
     Please see page 63 of the Dangerous Covenants Sourcebook for details.
   </Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="63">Dangerous Covenants</Source>
   <Type>Speeder Bike</Type>
   <Categories>
     <Category>Air Vehicle</Category>

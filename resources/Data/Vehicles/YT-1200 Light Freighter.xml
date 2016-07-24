@@ -4,8 +4,7 @@
   <Name>YT-1200 Light Freighter</Name>
   <Description>[H3]YT-1200 Light Freighter[h3]
 Please see page 57 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="57">Far Horizons</Source>
   <Type>Freighter</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

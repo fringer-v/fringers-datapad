@@ -4,7 +4,7 @@
   <Name>Fated Duel</Name>
   <Description>[H4]Fated Duel[h4]
   Please see page 35 of the Keeping the Peace sourcebook for details.</Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="35">Keeping the Peace</Source>
   <AbilityRows>
     <AbilityRow>
       <Index>0</Index>

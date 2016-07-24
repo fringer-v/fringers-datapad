@@ -104,7 +104,7 @@
     will contain a suffix of -sa, for example, "We-sa" and "You-sa". Many one-syllable 
     words ending in a consonant will end with -u.
   </Description>
-  <Source>Nexus of Power</Source>
+  <Source Page="101">Nexus of Power</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>2</Agility>

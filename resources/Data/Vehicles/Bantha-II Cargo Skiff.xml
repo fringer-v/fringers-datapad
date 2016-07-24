@@ -5,7 +5,7 @@
   <Description>[H3]Ubrikkian Industries Bantha-II Cargo Skiff[h3]
 Please see page 112 of the Lords of Nal Hutta Sourcebook for details.
 </Description>
-  <Source>Lords of Nal Hutta</Source>
+  <Source Page="112">Lords of Nal Hutta</Source>
   <Sources />
   <Type>Cargo Skiff</Type>
   <Categories>

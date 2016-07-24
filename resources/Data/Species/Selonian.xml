@@ -5,7 +5,7 @@
   <Description>[H4]Selonian[h4]
 Please see page 91 of the Suns of Fortune Sourcebook for details.
 </Description>
-  <Source>Suns of Fortune</Source>
+  <Source Page="91">Suns of Fortune</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>3</Agility>

@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Specialization>
   <Key>SCOUT</Key>
   <Name>Scout</Name>
   <Description>
-    [H4]Scout &#8212; Discovering New Planets[h4]
+    [H4]Scout — Discovering New Planets[h4]
     Please see page 72 of the Edge of the Empire Core Rulebook, or page 98 of the Age of Rebellion Core Rulebook, for details.
   </Description>
   <Sources>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="72">Edge of the Empire Core Rulebook</Source>
+    <Source Page="98">Age of Rebellion Core Rulebook</Source>
   </Sources>
   <CareerSkills>
     <Key>ATHL</Key>

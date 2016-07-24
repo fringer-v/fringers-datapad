@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Species>
   <Key>BOTH</Key>
   <Name>Bothan</Name>
@@ -7,8 +7,8 @@
     Please see page 43 of the Edge of the Empire Core Rulebook, or page 51 of the Age of Rebellion Core Rulebook, for details.
   </Description>
   <Sources>
-    <Source>Edge of the Empire Core Rulebook</Source>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="43">Edge of the Empire Core Rulebook</Source>
+    <Source Page="51">Age of Rebellion Core Rulebook</Source>
   </Sources>
   <StartingChars>
     <Brawn>1</Brawn>
@@ -36,4 +36,4 @@
       <RankAdd>1</RankAdd>
     </TalentModifier>
   </TalentModifiers>
-  </Species>
+</Species>

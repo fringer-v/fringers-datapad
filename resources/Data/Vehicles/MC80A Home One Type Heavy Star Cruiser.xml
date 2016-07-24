@@ -4,7 +4,7 @@
   <Name>MC80A Home One Type Heavy Star Cruiser</Name>
   <Description>[H3]MC80A [I]Home One[i] Type Heavy Star Cruiser[h3]
 Please see page 53 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="53">Lead by Example</Source>
   <Type>Heavy Star Cruiser</Type>
   <Categories>
     <Category>Capital Ship</Category>

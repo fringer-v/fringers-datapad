@@ -4,7 +4,7 @@
   <Name>Surveyor-Class Reconnaissance Frigate</Name>
   <Description>[H3][I]Surveyor[i]-Class Reconnaissance Frigate[h3]
 Please see page 53 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="53">Lead by Example</Source>
   <Type>Frigate</Type>
   <Categories>
     <Category>Capital Ship</Category>

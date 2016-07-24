@@ -4,7 +4,7 @@
   <Name>ND-47 Stalwart Bulk Freighter</Name>
   <Description>[H3]ND-47 [I]Stalwart[i] Bulk Freighter[h3]
 Please see page 62 of the Keeping the Peace sourcebook for details.</Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="62">Keeping the Peace</Source>
   <Type>Bulk Freighter</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

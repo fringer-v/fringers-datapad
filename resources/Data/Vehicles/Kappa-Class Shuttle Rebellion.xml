@@ -4,7 +4,7 @@
   <Name>Kappa-Class Shuttle (Rebellion)</Name>
   <Description>[H3][I]Kappa[i]-Class Shuttle (Rebellion)[h3]
 Please see page 63 of the Desperate Allies Sourcebook for details.</Description>
-  <Source>Desperate Allies</Source>
+  <Source Page="63">Desperate Allies</Source>
   <Type>Shuttle</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

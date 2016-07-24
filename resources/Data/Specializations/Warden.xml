@@ -5,7 +5,7 @@
   <Description>[H4]Warden[h4]
   Please see page 26 of the Keeping the Peace sourcebook for details.
 </Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="26">Keeping the Peace</Source>
   <CareerSkills>
     <Key>BRAWL</Key>
     <Key>COERC</Key>

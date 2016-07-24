@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Species>
   <Key>ROD</Key>
   <Name>Rodian</Name>
@@ -7,7 +7,7 @@
     Please see page 49 of the Edge of the Empire Core Rulebook for details.
 
   </Description>
-  <Source>Edge of the Empire Core Rulebook</Source>
+  <Source Page="49">Edge of the Empire Core Rulebook</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>3</Agility>

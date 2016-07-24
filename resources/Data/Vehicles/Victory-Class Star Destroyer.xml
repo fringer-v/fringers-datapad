@@ -7,8 +7,8 @@
     Please see page 283 of the Age of Rebellion Core Rulebook, or page 267 of the Force and Destiny Core Rulebook, for details.
   </Description>
   <Sources>
-    <Source>Age of Rebellion Core Rulebook</Source>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="283">Age of Rebellion Core Rulebook</Source>
+    <Source Page="267">Force and Destiny Core Rulebook</Source>
   </Sources>
   <Type>Star Destroyer</Type>
   <Categories>

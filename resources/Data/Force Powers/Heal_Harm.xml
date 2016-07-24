@@ -6,7 +6,7 @@
     [H4]Force Power: Heal/Harm[h4]
     Please see page 292 of the Force and Destiny Core Rulebook for details.
   </Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="292">Force and Destiny Core Rulebook</Source>
   <AbilityRows>
     <AbilityRow>
       <Index>0</Index>

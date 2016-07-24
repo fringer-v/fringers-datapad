@@ -4,8 +4,7 @@
   <Name>YT-1760 Small Transport</Name>
   <Description>[H3]YT-1760 Small Transport[h3]
 Please see page 58 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Age of Rebellion Beta Rulebook</Source>
-
+  <Source Page="58">Age of Rebellion Beta Rulebook</Source>
   <Type>Freighter</Type>
   <Categories>
     <Category>Non-Fighter Starship</Category>

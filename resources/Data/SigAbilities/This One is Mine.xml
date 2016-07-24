@@ -6,7 +6,7 @@
     [H4]Ace Signature Ability: This One is Mine[h4]
     Please see page 36 of the Stay on Target Sourcebook for details.
   </Description>
-  <Source>Stay on Target</Source>
+  <Source Page="36">Stay on Target</Source>
   <Sources />
   <AbilityRows>
     <AbilityRow>

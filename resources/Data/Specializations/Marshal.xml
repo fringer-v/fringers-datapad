@@ -2,10 +2,9 @@
 <Specialization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Key>MARSHAL</Key>
   <Name>Marshal</Name>
-  <Description>[H4]Marshal &#8212; The Burden of Peace[h4]
+  <Description>[H4]Marshal — The Burden of Peace[h4]
 Please see page 28 of the Far Horizons Sourcebook for details.</Description>
-  <Source>Far Horizons</Source>
-
+  <Source Page="28">Far Horizons</Source>
   <CareerSkills>
     <Key>COERC</Key>
     <Key>RANGLT</Key>

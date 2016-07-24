@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <BaseOfOperations>
   <BaseOfOperation>
     <Key>HOMESTEAD</Key>
     <Name>Homestead</Name>
     <Description>
       [H4]Homestead[h4]
-      Please see page 82 of the Far Horizons Sourcebook for details
+      Please see page 82 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="82">Far Horizons</Source>
     <Cost>
       <Credits>50000</Credits>
       <Obligation>5</Obligation>
@@ -33,9 +33,9 @@
     <Name>Business</Name>
     <Description>
       [H4]Business[h4]
-      Please see page 82 of the Far Horizons Sourcebook for details
+      Please see page 82 of the Far Horizons Sourcebook for details.
     </Description>
-    <Source>Far Horizons</Source>
+    <Source Page="82">Far Horizons</Source>
     <Cost>
       <Credits>50000</Credits>
       <Obligation>5</Obligation>
@@ -60,9 +60,9 @@
     <Name>Rebel Base</Name>
     <Description>
       [H4]Rebel Base[h4]
-      Please see page 86 of the Desperate Allies Sourcebook for details
+      Please see page 86 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="86">Desperate Allies</Source>
     <Cost>
       <Credits>0</Credits>
       <Obligation>0</Obligation>
@@ -185,5 +185,125 @@
         <Type>Minion</Type>
       </Adversary>
     </NPCs>
+  </BaseOfOperation>
+  <BaseOfOperation>
+    <Key>WORKSHOP</Key>
+    <Name>Workshop</Name>
+    <Description>
+      [H4]Workshop[h4]
+      Please see page 94 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="94">Special Modifications</Source>
+    <Cost>
+      <Credits>0</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <NPCPerMember>false</NPCPerMember>
+    <MaxUpgrades>3</MaxUpgrades>
+    <Foci>
+      <Key>WORKCOMP</Key>
+      <Key>WORKMECH</Key>
+      <Key>WORKMED</Key>
+    </Foci>
+    <AvailableUpgrades>
+      <Key>WORKSPACE</Key>
+      <Key>WORKHOME</Key>
+      <Key>WORKCONT</Key>
+      <Key>WORKRECLAM</Key>
+      <Key>WORKRES</Key>
+      <Key>WORKSPARE</Key>
+    </AvailableUpgrades>
+  </BaseOfOperation>
+  <BaseOfOperation>
+    <Key>WORKSHOPSHIP</Key>
+    <Name>Shipboard Workshop</Name>
+    <Description>
+      [H4]Shipboard Workshop[h4]
+      Please see page 95 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="95">Special Modifications</Source>
+    <Cost>
+      <Credits>0</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <NPCPerMember>false</NPCPerMember>
+    <MaxUpgrades>3</MaxUpgrades>
+    <Foci>
+      <Key>WORKCOMP</Key>
+      <Key>WORKMECH</Key>
+      <Key>WORKMED</Key>
+    </Foci>
+    <AvailableUpgrades>
+      <Key>WORKSPACE</Key>
+      <Key>WORKHOME</Key>
+      <Key>WORKCONT</Key>
+      <Key>WORKRECLAM</Key>
+      <Key>WORKRES</Key>
+      <Key>WORKSPARE</Key>
+      <Key>WORKLOWGRAV</Key>
+    </AvailableUpgrades>
+  </BaseOfOperation>
+  <BaseOfOperation>
+    <Key>WORKSHOPHOME</Key>
+    <Name>Homestead Workshop</Name>
+    <Description>
+      [H4]Homestead Workshop[h4]
+      Please see page 95 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="95">Special Modifications</Source>
+    <Cost>
+      <Credits>0</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <NPCPerMember>false</NPCPerMember>
+    <MaxUpgrades>3</MaxUpgrades>
+    <Foci>
+      <Key>WORKCOMP</Key>
+      <Key>WORKMECH</Key>
+      <Key>WORKMED</Key>
+    </Foci>
+    <AvailableUpgrades>
+      <Key>WORKSPACE</Key>
+      <Key>WORKHOME</Key>
+      <Key>WORKCONT</Key>
+      <Key>WORKRECLAM</Key>
+      <Key>WORKRES</Key>
+      <Key>WORKSPARE</Key>
+    </AvailableUpgrades>
+    <BuiltInUpgrades>
+      <Key>WORKHOME</Key>
+    </BuiltInUpgrades>
+  </BaseOfOperation>
+  <BaseOfOperation>
+    <Key>WORKSHOPIND</Key>
+    <Name>Industrial Workshop</Name>
+    <Description>
+      [H4]Industrial Workshop[h4]
+      Please see page 96 of the Special Modifications Sourcebook for details.
+    </Description>
+    <Source Page="96">Special Modifications</Source>
+    <Cost>
+      <Credits>0</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <NPCPerMember>false</NPCPerMember>
+    <Foci>
+      <Key>WORKCOMP</Key>
+      <Key>WORKMECH</Key>
+      <Key>WORKMED</Key>
+    </Foci>
+    <AvailableUpgrades>
+      <Key>WORKSPACE</Key>
+      <Key>WORKHOME</Key>
+      <Key>WORKCONT</Key>
+      <Key>WORKRECLAM</Key>
+      <Key>WORKRES</Key>
+      <Key>WORKSPARE</Key>
+    </AvailableUpgrades>
+    <BuiltInUpgrades>
+      <Key>WORKSPACE</Key>
+      <Key>WORKRES</Key>
+      <Key>WORKSPARE</Key>
+    </BuiltInUpgrades>
   </BaseOfOperation>
 </BaseOfOperations>

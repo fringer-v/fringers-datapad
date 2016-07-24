@@ -4,9 +4,12 @@
   <Name>VCX-100 Light Freighter</Name>
   <Description>[H3]VCX-100 Light Freighter[h3]
 Please see page 63 of the Keeping the Peace sourcebook for details.</Description>
-  <Source>Keeping the Peace</Source>
+  <Source Page="63">Keeping the Peace</Source>
   <Type>Light Freighter</Type>
-  <Categories />
+  <Categories>
+    <Category>Starship</Category>
+    <Category>Non-Fighter Starship</Category>
+  </Categories>
   <Encumbrance>0</Encumbrance>
   <HP>5</HP>
   <Price>155000</Price>

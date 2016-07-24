@@ -20,7 +20,7 @@ Sriluurian is the official language of the Sriluur system. The most notable spec
 [P]The language has some special characteristics that most languages in the galaxy lack: The Weequays can speak to one another and prevent outsiders from understanding them.
 [P]Weequays also use pheromones to communicate with each other. However, only the members of one's same tribe can understand the pheromones of another Weequay. Sriluurian is a language used to communicate with people from other tribes.
 [P]Most Weequays are fluent in both Sriluurian and Basic, although they are usually only literate in their own language.</Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="22">Dangerous Covenants</Source>
   <StartingChars>
     <Brawn>3</Brawn>
     <Agility>2</Agility>

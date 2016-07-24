@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ForcePower>
   <Key>FORSEE</Key>
   <Name>Foresee</Name>
@@ -7,8 +7,8 @@
     Please see page 300 of the Age of Rebellion Core Rulebook, or page 290 of the Force and Destiny Core Rulebook, for details.
   </Description>
   <Sources>
-    <Source>Age of Rebellion Core Rulebook</Source>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="300">Age of Rebellion Core Rulebook</Source>
+    <Source Page="290">Force and Destiny Core Rulebook</Source>
   </Sources>
   <MinForceRating>1</MinForceRating>
   <AbilityRows>
@@ -151,7 +151,7 @@
         </Direction>
         <Direction>
           <Up>true</Up>
-		  <Right>true</Right>
+          <Right>true</Right>
         </Direction>
         <Direction>
           <Left>true</Left>

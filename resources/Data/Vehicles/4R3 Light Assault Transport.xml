@@ -5,7 +5,7 @@
   <Description>
     [H3]4R3 Light Assault Transport[h3]
     Please see page 67 of the Dangerous Covenants Sourcebook for details.</Description>
-  <Source>Dangerous Covenants</Source>
+  <Source Page="67">Dangerous Covenants</Source>
   <Type>Light Assault Transport</Type>
   <Categories>
     <Category>Starship</Category>

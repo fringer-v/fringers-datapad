@@ -4,7 +4,7 @@
   <Name>Soresu Defender</Name>
   <Description>[H4]Soresu Defender[h4]
 Please see page 77 of the Force and Destiny Core Rulebook for details.</Description>
-  <Source>Force and Destiny Core Rulebook</Source>
+  <Source Page="77">Force and Destiny Core Rulebook</Source>
   <CareerSkills>
     <Key>DISC</Key>
     <Key>LTSABER</Key>

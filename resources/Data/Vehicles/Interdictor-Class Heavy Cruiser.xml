@@ -7,8 +7,8 @@
     Please see page 60 of the Fly Casual Sourcebook, or page 280 of the Age of Rebellion Core Rulebook, for details.
   </Description>
   <Sources>
-    <Source>Age of Rebellion Core Rulebook</Source>
-    <Source>Fly Casual</Source>
+    <Source Page="60">Fly Casual Sourcebook</Source>
+    <Source Page="280">Age of Rebellion Core Rulebook</Source>
   </Sources>
   <Type>Heavy Cruiser</Type>
   <Categories>

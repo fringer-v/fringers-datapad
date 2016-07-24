@@ -6,7 +6,7 @@
     [H3]Jawa Salvage Skiff[h3]
     Please see page 87 of the Beyond the Rim Adventure Module for details.
   </Description>
-  <Source>Beyond the Rim</Source>
+  <Source Page="87">Beyond the Rim</Source>
   <Type>Cargo Floater</Type>
   <Categories>
     <Category>Land Vehicle</Category>

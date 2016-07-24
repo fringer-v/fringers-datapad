@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Duties>
   <Duty>
     <Key>COMBATVICTORY</Key>
@@ -7,7 +7,7 @@
       [H4]Combat Victory[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>COUNTERINTELLIGENCE</Key>
@@ -16,7 +16,7 @@
       [H4]Counter Intelligence[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>INTELLIGENCE</Key>
@@ -25,7 +25,7 @@
       [H4]Intelligence[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>INTERNALSECURITY</Key>
@@ -34,7 +34,7 @@
       [H4]Internal Security[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>PERSONNEL</Key>
@@ -43,7 +43,7 @@
       [H4]Personnel[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>POLITICALSUPPORT</Key>
@@ -52,7 +52,7 @@
       [H4]Political Support[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>RECRUITING</Key>
@@ -61,7 +61,7 @@
       [H4]Recruiting[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>RESOURCEACQUISITION</Key>
@@ -70,7 +70,7 @@
       [H4]Resource Acquisition[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>SABOTAGE</Key>
@@ -79,7 +79,7 @@
       [H4]Sabotage[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>SPACESUPERIORITY</Key>
@@ -88,7 +88,7 @@
       [H4]Space Superiority[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>TECHPROCUREMENT</Key>
@@ -97,7 +97,7 @@
       [H4]Tech Procurement[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>SUPPORT</Key>
@@ -106,7 +106,7 @@
       [H4]Support[h4]
       Please see page 47 of the Age of Rebellion Core Rulebook for details.
     </Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="47">Age of Rebellion Core Rulebook</Source>
   </Duty>
   <Duty>
     <Key>AIRSUP</Key>
@@ -115,7 +115,7 @@
       [H4]Air Superiority[h4]
       Please see page 19 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="19">Stay on Target</Source>
   </Duty>
   <Duty>
     <Key>GROUNDSUP</Key>
@@ -124,7 +124,7 @@
       [H4]Ground Superiority[h4]
       Please see page 19 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="19">Stay on Target</Source>
   </Duty>
   <Duty>
     <Key>PLACHUNT</Key>
@@ -133,7 +133,7 @@
       [H4]Placard Hunter[h4]
       Please see page 19 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="19">Stay on Target</Source>
   </Duty>
   <Duty>
     <Key>TECHSUPERIORITY</Key>
@@ -142,7 +142,7 @@
       [H4]Tech Superiority[h4]
       Please see page 19 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="19">Stay on Target</Source>
   </Duty>
   <Duty>
     <Key>COMMFAC</Key>
@@ -151,7 +151,7 @@
       [H4]Communication Facilitation[h4]
       Please see page 17 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="17">Desperate Allies</Source>
   </Duty>
   <Duty>
     <Key>OPPLAN</Key>
@@ -160,7 +160,7 @@
       [H4]Operation Planning[h4]
       Please see page 17 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="17">Desperate Allies</Source>
   </Duty>
   <Duty>
     <Key>REBELBASE</Key>
@@ -169,7 +169,7 @@
       [H4]Rebel Base[h4]
       Please see page 87 of the Desperate Allies Sourcebook for details.
     </Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="87">Desperate Allies</Source>
   </Duty>
   <Duty>
     <Key>CAMAR</Key>
@@ -178,7 +178,7 @@
       [H4]Camaraderie[h4]
       See page 17 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="17">Lead by Example</Source>
   </Duty>
   <Duty>
     <Key>ENEMYDEMOR</Key>
@@ -187,7 +187,7 @@
       [H4]Enemy Demoralization[h4]
       See page 17 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="17">Lead by Example</Source>
   </Duty>
   <Duty>
     <Key>LOSSPREV</Key>
@@ -196,6 +196,6 @@
       [H4]Loss Prevention[h4]
       See page 17 of the Lead by Example Sourcebook for details.
     </Description>
-    <Source>Lead by Example</Source>
+    <Source Page="17">Lead by Example</Source>
   </Duty>
 </Duties>

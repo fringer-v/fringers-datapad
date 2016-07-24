@@ -6,7 +6,7 @@
     [H3]All Terrain Scout Transport[h3]
     Please see page 265 of the Age of Rebellion Core Rulebook for details.
   </Description>
-  <Source>Age of Rebellion Core Rulebook</Source>
+  <Source Page="265">Age of Rebellion Core Rulebook</Source>
   <Type>Walker</Type>
   <Categories>
     <Category>Walker</Category>

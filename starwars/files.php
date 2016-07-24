@@ -65,7 +65,7 @@ $current_data = get_contents($_SESSION["email_address"], "cdata");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Character Sheet Files</title>
+<title>Fringer's Datapad - Files</title>
 <link rel="stylesheet" type="text/css" href="style.css"/>
 <link rel="stylesheet" href="js/jquery-ui-1.11.2/jquery-ui.css">
 <script src="js/jquery-1.11.2.min.js"></script>
@@ -104,12 +104,8 @@ $current_data = get_contents($_SESSION["email_address"], "cdata");
 <body bgcolor="#000000" onLoad='setUpPage()'>
 <table border="0" width="100%">
 <tr><td align="center">
-
 <table border="0" width="80%">
-<tr><td class="main-text" align="center" colspan="2"><font size="+2">Jabberwookiee's Star Wars&trade; Character Sheet</font></td></tr>
-<tr>
-  <td colspan="2"><img src="space.gif" width="1" height="20" border="0"/></td></tr>
-<tr>
+<tr><td class="main-text" align="center" colspan="+2"><font size="+2">Fringer's Datapad</font></td></tr>
 <td class="comic-text" align="left"><font size="+1"><?php print $_SESSION["email_address"];?></font></td>
 <td class="comic-text" align="right"><font size="+1"><a href="?logout">Logout...</a></font></td>
 </tr>
@@ -186,7 +182,7 @@ if (!empty($error)) {
 <?php
 	if (count($current_data) == 0) {
 		print '<tr>';
-		print '<td class="comic-text" align="center" colspan="3">Current Data files will be uploaded by Jabberwookiee's Datapad App.<br>
+		print '<td class="comic-text" align="center" colspan="3">'."Current Data files will be uploaded by Fringer's Datapad App.".'<br>
 		<font size="-1">Current Data (<i>.xpad</i>) files are XML files that contain changes to your characters made by the App.<br>
 		Any modifications you make to the files here (including deletion) will be transferred to the App when you "Sync with Server".</font></td>';
 		print '</tr>';

@@ -4,7 +4,7 @@
   <Name>Figurehead</Name>
   <Description>[H4]Figurehead[h4]
 Please see page 28 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="28">Lead by Example</Source>
   <CareerSkills>
     <Key>COOL</Key>
     <Key>CORE</Key>

@@ -4,7 +4,7 @@
   <Name>SU-42RS Flashblind Aerial Reconnaissance Airspeeder</Name>
   <Description>[H3]SU-42RS Flashblind Aerial Reconnaissance Airspeeder[h3]
 Please see page 50 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="50">Lead by Example</Source>
   <Type>Airspeeder</Type>
   <Categories>
     <Category>Air Vehicle</Category>

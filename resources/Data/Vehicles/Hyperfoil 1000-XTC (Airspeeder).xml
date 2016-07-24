@@ -4,7 +4,7 @@
   <Name>Hyperfoil 1000-XTC (Airspeeder)</Name>
   <Description>[H3]Hyperfoil 1000-XTC (Airspeeder)[h3]
 Please see page 60 of the Desperate Allies Sourcebook for details.</Description>
-  <Source>Desperate Allies</Source>
+  <Source Page="60">Desperate Allies</Source>
   <Sources />
   <Type>Airspeeder</Type>
   <Categories>

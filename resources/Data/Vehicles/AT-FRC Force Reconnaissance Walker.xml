@@ -4,7 +4,7 @@
   <Name>AT-FRC Force Reconnaissance Walker</Name>
   <Description>[H3]AT-FRC Force Reconnaissance Walker[h3]
 Please see page 51 of the Lead by Example Sourcebook for details.</Description>
-  <Source>Lead by Example</Source>
+  <Source Page="51">Lead by Example</Source>
   <Type>Walker</Type>
   <Categories>
     <Category>Walker</Category>

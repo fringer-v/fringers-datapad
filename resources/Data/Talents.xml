@@ -1,9 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Talents>
   <Talent>
     <Key>ADV</Key>
     <Name>Adversary</Name>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook, or page 142 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="142">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -11,6 +15,10 @@
     <Key>ANAT</Key>
     <Name>Anatomy Lessons</Name>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook, or page 142 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="142">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -18,7 +26,7 @@
     <Key>ALLTERDRIV</Key>
     <Name>All-Terrain Driver</Name>
     <Description>Please see page 142 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="142">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -26,6 +34,10 @@
     <Key>ARM</Key>
     <Name>Armor Master</Name>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook, or page 142 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="142">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Attributes>
@@ -39,6 +51,10 @@
     <Key>ARMIMP</Key>
     <Name>Armor Master (Improved)</Name>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook, or page 143 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="143">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Attributes>
@@ -54,6 +70,10 @@
     <Key>BACT</Key>
     <Name>Bacta Specialist</Name>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook, or page 143 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="143">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -61,6 +81,10 @@
     <Key>BADM</Key>
     <Name>Bad Motivator</Name>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook, or page 143 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="143">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -68,6 +92,10 @@
     <Key>BAL</Key>
     <Name>Balance</Name>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook, or page 143 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="143">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -77,14 +105,14 @@
     <Name>Barrage</Name>
     <Ranked>true</Ranked>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook for details.</Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="132">Edge of the Empire Core Rulebook</Source>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
   <Talent>
     <Key>BASICTRAIN</Key>
     <Name>Basic Combat Training</Name>
     <Description>Please see page 143 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="143">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <JuryRigged>false</JuryRigged>
@@ -100,7 +128,7 @@
     <Key>BLA</Key>
     <Name>Black Market Contacts</Name>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook for details.</Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="132">Edge of the Empire Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -108,6 +136,10 @@
     <Key>BLO</Key>
     <Name>Blooded</Name>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook, or page 143 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="143">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -116,13 +148,18 @@
     <Name>Body Guard</Name>
     <Ranked>true</Ranked>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook, page 143 of the Age of Rebellion Core Rulebook, or page 140 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="143">Age of Rebellion Core Rulebook</Source>
+      <Source Page="140">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
   <Talent>
     <Key>BOUGHT</Key>
     <Name>Bought Info</Name>
     <Description>Please see page 143 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="143">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -130,6 +167,10 @@
     <Key>BRA</Key>
     <Name>Brace</Name>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook, or page 143 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="143">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -137,6 +178,10 @@
     <Key>BRI</Key>
     <Name>Brilliant Evasion</Name>
     <Description>Please see page 132 of the Edge of the Empire Core Rulebook, or page 144 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="144">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -144,6 +189,10 @@
     <Key>BYP</Key>
     <Name>Bypass Security</Name>
     <Description>Please see page 133 of the Edge of the Empire Core Rulebook, or page 144 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="133">Edge of the Empire Core Rulebook</Source>
+      <Source Page="144">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -151,7 +200,7 @@
     <Key>CAREPLAN</Key>
     <Name>Careful Planning</Name>
     <Description>Please see page 144 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="144">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -160,8 +209,8 @@
     <Name>Clever Solution</Name>
     <Description>Please see page 144 of the Age of Rebellion Core Rulebook, or page 32 of the Fly Casual Sourcebook, for details.</Description>
     <Sources>
-      <Source>Age of Rebellion Core Rulebook</Source>
-      <Source>Fly Casual</Source>
+      <Source Page="144">Age of Rebellion Core Rulebook</Source>
+      <Source Page="32">Fly Casual Sourcebook</Source>
     </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -170,6 +219,11 @@
     <Key>COD</Key>
     <Name>Codebreaker</Name>
     <Description>Please see page 133 of the Edge of the Empire Core Rulebook, page 144 of the Age of Rebellion Core Rulebook, or page 140 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="133">Edge of the Empire Core Rulebook</Source>
+      <Source Page="144">Age of Rebellion Core Rulebook</Source>
+      <Source Page="140">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -178,6 +232,11 @@
     <Name>Command</Name>
     <Ranked>true</Ranked>
     <Description>Please see page 133 of the Edge of the Empire Core Rulebook, page 144 of the Age of Rebellion Core Rulebook, or page 140 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="133">Edge of the Empire Core Rulebook</Source>
+      <Source Page="144">Age of Rebellion Core Rulebook</Source>
+      <Source Page="140">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
       <DieModifier>
@@ -190,7 +249,10 @@
     <Key>COMMPRES</Key>
     <Name>Commanding Presence</Name>
     <Description>Please see page 144 of the Age of Rebellion Core Rulebook, or page 140 of the Force and Destiny Core Rulebook, for details.</Description>
-    <Source></Source>
+    <Sources>
+      <Source Page="144">Age of Rebellion Core Rulebook</Source>
+      <Source Page="140">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -208,6 +270,11 @@
     <Key>CONF</Key>
     <Name>Confidence</Name>
     <Description>Please see page 133 of the Edge of the Empire Core Rulebook, page 144 of the Age of Rebellion Core Rulebook, or page 141 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="133">Edge of the Empire Core Rulebook</Source>
+      <Source Page="144">Age of Rebellion Core Rulebook</Source>
+      <Source Page="141">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -215,6 +282,10 @@
     <Key>CONT</Key>
     <Name>Contraption</Name>
     <Description>Please see page 133 of the Edge of the Empire Core Rulebook, or page 144 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="133">Edge of the Empire Core Rulebook</Source>
+      <Source Page="144">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -222,6 +293,10 @@
     <Key>CONV</Key>
     <Name>Convincing Demeanor</Name>
     <Description>Please see page 133 of the Edge of the Empire Core Rulebook, or page 145 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="133">Edge of the Empire Core Rulebook</Source>
+      <Source Page="145">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -239,7 +314,7 @@
     <Key>COORDASS</Key>
     <Name>Coordinated Assault</Name>
     <Description>Please see page 145 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="145">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -247,7 +322,7 @@
     <Key>CREATKILL</Key>
     <Name>Creative Killer</Name>
     <Description>Please see page 145 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="145">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -255,6 +330,11 @@
     <Key>CRIPV</Key>
     <Name>Crippling Blow</Name>
     <Description>Please see page 133 of the Edge of the Empire Core Rulebook, page 145 of the Age of Rebellion Core Rulebook, or page 141 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="133">Edge of the Empire Core Rulebook</Source>
+      <Source Page="145">Age of Rebellion Core Rulebook</Source>
+      <Source Page="141">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -262,6 +342,10 @@
     <Key>DEAD</Key>
     <Name>Dead to Rights</Name>
     <Description>Please see page 134 of the Edge of the Empire Core Rulebook, or page 145 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="134">Edge of the Empire Core Rulebook</Source>
+      <Source Page="145">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -269,6 +353,10 @@
     <Key>DEADIMP</Key>
     <Name>Dead to Rights (Improved)</Name>
     <Description>Please see page 134 of the Edge of the Empire Core Rulebook, or page 145 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="134">Edge of the Empire Core Rulebook</Source>
+      <Source Page="145">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -276,20 +364,24 @@
     <Key>DEADACC</Key>
     <Name>Deadly Accuracy</Name>
     <Description>Please see page 134 of the Edge of the Empire Core Rulebook, or page 145 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="134">Edge of the Empire Core Rulebook</Source>
+      <Source Page="145">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
-      <SkillChoice>
-        <TypeValue>stCombat</TypeValue>
-        <SkillCount>1</SkillCount>
-        <AddDamagePerSkillRank>true</AddDamagePerSkillRank>
-        <AddSkillsPerRank>true</AddSkillsPerRank>
-      </SkillChoice>
+    <SkillChoice>
+      <TypeValue>stCombat</TypeValue>
+      <SkillCount>1</SkillCount>
+      <AddDamagePerSkillRank>true</AddDamagePerSkillRank>
+      <AddSkillsPerRank>true</AddSkillsPerRank>
+    </SkillChoice>
   </Talent>
   <Talent>
     <Key>DEPSHOT</Key>
     <Name>Debilitating Shot</Name>
     <Description>Please see page 145 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="145">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -297,6 +389,11 @@
     <Key>DEDI</Key>
     <Name>Dedication</Name>
     <Description>Please see page 134 of the Edge of the Empire Core Rulebook, page 145 of the Age of Rebellion Core Rulebook, or page 141 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="134">Edge of the Empire Core Rulebook</Source>
+      <Source Page="145">Age of Rebellion Core Rulebook</Source>
+      <Source Page="141">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <CharacteristicChoices>
@@ -309,6 +406,10 @@
     <Key>DEFDRI</Key>
     <Name>Defensive Driving</Name>
     <Description>Please see page 134 of the Edge of the Empire Core Rulebook, or page 145 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="134">Edge of the Empire Core Rulebook</Source>
+      <Source Page="145">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <RosterMods>
@@ -320,6 +421,11 @@
     <Key>DEFSLI</Key>
     <Name>Defensive Slicing</Name>
     <Description>Please see page 134 of the Edge of the Empire Core Rulebook, page 145 of the Age of Rebellion Core Rulebook, or page 141 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="134">Edge of the Empire Core Rulebook</Source>
+      <Source Page="145">Age of Rebellion Core Rulebook</Source>
+      <Source Page="141">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -327,6 +433,10 @@
     <Key>DEFSLIIMP</Key>
     <Name>Defensive Slicing (Improved)</Name>
     <Description>Please see page 134 of the Edge of the Empire Core Rulebook, or page 145 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="134">Edge of the Empire Core Rulebook</Source>
+      <Source Page="145">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -334,6 +444,11 @@
     <Key>DEFSTA</Key>
     <Name>Defensive Stance</Name>
     <Description>Please see page 134 of the Edge of the Empire Core Rulebook, page 146 of the Age of Rebellion Core Rulebook, or page 141 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="134">Edge of the Empire Core Rulebook</Source>
+      <Source Page="146">Age of Rebellion Core Rulebook</Source>
+      <Source Page="141">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -341,6 +456,10 @@
     <Key>DISOR</Key>
     <Name>Disorient</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, or page 146 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="146">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -348,6 +467,11 @@
     <Key>DODGE</Key>
     <Name>Dodge</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, page 146 of the Age of Rebellion Core Rulebook, or page 142 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="146">Age of Rebellion Core Rulebook</Source>
+      <Source Page="142">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
   </Talent>
@@ -355,6 +479,11 @@
     <Key>DURA</Key>
     <Name>Durable</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, page 146 of the Age of Rebellion Core Rulebook, or page 142 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="146">Age of Rebellion Core Rulebook</Source>
+      <Source Page="142">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -362,7 +491,7 @@
     <Key>DYNFIRE</Key>
     <Name>Dynamic Fire</Name>
     <Description>Please see page 146 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="146">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -370,6 +499,11 @@
     <Key>ENDUR</Key>
     <Name>Enduring</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, page 146 of the Age of Rebellion Core Rulebook, or page 100 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="146">Age of Rebellion Core Rulebook</Source>
+      <Source Page="100">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Attributes>
@@ -380,7 +514,10 @@
     <Key>EXHPORT</Key>
     <Name>Exhaust Port</Name>
     <Description>Please see page 146 of the Age of Rebellion Core Rulebook, or page 142 of the Force and Destiny Core Rulebook, for details.</Description>
-    <Source></Source>
+    <Sources>
+      <Source Page="146">Age of Rebellion Core Rulebook</Source>
+      <Source Page="142">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -388,6 +525,11 @@
     <Key>EXTRACK</Key>
     <Name>Expert Tracker</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, page 146 of the Age of Rebellion Core Rulebook, or page 142 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="146">Age of Rebellion Core Rulebook</Source>
+      <Source Page="142">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -395,6 +537,10 @@
     <Key>FAMSUNS</Key>
     <Name>Familiar Suns</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, or page 146 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="146">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -402,6 +548,10 @@
     <Key>FERSTR</Key>
     <Name>Feral Strength</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, or page 146 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="146">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Damage>
@@ -416,6 +566,11 @@
     <Key>FLDCOMM</Key>
     <Name>Field Commander</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, page 146 of the Age of Rebellion Core Rulebook, or page 101 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="146">Age of Rebellion Core Rulebook</Source>
+      <Source Page="101">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -423,6 +578,11 @@
     <Key>FLDCOMMIMP</Key>
     <Name>Field Commander (Improved)</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, page 146 of the Age of Rebellion Core Rulebook, or page 143 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="146">Age of Rebellion Core Rulebook</Source>
+      <Source Page="143">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -430,6 +590,11 @@
     <Key>FINETUN</Key>
     <Name>Fine Tuning</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, page 147 of the Age of Rebellion Core Rulebook, or page 143 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="147">Age of Rebellion Core Rulebook</Source>
+      <Source Page="143">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -437,7 +602,7 @@
     <Key>FIRECON</Key>
     <Name>Fire Control</Name>
     <Description>Please see page 147 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="147">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -445,7 +610,10 @@
     <Key>FORAG</Key>
     <Name>Forager</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, or page 143 of the Force and Destiny Core Rulebook, for details.</Description>
-    <Source></Source>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="143">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -453,7 +621,7 @@
     <Key>FORCEWILL</Key>
     <Name>Force of Will</Name>
     <Description>Please see page 147 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="147">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -461,6 +629,11 @@
     <Key>FORCERAT</Key>
     <Name>Force Rating</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, page 147 of the Age of Rebellion Core Rulebook, or page 143 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="147">Age of Rebellion Core Rulebook</Source>
+      <Source Page="143">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Attributes>
@@ -472,7 +645,7 @@
     <Key>FORMONME</Key>
     <Name>Form On Me</Name>
     <Description>Please see page 147 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="147">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -480,6 +653,7 @@
     <Key>FRENZ</Key>
     <Name>Frenzied Attack</Name>
     <Description>Please see page 135 of the Core Rulebook for details.</Description>
+    <Source Page="135">Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -487,7 +661,7 @@
     <Key>FULLSTOP</Key>
     <Name>Full Stop</Name>
     <Description>Please see page 147 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="147">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -495,6 +669,11 @@
     <Key>FULLTH</Key>
     <Name>Full Throttle</Name>
     <Description>Please see page 135 of the Edge of the Empire Core Rulebook, page 147 of the Age of Rebellion Core Rulebook, or page 143 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="147">Age of Rebellion Core Rulebook</Source>
+      <Source Page="143">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -502,6 +681,10 @@
     <Key>FULLTHIMP</Key>
     <Name>Full Throttle (Improved)</Name>
     <Description>Please see page 136 of the Edge of the Empire Core Rulebook, or page 148 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="136">Edge of the Empire Core Rulebook</Source>
+      <Source Page="148">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -509,6 +692,10 @@
     <Key>FULLTHSUP</Key>
     <Name>Full Throttle (Supreme)</Name>
     <Description>Please see page 136 of the Edge of the Empire Core Rulebook, or page 148 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="136">Edge of the Empire Core Rulebook</Source>
+      <Source Page="148">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -516,6 +703,11 @@
     <Key>GALMAP</Key>
     <Name>Galaxy Mapper</Name>
     <Description>Please see page 136 of the Edge of the Empire Core Rulebook, page 148 of the Age of Rebellion Core Rulebook, or page 144 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="136">Edge of the Empire Core Rulebook</Source>
+      <Source Page="148">Age of Rebellion Core Rulebook</Source>
+      <Source Page="144">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -529,6 +721,10 @@
     <Key>GEARHD</Key>
     <Name>Gearhead</Name>
     <Description>Please see page 136 of the Edge of the Empire Core Rulebook, or page 148 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="136">Edge of the Empire Core Rulebook</Source>
+      <Source Page="148">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -542,7 +738,7 @@
     <Key>GREASE</Key>
     <Name>Greased Palms</Name>
     <Description>Please see page 148 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="148">Age of Rebellion Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -550,6 +746,11 @@
     <Key>GRIT</Key>
     <Name>Grit</Name>
     <Description>Please see page 136 of the Edge of the Empire Core Rulebook, page 148 of the Age of Rebellion Core Rulebook, or page 144 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="136">Edge of the Empire Core Rulebook</Source>
+      <Source Page="148">Age of Rebellion Core Rulebook</Source>
+      <Source Page="144">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Attributes>
@@ -560,6 +761,10 @@
     <Key>HARDHD</Key>
     <Name>Hard Headed</Name>
     <Description>Please see page 136 of the Edge of the Empire Core Rulebook, or page 148 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="136">Edge of the Empire Core Rulebook</Source>
+      <Source Page="148">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -567,6 +772,10 @@
     <Key>HARDHDIMP</Key>
     <Name>Hard Headed (Improved)</Name>
     <Description>Please see page 136 of the Edge of the Empire Core Rulebook, or page 148 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="136">Edge of the Empire Core Rulebook</Source>
+      <Source Page="148">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -574,6 +783,11 @@
     <Key>HEIGHT</Key>
     <Name>Heightened Awareness</Name>
     <Description>Please see page 136 of the Edge of the Empire Core Rulebook, page 148 of the Age of Rebellion Core Rulebook, or page 145 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="136">Edge of the Empire Core Rulebook</Source>
+      <Source Page="148">Age of Rebellion Core Rulebook</Source>
+      <Source Page="145">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -581,6 +795,11 @@
     <Key>HERO</Key>
     <Name>Heroic Fortitude</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, page 148 of the Age of Rebellion Core Rulebook, or page 145 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="148">Age of Rebellion Core Rulebook</Source>
+      <Source Page="145">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -588,6 +807,10 @@
     <Key>HIDD</Key>
     <Name>Hidden Storage</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, or page 148 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="148">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -595,6 +818,10 @@
     <Key>HOLDTOG</Key>
     <Name>Hold Together</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, or page 149 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="149">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -602,7 +829,10 @@
     <Key>HUNT</Key>
     <Name>Hunter</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, or page 145 of the Force and Destiny Core Rulebook, for details.</Description>
-    <Source></Source>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="145">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -610,7 +840,7 @@
     <Key>INCITE</Key>
     <Name>Incite Rebellion</Name>
     <Description>Please see page 149 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="149">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -618,6 +848,11 @@
     <Key>INDIS</Key>
     <Name>Indistinguishable</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, page 149 of the Age of Rebellion Core Rulebook, or page 145 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="149">Age of Rebellion Core Rulebook</Source>
+      <Source Page="145">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -625,6 +860,10 @@
     <Key>INSIGHT</Key>
     <Name>Insight</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, or page 149 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="149">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -639,6 +878,10 @@
     <Key>INSPRHET</Key>
     <Name>Inspiring Rhetoric</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, or page 149 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="149">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -646,6 +889,10 @@
     <Key>INSPRHETIMP</Key>
     <Name>Inspiring Rhetoric (Improved)</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, or page 149 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="149">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -653,6 +900,10 @@
     <Key>INSPRHETSUP</Key>
     <Name>Inspiring Rhetoric (Supreme)</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, or page 149 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="149">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -660,6 +911,10 @@
     <Key>INTENSFOC</Key>
     <Name>Intense Focus</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, or page 150 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -667,6 +922,11 @@
     <Key>INTENSPRE</Key>
     <Name>Intense Presence</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, page 150 of the Age of Rebellion Core Rulebook, or page 145 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
+      <Source Page="145">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
   </Talent>
@@ -674,6 +934,11 @@
     <Key>INTIM</Key>
     <Name>Intimidating</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, page 150 of the Age of Rebellion Core Rulebook, or page 145 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
+      <Source Page="145">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
   </Talent>
@@ -681,6 +946,11 @@
     <Key>INVENT</Key>
     <Name>Inventor</Name>
     <Description>Please see page 137 of the Edge of the Empire Core Rulebook, page 150 of the Age of Rebellion Core Rulebook, or page 146 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="137">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
+      <Source Page="146">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -688,7 +958,7 @@
     <Key>INVIG</Key>
     <Name>Invigorate</Name>
     <Description>Please see page 150 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="150">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -697,7 +967,7 @@
     <Key>ITSNOTTHATBAD</Key>
     <Name>It's Not that Bad</Name>
     <Description>Please see page 150 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="150">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -705,6 +975,11 @@
     <Key>JUMP</Key>
     <Name>Jump Up</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, page 150 of the Age of Rebellion Core Rulebook, or page 146 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
+      <Source Page="146">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -712,6 +987,10 @@
     <Key>JURY</Key>
     <Name>Jury Rigged</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, or page 150 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <JuryRigged>true</JuryRigged>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -720,6 +999,11 @@
     <Key>KILL</Key>
     <Name>Kill With Kindness</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, page 150 of the Age of Rebellion Core Rulebook, or page 146 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
+      <Source Page="146">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -737,6 +1021,10 @@
     <Key>KNOCK</Key>
     <Name>Knockdown</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, or page 150 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -744,6 +1032,11 @@
     <Key>KNOWSOM</Key>
     <Name>Know Somebody</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, page 150 of the Age of Rebellion Core Rulebook, or page 146 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
+      <Source Page="146">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -751,17 +1044,26 @@
     <Key>KNOWSPEC</Key>
     <Name>Knowledge Specialization</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, page 150 of the Age of Rebellion Core Rulebook, or page 146 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="150">Age of Rebellion Core Rulebook</Source>
+      <Source Page="146">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
-      <SkillChoice>
-        <TypeValue>stKnowledge</TypeValue>
-        <SkillCount>1</SkillCount>
-      </SkillChoice>
+    <SkillChoice>
+      <TypeValue>stKnowledge</TypeValue>
+      <SkillCount>1</SkillCount>
+    </SkillChoice>
   </Talent>
   <Talent>
     <Key>KNOWSCH</Key>
     <Name>Known Schematic</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, or page 151 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="151">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -769,6 +1071,10 @@
     <Key>LETSRIDE</Key>
     <Name>Let's Ride</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, or page 151 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="151">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -776,6 +1082,10 @@
     <Key>LETHALBL</Key>
     <Name>Lethal Blows</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, or page 151 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="151">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -783,6 +1093,10 @@
     <Key>MASDOC</Key>
     <Name>Master Doctor</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, or page 151 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="151">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -790,7 +1104,7 @@
     <Key>MASDRIV</Key>
     <Name>Master Driver</Name>
     <Description>Please see page 151 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="151">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -799,8 +1113,8 @@
     <Name>Master Grenadier</Name>
     <Description>Please see page 151 of the Age of Rebellion Core Rulebook, or page 32 of the Dangerous Covenants Sourcebook, for details.</Description>
     <Sources>
-      <Source>Age of Rebellion Core Rulebook</Source>
-      <Source>Dangerous Covenants</Source>
+      <Source Page="151">Age of Rebellion Core Rulebook</Source>
+      <Source Page="32">Dangerous Covenants Sourcebook</Source>
     </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -809,7 +1123,7 @@
     <Key>MASLEAD</Key>
     <Name>Master Leader</Name>
     <Description>Please see page 151 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="151">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -817,6 +1131,10 @@
     <Key>MASMERC</Key>
     <Name>Master Merchant</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, or page 151 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="151">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -824,6 +1142,11 @@
     <Key>MASSHAD</Key>
     <Name>Master of Shadows</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, page 151 of the Age of Rebellion Core Rulebook, or page 146 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="151">Age of Rebellion Core Rulebook</Source>
+      <Source Page="146">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -831,6 +1154,10 @@
     <Key>MASPIL</Key>
     <Name>Master Pilot</Name>
     <Description>Please see page 138 of the Edge of the Empire Core Rulebook, or page 151 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="138">Edge of the Empire Core Rulebook</Source>
+      <Source Page="151">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -838,6 +1165,10 @@
     <Key>MASSLIC</Key>
     <Name>Master Slicer</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, or page 151 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="151">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -845,6 +1176,10 @@
     <Key>MASSTAR</Key>
     <Name>Master Starhopper</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, or page 151 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="151">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -852,6 +1187,11 @@
     <Key>MENTFOR</Key>
     <Name>Mental Fortress</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, page 151 of the Age of Rebellion Core Rulebook, or page 147 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="151">Age of Rebellion Core Rulebook</Source>
+      <Source Page="147">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -859,6 +1199,10 @@
     <Key>NATBRAW</Key>
     <Name>Natural Brawler</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, or page 153 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -866,6 +1210,11 @@
     <Key>NATCHARM</Key>
     <Name>Natural Charmer</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, page 153 of the Age of Rebellion Core Rulebook, or page 147 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+      <Source Page="147">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -873,6 +1222,11 @@
     <Key>NATDOC</Key>
     <Name>Natural Doctor</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, page 153 of the Age of Rebellion Core Rulebook, or page 148 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+      <Source Page="148">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -880,7 +1234,7 @@
     <Key>NATDRIV</Key>
     <Name>Natural Driver</Name>
     <Description>Please see page 153 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="153">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -888,6 +1242,10 @@
     <Key>NATENF</Key>
     <Name>Natural Enforcer</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, or page 153 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -895,6 +1253,11 @@
     <Key>NATHUN</Key>
     <Name>Natural Hunter</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, page 153 of the Age of Rebellion Core Rulebook, or page 105 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+      <Source Page="105">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -902,7 +1265,10 @@
     <Key>NATLEAD</Key>
     <Name>Natural Leader</Name>
     <Description>Please see page 153 of the Age of Rebellion Core Rulebook, or page 148 of the Force and Destiny Core Rulebook, for details.</Description>
-    <Source></Source>
+    <Sources>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+      <Source Page="148">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -910,6 +1276,10 @@
     <Key>NATMAR</Key>
     <Name>Natural Marksman</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, or page 153 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -917,6 +1287,11 @@
     <Key>NATNEG</Key>
     <Name>Natural Negotiator</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, page 153 of the Age of Rebellion Core Rulebook, or page 148 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+      <Source Page="148">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -924,6 +1299,11 @@
     <Key>NATOUT</Key>
     <Name>Natural Outdoorsman</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, page 153 of the Age of Rebellion Core Rulebook, or page 148 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+      <Source Page="148">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -931,6 +1311,10 @@
     <Key>NATPIL</Key>
     <Name>Natural Pilot</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, or page 153 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -938,6 +1322,10 @@
     <Key>NATPRO</Key>
     <Name>Natural Programmer</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, or page 153 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -945,6 +1333,10 @@
     <Key>NATROG</Key>
     <Name>Natural Rogue</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, or page 153 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -952,6 +1344,10 @@
     <Key>NATSCH</Key>
     <Name>Natural Scholar</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, or page 153 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -959,6 +1355,11 @@
     <Key>NATTIN</Key>
     <Name>Natural Tinkerer</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, page 153 of the Age of Rebellion Core Rulebook, or page 148 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+      <Source Page="148">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -966,6 +1367,11 @@
     <Key>NOBFOOL</Key>
     <Name>Nobody's Fool</Name>
     <Description>Please see page 139 of the Edge of the Empire Core Rulebook, page 153 of the Age of Rebellion Core Rulebook, or page 148 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="139">Edge of the Empire Core Rulebook</Source>
+      <Source Page="153">Age of Rebellion Core Rulebook</Source>
+      <Source Page="148">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -973,6 +1379,11 @@
     <Key>OUTDOOR</Key>
     <Name>Outdoorsman</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook, page 154 of the Age of Rebellion Core Rulebook, or page 149 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="141">Edge of the Empire Core Rulebook</Source>
+      <Source Page="154">Age of Rebellion Core Rulebook</Source>
+      <Source Page="149">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -980,7 +1391,7 @@
     <Key>OVEREM</Key>
     <Name>Overwhelm Emotions</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook for details.</Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="141">Edge of the Empire Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -989,7 +1400,7 @@
     <Key>OVERDEF</Key>
     <Name>Overwhelm Defenses</Name>
     <Description>Please see page 154 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="154">Age of Rebellion Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -997,7 +1408,7 @@
     <Key>PHYSTRAIN</Key>
     <Name>Physical Training</Name>
     <Description>Please see page 154 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="154">Age of Rebellion Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -1015,6 +1426,11 @@
     <Key>PLAUSDEN</Key>
     <Name>Plausible Deniability</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook, page 154 of the Age of Rebellion Core Rulebook, or page 149 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="141">Edge of the Empire Core Rulebook</Source>
+      <Source Page="154">Age of Rebellion Core Rulebook</Source>
+      <Source Page="149">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -1032,6 +1448,10 @@
     <Key>POINTBL</Key>
     <Name>Point Blank</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook, or page 154 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="141">Edge of the Empire Core Rulebook</Source>
+      <Source Page="154">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1039,7 +1459,7 @@
     <Key>PWRBLST</Key>
     <Name>Powerful Blast</Name>
     <Description>Please see page 154 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="154">Age of Rebellion Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1047,7 +1467,7 @@
     <Key>PRECAIM</Key>
     <Name>Precise Aim</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook for details.</Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="141">Edge of the Empire Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -1055,7 +1475,7 @@
     <Key>PRESPNT</Key>
     <Name>Pressure Point</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook for details.</Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="141">Edge of the Empire Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1063,6 +1483,11 @@
     <Key>QUICKDR</Key>
     <Name>Quick Draw</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook, page 154 of the Age of Rebellion Core Rulebook, or page 149 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="141">Edge of the Empire Core Rulebook</Source>
+      <Source Page="154">Age of Rebellion Core Rulebook</Source>
+      <Source Page="149">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1070,7 +1495,7 @@
     <Key>QUICKFIX</Key>
     <Name>Quick Fix</Name>
     <Description>Please see page 154 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="154">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1078,6 +1503,11 @@
     <Key>QUICKST</Key>
     <Name>Quick Strike</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook, page 154 of the Age of Rebellion Core Rulebook, or page 150 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="141">Edge of the Empire Core Rulebook</Source>
+      <Source Page="154">Age of Rebellion Core Rulebook</Source>
+      <Source Page="150">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1085,6 +1515,11 @@
     <Key>RAPREA</Key>
     <Name>Rapid Reaction</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook, page 154 of the Age of Rebellion Core Rulebook, or page 150 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="141">Edge of the Empire Core Rulebook</Source>
+      <Source Page="154">Age of Rebellion Core Rulebook</Source>
+      <Source Page="150">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
   </Talent>
@@ -1092,6 +1527,11 @@
     <Key>RAPREC</Key>
     <Name>Rapid Recovery</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook, page 154 of the Age of Rebellion Core Rulebook, or page 150 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="141">Edge of the Empire Core Rulebook</Source>
+      <Source Page="154">Age of Rebellion Core Rulebook</Source>
+      <Source Page="150">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1099,6 +1539,10 @@
     <Key>REDUNSYS</Key>
     <Name>Redundant Systems</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook, or page 154 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="141">Edge of the Empire Core Rulebook</Source>
+      <Source Page="154">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -1106,6 +1550,11 @@
     <Key>RESEARCH</Key>
     <Name>Researcher</Name>
     <Description>Please see page 141 of the Edge of the Empire Core Rulebook, page 154 of the Age of Rebellion Core Rulebook, or page 150 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="141">Edge of the Empire Core Rulebook</Source>
+      <Source Page="154">Age of Rebellion Core Rulebook</Source>
+      <Source Page="150">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -1119,6 +1568,10 @@
     <Key>RESOLVE</Key>
     <Name>Resolve</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, or page 155 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="155">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1126,6 +1579,10 @@
     <Key>RESPSCHOL</Key>
     <Name>Respected Scholar</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, or page 155 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="155">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1133,6 +1590,10 @@
     <Key>SCATH</Key>
     <Name>Scathing Tirade</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, or page 155 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="155">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -1140,6 +1601,10 @@
     <Key>SCATHIMP</Key>
     <Name>Scathing Tirade (Improved)</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, or page 155 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="155">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1147,6 +1612,10 @@
     <Key>SCATHSUP</Key>
     <Name>Scathing Tirade (Supreme)</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, or page 155 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="155">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1154,6 +1623,11 @@
     <Key>SECWIND</Key>
     <Name>Second Wind</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, page 155 of the Age of Rebellion Core Rulebook, or page 151 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="155">Age of Rebellion Core Rulebook</Source>
+      <Source Page="151">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1161,7 +1635,7 @@
     <Key>SELDETON</Key>
     <Name>Selective Detonation</Name>
     <Description>Please see page 155 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="155">Age of Rebellion Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1169,6 +1643,11 @@
     <Key>SENSDANG</Key>
     <Name>Sense Danger</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, page 155 of the Age of Rebellion Core Rulebook, or page 151 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="155">Age of Rebellion Core Rulebook</Source>
+      <Source Page="151">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1177,7 +1656,10 @@
     <Key>SENSDEMO</Key>
     <Name>Sense Emotions</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, or page 151 of the Force and Destiny Core Rulebook, for details.</Description>
-    <Source></Source>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="151">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ForceTalent>true</ForceTalent>
     <ActivationValue>taPassive</ActivationValue>
@@ -1200,6 +1682,10 @@
     <Key>SHORTCUT</Key>
     <Name>Short Cut</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, or page 155 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="155">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1207,6 +1693,11 @@
     <Key>SIDESTEP</Key>
     <Name>Side Step</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, page 156 of the Age of Rebellion Core Rulebook, or page 151 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="156">Age of Rebellion Core Rulebook</Source>
+      <Source Page="151">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -1214,7 +1705,7 @@
     <Key>SITAWARE</Key>
     <Name>Situational Awareness</Name>
     <Description>Please see page 156 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="156">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1222,6 +1713,11 @@
     <Key>SIXSENSE</Key>
     <Name>Sixth Sense</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, page 156 of the Age of Rebellion Core Rulebook, or page 152 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="156">Age of Rebellion Core Rulebook</Source>
+      <Source Page="152">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Attributes>
@@ -1232,6 +1728,11 @@
     <Key>SKILLJOCK</Key>
     <Name>Skilled Jockey</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, page 156 of the Age of Rebellion Core Rulebook, or page 152 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="156">Age of Rebellion Core Rulebook</Source>
+      <Source Page="152">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -1249,6 +1750,10 @@
     <Key>SKILLSLIC</Key>
     <Name>Skilled Slicer</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, or page 156 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="156">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1256,7 +1761,10 @@
     <Key>SLEIGHTMIND</Key>
     <Name>Sleight of Mind</Name>
     <Description>Please see page 156 of the Age of Rebellion Core Rulebook, or page 152 of the Force and Destiny Core Rulebook, for details.</Description>
-    <Source></Source>
+    <Sources>
+      <Source Page="156">Age of Rebellion Core Rulebook</Source>
+      <Source Page="152">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1271,22 +1779,31 @@
     <Key>SMOOTHTALK</Key>
     <Name>Smooth Talker</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, page 156 of the Age of Rebellion Core Rulebook, or page 152 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="156">Age of Rebellion Core Rulebook</Source>
+      <Source Page="152">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
-      <SkillChoice>
-        <SkillCount>1</SkillCount>
-        <SkillList>
-          <Key>CHARM</Key>
-          <Key>COERC</Key>
-          <Key>NEG</Key>
-          <Key>DECEP</Key>
-        </SkillList>
-      </SkillChoice>
+    <SkillChoice>
+      <SkillCount>1</SkillCount>
+      <SkillList>
+        <Key>CHARM</Key>
+        <Key>COERC</Key>
+        <Key>NEG</Key>
+        <Key>DECEP</Key>
+      </SkillList>
+    </SkillChoice>
   </Talent>
   <Talent>
     <Key>SNIPSHOT</Key>
     <Name>Sniper Shot</Name>
     <Description>Please see page 142 of the Edge of the Empire Core Rulebook, or page 156 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Edge of the Empire Core Rulebook</Source>
+      <Source Page="156">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -1294,6 +1811,11 @@
     <Key>SOFTSP</Key>
     <Name>Soft Spot</Name>
     <Description>Please see page 143 of the Edge of the Empire Core Rulebook, page 156 of the Age of Rebellion Core Rulebook, or page 152 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="143">Edge of the Empire Core Rulebook</Source>
+      <Source Page="156">Age of Rebellion Core Rulebook</Source>
+      <Source Page="152">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1301,6 +1823,11 @@
     <Key>SOLREP</Key>
     <Name>Solid Repairs</Name>
     <Description>Please see page 143 of the Edge of the Empire Core Rulebook, page 156 of the Age of Rebellion Core Rulebook, or page 152 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="143">Edge of the Empire Core Rulebook</Source>
+      <Source Page="156">Age of Rebellion Core Rulebook</Source>
+      <Source Page="152">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1308,7 +1835,7 @@
     <Key>SOUNDINV</Key>
     <Name>Sound Investments</Name>
     <Description>Please see page 156 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="156">Age of Rebellion Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1316,13 +1843,22 @@
     <Key>SPARECL</Key>
     <Name>Spare Clip</Name>
     <Description>Please see page 143 of the Edge of the Empire Core Rulebook, or page 157 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="143">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
   <Talent>
     <Key>SPKBIN</Key>
     <Name>Speaks Binary</Name>
-    <Description>Please see page 143 of the Edge of the Empire Core Rulebook, or page 157 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Description>Please see page 143 of the Edge of the Empire Core Rulebook, page 157 of the Age of Rebellion Core Rulebook, or page 35 of the Special Modificaitons Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="143">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+      <Source Page="35">Special Modifications</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1330,6 +1866,10 @@
     <Key>STALK</Key>
     <Name>Stalker</Name>
     <Description>Please see page 143 of the Edge of the Empire Core Rulebook, or page 157 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="143">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -1347,6 +1887,11 @@
     <Key>STNERV</Key>
     <Name>Steely Nerves</Name>
     <Description>Please see page 143 of the Edge of the Empire Core Rulebook, page 157 of the Age of Rebellion Core Rulebook, or page 152 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="143">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+      <Source Page="152">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1354,6 +1899,10 @@
     <Key>STIMAP</Key>
     <Name>Stim Application</Name>
     <Description>Please see page 143 of the Edge of the Empire Core Rulebook, or page 157 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="143">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -1361,6 +1910,10 @@
     <Key>STIMAPIMP</Key>
     <Name>Stim Application (Improved)</Name>
     <Description>Please see page 143 of the Edge of the Empire Core Rulebook, or page 157 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="143">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1368,6 +1921,10 @@
     <Key>STIMAPSUP</Key>
     <Name>Stim Application (Supreme)</Name>
     <Description>Please see page 143 of the Edge of the Empire Core Rulebook, or page 157 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="143">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1375,7 +1932,10 @@
     <Key>STIMSPEC</Key>
     <Name>Stimpack Specialization</Name>
     <Description>Please see page 157 of the Age of Rebellion Core Rulebook, or page 152 of the Force and Destiny Core Rulebook, for details.</Description>
-    <Source></Source>
+    <Sources>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+      <Source Page="152">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1383,6 +1943,11 @@
     <Key>STRSMART</Key>
     <Name>Street Smarts</Name>
     <Description>Please see page 144 of the Edge of the Empire Core Rulebook, page 157 of the Age of Rebellion Core Rulebook, or page 152 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="144">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+      <Source Page="152">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -1400,6 +1965,10 @@
     <Key>STRGEN</Key>
     <Name>Stroke of Genius</Name>
     <Description>Please see page 144 of the Edge of the Empire Core Rulebook, or page 157 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="144">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1407,6 +1976,10 @@
     <Key>STRONG</Key>
     <Name>Strong Arm</Name>
     <Description>Please see page 144 of the Edge of the Empire Core Rulebook, or page 157 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="144">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1414,6 +1987,10 @@
     <Key>STUNBL</Key>
     <Name>Stunning Blow</Name>
     <Description>Please see page 144 of the Edge of the Empire Core Rulebook, or page 157 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="144">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1421,6 +1998,10 @@
     <Key>STUNBLIMP</Key>
     <Name>Stunning Blow (Improved)</Name>
     <Description>Please see page 144 of the Edge of the Empire Core Rulebook, or page 157 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="144">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1428,6 +2009,10 @@
     <Key>SUPREF</Key>
     <Name>Superior Reflexes</Name>
     <Description>Please see page 144 of the Edge of the Empire Core Rulebook, or page 157 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="144">Edge of the Empire Core Rulebook</Source>
+      <Source Page="157">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Attributes>
@@ -1438,6 +2023,11 @@
     <Key>SURG</Key>
     <Name>Surgeon</Name>
     <Description>Please see page 144 of the Edge of the Empire Core Rulebook, page 158 of the Age of Rebellion Core Rulebook, or page 153 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="144">Edge of the Empire Core Rulebook</Source>
+      <Source Page="158">Age of Rebellion Core Rulebook</Source>
+      <Source Page="153">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1445,6 +2035,11 @@
     <Key>SWIFT</Key>
     <Name>Swift</Name>
     <Description>Please see page 144 of the Edge of the Empire Core Rulebook, page 158 of the Age of Rebellion Core Rulebook, or page 153 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="144">Edge of the Empire Core Rulebook</Source>
+      <Source Page="158">Age of Rebellion Core Rulebook</Source>
+      <Source Page="153">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1452,7 +2047,7 @@
     <Key>TACTTRAIN</Key>
     <Name>Tactical Combat Training</Name>
     <Description>Please see page 158 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="158">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ChooseCareerSkills>
@@ -1467,6 +2062,10 @@
     <Key>TARGBL</Key>
     <Name>Targeted Blow</Name>
     <Description>Please see page 144 of the Edge of the Empire Core Rulebook, or page 158 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="144">Edge of the Empire Core Rulebook</Source>
+      <Source Page="158">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1474,6 +2073,10 @@
     <Key>TECHAPT</Key>
     <Name>Technical Aptitude</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook, page 158 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Edge of the Empire Core Rulebook</Source>
+      <Source Page="158">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1481,7 +2084,7 @@
     <Key>TIME2GO</Key>
     <Name>Time to Go</Name>
     <Description>Please see page 158 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="158">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -1489,7 +2092,7 @@
     <Key>TIME2GOIMP</Key>
     <Name>Time to Go (Improved)</Name>
     <Description>Please see page 158 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="158">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -1497,6 +2100,10 @@
     <Key>TINK</Key>
     <Name>Tinkerer</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook, or page 158 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Edge of the Empire Core Rulebook</Source>
+      <Source Page="158">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <AddlHP>1</AddlHP>
@@ -1505,6 +2112,11 @@
     <Key>TOUCH</Key>
     <Name>Touch of Fate</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook, page 158 of the Age of Rebellion Core Rulebook, or page 153 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Edge of the Empire Core Rulebook</Source>
+      <Source Page="158">Age of Rebellion Core Rulebook</Source>
+      <Source Page="153">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1513,6 +2125,11 @@
     <Key>TOUGH</Key>
     <Name>Toughened</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook, page 158 of the Age of Rebellion Core Rulebook, or page 153 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Edge of the Empire Core Rulebook</Source>
+      <Source Page="158">Age of Rebellion Core Rulebook</Source>
+      <Source Page="153">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Attributes>
@@ -1523,6 +2140,11 @@
     <Key>TRICK</Key>
     <Name>Tricky Target</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook, page 158 of the Age of Rebellion Core Rulebook, or page 153 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Edge of the Empire Core Rulebook</Source>
+      <Source Page="158">Age of Rebellion Core Rulebook</Source>
+      <Source Page="153">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1530,6 +2152,10 @@
     <Key>TRUEAIM</Key>
     <Name>True Aim</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook, or page 158 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Edge of the Empire Core Rulebook</Source>
+      <Source Page="158">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -1537,6 +2163,11 @@
     <Key>UNCANREAC</Key>
     <Name>Uncanny Reactions</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook, page 158 of the Age of Rebellion Core Rulebook, or page 153 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Edge of the Empire Core Rulebook</Source>
+      <Source Page="158">Age of Rebellion Core Rulebook</Source>
+      <Source Page="153">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1551,6 +2182,11 @@
     <Key>UNCANSENS</Key>
     <Name>Uncanny Senses</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook, page 158 of the Age of Rebellion Core Rulebook, or page 153 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Edge of the Empire Core Rulebook</Source>
+      <Source Page="158">Age of Rebellion Core Rulebook</Source>
+      <Source Page="153">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1565,7 +2201,7 @@
     <Key>UNSTOP</Key>
     <Name>Unstoppable</Name>
     <Description>Please see page 159 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="159">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1573,6 +2209,10 @@
     <Key>UTIL</Key>
     <Name>Utility Belt</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook, or page 159 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Edge of the Empire Core Rulebook</Source>
+      <Source Page="159">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1580,7 +2220,7 @@
     <Key>UTINNI</Key>
     <Name>Utinni!</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook for details.</Description>
-    <Source>Edge of the Empire Core Rulebook</Source>
+    <Source Page="145">Edge of the Empire Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1588,7 +2228,7 @@
     <Key>VEHTRAIN</Key>
     <Name>Vehicle Combat Training</Name>
     <Description>Please see page 159 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="159">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ChooseCareerSkills>
@@ -1603,6 +2243,11 @@
     <Key>WELLROUND</Key>
     <Name>Well Rounded</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook, page 159 of the Age of Rebellion Core Rulebook, or page 153 of the Force and Destiny Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Edge of the Empire Core Rulebook</Source>
+      <Source Page="159">Age of Rebellion Core Rulebook</Source>
+      <Source Page="153">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ChooseCareerSkills>
@@ -1613,7 +2258,7 @@
     <Key>WELLTRAV</Key>
     <Name>Well Travelled</Name>
     <Description>Please see page 159 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="159">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ChooseCareerSkills>
@@ -1628,6 +2273,10 @@
     <Key>WHEEL</Key>
     <Name>Wheel and Deal</Name>
     <Description>Please see page 145 of the Edge of the Empire Core Rulebook, or page 159 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Edge of the Empire Core Rulebook</Source>
+      <Source Page="159">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -1635,21 +2284,19 @@
     <Key>WORKLIKECHARM</Key>
     <Name>Works Like A Charm</Name>
     <Description>Please see page 159 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source>Age of Rebellion Core Rulebook</Source>
+    <Source Page="159">Age of Rebellion Core Rulebook</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
-  
   <!-- Enter the Unknown-->
-  
   <Talent>
     <Key>PIN</Key>
     <Name>Pin</Name>
     <Description>
       Please see page 30 of Enter the Unknown for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="30">Enter the Unknown</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
@@ -1660,7 +2307,7 @@
     <Description>
       Please see page 30 of Enter the Unknown for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="30">Enter the Unknown</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
@@ -1671,7 +2318,7 @@
     <Description>
       Please see page 30 of Enter the Unknown for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="30">Enter the Unknown</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -1680,7 +2327,7 @@
     <Key>HUNTERQUARRY</Key>
     <Name>Hunter's Quarry</Name>
     <Description>Please see page 30 of Enter the Unknown for details.</Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="30">Enter the Unknown</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
@@ -1691,21 +2338,19 @@
     <Description>
       Please see page 30 of Enter the Unknown for details.
     </Description>
-    <Source>Enter the Unknown</Source>
+    <Source Page="30">Enter the Unknown</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
-  
   <!-- Dangerous Covenants -->
-  
   <Talent>
     <Key>BURLY</Key>
     <Name>Burly</Name>
     <Description>
       Please see page 32 of Dangerous Covenants for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="32">Dangerous Covenants</Source>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -1726,7 +2371,9 @@
     <Description>
       Please see page 142 of the Force and Destiny Core Rulebook, or page 32 of Dangerous Covenants, for details.
     </Description>
-    <Source></Source>
+    <Sources>
+      <Source Page="142">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -1737,7 +2384,7 @@
     <Description>
       Please see page 32 of Dangerous Covenants for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="32">Dangerous Covenants</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -1748,7 +2395,7 @@
     <Description>
       Please see page 32 of Dangerous Covenants for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="32">Dangerous Covenants</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -1759,7 +2406,7 @@
     <Description>
       Please see page 32 of Dangerous Covenants for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="32">Dangerous Covenants</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
@@ -1770,7 +2417,7 @@
     <Description>
       Please see page 32 of Dangerous Covenants for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="32">Dangerous Covenants</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -1781,7 +2428,7 @@
     <Description>
       Please see page 32 of Dangerous Covenants for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="32">Dangerous Covenants</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -1792,7 +2439,7 @@
     <Description>
       Please see page 32 of Dangerous Covenants for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="32">Dangerous Covenants</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
@@ -1803,7 +2450,7 @@
     <Description>
       Please see page 33 of Dangerous Covenants for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="33">Dangerous Covenants</Source>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -1824,7 +2471,7 @@
     <Description>
       Please see page 33 of Dangerous Covenants for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="33">Dangerous Covenants</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -1835,7 +2482,7 @@
     <Description>
       Please see page 33 of Dangerous Covenants for details.
     </Description>
-    <Source>Dangerous Covenants</Source>
+    <Source Page="33">Dangerous Covenants</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -1846,21 +2493,19 @@
     <Description>
       Please see page 62 of the Jewel of Yavin adventure for details.
     </Description>
-    <Source>Jewel of Yavin</Source>
+    <Source Page="62">Jewel of Yavin</Source>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
-
   <!-- Force and Destiny -->
-
   <Talent>
     <Key>AAO</Key>
     <Name>Against All Odds</Name>
     <Description>
       Please see page 138 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="138">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1871,7 +2516,7 @@
     <Description>
       Please see page 138 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="138">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1882,7 +2527,7 @@
     <Description>
       Please see page 139 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="139">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1893,7 +2538,7 @@
     <Description>
       Please see page 139 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="139">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1910,7 +2555,7 @@
     <Description>
       Please see page 140 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="140">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -1921,7 +2566,7 @@
     <Description>
       Please see page 140 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="140">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1932,7 +2577,7 @@
     <Description>
       Please see page 140 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="140">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1943,7 +2588,7 @@
     <Description>
       Please see page 140 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="140">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1954,7 +2599,7 @@
     <Description>
       Please see page 140 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="140">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1965,7 +2610,7 @@
     <Description>
       Please see page 140 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="140">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1976,7 +2621,7 @@
     <Description>
       Please see page 141 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="141">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -1987,7 +2632,7 @@
     <Description>
       Please see page 141 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="141">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -2008,8 +2653,7 @@
       Please see page 33 of the Desperate Allies Sourcebook or page 141 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Force and Destiny Core Rulebook</Source>
-      <Source>Desperate Allies</Source>
+      <Source Page="33">Desperate Allies Sourcebook or page 141 of the Force and Destiny Core Rulebook</Source>
     </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
@@ -2020,7 +2664,7 @@
     <Description>
       Please see page 141 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="141">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2031,7 +2675,7 @@
     <Description>
       Please see page 141 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="141">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2042,7 +2686,7 @@
     <Description>
       Please see page 141 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="141">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2068,7 +2712,7 @@
     <Description>
       Please see page 142 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="142">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2079,7 +2723,7 @@
     <Description>
       Please see page 142 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="142">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2090,7 +2734,7 @@
     <Description>
       Please see page 142 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="142">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2101,7 +2745,7 @@
     <Description>
       Please see page 142 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="142">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2112,7 +2756,7 @@
     <Description>
       Please see page 142 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="142">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2129,7 +2773,7 @@
     <Description>
       Please see page 142 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="142">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2140,7 +2784,7 @@
     <Description>
       Please see page 142 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="142">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2151,7 +2795,7 @@
     <Description>
       Please see page 143 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="143">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2162,7 +2806,7 @@
     <Description>
       Please see page 143 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="143">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2173,7 +2817,7 @@
     <Description>
       Please see page 143 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="143">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2184,7 +2828,7 @@
     <Description>
       Please see page 144 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="144">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2195,7 +2839,7 @@
     <Description>
       Please see page 144 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="144">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2206,7 +2850,7 @@
     <Description>
       Please see page 144 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="144">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2217,7 +2861,7 @@
     <Description>
       Please see page 145 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="145">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2228,7 +2872,7 @@
     <Description>
       Please see page 145 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="145">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2239,7 +2883,7 @@
     <Description>
       Please see page 145 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="145">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2251,7 +2895,7 @@
     <Description>
       Please see page 145 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="145">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2272,7 +2916,7 @@
     <Description>
       Please see page 145 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="145">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2283,7 +2927,7 @@
     <Description>
       Please see page 146 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="146">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2304,7 +2948,7 @@
     <Description>
       Please see page 103 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="103">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2315,7 +2959,7 @@
     <Description>
       Please see page 146 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="146">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2326,7 +2970,7 @@
     <Description>
       Please see page 146 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="146">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2337,7 +2981,7 @@
     <Description>
       Please see page 146 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="146">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2348,7 +2992,7 @@
     <Description>
       Please see page 146 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="146">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2365,7 +3009,7 @@
     <Description>
       Please see page 146 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="146">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2376,7 +3020,7 @@
     <Description>
       Please see page 147 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="147">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2387,7 +3031,7 @@
     <Description>
       Please see page 147 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="147">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2398,7 +3042,7 @@
     <Description>
       Please see page 147 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="147">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2409,7 +3053,7 @@
     <Description>
       Please see page 147 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="147">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2420,7 +3064,7 @@
     <Description>
       Please see page 148 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="148">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2431,7 +3075,7 @@
     <Description>
       Please see page 148 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="148">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2448,7 +3092,7 @@
     <Description>
       Please see page 148 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="148">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2459,7 +3103,7 @@
     <Description>
       Please see page 149 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="149">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2470,7 +3114,7 @@
     <Description>
       Please see page 149 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="149">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2481,7 +3125,7 @@
     <Description>
       Please see page 149 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="149">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2492,7 +3136,7 @@
     <Description>
       Please see page 149 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="149">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2503,7 +3147,7 @@
     <Description>
       Please see page 149 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="149">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2514,7 +3158,7 @@
     <Description>
       Please see page 149 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="149">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2525,7 +3169,7 @@
     <Description>
       Please see page 149 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="149">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2536,7 +3180,7 @@
     <Description>
       Please see page 150 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="150">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2547,7 +3191,7 @@
     <Description>
       Please see page 150 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="150">Force and Destiny Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2558,7 +3202,7 @@
     <Description>
       Please see page 150 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="150">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2569,7 +3213,7 @@
     <Description>
       Please see page 150 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="150">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2580,7 +3224,7 @@
     <Description>
       Please see page 151 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="151">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -2591,7 +3235,7 @@
     <Description>
       Please see page 151 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="151">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2602,7 +3246,7 @@
     <Description>
       Please see page 151 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="151">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2613,7 +3257,7 @@
     <Description>
       Please see page 151 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="151">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2624,7 +3268,7 @@
     <Description>
       Please see page 151 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="151">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2635,7 +3279,7 @@
     <Description>
       Please see page 151 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="151">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2646,7 +3290,7 @@
     <Description>
       Please see page 151 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="151">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2663,7 +3307,7 @@
     <Description>
       Please see page 151 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="151">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2674,7 +3318,7 @@
     <Description>
       Please see page 152 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="152">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2685,7 +3329,7 @@
     <Description>
       Please see page 152 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="152">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2702,7 +3346,7 @@
     <Description>
       Please see page 152 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="152">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2713,7 +3357,7 @@
     <Description>
       Please see page 152 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="152">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2724,7 +3368,7 @@
     <Description>
       Please see page 153 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="153">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2736,7 +3380,7 @@
     <Description>
       Please see page 153 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="153">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2747,7 +3391,7 @@
     <Description>
       Please see page 153 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="153">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2758,7 +3402,7 @@
     <Description>
       Please see page 153 of the Force and Destiny Core Rulebook for details.
     </Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="153">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -2770,175 +3414,176 @@
       Please see page 34 of the Desperate Allies Sourcebook, and page 153 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source>Force and Destiny Core Rulebook</Source>
-      <Source>Desperate Allies</Source>
+      <Source Page="34">Desperate Allies Sourcebook</Source>
+      <Source Page="153">Force and Destiny Core Rulebook</Source>
     </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
     <ForceTalent>false</ForceTalent>
   </Talent>
-    <Talent>
-      <Key>BADCOP</Key>
-      <Name>Bad Cop</Name>
-      <Description>
+  <Talent>
+    <Key>BADCOP</Key>
+    <Name>Bad Cop</Name>
+    <Description>
         Please see page 32 of the Far Horizons Sourcebook for details.
       </Description>
-      <Source>Far Horizons</Source>
-      <AddlHP>0</AddlHP>
-      <Ranked>true</Ranked>
-      <ActivationValue>taPassive</ActivationValue>
-      <JuryRigged>false</JuryRigged>
-    </Talent>
-    <Talent>
-      <Key>BIGGESTFAN</Key>
-      <Name>Biggest Fan</Name>
-      <Description>Please see page 32 of the Far Horizons Sourcebook for details.</Description>
-      <Source>Far Horizons</Source>
-      <AddlHP>0</AddlHP>
-      <Ranked>false</Ranked>
-      <ActivationValue>taAction</ActivationValue>
-      <JuryRigged>false</JuryRigged>
-    </Talent>
-    <Talent>
-      <Key>CONGENIAL</Key>
-      <Name>Congenial</Name>
-      <Description>
+    <Source Page="32">Far Horizons</Source>
+    <AddlHP>0</AddlHP>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <JuryRigged>false</JuryRigged>
+  </Talent>
+  <Talent>
+    <Key>BIGGESTFAN</Key>
+    <Name>Biggest Fan</Name>
+    <Description>Please see page 32 of the Far Horizons Sourcebook for details.</Description>
+    <Source Page="32">Far Horizons</Source>
+    <AddlHP>0</AddlHP>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+    <JuryRigged>false</JuryRigged>
+  </Talent>
+  <Talent>
+    <Key>CONGENIAL</Key>
+    <Name>Congenial</Name>
+    <Description>
         Please see page 32 of the Far Horizons Sourcebook, or page 32 of the Fly Casual Sourcebook, for details.
       </Description>
-      <Sources>
-        <Source>Far Horizons</Source>
-        <Source>Fly Casual</Source>
-      </Sources>
-      <AddlHP>0</AddlHP>
-      <Ranked>true</Ranked>
-      <ActivationValue>taIncidental</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>COORDODGE</Key>
-      <Name>Coordination Dodge</Name>
-      <Description>
+    <Sources>
+      <Source Page="32">Far Horizons Sourcebook</Source>
+      <Source Page="32">Fly Casual Sourcebook</Source>
+    </Sources>
+    <AddlHP>0</AddlHP>
+    <Ranked>true</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>COORDODGE</Key>
+    <Name>Coordination Dodge</Name>
+    <Description>
         Please see page 32 of the Far Horizons Sourcebook for details.
       </Description>
-      <Source>Far Horizons</Source>
-      <AddlHP>0</AddlHP>
-      <Ranked>false</Ranked>
-      <ActivationValue>taIncidental</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>DISBEH</Key>
-      <Name>Distracting Behavior</Name>
-      <Description>
+    <Source Page="32">Far Horizons</Source>
+    <AddlHP>0</AddlHP>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>DISBEH</Key>
+    <Name>Distracting Behavior</Name>
+    <Description>
         Please see page 32 of the Far Horizons Sourcebook for details.
       </Description>
-      <Source>Far Horizons</Source>
-      <AddlHP>0</AddlHP>
-      <Ranked>true</Ranked>
-      <ActivationValue>taManeuver</ActivationValue>
-      <JuryRigged>false</JuryRigged>
-    </Talent>
-    <Talent>
-      <Key>DISBEHIMP</Key>
-      <Name>Distracting Behavior (Improved)</Name>
-      <Description>
+    <Source Page="32">Far Horizons</Source>
+    <AddlHP>0</AddlHP>
+    <Ranked>true</Ranked>
+    <ActivationValue>taManeuver</ActivationValue>
+    <JuryRigged>false</JuryRigged>
+  </Talent>
+  <Talent>
+    <Key>DISBEHIMP</Key>
+    <Name>Distracting Behavior (Improved)</Name>
+    <Description>
         Please see page 33 of the Far Horizons Sourcebook for details.
       </Description>
-      <Source>Far Horizons</Source>
-      <AddlHP>0</AddlHP>
-      <Ranked>false</Ranked>
-      <ActivationValue>taPassive</ActivationValue>
-      <JuryRigged>false</JuryRigged>
-    </Talent>
-    <Talent>
-      <Key>DECEPTAUNT</Key>
-      <Name>Deceptive Taunt</Name>
-      <Description>Please see page 32 of the Far Horizons Sourcebook for details.</Description>
-      <Source>Far Horizons</Source>
-      <AddlHP>0</AddlHP>
-      <Ranked>false</Ranked>
-      <ActivationValue>taAction</ActivationValue>
-      <JuryRigged>false</JuryRigged>
-    </Talent>
-    <Talent>
-      <Key>GOODCOP</Key>
-      <Name>Good Cop</Name>
-      <Description>
+    <Source Page="33">Far Horizons</Source>
+    <AddlHP>0</AddlHP>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <JuryRigged>false</JuryRigged>
+  </Talent>
+  <Talent>
+    <Key>DECEPTAUNT</Key>
+    <Name>Deceptive Taunt</Name>
+    <Description>Please see page 32 of the Far Horizons Sourcebook for details.</Description>
+    <Source Page="32">Far Horizons</Source>
+    <AddlHP>0</AddlHP>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+    <JuryRigged>false</JuryRigged>
+  </Talent>
+  <Talent>
+    <Key>GOODCOP</Key>
+    <Name>Good Cop</Name>
+    <Description>
         Please see page 33 of the Far Horizons Sourcebook for details.
       </Description>
-      <Source>Far Horizons</Source>
-      <AddlHP>0</AddlHP>
-      <Ranked>true</Ranked>
-      <ActivationValue>taPassive</ActivationValue>
-      <JuryRigged>false</JuryRigged>
-    </Talent>
-    <Talent>
-      <Key>NATATHL</Key>
-      <Name>Natural Athlete</Name>
-      <Description>
+    <Source Page="33">Far Horizons</Source>
+    <AddlHP>0</AddlHP>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <JuryRigged>false</JuryRigged>
+  </Talent>
+  <Talent>
+    <Key>NATATHL</Key>
+    <Name>Natural Athlete</Name>
+    <Description>
         Please see page 33 of the Far Horizons Sourcebook for details.
       </Description>
-      <Source>Far Horizons</Source>
-      <AddlHP>0</AddlHP>
-      <Ranked>false</Ranked>
-      <ActivationValue>taIncidental</ActivationValue>
-      <JuryRigged>false</JuryRigged>
-    </Talent>
-    <Talent>
-      <Key>NATMERCH</Key>
-      <Name>Natural Merchant</Name>
-      <Description>
+    <Source Page="33">Far Horizons</Source>
+    <AddlHP>0</AddlHP>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+    <JuryRigged>false</JuryRigged>
+  </Talent>
+  <Talent>
+    <Key>NATMERCH</Key>
+    <Name>Natural Merchant</Name>
+    <Description>
         Please see page 33 of the Far Horizons Sourcebook for details.
       </Description>
-      <Source>Far Horizons</Source>
-      <AddlHP>0</AddlHP>
-      <Ranked>false</Ranked>
-      <ActivationValue>taIncidental</ActivationValue>
-      <JuryRigged>false</JuryRigged>
-    </Talent>
-    <Talent>
-      <Key>THROWCRED</Key>
-      <Name>Throwing Credits</Name>
-      <Description>
+    <Source Page="33">Far Horizons</Source>
+    <AddlHP>0</AddlHP>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+    <JuryRigged>false</JuryRigged>
+  </Talent>
+  <Talent>
+    <Key>THROWCRED</Key>
+    <Name>Throwing Credits</Name>
+    <Description>
         Please see page 33 of the Far Horizons Sourcebook for details.
       </Description>
-      <Source>Far Horizons</Source>
-      <AddlHP>0</AddlHP>
-      <Ranked>false</Ranked>
-      <ActivationValue>taIncidental</ActivationValue>
-      <JuryRigged>false</JuryRigged>
-    </Talent>
-    <Talent>
-      <Key>UNRELSKEP</Key>
-      <Name>Unrelenting Skeptic</Name>
-      <Description>
+    <Source Page="33">Far Horizons</Source>
+    <AddlHP>0</AddlHP>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+    <JuryRigged>false</JuryRigged>
+  </Talent>
+  <Talent>
+    <Key>UNRELSKEP</Key>
+    <Name>Unrelenting Skeptic</Name>
+    <Description>
         Please see page 33 of the Far Horizons Sourcebook for details.
       </Description>
-      <Sources>
-        <Source>Far Horizons</Source>
-      </Sources>
-      <AddlHP>0</AddlHP>
-      <Ranked>false</Ranked>
-      <ActivationValue>taPassive</ActivationValue>
-      <JuryRigged>false</JuryRigged>
-    </Talent>
-    <Talent>
-      <Key>UNRELSKEPIMP</Key>
-      <Name>Unrelenting Skeptic (Improved)</Name>
-      <Description>
+    <Source Page="33">Far Horizons Sourcebook</Source>
+    <Sources>
+      <Source>Far Horizons</Source>
+    </Sources>
+    <AddlHP>0</AddlHP>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <JuryRigged>false</JuryRigged>
+  </Talent>
+  <Talent>
+    <Key>UNRELSKEPIMP</Key>
+    <Name>Unrelenting Skeptic (Improved)</Name>
+    <Description>
         Please see page 33 of the Far Horizons Sourcebook for details.
       </Description>
-      <Source>Far Horizons</Source>
-      <AddlHP>0</AddlHP>
-      <Ranked>false</Ranked>
-      <ActivationValue>taIncidental</ActivationValue>
-      <JuryRigged>false</JuryRigged>
-    </Talent>
+    <Source Page="33">Far Horizons</Source>
+    <AddlHP>0</AddlHP>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+    <JuryRigged>false</JuryRigged>
+  </Talent>
   <Talent>
     <Key>BEASTWRANG</Key>
     <Name>Beast Wrangler</Name>
     <Description>
       Please see page 32 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="32">Stay on Target</Source>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -2950,7 +3595,7 @@
     <Description>
       Please see page 32 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="32">Stay on Target</Source>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -2969,7 +3614,7 @@
     <Description>
       Please see page 32 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="32">Stay on Target</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
@@ -2980,7 +3625,7 @@
     <Description>
       Please see page 32 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="32">Stay on Target</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -2991,7 +3636,7 @@
     <Description>
       Please see page 32 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="32">Stay on Target</Source>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -3010,7 +3655,7 @@
     <Description>
       Please see page 32 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="32">Stay on Target</Source>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -3019,9 +3664,12 @@
     <Key>FANCPAINT</Key>
     <Name>Fancy Paint Job</Name>
     <Description>
-      Please see page 32 of the Stay on Target Sourcebook for details.
+      Please see page 32 of the Stay on Target Sourcebook, or page 34 of the Special Modifications Sourcebook, for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Sources>
+      <Source Page="32">Stay on Target</Source>
+      <Source Page="34">Special Modifications</Source>
+    </Sources>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -3032,7 +3680,7 @@
     <Description>
       Please see page 32 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="32">Stay on Target</Source>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -3051,7 +3699,7 @@
     <Description>
       Please see page 32 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="32">Stay on Target</Source>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -3062,7 +3710,7 @@
     <Description>
       Please see page 32 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="32">Stay on Target</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
@@ -3071,9 +3719,12 @@
     <Key>LARGEPROJ</Key>
     <Name>Larger Project</Name>
     <Description>
-      Please see page 32 of the Stay on Target Sourcebook for details.
+      Please see page 32 of the Stay on Target Sourcebook, or page 34 of the Special Modifications Sourcebook, for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Sources>
+      <Source Page="32">Stay on Target</Source>
+      <Source Page="34">Special Modifications</Source>
+    </Sources>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -3087,7 +3738,7 @@
     <Description>
       Please see page 33 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="33">Stay on Target</Source>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -3098,7 +3749,7 @@
     <Description>
       Please see page 33 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="33">Stay on Target</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Rigger>
@@ -3117,7 +3768,7 @@
     <Description>
       Please see page 33 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="33">Stay on Target</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Rigger>
@@ -3135,7 +3786,7 @@
     <Description>
       Please see page 33 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="33">Stay on Target</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -3143,9 +3794,12 @@
     <Key>SIGVEH</Key>
     <Name>Signature Vehicle</Name>
     <Description>
-      Please see page 33 of the Stay on Target Sourcebook for details.
+      Please see page 33 of the Stay on Target Sourcebook, or page 35 of the Special Modificaitons Sourcebook, for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Sources>
+      <Source Page="33">Stay on Target</Source>
+      <Source Page="35">Special Modifications</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Rigger>
@@ -3165,7 +3819,7 @@
     <Description>
       Please see page 33 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="33">Stay on Target</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -3175,7 +3829,7 @@
     <Description>
       Please see page 33 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="33">Stay on Target</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -3185,7 +3839,7 @@
     <Description>
       Please see page 33 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="33">Stay on Target</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -3195,7 +3849,7 @@
     <Description>
       Please see page 33 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="33">Stay on Target</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3205,7 +3859,7 @@
     <Description>
       Please see page 33 of the Stay on Target Sourcebook for details.
     </Description>
-    <Source>Stay on Target</Source>
+    <Source Page="33">Stay on Target</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <Rigger>
@@ -3217,7 +3871,6 @@
       </BaseMods>
     </Rigger>
   </Talent>
-
   <!-- Fly Casual -->
   <Talent>
     <Key>CALLEM</Key>
@@ -3225,7 +3878,7 @@
     <Description>
       Please see page 32 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="32">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3235,7 +3888,7 @@
     <Description>
       Please see page 32 of the Fly Casual Sourcebook for details.
     </Description>
-    <Source>Fly Casual</Source>
+    <Source Page="32">Fly Casual</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -3243,7 +3896,7 @@
     <Key>DONTSHOOT</Key>
     <Name>Don't Shoot!</Name>
     <Description>Please see page 32 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="32">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -3251,7 +3904,7 @@
     <Key>DOUBLEORNOTHING</Key>
     <Name>Double or Nothing</Name>
     <Description>Please see page 32 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="32">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3259,7 +3912,7 @@
     <Key>DOUBLEORNOTHINGIMP</Key>
     <Name>Double or Nothing (Improved)</Name>
     <Description>Please see page 32 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="32">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3267,7 +3920,7 @@
     <Key>DOUBLEORNOTHINGSUP</Key>
     <Name>Double or Nothing (Supreme)</Name>
     <Description>Please see page 32 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="32">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3275,7 +3928,7 @@
     <Key>FORTFAVORBOLD</Key>
     <Name>Fortune Favors the Bold</Name>
     <Description>Please see page 32 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="32">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -3283,7 +3936,7 @@
     <Key>GUNSBLAZING</Key>
     <Name>Guns Blazing</Name>
     <Description>Please see page 33 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="33">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -3291,7 +3944,7 @@
     <Key>JUSTKID</Key>
     <Name>Just Kidding!</Name>
     <Description>Please see page 33 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="33">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -3299,7 +3952,7 @@
     <Key>QUICKDRIMP</Key>
     <Name>Quickdraw (Improved)</Name>
     <Description>Please see page 33 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="33">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3308,8 +3961,8 @@
     <Name>Second Chances</Name>
     <Description>Please see  page 33 of the Stay on Target Sourcebook, or page 33 of the Fly Casual Sourcebook, for details.</Description>
     <Sources>
-      <Source>Stay on Target</Source>
-      <Source>Fly Casual</Source>
+      <Source Page="33">Stay on Target Sourcebook</Source>
+      <Source Page="33">Fly Casual Sourcebook</Source>
     </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -3318,7 +3971,7 @@
     <Key>SORRYMESS</Key>
     <Name>Sorry About the Mess</Name>
     <Description>Please see page 33 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="33">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3326,7 +3979,7 @@
     <Key>SPITFIRE</Key>
     <Name>Spitfire</Name>
     <Description>Please see page 33 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="33">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3334,7 +3987,7 @@
     <Key>UPANTE</Key>
     <Name>Up the Ante</Name>
     <Description>Please see page 33 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="33">Fly Casual</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3342,7 +3995,7 @@
     <Key>WORKLIKECHARM</Key>
     <Name>Works Like a Charm</Name>
     <Description>Please see page 33 of the Fly Casual Sourcebook for details.</Description>
-    <Source>Fly Casual</Source>
+    <Source Page="33">Fly Casual</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -3350,7 +4003,7 @@
     <Key>BADPRESS</Key>
     <Name>Bad Press</Name>
     <Description>Please see page 32 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="32">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -3358,7 +4011,7 @@
     <Key>BLACKMAIL</Key>
     <Name>Blackmail</Name>
     <Description>Please see page 32 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="32">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
   </Talent>
@@ -3366,7 +4019,7 @@
     <Key>CUTQUEST</Key>
     <Name>Cutting Question</Name>
     <Description>Please see page 33 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="33">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -3374,7 +4027,7 @@
     <Key>DISCREDIT</Key>
     <Name>Discredit</Name>
     <Description>Please see page 33 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="33">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -3382,7 +4035,7 @@
     <Key>ENCCOMM</Key>
     <Name>Encoded Communique</Name>
     <Description>Please see page 33 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="33">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3390,7 +4043,7 @@
     <Key>ENCWORD</Key>
     <Name>Encouraging Words</Name>
     <Description>Please see page 33 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="33">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
   </Talent>
@@ -3398,7 +4051,7 @@
     <Key>INKNOW</Key>
     <Name>In The Know</Name>
     <Description>Please see page 33 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="33">Desperate Allies</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3406,7 +4059,7 @@
     <Key>INKNOWIMP</Key>
     <Name>In The Know (Improved)</Name>
     <Description>Please see page 33 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="33">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -3414,7 +4067,7 @@
     <Key>INFORM</Key>
     <Name>Informant</Name>
     <Description>Please see page 33 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="33">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -3422,7 +4075,7 @@
     <Key>INTERJECT</Key>
     <Name>Interjection</Name>
     <Description>Please see page 34 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="34">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
   </Talent>
@@ -3430,7 +4083,7 @@
     <Key>KNOWALL</Key>
     <Name>Know-It-All</Name>
     <Description>Please see page 34 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="34">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -3438,7 +4091,7 @@
     <Key>PLAUSDENIMP</Key>
     <Name>Plausible Deniability (Improved)</Name>
     <Description>Please see page 34 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="34">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -3446,7 +4099,7 @@
     <Key>POSSPIN</Key>
     <Name>Positive Spin</Name>
     <Description>Please see page 34 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="34">Desperate Allies</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3454,7 +4107,7 @@
     <Key>POSSPINIMP</Key>
     <Name>Positive Spin (Improved)</Name>
     <Description>Please see page 34 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="34">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -3462,7 +4115,7 @@
     <Key>RESEARCHIMP</Key>
     <Name>Researcher (Improved)</Name>
     <Description>Please see page 34 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="34">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3470,7 +4123,7 @@
     <Key>SUPPEVI</Key>
     <Name>Supporting Evidence</Name>
     <Description>Please see page 34 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="34">Desperate Allies</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3478,7 +4131,7 @@
     <Key>THORASS</Key>
     <Name>Thorough Assessment</Name>
     <Description>Please see page 34 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="34">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -3486,7 +4139,7 @@
     <Key>TWISTWORD</Key>
     <Name>Twisted Words</Name>
     <Description>Please see page 34 of the Desperate Allies Sourcebook for details.</Description>
-    <Source>Desperate Allies</Source>
+    <Source Page="34">Desperate Allies</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
   </Talent>
@@ -3494,16 +4147,15 @@
     <Key>DRIVEBACK</Key>
     <Name>Drive Back</Name>
     <Description>Please see page 419 of the Force and Destiny Core Rulebook for details.</Description>
-    <Source>Force and Destiny Core Rulebook</Source>
+    <Source Page="419">Force and Destiny Core Rulebook</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
-
-    <Talent>
+  <Talent>
     <Key>ARMSUP</Key>
     <Name>Armor Master (Supreme)</Name>
     <Description>Please see page 30 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="30">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
   </Talent>
@@ -3511,7 +4163,7 @@
     <Key>BALEGAZE</Key>
     <Name>Baleful Gaze</Name>
     <Description>Please see page 30 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="30">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -3521,7 +4173,7 @@
     <Key>BLINDSPOT</Key>
     <Name>Blind Spot</Name>
     <Description>Please see page 30 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="30">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3529,7 +4181,7 @@
     <Key>GRAPPLE</Key>
     <Name>Grapple</Name>
     <Description>Please see page 30 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="30">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -3537,7 +4189,7 @@
     <Key>NOESC</Key>
     <Name>No Escape</Name>
     <Description>Please see page 30 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="30">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -3546,7 +4198,7 @@
     <Key>OVERBAL</Key>
     <Name>Overbalance</Name>
     <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="31">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3554,7 +4206,7 @@
     <Key>PRECSTR</Key>
     <Name>Precision Strike</Name>
     <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="31">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
   </Talent>
@@ -3562,7 +4214,7 @@
     <Key>PRIMEPOS</Key>
     <Name>Prime Positions</Name>
     <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="31">Keeping the Peace</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -3570,7 +4222,7 @@
     <Key>PRESSHOT</Key>
     <Name>Prescient Shot</Name>
     <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="31">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -3579,7 +4231,7 @@
     <Key>PROPAIM</Key>
     <Name>Prophetic Aim</Name>
     <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="31">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -3588,7 +4240,7 @@
     <Key>REINITEM</Key>
     <Name>Reinforce Item</Name>
     <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="31">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
     <ForceTalent>true</ForceTalent>
@@ -3597,103 +4249,231 @@
     <Key>SUPPRFIRE</Key>
     <Name>Suppressing Fire</Name>
     <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
-    <Source>Keeping the Peace</Source>
+    <Source Page="31">Keeping the Peace</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
-    <Talent>
-      <Key>CALMCOMM</Key>
-      <Name>Calm Commander</Name>
-      <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
-      <Source>Lead by Example</Source>
-      <Ranked>false</Ranked>
-      <ActivationValue>taPassive</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>CLEVCOMM</Key>
-      <Name>Clever Commander</Name>
-      <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
-      <Source>Lead by Example</Source>
-      <Ranked>false</Ranked>
-      <ActivationValue>taPassive</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>COMMPRESIMP</Key>
-      <Name>Commanding Presence (Improved)</Name>
-      <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
-      <Source>Lead by Example</Source>
-      <Ranked>false</Ranked>
-      <ActivationValue>taAction</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>CONFIMP</Key>
-      <Name>Confidence (Improved)</Name>
-      <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
-      <Source>Lead by Example</Source>
-      <Ranked>false</Ranked>
-      <ActivationValue>taPassive</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>MASINST</Key>
-      <Name>Master Instructor</Name>
-      <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
-      <Source>Lead by Example</Source>
-      <Ranked>false</Ranked>
-      <ActivationValue>taIncidentalOOT</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>MASSTRAT</Key>
-      <Name>Master Strategist</Name>
-      <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
-      <Source>Lead by Example</Source>
-      <Ranked>false</Ranked>
-      <ActivationValue>taIncidentalOOT</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>NATINST</Key>
-      <Name>Natural Instructor</Name>
-      <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
-      <Source>Lead by Example</Source>
-      <Ranked>false</Ranked>
-      <ActivationValue>taIncidental</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>READANY</Key>
-      <Name>Ready for Anything</Name>
-      <Description>See page 34 of the Lead by Example Sourcebook for details.</Description>
-      <Source>Lead by Example</Source>
-      <Ranked>true</Ranked>
-      <ActivationValue>taPassive</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>READANYIMP</Key>
-      <Name>Ready for Anything (Improved)</Name>
-      <Description>See page 34 of the Lead by Example Sourcebook for details.</Description>
-      <Source>Keeping the Peace</Source>
-      <Ranked>false</Ranked>
-      <ActivationValue>taPassive</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>THATHOWDONE</Key>
-      <Name>That's How It's Done</Name>
-      <Description>See page 34 of the Lead by Example Sourcebook for details.</Description>
-      <Source>Lead by Example</Source>
-      <Ranked>true</Ranked>
-      <ActivationValue>taIncidental</ActivationValue>
-    </Talent>
-    <Talent>
-      <Key>WELLREAD</Key>
-      <Name>Well Read</Name>
-      <Description>See page 34 of the Lead by Example Sourcebook for details.</Description>
-      <Source>Lead by Example</Source>
-      <Ranked>false</Ranked>
-      <ActivationValue>taPassive</ActivationValue>
-      <ChooseCareerSkills>
-        <SkillCount>3</SkillCount>
-        <NewSkills />
-        <ChooseByType>true</ChooseByType>
-        <TypeValue>stKnowledge</TypeValue>
-      </ChooseCareerSkills>
-    </Talent>
+  <Talent>
+    <Key>CALMCOMM</Key>
+    <Name>Calm Commander</Name>
+    <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
+    <Source Page="33">Lead by Example</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>CLEVCOMM</Key>
+    <Name>Clever Commander</Name>
+    <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
+    <Source Page="33">Lead by Example</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>COMMPRESIMP</Key>
+    <Name>Commanding Presence (Improved)</Name>
+    <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
+    <Source Page="33">Lead by Example</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>CONFIMP</Key>
+    <Name>Confidence (Improved)</Name>
+    <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
+    <Source Page="33">Lead by Example</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>MASINST</Key>
+    <Name>Master Instructor</Name>
+    <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
+    <Source Page="33">Lead by Example</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidentalOOT</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>MASSTRAT</Key>
+    <Name>Master Strategist</Name>
+    <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
+    <Source Page="33">Lead by Example</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidentalOOT</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>NATINST</Key>
+    <Name>Natural Instructor</Name>
+    <Description>See page 33 of the Lead by Example Sourcebook for details.</Description>
+    <Source Page="33">Lead by Example</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>READANY</Key>
+    <Name>Ready for Anything</Name>
+    <Description>See page 34 of the Lead by Example Sourcebook for details.</Description>
+    <Source Page="34">Lead by Example</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>READANYIMP</Key>
+    <Name>Ready for Anything (Improved)</Name>
+    <Description>See page 34 of the Lead by Example Sourcebook for details.</Description>
+    <Source Page="34">Keeping the Peace</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>THATHOWDONE</Key>
+    <Name>That's How It's Done</Name>
+    <Description>See page 34 of the Lead by Example Sourcebook for details.</Description>
+    <Source Page="34">Lead by Example</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>WELLREAD</Key>
+    <Name>Well Read</Name>
+    <Description>See page 34 of the Lead by Example Sourcebook for details.</Description>
+    <Source Page="34">Lead by Example</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <ChooseCareerSkills>
+      <SkillCount>3</SkillCount>
+      <NewSkills />
+      <ChooseByType>true</ChooseByType>
+      <TypeValue>stKnowledge</TypeValue>
+    </ChooseCareerSkills>
+  </Talent>
+  <Talent>
+    <Key>CUSTLOAD</Key>
+    <Name>Custom Loadout</Name>
+    <Description>See page 34 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="34">Special Modifications</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <Rigger>
+      <BaseMods>
+        <Mod>
+          <Key>HPADD</Key>
+          <Count>2</Count>
+        </Mod>
+      </BaseMods>
+    </Rigger>
+  </Talent>
+  <Talent>
+    <Key>CYBERNETICIST</Key>
+    <Name>Cyberneticist</Name>
+    <Description>See page 34 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="34">Special Modifications</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>DEFTMAKER</Key>
+    <Name>Deft Maker</Name>
+    <Description>See page 34 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="34">Special Modifications</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>ENGREDUN</Key>
+    <Name>Engineered Redundancies</Name>
+    <Description>See page 34 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="34">Special Modifications</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>EYEDET</Key>
+    <Name>Eye for Detail</Name>
+    <Description>See page 34 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="34">Special Modifications</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>ENERGTRANS</Key>
+    <Name>Energy Transfer</Name>
+    <Description>See page 34 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="34">Special Modifications</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taManeuver</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>MACHMEND</Key>
+    <Name>Machine Mender</Name>
+    <Description>See page 34 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="34">Special Modifications</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>MOREMACH</Key>
+    <Name>More Machine Than Man</Name>
+    <Description>See page 34 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="34">Special Modifications</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <AddlCyber>1</AddlCyber>
+  </Talent>
+  <Talent>
+    <Key>OVERCHARGE</Key>
+    <Name>Overcharge</Name>
+    <Description>See page 35 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="35">Special Modifications</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>OVERCHARGEIMP</Key>
+    <Name>Improved Overcharge</Name>
+    <Description>See page 35 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="35">Special Modifications</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>OVERCHARGESUP</Key>
+    <Name>Supreme Overcharge</Name>
+    <Description>See page 35 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="35">Special Modifications</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>REROUTEPROC</Key>
+    <Name>Reroute Processors</Name>
+    <Description>See page 35 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="35">Special Modifications</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>RESOURCEREFIT</Key>
+    <Name>Resourceful Refit</Name>
+    <Description>See page 35 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="35">Special Modifications</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>SPKBINIMP</Key>
+    <Name>Improved Speaks Binary</Name>
+    <Description>See page 35 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="35">Special Modifications</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>SPKBINSUP</Key>
+    <Name>Supreme Speaks Binary</Name>
+    <Description>See page 35 of the Special Modifications Sourcebook for details.</Description>
+    <Source Page="35">Special Modifications</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
 </Talents>
-
