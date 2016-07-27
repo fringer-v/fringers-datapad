@@ -103,8 +103,8 @@ void DataAccess::init()
 	// Hash the password:
 }
 
-void DataAccess::serverAccessInfo(QString& host, QString& email, QString& current_email,
-	QString& password, QString& current_password)
+void DataAccess::getDatapadSettings(QString& host, QString& email, QString& current_email,
+	QString& password, QString& current_password, int& locked, int& hide_coded_talents)
 {
 	QSettings settings(DatUtil::getApplicationData() + "settings.ini", QSettings::IniFormat);
 
@@ -113,6 +113,9 @@ void DataAccess::serverAccessInfo(QString& host, QString& email, QString& curren
 	current_email = settings.value("current-email").toString();
 	password = settings.value("password").toString();
 	current_password = settings.value("current-password").toString();
+	locked = settings.value("locked").toInt();
+	hide_coded_talents = settings.value("hide-coded-talents").toInt();
+
 	if (current_email.isEmpty())
 		current_password.clear();
 }
@@ -132,6 +135,22 @@ void DataAccess::setServerAccessInfo(const QString& host, const QString& email, 
 
 	QDir dir(DatUtil::getApplicationData());
 	QStringList files = dir.entryList();
+}
+
+void DataAccess::setLocked(int val)
+{
+	QSettings settings(DatUtil::getApplicationData() + "settings.ini", QSettings::IniFormat);
+	DataAccess::makeDir(DatUtil::getApplicationData() , false);
+	settings.setValue("locked", val);
+	settings.sync();
+}
+
+void DataAccess::setHideCodedTalents(int val)
+{
+	QSettings settings(DatUtil::getApplicationData() + "settings.ini", QSettings::IniFormat);
+	DataAccess::makeDir(DatUtil::getApplicationData() , false);
+	settings.setValue("hide-coded-talents", val);
+	settings.sync();
 }
 
 QString DataAccess::selectedDataSet(QString data_set)

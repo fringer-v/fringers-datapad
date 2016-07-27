@@ -4,8 +4,10 @@ Fringer's Datapad
 RELEASE NOTES
 -------------
 
-1.0.01
+1.0.10
 ------
+
+- The setting "Locked" (which allows you to hide XP and cash) and "Hide Talents" (which allows you to hide talents that are "implemented") are now global, and work correctly when changing characters.
 
 - Added version information to setup dialog.
 

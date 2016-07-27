@@ -13,8 +13,8 @@ Rectangle {
 	property bool hideTalents: {
 		// PMC: This should not be necessary, but the checkbox is
 		// not responding, otherwise!?
-		hideTalentsCheckbox.checked = (characterData.hideCodedTalents == 1);
-		return characterData.hideCodedTalents == 1;
+		hideTalentsCheckbox.checked = (characterData.hideCodedTalents === 1);
+		return characterData.hideCodedTalents === 1;
 	}
 
 	// This area prevents to dialog from closing if you click wrong
@@ -239,9 +239,9 @@ Rectangle {
 				Column {
 					CheckBox {
 						id: hideTalentsCheckbox
-						text: "Hide Talents that are automatically added to a Checklist or summed"+" >>> "+characterData.hideCodedTalents
+						text: "Hide Talents that are automatically added to a Checklist or summed"
 						checked: hideTalents
-						onCheckedChanged: characterData.hideCodedTalents = checked ? 1 : 0
+						onCheckedChanged: characterData.hideCodedTalents = (checked ? 1 : 0)
 					}
 
 					Vspacer { size: 10 }

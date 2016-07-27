@@ -215,9 +215,6 @@ void CurrentData::clear()
 	conflictHistory.clear();
 	woundDelta = 0;
 	strainDelta = 0;
-	locked = 0;
-	hideCodedTalents = 0;
-qDebug() << "SET CurrentData::clear" << hideCodedTalents;
 	invMod.clear();
 	inventoryLog.clear();
 	stimPacksUsed = 0;
@@ -313,15 +310,6 @@ bool CurrentData::xmlElement(const DatStringBuffer& path, const char* value)
 		woundDelta = toInt(value);
 	else if (path.endsWith("/StrainDelta/"))
 		strainDelta = toInt(value);
-	else if (path.endsWith("/Locked/")) {
-		locked = toInt(value);
-		Character::instance->emitLockedChanged();
-	}
-	else if (path.endsWith("/HideCodedTalents/")) {
-		hideCodedTalents = toInt(value);
-		qDebug() << "SET CurrentData::xmlElement" << hideCodedTalents;
-		Character::instance->emitHideCodedTalents();
-	}
 	else if (path.endsWith("/Injury/Percent/"))
 		iInjuryPercent = toInt(value);
 	else if (path.endsWith("/Injury/Type/"))
@@ -508,27 +496,6 @@ bool CurrentData::setStrainDelta(int val)
 {
 	if (strainDelta != val) {
 		strainDelta = val;
-		writeCurrentData();
-		return true;
-	}
-	return false;
-}
-
-bool CurrentData::setLocked(int val)
-{
-	if (locked != val) {
-		locked = val;
-		writeCurrentData();
-		return true;
-	}
-	return false;
-}
-
-bool CurrentData::setHideCodedTalents(int val)
-{
-	if (hideCodedTalents != val) {
-		hideCodedTalents = val;
-		qDebug() << "SET CurrentData::setHideCodedTalents" << hideCodedTalents;
 		writeCurrentData();
 		return true;
 	}
@@ -1791,10 +1758,6 @@ void CurrentData::writeCurrentData()
 	data += QString(" <ConflictHistory>%1</ConflictHistory>\n").arg(conflictHistory);
 	data += QString(" <WoundDelta>%1</WoundDelta>\n").arg(woundDelta);
 	data += QString(" <StrainDelta>%1</StrainDelta>\n").arg(strainDelta);
-	if (locked != 0)
-		data += QString(" <Locked>%1</Locked>\n").arg(locked);
-	if (hideCodedTalents != 0)
-		data += QString(" <HideCodedTalents>%1</HideCodedTalents>\n").arg(hideCodedTalents);
 	data += QString(" <Injuries>\n");
 	for (int i=0; i<DataList::injuries.rowCount(); i++) {
 		if (DataList::injuries.getValueAsInt(i, "ref") > 0) {

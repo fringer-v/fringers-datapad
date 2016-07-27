@@ -494,13 +494,13 @@ Talents::Talents() :
 
 int Talents::rowCount()
 {
-	bool exclude_hidden = Character::instance->currentData()->hideCodedTalents;
+	bool exclude_hidden = Character::instance->hideCodedTalents();
 	return Character::instance->talents.size(exclude_hidden);
 }
 
 QVariant Talents::getValue(int row, int col)
 {
-	bool exclude_hidden = Character::instance->currentData()->hideCodedTalents;
+	bool exclude_hidden = Character::instance->hideCodedTalents();
 	CharTalent& char_talent = Character::instance->talents.at(row, exclude_hidden);
 	Talent talent = AllTalents::instance()->getTalent(char_talent.key);
 

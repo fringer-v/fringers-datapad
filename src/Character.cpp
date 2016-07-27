@@ -171,6 +171,9 @@ Character* Character::instance;
 Character::Character(QObject *parent) :
 	QObject(parent)
 {
+	iLocked = 0;
+	iHideCodedTalents = 0;
+
 	clear(false);
 
 	connect(&iCharacterDownloader, SIGNAL(downloaded(bool)), SLOT(characterDownloaded(bool)));
@@ -281,18 +284,17 @@ void Character::clear(bool signal)
 		emit itemCriticalChanged(itemCritical());
 		emit itemQualitiesChanged(itemQualities());
 		emit itemAttachmentsChanged(itemAttachments());
-
-		emitLockedChanged();
-		emitHideCodedTalents();
 	}
 }
 
 void Character::init(void)
 {
-	DataAccess::serverAccessInfo(iHost, iEmail, iCurrentEmail, iPassword, iCurrentPassword);
+	DataAccess::getDatapadSettings(iHost, iEmail, iCurrentEmail, iPassword, iCurrentPassword, iLocked, iHideCodedTalents);
 	emit hostChanged(iHost);
 	emit emailChanged(iEmail);
 	emit passwordChanged(iPassword);
+	emit lockedChanged(iLocked);
+	emit hideCodedTalentsChanged(iHideCodedTalents);
 	setDataSet(DataAccess::selectedDataSet());
 	setFile(DataAccess::selectedCharacter());
 }
@@ -367,6 +369,16 @@ QString Character::currentPassword()
 	return iCurrentPassword;
 }
 
+int Character::locked()
+{
+	return iLocked;
+}
+
+int Character::hideCodedTalents()
+{
+	return iHideCodedTalents;
+}
+
 bool Character::loading()
 {
 	return iLoading != 0;
@@ -430,6 +442,25 @@ void Character::setPassword(const QString& v)
 		iPassword = hashed_password;
 		DataAccess::setServerAccessInfo(iHost, iEmail, iCurrentEmail, iPassword, iCurrentPassword);
 		emit passwordChanged(v);
+	}
+}
+
+void Character::setLocked(int t)
+{
+	if (iLocked != t) {
+		iLocked = t;
+		DataAccess::setLocked(t);
+		emit lockedChanged(t);
+	}
+}
+
+void Character::setHideCodedTalents(int t)
+{
+	if (iHideCodedTalents != t) {
+		iHideCodedTalents = t;
+		DataAccess::setHideCodedTalents(t);
+		emit hideCodedTalentsChanged(t);
+		Talents::instance.rowCountChanged();
 	}
 }
 
@@ -729,16 +760,6 @@ int Character::itemPierce()
 int Character::imageProviderCount()
 {
 	return iImageProviderCount;
-}
-
-int Character::locked()
-{
-	return iCurrentData.locked;
-}
-
-int Character::hideCodedTalents()
-{
-	return iCurrentData.hideCodedTalents;
 }
 
 void Character::adjustWounds(int delta)
@@ -1371,18 +1392,6 @@ void Character::setImageProviderCount(int t)
 	}
 }
 
-void Character::setLocked(int t)
-{
-	if (iCurrentData.setLocked(t))
-		emitLockedChanged();
-}
-
-void Character::setHideCodedTalents(int t)
-{
-	if (iCurrentData.setHideCodedTalents(t))
-		emitHideCodedTalents();
-}
-
 int Character::setChMod(const CharMods& mods)
 {
 	int changed = iChMod.set(mods);
@@ -1762,18 +1771,6 @@ void Character::emitBrawnChanged()
 void Character::emitAgilityChanged()
 {
 	emit agilityChanged(agility());
-}
-
-void Character::emitLockedChanged()
-{
-	emit lockedChanged(locked());
-}
-
-void Character::emitHideCodedTalents()
-{
-	qDebug() << "===EMIT=== emitHideCodedTalents" << hideCodedTalents();
-	emit hideCodedTalentsChanged(hideCodedTalents());
-	Talents::instance.rowCountChanged();
 }
 
 int Character::getAttribute(const QString& val)

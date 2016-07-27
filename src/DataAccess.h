@@ -12,10 +12,12 @@ class DataAccess
 public:
 	static void init();
 
-	static void serverAccessInfo(QString& host, QString& email, QString& current_email,
-		QString& password, QString& current_password);
+	static void getDatapadSettings(QString& host, QString& email, QString& current_email,
+		QString& password, QString& current_password, int& locked, int& hide_coded_talents);
 	static void setServerAccessInfo(const QString& host, const QString& email, const QString& current_email,
 		const QString& password, const QString& current_password);
+	static void setLocked(int val);
+	static void setHideCodedTalents(int val);
 
 	static QString selectedDataSet(QString data_set = QString());
 	static void setSelectedDataSet(const QString& val);

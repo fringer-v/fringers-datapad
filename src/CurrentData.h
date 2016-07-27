@@ -304,8 +304,6 @@ public:
 	QString conflictHistory;
 	int woundDelta;
 	int strainDelta;
-	int locked;
-	int hideCodedTalents;
 	QMap<QString, InvModItem> invMod;
 	QList<InvLogItem> inventoryLog;
 	int stimPacksUsed;
@@ -338,8 +336,8 @@ public:
 
 	bool setWoundDelta(int val);
 	bool setStrainDelta(int val);
-	bool setLocked(int val);
-	bool setHideCodedTalents(int val);
+	//bool setLocked(int val);
+	//bool setHideCodedTalents(int val);
 
 	void addCriticalWound(int perc, int type);
 	void removeCriticalWound(int ref);

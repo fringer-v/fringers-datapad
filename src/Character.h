@@ -78,6 +78,9 @@ public:
 	Q_PROPERTY(QString host READ host WRITE setHost NOTIFY hostChanged)
 	Q_PROPERTY(QString email READ email WRITE setEmail NOTIFY emailChanged)
 	Q_PROPERTY(QString password READ password WRITE setPassword NOTIFY passwordChanged)
+	Q_PROPERTY(int locked READ locked WRITE setLocked NOTIFY lockedChanged)
+	Q_PROPERTY(int hideCodedTalents READ hideCodedTalents WRITE setHideCodedTalents NOTIFY hideCodedTalentsChanged)
+
 	Q_PROPERTY(bool loading READ loading WRITE setLoading NOTIFY loadingChanged)
 	Q_PROPERTY(bool isIOS READ isIOS NOTIFY isIOSChanged)
 	Q_PROPERTY(QString lastSystemDataUpdate
@@ -97,6 +100,9 @@ public:
 	QString currentEmail();
 	QString password();
 	QString currentPassword();
+	int locked();
+	int hideCodedTalents();
+
 	bool loading();
 	bool isIOS();
 	QString lastSystemDataUpdate();
@@ -107,6 +113,9 @@ public:
 	Q_INVOKABLE void setHost(const QString& v);
 	Q_INVOKABLE void setEmail(const QString& v);
 	Q_INVOKABLE void setPassword(const QString& v);
+	Q_INVOKABLE void setLocked(int t);
+	Q_INVOKABLE void setHideCodedTalents(int t);
+
 	Q_INVOKABLE void setLoading(bool v);
 	Q_INVOKABLE void setLastSystemDataUpdate(const QString& la);
 	Q_INVOKABLE void setDataSet(const QString& file);
@@ -203,9 +212,6 @@ public:
 	Q_PROPERTY(int itemCritPlus READ itemCritPlus WRITE setItemCritPlus NOTIFY itemCritPlusChanged)
 	Q_PROPERTY(int itemPierce READ itemPierce WRITE setItemPierce NOTIFY itemPierceChanged)
 	Q_PROPERTY(int imageProviderCount READ imageProviderCount WRITE setImageProviderCount NOTIFY imageProviderCountChanged)
-	Q_PROPERTY(int locked READ locked WRITE setLocked NOTIFY lockedChanged)
-
-	Q_PROPERTY(int hideCodedTalents READ hideCodedTalents WRITE setHideCodedTalents NOTIFY hideCodedTalentsChanged)
 
 	int currentWounds() { return iCurrentData.wounds; }
 	int currentStrain() { return iCurrentData.strain+iCurrentData.temporaryStrain; }
@@ -330,8 +336,6 @@ public:
 	int itemCritPlus();
 	int itemPierce();
 	int imageProviderCount();
-	int locked();
-	int hideCodedTalents();
 
 	Q_INVOKABLE void adjustWounds(int delta);
 	Q_INVOKABLE void adjustStrain(int delta);
@@ -416,8 +420,6 @@ public:
 	Q_INVOKABLE void setItemCritPlus(int t);
 	Q_INVOKABLE void setItemPierce(int t);
 	Q_INVOKABLE void setImageProviderCount(int t);
-	Q_INVOKABLE void setLocked(int t);
-	Q_INVOKABLE void setHideCodedTalents(int t);
 
 signals:
 	void currentWoundsChanged(int val);
@@ -513,8 +515,6 @@ public:
 	void emitCharacterCountChanged();
 	void emitBrawnChanged();
 	void emitAgilityChanged();
-	void emitLockedChanged();
-	void emitHideCodedTalents();
 	int getAttribute(const QString& val);
 	CurrentData* currentData();
 	void setTemporaryStrain(int value);
@@ -529,6 +529,9 @@ private:
 	QString iCurrentEmail; // The user from which we last loaded data
 	QString iPassword;
 	QString iCurrentPassword;
+	int		iLocked;
+	int		iHideCodedTalents;
+
 	static int iLoading;
 	QString iLastSystemDataUpdate;
 	QString iDataSet;
