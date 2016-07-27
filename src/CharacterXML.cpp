@@ -354,6 +354,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/CharTalent/#end")) {
 		if (iPurchased)
 			Character::instance->talents.addTalent(iCharTalent);
+		iPurchased = false;
 	}
 
 	// Force Abilities -----------------------
@@ -366,6 +367,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/CharForceAbility/#end")) {
 		if (iPurchased)
 			Character::instance->talents.addTalent(iCharTalent);
+		iPurchased = false;
 	}
 
 	// Species -----------------------
