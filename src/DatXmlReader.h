@@ -47,6 +47,7 @@ public:
 	void trim();
 	bool startsWith(const char* str) const;
 	bool endsWith(const char* string) const;
+	bool contains(const char* str) const;
 	int toInt() const;
 
 private:

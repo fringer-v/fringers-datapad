@@ -305,7 +305,7 @@ public:
 	int woundDelta;
 	int strainDelta;
 	int locked;
-	int hideAutoTalents;
+	int hideCodedTalents;
 	QMap<QString, InvModItem> invMod;
 	QList<InvLogItem> inventoryLog;
 	int stimPacksUsed;

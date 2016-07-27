@@ -138,8 +138,8 @@ void CharacterXML::end()
 
 bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 {
-	//if (value.contains("MISSJAM"))
-	//qDebug() << "XML" << path << value.left(100) << "--" << iAttribute << iAttrValue;
+	//if (path.contains("ExperienceRanks"))
+	//qDebug() << "XML" << path.getCString() << value << "--" << iAttribute << iAttrValue;
 	//if (strlen(value) > 200)
 	//	qDebug() << "XML" << path.getCString() << "VALUE(" << strlen(value) << ")" << "--" << iAttribute << iAttrValue;
 	//else

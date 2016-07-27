@@ -281,6 +281,9 @@ void Character::clear(bool signal)
 		emit itemCriticalChanged(itemCritical());
 		emit itemQualitiesChanged(itemQualities());
 		emit itemAttachmentsChanged(itemAttachments());
+
+		emitLockedChanged();
+		emitHideCodedTalents();
 	}
 }
 
@@ -733,9 +736,9 @@ int Character::locked()
 	return iCurrentData.locked;
 }
 
-int Character::hideAutoTalents()
+int Character::hideCodedTalents()
 {
-	return iCurrentData.hideAutoTalents;
+	return iCurrentData.hideCodedTalents;
 }
 
 void Character::adjustWounds(int delta)
@@ -1371,15 +1374,13 @@ void Character::setImageProviderCount(int t)
 void Character::setLocked(int t)
 {
 	if (iCurrentData.setLocked(t))
-		emit lockedChanged(t);
+		emitLockedChanged();
 }
 
 void Character::setHideCodedTalents(int t)
 {
-	if (iCurrentData.setHideCodedTalents(t)) {
-		emit hideCodedTalentsChanged(t);
-		Talents::instance.rowCountChanged();
-	}
+	if (iCurrentData.setHideCodedTalents(t))
+		emitHideCodedTalents();
 }
 
 int Character::setChMod(const CharMods& mods)
@@ -1761,6 +1762,18 @@ void Character::emitBrawnChanged()
 void Character::emitAgilityChanged()
 {
 	emit agilityChanged(agility());
+}
+
+void Character::emitLockedChanged()
+{
+	emit lockedChanged(locked());
+}
+
+void Character::emitHideCodedTalents()
+{
+	qDebug() << "===EMIT=== emitHideCodedTalents" << hideCodedTalents();
+	emit hideCodedTalentsChanged(hideCodedTalents());
+	Talents::instance.rowCountChanged();
 }
 
 int Character::getAttribute(const QString& val)

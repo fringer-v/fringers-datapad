@@ -205,7 +205,7 @@ public:
 	Q_PROPERTY(int imageProviderCount READ imageProviderCount WRITE setImageProviderCount NOTIFY imageProviderCountChanged)
 	Q_PROPERTY(int locked READ locked WRITE setLocked NOTIFY lockedChanged)
 
-	Q_PROPERTY(int hideAutoTalents READ hideAutoTalents WRITE setHideCodedTalents NOTIFY hideCodedTalentsChanged)
+	Q_PROPERTY(int hideCodedTalents READ hideCodedTalents WRITE setHideCodedTalents NOTIFY hideCodedTalentsChanged)
 
 	int currentWounds() { return iCurrentData.wounds; }
 	int currentStrain() { return iCurrentData.strain+iCurrentData.temporaryStrain; }
@@ -331,7 +331,7 @@ public:
 	int itemPierce();
 	int imageProviderCount();
 	int locked();
-	int hideAutoTalents();
+	int hideCodedTalents();
 
 	Q_INVOKABLE void adjustWounds(int delta);
 	Q_INVOKABLE void adjustStrain(int delta);
@@ -513,6 +513,8 @@ public:
 	void emitCharacterCountChanged();
 	void emitBrawnChanged();
 	void emitAgilityChanged();
+	void emitLockedChanged();
+	void emitHideCodedTalents();
 	int getAttribute(const QString& val);
 	CurrentData* currentData();
 	void setTemporaryStrain(int value);

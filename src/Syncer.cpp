@@ -141,25 +141,27 @@ QString Syncer::syncDirectory(uint last_sync_time, const QString& local_path, co
 
 	//local_list.startChanges();
 
-	if (!upload_only) {
-		for (remote_row=0; remote_row<server_list.rowCount() && error.isEmpty(); remote_row++) {
-			QString file = server_list.getValueAsString(remote_row, "file");
-			remote_modt = server_list.getValueAsUint(remote_row, "modt");
+	for (remote_row=0; remote_row<server_list.rowCount() && error.isEmpty(); remote_row++) {
+		QString file = server_list.getValueAsString(remote_row, "file");
+		remote_modt = server_list.getValueAsUint(remote_row, "modt");
 
-			if (file.endsWith(".tri"))
-				continue;
-			local_row = local_list.findRow("file", file);
-			if (local_row < 0) {
+		if (file.endsWith(".tri"))
+			continue;
+		local_row = local_list.findRow("file", file);
+		if (local_row < 0) {
+			if (!upload_only) {
 				error = downloadFile(local_path + file, prefix, remote_modt, local_list);
 				if (error.isEmpty() && file == current_file)
 					iCurrentChanged = true;
 			}
-			else {
-				// Compare date:
-				local_modt = local_list.getValueAsUint(local_row, "modt");
-				if (local_modt > remote_modt)
-					error = uploadFile(local_path + file, prefix, local_modt);
-				else if (remote_modt > local_modt) {
+		}
+		else {
+			// Compare date:
+			local_modt = local_list.getValueAsUint(local_row, "modt");
+			if (local_modt > remote_modt)
+				error = uploadFile(local_path + file, prefix, local_modt);
+			else if (remote_modt > local_modt) {
+				if (!upload_only) {
 					error = downloadFile(local_path + file, prefix, remote_modt, local_list);
 					if (error.isEmpty() && file == current_file)
 						iCurrentChanged = true;

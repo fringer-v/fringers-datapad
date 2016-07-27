@@ -666,6 +666,20 @@ bool DatStringBuffer::endsWith(const char* str) const
 	return strcmp(iStrBuf + myStrLen - slen, str) == 0;
 }
 
+bool DatStringBuffer::contains(const char* str) const
+{
+	size_t slen = strlen(str);
+
+	if (!slen || myStrLen < slen)
+		return false;
+
+	if (!iStrBuf || !myStrLen)
+		return false;
+
+	iStrBuf[myStrLen] = 0;
+	return strstr(iStrBuf, str) != 0;
+}
+
 int DatStringBuffer::toInt() const
 {
 	if (!iStrBuf || !myStrLen)
