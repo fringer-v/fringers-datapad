@@ -1,0 +1,14 @@
+Fringer's Datapad
+=================
+
+RELEASE NOTES
+-------------
+
+1.0.01
+------
+
+- Added version information to setup dialog.
+
+- Added SWCharGen 1.7.0 data.
+
+- Fixed bug: Datapad was loading all Talents instead of just those purchased. This was due to changes to the character XML in SWCharGen 1.7.0.
