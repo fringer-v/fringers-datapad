@@ -975,7 +975,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 		force = Character::instance->nonCommitedForce();
 		if (force > 0) {
 			if (Character::instance->talents.contains("INFLUENCECONTROL1"))
-				autoCheckItems.addItem(QString("F").repeated(force), "[B]Influence:[b] vs Discipline, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
+				autoCheckItems.addItem(QString("F").repeated(force), "[B]Influence (Mind Trick):[b] vs Discipline, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
 			if (Character::instance->talents.contains("MOVECONTROL1")) {
 				QString type = "Hurl";
 
