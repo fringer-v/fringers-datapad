@@ -182,7 +182,7 @@ bool ShopGear::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/BaseMods/Mod/Count/"))
 		iMod.count = toInt(value);
 	else if (path.endsWith("/BaseMods/Mod/MiscDesc/")) {
-		iMod.miscDesc = value; // value.trimmed();
+		iMod.miscDesc = QString::fromUtf8(value).trimmed(); // value.trimmed();
 		// PACKMIL <MiscDesc>Cumbersome 2</MiscDesc>
 		if (iMod.miscDesc.startsWith("Cumbersome ")) {
 			if (iMod.key.isEmpty()) {
@@ -198,6 +198,14 @@ bool ShopGear::xmlElement(const DatStringBuffer& path, const char* value)
 			iItem.qualityList[iMod.key].count = iMod.count * iMod.number;
 			// Check PACKMIL, it has a second Mod with no key!
 			iMod.clear();
+		}
+		else if (!iMod.miscDesc.isEmpty()) {
+			// Add the MiscDesc to the description
+			if (!iMod.miscDesc.endsWith(".") &&
+				!iMod.miscDesc.endsWith(";") &&
+				!iMod.miscDesc.endsWith(","))
+				iMod.miscDesc += ".";
+			DatUtil::appendToList(iItem.description, iMod.miscDesc, " ");
 		}
 	}
 	else if (path.endsWith("/Gears/Gear/#end")) {
