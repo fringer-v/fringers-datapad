@@ -257,6 +257,22 @@ Rectangle {
 		Hspacer { size: 10 }
 	}
 
+	Rectangle {
+		anchors.left: parent.left
+		anchors.bottom: parent.bottom
+		height: versionText.height + 10
+		width: versionText.width + 10
+
+		Text {
+			id: versionText
+			anchors.verticalCenter: parent.verticalCenter
+			anchors.horizontalCenter: parent.horizontalCenter
+			font.family: "Arial"
+			color: "darkgray"
+			text: "Fringer's Datapad 1.0.10, compatible with Oggdude's SWCharGen 1.7.0"
+		}
+	}
+
 	//onXHostChanged: {
 	//	hostField.text = xHost;
 	//}
