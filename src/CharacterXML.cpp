@@ -95,26 +95,6 @@ void CharacterXML::end()
 	una.setQuantity(1);
 	Weapons::instance.addItem(una);
 
-	// Subtract builder adjustments:
-	if (Character::instance->getAttribute(FORCE) > 0) {
-		int strain_adj = 0;
-		int wound_adj = 0;
-		if (Character::instance->getAttribute(MORALITY) > 90)
-			strain_adj = 2;
-		else if (Character::instance->getAttribute(MORALITY) > 80)
-			strain_adj = 1;
-		else if (Character::instance->getAttribute(MORALITY) < 10) {
-			strain_adj = -2;
-			wound_adj = 2;
-		}
-		else if (Character::instance->getAttribute(MORALITY) < 20) {
-			strain_adj = -1;
-			wound_adj = 1;
-		}
-		Character::instance->setAttribute(STRAIN, Character::instance->getAttribute(STRAIN) + strain_adj);
-		Character::instance->setAttribute(WOUND, Character::instance->getAttribute(WOUND) + wound_adj);
-	}
-
 	GeneralSkills::instance.setDataChanged();
 	CombatSkills::instance.setDataChanged();
 	KnowledgeSkills::instance.setDataChanged();

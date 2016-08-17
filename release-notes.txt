@@ -4,13 +4,18 @@ Fringer's Datapad
 RELEASE NOTES
 -------------
 
+1.0.11
+------
+
+- Strain and wound adjustments due to morality was incorrectly doubled.
+
 1.0.10
 ------
 
-- The setting "Locked" (which allows you to hide XP and cash) and "Hide Talents" (which allows you to hide talents that are "implemented") are now global, and work correctly when changing characters.
+- The setting "Locked" (which allows you to hide XP and cash) and "Hide Talents" (which allows you to hide talents that are "implemented") are now global, and work correctly when changing characters/accounts.
 
 - Added version information to setup dialog.
 
 - Added SWCharGen 1.7.0 data.
 
-- Fixed bug: Datapad was loading all Talents instead of just those purchased. This was due to changes to the character XML in SWCharGen 1.7.0.
+- Fixed bug: When reading SWCharGen 1.7.0 character sheets, Datapad was loading all Talents instead of just those purchased.
