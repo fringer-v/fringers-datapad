@@ -23,7 +23,7 @@ BaseList {
 		id: xpData
 	}
 
-	onAdd: {
-		positionViewAtEnd();
-	}
+	onAdd: positionViewAtEnd()
+
+	Component.onCompleted: positionViewAtEnd()
 }

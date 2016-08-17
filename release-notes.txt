@@ -9,6 +9,8 @@ RELEASE NOTES
 
 - Strain and wound adjustments due to morality was incorrectly doubled.
 
+- Clicking the TOTAL XP, UNUSED XP or USED XP boxes now brings up the XP allocation dialog.
+
 1.0.10
 ------
 

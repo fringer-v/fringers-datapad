@@ -502,15 +502,36 @@ Rectangle {
 								color: "lightgrey"
 
 								Text {
-									anchors.verticalCenter: parent.verticalCenter
+									width: parent.width - 20
 									anchors.horizontalCenter: parent.horizontalCenter
+									anchors.verticalCenter: parent.verticalCenter
 									font.pixelSize: 24
 									font.family: "Comic Sans MS"
+									color: "grey"
+									horizontalAlignment: Text.AlignLeft
+									text: numberPadBase
+								}
+
+								Text {
+									width: parent.width
+									anchors.horizontalCenter: parent.horizontalCenter
+									anchors.verticalCenter: parent.verticalCenter
+									font.pixelSize: 24
+									font.family: "Comic Sans MS"
+									font.bold: true
 									horizontalAlignment: Text.AlignHCenter
-									text: {
-										var result = numberPadBase + numberPadValue;
-										return "" + numberPadBase + (numberPadValue >= 0 ? "  +" : "  ") + numberPadValue + "  =" + result;
-									}
+									text: (numberPadValue >= 0 ? "+" : "") + numberPadValue;
+								}
+
+								Text {
+									width: parent.width - 20
+									anchors.horizontalCenter: parent.horizontalCenter
+									anchors.verticalCenter: parent.verticalCenter
+									font.pixelSize: 24
+									font.family: "Comic Sans MS"
+									color: "grey"
+									horizontalAlignment: Text.AlignRight
+									text: "=" + (numberPadBase + numberPadValue)
 								}
 							}
 						}

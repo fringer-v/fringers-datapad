@@ -80,15 +80,36 @@ Rectangle {
 					color: "lightgrey"
 
 					Text {
-						anchors.verticalCenter: parent.verticalCenter
+						width: parent.width - 20
 						anchors.horizontalCenter: parent.horizontalCenter
+						anchors.verticalCenter: parent.verticalCenter
 						font.pixelSize: 20
 						font.family: "Comic Sans MS"
+						color: "grey"
+						horizontalAlignment: Text.AlignLeft
+						text: experienceDialogBase
+					}
+
+					Text {
+						width: parent.width
+						anchors.horizontalCenter: parent.horizontalCenter
+						anchors.verticalCenter: parent.verticalCenter
+						font.pixelSize: 20
+						font.family: "Comic Sans MS"
+						font.bold: true
 						horizontalAlignment: Text.AlignHCenter
-						text: {
-							var result = experienceDialogBase + experienceDialogValue;
-							return "" + experienceDialogBase + (experienceDialogValue >= 0 ? "  +" : "  ") + experienceDialogValue + "  =" + result;
-						}
+						text:  (experienceDialogValue >= 0 ? " +" : "") + experienceDialogValue
+					}
+
+					Text {
+						width: parent.width - 20
+						anchors.horizontalCenter: parent.horizontalCenter
+						anchors.verticalCenter: parent.verticalCenter
+						font.pixelSize: 20
+						font.family: "Comic Sans MS"
+						color: "grey"
+						horizontalAlignment: Text.AlignRight
+						text: "=" + (experienceDialogBase + experienceDialogValue)
 					}
 				}
 

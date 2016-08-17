@@ -28,9 +28,23 @@ Rectangle {
 					height: 24
 					y: 32
 					anchors.horizontalCenter: parent.horizontalCenter
-					//anchors.verticalCenter: parent.verticalCenter
 					source: "qrc:/images/lock.png"
 					visible: characterData.locked !== 0
+				}
+
+				MouseArea {
+					anchors.fill: parent
+					onClicked: {
+						experienceDialog.experienceDialogRef = 0;
+						experienceDialog.experienceDialogType = "XP";
+						experienceDialog.experienceDialogKey = "";
+						experienceDialog.experienceDialogName = "";
+						experienceDialog.experienceDialogDesc = "";
+						experienceDialog.experienceDialogBase = characterData.totalXP;
+						experienceDialog.experienceDialogValue = 0;
+						experienceDialog.experienceDialogMayDelete = false;
+						experienceDialog.visible = true;
+					}
 				}
 			}
 
@@ -51,6 +65,21 @@ Rectangle {
 					source: "qrc:/images/lock.png"
 					visible: characterData.locked !== 0
 				}
+
+				MouseArea {
+					anchors.fill: parent
+					onClicked: {
+						experienceDialog.experienceDialogRef = 0;
+						experienceDialog.experienceDialogType = "XP";
+						experienceDialog.experienceDialogKey = "";
+						experienceDialog.experienceDialogName = "";
+						experienceDialog.experienceDialogDesc = "";
+						experienceDialog.experienceDialogBase = characterData.totalXP;
+						experienceDialog.experienceDialogValue = 0;
+						experienceDialog.experienceDialogMayDelete = false;
+						experienceDialog.visible = true;
+					}
+				}
 			}
 
 			Hspacer { size: (experience.width - xpBoxWidth*3) / 2 }
@@ -69,6 +98,21 @@ Rectangle {
 					//anchors.verticalCenter: parent.verticalCenter
 					source: "qrc:/images/lock.png"
 					visible: characterData.locked !== 0
+				}
+
+				MouseArea {
+					anchors.fill: parent
+					onClicked: {
+						experienceDialog.experienceDialogRef = 0;
+						experienceDialog.experienceDialogType = "XP";
+						experienceDialog.experienceDialogKey = "";
+						experienceDialog.experienceDialogName = "";
+						experienceDialog.experienceDialogDesc = "";
+						experienceDialog.experienceDialogBase = characterData.totalXP;
+						experienceDialog.experienceDialogValue = 0;
+						experienceDialog.experienceDialogMayDelete = false;
+						experienceDialog.visible = true;
+					}
 				}
 			}
 		}
