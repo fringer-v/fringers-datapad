@@ -58,8 +58,17 @@ QVariant ExperienceList::getValue(int row, int col)
 			case 2:
 			case 3:
 				break;
-			case 4:
-				return "Add to Experience...";
+			case 4: {
+				// XP, Duty, Obligation, Morality
+				bool morality_applies = Character::instance->getAttribute(FORCE) > 0 ||
+					Character::instance->morality() != 50;
+
+				return QString("XP: %1, Obligation: %2, Duty: %3, Morality: %4")
+					.arg(Character::instance->totalXP())
+					.arg(ObligationList::instance.total())
+					.arg(DutyList::instance.total())
+					.arg(morality_applies ? QString::number(Character::instance->morality()) + "%" : "n/a");
+			}
 			case 5:
 				return 0;
 			case 6:
@@ -139,6 +148,18 @@ QVariant ObligationList::getValue(int row, int col)
 	return QVariant();
 }
 
+int ObligationList::total()
+{
+	int total = 0;
+
+	foreach (CharItem item, Character::instance->obligations.items) {
+		if (Character::instance->currentData()->experienceTotal.contains(item.key))
+			total += Character::instance->currentData()->experienceTotal[item.key].value;
+		else
+			total += item.size;
+	}
+	return total;
+}
 
 // DutyList -------------------------------------------
 
@@ -178,3 +199,18 @@ QVariant DutyList::getValue(int row, int col)
 	}
 	return QVariant();
 }
+
+int DutyList::total()
+{
+	int total = 0;
+
+	foreach (CharItem item, Character::instance->duties.items) {
+		if (Character::instance->currentData()->experienceTotal.contains(item.key))
+			total += Character::instance->currentData()->experienceTotal[item.key].value;
+		else
+			total += item.size;
+	}
+	return total;
+}
+
+

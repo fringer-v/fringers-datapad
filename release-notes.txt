@@ -11,6 +11,8 @@ RELEASE NOTES
 
 - Clicking the TOTAL XP, UNUSED XP or USED XP boxes now brings up the XP allocation dialog.
 
+- The total XP, Obligations, Duty and Morality are now shown in the EARNED & AQUIRED box.
+
 1.0.10
 ------
 

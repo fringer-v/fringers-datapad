@@ -47,6 +47,8 @@ public:
 
 	virtual int rowCount();
 	virtual QVariant getValue(int row, int col);
+
+	int total();
 };
 
 
@@ -58,6 +60,8 @@ public:
 
 	virtual int rowCount();
 	virtual QVariant getValue(int row, int col);
+
+	int total();
 };
 
 #endif // __CharacterList_h__

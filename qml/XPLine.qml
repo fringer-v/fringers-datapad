@@ -5,13 +5,15 @@ import "../js/drawing.js" as Draw
 
 Rectangle {
 	id: xp
-	height: 22
+	height: ref === 0 ? 24 : 22
 	width: parent.width
 	property int amountWidth: 60
 	property int spacer: 10
 	property int fontSize: 14
 
 	Column {
+		visible: ref !== 0
+
 		Row {
 			Text {
 				id: descText
@@ -60,6 +62,31 @@ Rectangle {
 				height: 1
 				width: amountText.width
 				color: "darkgray"
+			}
+		}
+	}
+
+	Column {
+		visible: ref === 0
+
+		Row {
+			Text {
+				width: xp.width
+				height: xp.height - 1
+				font.pixelSize: fontSize
+				font.family: "Comic Sans MS"
+				font.bold: true
+				horizontalAlignment: Text.AlignHCenter
+				verticalAlignment: Text.AlignVCenter
+				text: desc
+			}
+		}
+
+		Row {
+			Rectangle {
+				height: 1
+				width: xp.width
+				color: "black"
 			}
 		}
 	}

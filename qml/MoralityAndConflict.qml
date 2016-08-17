@@ -46,7 +46,7 @@ Rectangle {
 		textFormat: Text.RichText
 		color: characterData.force > 0 ? "black" : Constant.DARK_GRAY
 		clip: true
-		text: characterData.force > 0 ? characterData.morality + "%" : "n/a"
+		text: characterData.force > 0 || characterData.morality !== 50 ? characterData.morality + "%" : "n/a"
 	}
 
 	MouseArea {
