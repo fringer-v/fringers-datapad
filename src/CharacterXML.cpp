@@ -371,6 +371,8 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		iItem.setQuantity(toInt(value));
 	else if (path.endsWith("/CharWeapon/Notes/") || path.endsWith("/CharArmor/Notes/") || path.endsWith("/CharGear/Notes/"))
 		iItem.notes = value;
+	else if (path.endsWith("/CharWeapon/Rename/") || path.endsWith("/CharArmor/Rename/") || path.endsWith("/CharGear/Rename/"))
+		iItem.rename = value;
 	else if (path.endsWith("/CharWeapon/Shown/"))
 		iItem.shown = isTrue(value);
 	else if (path.endsWith("/PurchasedAttachments/CharItemAttachment/AttachKey/")) {

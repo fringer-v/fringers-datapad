@@ -302,6 +302,8 @@ void ModList::attachments(QString& list)
 
 QString Item::name() const
 {
+	if (!rename.isEmpty())
+		return rename;
 	ShopItem shop = Shop::instance.getItem(key);
 	if (shop.name.isEmpty())
 		return key;

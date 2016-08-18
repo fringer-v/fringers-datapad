@@ -218,6 +218,7 @@ private:
 class Item {
 public:
 	QString		key;
+	QString		rename;
 	QString		notes;
 	QString		attachments;
 	bool		shown;
@@ -274,6 +275,7 @@ public:
 		iQuantity = 0;
 		iHeld = false;
 		iEquipped = false;
+		rename.clear();
 		notes.clear();
 		attachments.clear();
 		shown = true;

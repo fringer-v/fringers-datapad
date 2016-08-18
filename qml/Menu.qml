@@ -10,6 +10,8 @@ Rectangle {
 	property real portraitBevel: Draw.pixel(10)
 	property real lineWidth: Draw.pixel(2)
 
+	property int imageProviderCount: characterData.imageProviderCount
+
 	Behavior on x {
 		PropertyAnimation { easing.type: Easing.InOutQuad; duration: 500 }
 	}
@@ -86,6 +88,12 @@ Rectangle {
 	}
 
 	function characterPortraitChanged() {
+		portrait.requestPaint();
+	}
+
+	onImageProviderCountChanged: {
+		// Like the pictures in the character list, this does not want to
+		// update correctly!
 		portrait.requestPaint();
 	}
 }

@@ -15,6 +15,8 @@ RELEASE NOTES
 
 - Inventory list and check list items now adjust to fit text.
 
+- Display renamed item names correctly.
+
 1.0.10
 ------
 
