@@ -1210,7 +1210,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 
 		ranks = Gear::instance.carried("MEDAIDPATCH");
 		if (ranks > 0)
-			autoCheckItems.addItem("sa", "[B]Med-Aid PAtch:[b] Maximum usage 1 per check, [B]Cost: 1x Med-Aid Patch[b]", 0, 0, 0, "MEDAIDPATCH");
+			autoCheckItems.addItem("sa", "[B]Med-Aid Patch:[b] Maximum usage 1 per check, [B]Cost: 1x Med-Aid Patch[b]", 0, 0, 0, "MEDAIDPATCH");
 
 		if (Gear::instance.equipped("BLOODSCAN"))
 			autoCheckItems.addItem("aa", "[B]Blood Scanner:[b] After use, add to next Medicine check, [B]Cost: Action[b]", 0, 0);

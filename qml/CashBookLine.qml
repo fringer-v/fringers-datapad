@@ -5,20 +5,28 @@ import "../js/drawing.js" as Draw
 
 Rectangle {
 	id: cashbook
-	height: 22
+	height:  {
+		var desc_heigth = desc_text.height;
+		if (type == 5)
+			desc_heigth = add_button_rect.height;
+		return (desc_heigth + 5) < minimumHeight ? minimumHeight : desc_heigth + 5;
+	}
 	width: parent.width
+
+	property int minimumHeight: 25
 	property int amountWidth: 110
 	property int spacer: 10
 	property int fontSize: 14
 
 	Column {
 		Row {
+			visible: type != 5
 			FlowText {
-				id: descText
+				id: desc_text
 				width: cashbook.width - amountWidth - spacer
-				height: cashbook.height - 1
 				pixelSize: fontSize
 				font: "Comic Sans MS"
+				anchors.verticalCenter: parent.verticalCenter
 				text: {
 					var t;
 					var c;
@@ -59,10 +67,10 @@ Rectangle {
 				}
 			}
 
-			Hspacer { size: spacer }
+			Hspacer { height: cashbook.height-1; size: spacer }
 
 			Text {
-				id: amountText
+				id: amount_text
 				width: amountWidth
 				height: cashbook.height-1
 				font.pixelSize: fontSize
@@ -75,9 +83,10 @@ Rectangle {
 		}
 
 		Row {
+			visible: type != 5
 			Rectangle {
 				height: 1
-				width: descText.width
+				width: desc_text.width
 				color: "darkgray"
 			}
 
@@ -85,8 +94,33 @@ Rectangle {
 
 			Rectangle {
 				height: type === 1 ? 2 : 1
-				width: amountText.width
+				width: amount_text.width
 				color: type === 1 || type === 2 ? "black" : "darkgray"
+			}
+		}
+
+		Row {
+			visible: type == 5
+			Rectangle {
+				id: add_button_rect
+				width: cashbook.width
+				height: add_button.height + 10
+
+				Button {
+					id: add_button
+					y: 10
+					width: add_text.width + 10
+					anchors.verticalCenter: parent.verticalCenter
+
+					Text {
+						id: add_text
+						anchors.verticalCenter: parent.verticalCenter
+						anchors.horizontalCenter: parent.horizontalCenter
+						font.pixelSize: 16
+						font.family: "Comic Sans MS"
+						text: description
+					}
+				}
 			}
 		}
 	}

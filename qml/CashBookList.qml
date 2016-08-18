@@ -24,7 +24,7 @@ BaseList {
 		id: cashBookListData
 	}
 
-	onAdd: {
-		positionViewAtEnd();
-	}
+	onAdd: positionViewAtEnd()
+
+	Component.onCompleted: positionViewAtEnd()
 }

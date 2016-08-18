@@ -13,6 +13,8 @@ RELEASE NOTES
 
 - The total XP, Obligations, Duty and Morality are now shown in the EARNED & AQUIRED box.
 
+- Inventory list and check list items now adjust to fit text.
+
 1.0.10
 ------
 
