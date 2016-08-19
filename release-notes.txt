@@ -17,6 +17,8 @@ RELEASE NOTES
 
 - Display renamed item names correctly.
 
+- Attachments that modify the base damage or crit value are now correctly applied (this fixes the problem with light saber crystals).
+
 1.0.10
 ------
 

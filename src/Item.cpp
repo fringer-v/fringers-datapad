@@ -334,8 +334,11 @@ QString Item::damageTotal()
 
 	if (baseDamage == 0 && (skillKey == "MELEE" || skillKey == "BRAWL"))
 		t = character->brawn();
-	else
+	else {
 		t = baseDamage;
+		if (hasQuality("DAMSET"))
+			t = getQuality("DAMSET").count;
+	}
 	if (hasQuality("SUPERIOR"))
 		t += 1;
 
@@ -596,7 +599,12 @@ void Item::characteristicDelta(CharMods& mods)
 int Item::critTotal()
 {
 	ShopItem	shop = Shop::instance.getItem(key);
-	int			t = shop.critical;
+	int			t;
+
+	if (hasQuality("CRITSET"))
+		t = getQuality("CRITSET").count;
+	else
+		t = shop.critical;
 
 	foreach (SpeciesTalent st, Character::instance->speciesTalents) {
 		if (st.weaponsCrit && st.damageBonusSkill == shop.skillKey && t > st.weaponsCrit)
