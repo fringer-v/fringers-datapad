@@ -150,7 +150,7 @@ int CheckListData::movesUsed() const
 	return move;
 }
 
-int CheckListData::addItem(const QString& pool, const QString& desc, int move, int strain, int dpoint,
+int CheckListData::plus(const QString& pool, const QString& desc, int move, int strain, int dpoint,
 	const QString& cons, const QString& commit_key, int force_cost)
 {
 	CheckListItem item;
@@ -192,7 +192,7 @@ int CheckListData::addItem(const QString& pool, const QString& desc, int move, i
 	return iRefCount;
 }
 
-void CheckListData::addCustomItem(int ref, const QString& pool, const QString& desc)
+void CheckListData::plusCustom(int ref, const QString& pool, const QString& desc)
 {
 	CheckListItem item;
 
@@ -280,7 +280,7 @@ void CurrentData::loadCurrentData(const QString& name)
 
 	QMap<QString, InvModItem>::iterator i;
 	for (i = invMod.begin(); i != invMod.end(); i++) {
-		changeInventory(i.key(), false);
+		inventoryChanged(i.value().uuid, i.value().itemkey, false);
 	}
 	Character::instance->inventoryChanged();
 	Character::instance->experienceChanged();
@@ -332,12 +332,15 @@ bool CurrentData::xmlElement(const DatStringBuffer& path, const char* value)
 		setExpLogItem(iExpItem.type, iExpItem.key, iExpItem.name, iExpItem.desc, iExpItem.amount, true);
 	else if (path.endsWith("/Inventory/Item/#open")) {
 		iItemCount = 0;
+		iItemUuid.clear();
 		iItemKey.clear();
 		iItemDesc.clear();
 		iItemAmount = 0;
 	}
 	else if (path.endsWith("/Item/Count/"))
 		iItemCount = toInt(value);
+	else if (path.endsWith("/Item/Uuid/"))
+		iItemUuid = value;
 	else if (path.endsWith("/Item/Key/"))
 		iItemKey = value;
 	else if (path.endsWith("/Item/Description/"))
@@ -345,8 +348,12 @@ bool CurrentData::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/Item/Amount/"))
 		iItemAmount = toInt(value);
 	else if (path.endsWith("/Inventory/Item/#end"))
-		setInvLogItem(iItemCount, iItemKey, iItemDesc, iItemAmount, true);
+		setInvLogItem(iItemCount, iItemUuid, iItemKey, iItemDesc, iItemAmount, true);
 
+	else if (path.endsWith("/StoreItem/#open"))
+		iStoreItemUuid.clear();
+	else if (path.endsWith("/StoreItem/Uuid/"))
+		iStoreItemUuid = value;
 	else if (path.endsWith("/StoreItem/Key/"))
 		iStoreItemKey = value;
 	else if (path.endsWith("/StoreItem/Amount/"))
@@ -354,7 +361,7 @@ bool CurrentData::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/StoreItem/State/"))
 		iStoreItemState = toInt(value);
 	else if (path.endsWith("/Storage/StoreItem/#end"))
-		storeItem(iStoreItemKey, iStoreItemAmount, iStoreItemState, true);
+		storeItem(iStoreItemUuid, iStoreItemKey, iStoreItemAmount, iStoreItemState, true);
 
 	else if (path.endsWith("/CurrentData/CheckList/#open"))
 		iItemSkill.clear();
@@ -462,24 +469,24 @@ void CurrentData::useErp(int delta)
 
 QString CurrentData::stimPacks()
 {
-	int quan = Gear::instance.getItem("STIMPACK").quantity();
-	return QString("%1/%2").arg(Gear::instance.getItem("STIMPACK").carriedQuantity()).arg(quan);
+	int quan = Gear::instance.quantity("STIMPACK");
+	return QString("%1/%2").arg(Gear::instance.carriedQuantity("STIMPACK")).arg(quan);
 }
 
 QString CurrentData::erps()
 {
-	int quan = Gear::instance.getItem("ERP").quantity();
-	return QString("%1/%2").arg(Gear::instance.getItem("ERP").carriedQuantity()).arg(quan);
+	int quan = Gear::instance.quantity("ERP");
+	return QString("%1/%2").arg(Gear::instance.carriedQuantity("ERP")).arg(quan);
 }
 
 int CurrentData::stimPackQuantity()
 {
-	return Gear::instance.getItem("STIMPACK").quantity();
+	return Gear::instance.quantity("STIMPACK");
 }
 
 int CurrentData::erpQuantity()
 {
-	return Gear::instance.getItem("ERP").quantity();
+	return Gear::instance.quantity("ERP");
 }
 
 bool CurrentData::setWoundDelta(int val)
@@ -636,13 +643,13 @@ void CurrentData::removeCustomSkill(const QString& name)
 	writeCurrentData();
 }
 
-void CurrentData::addItem(int count, const QString& key, const QString& desc, int amount)
+void CurrentData::addItem(int count, const QString& itemkey, const QString& desc, int amount)
 {
 	InventoryLog::instance.setRowCountChanged();
-	setInvLogItem(count, key, desc, amount, false);
+	QString uuid = setInvLogItem(count, QString(), itemkey, desc, amount, false);
 	InventoryLog::instance.setClean();
 	writeCurrentData();
-	changeInventory(key, true);
+	inventoryChanged(uuid, itemkey, true);
 	Character::instance->inventoryChanged();
 }
 
@@ -658,7 +665,7 @@ void CurrentData::updateItem(int ref, int count, const QString& desc, int amount
 	int old_count = item.count;
 	int old_amount = item.amount;
 
-	if (!item.key.isEmpty()) {
+	if (!item.uuid.isEmpty()) {
 		if (!count)
 			count = 1;
 		if (count > 0) {
@@ -669,8 +676,8 @@ void CurrentData::updateItem(int ref, int count, const QString& desc, int amount
 			if (amount < 0)
 				amount = -amount;
 		}
-		if (invMod.contains(item.key) && invMod[item.key].quantity != UNKNOWN_QUANTITY)
-			invMod[item.key].quantity += count - old_count;
+		if (invMod.contains(item.uuid) && invMod[item.uuid].quantity != UNKNOWN_QUANTITY)
+			invMod[item.uuid].quantity += count - old_count;
 	}
 	else if (!desc.isEmpty()) {
 		// Free text has no count:
@@ -689,7 +696,7 @@ void CurrentData::updateItem(int ref, int count, const QString& desc, int amount
 	InventoryLog::instance.setClean();
 	writeCurrentData();
 	if (count - old_count) {
-		changeInventory(item.key, true);
+		inventoryChanged(item.uuid, item.itemkey, true);
 		Character::instance->inventoryChanged();
 	}
 }
@@ -703,15 +710,15 @@ bool CurrentData::removeItem(int ref)
 	if (item.type != ITEM_AMOUNT && item.type != ITEM_ORIG_STOCK)
 		return false;
 
-	if (!item.key.isEmpty() && invMod.contains(item.key)) {
+	if (!item.uuid.isEmpty() && invMod.contains(item.uuid)) {
 		ShopItem	shop_item;
 		ItemList*	list;
 		int			quantity = 0;
 
-		if (item.type == ITEM_ORIG_STOCK && invMod[item.key].rowCount > 1)
+		if (item.type == ITEM_ORIG_STOCK && invMod[item.uuid].rowCount > 1)
 			return false;
 
-		shop_item = Shop::instance.getItem(item.key);
+		shop_item = Shop::instance.getItem(item.itemkey);
 		if (shop_item.type == "GEAR")
 			list = &Gear::instance;
 		else if (shop_item.type == "ARMOR")
@@ -719,34 +726,25 @@ bool CurrentData::removeItem(int ref)
 		else
 			list = &Weapons::instance;
 
-		invMod[item.key].rowCount--;
-		if (invMod[item.key].rowCount == 0) {
-			if (invMod[item.key].stored > 0 || invMod[item.key].state != UNDEFINED)
-				invMod[item.key].quantity = UNKNOWN_QUANTITY;
+		invMod[item.uuid].rowCount--;
+		if (invMod[item.uuid].rowCount == 0) {
+			if (invMod[item.uuid].stored > 0 || invMod[item.uuid].state != UNDEFINED)
+				invMod[item.uuid].quantity = UNKNOWN_QUANTITY;
 			else
-				invMod.remove(item.key);
+				invMod.remove(item.uuid);
 		}
-		else if (invMod[item.key].quantity != UNKNOWN_QUANTITY) {
-			invMod[item.key].quantity -= item.count;
-			quantity = invMod[item.key].quantity;
+		else if (invMod[item.uuid].quantity != UNKNOWN_QUANTITY) {
+			invMod[item.uuid].quantity -= item.count;
+			quantity = invMod[item.uuid].quantity;
 		}
 
 		if (quantity == 0) {
-			if (list->contains(item.key)) {
-				if (list->getItem(item.key).originalQuantity() == 0) {
-					list->removeItem(item.key);
+			if (list->containsByUuid(item.uuid)) {
+				if (list->getItemByUuid(item.uuid).originalQuantity == 0) {
+					list->removeItemByUuid(item.uuid);
 					list->setRowCountChanged();
 					list->setClean();
 				}
-			}
-		}
-		else {
-			if (!list->contains(item.key)) {
-				Item new_item;
-				new_item.clear(item.key);
-				list->addItem(new_item);
-				list->setRowCountChanged();
-				list->setClean();
 			}
 		}
 	}
@@ -763,24 +761,25 @@ bool CurrentData::removeItem(int ref)
 	}
 	writeCurrentData();
 	InventoryLog::instance.setClean();
-	changeInventory(item.key, true);
+	inventoryChanged(item.uuid, item.itemkey, true);
 	Character::instance->inventoryChanged();
 	return true;
 }
 
-void CurrentData::storeItem(const QString& key, int count, int state, bool loading)
+void CurrentData::storeItem(const QString& uuid, const QString& itemkey, int count, int state, bool loading)
 {
-	if (!invMod.contains(key)) {
-		invMod[key].key = key;
-		invMod[key].quantity = UNKNOWN_QUANTITY;
+	if (!invMod.contains(uuid)) {
+		invMod[uuid].uuid = uuid;
+		invMod[uuid].itemkey = itemkey;
+		invMod[uuid].quantity = UNKNOWN_QUANTITY;
 	}
-	invMod[key].stored = count;
-	invMod[key].state = state;
+	invMod[uuid].stored = count;
+	invMod[uuid].state = state;
 	if (!loading)
 		writeCurrentData();
-	if (key == "STIMPACK")
+	if (itemkey == "STIMPACK")
 		Character::instance->emitStimPacksChanged();
-	else if (key == "ERP")
+	else if (itemkey == "ERP")
 		Character::instance->emitErpsChanged();
 }
 
@@ -825,7 +824,7 @@ static void setup_talent_checks()
 	}
 }
 
-void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& weaponKey)
+void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uuid)
 {
 	bool combat = false;
 	bool ranged = false;
@@ -841,6 +840,8 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 	int ranks;
 	int force;
 	int default_check = 0;
+	Item weapon = Weapons::instance.getItemByUuid(uuid);
+	QString weaponKey = weapon.itemkey;
 
 	uncheckAllItem(skillKey);
 	autoCheckItems.clear();
@@ -862,17 +863,17 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 		charm = true;
 
 	if (!skill || skill->type != SPECIAL)
-		autoCheckItems.addItem("@+1 Move", "[B]Maneuver:[b] Perform an action that requires a maneuver", 1, 0);
+		autoCheckItems.plus("@+1 Move", "[B]Maneuver:[b] Perform an action that requires a maneuver", 1, 0);
 
 	for (int i=0; i<Character::instance->talents.ranks("BRA"); i++)
-		autoCheckItems.addItem("N", "[B]Brace:[b] Remove [SE] if due to any environmental effects, Duration: 1 Round", i == 0 ? 1 : 0, 0);
+		autoCheckItems.plus("N", "[B]Brace:[b] Remove [SE] if due to any environmental effects, Duration: 1 Round", i == 0 ? 1 : 0, 0);
 
 	if (combat) {
 		if (isCommitted("SENSECONTROL3")) {
 			QString send_str = "U";
 			if (Character::instance->talents.contains("SENSESTRENGTH"))
 				send_str = "UU";
-			default_check = autoCheckItems.addItem(send_str, QString("[B]Sense Control:[b] Upgrade ability of combat check %1 per round").arg(send_mag), 0, 0);
+			default_check = autoCheckItems.plus(send_str, QString("[B]Sense Control:[b] Upgrade ability of combat check %1 per round").arg(send_mag), 0, 0);
 		}
 	}
 
@@ -880,76 +881,76 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 		skillKey == "DECEP" || skillKey == "LEAD") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("INFLUENCECONTROL2"))
-			default_check = autoCheckItems.addItem(QString("F").repeated(force), "[B]Influence:[b] Spend [LI] to gain [SU] or [AD] vs 1 engaged target, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL2", RAN | MAG), 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Influence:[b] Spend [LI] to gain [SU] or [AD] vs 1 engaged target, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL2", RAN | MAG), 0, 0);
 		if (Character::instance->talents.contains("JUSTKID"))
-			autoCheckItems.addItem("-y", "[B]Just Kidding:[b] Once per round, Target: self or ally", 0, 0, 1);
+			autoCheckItems.plus("-y", "[B]Just Kidding:[b] Once per round, Target: self or ally", 0, 0, 1);
 	}
 	else if (skillKey == "REC") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("BAL"))
-			default_check = autoCheckItems.addItem(QString("F").repeated(force), "[B]Balance:[b] Gain +1 Strain per [LI]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Balance:[b] Gain +1 Strain per [LI]", 0, 0);
 	}
 	else if (skillKey == "ATHL") {
 		if (Character::instance->talents.contains("NIKTOSP2OC2OP1"))
-			autoCheckItems.addItem("B", "[B]Climbing Claws:[b] Add when climbing trees and other surfaces their claws can pierce", 0, 0);
+			autoCheckItems.plus("B", "[B]Climbing Claws:[b] Add when climbing trees and other surfaces their claws can pierce", 0, 0);
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCEBASIC"))
-			default_check = autoCheckItems.addItem(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "COORD") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCECONT1"))
-			default_check = autoCheckItems.addItem(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "RESIL") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCECONT2"))
-			default_check = autoCheckItems.addItem(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "PILOTPL") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCECONT4"))
-			default_check = autoCheckItems.addItem(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "BRAWL") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCECONT5"))
-			default_check = autoCheckItems.addItem(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "PILOTSP") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCECONT7"))
-			default_check = autoCheckItems.addItem(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "ICOOL" || skillKey == "IVIG") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("FORSEECONTROL1")) {
 			if (Character::instance->talents.contains("FORSEECONTROL3"))
-				default_check = autoCheckItems.addItem(QString("F").repeated(force), "[B]Foresee:[b] Spend [LI] to gain [SU], spend [LI] to grant free move to targets", 0, 0);
+				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [LI] to gain [SU], spend [LI] to grant free move to targets", 0, 0);
 			else
-				default_check = autoCheckItems.addItem(QString("F").repeated(force), "[B]Foresee:[b] Spend [LI] to gain [SU] on initiative check", 0, 0);
+				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [LI] to gain [SU] on initiative check", 0, 0);
 		}
 		for (int i=0; i<Character::instance->talents.ranks("RAPREA"); i++)
-			autoCheckItems.addItem("s", "[B]Rapid Reaction:[b] Suffer straing to improve initiative", 0, 1);
+			autoCheckItems.plus("s", "[B]Rapid Reaction:[b] Suffer straing to improve initiative", 0, 1);
 	}
 	else if (skillKey == "STEAL") {
 		ranks = Character::instance->talents.ranks("SLEIGHTMIND");
 		if (ranks > 0)
-			autoCheckItems.addItem(QString("B").repeated(ranks), "[B]Sleight of Mind:[b] Add if opposition is not immune to Force powers", 0, 0);
+			autoCheckItems.plus(QString("B").repeated(ranks), "[B]Sleight of Mind:[b] Add if opposition is not immune to Force powers", 0, 0);
 	}
 	else if (skillKey == "LTSABER") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.ranks("HAWKSWOOP"))
-			autoCheckItems.addItem(QString("F").repeated(force), "[B]Hawk Bat Swoop:[b] Spend [LI] to engage target, and [LI] to add [AD]", 0, 0);
+			autoCheckItems.plus(QString("F").repeated(force), "[B]Hawk Bat Swoop:[b] Spend [LI] to engage target, and [LI] to add [AD]", 0, 0);
 
 		if (force > 0 && Character::instance->talents.contains("SABERSW"))
-			autoCheckItems.addItem(QString("@Linked %1").arg(force), QString("[B]Saber Swarm:[b] Attack has linked %1 quality").arg(force), 1, 1);
+			autoCheckItems.plus(QString("@Linked %1").arg(force), QString("[B]Saber Swarm:[b] Attack has linked %1 quality").arg(force), 1, 1);
 	}
 	else if (skillKey == "DISC") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0) {
 			if (Character::instance->talents.contains("INFLUENCECONTROL1"))
-				autoCheckItems.addItem(QString("F").repeated(force), "[B]Influence (Mind Trick):[b] vs Discipline, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
+				autoCheckItems.plus(QString("F").repeated(force), "[B]Influence (Mind Trick):[b] vs Discipline, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
 			if (Character::instance->talents.contains("MOVECONTROL1")) {
 				QString type = "Hurl";
 
@@ -959,24 +960,24 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 				if (Character::instance->talents.contains("MOVECONTROL3"))
 					DatUtil::appendToList(type, "Manipulate", "/");
 
-				autoCheckItems.addItem(QString("F").repeated(force), "[B]Move:[b] "+type+" objects, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
+				autoCheckItems.plus(QString("F").repeated(force), "[B]Move:[b] "+type+" objects, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
 			}
 		}
 	}
 
 	if (!skill || skill->type != SPECIAL) {
 		if (skillKey != "FORCE" && Character::instance->talents.contains("INTENSFOC"))
-			autoCheckItems.addItem("U", "[B]Intense Focus:[b] Upgrade the next skill check once", 1, 1);
+			autoCheckItems.plus("U", "[B]Intense Focus:[b] Upgrade the next skill check once", 1, 1);
 	}
 
 	if (skillKey == "COERC") {
 		for (int i=0; i<Character::instance->talents.ranks("INTIM"); i++) {
-			autoCheckItems.addItem("d", "[B]Intimidating:[b] Downgrade the difficulty of the check", 0, 1);
+			autoCheckItems.plus("d", "[B]Intimidating:[b] Downgrade the difficulty of the check", 0, 1);
 		}
 	}
 	else if (charm || skillKey == "NEG") {
 		for (int i=0; i<Character::instance->talents.ranks("CONGENIAL"); i++) {
-			autoCheckItems.addItem("d", "[B]Congenial:[b] Downgrade the difficulty of the check", 0, 1);
+			autoCheckItems.plus("d", "[B]Congenial:[b] Downgrade the difficulty of the check", 0, 1);
 		}
 	}
 	else if (skillKey == "DEFM" || skillKey == "DEFR") {
@@ -984,15 +985,15 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 			QString send_str = "u";
 			if (Character::instance->talents.contains("SENSESTRENGTH"))
 				send_str = "uu";
-			default_check = autoCheckItems.addItem(send_str, QString("[B]Sense Control:[b] Upgrade difficulty of incoming attack %1 per round").arg(send_mag), 0, 0);
+			default_check = autoCheckItems.plus(send_str, QString("[B]Sense Control:[b] Upgrade difficulty of incoming attack %1 per round").arg(send_mag), 0, 0);
 		}
 
 		for (int i=0; i<Character::instance->talents.ranks("DODGE"); i++)
-			autoCheckItems.addItem("u", "[B]Dodge:[b] Out-of-turn incedental", 0, 1);
+			autoCheckItems.plus("u", "[B]Dodge:[b] Out-of-turn incedental", 0, 1);
 
 		ranks = Character::instance->talents.ranks("DURA");
 		if (ranks > 0)
-			autoCheckItems.addItem(QString("@-%1% Crits").arg(ranks*10), "[B]Durable:[b] Reduce critical hits", 0, 0);
+			autoCheckItems.plus(QString("@-%1% Crits").arg(ranks*10), "[B]Durable:[b] Reduce critical hits", 0, 0);
 
 		if (skillKey == "DEFM") {
 			ranks = Character::instance->talents.ranks("PARRY");
@@ -1001,11 +1002,11 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 
 				if (Character::instance->talents.contains("PARRYIMP"))
 					par = par + ", on [DE] or [TH][TH][TH] hit attacker";
-				autoCheckItems.addItem(QString("@-%1 Damage").arg(ranks+2), par, 0, 3);
+				autoCheckItems.plus(QString("@-%1 Damage").arg(ranks+2), par, 0, 3);
 			}
 
 			for (int i=0; i<Character::instance->talents.ranks("DEFSTA"); i++)
-				autoCheckItems.addItem("u", "[B]Defensive Stance:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
+				autoCheckItems.plus("u", "[B]Defensive Stance:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
 
 			setNegativePool(iNegMelee, skillKey);
 		}
@@ -1016,44 +1017,44 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 
 				if (Character::instance->talents.contains("REFLECTIMP"))
 					par = "[B]Reflect:[b] vs Lightsaber, on [DE] or [TH][TH][TH] damage apponent (Medium range)";
-				autoCheckItems.addItem(QString("@-%1 Damage").arg(ranks+2), par, 0, 3);
+				autoCheckItems.plus(QString("@-%1 Damage").arg(ranks+2), par, 0, 3);
 			}
 
 			for (int i=0; i<Character::instance->talents.ranks("SIDESTEP"); i++)
-				autoCheckItems.addItem("u", "[B]Side Step:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
+				autoCheckItems.plus("u", "[B]Side Step:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
 
 			setNegativePool(iNegRanged, skillKey);
 		}
 
 		if (Character::instance->talents.contains("SENSEADV")) {
-			autoCheckItems.addItem("SS", "[B]Sense Advantage:[b] Add to NPC check, once per session", 0, 0);
+			autoCheckItems.plus("SS", "[B]Sense Advantage:[b] Add to NPC check, once per session", 0, 0);
 		}
 	}
 	else if (skillKey == "PILOTSP") {
 		piloting = true;
 		if (Character::instance->talents.contains("MASPIL"))
-			autoCheckItems.addItem("@+1 Action", QString("[B]Master Pilot:[b] Once per round, perform Action as Manuever"), 1, 2);
+			autoCheckItems.plus("@+1 Action", QString("[B]Master Pilot:[b] Once per round, perform Action as Manuever"), 1, 2);
 	}
 	else if (skillKey == "FORCE") {
 		int ref;
 
 		if (Character::instance->talents.contains("SENSECONTROL1")) {
-			ref = autoCheckItems.addItem("g", "[B]Sense Control:[b] Commit force dice to upgrade difficulty of incoming attacks", 0, 0, 0, "", "SENSECONTROL1", 1);
+			ref = autoCheckItems.plus("g", "[B]Sense Control:[b] Commit force dice to upgrade difficulty of incoming attacks", 0, 0, 0, "", "SENSECONTROL1", 1);
 			if (isCommitted("SENSECONTROL1"))
 				checkItem(ref, skillKey, true);
 		}
 		if (Character::instance->talents.contains("SENSECONTROL3")) {
-			ref = autoCheckItems.addItem("g", "[B]Sense Control:[b] Commit force dice to upgrade abilty of combat checks", 0, 0, 0, "", "SENSECONTROL3", 1);
+			ref = autoCheckItems.plus("g", "[B]Sense Control:[b] Commit force dice to upgrade abilty of combat checks", 0, 0, 0, "", "SENSECONTROL3", 1);
 			if (isCommitted("SENSECONTROL3"))
 				checkItem(ref, skillKey, true);
 		}
 		if (Character::instance->talents.contains("ENHANCECONT8")) {
-			ref = autoCheckItems.addItem("g", "[B]Enhance:[b] Commit force dice to increase Brawn by one", 0, 0, 0, "", "ENHANCECONT8", 1);
+			ref = autoCheckItems.plus("g", "[B]Enhance:[b] Commit force dice to increase Brawn by one", 0, 0, 0, "", "ENHANCECONT8", 1);
 			if (isCommitted("ENHANCECONT8"))
 				checkItem(ref, skillKey, true);
 		}
 		if (Character::instance->talents.contains("ENHANCECONT9")) {
-			ref = autoCheckItems.addItem("g", "[B]Enhance:[b] Commit force dice to increase Agility by one", 0, 0, 0, "", "ENHANCECONT9", 1);
+			ref = autoCheckItems.plus("g", "[B]Enhance:[b] Commit force dice to increase Agility by one", 0, 0, 0, "", "ENHANCECONT9", 1);
 			if (isCommitted("ENHANCECONT9"))
 				checkItem(ref, skillKey, true);
 		}
@@ -1061,14 +1062,14 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 			int count = isCommitted("MISDIRCONTROL3");
 			ranks = Character::instance->force();
 			for (int i=0; i<ranks; i++) {
-				ref = autoCheckItems.addItem("g", "[B]Misdirect Control:[b] Add [TH] to all incoming attacks", 0, 0, 0, "", "MISDIRCONTROL3", 1);
+				ref = autoCheckItems.plus("g", "[B]Misdirect Control:[b] Add [TH] to all incoming attacks", 0, 0, 0, "", "MISDIRCONTROL3", 1);
 				if (i < count)
 					checkItem(ref, skillKey, true);
 			}
 		}
 
 		if (Character::instance->talents.contains("MISDIRDURATION")) {
-			ref = autoCheckItems.addItem("gg", "[B]Misdirect Duration:[b] Sustain misdiration as long as target in range", 0, 0, 0, "", "MISDIRDURATION", 2);
+			ref = autoCheckItems.plus("gg", "[B]Misdirect Duration:[b] Sustain misdiration as long as target in range", 0, 0, 0, "", "MISDIRDURATION", 2);
 			if (isCommitted("MISDIRDURATION"))
 				checkItem(ref, skillKey, true);
 		}
@@ -1079,7 +1080,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 
 	if (charm) {
 		if (Character::instance->talents.contains("DONTSHOOT"))
-			autoCheckItems.addItem("DDD", "[B]Don't Shoot!:[b] Once per session, cannot be attacked unless attack, Duration: Encounter", 0, 0);
+			autoCheckItems.plus("DDD", "[B]Don't Shoot!:[b] Once per session, cannot be attacked unless attack, Duration: Encounter", 0, 0);
 	}
 
 	if (piloting) {
@@ -1088,38 +1089,38 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 		if (Character::instance->talents.contains("FULLTHSUP"))
 			amount = 2;
 		if (Character::instance->talents.contains("FULLTH"))
-			autoCheckItems.addItem("DDD", QString("[B]Full Throttle:[b] Increase Speed by %1 for %2 rounds, [B]Cost: Action[b]").arg(amount).arg(Character::instance->cunning()), 0, 0);
+			autoCheckItems.plus("DDD", QString("[B]Full Throttle:[b] Increase Speed by %1 for %2 rounds, [B]Cost: Action[b]").arg(amount).arg(Character::instance->cunning()), 0, 0);
 		if (Character::instance->talents.contains("FULLTHIMP"))
-			autoCheckItems.addItem("DD", QString("[B]Full Throttle (Improved):[b] Increase Speed by %1 for %2 rounds").arg(amount).arg(Character::instance->cunning()), 1, 1);
+			autoCheckItems.plus("DD", QString("[B]Full Throttle (Improved):[b] Increase Speed by %1 for %2 rounds").arg(amount).arg(Character::instance->cunning()), 1, 1);
 	}
 
 	if (combat) {
 		// Aim skills:
 		ranks = Character::instance->talents.ranks("TRUEAIM");
 		if (ranged && ranks > 0)
-			autoCheckItems.addItem("B" + QString("U").repeated(ranks), "[B]True Aim:[b] Once per round, use a maneuver to aim", 1, 0);
+			autoCheckItems.plus("B" + QString("U").repeated(ranks), "[B]True Aim:[b] Once per round, use a maneuver to aim", 1, 0);
 		else
-			autoCheckItems.addItem("B", "[B]Aim:[b] Use a maneuver to aim", 1, 0);
-		autoCheckItems.addItem("B", "[B]Aim Twice:[b] Use a second maneuver to aim longer", 1, 0);
+			autoCheckItems.plus("B", "[B]Aim:[b] Use a maneuver to aim", 1, 0);
+		autoCheckItems.plus("B", "[B]Aim Twice:[b] Use a second maneuver to aim longer", 1, 0);
 		if (ranged && ranks > 0)
-			autoCheckItems.addItem("SS" + QString("U").repeated(ranks), "[B]Called Shot (True Aim):[b] Once per round, use a True Aim to call a shot", 1, 0);
+			autoCheckItems.plus("SS" + QString("U").repeated(ranks), "[B]Called Shot (True Aim):[b] Once per round, use a True Aim to call a shot", 1, 0);
 		else
-			autoCheckItems.addItem("SS", "[B]Called Shot:[b] Use a maneuver to call a shot by aiming", 1, 0);
-		autoCheckItems.addItem("N", "[B]Called Shot (2x Aim):[b] Use a 2nd maneuver to aim longer on a called shot", 1, 0);
+			autoCheckItems.plus("SS", "[B]Called Shot:[b] Use a maneuver to call a shot by aiming", 1, 0);
+		autoCheckItems.plus("N", "[B]Called Shot (2x Aim):[b] Use a 2nd maneuver to aim longer on a called shot", 1, 0);
 
 		for (int i=0; i<Character::instance->talents.ranks("PRECAIM"); i++) {
-			autoCheckItems.addItem("N", "[B]Precise Aim:[b] Decrease apponents defense", i ? 0 : 1, 1);
+			autoCheckItems.plus("N", "[B]Precise Aim:[b] Decrease apponents defense", i ? 0 : 1, 1);
 		}
 		ranks = Character::instance->talents.ranks("QUICKST");
 		if (ranks > 0)
-			autoCheckItems.addItem(QString("B").repeated(ranks), "[B]Quick Strike:[b] Add if target has not acted in this encounter yet", 0, 0);
+			autoCheckItems.plus(QString("B").repeated(ranks), "[B]Quick Strike:[b] Add if target has not acted in this encounter yet", 0, 0);
 
 		if (!weaponKey.isEmpty() && weaponKey != "UNARMED" && Character::instance->talents.contains("TARGBL"))
-			autoCheckItems.addItem(QString("@Damage +%1").arg(Character::instance->agility()), "[B]Targeted Blow:[b] Add to damage on hit with non-vehicle weapon", 0, 0, 1);
+			autoCheckItems.plus(QString("@Damage +%1").arg(Character::instance->agility()), "[B]Targeted Blow:[b] Add to damage on hit with non-vehicle weapon", 0, 0, 1);
 
 		ranks = Character::instance->talents.ranks("DISARMSMILE");
 		if (ranks > 0)
-			autoCheckItems.addItem(QString("N").repeated(ranks), "[B]Disarming Smile:[b] Opposed Charm vs Target, Range: Short, Duration: Encounter, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus(QString("N").repeated(ranks), "[B]Disarming Smile:[b] Opposed Charm vs Target, Range: Short, Duration: Encounter, [B]Cost: Action[b]", 0, 0);
 
 	}
 	if (ranged) {
@@ -1127,30 +1128,29 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 		if (!extreme_range) {
 			ranks = Character::instance->talents.ranks("SNIPSHOT");
 			if (ranks > 0)
-				autoCheckItems.addItem("@Range +1", "[B]Sniper Shot:[b] Increase range (and difficulty) of next attack", 1, 0);
+				autoCheckItems.plus("@Range +1", "[B]Sniper Shot:[b] Increase range (and difficulty) of next attack", 1, 0);
 		}
 		ranks = Character::instance->talents.ranks("POINTBL");
 		if (ranks > 0)
-			autoCheckItems.addItem(QString("@Damage +%1").arg(ranks), "[B]Point Blank:[b] Engaged or Short range", 0, 0);
+			autoCheckItems.plus(QString("@Damage +%1").arg(ranks), "[B]Point Blank:[b] Engaged or Short range", 0, 0);
 		if (Character::instance->talents.contains("RAINDEATH"))
-			autoCheckItems.addItem("@Auto-fire", "[B]Rain of Death:[b] Ignore increase difficulty due to auto-fire", 1, 0);
+			autoCheckItems.plus("@Auto-fire", "[B]Rain of Death:[b] Ignore increase difficulty due to auto-fire", 1, 0);
 		if (skillKey != "RANGLT") {
 			if (Character::instance->talents.contains("HEAVYHITTER"))
-				autoCheckItems.addItem("@Breach +1", "[B]Heavy Hitter:[b] Once per session use [TR] to add breach property", 1, 0);
+				autoCheckItems.plus("@Breach +1", "[B]Heavy Hitter:[b] Once per session use [TR] to add breach property", 1, 0);
 			ranks = Character::instance->talents.ranks("BAR");
 			if (ranks > 0)
-				autoCheckItems.addItem(QString("@Damage +%1").arg(ranks), "[B]Barrage:[b] Long or extreme range", 0, 0);
+				autoCheckItems.plus(QString("@Damage +%1").arg(ranks), "[B]Barrage:[b] Long or extreme range", 0, 0);
 		}
 	}
 
-	Item weapon = Weapons::instance.getItem(weaponKey);
-	if (!weapon.key.isEmpty()) {
+	if (!weaponKey.isEmpty()) {
 		if (weapon.attachList.contains("TOS"))
-			autoCheckItems.addItem("-D", "[B]Telescopic Optical Sight:[b] Reduce difficulty by 1 at Long or Extreme range", 0, 0);
+			autoCheckItems.plus("-D", "[B]Telescopic Optical Sight:[b] Reduce difficulty by 1 at Long or Extreme range", 0, 0);
 		if (weapon.hasMod("SETTRIGGER_EXTRA_MOD"))
-			autoCheckItems.addItem("sst", "[B]Set Trigger:[b] Add if this is the first combat check of the encounter", 0, 0);
+			autoCheckItems.plus("sst", "[B]Set Trigger:[b] Add if this is the first combat check of the encounter", 0, 0);
 		else if (weapon.hasMod("SETTRIGGER_BASE_MOD"))
-			autoCheckItems.addItem("st", "[B]Set Trigger:[b] Add if this is the first combat check of the encounter", 0, 0);
+			autoCheckItems.plus("st", "[B]Set Trigger:[b] Add if this is the first combat check of the encounter", 0, 0);
 	}
 
 	for (int i = 0; i < Armor::instance.rowCount(); i++) {
@@ -1162,42 +1162,42 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 				integrated_scanner = true;
 			if (item.attachList.contains("EOS"))
 				eos = true;
-			if (item.key == "MOUNTARMOR")
+			if (item.itemkey == "MOUNTARMOR")
 				mount_armor = true;
 		}
 	}
 	if (mount_armor && skillKey == "ATHL")
-		autoCheckItems.addItem("BB", "[B]Mountaineer Armour:[b] Add to all climb or rappel checks", 0, 0);
+		autoCheckItems.plus("BB", "[B]Mountaineer Armour:[b] Add to all climb or rappel checks", 0, 0);
 	if (targeting_comp && ranged)
-		autoCheckItems.addItem("B", "[B]Targeting Computer:[b] Add Boost dice at Long and Extreme range", 0, 0);
+		autoCheckItems.plus("B", "[B]Targeting Computer:[b] Add Boost dice at Long and Extreme range", 0, 0);
 	else if ((integrated_scanner || hunting_goggles) && skillKey == "PERC") {
 		if (integrated_scanner)
-			autoCheckItems.addItem("B", "[B]OmniScan 3 Scanner:[b] To detect movement or hidden enemies", 0, 0);
+			autoCheckItems.plus("B", "[B]OmniScan 3 Scanner:[b] To detect movement or hidden enemies", 0, 0);
 		if (hunting_goggles)
-			autoCheckItems.addItem("B", "[B]Hunting Goggles:[b] Add when locating prey", 0, 0);
+			autoCheckItems.plus("B", "[B]Hunting Goggles:[b] Add when locating prey", 0, 0);
 	}
 	if (eos) {
 		if (combat || skillKey == "PERC" || skillKey == "VIGIL" || skillKey == "IVIG")
-			autoCheckItems.addItem("NN", "[B]Enhanced Optics Suite:[b] Darkness, smoke or environmental effects that obscure vision", 0, 0);
+			autoCheckItems.plus("NN", "[B]Enhanced Optics Suite:[b] Darkness, smoke or environmental effects that obscure vision", 0, 0);
 	}
 	if (hunting_goggles) {
 		if (combat && skillKey != "GUNN")
-			autoCheckItems.addItem("NN", "[B]Hunting Googles:[b] Concealment, darkness, fog and mist", 0, 0);
+			autoCheckItems.plus("NN", "[B]Hunting Googles:[b] Concealment, darkness, fog and mist", 0, 0);
 	}
 
 	if (Character::instance->talents.contains("TOUCH")) {
 		if (skillKey != "DEFM" && skillKey != "DEFR")
-			autoCheckItems.addItem("BB", "[B]Touch of Fate:[b] May be used once per session", 0, 0);
+			autoCheckItems.plus("BB", "[B]Touch of Fate:[b] May be used once per session", 0, 0);
 	}
 	if (Character::instance->talents.contains("SENSDANG")) {
 		if (skillKey != "DEFM" && skillKey != "DEFR")
-			autoCheckItems.addItem("NN", "[B]Sense Danger:[b] May be used once per session", 0, 0);
+			autoCheckItems.plus("NN", "[B]Sense Danger:[b] May be used once per session", 0, 0);
 	}
 
 	setup_talent_checks();
 	if (talentChecks.contains(skillKey)) {
 		foreach (CheckItem* item, talentChecks[skillKey].checks) {
-			int ref = autoCheckItems.addItem(item->pool, item->desc, item->move, item->strain, item->dpoint);
+			int ref = autoCheckItems.plus(item->pool, item->desc, item->move, item->strain, item->dpoint);
 			if (item->default_check)
 				checkItem(ref, skillKey, true);
 		}
@@ -1206,40 +1206,38 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& we
 	// MEDPAC
 	if (skillKey == "MED") {
 		if (Gear::instance.equipped("MEDPAC"))
-			default_check = autoCheckItems.addItem("B", "[B]Medpac:[b] Add to all Medicine checks when equipped", 0, 0);
+			default_check = autoCheckItems.plus("B", "[B]Medpac:[b] Add to all Medicine checks when equipped", 0, 0);
 
-		ranks = Gear::instance.carried("MEDAIDPATCH");
-		if (ranks > 0)
-			autoCheckItems.addItem("sa", "[B]Med-Aid Patch:[b] Maximum usage 1 per check, [B]Cost: 1x Med-Aid Patch[b]", 0, 0, 0, "MEDAIDPATCH");
+		if (Gear::instance.carriedQuantity("MEDAIDPATCH") > 0)
+			autoCheckItems.plus("sa", "[B]Med-Aid Patch:[b] Maximum usage 1 per check, [B]Cost: 1x Med-Aid Patch[b]", 0, 0, 0, "MEDAIDPATCH");
 
 		if (Gear::instance.equipped("BLOODSCAN"))
-			autoCheckItems.addItem("aa", "[B]Blood Scanner:[b] After use, add to next Medicine check, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus("aa", "[B]Blood Scanner:[b] After use, add to next Medicine check, [B]Cost: Action[b]", 0, 0);
 
 		ranks = Character::instance->talents.ranks("SURG");
 		if (ranks > 0)
-			autoCheckItems.addItem(QString("@Wound -%1").arg(ranks), "[B]Surgeon:[b] Add to Wounds recovered on successful check", 0, 0);
+			autoCheckItems.plus(QString("@Wound -%1").arg(ranks), "[B]Surgeon:[b] Add to Wounds recovered on successful check", 0, 0);
 
-		ranks = Gear::instance.carried("DROIDMINIMED");
-		if (ranks > 0)
-			autoCheckItems.addItem(QString("@Wound -%1").arg(ranks), "[B]Mini-med Droids:[b] Add to Wounds recovered on successful check", 1, 0);
+		if (Gear::instance.carriedQuantity("DROIDMINIMED") > 0)
+			autoCheckItems.plus(QString("@Wound -%1").arg(ranks), "[B]Mini-med Droids:[b] Add to Wounds recovered on successful check", 1, 0);
 
-		autoCheckItems.addItem("D", "[B]Easy Severity:[b] 1-40% Critical injury, 1-50% Wounds, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.addItem("DD", "[B]Average Severity:[b] 41-90% Critical injury, 51-100% Wounds, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.addItem("DDD", "[B]Hard Severity:[b] 91-125% Critical injury, 101+% Wounds, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.addItem("DDDD", "[B]Easy Severity:[b] 126-150% Critical injury, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("D", "[B]Easy Severity:[b] 1-40% Critical injury, 1-50% Wounds, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("DD", "[B]Average Severity:[b] 41-90% Critical injury, 51-100% Wounds, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("DDD", "[B]Hard Severity:[b] 91-125% Critical injury, 101+% Wounds, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("DDDD", "[B]Easy Severity:[b] 126-150% Critical injury, [B]Cost: Action[b]", 0, 0);
 	}
 	else if (skillKey == "MECH") { // 2264
-		autoCheckItems.addItem("D", "[B]Damage Control (Easy):[b] System strain or hull trauma less than half threshold, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.addItem("DD", "[B]Damage Control (Average):[b] System strain or hull trauma less or equal threshold, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.addItem("DDD", "[B]Damage Control (Hard):[b] System strain or hull trauma exceeds threshold, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.addItem("DD", "[B]Boost Sheilds:[b] On success add 1 to a shield zone, Duration: [SU] less 1 rounds, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("D", "[B]Damage Control (Easy):[b] System strain or hull trauma less than half threshold, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("DD", "[B]Damage Control (Average):[b] System strain or hull trauma less or equal threshold, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("DDD", "[B]Damage Control (Hard):[b] System strain or hull trauma exceeds threshold, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("DD", "[B]Boost Sheilds:[b] On success add 1 to a shield zone, Duration: [SU] less 1 rounds, [B]Cost: Action[b]", 0, 0);
 	}
 	else if (piloting) {
-		autoCheckItems.addItem("D", "[B]Gain the Advantage (Easy):[b] Going faster than opponent, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.addItem("DD", "[B]Gain the Advantage (Average):[b] Vehicle speed identical, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.addItem("DDD", "[B]Gain the Advantage (Hard):[b] Opponent's speed is one higher, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.addItem("DDDD", "[B]Gain the Advantage (Daunting):[b] Opponent's speed is 2 or more higher, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.addItem("DD", "[B]Co-Pilot:[b] Each [SU] downgrades difficulty of pilot's next check by 1, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("D", "[B]Gain the Advantage (Easy):[b] Going faster than opponent, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("DD", "[B]Gain the Advantage (Average):[b] Vehicle speed identical, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("DDD", "[B]Gain the Advantage (Hard):[b] Opponent's speed is one higher, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("DDDD", "[B]Gain the Advantage (Daunting):[b] Opponent's speed is 2 or more higher, [B]Cost: Action[b]", 0, 0);
+		autoCheckItems.plus("DD", "[B]Co-Pilot:[b] Each [SU] downgrades difficulty of pilot's next check by 1, [B]Cost: Action[b]", 0, 0);
 	}
 
 	if (checkLists.contains(skillKey))
@@ -1576,13 +1574,29 @@ int CurrentData::findInvLogItem(int ref)
 	return -1;
 }
 
-void CurrentData::setInvLogItem(int count, const QString& in_key, const QString& desc, int amount, bool loading)
+QString CurrentData::setInvLogItem(int count, const QString& in_uuid, const QString& itemkey, const QString& desc, int amount, bool loading)
 {
 	int total = Character::instance->credits();
 	int type = ITEM_AMOUNT;
-	QString key = in_key.toUpper();
+	ItemList* list = NULL;
+	QString uuid;
 
-	if (!key.isEmpty()) {
+	if (inventoryLog.size() == 0) {
+		// Record, or add orignal credits total:
+		if (loading) {
+			// The first entry loaded myst be the original credit total:
+			inventoryLog.append(InvLogItem(++iNextItem, count, in_uuid, itemkey, desc, amount, ITEM_START));
+			Character::instance->setCredits(amount);
+			return in_uuid;
+		}
+
+		addInvLogItem("[B]Original Total Credits[b]", total, ITEM_START);
+	}
+
+	if (!itemkey.isEmpty()) {
+		// Add an item to the inventory:
+		ShopItem shop_item = Shop::instance.getItem(itemkey);
+
 		if (!count)
 			count = 1;
 		if (count > 0) {
@@ -1593,125 +1607,109 @@ void CurrentData::setInvLogItem(int count, const QString& in_key, const QString&
 			if (amount < 0)
 				amount = -amount;
 		}
-	}
-	else if (!desc.isEmpty()) {
-		// Free text has no count:
-		count = 0;
-	}
-	else
-		return;
 
-	if (inventoryLog.size() == 0) {
-		if (loading) {
-			// The first entry loaded myst be the original credit total:
-			inventoryLog.append(InvLogItem(++iNextItem, count, key, desc, amount, ITEM_START));
-			Character::instance->setCredits(amount);
-			return;
-		}
-
-		addInvLogItem("[B]Original Total Credits[b]", total, ITEM_START);
-	}
-
-	if (!key.isEmpty()) {
-		// Check the original stock:
-		ShopItem item = Shop::instance.getItem(key);
-		ItemList* list;
-
-		if (item.type == "GEAR")
+		if (shop_item.type == "GEAR")
 			list = &Gear::instance;
-		else if (item.type == "ARMOR")
+		else if (shop_item.type == "ARMOR")
 			list = &Armor::instance;
 		else
 			list = &Weapons::instance;
 
-		if (invMod[key].rowCount == 0) {
+		Item item;
+		item.clear();
+		item.uuid = in_uuid;
+		item.itemkey = itemkey;
+		list->aquireItem(item, false);
+		uuid = item.uuid;
+
+		// Check the original stock:
+		if (invMod[uuid].rowCount == 0) {
+			// First row for this item:
 			int c = 0;
-			if (list->contains(key))
-				c = list->getItem(key).originalQuantity();
+			if (list->containsByUuid(uuid))
+				c = list->getItemByUuid(uuid).originalQuantity;
 
 			if (c) {
 				// We have an original stock amount
 				if (loading) {
 					// This must be the original stock:
-					invMod[key].quantity = 0;
+					invMod[uuid].quantity = 0;
 					type = ITEM_ORIG_STOCK;
 				}
 				else {
 					// Record the original stock:
-					invMod[key].rowCount++;
-					invMod[key].quantity = c;
-					inventoryLog.append(InvLogItem(++iNextItem, c, key, QString(), 0, ITEM_ORIG_STOCK));
+					invMod[uuid].rowCount++;
+					invMod[uuid].quantity = c;
+					inventoryLog.append(InvLogItem(++iNextItem, c, uuid, itemkey, QString(), 0, ITEM_ORIG_STOCK));
 				}
 			}
 			else {
 				// No original stock:
-				invMod[key].quantity = 0;
+				invMod[uuid].quantity = 0;
 			}
 		}
 
-		invMod[key].rowCount++; // Count the number of rows with this key:
-		invMod[key].quantity += count; // And sum the quantity:
+		invMod[uuid].rowCount++; // Count the number of rows with this key:
+		invMod[uuid].quantity += count; // And sum the quantity:
 
-		if (invMod[key].quantity == 0) {
-			if (list->contains(key)) {
-				if (list->getItem(key).originalQuantity() == 0) {
-					list->removeItem(key);
-					list->setRowCountChanged();
-					list->setClean();
-				}
-			}
+		if (invMod[uuid].quantity == 0) {
+			if (list->getItemByUuid(uuid).originalQuantity == 0)
+				// This means the item was not added by SWCharGen:
+				list->removeItemByUuid(uuid);
 		}
-		else {
-			if (!list->contains(key)) {
-				Item new_item;
-				new_item.clear(key);
-				list->addItem(new_item);
-				list->setRowCountChanged();
-				list->setClean();
-			}
-		}
+
+		list->setRowCountChanged();
+		list->setClean();
+
 	}
+	else if (!desc.isEmpty()) {
+		// Free text has no count and no item ID:
+		count = 0;
+	}
+	else
+		return QString();
 
-	inventoryLog.append(InvLogItem(++iNextItem, count, key, desc, amount, type));
-	//Character::instance->setLastInvLine(text + (amount != 0 ? QString(", %1 CR").arg(amount) : ""));
+	inventoryLog.append(InvLogItem(++iNextItem, count, uuid, itemkey, desc, amount, type));
 
 	Character::instance->setCredits(total + amount);
+
+	return uuid;
 }
 
 void CurrentData::addInvLogItem(const QString& desc, int amount, int type)
 {
-	inventoryLog.append(InvLogItem(++iNextItem, 0, QString(), desc, amount, type));
+	inventoryLog.append(InvLogItem(++iNextItem, 0, QString(), QString(), desc, amount, type));
 }
 
-void CurrentData::changeInventory(const QString& key, bool signal)
+void CurrentData::inventoryChanged(const QString& uuid, const QString& itemkey, bool signal)
 {
-	if (!invMod.contains(key))
+	if (!invMod.contains(uuid))
 		return;
 
-	if (Weapons::instance.contains(key) && signal) {
-		//Weapons::instance.startChanges();
-		// "quantity" is taken dynamically from inventory!
-		// Just signal change!
-		Weapons::instance.rowCountChanged();
+	if (signal) {
+		if (Weapons::instance.containsByUuid(uuid)) {
+			//Weapons::instance.startChanges();
+			// "quantity" is taken dynamically from inventory!
+			// Just signal change!
+			Weapons::instance.rowCountChanged();
+		}
+		else if (Armor::instance.containsByUuid(uuid)) {
+			//Armor::instance.startChanges();
+			// "quantity" is taken dynamically from inventory!
+			// Just signal change!
+			Armor::instance.rowCountChanged();
+		}
+		else if (Gear::instance.containsByUuid(uuid)) {
+			//Gear::instance.startChanges();
+			// "quantity" is taken dynamically from inventory!
+			// Just signal change!
+			Gear::instance.rowCountChanged();
+		}
 	}
 
-	if (Armor::instance.contains(key) && signal) {
-		//Armor::instance.startChanges();
-		// "quantity" is taken dynamically from inventory!
-		// Just signal change!
-		Armor::instance.rowCountChanged();
-	}
-
-	if (Gear::instance.contains(key) && signal) {
-		//Gear::instance.startChanges();
-		// "quantity" is taken dynamically from inventory!
-		// Just signal change!
-		Gear::instance.rowCountChanged();
-	}
-
-	if (key == "STIMPACK")
+	if (itemkey == "STIMPACK")
 		Character::instance->emitStimPacksChanged();
-	else if (key == "ERP")
+	else if (itemkey == "ERP")
 		Character::instance->emitErpsChanged();
 }
 
@@ -1740,7 +1738,7 @@ void CurrentData::addCheckItem(const QString& skillKey, int ref, const QString& 
 		list.skillKey = skillKey;
 		checkLists[skillKey] = list;
 	}
-	checkLists[skillKey].addCustomItem(ref, pool, desc);
+	checkLists[skillKey].plusCustom(ref, pool, desc);
 }
 
 void CurrentData::writeCurrentData()
@@ -1787,8 +1785,10 @@ void CurrentData::writeCurrentData()
 			data += QString("  <Item>");
 			if (inventoryLog[i].count != 0)
 				data += QString("<Count>%1</Count>").arg(inventoryLog[i].count);
-			if (!inventoryLog[i].key.isEmpty())
-				data += QString("<Key>%1</Key>").arg(inventoryLog[i].key);
+			if (!inventoryLog[i].uuid.isEmpty() && inventoryLog[i].uuid != inventoryLog[i].itemkey)
+				data += QString("<Uuid>%1</Uuid>").arg(inventoryLog[i].uuid);
+			if (!inventoryLog[i].itemkey.isEmpty())
+				data += QString("<Key>%1</Key>").arg(inventoryLog[i].itemkey);
 			if (!inventoryLog[i].desc.isEmpty())
 				data += QString("<Description>%1</Description>").arg(inventoryLog[i].desc);
 			if (inventoryLog[i].amount != 0)
@@ -1803,7 +1803,7 @@ void CurrentData::writeCurrentData()
 		s.next();
 		InvModItem inv_item = s.value();
 		if (inv_item.stored > 0 || inv_item.state != UNDEFINED)
-			data += QString("  <StoreItem><Key>%1</Key><Amount>%2</Amount><State>%3</State></StoreItem>\n").arg(s.key()).arg(inv_item.stored).arg(inv_item.state);
+			data += QString("  <StoreItem><Uuid>%1</Uuid><Key>%2</Key><Amount>%3</Amount><State>%4</State></StoreItem>\n").arg(inv_item.uuid).arg(inv_item.itemkey).arg(inv_item.stored).arg(inv_item.state);
 	}
 	data += QString(" </Storage>\n");
 
@@ -1997,7 +1997,7 @@ QVariant CheckList::getValue(int row, int col)
 InventoryLog InventoryLog::instance = InventoryLog();
 
 InventoryLog::InventoryLog() :
-	AbstractDataList(QStringList() << "ref" << "key" << "count" << "item"
+	AbstractDataList(QStringList() << "ref" << "itemkey" << "count" << "item"
 		<< "description" << "amount" << "type" << "rarity" << "price" << "keycount")
 
 {
@@ -2022,16 +2022,16 @@ QVariant InventoryLog::getValue(int row, int col)
 		ShopItem shop_item;
 		InvModItem	mod_item;
 
-		if (!item->key.isEmpty()) {
-			shop_item = Shop::instance.getItem(item->key);
-			mod_item = Character::instance->currentData()->invMod[item->key];
-		}
+		if (!item->uuid.isEmpty())
+			mod_item = Character::instance->currentData()->invMod[item->uuid];
+		if (!item->itemkey.isEmpty())
+			shop_item = Shop::instance.getItem(item->itemkey);
 
 		switch (col) {
 			case 0:
 				return item->ref;
 			case 1:
-				return item->key;
+				return item->itemkey;
 			case 2:
 				return item->count;
 			case 3:
@@ -2067,8 +2067,8 @@ QVariant InventoryLog::getValue(int row, int col)
 		}
 		else {
 			switch (col) {
-				case 3:
 				case 1:
+				case 3:
 					return "";
 				case 4:
 					return "Add to Inventory...";

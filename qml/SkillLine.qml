@@ -89,7 +89,7 @@ Rectangle {
 			MouseArea {
 				anchors.fill: parent
 				onClicked: {
-					characterData.itemKey = "";
+					characterData.itemUuid = "";
 					characterData.itemName = "";
 					characterData.activeSkill = skill;
 					characterData.dicePool = dice;

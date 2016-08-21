@@ -51,6 +51,11 @@
 #define DRANGED_BIT	128
 #define DMELEE_BIT	256
 
+#define UNDEFINED	0
+#define NOT_CARRIED	1
+#define IS_HELD		2
+#define IS_EQUIPPED	3
+
 class Character;
 
 class Quality {
@@ -86,7 +91,7 @@ public:
 	Quality itemAt(int i);
 	Quality get(const QString& key);
 	void addItem(Quality qual);
-	void addMod(Mod mod);
+	//void addMod(Mod mod);
 
 private:
 	QMap<QString, Quality>	iModMap;
@@ -217,15 +222,20 @@ private:
 
 class Item {
 public:
-	QString		key;
+	QString		uuid;
+	QString		itemkey;
 	QString		rename;
 	QString		notes;
 	QString		attachments;
 	bool		shown;
 	DieModList	dieModList;
 	QStringList	attachList;
+	int			originalQuantity;
+	int			originalStored;
+	int			originalState;
 
 	QString name() const;
+	bool unmodified();
 	bool restricted();
 	QString damageTotal();
 	QString dicePool();
@@ -250,11 +260,6 @@ public:
 	int quantity();
 	int carriedQuantity();
 	int stored();
-	void setHeld(bool h);
-	void setEquipped(bool g);
-	void setQuantity(int v);
-	int originalQuantity();
-	int originalState();
 	bool isGrenade();
 	bool canBeWorn();
 
@@ -263,36 +268,32 @@ public:
 	bool hasMod(const QString& qkey);
 	Mod getMod(const QString& key);
 
-	void addQuality(Quality qual);
-	//void addQualityFromMod(Mod mod);
 	bool hasQuality(const QString& key);
 	Quality getQuality(const QString& key);
 
 	int encumberance();
 
-	void clear(const QString& k) {
-		key = k;
-		iQuantity = 0;
-		iHeld = false;
-		iEquipped = false;
+	void clear() {
+		uuid.clear();
+		itemkey.clear();
 		rename.clear();
 		notes.clear();
 		attachments.clear();
 		shown = true;
+		dieModList.clear();
 		attachList.clear();
-		qualityList.clear();
-		modList.clear();
+
+		originalQuantity = 0;
+		originalStored = 0;
+		originalState = NOT_CARRIED;
+
+		iModList.clear();
 	}
 
 private:
 	void storageData(int& quantity, int& stored, int& state);
 
-	bool	iHeld;
-	bool	iEquipped;
-	int		iQuantity;
-
-	QualityList qualityList;
-	ModList modList;
+	ModList	iModList;
 };
 
 #define INV_TYPE_WEAPON			0

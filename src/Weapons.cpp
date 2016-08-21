@@ -34,7 +34,7 @@
 
 // Weapons -------------------------
 
-Weapons Weapons::instance = Weapons(QStringList() << "key" << "weapon" << "skill" << "range"
+Weapons Weapons::instance = Weapons(QStringList() << "uuid" << "itemkey" << "weapon" << "skill" << "range"
 									<< "damage" << "critical" << "dicePool" << "qualities" << "quantity" << "stored"
 									<< "encumberance" << "carry_state" << "restricted" << "attachments" << "critplus" << "pierce" << "notes");
 
@@ -51,15 +51,15 @@ QVariant Weapons::getValue(int row, const char* col)
 		return item.name();
 
 	if (strcmp(col, "skill") == 0) {
-		Skill* skill = Skill::getSkill(Shop::instance.getItem(item.key).skillKey);
+		Skill* skill = Skill::getSkill(Shop::instance.getItem(item.itemkey).skillKey);
 		return skill ? skill->shortName : "?";
 	}
 
 	if (strcmp(col, "encumberance") == 0)
-		return Shop::instance.getItem(item.key).encumberance;
+		return Shop::instance.getItem(item.itemkey).encumberance;
 
 	if (strcmp(col, "range") == 0)
-		return Shop::instance.getItem(item.key).range;
+		return Shop::instance.getItem(item.itemkey).range;
 
 	if (strcmp(col, "damage") == 0)
 		return item.damageTotal();

@@ -119,7 +119,7 @@ Rectangle {
 			width: colWidths[5]
 			height: parent.height
 			color: lineColor
-			invKey: key
+			invUuid: uuid
 			invName: armor
 			invState: carry_state
 			invQuantity: quantity
@@ -142,7 +142,7 @@ Rectangle {
 
 			MouseArea {
 				anchors.fill: parent
-				onClicked: gearDatapadDialog.newDatapadItem(key, 3, armor); // ITEM_AMOUNT
+				onClicked: gearDatapadDialog.newDatapadItem(itemkey, 3, armor); // ITEM_AMOUNT
 			}
 		}
 

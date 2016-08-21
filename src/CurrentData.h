@@ -59,11 +59,6 @@
 								(((x) & NEG_CHECK_3_PURPLE) ? 3 : 0) + \
 								(((x) & NEG_CHECK_4_PURPLE) ? 4 : 0))
 
-#define UNDEFINED				0
-#define NOT_CARRIED				1
-#define IS_HELD					2
-#define IS_EQUIPPED				3
-
 /*
 #define EXTRA_MAN				-100
 #define AIM						-101
@@ -124,14 +119,16 @@ private:
 
 class InvModItem {
 public:
-	QString key;
+	QString uuid;
+	QString itemkey;
 	int quantity; // UNKNOWN_QUANTITY, or actual stock
 	int stored;
 	int state; // UNDEFINED, NOT_CARRIED, IS_HELD, IS_EQUIPPED
 	int rowCount;
 
 	InvModItem() :
-		key(),
+		uuid(),
+		itemkey(),
 		quantity(UNKNOWN_QUANTITY),
 		stored(0),
 		state(UNDEFINED),
@@ -143,7 +140,8 @@ class InvLogItem {
 public:
 	int ref;
 	int count;
-	QString key;
+	QString uuid;
+	QString itemkey;
 	QString desc;
 	int amount;
 	int type;
@@ -151,16 +149,18 @@ public:
 	InvLogItem() :
 		ref(0),
 		count(0),
-		key(),
+		uuid(),
+		itemkey(),
 		desc(),
 		amount(0),
 		type(0) {
 	}
 
-	InvLogItem(int r, int c, const QString& k, const QString& d, int a, int t) :
+	InvLogItem(int r, int c, const QString& u, const QString& k, const QString& d, int a, int t) :
 		ref(r),
 		count(c),
-		key(k),
+		uuid(u),
+		itemkey(k),
 		desc(d),
 		amount(a),
 		type(t) {
@@ -279,11 +279,9 @@ public:
 	bool hasCustomItem() const;
 	int strainUsed(QString& consumable) const;
 	int movesUsed() const;
-	int addItem(const QString& pool, const QString& desc, int move, int strain,
+	int plus(const QString& pool, const QString& desc, int move, int strain,
 		int dpoint = 0, const QString& consumable = QString(), const QString& commit_key = QString(), int force_cost = 0);
-	//void addItem(int reference, const QString& pool, const QString& desc, int move, int strain,
-	//	int dpoint = 0, const QString& consumable = QString());
-	void addCustomItem(int ref, const QString& pool, const QString& desc);
+	void plusCustom(int ref, const QString& pool, const QString& desc);
 
 private:
 	int iRefCount;
@@ -349,13 +347,13 @@ public:
 	void addCustomSkill(const QString& name, const QString& charac, int ranks, bool loading = false);
 	void removeCustomSkill(const QString& name);
 
-	void addItem(int count, const QString& key, const QString& desc, int amount);
+	void addItem(int count, const QString& itemkey, const QString& desc, int amount);
 	void updateItem(int ref, int count, const QString& desc, int amount);
 	bool removeItem(int ref);
-	void storeItem(const QString& key, int count, int state, bool loading);
+	void storeItem(const QString& uuid, const QString& itemkey, int count, int state, bool loading);
 
 	void clearAutoCheckItems(const QString& skillKey);
-	void setupAutoCheckItems(const QString& skillKey, const QString& weapon);
+	void setupAutoCheckItems(const QString& skillKey, const QString& uuid);
 	void exitAutoCheckItems(const QString& skillKey);
 	void addCheckItem(const QString& skillKey, const QString& pool, const QString& desc);
 	void updateCheckItem(int ref, const QString& skillKey, const QString& pool, const QString& desc);
@@ -380,9 +378,9 @@ private:
 	void setExpLogItem(int type, const QString& key, const QString& name, const QString& desc, int amount, bool loading);
 	void addExpLogItem(int type, const QString& key, const QString& name, const QString& desc, int amount);
 	int findInvLogItem(int ref);
-	void setInvLogItem(int count, const QString& key, const QString& desc, int amount, bool loading);
+	QString setInvLogItem(int count, const QString& uuid, const QString& itemkey, const QString& desc, int amount, bool loading);
 	void addInvLogItem(const QString& desc, int amount, int type);
-	void changeInventory(const QString& key, bool signal);
+	void inventoryChanged(const QString& uuid, const QString& itemkey, bool signal);
 	void setCheckItem(const QString& skillKey, const QString& pool, const QString& desc);
 	void addCheckItem(const QString& skillKey, int reference, const QString& pool, const QString& desc);
 	void checkChecked(const QString& skillKey);
@@ -400,10 +398,12 @@ private:
 
 	int			iNextItem;
 	int			iItemCount;
+	QString		iItemUuid;
 	QString		iItemKey;
 	QString		iItemDesc;
 	int			iItemAmount;
 
+	QString		iStoreItemUuid;
 	QString		iStoreItemKey;
 	int			iStoreItemAmount;
 	int			iStoreItemState; // UNDEFINED, NOT_CARRIED, IS_HELD, IS_EQUIPPED

@@ -6,9 +6,6 @@
 DataList DataList::speciesFeatures = DataList(QStringList() << "title" << "subtitle" << "content");
 DataList DataList::injuries = DataList(QStringList() << "ref" << "percent" << "type" << "title"
 	<< "description" << "dice");
-// type: start=0, total=1, amount=2
-//DataList ExperienceList::instance = DataList(QStringList() << "ref" << "description" << "amount" << "type");
-//DataList DataList::checklist = DataList(QStringList() << "ref" << "checked" << "dice" << "description");
 DataList DataList::motivation = DataList(QStringList() << "name1" << "name2" << "notes");
 DataList DataList::morality = DataList(QStringList() << "name1" << "name2" << "notes");
 
@@ -260,13 +257,14 @@ void DataList::setValue(int row, const char* col, bool value)
 
 ItemList::ItemList(QStringList columns) :
 	AbstractDataList(columns),
-	iList()
+	iUuidList(),
+	iItemKeyList()
 {
 }
 
 int ItemList::rowCount()
 {
-	return iList.size();
+	return iUuidList.size();
 }
 
 QVariant ItemList::getValue(int row, int col)
@@ -280,8 +278,10 @@ QVariant ItemList::getValue(int row, const char* col)
 {
 	Item item = itemAt(row);
 
-	if (strcmp(col, "key") == 0)
-		return item.key;
+	if (strcmp(col, "uuid") == 0)
+		return item.uuid;
+	if (strcmp(col, "itemkey") == 0)
+		return item.itemkey;
 	if (strcmp(col, "name") == 0)
 		return item.name();
 	if (strcmp(col, "quantity") == 0)
@@ -306,20 +306,59 @@ QVariant ItemList::getValue(int row, const char* col)
 
 void ItemList::clear()
 {
-	iList.clear();
+	iUuidList.clear();
+	iItemKeyList.clear();
 	iSortedKeys.clear();
 }
 
-void ItemList::addItem(const Item& item)
+void ItemList::aquireItem(Item& item, bool loading)
 {
-	iList[item.key] = item;
-	iSortedKeys.clear();
+	if (item.itemkey.isEmpty()) {
+		if (item.uuid.isEmpty()) {
+			qDebug() << "NO!";
+			return;
+		}
+
+		// For example UNARMED!
+		item.itemkey = item.uuid;
+	}
+
+	if (item.unmodified())
+		// If unmodified, store as generic:
+		item.uuid = item.itemkey;
+	else if (item.uuid.isEmpty())
+		item.uuid = DatUtil::genUuid();
+
+	if (loading) {
+		if (item.originalState == NOT_CARRIED)
+			item.originalStored = item.originalQuantity;
+	}
+
+	if (iUuidList.contains(item.uuid)) {
+		if (loading) {
+			iUuidList[item.uuid].originalQuantity += item.originalQuantity;
+			iUuidList[item.uuid].originalStored += item.originalStored;
+			if (item.originalState > iUuidList[item.uuid].originalState)
+				iUuidList[item.uuid].originalState = item.originalState;
+			if (item.notes.length() > iUuidList[item.uuid].notes.length())
+				iUuidList[item.uuid].notes = item.notes;
+		}
+	}
+	else {
+		iUuidList[item.uuid] = item;
+		iItemKeyList[item.itemkey].append(item.uuid);
+		iSortedKeys.clear();
+	}
 }
 
-void ItemList::removeItem(const QString& key)
+void ItemList::removeItemByUuid(const QString& uuid)
 {
-	iList.remove(key);
-	iSortedKeys.clear();
+	if (iUuidList.contains(uuid)) {
+		QString itemkey = iUuidList[uuid].itemkey;
+		iUuidList.remove(uuid);
+		iItemKeyList[itemkey].removeOne(uuid);
+		iSortedKeys.clear();
+	}
 }
 
 Item ItemList::itemAt(int row)
@@ -327,50 +366,79 @@ Item ItemList::itemAt(int row)
 	if (row < 0 || row >= rowCount())
 		return Item();
 	if (iSortedKeys.size() == 0) {
-		QMapIterator<QString, Item> i(iList);
+		QMapIterator<QString, Item> i(iUuidList);
 
 		while (i.hasNext()) {
 			i.next();
 			addSortedItem(i.value());
 		}
 	}
-	return iList[iSortedKeys[row]];
+	return iUuidList[iSortedKeys[row]];
 }
 
-bool ItemList::contains(const QString& key)
+bool ItemList::containsByUuid(const QString& uuid)
 {
-	return iList.contains(key);
+	return iUuidList.contains(uuid);
 }
 
 bool ItemList::equipped(const QString& key)
 {
-	Item i = getItem(key);
-	return i.equipped();
+	QListIterator<QString> i(getItemByKey(key));
+
+	while (i.hasNext()) {
+		if (iUuidList[i.next()].equipped())
+			return true;
+	}
+	return false;
 }
 
-int ItemList::carried(const QString& key)
+int ItemList::carriedQuantity(const QString& key)
 {
-	Item i = getItem(key);
-	return i.carriedQuantity();
+	int count = 0;
+	QListIterator<QString> i(getItemByKey(key));
+
+	while (i.hasNext()) {
+		count += iUuidList[i.next()].carriedQuantity();
+	}
+	return count;
 }
 
-Item ItemList::getItem(const QString& key)
+int ItemList::quantity(const QString& key)
 {
-	if (iList.contains(key))
-		return iList[key];
+	int count = 0;
+	QListIterator<QString> i(getItemByKey(key));
+
+	while (i.hasNext()) {
+		count += iUuidList[i.next()].quantity();
+	}
+	return count;
+}
+
+Item ItemList::getItemByUuid(const QString& uuid)
+{
+	if (iUuidList.contains(uuid))
+		return iUuidList[uuid];
 	return Item();
 }
 
-bool ItemList::changeEquipment(const QString& key, int state, int stored)
+QStringList& ItemList::getItemByKey(const QString& key)
 {
-	if (iList.contains(key)) {
-		Item item = iList[key];
+	static QStringList empty;
+	if (iItemKeyList.contains(key))
+		return iItemKeyList[key];
+	return empty;
+}
+
+bool ItemList::changeEquipment(const QString& uuid, int state, int stored)
+{
+	if (iUuidList.contains(uuid)) {
+		Item item = iUuidList[uuid];
 
 		if (state < NOT_CARRIED || state > IS_EQUIPPED)
 			state = NOT_CARRIED;
-		if (state == item.originalState())
+		if (state == item.originalState)
 			state = UNDEFINED;
-		Character::instance->currentData()->storeItem(key, stored, state, false);
+		Character::instance->currentData()->storeItem(uuid, item.itemkey, stored, state, false);
 		setDataChanged();
 		return true;
 	}
@@ -380,11 +448,11 @@ bool ItemList::changeEquipment(const QString& key, int state, int stored)
 void ItemList::addSortedItem(const Item& item)
 {
 	for (int i=0; i<iSortedKeys.size(); i++) {
-		Item b = iList[iSortedKeys[i]];
+		Item b = iUuidList[iSortedKeys[i]];
 		if (b.name() > item.name()) {
-			iSortedKeys.insert(i, item.key);
+			iSortedKeys.insert(i, item.uuid);
 			return;
 		}
 	}
-	iSortedKeys.append(item.key);
+	iSortedKeys.append(item.uuid);
 }

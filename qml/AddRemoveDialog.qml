@@ -72,7 +72,7 @@ Dialog {
 		if (countDelta.text.trim().length > 0) {
 			if (amountDelta.text.trim().length == 0)
 				amountDelta.text = "0";
-			characterData.addItem(parseInt(countDelta.text), key, "", parseInt(amountDelta.text));
+			characterData.addInvItem(parseInt(countDelta.text), key, "", parseInt(amountDelta.text));
 		}
 		Qt.inputMethod.hide();
 	}

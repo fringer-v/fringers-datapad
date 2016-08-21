@@ -216,7 +216,8 @@ void Character::clear(bool signal)
 	iActiveSkill.clear();
 	iActiveSkillKey.clear();
 	iDicePool.clear();
-	iItemKey.clear();
+	iItemUuid.clear();
+	iItemItemKey.clear();
 	iItemName.clear();
 	iItemSkill.clear();
 	iItemDamage.clear();
@@ -276,7 +277,8 @@ void Character::clear(bool signal)
 		emit activeSkillChanged(activeSkill());
 		emit dicePoolChanged(dicePool());
 		emit negativePoolChanged(negativePool());
-		emit itemKeyChanged(itemKey());
+		emit itemUuidChanged(itemUuid());
+		emit itemItemKeyChanged(itemItemKey());
 		emit itemNameChanged(itemName());
 		emit itemRangeChanged(itemRange());
 		emit itemSkillChanged(itemSkill());
@@ -626,9 +628,14 @@ int Character::negativePool()
 	return iCurrentData.negativePool();
 }
 
-QString Character::itemKey()
+QString Character::itemUuid()
 {
-	return iItemKey;
+	return iItemUuid;
+}
+
+QString Character::itemItemKey()
+{
+	return iItemItemKey;
 }
 
 QString Character::itemName()
@@ -846,35 +853,19 @@ void Character::removeCustomSkill(const QString& name)
 	iCurrentData.removeCustomSkill(name);
 }
 
-void Character::addItem(int count, const QString& key, const QString& desc, int amount)
+void Character::addInvItem(int count, const QString& itemkey, const QString& desc, int amount)
 {
-	if (!key.isEmpty()) {
-		if (!count)
-			count = 1;
-		if (count > 0) {
-			if (amount > 0)
-				amount = -amount;
-		}
-		else {
-			if (amount < 0)
-				amount = -amount;
-		}
-	}
-	else if (!desc.isEmpty()) {
-		// Free text has no count:
-		count = 0;
-	}
-	else
+	if (!itemkey.isEmpty() && !desc.isEmpty())
 		return;
-	iCurrentData.addItem(count, key, desc, amount);
+	iCurrentData.addItem(count, itemkey, desc, amount);
 }
 
-void Character::updateItem(int ref, int count, const QString& desc, int amount)
+void Character::updateInvItem(int ref, int count, const QString& desc, int amount)
 {
 	iCurrentData.updateItem(ref, count, desc, amount);
 }
 
-bool Character::removeItem(int ref)
+bool Character::removeInvItem(int ref)
 {
 	return iCurrentData.removeItem(ref);
 }
@@ -995,7 +986,7 @@ void Character::hideCheckList()
 
 void Character::fillCheckList()
 {
-	iCurrentData.setupAutoCheckItems(iActiveSkillKey, iItemKey);
+	iCurrentData.setupAutoCheckItems(iActiveSkillKey, iItemUuid);
 	CheckList::instance.setRowCountChanged();
 	CheckList::instance.setClean();
 }
@@ -1294,11 +1285,19 @@ void Character::setNegativePool(int t)
 	emit negativePoolChanged(negativePool());
 }
 
-void Character::setItemKey(const QString& t)
+void Character::setItemUuid(const QString& t)
 {
-	if (iItemKey != t) {
-		iItemKey = t;
-		emit itemKeyChanged(t);
+	if (iItemUuid != t) {
+		iItemUuid = t;
+		emit itemUuidChanged(t);
+	}
+}
+
+void Character::setItemItemKey(const QString& t)
+{
+	if (iItemItemKey != t) {
+		iItemItemKey = t;
+		emit itemItemKeyChanged(t);
 	}
 }
 
@@ -1541,11 +1540,8 @@ void Character::inventoryChanged()
 		burly = ch_talent.ranks * talent.burly;
 	}
 
-	if (Gear::instance.contains(ShopGear::grenBandKey)) {
-		Item item = Gear::instance.getItem(ShopGear::grenBandKey);
-		if (item.equipped())
-			grenade_bandolier = true;
-	}
+	if (Gear::instance.equipped(ShopGear::grenBandKey))
+		grenade_bandolier = true;
 
 	mods.clear();
 	for (int i = 0; i < Weapons::instance.rowCount(); i++) {

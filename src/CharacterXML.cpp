@@ -90,10 +90,13 @@ void CharacterXML::end()
 	// Current Data!
 	Character::instance->loadCurrentData();
 
-	Item una;
-	una.clear("UNARMED");
-	una.setQuantity(1);
-	Weapons::instance.addItem(una);
+	if (!Weapons::instance.containsByUuid("UNARMED")) {
+		Item una;
+		una.clear();
+		una.itemkey = "UNARMED";
+		una.originalQuantity = 1;
+		Weapons::instance.aquireItem(una, true);
+	}
 
 	GeneralSkills::instance.setDataChanged();
 	CombatSkills::instance.setDataChanged();
@@ -260,7 +263,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/CharRanks/"))
 		iAttrValue += toInt(value);
 
-	// Oblictions -----------------------
+	// Obligations -----------------------
 	else if (path.endsWith("/CharObligation/#open"))
 		iCharItem.clear();
 	else if (path.endsWith("/CharObligation/ObKey/"))
@@ -361,14 +364,22 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		iChoices[iChoiceKey] = value;
 
 	// Weapons, Armor, Gear -----------------------
+	else if (path.endsWith("/CharWeapon/#open") || path.endsWith("/CharArmor/#open") || path.endsWith("/CharGear/#open"))
+		iItem.clear();
+	else if (path.endsWith("/CharWeapon/Key/") || path.endsWith("/CharArmor/Key/") || path.endsWith("/CharGear/Key/"))
+		iItem.uuid = value;
 	else if (path.endsWith("/CharWeapon/ItemKey/") || path.endsWith("/CharArmor/ItemKey/") || path.endsWith("/CharGear/ItemKey/"))
-		iItem.clear(value);
-	else if (path.endsWith("/CharWeapon/Equipped/") || path.endsWith("/CharArmor/Equipped/") || path.endsWith("/CharGear/Equipped/"))
-		iItem.setEquipped(isTrue(value));
-	else if (path.endsWith("/CharWeapon/Held/") || path.endsWith("/CharArmor/Held/") || path.endsWith("/CharGear/Held/"))
-		iItem.setHeld(isTrue(value));
+		iItem.itemkey = value;
+	else if (path.endsWith("/CharWeapon/Equipped/") || path.endsWith("/CharArmor/Equipped/") || path.endsWith("/CharGear/Equipped/")) {
+		if (isTrue(value))
+			iItem.originalState = IS_EQUIPPED;
+	}
+	else if (path.endsWith("/CharWeapon/Held/") || path.endsWith("/CharArmor/Held/") || path.endsWith("/CharGear/Held/")) {
+		if (iItem.originalState != IS_EQUIPPED && isTrue(value))
+			iItem.originalState = IS_HELD;
+	}
 	else if (path.endsWith("/CharWeapon/Count/") || path.endsWith("/CharArmor/Count/") || path.endsWith("/CharGear/Count/"))
-		iItem.setQuantity(toInt(value));
+		iItem.originalQuantity = toInt(value);
 	else if (path.endsWith("/CharWeapon/Notes/") || path.endsWith("/CharArmor/Notes/") || path.endsWith("/CharGear/Notes/"))
 		iItem.notes = value;
 	else if (path.endsWith("/CharWeapon/Rename/") || path.endsWith("/CharArmor/Rename/") || path.endsWith("/CharGear/Rename/"))
@@ -429,22 +440,20 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		iItem.addMod(iModList);
 	}
 	else if (path.endsWith("/CharWeapon/#end")) {
-		if (!iItem.key.isEmpty())
-			Weapons::instance.addItem(iItem);
+		if (!iItem.uuid.isEmpty())
+			Weapons::instance.aquireItem(iItem, true);
 	}
 	else if (path.endsWith("/CharArmor/#end")) {
-		if (!iItem.key.isEmpty())
-			Armor::instance.addItem(iItem);
+		if (!iItem.uuid.isEmpty())
+			Armor::instance.aquireItem(iItem, true);
 	}
 	else if (path.endsWith("/CharGear/#end")) {
-		if (!iItem.key.isEmpty())
-			Gear::instance.addItem(iItem);
+		if (!iItem.uuid.isEmpty())
+			Gear::instance.aquireItem(iItem, true);
 	}
 
-	else if (path.endsWith("/AdvAbility/Key/")) {
-		iShopItem.clear(value);
-		iItem.clear(value);
-	}
+	else if (path.endsWith("/AdvAbility/#open"))
+		iTalent.clear(QString());
 	else if (path.endsWith("/AdvAbility/Name/"))
 		iTalent.name = value;
 	else if (path.endsWith("/AdvAbility/Description/"))
@@ -461,17 +470,17 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		}
 		else {
 			iTalent.key = "KEY_"+iTalent.name.toUpper();
-			iCharTalent.key = "KEY_"+iTalent.name.toUpper();
+			iCharTalent.key = iTalent.key;
 			AllTalents::instance()->addTalent(iTalent);
 			Character::instance->talents.addTalent(iCharTalent);
 		}
 	}
 
-	else if (path.endsWith("/AdvItem/Key/")) {
-		iShopItem.clear(value);
+	else if (path.endsWith("/AdvItem/#open")) {
+		iShopItem.clear(QString());
 		iShopItem.type = "GEAR";
-		iItem.clear((value));
-		iItem.setQuantity(1);
+		iItem.clear();
+		iItem.originalQuantity = 1;
 	}
 	else if (path.endsWith("/AdvItem/Name/"))
 		iShopItem.name = value;
@@ -485,10 +494,10 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 			iShopItem.description = iShopItem.name;
 			iShopItem.name = word_1 + (!word_2.isEmpty() ? " " + word_2 : "");
 		}
-		iShopItem.key = "KEY_"+iShopItem.name.toUpper();
-		iItem.key = "KEY_"+iShopItem.name.toUpper();
+		iItem.itemkey = "KEY_"+iShopItem.name.toUpper();
+		iShopItem.key = iItem.itemkey;
 		Shop::instance.addItem(iShopItem);
-		Gear::instance.addItem(iItem);
+		Gear::instance.aquireItem(iItem, true);
 	}
 
 	//	Character::instance->setCareer(value);

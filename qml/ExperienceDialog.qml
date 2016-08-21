@@ -374,15 +374,15 @@ Rectangle {
 	{
 		var val;
 
-		if (type == "DUTYRANK")
+		if (type === "DUTYRANK")
 			val = "Duty Rank";
-		else if (type == "DUTY")
+		else if (type === "DUTY")
 			val = "Duty: "+name;
-		else if (type == "XP")
+		else if (type === "XP")
 			val = "XP";
-		else if (type == "OBLIGATION")
+		else if (type === "OBLIGATION")
 			val = "Obligation: "+name;
-		else if (type == "MORALITY")
+		else if (type === "MORALITY")
 			val = "Morality";
 		else
 			return "";

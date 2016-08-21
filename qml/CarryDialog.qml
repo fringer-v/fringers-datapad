@@ -9,7 +9,7 @@ Dialog {
 	width: 400
 	standardButtons: StandardButton.Ok | StandardButton.Cancel
 
-	property string itemKey: ""
+	property string itemUuid: ""
 	property int itemTotal: 0
 	property int itemStored: 0
 
@@ -60,7 +60,7 @@ Dialog {
 			if (carry > itemTotal)
 				carry = itemTotal;
 			if (carry > 0)
-				characterData.changeEquipment(itemKey, 2, itemTotal - carry);
+				characterData.changeEquipment(itemUuid, 2, itemTotal - carry);
 		}
 		Qt.inputMethod.hide();
 	}

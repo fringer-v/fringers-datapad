@@ -13,6 +13,8 @@ RELEASE NOTES
 
 - The total XP, Obligations, Duty and Morality are now shown in the EARNED & AQUIRED box.
 
+- Morality of non-Force users may be changed, when at 50%, the morality is display as "n/a". When not at 50%, the value is displayed.
+
 - Inventory list and check list items now adjust to fit text.
 
 - Display renamed item names correctly.

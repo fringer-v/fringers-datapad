@@ -368,6 +368,13 @@ QString DatUtil::unCapitalize(QString x)
 	return x.replace(0, 1, ch.toLower());
 }
 
+QString DatUtil::genUuid()
+{
+	static uint counter = rand();
+	counter++;
+	return QString("#%1-%2-%3").arg(time(NULL) % 10000000).arg(rand() % 1000000).arg(counter % 100000);
+}
+
 QByteArray DatUtil::toBytes(const QString& value)
 {
 	QByteArray from;

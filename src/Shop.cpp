@@ -92,12 +92,12 @@ ShopItem Shop::itemAt(int row)
 
 bool Shop::contains(const QString& key)
 {
-	return iList.contains(key);
+	return !key.isEmpty() && iList.contains(key);
 }
 
 ShopItem Shop::getItem(const QString& key)
 {
-	if (iList.contains(key))
+	if (contains(key))
 		return iList[key];
 	return ShopItem();
 }

@@ -299,7 +299,7 @@ public:
 	Q_INVOKABLE void removeCheckItem(int ref);
 	Q_INVOKABLE void checkItem(int ref);
 
-	Q_INVOKABLE void changeEquipment(const QString& key, bool equipped, bool held);
+	Q_INVOKABLE void changeEquipment(const QString& uuid, bool equipped, bool held);
 
 	Q_INVOKABLE void setFile(const QString& value);
 	Q_INVOKABLE void setName(const QString& value);

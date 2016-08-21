@@ -186,12 +186,12 @@ Rectangle {
 			width: colWidths[6]
 			height: parent.height
 			color: lineColor
-			invKey: key
+			invUuid: uuid
 			invName: weapon
 			invState: carry_state
 			invQuantity: quantity
 			invStored: stored
-			enabled: key !== "UNARMED"
+			enabled: itemkey !== "UNARMED"
 		}
 
 		Rectangle {
@@ -205,15 +205,15 @@ Rectangle {
 				anchors.horizontalCenter: parent.horizontalCenter
 				antialiasing: true
 				smooth: true
-				visible: key !== "UNARMED"
+				visible: itemkey !== "UNARMED"
 				source: "qrc:/images/cart20.png"
 			}
 
 			MouseArea {
 				anchors.fill: parent
 				onClicked: {
-					if (key !== "UNARMED")
-						gearDatapadDialog.newDatapadItem(key, 3, weapon); // ITEM_AMOUNT
+					if (itemkey !== "UNARMED")
+						gearDatapadDialog.newDatapadItem(itemkey, 3, weapon); // ITEM_AMOUNT
 				}
 			}
 		}
@@ -303,7 +303,8 @@ Rectangle {
 
 	function useWeapon()
 	{
-		characterData.itemKey = key;
+		characterData.itemUuid = uuid;
+		characterData.itemItemKey = itemkey;
 		characterData.itemName = weapon;
 		characterData.itemRange = range;
 		characterData.itemSkill = skill;

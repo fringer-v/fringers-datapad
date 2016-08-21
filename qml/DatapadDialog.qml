@@ -12,7 +12,7 @@ Rectangle {
 	visible: false
 
 	property int itemRef: 0
-	property string itemKey: ""
+	property string itemItemKey: ""
 	property int itemType: 0
 
 	property int margin: 5
@@ -23,10 +23,10 @@ Rectangle {
 		return datapadItemDialog.mapToItem (item_dest.parent, pos_abs.x, pos_abs.y);
 	}
 
-	function editDataPadLine(ref, key, type, count, amount, desc, item, price, rarity)
+	function editDataPadLine(ref, itemkey, type, count, amount, desc, item, price, rarity)
 	{
 		itemRef = ref;
-		itemKey = key;
+		itemItemKey = itemkey;
 		itemType = type;
 		if (count === 0) {
 			datapadItemDialogNumber.boxText = "";
@@ -45,17 +45,17 @@ Rectangle {
 		datapadItemDialogNumber.focus = true;
 	}
 
-	function newDatapadItem(key, type, item)
+	function newDatapadItem(itemkey, type, item)
 	{
 		itemRef = 0;
-		itemKey = key;
+		itemItemKey = itemkey;
 		itemType = type;
 		datapadItemDialogNumber.boxText = "";
 		datapadItemDialogAmount.boxText = "";
 		datapadItemDialogDesc.boxText = "";
 		datapadItemBoxItem.infoText = item;
-		datapadItemBoxPrice.infoText = key === "" ? "" : characterData.getPrice(key) + " CR";
-		datapadItemBoxRarity.infoText = key === "" ? "" : characterData.getRarity(key);
+		datapadItemBoxPrice.infoText = itemkey === "" ? "" : characterData.getPrice(itemkey) + " CR";
+		datapadItemBoxRarity.infoText = itemkey === "" ? "" : characterData.getRarity(itemkey);
 		searchTextField.text = "";
 		datapadItemDialog.visible = true
 		searchTextField.focus = true;
@@ -152,14 +152,14 @@ Rectangle {
 				amount = 0;
 		}
 
-		var item = itemKey.trim();
+		var item = itemItemKey.trim();
 		var desc = datapadItemDialogDesc.boxText.trim();
 
-		if (item.length != 0 || desc.length !== 0) {
+		if (item.length !== 0 || desc.length !== 0) {
 			if (itemRef > 0)
-				characterData.updateItem(itemRef, count, desc, amount);
+				characterData.updateInvItem(itemRef, count, desc, amount);
 			else
-				characterData.addItem(count, item, desc, amount);
+				characterData.addInvItem(count, item, desc, amount);
 		}
 		Qt.inputMethod.hide();
 	}
@@ -279,7 +279,7 @@ Rectangle {
 					height: 40
 					enabled: itemType === 3 || itemType === 5 // ITEM_AMOUNT || ITEM_ADD_ITEM
 					placeHolderText: "Price"
-					format: itemKey === "" ? "integer" : "natural"
+					format: itemItemKey === "" ? "integer" : "natural"
 					name: "amount"
 
 					onDonePressed: datapadClickedOK()
@@ -442,7 +442,7 @@ Rectangle {
 										else {
 											datapadShopList.visible = false;
 											if (text.length == 0) {
-												itemKey = "";
+												itemItemKey = "";
 												datapadItemBoxItem.infoText = "";
 												datapadItemBoxPrice.infoText = "";
 												datapadItemBoxRarity.infoText = "";
@@ -605,7 +605,7 @@ Rectangle {
 		}
 
 		onYes: {
-			characterData.removeItem(itemRef);
+			characterData.removeInvItem(itemRef);
 			datapadItemDialog.visible = false;
 		}
 	}

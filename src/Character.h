@@ -199,7 +199,8 @@ public:
 	Q_PROPERTY(QString activeSkill READ activeSkill WRITE setActiveSkill NOTIFY activeSkillChanged)
 	Q_PROPERTY(QString dicePool READ dicePool WRITE setDicePool NOTIFY dicePoolChanged)
 	Q_PROPERTY(int negativePool READ negativePool WRITE setNegativePool NOTIFY negativePoolChanged)
-	Q_PROPERTY(QString itemKey READ itemKey WRITE setItemKey NOTIFY itemKeyChanged)
+	Q_PROPERTY(QString itemUuid READ itemUuid WRITE setItemUuid NOTIFY itemUuidChanged)
+	Q_PROPERTY(QString itemItemKey READ itemItemKey WRITE setItemItemKey NOTIFY itemItemKeyChanged)
 	Q_PROPERTY(QString itemName READ itemName WRITE setItemName NOTIFY itemNameChanged)
 	Q_PROPERTY(QString itemRange READ itemRange WRITE setItemRange NOTIFY itemRangeChanged)
 	Q_PROPERTY(QString itemSkill READ itemSkill WRITE setItemSkill NOTIFY itemSkillChanged)
@@ -323,7 +324,8 @@ public:
 	QString activeSkillKey();
 	QString dicePool();
 	int negativePool();
-	QString itemKey();
+	QString itemUuid();
+	QString itemItemKey();
 	QString itemName();
 	QString itemRange();
 	QString itemSkill();
@@ -357,9 +359,9 @@ public:
 	Q_INVOKABLE void addCustomSkill(const QString& name, const QString& charac, int ranks);
 	Q_INVOKABLE void removeCustomSkill(const QString& name);
 
-	Q_INVOKABLE void addItem(int count, const QString& key, const QString& desc, int amount);
-	Q_INVOKABLE void updateItem(int ref, int count, const QString& desc, int amount);
-	Q_INVOKABLE bool removeItem(int ref);
+	Q_INVOKABLE void addInvItem(int count, const QString& itemkey, const QString& desc, int amount);
+	Q_INVOKABLE void updateInvItem(int ref, int count, const QString& desc, int amount);
+	Q_INVOKABLE bool removeInvItem(int ref);
 	Q_INVOKABLE int getPrice(const QString& key);
 	Q_INVOKABLE int getRarity(const QString& key);
 	Q_INVOKABLE void searchShop(QString search_string);
@@ -369,7 +371,7 @@ public:
 	Q_INVOKABLE void removeCheckItem(int ref);
 	Q_INVOKABLE void checkItem(int ref);
 
-	Q_INVOKABLE void changeEquipment(const QString& key, int state, int stored);
+	Q_INVOKABLE void changeEquipment(const QString& uuid, int state, int stored);
 	Q_INVOKABLE void showCharacteristics(); // characteristics
 	Q_INVOKABLE void showDescription(); // description
 	Q_INVOKABLE void showSkills(); // skills
@@ -407,7 +409,8 @@ public:
 	Q_INVOKABLE void setActiveSkill(const QString& t);
 	Q_INVOKABLE void setDicePool(const QString& t);
 	Q_INVOKABLE void setNegativePool(int t);
-	Q_INVOKABLE void setItemKey(const QString& t);
+	Q_INVOKABLE void setItemUuid(const QString& t);
+	Q_INVOKABLE void setItemItemKey(const QString& t);
 	Q_INVOKABLE void setItemName(const QString& t);
 	Q_INVOKABLE void setItemRange(const QString& t);
 	Q_INVOKABLE void setItemSkill(const QString& t);
@@ -483,7 +486,8 @@ signals:
 	void activeSkillChanged(const QString& value);
 	void dicePoolChanged(const QString& value);
 	void negativePoolChanged(int value);
-	void itemKeyChanged(const QString& value);
+	void itemUuidChanged(const QString& value);
+	void itemItemKeyChanged(const QString& value);
 	void itemNameChanged(const QString& value);
 	void itemRangeChanged(const QString& value);
 	void itemSkillChanged(const QString& value);
@@ -568,7 +572,8 @@ private:
 	QString iActiveSkill;
 	QString iActiveSkillKey;
 	QString iDicePool;
-	QString iItemKey;
+	QString iItemUuid;
+	QString iItemItemKey;
 	QString iItemName;
 	QString iItemRange;
 	QString iItemSkill;

@@ -34,7 +34,7 @@
 
 // Armor -------------------------
 
-Armor Armor::instance = Armor(QStringList() << "key" << "armor" << "quantity" << "stored" << "soak"
+Armor Armor::instance = Armor(QStringList() << "uuid" << "itemkey" << "armor" << "quantity" << "stored" << "soak"
 							  << "mdef" << "rdef" << "encumberance" << "carry_state" << "retricted" << "features"
 							  << "attachments" << "notes");
 

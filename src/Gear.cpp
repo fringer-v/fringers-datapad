@@ -33,7 +33,7 @@
 
 // Gear -------------------------
 
-Gear Gear::instance = Gear(QStringList() << "key" << "gear" << "quantity" << "stored" << "encumberance"
+Gear Gear::instance = Gear(QStringList() << "uuid" << "itemkey" << "gear" << "quantity" << "stored" << "encumberance"
 						   << "carry_state" << "special" << "notes");
 
 Gear::Gear(QStringList columns) :
@@ -49,12 +49,12 @@ QVariant Gear::getValue(int row, const char* col)
 		return item.name();
 
 	if (strcmp(col, "encumberance") == 0) {
-		ShopItem shop = Shop::instance.getItem(item.key);
+		ShopItem shop = Shop::instance.getItem(item.itemkey);
 		return QVariant(shop.encumberance);
 	}
 
 	if (strcmp(col, "special") == 0) {
-		ShopItem	shop = Shop::instance.getItem(item.key);
+		ShopItem	shop = Shop::instance.getItem(item.itemkey);
 		QString		special;
 		QString		features;
 

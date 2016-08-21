@@ -31,11 +31,11 @@ Rectangle {
 					var t;
 					var c;
 
-					if (key == undefined || description == undefined ||
+					if (itemkey == undefined || description == undefined ||
 						type == undefined)
 						return "";
 
-					if (key.length === 0)
+					if (itemkey.length === 0)
 						return description;
 
 					if (type === 4) // ITEM_ORIG_STOCK
@@ -129,7 +129,7 @@ Rectangle {
 		anchors.fill: parent
 		onClicked: {
 			if (type === 3 || (type === 4 && keycount <= 1)) // ITEM_AMOUNT || ITEM_ORIG_STOCK
-				datapadItemDialog.editDataPadLine(ref, key, type, count, amount, description, item, price, rarity);
+				datapadItemDialog.editDataPadLine(ref, itemkey, type, count, amount, description, item, price, rarity);
 			else if (type == 5) // ITEM_ADD_ITEM
 				datapadItemDialog.newDatapadItem("", 5, ""); // ITEM_ADD_ITEM
 		}

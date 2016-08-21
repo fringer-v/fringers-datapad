@@ -4,7 +4,7 @@ import "../js/constants.js" as Constant
 
 Rectangle {
 	property bool isGear: false
-	property string invKey: ""
+	property string invUuid: ""
 	property string invName: ""
 	property int invState: 1
 	property int invQuantity: 1
@@ -33,14 +33,14 @@ Rectangle {
 			var new_stored = invStored;
 
 			if (new_state == 2 && invQuantity > 1) {
-				carryItemsDialog.itemKey = invKey;
+				carryItemsDialog.itemUuid = invUuid;
 				carryItemsDialog.itemTotal = invQuantity;
 				carryItemsDialog.itemStored = invStored;
 				carryItemsDialog.open();
 				new_stored = carryItemsDialog.itemsStored;
 			}
 			else
-				characterData.changeEquipment(invKey, new_state, new_stored);
+				characterData.changeEquipment(invUuid, new_state, new_stored);
 		}
 	}
 

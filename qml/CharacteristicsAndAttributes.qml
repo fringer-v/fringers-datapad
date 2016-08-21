@@ -39,7 +39,7 @@ Rectangle {
 					charShortName: "Br"
 					charValue: characterData.brawn + characterData.brawnDelta
 					onClicked: {
-						characterData.itemKey = "";
+						characterData.itemUuid = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -55,7 +55,7 @@ Rectangle {
 					charShortName: "Ag"
 					charValue: characterData.agility + characterData.agilityDelta
 					onClicked: {
-						characterData.itemKey = "";
+						characterData.itemUuid = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -71,7 +71,7 @@ Rectangle {
 					charShortName: "Int"
 					charValue: characterData.intellect + characterData.intellectDelta
 					onClicked: {
-						characterData.itemKey = "";
+						characterData.itemUuid = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -87,7 +87,7 @@ Rectangle {
 					charShortName: "Cun"
 					charValue: characterData.cunning + characterData.cunningDelta
 					onClicked: {
-						characterData.itemKey = "";
+						characterData.itemUuid = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -103,7 +103,7 @@ Rectangle {
 					charShortName: "Wil"
 					charValue: characterData.willpower + characterData.willpowerDelta
 					onClicked: {
-						characterData.itemKey = "";
+						characterData.itemUuid = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -119,7 +119,7 @@ Rectangle {
 					charShortName: "Pr"
 					charValue: characterData.presence + characterData.presenceDelta
 					onClicked: {
-						characterData.itemKey = "";
+						characterData.itemUuid = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -192,7 +192,7 @@ Rectangle {
 							anchors.bottom: parent.bottom
 							width: parent.width/2
 							onClicked: {
-								characterData.itemKey = "";
+								characterData.itemUuid = "";
 								characterData.itemName = "";
 								characterData.activeSkill = "DEFR";
 								characterData.dicePool = "?";
@@ -207,7 +207,7 @@ Rectangle {
 							anchors.bottom: parent.bottom
 							width: parent.width/2
 							onClicked: {
-								characterData.itemKey = "";
+								characterData.itemUuid = "";
 								characterData.itemName = "";
 								characterData.activeSkill = "DEFM";
 								characterData.dicePool = "?";
@@ -262,7 +262,7 @@ Rectangle {
 						charValue: characterData.force
 						onClicked: {
 							if (characterData.force > 0) {
-								characterData.itemKey = "";
+								characterData.itemUuid = "";
 								characterData.itemName = "";
 								characterData.activeSkill = "FORCE";
 								characterData.dicePool = Util.repeat("F", characterData.force);

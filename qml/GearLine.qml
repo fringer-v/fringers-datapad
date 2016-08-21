@@ -70,7 +70,7 @@ Rectangle {
 			height: gearLine.height
 			color: lineColor
 			isGear: true
-			invKey: key
+			invUuid: uuid
 			invName: gear
 			invState: carry_state
 			invQuantity: quantity
@@ -93,7 +93,7 @@ Rectangle {
 
 			MouseArea {
 				anchors.fill: parent
-				onClicked: gearDatapadDialog.newDatapadItem(key, 3, gear); // ITEM_AMOUNT
+				onClicked: gearDatapadDialog.newDatapadItem(itemkey, 3, gear); // ITEM_AMOUNT
 			}
 		}
 

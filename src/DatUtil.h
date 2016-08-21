@@ -86,6 +86,7 @@ public:
 	static int random();
 	static int d20() { return d(20); }
 	static const char *cstr(QString s);
+	static QString genUuid();
 
 	static QByteArray toBytes(const QString& value);
 	static QByteArray stringToBytes(QString value);

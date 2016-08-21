@@ -17,8 +17,6 @@ public:
 
 public:
 	void setModel(ListModel* model);
-	//void startChanges();
-	//void endChanges();
 	void dataChanged();
 	void rowCountChanged();
 	void setDataChanged();
@@ -75,12 +73,9 @@ public:
 	void setValue(int row, const char* col, bool value);
 
 	static DataList	speciesFeatures;
-	//static DataList	obligations;
-	//static DataList	duty;
 	static DataList	injuries;
 	static DataList	xp;
 	static DataList	inventory;
-	//static DataList	checklist;
 	static DataList	motivation;
 	static DataList	morality;
 
@@ -98,20 +93,23 @@ public:
 	virtual QVariant getValue(int row, const char* col);
 
 	void clear();
-	void addItem(const Item& item);
-	void removeItem(const QString& key);
+	void aquireItem(Item& item, bool loading);
+	void removeItemByUuid(const QString& uuid);
 	Item itemAt(int i);
-	bool contains(const QString& key);
+	bool containsByUuid(const QString& key);
 	bool equipped(const QString& key);
-	int carried(const QString& key);
-	Item getItem(const QString& key);
-	bool changeEquipment(const QString& key, int state, int stored);
+	int carriedQuantity(const QString& key);
+	int quantity(const QString& key);
+	Item getItemByUuid(const QString& uuid);
+	QStringList& getItemByKey(const QString& key);
+	bool changeEquipment(const QString& uuid, int state, int stored);
 
-protected:
+private:
 	void addSortedItem(const Item& item);
 
-	QMap<QString, Item> iList;
-	QStringList			iSortedKeys;
+	QMap<QString, Item> iUuidList;
+	QMap<QString, QStringList> iItemKeyList;
+	QStringList iSortedKeys;
 };
 
 #endif // __DataList_h__

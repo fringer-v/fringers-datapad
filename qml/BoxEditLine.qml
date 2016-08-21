@@ -57,11 +57,13 @@ Rectangle {
 
 	function actualText(text)
 	{
+		var val;
+
 		if (text !== "") {
 			if (format !== "text")
 				text = text.trim();
 			if (format === "natural") {
-				var val = parseInt(text);
+				val = parseInt(text);
 
 				if (isNaN(val))
 					text = "";
@@ -70,7 +72,7 @@ Rectangle {
 			}
 			else if (format === "integer") {
 				if (text !== "-") {
-					var val = parseInt(text);
+					val = parseInt(text);
 
 					if (isNaN(val))
 						text = "";
