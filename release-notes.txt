@@ -21,6 +21,10 @@ RELEASE NOTES
 
 - Attachments that modify the base damage or crit value are now correctly applied (this fixes the problem with light saber crystals).
 
+- Adding the same type of item with different modifications was previously not supported.
+
+- Add Brawn to damage of lightsaber melee weapon, such as "training stick".
+
 1.0.10
 ------
 
