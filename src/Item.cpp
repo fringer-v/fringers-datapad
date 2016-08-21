@@ -347,7 +347,7 @@ QString Item::damageTotal()
 	int			baseDamage = shop.damage;
 	int			addDamage = shop.addDamage;
 
-	if (baseDamage == 0 && (skillKey == "MELEE" || skillKey == "BRAWL"))
+	if (baseDamage == 0 && (skillKey == "MELEE" || skillKey == "BRAWL" || skillKey == "LTSABER"))
 		t = character->brawn();
 	else {
 		t = baseDamage;
