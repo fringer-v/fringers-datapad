@@ -29,6 +29,10 @@ RELEASE NOTES
 
 - Removed description text from generic items.
 
+- Created the [FORCEPOINT] symbol.
+
+- Improved text of Mod descriptions.
+
 1.0.10
 ------
 

@@ -464,8 +464,9 @@ function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 				drawBox(ctx, x + shape_width / 5.0, y_mid - (shape_width / 5.0) / 2.0, shape_width * 3.0 / 5.0, shape_width / 5.0, 0.5, "orange", "red");
 				break;
 			case '.':
-				shape_width = circle(ctx, x, y_mid, height, line_width, "black", "black");
-				halfCircle(ctx, x, y_mid, height, line_width, "black", "white");
+				shape_width = circle(ctx, x, y_mid, height, 0, "black", "black");
+				halfCircle(ctx, x, y_mid, height, 0, "black", "white");
+				circle(ctx, x, y_mid, height, line_width, "black");
 				break;
 			case 'U': // Upgrade
 				shape_width = hexagon(ctx, x, y_mid, height, line_width, "black", Constant.DICE_YELLOW);
