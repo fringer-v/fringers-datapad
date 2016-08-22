@@ -174,6 +174,8 @@ bool ShopGear::xmlElement(const DatStringBuffer& path, const char* value)
 			iItem.gearType |= GEAR_TYPE_CYBERNETICS;
 		else if (strcmp(value, "Carrying/Storage") == 0)
 			iItem.gearType |= GEAR_TYPE_STORAGE;
+		else if (strcmp(value, "Generic") == 0)
+			iItem.description.clear();
 	}
 	else if (path.endsWith("/BaseMods/Mod/"))
 		iMod.clear();
