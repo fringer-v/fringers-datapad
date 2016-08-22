@@ -29,7 +29,7 @@ RELEASE NOTES
 
 - Removed description text from generic items.
 
-- Created the [FORCEPOINT] symbol.
+- Created the [FORCEPOINT]/[FP] and [RESTRICTED]/[RE] symbols.
 
 - Improved text of Mod descriptions.
 

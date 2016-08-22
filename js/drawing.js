@@ -45,13 +45,10 @@ symbolCodes["[FORCE]"] = 'F';
 symbolCodes["[FO]"] = 'F';
 symbolCodes["[REMFORCE"] = 'g';
 symbolCodes["[RF]"] = 'g';
-
 symbolCodes["[FORCEPOINT]"] = '.'; //'.';
 symbolCodes["[FP]"] = '.'; //'.';
-//iSymbolCodes["[FORCE]"] = 'F';
-//iSymbolCodes["[FO]"] = 'F';
-//symbolCodes["[RESTRICTED]"] = '=';
-//symbolCodes["[RE]"] = '=';
+symbolCodes["[RESTRICTED]"] = '=';
+symbolCodes["[RE]"] = '=';
 
 
 function pixel(p)
@@ -271,7 +268,7 @@ function squareWidth(height)
 
 function circleWidth(height)
 {
-	return height * 16 / 19;
+	return height * 16.5 / 19;
 }
 
 function symbolSpace(height)
@@ -346,7 +343,8 @@ function diceWidth(ctx, height, spacing, dice, pixelSize)
 			case "B":
 			case "S":
 			case "N": shape_width = squareWidth(height); break;
-			case ".": shape_width = circleWidth(height); break;
+			case ".":
+			case "=": shape_width = circleWidth(height); break;
 			default:
 				ctx.save();
 				if (pixelSize === undefined)
@@ -467,6 +465,10 @@ function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 				shape_width = circle(ctx, x, y_mid, height, 0, "black", "black");
 				halfCircle(ctx, x, y_mid, height, 0, "black", "white");
 				circle(ctx, x, y_mid, height, line_width, "black");
+				break;
+			case '=':
+				shape_width = circle(ctx, x, y_mid, height, line_width, "black", "red");
+				drawBox(ctx, x + shape_width / 5.0, y_mid - (shape_width / 5.0) / 2.0, shape_width * 3.0 / 5.0, shape_width / 5.0, 0.5, "white", "white");
 				break;
 			case 'U': // Upgrade
 				shape_width = hexagon(ctx, x, y_mid, height, line_width, "black", Constant.DICE_YELLOW);
