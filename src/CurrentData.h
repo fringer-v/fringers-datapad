@@ -116,13 +116,14 @@ private:
 };
 
 #define UNKNOWN_QUANTITY		-2000000000
+#define UNKNOWN_STORED			-1
 
 class InvModItem {
 public:
 	QString uuid;
 	QString itemkey;
 	int quantity; // UNKNOWN_QUANTITY, or actual stock
-	int stored;
+	int stored; // UNKNOWN_STORED, or a value >= 0
 	int state; // UNDEFINED, NOT_CARRIED, IS_HELD, IS_EQUIPPED
 	int rowCount;
 
@@ -130,7 +131,7 @@ public:
 		uuid(),
 		itemkey(),
 		quantity(UNKNOWN_QUANTITY),
-		stored(0),
+		stored(UNKNOWN_STORED),
 		state(UNDEFINED),
 		rowCount(0) {
 	}
@@ -350,7 +351,7 @@ public:
 	void addItem(int count, const QString& itemkey, const QString& desc, int amount);
 	void updateItem(int ref, int count, const QString& desc, int amount);
 	bool removeItem(int ref);
-	void storeItem(const QString& uuid, const QString& itemkey, int count, int state, bool loading);
+	void storeItem(const QString& uuid, const QString& itemkey, int count, int state, Item* item);
 
 	void clearAutoCheckItems(const QString& skillKey);
 	void setupAutoCheckItems(const QString& skillKey, const QString& uuid);

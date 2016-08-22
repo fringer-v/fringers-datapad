@@ -59,8 +59,7 @@ Dialog {
 				carry = 0;
 			if (carry > itemTotal)
 				carry = itemTotal;
-			if (carry > 0)
-				characterData.changeEquipment(itemUuid, 2, itemTotal - carry);
+			characterData.changeEquipment(itemUuid, 2, itemTotal - carry);
 		}
 		Qt.inputMethod.hide();
 	}

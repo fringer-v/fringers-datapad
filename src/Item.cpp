@@ -800,6 +800,8 @@ int Item::encumberance()
 
 void Item::storageData(int& quantity, int& stored, int& state)
 {
+	InvModItem item;
+
 	quantity = 0;
 	if (originalQuantity >= 0)
 		quantity = originalQuantity;
@@ -808,22 +810,26 @@ void Item::storageData(int& quantity, int& stored, int& state)
 
 	if (Character::instance->currentData()->invMod.contains(uuid)) {
 		// Inventory overrides:
-		InvModItem item = Character::instance->currentData()->invMod[uuid];
+		item = Character::instance->currentData()->invMod[uuid];
 
 		if (item.quantity != UNKNOWN_QUANTITY)
 			quantity = item.quantity;
-		if (item.stored >= 0)
+		if (item.stored != UNKNOWN_STORED)
 			stored = item.stored;
 		if (item.state != UNDEFINED)
 			state = item.state;
+	}
 
-		// Cannot store more than we have:
+	// Cannot store more than we have:
+	if (quantity > 1) {
 		if (stored > quantity)
 			stored = quantity;
 	}
+	else // Quantity 1 or less
+		stored = 0;
 
 	// Nothing to carry:
-	if ((quantity - stored) == 0)
+	if (quantity <= 0 || quantity == stored)
 		state = NOT_CARRIED;
 }
 

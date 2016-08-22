@@ -350,8 +350,12 @@ bool CurrentData::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/Inventory/Item/#end"))
 		setInvLogItem(iItemCount, iItemUuid, iItemKey, iItemDesc, iItemAmount, true);
 
-	else if (path.endsWith("/StoreItem/#open"))
+	else if (path.endsWith("/StoreItem/#open")) {
 		iStoreItemUuid.clear();
+		iStoreItemKey.clear();
+		iStoreItemAmount = UNKNOWN_QUANTITY;
+		iStoreItemState = UNDEFINED;
+	}
 	else if (path.endsWith("/StoreItem/Uuid/"))
 		iStoreItemUuid = value;
 	else if (path.endsWith("/StoreItem/Key/"))
@@ -361,7 +365,7 @@ bool CurrentData::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/StoreItem/State/"))
 		iStoreItemState = toInt(value);
 	else if (path.endsWith("/Storage/StoreItem/#end"))
-		storeItem(iStoreItemUuid, iStoreItemKey, iStoreItemAmount, iStoreItemState, true);
+		storeItem(iStoreItemUuid, iStoreItemKey, iStoreItemAmount, iStoreItemState, NULL);
 
 	else if (path.endsWith("/CurrentData/CheckList/#open"))
 		iItemSkill.clear();
@@ -706,46 +710,45 @@ bool CurrentData::removeItem(int ref)
 	int row = findInvLogItem(ref);
 	if (row < 0)
 		return false;
-	InvLogItem item = inventoryLog[row];
-	if (item.type != ITEM_AMOUNT && item.type != ITEM_ORIG_STOCK)
+	InvLogItem log_item = inventoryLog[row];
+	if (log_item.type != ITEM_AMOUNT && log_item.type != ITEM_ORIG_STOCK)
 		return false;
 
-	if (!item.uuid.isEmpty() && invMod.contains(item.uuid)) {
+	if (!log_item.uuid.isEmpty() && invMod.contains(log_item.uuid)) {
 		ShopItem	shop_item;
 		ItemList*	list;
 		int			quantity = 0;
 
-		if (item.type == ITEM_ORIG_STOCK && invMod[item.uuid].rowCount > 1)
+		if (log_item.type == ITEM_ORIG_STOCK && invMod[log_item.uuid].rowCount > 1)
 			return false;
 
-		shop_item = Shop::instance.getItem(item.itemkey);
+		shop_item = Shop::instance.getItem(log_item.itemkey);
 		if (shop_item.type == "GEAR")
 			list = &Gear::instance;
 		else if (shop_item.type == "ARMOR")
 			list = &Armor::instance;
 		else
 			list = &Weapons::instance;
+		Item item = list->getItemByUuid(log_item.uuid);
 
 		invMod[item.uuid].rowCount--;
 		if (invMod[item.uuid].rowCount == 0) {
-			if (invMod[item.uuid].stored > 0 || invMod[item.uuid].state != UNDEFINED)
-				invMod[item.uuid].quantity = UNKNOWN_QUANTITY;
-			else
+			if ((invMod[item.uuid].stored == UNKNOWN_STORED || invMod[item.uuid].stored == item.originalStored) &&
+				(invMod[item.uuid].state == UNDEFINED || invMod[item.uuid].state == item.originalState))
+				// This record contains no information:
 				invMod.remove(item.uuid);
+			else
+				invMod[item.uuid].quantity = UNKNOWN_QUANTITY;
 		}
 		else if (invMod[item.uuid].quantity != UNKNOWN_QUANTITY) {
-			invMod[item.uuid].quantity -= item.count;
+			invMod[item.uuid].quantity -= log_item.count;
 			quantity = invMod[item.uuid].quantity;
 		}
 
-		if (quantity == 0) {
-			if (list->containsByUuid(item.uuid)) {
-				if (list->getItemByUuid(item.uuid).originalQuantity == 0) {
-					list->removeItemByUuid(item.uuid);
-					list->setRowCountChanged();
-					list->setClean();
-				}
-			}
+		if (quantity == 0 && item.originalQuantity == 0) {
+			list->removeItemByUuid(item.uuid);
+			list->setRowCountChanged();
+			list->setClean();
 		}
 	}
 
@@ -755,28 +758,62 @@ bool CurrentData::removeItem(int ref)
 		inventoryLog.clear();
 		Character::instance->setCredits(Character::instance->originalCredits);
 	}
-	else if (item.amount) {
+	else if (log_item.amount) {
 		int total = Character::instance->credits();
-		Character::instance->setCredits(total - item.amount);
+		Character::instance->setCredits(total - log_item.amount);
 	}
 	writeCurrentData();
 	InventoryLog::instance.setClean();
-	inventoryChanged(item.uuid, item.itemkey, true);
+	inventoryChanged(log_item.uuid, log_item.itemkey, true);
 	Character::instance->inventoryChanged();
 	return true;
 }
 
-void CurrentData::storeItem(const QString& uuid, const QString& itemkey, int count, int state, bool loading)
+void CurrentData::storeItem(const QString& in_uuid, const QString& itemkey, int store, int state, Item* item)
 {
-	if (!invMod.contains(uuid)) {
-		invMod[uuid].uuid = uuid;
-		invMod[uuid].itemkey = itemkey;
-		invMod[uuid].quantity = UNKNOWN_QUANTITY;
+	QString uuid = in_uuid;
+	InvModItem inv_item;
+
+	if (state < NOT_CARRIED || state > IS_EQUIPPED)
+		state = NOT_CARRIED;
+	if (store < 0)
+		store = 0;
+
+	if (uuid.isEmpty()) {
+		if (itemkey.isEmpty())
+			return;
+		uuid = itemkey;
 	}
-	invMod[uuid].stored = count;
+
+	if (!invMod.contains(uuid)) {
+		inv_item.uuid = uuid;
+		inv_item.itemkey = itemkey;
+		invMod[uuid] = inv_item;
+	}
+
+	if (item) {
+		if (store >= item->originalQuantity) {
+			store = 0;
+			state = NOT_CARRIED;
+		}
+		if (store == item->originalStored)
+			store = UNKNOWN_STORED;
+		if (state == item->originalState)
+			state = UNDEFINED;
+	}
+
+	invMod[uuid].stored = store;
 	invMod[uuid].state = state;
-	if (!loading)
+
+	if (item) {
+		inv_item = invMod[uuid];
+		if (inv_item.quantity == UNKNOWN_QUANTITY &&
+			inv_item.stored == UNKNOWN_STORED &&
+			inv_item.state == UNDEFINED)
+			invMod.remove(uuid);
 		writeCurrentData();
+	}
+
 	if (itemkey == "STIMPACK")
 		Character::instance->emitStimPacksChanged();
 	else if (itemkey == "ERP")
@@ -1623,6 +1660,13 @@ QString CurrentData::setInvLogItem(int count, const QString& in_uuid, const QStr
 		uuid = item.uuid;
 
 		// Check the original stock:
+		if (!invMod.contains(uuid)) {
+			InvModItem inv_item;
+			inv_item.uuid = uuid;
+			inv_item.itemkey = itemkey;
+			invMod[uuid] = inv_item;
+		}
+
 		if (invMod[uuid].rowCount == 0) {
 			// First row for this item:
 			int c = 0;
@@ -1802,8 +1846,18 @@ void CurrentData::writeCurrentData()
 	while (s.hasNext()) {
 		s.next();
 		InvModItem inv_item = s.value();
-		if (inv_item.stored > 0 || inv_item.state != UNDEFINED)
-			data += QString("  <StoreItem><Uuid>%1</Uuid><Key>%2</Key><Amount>%3</Amount><State>%4</State></StoreItem>\n").arg(inv_item.uuid).arg(inv_item.itemkey).arg(inv_item.stored).arg(inv_item.state);
+		if (inv_item.stored != UNKNOWN_STORED || inv_item.state != UNDEFINED) {
+			data += QString("  <StoreItem>");
+			if (!inv_item.uuid.isEmpty() && inv_item.uuid != inv_item.itemkey)
+				data += QString("<Uuid>%1</Uuid>").arg(inv_item.uuid);
+			if (!inv_item.itemkey.isEmpty())
+				data += QString("<Key>%1</Key>").arg(inv_item.itemkey);
+			if (inv_item.stored != UNKNOWN_STORED)
+				data += QString("<Amount>%1</Amount>").arg(inv_item.stored);
+			if (inv_item.state != UNDEFINED)
+				data += QString("<State>%1</State>").arg(inv_item.state);
+			data += QString("</StoreItem>\n");
+		}
 	}
 	data += QString(" </Storage>\n");
 

@@ -909,11 +909,11 @@ void Character::checkItem(int ref)
 	iCurrentData.checkItem(ref, iActiveSkillKey, false);
 }
 
-void Character::changeEquipment(const QString& key, int state, int stored)
+void Character::changeEquipment(const QString& uuid, int state, int stored)
 {
-	bool weapons_changed = Weapons::instance.changeEquipment(key, state, stored);
-	bool armor_changed = Armor::instance.changeEquipment(key, state, stored);
-	bool gear_changed = Gear::instance.changeEquipment(key, state, stored);
+	bool weapons_changed = Weapons::instance.changeEquipment(uuid, state, stored);
+	bool armor_changed = Armor::instance.changeEquipment(uuid, state, stored);
+	bool gear_changed = Gear::instance.changeEquipment(uuid, state, stored);
 
 	inventoryChanged();
 

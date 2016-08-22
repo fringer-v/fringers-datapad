@@ -329,17 +329,25 @@ void ItemList::aquireItem(Item& item, bool loading)
 	else if (item.uuid.isEmpty())
 		item.uuid = DatUtil::genUuid();
 
-	if (loading) {
-		if (item.originalState == NOT_CARRIED)
-			item.originalStored = item.originalQuantity;
-	}
-
 	if (iUuidList.contains(item.uuid)) {
 		if (loading) {
-			iUuidList[item.uuid].originalQuantity += item.originalQuantity;
-			iUuidList[item.uuid].originalStored += item.originalStored;
-			if (item.originalState > iUuidList[item.uuid].originalState)
+			int current_state = iUuidList[item.uuid].originalState;
+			if (item.originalState > current_state)
 				iUuidList[item.uuid].originalState = item.originalState;
+
+			if (current_state == NOT_CARRIED) {
+				if (item.originalState != NOT_CARRIED)
+					iUuidList[item.uuid].originalStored = iUuidList[item.uuid].originalQuantity;
+			}
+			else {
+				// Some items are being carried
+				if (item.originalState == NOT_CARRIED)
+					// These items are not carried:
+					iUuidList[item.uuid].originalStored += item.originalQuantity;
+			}
+
+			iUuidList[item.uuid].originalQuantity += item.originalQuantity;
+
 			if (item.notes.length() > iUuidList[item.uuid].notes.length())
 				iUuidList[item.uuid].notes = item.notes;
 		}
@@ -434,11 +442,7 @@ bool ItemList::changeEquipment(const QString& uuid, int state, int stored)
 	if (iUuidList.contains(uuid)) {
 		Item item = iUuidList[uuid];
 
-		if (state < NOT_CARRIED || state > IS_EQUIPPED)
-			state = NOT_CARRIED;
-		if (state == item.originalState)
-			state = UNDEFINED;
-		Character::instance->currentData()->storeItem(uuid, item.itemkey, stored, state, false);
+		Character::instance->currentData()->storeItem(uuid, item.itemkey, stored, state, &item);
 		setDataChanged();
 		return true;
 	}
