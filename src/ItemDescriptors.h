@@ -37,6 +37,12 @@ public:
 	QString qualDesc;
 	bool isQuality;
 
+	QString getModDesc() {
+		if (qualDesc.isEmpty())
+			return modDesc;
+		return qualDesc;
+	}
+
 	ItemDescriptor();
 	void clear(const QString& k = QString());
 };

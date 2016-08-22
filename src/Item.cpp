@@ -54,34 +54,12 @@ void Mod::clear(const QString& k)
 	miscDesc.clear();
 }
 
-QString Mod::qualityText()
-{
-	if (!miscDesc.isEmpty())
-		return miscDesc;
-
-	QString mod_desc = ItemDescriptors::instance()->descriptor(key).modDesc;
-	int n_number = number * count;
-	if (mod_desc.contains("{0}"))
-		mod_desc.replace("{0}", QString::number(n_number));
-	else {
-		if (n_number > 1)
-			mod_desc = QString("%1 %2").arg(n_number).arg(mod_desc);
-
-	}
-	return mod_desc;
-}
-
-bool Mod::isQuality()
-{
-	return ItemDescriptors::instance()->descriptor(key).isQuality;
-}
-
 QString Mod::modText()
 {
 	if (!miscDesc.isEmpty())
 		return miscDesc;
 
-	QString mod_desc = ItemDescriptors::instance()->descriptor(key).modDesc;
+	QString mod_desc = ItemDescriptors::instance()->descriptor(key).getModDesc();
 
 	if (mod_desc.isEmpty()) {
 		Skill* skill;
@@ -108,10 +86,8 @@ QString Mod::modText()
 	else
 		n_number = count*number;
 
-	if (n_number == 0)
+	if (n_number == 0 || n_number == 1)
 		mod_desc = QString("%1 Mod").arg(mod_desc);
-	else if (n_number == 1)
-		mod_desc = QString("1 %2 Mod").arg(mod_desc);
 	else
 		mod_desc = QString("%1 %2 Mods").arg(n_number).arg(mod_desc);
 	return mod_desc;
@@ -349,11 +325,11 @@ QString Item::damageTotal()
 
 	if (baseDamage == 0 && (skillKey == "MELEE" || skillKey == "BRAWL" || skillKey == "LTSABER"))
 		t = character->brawn();
-	else {
+	else
 		t = baseDamage;
-		if (hasQuality("DAMSET"))
-			t = getQuality("DAMSET").count;
-	}
+	if (hasQuality("DAMSET"))
+		t = getQuality("DAMSET").count;
+
 	if (hasQuality("SUPERIOR"))
 		t += 1;
 

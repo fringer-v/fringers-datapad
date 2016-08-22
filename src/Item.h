@@ -77,10 +77,7 @@ public:
 
 	Mod();
 	void clear(const QString& k = QString());
-	QString text();
-	QString qualityText();
 	QString modText();
-	bool isQuality();
 };
 
 class QualityList {
