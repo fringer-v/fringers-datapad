@@ -25,6 +25,10 @@ RELEASE NOTES
 
 - Add Brawn to damage of lightsaber melee weapon, such as "training stick".
 
+- Fixed a bug: some items of gear that have no book reference, were given an incorrect book reference.
+
+- Removed description text from generic items.
+
 1.0.10
 ------
 

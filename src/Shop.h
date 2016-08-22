@@ -58,11 +58,10 @@ public:
 		type.clear();
 		name.clear();
 		description.clear();
+		books.clear();
 		price = 0;
 		rarity = 0;
-		modList.clear();
 		encumberance = 0;
-		qualityList.clear();
 		range.clear();
 		critical = 0;
 		addDamage = 0;
@@ -72,6 +71,8 @@ public:
 		rdef = 0;
 		soak = 0;
 		gearType = 0;
+		modList.clear();
+		qualityList.clear();
 	}
 };
 
