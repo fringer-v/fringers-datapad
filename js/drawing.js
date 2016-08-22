@@ -41,10 +41,18 @@ symbolCodes["[UPGDIFFICULTY"] = 'u';
 symbolCodes["[UD]"] = 'u';
 symbolCodes["[DWNDIFFICULTY"] = 'd';
 symbolCodes["[DD]"] = 'd';
-symbolCodes["[FORCE"] = 'F';
+symbolCodes["[FORCE]"] = 'F';
 symbolCodes["[FO]"] = 'F';
 symbolCodes["[REMFORCE"] = 'g';
 symbolCodes["[RF]"] = 'g';
+
+symbolCodes["[FORCEPOINT]"] = '.'; //'.';
+symbolCodes["[FP]"] = '.'; //'.';
+//iSymbolCodes["[FORCE]"] = 'F';
+//iSymbolCodes["[FO]"] = 'F';
+//symbolCodes["[RESTRICTED]"] = '=';
+//symbolCodes["[RE]"] = '=';
+
 
 function pixel(p)
 {
@@ -261,9 +269,9 @@ function squareWidth(height)
 	return height * 13 / 19; // Scale height so it fits diamond size of same height
 }
 
-function symbolHeight(height)
+function circleWidth(height)
 {
-	return height * 16 / 19; // Scale height so it fits diamond size of same height
+	return height * 16 / 19;
 }
 
 function symbolSpace(height)
@@ -283,6 +291,35 @@ function square(ctx, x, y_mid, box_height, lineSize, strokeStyle, fillStyle)
 	ctx.lineTo(x+width-lof, y+lof);
 	ctx.lineTo(x+width-lof, y+height-lof);
 	ctx.lineTo(x+lof, y+height-lof);
+	ctx.closePath();
+	paintPath(ctx, x, y, width, height, lineSize, strokeStyle, fillStyle);
+	return width;
+}
+
+function circle(ctx, x, y_mid, box_height, lineSize, strokeStyle, fillStyle)
+{
+	var lof = lineSize/2;
+	var width = circleWidth(box_height); // Scale height so it fits diamond size of same height
+	var height = width; // duh!
+	var y = y_mid - height/2;
+	var x_mid = x + width/2;
+
+	ctx.beginPath();
+	ctx.arc(x_mid, y_mid, width/2-lof, 0, 2*Math.PI);
+	paintPath(ctx, x, y, width, height, lineSize, strokeStyle, fillStyle);
+	return width;
+}
+
+function halfCircle(ctx, x, y_mid, box_height, lineSize, strokeStyle, fillStyle)
+{
+	var lof = lineSize/2;
+	var width = circleWidth(box_height);
+	var height = width; // duh!
+	var y = y_mid - height/2;
+	var x_mid = x + width/2;
+
+	ctx.beginPath();
+	ctx.arc(x_mid, y_mid, width/2-lof, 0.5*Math.PI, 1.5*Math.PI);
 	ctx.closePath();
 	paintPath(ctx, x, y, width, height, lineSize, strokeStyle, fillStyle);
 	return width;
@@ -309,6 +346,7 @@ function diceWidth(ctx, height, spacing, dice, pixelSize)
 			case "B":
 			case "S":
 			case "N": shape_width = squareWidth(height); break;
+			case ".": shape_width = circleWidth(height); break;
 			default:
 				ctx.save();
 				if (pixelSize === undefined)
@@ -424,6 +462,10 @@ function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 			case 'N':
 				shape_width = square(ctx, x, y_mid, height, line_width, "black", "black");
 				drawBox(ctx, x + shape_width / 5.0, y_mid - (shape_width / 5.0) / 2.0, shape_width * 3.0 / 5.0, shape_width / 5.0, 0.5, "orange", "red");
+				break;
+			case '.':
+				shape_width = circle(ctx, x, y_mid, height, line_width, "black", "black");
+				halfCircle(ctx, x, y_mid, height, line_width, "black", "white");
 				break;
 			case 'U': // Upgrade
 				shape_width = hexagon(ctx, x, y_mid, height, line_width, "black", Constant.DICE_YELLOW);
