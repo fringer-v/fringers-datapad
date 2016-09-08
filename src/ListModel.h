@@ -14,12 +14,9 @@ public:
 	ListModel(AbstractDataList* list, const QString& name, QObject *parent = 0);
 	virtual ~ListModel();
 
-	Q_INVOKABLE QStringList stringList(const QString& col);
-	Q_INVOKABLE QString valueAt(int i, const QString& col);
-	Q_INVOKABLE int rowOf(const QString& col, const QString& val);
-
-	void beginReset();
-	void endReset();
+	//Q_INVOKABLE QStringList stringList(const QString& col);
+	//Q_INVOKABLE QString valueAt(int i, const QString& col);
+	//Q_INVOKABLE int rowOf(const QString& col, const QString& val);
 
 	void setDataChanged();
 	void setRowCountChanged();
@@ -38,7 +35,6 @@ public:
 
 protected:
 	AbstractDataList*	iDataList;
-	int					iInReset;
 	bool				iDataChanged;
 	bool				iRowCountChanged;
 };

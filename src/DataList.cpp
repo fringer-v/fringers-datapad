@@ -30,20 +30,6 @@ void AbstractDataList::setModel(ListModel* model)
 	iModel = model;
 }
 
-/*
-void AbstractDataList::startChanges()
-{
-	if (iModel)
-		iModel->beginReset();
-}
-
-void AbstractDataList::endChanges()
-{
-	if (iModel)
-		iModel->endReset();
-}
-*/
-
 void AbstractDataList::dataChanged()
 {
 	if (iModel) {

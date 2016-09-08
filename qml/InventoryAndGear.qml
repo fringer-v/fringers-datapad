@@ -15,7 +15,7 @@ Rectangle {
 
 				Header {
 					width: encumberance.width
-					headText: "ENCUMBERANCE"
+					headText: "ENCUMBRANCE"
 				}
 
 				Vspacer { size: panels.lineSpace }

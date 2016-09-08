@@ -16,7 +16,6 @@ ListModel::ListModel(AbstractDataList* list, const QString& name, QObject *paren
 	QAbstractListModel(parent),
 	iName(name),
 	iDataList(list),
-	iInReset(0),
 	iDataChanged(false),
 	iRowCountChanged(false)
 {
@@ -27,6 +26,7 @@ ListModel::~ListModel()
 {
 }
 
+/*
 QStringList ListModel::stringList(const QString& col)
 {
 	QStringList list;
@@ -48,24 +48,7 @@ int ListModel::rowOf(const QString& col, const QString& val)
 			return i;
 	return -1;
 }
-
-void ListModel::beginReset()
-{
-	if (iInReset == 0) {
-		beginResetModel();
-	}
-	iInReset++;
-}
-
-void ListModel::endReset()
-{
-	if (iInReset == 0)
-		qDebug() << "SHOULD NOT HAPPEN!";
-	iInReset--;
-	if (iInReset == 0) {
-		endResetModel();
-	}
-}
+*/
 
 void ListModel::setDataChanged()
 {

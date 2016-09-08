@@ -261,20 +261,8 @@ public:
 			return iCurrentData.experienceTotal[EXP_TOT_MORALITY].value;
 		return getAttribute(MORALITY);
 	}
-	int brawn() {
-		int att = getAttribute(BRAWN);
-
-		if (iCurrentData.isCommitted("ENHANCECONT8") && att < 6)
-			return att + 1;
-		return att;
-	}
-	int agility() {
-		int att = getAttribute(AGILITY);
-
-		if (iCurrentData.isCommitted("ENHANCECONT9") && att < 6)
-			return att + 1;
-		return att;
-	}
+	int brawn() { return getAttribute(BRAWN); } // Modifications must go into getAttribute()
+	int agility() { return getAttribute(AGILITY); }
 	int intellect() { return getAttribute(INTELLECT); }
 	int cunning() { return getAttribute(CUNNING); }
 	int willpower() { return getAttribute(WILLPOWER); }

@@ -101,7 +101,7 @@ Window {
 					font.pixelSize: 40
 					font.family: "Arial"
 					color: "white"
-					text: "Welcome to Fringers's Datapad"
+					text: "Welcome to Fringer's Datapad"
 				}
 
 				Vspacer { size: 20 }

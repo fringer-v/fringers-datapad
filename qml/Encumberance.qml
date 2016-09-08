@@ -14,7 +14,7 @@ Rectangle {
 			id: encumValues
 			y: encumberance.height - encumValues.height
 
-			attrText: "ENCUMBERANCE"
+			attrText: "ENCUMBRANCE"
 			textFontSize: 12
 			attrSubText1: "VALUE"
 			attrSubText2: "THRESHOLD"

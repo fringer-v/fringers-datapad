@@ -1773,7 +1773,16 @@ int Character::getAttribute(const QString& val)
 {
 	if (!iAttributes.contains(val))
 		return 0;
-	return iAttributes[val] + iChMod.get(val);
+	int att = iAttributes[val] + iChMod.get(val);
+	if (val == BRAWN) {
+		if (iCurrentData.isCommitted("ENHANCECONT8") && att < 6)
+			att++;
+	}
+	else if (val == AGILITY) {
+		if (iCurrentData.isCommitted("ENHANCECONT9") && att < 6)
+			att++;
+	}
+	return att;
 }
 
 CurrentData* Character::currentData()
