@@ -4,6 +4,13 @@ Fringer's Datapad
 RELEASE NOTES
 -------------
 
+1.0.12
+------
+
+- Corrected some typos
+
+- Change in characterics (due to Enhance) was not changing dice pools.
+
 1.0.11
 ------
 
