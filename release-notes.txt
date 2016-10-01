@@ -7,6 +7,8 @@ RELEASE NOTES
 1.0.12
 ------
 
+- Fixed bug: clicking on the Skill dice pools incorrectly brought up the Weapons check list.
+
 - Corrected some typos
 
 - Change in characterics (due to Enhance) was not changing dice pools.

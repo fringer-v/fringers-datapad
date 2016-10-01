@@ -39,11 +39,11 @@ Rectangle {
 					Vspacer { size: panels.lineSpace }
 
 					SkillCheck {
-						visible: characterData.itemItemKey === ""
+						visible: characterData.itemUuid === "" && characterData.itemItemKey === ""
 					}
 
 					WeaponCheck {
-						visible: characterData.itemItemKey !== ""
+						visible: !(characterData.itemUuid === "" && characterData.itemItemKey === "")
 					}
 
 					Vspacer { size: panels.lineSpace }

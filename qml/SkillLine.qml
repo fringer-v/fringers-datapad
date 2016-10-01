@@ -90,6 +90,7 @@ Rectangle {
 				anchors.fill: parent
 				onClicked: {
 					characterData.itemUuid = "";
+					characterData.itemItemKey = "";
 					characterData.itemName = "";
 					characterData.activeSkill = skill;
 					characterData.dicePool = dice;

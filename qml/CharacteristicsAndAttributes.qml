@@ -40,6 +40,7 @@ Rectangle {
 					charValue: characterData.brawn + characterData.brawnDelta
 					onClicked: {
 						characterData.itemUuid = "";
+						characterData.itemItemKey = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -56,6 +57,7 @@ Rectangle {
 					charValue: characterData.agility + characterData.agilityDelta
 					onClicked: {
 						characterData.itemUuid = "";
+						characterData.itemItemKey = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -72,6 +74,7 @@ Rectangle {
 					charValue: characterData.intellect + characterData.intellectDelta
 					onClicked: {
 						characterData.itemUuid = "";
+						characterData.itemItemKey = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -88,6 +91,7 @@ Rectangle {
 					charValue: characterData.cunning + characterData.cunningDelta
 					onClicked: {
 						characterData.itemUuid = "";
+						characterData.itemItemKey = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -104,6 +108,7 @@ Rectangle {
 					charValue: characterData.willpower + characterData.willpowerDelta
 					onClicked: {
 						characterData.itemUuid = "";
+						characterData.itemItemKey = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -120,6 +125,7 @@ Rectangle {
 					charValue: characterData.presence + characterData.presenceDelta
 					onClicked: {
 						characterData.itemUuid = "";
+						characterData.itemItemKey = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
 						characterData.dicePool = Util.repeat("A", charValue);
@@ -192,6 +198,7 @@ Rectangle {
 							anchors.bottom: parent.bottom
 							width: parent.width/2
 							onClicked: {
+								characterData.itemItemKey = "";
 								characterData.itemUuid = "";
 								characterData.itemName = "";
 								characterData.activeSkill = "DEFR";
@@ -208,6 +215,7 @@ Rectangle {
 							width: parent.width/2
 							onClicked: {
 								characterData.itemUuid = "";
+								characterData.itemItemKey = "";
 								characterData.itemName = "";
 								characterData.activeSkill = "DEFM";
 								characterData.dicePool = "?";
@@ -263,6 +271,7 @@ Rectangle {
 						onClicked: {
 							if (characterData.force > 0) {
 								characterData.itemUuid = "";
+								characterData.itemItemKey = "";
 								characterData.itemName = "";
 								characterData.activeSkill = "FORCE";
 								characterData.dicePool = Util.repeat("F", characterData.force);
