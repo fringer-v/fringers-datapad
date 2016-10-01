@@ -11,6 +11,7 @@ Rectangle {
 
 	property string infoTitle: ""
 	property string infoText: ""
+	property string infoComment: ""
 	property string infoType: "" // left|right [ ,large-font ] [ ,wide-row ] [,desc-box] [, obligation ] [,clear]
 	property string infoColor: "black"
 	property string infoBackground: "white"
@@ -58,9 +59,14 @@ Rectangle {
 			if (infoType.indexOf("dice") >= 0)
 				Draw.dice(ctx, infoLeftMargin+infoTextIndent, parent.height - diceHeight - 3,
 					/*parent.width-infoLeftMargin-infoTextIndent*/0, diceHeight, spacing, infoText);
-			else
+			else {
 				Draw.textBox(ctx, infoText, infoLeftMargin+infoTextIndent, 0, parent.width-infoLeftMargin-infoTextIndent,
 					parent.height, infoTextFont, infoColor, infoTextMargin, "left", "bottom");
+				if (infoComment !== "") {
+					Draw.textBox(ctx, infoComment, infoLeftMargin+infoTextIndent, 0, parent.width-infoLeftMargin-infoTextIndent,
+						parent.height, infoTextFont, "darkgrey", infoTextMargin, "right", "bottom");
+				}
+			}
 
 			ctx.restore();
 		}

@@ -739,7 +739,7 @@ QString Character::itemAttachments()
 
 QString Character::itemManeuvers()
 {
-	QString val = QString("%1 / 2").arg(Character::instance->currentData()->autoCheckItems.movesUsed());
+	QString val = QString("  %1|/ 2  ").arg(Character::instance->currentData()->autoCheckItems.movesUsed());
 	return val;
 }
 
@@ -747,7 +747,7 @@ QString Character::itemStrain()
 {
 	QString cons;
 
-	QString val = QString("%1 (%2 / %3)")
+	QString val = QString("  %1|(%2 / %3)  ")
 		.arg(Character::instance->currentData()->autoCheckItems.strainUsed(cons))
 		.arg(currentStrain())
 		.arg(strain());

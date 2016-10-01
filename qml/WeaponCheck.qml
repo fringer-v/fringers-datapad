@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import "../js/drawing.js" as Draw
 import "../js/constants.js" as Constant
+import "../js/utilities.js" as Util
 
 Rectangle {
 	id: poolItem
@@ -61,7 +62,8 @@ Rectangle {
 			InfoLine {
 				width: roghtWidth
 				infoTitle: "MANEUVERS:"
-				infoText: characterData.itemManeuvers
+				infoText: Util.left(characterData.itemManeuvers, "|")
+				infoComment: Util.right(characterData.itemManeuvers, "|")
 				infoType: "check-item,right,clear"
 			}
 		}
@@ -88,7 +90,8 @@ Rectangle {
 			InfoLine {
 				width: roghtWidth
 				infoTitle: "STRAIN:"
-				infoText: characterData.itemStrain
+				infoText: Util.left(characterData.itemStrain, "|")
+				infoComment: Util.right(characterData.itemStrain, "|")
 				infoType: "check-item,right,clear"
 			}
 		}

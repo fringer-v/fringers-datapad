@@ -9,6 +9,7 @@ Rectangle {
 
 	property string boxTitle: ""
 	property string boxText: ""
+	property string boxComment: ""
 	property int textIndent: 0
 	property int boxTitleWidth: 180 // 229
 	property int boxCornerHeight: 38
