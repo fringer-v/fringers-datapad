@@ -39,6 +39,7 @@ Rectangle {
 					charShortName: "Br"
 					charValue: characterData.brawn + characterData.brawnDelta
 					onClicked: {
+						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
@@ -56,6 +57,7 @@ Rectangle {
 					charShortName: "Ag"
 					charValue: characterData.agility + characterData.agilityDelta
 					onClicked: {
+						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
@@ -73,6 +75,7 @@ Rectangle {
 					charShortName: "Int"
 					charValue: characterData.intellect + characterData.intellectDelta
 					onClicked: {
+						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
@@ -90,6 +93,7 @@ Rectangle {
 					charShortName: "Cun"
 					charValue: characterData.cunning + characterData.cunningDelta
 					onClicked: {
+						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
@@ -107,6 +111,7 @@ Rectangle {
 					charShortName: "Wil"
 					charValue: characterData.willpower + characterData.willpowerDelta
 					onClicked: {
+						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
@@ -124,6 +129,7 @@ Rectangle {
 					charShortName: "Pr"
 					charValue: characterData.presence + characterData.presenceDelta
 					onClicked: {
+						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
@@ -198,6 +204,7 @@ Rectangle {
 							anchors.bottom: parent.bottom
 							width: parent.width/2
 							onClicked: {
+								checklist.checkListType = "skill"
 								characterData.itemItemKey = "";
 								characterData.itemUuid = "";
 								characterData.itemName = "";
@@ -214,6 +221,7 @@ Rectangle {
 							anchors.bottom: parent.bottom
 							width: parent.width/2
 							onClicked: {
+								checklist.checkListType = "skill"
 								characterData.itemUuid = "";
 								characterData.itemItemKey = "";
 								characterData.itemName = "";
@@ -270,6 +278,7 @@ Rectangle {
 						charValue: characterData.force
 						onClicked: {
 							if (characterData.force > 0) {
+								checklist.checkListType = "skill"
 								characterData.itemUuid = "";
 								characterData.itemItemKey = "";
 								characterData.itemName = "";

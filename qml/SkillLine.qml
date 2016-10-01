@@ -89,6 +89,7 @@ Rectangle {
 			MouseArea {
 				anchors.fill: parent
 				onClicked: {
+					checklist.checkListType = "skill"
 					characterData.itemUuid = "";
 					characterData.itemItemKey = "";
 					characterData.itemName = "";

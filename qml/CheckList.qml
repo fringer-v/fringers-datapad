@@ -7,6 +7,7 @@ import "../js/constants.js" as Constant
 Rectangle {
 	id: checklist
 
+	property string checkListType: ""
 	property int checkItemRef: 0
 	//property real betweenButtons: 12.3
 	property real buttonCount: 19
@@ -39,11 +40,11 @@ Rectangle {
 					Vspacer { size: panels.lineSpace }
 
 					SkillCheck {
-						visible: characterData.itemUuid === "" && characterData.itemItemKey === ""
+						visible: checkListType === "skill"
 					}
 
 					WeaponCheck {
-						visible: !(characterData.itemUuid === "" && characterData.itemItemKey === "")
+						visible: checkListType === "weapon"
 					}
 
 					Vspacer { size: panels.lineSpace }

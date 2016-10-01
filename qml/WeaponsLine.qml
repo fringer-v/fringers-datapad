@@ -303,6 +303,7 @@ Rectangle {
 
 	function useWeapon()
 	{
+		checklist.checkListType = "weapon"
 		characterData.itemUuid = uuid;
 		characterData.itemItemKey = itemkey;
 		characterData.itemName = weapon;
