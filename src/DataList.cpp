@@ -274,8 +274,8 @@ QVariant ItemList::getValue(int row, const char* col)
 		return item.quantity();
 	if (strcmp(col, "stored") == 0)
 		return item.stored();
-	if (strcmp(col, "encumberance") == 0)
-		return item.encumberance();
+	if (strcmp(col, "encumbrance") == 0)
+		return item.encumbrance();
 	if (strcmp(col, "carry_state") == 0)
 		return item.state();
 	if (strcmp(col, "restricted") == 0)

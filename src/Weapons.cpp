@@ -36,7 +36,7 @@
 
 Weapons Weapons::instance = Weapons(QStringList() << "uuid" << "itemkey" << "weapon" << "skill" << "range"
 									<< "damage" << "critical" << "dicePool" << "qualities" << "quantity" << "stored"
-									<< "encumberance" << "carry_state" << "restricted" << "attachments" << "critplus" << "pierce" << "notes");
+									<< "encumbrance" << "carry_state" << "restricted" << "attachments" << "critplus" << "pierce" << "notes");
 
 Weapons::Weapons(QStringList columns) :
 	ItemList(columns)
@@ -55,8 +55,8 @@ QVariant Weapons::getValue(int row, const char* col)
 		return skill ? skill->shortName : "?";
 	}
 
-	if (strcmp(col, "encumberance") == 0)
-		return Shop::instance.getItem(item.itemkey).encumberance;
+	if (strcmp(col, "encumbrance") == 0)
+		return Shop::instance.getItem(item.itemkey).encumbrance;
 
 	if (strcmp(col, "range") == 0)
 		return Shop::instance.getItem(item.itemkey).range;
@@ -166,7 +166,7 @@ bool ShopWeapons::xmlElement(const DatStringBuffer& path, const char* value)
 			iItem.gearType |= GEAR_TYPE_RANGED;
 	}
 	else if (path.endsWith("/Weapon/Encumbrance/"))
-		iItem.encumberance = toInt(value);
+		iItem.encumbrance = toInt(value);
 	else if (path.endsWith("/Weapon/Price/"))
 		iItem.price = toInt(value);
 	else if (path.endsWith("/Weapon/Rarity/"))

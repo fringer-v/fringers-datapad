@@ -268,7 +268,7 @@ public:
 	bool hasQuality(const QString& key);
 	Quality getQuality(const QString& key);
 
-	int encumberance();
+	int encumbrance();
 
 	void clear() {
 		uuid.clear();

@@ -511,7 +511,7 @@ QString Item::features()
 // Used for gear:
 int Item::encCarriedVal(int burly)
 {
-	return removeBurly(encumberance(), burly);
+	return removeBurly(encumbrance(), burly);
 }
 
 int Item::removeBurly(int val, int burly)
@@ -528,7 +528,7 @@ int Item::removeBurly(int val, int burly)
 int Item::encWornValue()
 {
 	if (carried()) {
-		int enc = encumberance();
+		int enc = encumbrance();
 
 		return enc - 3 > 0 ? enc - 3 : 0;
 	}
@@ -537,7 +537,7 @@ int Item::encWornValue()
 
 QString Item::encArmorValue()
 {
-	return QString("%1/%2").arg(encWornValue()).arg(encumberance());
+	return QString("%1/%2").arg(encWornValue()).arg(encumbrance());
 }
 
 int Item::soakVal()
@@ -768,10 +768,10 @@ Quality Item::getQuality(const QString& qkey)
 	return qual;
 }
 
-int Item::encumberance()
+int Item::encumbrance()
 {
 	ShopItem shop = Shop::instance.getItem(itemkey);
-	return shop.encumberance;
+	return shop.encumbrance;
 }
 
 void Item::storageData(int& quantity, int& stored, int& state)

@@ -35,7 +35,7 @@
 // Armor -------------------------
 
 Armor Armor::instance = Armor(QStringList() << "uuid" << "itemkey" << "armor" << "quantity" << "stored" << "soak"
-							  << "mdef" << "rdef" << "encumberance" << "carry_state" << "retricted" << "features"
+							  << "mdef" << "rdef" << "encumbrance" << "carry_state" << "retricted" << "features"
 							  << "attachments" << "notes");
 
 Armor::Armor(QStringList columns) :
@@ -63,7 +63,7 @@ QVariant Armor::getValue(int row, const char* col)
 	if (strcmp(col, "rdef") == 0)
 		return QVariant(item.rangeDef());
 
-	if (strcmp(col, "encumberance") == 0)
+	if (strcmp(col, "encumbrance") == 0)
 		return QVariant(item.encArmorValue());
 
 	return ItemList::getValue(row, col);
@@ -98,7 +98,7 @@ void ShopArmor::loadArmor()
 			if (!i.value().loaded) {
 				i.value().loaded = true;
 				i.value().name = shop.name;
-				//i.value().encumberance = shop.encumberance;
+				//i.value().encumbrance = shop.encumbrance;
 				//foreach (Mod mod, shop.modList) {
 				//	i.value().addMod(mod);
 				//	i.value().addQualityFromMod(mod);
@@ -117,7 +117,7 @@ void ShopArmor::loadArmor()
 				//DataList::armor.setValue(row, "soak", item.soakVal());
 				//DataList::armor.setValue(row, "mdef", item.meleeDef());
 				//DataList::armor.setValue(row, "rdef", item.rangeDef());
-				//DataList::armor.setValue(row, "encumberance", item.encArmorValue());
+				//DataList::armor.setValue(row, "encumbrance", item.encArmorValue());
 				//DataList::armor.setValue(row, "held", item.held);
 				//DataList::armor.setValue(row, "equipped", item.equipped);
 				//DataList::armor.setValue(row, "restricted", item.restricted);
@@ -147,7 +147,7 @@ bool ShopArmor::xmlElement(const DatStringBuffer& path, const char* value)
 		iItem.rdef = toInt(value);
 	}
 	else if (path.endsWith("/Armor/Encumbrance/"))
-		iItem.encumberance = toInt(value);
+		iItem.encumbrance = toInt(value);
 	else if (path.endsWith("/Armor/Price/"))
 		iItem.price = toInt(value);
 	else if (path.endsWith("/Armor/Rarity/"))

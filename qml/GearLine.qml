@@ -61,7 +61,7 @@ Rectangle {
 				font.pixelSize: lineFontSize
 				font.family: "Arial"
 				horizontalAlignment: Text.AlignHCenter
-				text: encumberance
+				text: encumbrance
 			}
 		}
 

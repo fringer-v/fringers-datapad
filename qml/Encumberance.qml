@@ -3,7 +3,7 @@ import "../js/drawing.js" as Draw
 import "../js/constants.js" as Constant
 
 Rectangle {
-	id: encumberance
+	id: encumbrance
 	width: encumValues.width + spaceBetween + cumbValues.width + spaceBetween + encumberanceCanvas.width
 	height: 93
 
@@ -12,7 +12,7 @@ Rectangle {
 	Row {
 		Attribute2 {
 			id: encumValues
-			y: encumberance.height - encumValues.height
+			y: encumbrance.height - encumValues.height
 
 			attrText: "ENCUMBRANCE"
 			textFontSize: 12
@@ -31,7 +31,7 @@ Rectangle {
 			id: cumbValues
 			height: 92
 			width: 143
-			y: encumberance.height - cumbValues.height
+			y: encumbrance.height - cumbValues.height
 
 			attrText: "CUMBERSOME"
 			textFontSize: 12
@@ -49,7 +49,7 @@ Rectangle {
 		Canvas {
 			id: encumberanceCanvas
 			width: 280
-			height: encumberance.height
+			height: encumbrance.height
 
 			onPaint: {
 				var ctx = encumberanceCanvas.getContext("2d");

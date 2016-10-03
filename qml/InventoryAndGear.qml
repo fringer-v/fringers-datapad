@@ -11,17 +11,17 @@ Rectangle {
 	Column {
 		Row {
 			Column {
-				width: encumberance.width
+				width: encumbrance.width
 
 				Header {
-					width: encumberance.width
+					width: encumbrance.width
 					headText: "ENCUMBRANCE"
 				}
 
 				Vspacer { size: panels.lineSpace }
 
 				Encumberance {
-					id: encumberance
+					id: encumbrance
 					height: topSectionHeight - panels.lineSpace - Constant.HEADER_HEIGHT
 				}
 			}
@@ -30,7 +30,7 @@ Rectangle {
 
 			Column {
 				id: inventory
-				width: metaPanel.contentWidth - 20 - encumberance.width
+				width: metaPanel.contentWidth - 20 - encumbrance.width
 
 				Header {
 					width: inventory.width

@@ -90,7 +90,7 @@ Item {
 			panelContent: "WeaponsAndArmor.qml"
 		}
 
-		// Encumberance, Money, Gear
+		// Encumbrance, Money, Gear
 		Panel {
 			id: inventory
 			anchors.fill: parent

@@ -33,7 +33,7 @@
 
 // Gear -------------------------
 
-Gear Gear::instance = Gear(QStringList() << "uuid" << "itemkey" << "gear" << "quantity" << "stored" << "encumberance"
+Gear Gear::instance = Gear(QStringList() << "uuid" << "itemkey" << "gear" << "quantity" << "stored" << "encumbrance"
 						   << "carry_state" << "special" << "notes");
 
 Gear::Gear(QStringList columns) :
@@ -48,9 +48,9 @@ QVariant Gear::getValue(int row, const char* col)
 	if (strcmp(col, "gear") == 0)
 		return item.name();
 
-	if (strcmp(col, "encumberance") == 0) {
+	if (strcmp(col, "encumbrance") == 0) {
 		ShopItem shop = Shop::instance.getItem(item.itemkey);
-		return QVariant(shop.encumberance);
+		return QVariant(shop.encumbrance);
 	}
 
 	if (strcmp(col, "special") == 0) {
@@ -107,7 +107,7 @@ void ShopGear::loadGear()
 			if (!i.value().loaded) {
 				i.value().loaded = true;
 				i.value().name = shop.name;
-				i.value().encumberance = shop.encumberance;
+				i.value().encumbrance = shop.encumbrance;
 				foreach (Mod mod, shop.modList) {
 					i.value().addMod(mod);
 					i.value().addQualityFromMod(mod);
@@ -129,7 +129,7 @@ void ShopGear::loadGear()
 				DataList::gear.setValue(row, "gear", item.name);
 				DataList::gear.setValue(row, "special", special);
 				DataList::gear.setValue(row, "quantity", item.quantity);
-				DataList::gear.setValue(row, "encumberance", item.encumberance);
+				DataList::gear.setValue(row, "encumbrance", item.encumbrance);
 				DataList::gear.setValue(row, "held", item.held);
 				DataList::gear.setValue(row, "equipped", item.equipped);
 			}
@@ -164,7 +164,7 @@ bool ShopGear::xmlElement(const DatStringBuffer& path, const char* value)
 		}
 	}
 	else if (path.endsWith("/Gear/Encumbrance/"))
-		iItem.encumberance = toInt(value);
+		iItem.encumbrance = toInt(value);
 	else if (path.endsWith("/Gear/Price/"))
 		iItem.price = toInt(value);
 	else if (path.endsWith("/Gear/Rarity/"))

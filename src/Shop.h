@@ -36,7 +36,7 @@ public:
 	QString books;
 	int price;
 	int rarity;
-	int encumberance;
+	int encumbrance;
 	QString	range;
 	int critical;
 	int addDamage;
@@ -61,7 +61,7 @@ public:
 		books.clear();
 		price = 0;
 		rarity = 0;
-		encumberance = 0;
+		encumbrance = 0;
 		range.clear();
 		critical = 0;
 		addDamage = 0;
