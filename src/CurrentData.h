@@ -335,8 +335,6 @@ public:
 
 	bool setWoundDelta(int val);
 	bool setStrainDelta(int val);
-	//bool setLocked(int val);
-	//bool setHideCodedTalents(int val);
 
 	void addCriticalWound(int perc, int type);
 	void removeCriticalWound(int ref);

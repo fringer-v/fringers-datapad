@@ -7,6 +7,8 @@ RELEASE NOTES
 1.0.12
 ------
 
+- Equipping newly added items was not working.
+
 - Changed the design of the Skill checklist box. It now looks similar to the Weapons checklist box.
 
 - Fixed bug: clicking on the Skill dice pools incorrectly brought up the Weapons checklist.

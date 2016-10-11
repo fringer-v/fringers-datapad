@@ -792,7 +792,7 @@ void CurrentData::storeItem(const QString& in_uuid, const QString& itemkey, int 
 	}
 
 	if (item) {
-		if (store >= item->originalQuantity) {
+		if (store >= item->quantity()) {
 			store = 0;
 			state = NOT_CARRIED;
 		}
