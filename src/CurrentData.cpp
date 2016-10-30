@@ -774,8 +774,6 @@ void CurrentData::storeItem(const QString& in_uuid, const QString& itemkey, int 
 	QString uuid = in_uuid;
 	InvModItem inv_item;
 
-	if (state < NOT_CARRIED || state > IS_EQUIPPED)
-		state = NOT_CARRIED;
 	if (store < 0)
 		store = 0;
 
@@ -792,6 +790,8 @@ void CurrentData::storeItem(const QString& in_uuid, const QString& itemkey, int 
 	}
 
 	if (item) {
+		if (state < NOT_CARRIED || state > IS_EQUIPPED)
+			state = NOT_CARRIED;
 		if (store >= item->quantity()) {
 			store = 0;
 			state = NOT_CARRIED;

@@ -7,6 +7,8 @@ RELEASE NOTES
 1.0.12
 ------
 
+- Sometimes Datapad was not remembering that items were equipped or held.
+
 - Equipping newly added items was not working.
 
 - Changed the design of the Skill checklist box. It now looks similar to the Weapons checklist box.
