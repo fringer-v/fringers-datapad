@@ -1531,6 +1531,7 @@ void Character::inventoryChanged()
 	int light_items = 0;
 	int grenade_count = 0;
 	bool grenade_bandolier = false;
+	bool mil_belt_pouch = false;
 	int cumb = 0;
 	CharMods mods;
 	int burly = 0;
@@ -1621,12 +1622,20 @@ void Character::inventoryChanged()
 					thr += item.getQuality("ENCTADD").count;
 				if (item.hasQuality("SOAKADD"))
 					mods.inc(V_SOAK, item.getQuality("SOAKADD").count);
+				if (item.itemkey == "BELTPOUCHMIL")
+					mil_belt_pouch = true;
 			}
 			else {
 				if (val == 0)
 					light_items += quantity;
 			}
 		}
+	}
+
+	if (mil_belt_pouch) {
+		light_items -= 2;
+		if (light_items < 0)
+			light_items = 0;
 	}
 	enc += light_items / 10;
 
