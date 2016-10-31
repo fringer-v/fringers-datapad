@@ -177,7 +177,7 @@ bool ShopGear::xmlElement(const DatStringBuffer& path, const char* value)
 		else if (strcmp(value, "Generic") == 0)
 			iItem.description.clear();
 	}
-	else if (path.endsWith("/BaseMods/Mod/"))
+	else if (path.endsWith("/BaseMods/Mod/#open"))
 		iMod.clear();
 	else if (path.endsWith("/BaseMods/Mod/Key/"))
 		iMod.clear(value);
@@ -198,8 +198,6 @@ bool ShopGear::xmlElement(const DatStringBuffer& path, const char* value)
 			iItem.modList[iMod.key] = iMod;
 			iItem.qualityList[iMod.key].key = iMod.key;
 			iItem.qualityList[iMod.key].count = iMod.count * iMod.number;
-			// Check PACKMIL, it has a second Mod with no key!
-			iMod.clear();
 		}
 		else if (!iMod.miscDesc.isEmpty()) {
 			// Add the MiscDesc to the description

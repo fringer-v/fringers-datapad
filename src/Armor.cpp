@@ -77,6 +77,8 @@ void ShopArmor::loadArmor()
 	QByteArray data;
 	//int row;
 
+	iItemModCount = 0;
+
 	// Custom data overwrite standard data, so load last!
 	path = DatUtil::getSystemDataFolder() + "Data/Armor.xml";
 	data = DataAccess::readFile(path);
@@ -152,7 +154,7 @@ bool ShopArmor::xmlElement(const DatStringBuffer& path, const char* value)
 		iItem.price = toInt(value);
 	else if (path.endsWith("/Armor/Rarity/"))
 		iItem.rarity = toInt(value);
-	else if (path.endsWith("/BaseMods/Mod/"))
+	else if (path.endsWith("/BaseMods/Mod/#open"))
 		iMod.clear();
 	else if (path.endsWith("/BaseMods/Mod/Key/"))
 		iMod.clear(value);
@@ -161,9 +163,15 @@ bool ShopArmor::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/BaseMods/Mod/MiscDesc/"))
 		iMod.miscDesc = value; //value.trimmed();
 	else if (path.endsWith("/BaseMods/Mod/#end")) {
+		if (iMod.key.isEmpty()) {
+			iItemModCount++;
+			iMod.key = QString("ARMOR_MOD_%1").arg(iItemModCount);
+		}
+		else {
+			iItem.qualityList[iMod.key].key = iMod.key;
+			iItem.qualityList[iMod.key].count = iMod.count * iMod.number;
+		}
 		iItem.modList[iMod.key] = iMod;
-		iItem.qualityList[iMod.key].key = iMod.key;
-		iItem.qualityList[iMod.key].count = iMod.count * iMod.number;
 	}
 	else if (path.endsWith("/Armors/Armor/#end")) {
 		iItem.type = "ARMOR";

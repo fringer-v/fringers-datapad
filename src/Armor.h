@@ -51,6 +51,7 @@ public:
 	virtual bool xmlElement(const DatStringBuffer& path, const char* value);
 
 private:
+	int			iItemModCount;
 	Mod			iMod;
 	ShopItem	iItem;
 };

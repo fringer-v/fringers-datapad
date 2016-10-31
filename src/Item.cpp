@@ -501,8 +501,14 @@ QString Item::features()
 			m.addItem(mod);
 	}
 
-	for (int i=0; i<m.count(); i++)
-		DatUtil::appendToList(list, m.itemAt(i).modText());
+	for (int i=0; i<m.count(); i++) {
+		QString desc = m.itemAt(i).modText();
+		if (!desc.endsWith(".") &&
+			!desc.endsWith(";") &&
+			!desc.endsWith(","))
+			desc += ",";
+		DatUtil::appendToList(list, desc, " ");
+	}
 
 	return list;
 }
