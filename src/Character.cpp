@@ -1628,7 +1628,7 @@ void Character::inventoryChanged()
 			}
 		}
 	}
-	enc += (light_items + 9) / 10;
+	enc += light_items / 10;
 
 	setEncValue(enc);
 	setCumbValue(cumb);
