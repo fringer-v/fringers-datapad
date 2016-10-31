@@ -98,11 +98,16 @@ CharTalentMap::CharTalentMap()
 	iCodedTalents->append("DURA");
 	iCodedTalents->append("SENSEADV");
 	iCodedTalents->append("KEENEYED");
+	iCodedTalents->append("SUPREF");
+	iCodedTalents->append("DEAD");
+	iCodedTalents->append("DEADIMP");
 
 	iCodedTalents->append("SENSECONTROL1");
 	iCodedTalents->append("SENSECONTROL3");
 	iCodedTalents->append("SENSESTRENGTH");
 	iCodedTalents->append("SENSEDURATION");
+	iCodedTalents->append("SENSERANGE");
+	iCodedTalents->append("SENSEMAGNITUDE");
 
 	iCodedTalents->append("INFLUENCECONTROL1");
 	iCodedTalents->append("INFLUENCECONTROL2");
@@ -142,6 +147,11 @@ CharTalentMap::CharTalentMap()
 	iCodedTalents->append("MISDIRSTRENGTH");
 	iCodedTalents->append("MISDIRCONTROL3");
 	iCodedTalents->append("MISDIRDURATION");
+
+	iCodedTalents->append("WARFORRANGE");
+	iCodedTalents->append("WARFORCONTROL1");
+	iCodedTalents->append("WARFORMAGNITUDE");
+	iCodedTalents->append("WARFORCONTROL3");
 }
 
 int CharTalentMap::size(bool exclude_hidden)
@@ -167,13 +177,24 @@ int CharTalentMap::ranks(const QString& key)
 QString CharTalentMap::range(const QString& key, int ranks)
 {
 	// Misdirect starts at short range
-	if (key.startsWith("MISDIR"))
+	if (key.startsWith("MISDIR") ||
+		key.startsWith("WARFOR"))
 		ranks++;
-	switch (ranks) {
-		case 0: return "Engaged";
-		case 1: return "Short range";
-		case 2: return "Medium range";
-		case 3: return "Long range";
+	if (key == "SENSEBASIC") {
+		switch (ranks) {
+			case 0: return "Engaged";
+			case 1: return "Medium range (Short for emotions)";
+			case 2: return "Long range (Medium for emotions)";
+			case 3: return "Extreme range (Long for emotions)";
+		}
+	}
+	else {
+		switch (ranks) {
+			case 0: return "Engaged";
+			case 1: return "Short range";
+			case 2: return "Medium range";
+			case 3: return "Long range";
+		}
 	}
 	return "Extreme range";
 }
@@ -211,6 +232,10 @@ QString CharTalentMap::forceUpgrades(const QString& key, int show, int cost)
 		power = "MOVE";
 	else if (key.startsWith("MISDIR"))
 		power = "MISDIR";
+	else if (key.startsWith("WARFOR"))
+		power = "WARFOR";
+	else if (key.startsWith("SENSE"))
+		power = "SENSE";
 
 	if (show & STR) {
 		t = get(power + "STRENGTH");
@@ -229,23 +254,23 @@ QString CharTalentMap::forceUpgrades(const QString& key, int show, int cost)
 	if (show & RAN) {
 		t = get(power + "RANGE");
 		if (t.ranks > 0)
-			DatUtil::appendToList(costs, range(power + "RANGE", t.ranks), " or ");
+			DatUtil::appendToList(costs, range(key, t.ranks), " or ");
 	}
 
 	if (show & MAG) {
 		t = get(power + "MAGNITUDE");
 		if (t.ranks > 0)
-			DatUtil::appendToList(costs, magnitude(power + "MAGNITUDE", t.ranks), " or ");
+			DatUtil::appendToList(costs, magnitude(key, t.ranks), " or ");
 	}
 
 	if (show & DUR) {
 		t = get(power + "DURATION");
 		if (t.ranks > 0)
-			DatUtil::appendToList(costs, duration(power + "DURATION", t.ranks), " or ");
+			DatUtil::appendToList(costs, duration(key, t.ranks), " or ");
 	}
 
 	if (!costs.isEmpty())
-		costs = QString("spend %1 for ").arg(DatUtil::repeat("[LI]", cost))+costs;
+		costs = QString("spend %1 for ").arg(DatUtil::repeat("[FP]", cost))+costs;
 
 	DatUtil::appendToList(upgrades, costs, ", ");
 
@@ -510,6 +535,10 @@ QVariant Talents::getValue(int row, int col)
 		case 1:
 			if (char_talent.key == "ENHANCECONT6")
 				return "Enhance: Force Leap";
+			else if (char_talent.key == "SENSECONTROL2")
+				return "Sense: Read Thoughts";
+			else if (char_talent.key == "MISDIRCONTROL1")
+				return "Misdirect: Change Appearance";
 			return talent.name.isEmpty() ? char_talent.key : talent.name;
 		case 2:
 			return talent.ranked ? char_talent.ranks : 0;
@@ -561,6 +590,12 @@ QVariant Talents::getValue(int row, int col)
 			else if (char_talent.key == "MISDIRBASIC") {
 				DatUtil::appendToList(desc, Character::instance->talents.forceUpgrades("MISDIRBASIC", RAN | MAG), " [B]Upgrades:[b] ");
 				DatUtil::appendToList(desc, Character::instance->talents.forceUpgrades("MISDIRBASIC", STR, 2), ", ");
+			}
+			else if (char_talent.key == "WARFORBASIC") {
+				DatUtil::appendToList(desc, Character::instance->talents.forceUpgrades("WARFORBASIC", RAN), " [B]Upgrades:[b] ");
+			}
+			else if (char_talent.key == "SENSEBASIC" || char_talent.key == "SENSECONTROL2") {
+				DatUtil::appendToList(desc, Character::instance->talents.forceUpgrades(char_talent.key, RAN | MAG), " [B]Upgrades:[b] ");
 			}
 
 			return desc;

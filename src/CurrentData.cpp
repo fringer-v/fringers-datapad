@@ -918,54 +918,65 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 		skillKey == "DECEP" || skillKey == "LEAD") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("INFLUENCECONTROL2"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Influence:[b] Spend [LI] to gain [SU] or [AD] vs 1 engaged target, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL2", RAN | MAG), 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Influence:[b] Spend [FP] to gain [SU] or [AD] vs 1 engaged target, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL2", RAN | MAG), 0, 0);
 		if (Character::instance->talents.contains("JUSTKID"))
 			autoCheckItems.plus("-y", "[B]Just Kidding:[b] Once per round, Target: self or ally", 0, 0, 1);
 	}
 	else if (skillKey == "REC") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("BAL"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Balance:[b] Gain +1 Strain per [LI]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Balance:[b] Gain +1 Strain per [FP]", 0, 0);
 	}
 	else if (skillKey == "ATHL") {
 		if (Character::instance->talents.contains("NIKTOSP2OC2OP1"))
 			autoCheckItems.plus("B", "[B]Climbing Claws:[b] Add when climbing trees and other surfaces their claws can pierce", 0, 0);
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCEBASIC"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "COORD") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCECONT1"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "RESIL") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCECONT2"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "PILOTPL") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCECONT4"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "BRAWL") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCECONT5"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "PILOTSP") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.contains("ENHANCECONT7"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [LI] to gain [SU] or [AD]", 0, 0);
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "ICOOL" || skillKey == "IVIG") {
 		force = Character::instance->nonCommitedForce();
-		if (force > 0 && Character::instance->talents.contains("FORSEECONTROL1")) {
-			if (Character::instance->talents.contains("FORSEECONTROL3"))
-				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [LI] to gain [SU], spend [LI] to grant free move to targets", 0, 0);
-			else
-				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [LI] to gain [SU] on initiative check", 0, 0);
+		if (force > 0) {
+			if (Character::instance->talents.contains("FORSEECONTROL1")) {
+				if (Character::instance->talents.contains("FORSEECONTROL3"))
+					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [FP] to gain [SU], spend [FP] to grant free move to targets", 0, 0);
+				else
+					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [FP] to gain [SU] on initiative check", 0, 0);
+			}
+			if (Character::instance->talents.contains("WARFORCONTROL1")) {
+				if (Character::instance->talents.contains("WARFORMAGNITUDE"))
+					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to self or ally's first check this encounter", 0, 0);
+				else if (Character::instance->talents.contains("WARFORCONTROL3"))
+					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to first check this encounter", 0, 0);
+				else
+					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] per [FP] spent to first check this encounter", 0, 0);
+			}
+
 		}
 		for (int i=0; i<Character::instance->talents.ranks("RAPREA"); i++)
 			autoCheckItems.plus("s", "[B]Rapid Reaction:[b] Suffer straing to improve initiative", 0, 1);
@@ -978,7 +989,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 	else if (skillKey == "LTSABER") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0 && Character::instance->talents.ranks("HAWKSWOOP"))
-			autoCheckItems.plus(QString("F").repeated(force), "[B]Hawk Bat Swoop:[b] Spend [LI] to engage target, and [LI] to add [AD]", 0, 0);
+			autoCheckItems.plus(QString("F").repeated(force), "[B]Hawk Bat Swoop:[b] Spend [FP] to engage target, and [FP] to add [AD]", 0, 0);
 
 		if (force > 0 && Character::instance->talents.contains("SABERSW"))
 			autoCheckItems.plus(QString("@Linked %1").arg(force), QString("[B]Saber Swarm:[b] Attack has linked %1 quality").arg(force), 1, 1);
@@ -1159,6 +1170,13 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 		if (ranks > 0)
 			autoCheckItems.plus(QString("N").repeated(ranks), "[B]Disarming Smile:[b] Opposed Charm vs Target, Range: Short, Duration: Encounter, [B]Cost: Action[b]", 0, 0);
 
+		if (Character::instance->talents.contains("DEAD")) {
+			int dam = Character::instance->agility();
+
+			if (!Character::instance->talents.contains("DEADIMP"))
+				dam = (dam + 1) / 2;
+			autoCheckItems.plus(QString("@+%1 Damage").arg(dam), "[B]Dead to Rights:[b] Add to one hit with vehicle mounted weapon", 0, 0, 1);
+		}
 	}
 	if (ranged) {
 		bool extreme_range = Shop::instance.getItem(weaponKey).range == "Extreme";

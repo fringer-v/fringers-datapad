@@ -70,6 +70,8 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 	else if (strcmp(skill->key, "ICOOL") == 0 || strcmp(skill->key, "IVIG") == 0) {
 		if (character->talents.contains("FORSEECONTROL1") > 0)
 			forceCount++;
+		else if (character->talents.contains("WARFORCONTROL1") > 0)
+			forceCount++;
 	}
 
 	for (int i = 0; i < character->talents.size(); i++) {
