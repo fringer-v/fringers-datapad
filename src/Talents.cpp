@@ -164,13 +164,13 @@ int CharTalentMap::size(bool exclude_hidden)
 
 bool CharTalentMap::contains(const QString& key)
 {
-	return iTalents.contains(key);
+	return charTalentMap.contains(key);
 }
 
 int CharTalentMap::ranks(const QString& key)
 {
-	if (iTalents.contains(key))
-		return iTalents[key].ranks;
+	if (charTalentMap.contains(key))
+		return charTalentMap[key].ranks;
 	return 0;
 }
 
@@ -279,7 +279,7 @@ QString CharTalentMap::forceUpgrades(const QString& key, int show, int cost)
 
 void CharTalentMap::clear()
 {
-	iTalents.clear();
+	charTalentMap.clear();
 	iDisplayNonSpecies.clear();
 	iDisplayNonCoded.clear();
 	iLightSaberChars.clear();
@@ -287,14 +287,14 @@ void CharTalentMap::clear()
 
 void CharTalentMap::addTalent(CharTalent talent)
 {
-	if (iCodedTalents->contains(talent.key))
+	if (talent.talentType == TALENT_REGULAR && iCodedTalents->contains(talent.key))
 		talent.talentType = TALENT_CODED;
-	if (iTalents.contains(talent.key)) {
-		iTalents[talent.key].ranks++;
-		DatUtil::appendToList(iTalents[talent.key].aquisition, talent.aquisition, ", ");
+	if (charTalentMap.contains(talent.key)) {
+		charTalentMap[talent.key].ranks++;
+		DatUtil::appendToList(charTalentMap[talent.key].aquisition, talent.aquisition, ", ");
 	}
 	else {
-		iTalents[talent.key] = talent;
+		charTalentMap[talent.key] = talent;
 		iDisplayNonSpecies.clear();
 		iDisplayNonCoded.clear();
 	}
@@ -307,20 +307,20 @@ CharTalent& CharTalentMap::at(int i, bool exclude_hidden)
 {
 	fillArrays();
 
-	if (i < 0 || i >= iTalents.size()) {
+	if (i < 0 || i >= charTalentMap.size()) {
 		iEmpty.clear();
 		return iEmpty;
 	}
 
 	if (exclude_hidden)
-		return iTalents[iDisplayNonCoded.at(i)];
-	return iTalents[iDisplayNonSpecies.at(i)];
+		return charTalentMap[iDisplayNonCoded.at(i)];
+	return charTalentMap[iDisplayNonSpecies.at(i)];
 }
 
 CharTalent& CharTalentMap::get(const QString& key)
 {
-	if (iTalents.contains(key))
-		return iTalents[key];
+	if (charTalentMap.contains(key))
+		return charTalentMap[key];
 	iEmpty.clear();
 	iEmpty.ranks = 0;
 	return iEmpty;
@@ -343,7 +343,7 @@ QString CharTalentMap::getLightSaberChar()
 void CharTalentMap::fillArrays()
 {
 	if (iDisplayNonSpecies.isEmpty()) {
-		for (QMap<QString, CharTalent>::iterator i = iTalents.begin(); i != iTalents.end(); i++) {
+		for (QMap<QString, CharTalent>::iterator i = charTalentMap.begin(); i != charTalentMap.end(); i++) {
 			if (i.value().talentType != TALENT_SPECIES)
 				iDisplayNonSpecies.append(i.key());
 
@@ -367,7 +367,7 @@ void Talent::clear(QString k)
 	addDamagePerSkillRank = false;
 	damageBonus = 0;
 	damageBonusSkills.clear();
-	dieModifiers.clear();
+	dieModList.clear();
 	lightSaberSkill.clear();
 	soakValue = 0;
 	defenseRanged = 0;
@@ -445,15 +445,23 @@ bool AllTalents::xmlElement(const DatStringBuffer& path, const char* value)
 
 	// Die modifiers
 	else if (path.endsWith("/DieModifier/SkillKey/"))
-		iDieModifier.clear(value);
-	else if (path.endsWith("/DieModifier/SetbackCount/"))
-		iDieModifier.setbackCount = toInt(value);
-	else if (path.endsWith("/DieModifier/ForceCount/"))
-		iDieModifier.forceCount = toInt(value);
+		iDieMod.clear(value);
 	else if (path.endsWith("/DieModifier/BoostCount/"))
-		iDieModifier.boostCount = toInt(value);
+		iDieMod.boostCount = toInt(value);
+	else if (path.endsWith("/DieModifier/SetbackCount/"))
+		iDieMod.setbackCount = toInt(value);
+	else if (path.endsWith("/DieModifier/ForceCount/"))
+		iDieMod.forceCount = toInt(value);
+	else if (path.endsWith("/DieModifier/AdvantageCount/"))
+		iDieMod.advantageCount = toInt(value);
+	else if (path.endsWith("/DieModifier/ThreatCount/"))
+		iDieMod.threatCount = toInt(value);
+	else if (path.endsWith("/DieModifier/AddSetbackCount/"))
+		iDieMod.addSetbackCount = toInt(value);
+	else if (path.endsWith("/DieModifier/UpgradeAbilityCount/"))
+		iDieMod.upgradeCount = toInt(value);
 	else if (path.endsWith("/DieModifier/#end"))
-		iTalent.dieModifiers.append(iDieModifier);
+		iTalent.dieModList.addMod(iDieMod);
 
 	else if (path.endsWith("/SkillChars/SkillChar/CharKey/"))
 		iTalent.lightSaberSkill = value;

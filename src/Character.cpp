@@ -74,32 +74,33 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 			forceCount++;
 	}
 
-	for (int i = 0; i < character->talents.size(); i++) {
-		CharTalent& ctalent = character->talents.at(i);
-		Talent talent = AllTalents::instance()->getTalent(ctalent.key);
+	foreach (CharTalent char_talent, character->talents.charTalentMap) {
+		Talent talent = AllTalents::instance()->getTalent(char_talent.key);
 
-		foreach (DieModifier mod, talent.dieModifiers) {
+		foreach (DieMod mod, talent.dieModList.modMap) {
 			if (mod.skillKey == key) {
 				if (talent.key == "SLEIGHTMIND")
-					optionalBoost += mod.boostCount * ctalent.ranks;
+					optionalBoost += mod.boostCount * char_talent.ranks;
 				else
-					boostCount += mod.boostCount * ctalent.ranks;
+					boostCount += mod.boostCount * char_talent.ranks;
 				if (talent.key == "KEENEYED")
-					optionalRemoveSetback += mod.setbackCount * ctalent.ranks;
+					optionalRemoveSetback += mod.setbackCount * char_talent.ranks;
 				else
-					setbackCount += mod.setbackCount * ctalent.ranks;
-				forceCount += mod.forceCount * ctalent.ranks;
+					setbackCount += mod.setbackCount * char_talent.ranks;
+				pool += DatUtil::repeat("a", mod.advantageCount * char_talent.ranks);
+				pool += DatUtil::repeat("t", mod.threatCount * char_talent.ranks);
+				pool += DatUtil::repeat("U", mod.upgradeCount * char_talent.ranks);
 			}
 		}
 
-		if (ctalent.key == "INTIM" && key == "COERC")
-			optionalUpgradeCount += ctalent.ranks;
-		if (ctalent.key == "CONGENIAL" &&
+		if (char_talent.key == "INTIM" && key == "COERC")
+			optionalUpgradeCount += char_talent.ranks;
+		if (char_talent.key == "CONGENIAL" &&
 			(key == "CHARM" || key == "NEG"))
-			optionalUpgradeCount += ctalent.ranks;
-		if (ctalent.key == "DODGE" &&
+			optionalUpgradeCount += char_talent.ranks;
+		if (char_talent.key == "DODGE" &&
 			(key == "DEFM" || key == "DEFR"))
-			optionalDowngradeCount += ctalent.ranks;
+			optionalDowngradeCount += char_talent.ranks;
 	}
 
 	for (int i = 0; i<Armor::instance.rowCount(); i++) {
@@ -1633,8 +1634,7 @@ void Character::inventoryChanged()
 	setCumbValue(cumb);
 
 	// Add armor talents:
-	for (int i = 0; i < talents.size(); i++) {
-		CharTalent& char_talent = talents.at(i);
+	foreach (CharTalent char_talent, talents.charTalentMap) {
 		Talent talent = AllTalents::instance()->getTalent(char_talent.key);
 
 		if (talent.soakValue > 0) {
@@ -1647,8 +1647,7 @@ void Character::inventoryChanged()
 	}
 
 	// Add defenses (which may depend on armor!
-	for (int i = 0; i < talents.size(); i++) {
-		CharTalent& char_talent = talents.at(i);
+	foreach (CharTalent char_talent, talents.charTalentMap) {
 		Talent talent = AllTalents::instance()->getTalent(char_talent.key);
 
 		if ((!talent.requirementWearingArmor || wearingArmor) &&

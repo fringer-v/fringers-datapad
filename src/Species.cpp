@@ -74,14 +74,16 @@ bool Species::xmlElement(const DatStringBuffer& path, const char* value)
 			iSubName = value;
 		iSubKeyMatched = false;
 	}
+
 	else if (path.endsWith("/TalentModifier/Key/")) {
 		iCharTalent.clear(value);
 		iCharTalent.aquisition = iName;
 	}
 	else if (path.endsWith("/TalentModifier/RankAdd/"))
 		iCharTalent.ranks = toInt(value);
-	else if (path.endsWith("/TalentModifier/#end"))
+	else if (path.endsWith("/TalentModifier/#end")) {
 		Character::instance->talents.addTalent(iCharTalent);
+	}
 
 	else if (path.endsWith("/OptionChoice/Key/")) {
 		iChoiceKey = value;
@@ -93,11 +95,33 @@ bool Species::xmlElement(const DatStringBuffer& path, const char* value)
 		iOptionKey = value;
 		iOptionSubTitle.clear();
 		iOptionContent.clear();
+		iDieMod.clear();
+		iDieModList.clear();
 	}
 	else if (path.endsWith("/Options/Option/Name/"))
 		iOptionSubTitle = value;
 	else if (path.endsWith("/Options/Option/Description/"))
 		iOptionContent = value;
+
+	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/SkillKey/"))
+		iDieMod.clear(value);
+	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/BoostCount/"))
+		iDieMod.boostCount = toInt(value);
+	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/SetbackCount/"))
+		iDieMod.setbackCount = toInt(value);
+	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/ForceCount/"))
+		iDieMod.forceCount = toInt(value);
+	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/AdvantageCount/"))
+		iDieMod.advantageCount = toInt(value);
+	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/ThreatCount/"))
+		iDieMod.threatCount = toInt(value);
+	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/AddSetbackCount/"))
+		iDieMod.addSetbackCount = toInt(value);
+	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/UpgradeAbilityCount/"))
+		iDieMod.upgradeCount = toInt(value);
+	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/#end"))
+		iDieModList.addMod(iDieMod);
+
 	else if (path.endsWith("/Options/Option/#end")) {
 		if (!iOptionKey.isEmpty()) {
 			if (iChoices->value(iChoiceKey) == iOptionKey) {
@@ -105,6 +129,14 @@ bool Species::xmlElement(const DatStringBuffer& path, const char* value)
 				DataList::speciesFeatures.setValue(iOptionsRow, "title", iOptionTitle);
 				DataList::speciesFeatures.setValue(iOptionsRow, "subtitle", iOptionSubTitle);
 				DataList::speciesFeatures.setValue(iOptionsRow, "content", iOptionContent);
+
+				if (iDieModList.count() > 0) {
+					Talent t;
+					t.clear(iOptionKey);
+					t.dieModList = iDieModList;
+					AllTalents::instance()->addTalent(t);
+				}
+
 				iCharTalent.clear(iOptionKey);
 				iCharTalent.aquisition = iName;
 				iCharTalent.talentType = TALENT_SPECIES;
@@ -113,6 +145,8 @@ bool Species::xmlElement(const DatStringBuffer& path, const char* value)
 		}
 		iOptionKey.clear();
 	}
+
+
 	else if (path.endsWith("/WeaponModifiers/WeaponModifier/#open"))
 		iSpecTalent.clear();
 	else if (path.endsWith("/WeaponModifiers/WeaponModifier/AllSkillKey/"))

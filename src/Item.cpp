@@ -184,22 +184,22 @@ void DieMod::clear(const QString& k)
 
 void DieModList::clear()
 {
-	iDieModMap.clear();
+	modMap.clear();
 }
 
 int DieModList::count()
 {
-	return iDieModMap.count();
+	return modMap.count();
 }
 
 bool DieModList::contains(const QString& key)
 {
-	return iDieModMap.contains(key);
+	return modMap.contains(key);
 }
 
 DieMod DieModList::get(const QString& key)
 {
-	return iDieModMap[key];
+	return modMap[key];
 }
 
 void DieModList::addMod(DieMod mod)
@@ -208,7 +208,7 @@ void DieModList::addMod(DieMod mod)
 
 	if (mod.skillKey.isEmpty())
 		return;
-	iDieModMap[mod.skillKey] = mod;
+	modMap[mod.skillKey] = mod;
 }
 
 // ModList ----------------------------------------
@@ -336,8 +336,7 @@ QString Item::damageTotal()
 	if (hasQuality("DAMADD"))
 		t += getQuality("DAMADD").count;
 
-	for (int i = 0; i < character->talents.size(); i++) {
-		CharTalent& char_talent = character->talents.at(i);
+	foreach (CharTalent char_talent, character->talents.charTalentMap) {
 		Talent talent = AllTalents::instance()->getTalent(char_talent.key);
 
 		if (talent.addDamagePerSkillRank && char_talent.selectedSkills.contains(skillKey)) {

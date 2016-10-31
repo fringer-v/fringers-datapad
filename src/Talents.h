@@ -78,27 +78,14 @@ public:
 private:
 	void fillArrays();
 
-	QMap<QString, CharTalent> iTalents;
 	QList<QString> iDisplayNonSpecies;
 	QList<QString> iDisplayNonCoded;
 	static CharTalent iEmpty;
 	static QStringList* iCodedTalents;
 	QStringList iLightSaberChars;
-};
 
-class DieModifier {
 public:
-	QString	skillKey;
-	int		boostCount;
-	int		setbackCount;
-	int		forceCount;
-
-	void clear(QString key) {
-		skillKey = key;
-		boostCount = 0;
-		setbackCount = 0;
-		forceCount = 0;
-	}
+	QMap<QString, CharTalent> charTalentMap;
 };
 
 class Talent {
@@ -115,7 +102,7 @@ public:
 	int damageBonus;
 	QString damageBonusSkills;
 
-	QList<DieModifier> dieModifiers;
+	DieModList dieModList;
 
 	QString lightSaberSkill;
 
@@ -148,7 +135,7 @@ private:
 
 	Talent iTalent;
 	QMap<QString, Talent> iTalents;
-	DieModifier iDieModifier;
+	DieMod iDieMod;
 };
 
 class Talents : public AbstractDataList {
@@ -170,10 +157,14 @@ public:
 	int damageBonus;
 	int weaponsCrit;
 
+	DieMod dieMod;
+
 	void clear() {
 		damageBonusSkill.clear();
 		damageBonus = 0;
 		weaponsCrit = 0;
+
+		dieMod.clear();
 	}
 };
 

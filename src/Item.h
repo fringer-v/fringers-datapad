@@ -118,7 +118,7 @@ public:
 	DieMod get(const QString& key);
 	void addMod(DieMod mod);
 
-	QMap<QString, DieMod> iDieModMap;
+	QMap<QString, DieMod> modMap;
 };
 
 class ModList {

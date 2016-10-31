@@ -49,6 +49,8 @@ private:
 	QString		iSubKey;
 	QString		iName;
 	QString		iSubName;
+	DieMod		iDieMod;
+	DieModList	iDieModList;
 	CharTalent	iCharTalent;
 	QMap<QString, QString>*	iChoices;
 	bool		iSubKeyMatched;
