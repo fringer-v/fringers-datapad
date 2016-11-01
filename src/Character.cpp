@@ -23,6 +23,8 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 	if (!(character = Character::instance))
 		return "";
 
+if (key == "PILOTPL")
+	qDebug() << "heh?";
 	if (!skill) {
 		skill = Skill::getSkill(key);
 		if (!skill)
@@ -35,7 +37,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 	QString pool;
 	int boostCount = 0;
 	int setbackCount = 0;
-	int forceCount = 0;
+	int addForceDice = 0;
 	int optionalRemoveSetback = 0;
 	int optionalUpgradeCount = 0;
 	int optionalDowngradeCount = 0;
@@ -65,13 +67,13 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 
 	if (strcmp(skill->key, "REC") == 0) {
 		if (character->talents.contains("BAL"))
-			forceCount++;
+			addForceDice++;
 	}
 	else if (strcmp(skill->key, "ICOOL") == 0 || strcmp(skill->key, "IVIG") == 0) {
 		if (character->talents.contains("FORSEECONTROL1") > 0)
-			forceCount++;
+			addForceDice++;
 		else if (character->talents.contains("WARFORCONTROL1") > 0)
-			forceCount++;
+			addForceDice++;
 	}
 
 	foreach (CharTalent char_talent, character->talents.charTalentMap) {
@@ -87,6 +89,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 					optionalRemoveSetback += mod.setbackCount * char_talent.ranks;
 				else
 					setbackCount += mod.setbackCount * char_talent.ranks;
+				addForceDice += mod.forceCount;
 				pool += DatUtil::repeat("a", mod.advantageCount * char_talent.ranks);
 				pool += DatUtil::repeat("t", mod.threatCount * char_talent.ranks);
 				pool += DatUtil::repeat("U", mod.upgradeCount * char_talent.ranks);
@@ -110,7 +113,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 				DieMod mod = item.dieModList.get(key);
 				pool += DatUtil::repeat("B", mod.boostCount);
 				pool += DatUtil::repeat("N", mod.setbackCount);
-				forceCount += mod.forceCount;
+				addForceDice += mod.forceCount;
 				pool += DatUtil::repeat("a", mod.advantageCount);
 				pool += DatUtil::repeat("t", mod.threatCount);
 				pool += DatUtil::repeat("U", mod.upgradeCount);
@@ -138,14 +141,14 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 			pool = "|"+QString("D").repeated(m)+"|" + pool;
 	}
 
-	if (forceCount + optionalRemoveSetback + optionalUpgradeCount + optionalDowngradeCount +
+	if (addForceDice + optionalRemoveSetback + optionalUpgradeCount + optionalDowngradeCount +
 		commitCount + optionalBoost) {
 		QString opt;
 		// Mark the optional dice
 		// Optional dice are just an indicator that something else
 		// can be added to the pool
 		opt += DatUtil::repeat("B", optionalBoost);
-		if (forceCount > 0)
+		if (addForceDice > 0)
 			opt += DatUtil::repeat("F", character->nonCommitedForce());
 		opt += DatUtil::repeat("F", commitCount);
 		opt += DatUtil::repeat("N", optionalRemoveSetback);
