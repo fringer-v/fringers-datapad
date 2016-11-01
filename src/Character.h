@@ -513,6 +513,8 @@ public:
 	int nonCommitedForce();
 
 private:
+	void excludeMorality(int mor);
+	void includeMorality(int mor);
 	void reload();
 	QString processDownload(const QString& url, const QByteArray& data, const QString& to_dir, QString& err_msg);
 

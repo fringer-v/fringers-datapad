@@ -1196,7 +1196,19 @@ void Character::setEncText(const QString& t)
 void Character::setAttribute(QString ch, int val)
 {
 	if (!iAttributes.contains(ch) || iAttributes[ch] != val) {
-		iAttributes[ch] = val;
+		int before_mor = 50;
+
+		if (iAttributes.contains(MORALITY))
+			before_mor = iAttributes[MORALITY];
+
+		if ((ch == STRAIN || ch == WOUND) && iAttributes.contains(FORCE) && iAttributes[FORCE] > 0) {
+			includeMorality(before_mor);
+			iAttributes[ch] = val;
+			excludeMorality(before_mor);
+		}
+		else
+			iAttributes[ch] = val;
+
 		if (ch == BRAWN)
 			emit brawnChanged(val);
 		else if (ch == AGILITY)
@@ -1212,15 +1224,20 @@ void Character::setAttribute(QString ch, int val)
 		else if (ch == SOAK)
 			emit soakChanged(val);
 		else if (ch == WOUND)
-			emit woundChanged(val);
+			emit woundChanged(wound());
 		else if (ch == STRAIN)
-			emit strainChanged(val);
+			emit strainChanged(strain());
 		else if (ch == DRANGED)
 			emit defenseRangedChanged(val);
 		else if (ch == DMELEE)
 			emit defenseMeleeChanged(val);
-		else if (ch == FORCE)
+		else if (ch == FORCE) {
+			if (iAttributes[FORCE] > 0)
+				excludeMorality(before_mor);
+			else
+				includeMorality(before_mor);
 			emit forceChanged(val);
+		}
 		else if (ch == XP)
 			emit totalXPChanged(val);
 		else if (ch == NEWXP)
@@ -1228,6 +1245,10 @@ void Character::setAttribute(QString ch, int val)
 		else if (ch == USEDXP)
 			emit usedXPChanged(val);
 		else if (ch == MORALITY) {
+			if (iAttributes.contains(FORCE) && iAttributes[FORCE] > 0) {
+				includeMorality(before_mor);
+				excludeMorality(val);
+			}
 			emit moralityChanged(val);
 			emit strainChanged(strain());
 			emit woundChanged(wound());
@@ -1809,6 +1830,44 @@ void Character::setTemporaryStrain(int value)
 int Character::nonCommitedForce()
 {
 	return force() - iCurrentData.commitCount();
+}
+
+// Use ths function to remove the morilty adjustment
+void Character::excludeMorality(int mor)
+{
+	if (iAttributes.contains(WOUND) && iAttributes.contains(STRAIN)) {
+		if (mor < 10) {
+			iAttributes[WOUND] -= 2;
+			iAttributes[STRAIN] += 2;
+		}
+		else if (mor < 20) {
+			iAttributes[WOUND] -= 1;
+			iAttributes[STRAIN] += 1;
+		}
+		else if (mor > 90)
+			iAttributes[STRAIN] -= 2;
+		else if (mor > 80)
+			iAttributes[STRAIN] -= 1;
+	}
+}
+
+// Use ths function to add the morality adjustment
+void Character::includeMorality(int mor)
+{
+	if (iAttributes.contains(WOUND) && iAttributes.contains(STRAIN)) {
+		if (mor < 10) {
+			iAttributes[WOUND] += 2;
+			iAttributes[STRAIN] -= 2;
+		}
+		else if (mor < 20) {
+			iAttributes[WOUND] += 1;
+			iAttributes[STRAIN] -= 1;
+		}
+		else if (mor > 90)
+			iAttributes[STRAIN] += 2;
+		else if (mor > 80)
+			iAttributes[STRAIN] += 1;
+	}
 }
 
 void Character::reload()
