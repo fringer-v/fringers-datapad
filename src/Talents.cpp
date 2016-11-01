@@ -101,6 +101,11 @@ CharTalentMap::CharTalentMap()
 	iCodedTalents->append("SUPREF");
 	iCodedTalents->append("DEAD");
 	iCodedTalents->append("DEADIMP");
+	iCodedTalents->append("HARDHD");
+	iCodedTalents->append("HARDHDIMP");
+	iCodedTalents->append("RESEARCH");
+	iCodedTalents->append("SORESUTECH");
+	iCodedTalents->append("WELLROUND");
 
 	iCodedTalents->append("SENSECONTROL1");
 	iCodedTalents->append("SENSECONTROL3");
@@ -444,8 +449,12 @@ bool AllTalents::xmlElement(const DatStringBuffer& path, const char* value)
 		DatUtil::appendToList(iTalent.damageBonusSkills, value, ",");
 
 	// Die modifiers
+	else if (path.endsWith("/DieModifier/#open"))
+		iDieMod.clear();
 	else if (path.endsWith("/DieModifier/SkillKey/"))
-		iDieMod.clear(value);
+		iDieMod.skillKey = value;
+	else if (path.endsWith("/DieModifier/SkillType/"))
+		iDieMod.skillType = strcmp(value, "Knowledge") == 0 ? KNOWLEDGE : NO_SKILL_TYPE;
 	else if (path.endsWith("/DieModifier/BoostCount/"))
 		iDieMod.boostCount = toInt(value);
 	else if (path.endsWith("/DieModifier/SetbackCount/"))

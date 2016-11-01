@@ -29,10 +29,11 @@
 #include "Item.h"
 #include "DataList.h"
 
-#define GENERAL		0
-#define COMBAT		1
-#define KNOWLEDGE	2
-#define SPECIAL		3
+#define NO_SKILL_TYPE	-1
+#define GENERAL			0
+#define COMBAT			1
+#define KNOWLEDGE		2
+#define SPECIAL			3
 
 #define BRAWN		"BR"
 #define AGILITY		"AG"

@@ -98,6 +98,7 @@ private:
 class DieMod {
 public:
 	QString	skillKey;
+	int skillType;
 	int boostCount;
 	int setbackCount;
 	int forceCount;

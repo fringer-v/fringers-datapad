@@ -78,7 +78,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 		Talent talent = AllTalents::instance()->getTalent(char_talent.key);
 
 		foreach (DieMod mod, talent.dieModList.modMap) {
-			if (mod.skillKey == key) {
+			if (mod.skillKey == key || mod.skillType == skill->type) {
 				if (talent.key == "SLEIGHTMIND")
 					optionalBoost += mod.boostCount * char_talent.ranks;
 				else

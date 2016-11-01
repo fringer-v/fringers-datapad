@@ -403,8 +403,12 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/ItemDescInfo/MiscDesc/") || path.endsWith("/PurchasedMods/Mod/MiscDesc/"))
 		iMod.miscDesc = value; //value.trimmed();
 
+	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/#open"))
+		iDieMod.clear();
 	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/SkillKey/"))
-		iDieMod.clear(value);
+		iDieMod.skillKey = value;
+	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/SkillType/"))
+		iDieMod.skillKey = (value == "Knowledge") ? KNOWLEDGE : NO_SKILL_TYPE;
 	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/BoostCount/"))
 		iDieMod.boostCount = toInt(value);
 	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/SetbackCount/"))

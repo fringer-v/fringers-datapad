@@ -158,6 +158,7 @@ void QualityList::addMod(Mod mod)
 
 DieMod::DieMod() :
 	skillKey(),
+	skillType(NO_SKILL_TYPE),
 	boostCount(0),
 	setbackCount(0),
 	forceCount(0),
@@ -171,6 +172,7 @@ DieMod::DieMod() :
 void DieMod::clear(const QString& k)
 {
 	skillKey = k;
+	skillType = NO_SKILL_TYPE;
 	boostCount = 0;
 	setbackCount = 0;
 	forceCount = 0;
@@ -204,10 +206,8 @@ DieMod DieModList::get(const QString& key)
 
 void DieModList::addMod(DieMod mod)
 {
-	Quality qual;
-
 	if (mod.skillKey.isEmpty())
-		return;
+		mod.skillKey = QString("KEY_%1").arg(rand());
 	modMap[mod.skillKey] = mod;
 }
 

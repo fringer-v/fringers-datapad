@@ -281,7 +281,7 @@ public:
 		}
 		return getAttribute(WOUND) + wound_adj;
 	}
-	int strain() {
+	int  strain(){
 		int strain_adj = 0;
 
 		if (getAttribute(FORCE) > 0) {

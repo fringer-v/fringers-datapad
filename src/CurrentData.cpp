@@ -995,6 +995,16 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			autoCheckItems.plus(QString("@Linked %1").arg(force), QString("[B]Saber Swarm:[b] Attack has linked %1 quality").arg(force), 1, 1);
 	}
 	else if (skillKey == "DISC") {
+		ranks = Character::instance->talents.ranks("HARDHD");
+		if (ranks > 0) {
+			int dif = 4-ranks;
+
+			autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), "[B]Hard Headed:[b] Perfrom check to remove staggered or disoriented effect", 0, 0);
+			if (Character::instance->talents.contains("HARDHDIMP")) {
+				dif = 6-ranks;
+				autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), QString("[B]Hard Headed (Improved):[b] Perfrom check to reduced straing to %1").arg(Character::instance->strain()-1), 0, 0);
+			}
+		}
 		force = Character::instance->nonCommitedForce();
 		if (force > 0) {
 			if (Character::instance->talents.contains("INFLUENCECONTROL1"))
