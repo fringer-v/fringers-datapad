@@ -1603,7 +1603,7 @@ void CurrentData::setExpLogItem(int type, const QString& key, const QString& nam
 
 		tot.value = total;
 		tot.firstItem = tot.lastItem = experienceLog.count();
-		tot.itemCount = 0;
+		tot.itemCount = 1;
 		experienceTotal[exp_key] = tot;
 		addExpLogItem(type, key, name, "Original Total", total);
 	}
