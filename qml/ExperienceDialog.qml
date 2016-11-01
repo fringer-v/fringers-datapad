@@ -27,6 +27,10 @@ Rectangle {
 	property bool experienceDialogMayDelete: false
 
 	onExperienceDialogDescChanged: descDisplay.boxText = experienceDialogDesc
+	onVisibleChanged: {
+		if (!visible)
+			experienceDialogDesc = descDisplay.boxText;
+	}
 
 	MouseArea {
 		anchors.fill: parent
