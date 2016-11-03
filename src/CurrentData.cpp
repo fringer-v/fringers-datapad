@@ -361,7 +361,6 @@ bool CurrentData::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/Inventory/Item/#end")) {
 		if (iItemCreate.isValid() && !iItemUpdate.isValid())
 			iItemUpdate = iItemCreate;
-qDebug() << "==" << iItemUpdate.toLocalTime().toString() << iItemCreate.toLocalTime().toString() << iItemDesc;
 		setInvLogItem(iItemCount, iItemCreate, iItemUpdate, iItemUuid, iItemKey, iItemDesc, iItemAmount, true);
 	}
 	else if (path.endsWith("/StoreItem/#open")) {
