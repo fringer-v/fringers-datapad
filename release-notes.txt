@@ -7,6 +7,10 @@ RELEASE NOTES
 1.0.12
 ------
 
+- Force dice committed to upgrading attacks is now display correctly in the dice pools.
+
+- The number of force points not committed are now display in the force POINTS indicator.
+
 - Fixed display of force dice in sklll dice pools.
 
 - Implemented "Sleight of Mind" and "Hard Headed".
