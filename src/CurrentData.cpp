@@ -236,6 +236,9 @@ void CurrentData::clear()
 
 	iNextItem = 0;
 	iItemCount = 0;
+	iItemCreate = QDateTime();
+	iItemUpdate = QDateTime();
+	iItemUuid.clear();
 	iItemKey.clear();
 	iItemDesc.clear();
 	iItemAmount = 0;
@@ -320,6 +323,8 @@ bool CurrentData::xmlElement(const DatStringBuffer& path, const char* value)
 	}
 	else if (path.endsWith("/XP/Type/"))
 		iExpItem.type = expTypeToInt(value);
+	else if (path.endsWith("/XP/Create/"))
+		iExpItem.when = QDateTime::fromString(value, Qt::ISODate);
 	else if (path.endsWith("/XP/Key/"))
 		iExpItem.key = value;
 	else if (path.endsWith("/XP/Name/"))
@@ -329,9 +334,11 @@ bool CurrentData::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/XP/Amount/"))
 		iExpItem.amount = toInt(value);
 	else if (path.endsWith("/XP/#end"))
-		setExpLogItem(iExpItem.type, iExpItem.key, iExpItem.name, iExpItem.desc, iExpItem.amount, true);
+		setExpLogItem(iExpItem.type, iExpItem.when, iExpItem.key, iExpItem.name, iExpItem.desc, iExpItem.amount, true);
 	else if (path.endsWith("/Inventory/Item/#open")) {
 		iItemCount = 0;
+		iItemCreate = QDateTime();
+		iItemUpdate = QDateTime();
 		iItemUuid.clear();
 		iItemKey.clear();
 		iItemDesc.clear();
@@ -339,6 +346,10 @@ bool CurrentData::xmlElement(const DatStringBuffer& path, const char* value)
 	}
 	else if (path.endsWith("/Item/Count/"))
 		iItemCount = toInt(value);
+	else if (path.endsWith("/Item/Create/"))
+		iItemCreate = QDateTime::fromString(value, Qt::ISODate);
+	else if (path.endsWith("/Item/Update/"))
+		iItemUpdate = QDateTime::fromString(value, Qt::ISODate);
 	else if (path.endsWith("/Item/Uuid/"))
 		iItemUuid = value;
 	else if (path.endsWith("/Item/Key/"))
@@ -347,9 +358,12 @@ bool CurrentData::xmlElement(const DatStringBuffer& path, const char* value)
 		iItemDesc = value;
 	else if (path.endsWith("/Item/Amount/"))
 		iItemAmount = toInt(value);
-	else if (path.endsWith("/Inventory/Item/#end"))
-		setInvLogItem(iItemCount, iItemUuid, iItemKey, iItemDesc, iItemAmount, true);
-
+	else if (path.endsWith("/Inventory/Item/#end")) {
+		if (iItemCreate.isValid() && !iItemUpdate.isValid())
+			iItemUpdate = iItemCreate;
+qDebug() << "==" << iItemUpdate.toLocalTime().toString() << iItemCreate.toLocalTime().toString() << iItemDesc;
+		setInvLogItem(iItemCount, iItemCreate, iItemUpdate, iItemUuid, iItemKey, iItemDesc, iItemAmount, true);
+	}
 	else if (path.endsWith("/StoreItem/#open")) {
 		iStoreItemUuid.clear();
 		iStoreItemKey.clear();
@@ -538,7 +552,7 @@ void CurrentData::addExperience(const QString& stype, const QString& key, const 
 {
 	int type = expTypeToInt(stype.toUtf8().constData());
 
-	setExpLogItem(type, key, name, desc, amount, false);
+	setExpLogItem(type, QDateTime::currentDateTime(), key, name, desc, amount, false);
 	writeCurrentData();
 	Character::instance->experienceChanged();
 	ExperienceList::instance.rowCountChanged();
@@ -650,7 +664,8 @@ void CurrentData::removeCustomSkill(const QString& name)
 void CurrentData::addItem(int count, const QString& itemkey, const QString& desc, int amount)
 {
 	InventoryLog::instance.setRowCountChanged();
-	QString uuid = setInvLogItem(count, QString(), itemkey, desc, amount, false);
+	QDateTime create = QDateTime::currentDateTime();
+	QString uuid = setInvLogItem(count, create, create, QString(), itemkey, desc, amount, false);
 	InventoryLog::instance.setClean();
 	writeCurrentData();
 	inventoryChanged(uuid, itemkey, true);
@@ -691,6 +706,7 @@ void CurrentData::updateItem(int ref, int count, const QString& desc, int amount
 		return;
 	InventoryLog::instance.setRowCountChanged();
 	inventoryLog[row].count = count;
+	inventoryLog[row].update = QDateTime::currentDateTime();
 	inventoryLog[row].desc = desc;
 	inventoryLog[row].amount = amount;
 	if (amount - old_amount) {
@@ -1581,7 +1597,7 @@ int CurrentData::findExpLogItem(int ref)
 	return -1;
 }
 
-void CurrentData::setExpLogItem(int type, const QString& key, const QString& name, const QString& desc, int amount, bool loading)
+void CurrentData::setExpLogItem(int type, const QDateTime& when, const QString& key, const QString& name, const QString& desc, int amount, bool loading)
 {
 	ExpLogTotal	tot;
 	QString		exp_key = expTypeToString(type, key);
@@ -1596,7 +1612,7 @@ void CurrentData::setExpLogItem(int type, const QString& key, const QString& nam
 			tot.firstItem = tot.lastItem = experienceLog.count();
 			tot.itemCount = 1;
 			experienceTotal[exp_key] = tot;
-			addExpLogItem(type, key, name, desc, amount);
+			addExpLogItem(type, when, key, name, desc, amount);
 			return;
 		}
 
@@ -1624,18 +1640,18 @@ void CurrentData::setExpLogItem(int type, const QString& key, const QString& nam
 		tot.firstItem = tot.lastItem = experienceLog.count();
 		tot.itemCount = 1;
 		experienceTotal[exp_key] = tot;
-		addExpLogItem(type, key, name, "Original Total", total);
+		addExpLogItem(type, when, key, name, "Original Total", total);
 	}
 
 	experienceTotal[exp_key].value += amount;
 	experienceTotal[exp_key].lastItem = experienceLog.count();
 	experienceTotal[exp_key].itemCount++;
-	addExpLogItem(type, key, name, desc, amount);
+	addExpLogItem(type, when, key, name, desc, amount);
 }
 
-void CurrentData::addExpLogItem(int type, const QString& key, const QString& name, const QString& desc, int amount)
+void CurrentData::addExpLogItem(int type, const QDateTime& when, const QString& key, const QString& name, const QString& desc, int amount)
 {
-	experienceLog.append(ExpLogItem(++iExpNextRef, type, key, name, desc, amount));
+	experienceLog.append(ExpLogItem(++iExpNextRef, type, when, key, name, desc, amount));
 // 	Character::instance->setAttribute("NEWXP", total + amount - Character::instance->totalXP());
 }
 
@@ -1648,7 +1664,7 @@ int CurrentData::findInvLogItem(int ref)
 	return -1;
 }
 
-QString CurrentData::setInvLogItem(int count, const QString& in_uuid, const QString& itemkey, const QString& desc, int amount, bool loading)
+QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDateTime& update, const QString& in_uuid, const QString& itemkey, const QString& desc, int amount, bool loading)
 {
 	int total = Character::instance->credits();
 	int type = ITEM_AMOUNT;
@@ -1659,12 +1675,12 @@ QString CurrentData::setInvLogItem(int count, const QString& in_uuid, const QStr
 		// Record, or add orignal credits total:
 		if (loading) {
 			// The first entry loaded myst be the original credit total:
-			inventoryLog.append(InvLogItem(++iNextItem, count, in_uuid, itemkey, desc, amount, ITEM_START));
+			inventoryLog.append(InvLogItem(++iNextItem, count, create, update, in_uuid, itemkey, desc, amount, ITEM_START));
 			Character::instance->setCredits(amount);
 			return in_uuid;
 		}
 
-		addInvLogItem("[B]Original Total Credits[b]", total, ITEM_START);
+		addInvLogItem(create, update, "[B]Original Total Credits[b]", total, ITEM_START);
 	}
 
 	if (!itemkey.isEmpty()) {
@@ -1721,7 +1737,7 @@ QString CurrentData::setInvLogItem(int count, const QString& in_uuid, const QStr
 					// Record the original stock:
 					invMod[uuid].rowCount++;
 					invMod[uuid].quantity = c;
-					inventoryLog.append(InvLogItem(++iNextItem, c, uuid, itemkey, QString(), 0, ITEM_ORIG_STOCK));
+					inventoryLog.append(InvLogItem(++iNextItem, c, create, update, uuid, itemkey, QString(), 0, ITEM_ORIG_STOCK));
 				}
 			}
 			else {
@@ -1750,16 +1766,16 @@ QString CurrentData::setInvLogItem(int count, const QString& in_uuid, const QStr
 	else
 		return QString();
 
-	inventoryLog.append(InvLogItem(++iNextItem, count, uuid, itemkey, desc, amount, type));
+	inventoryLog.append(InvLogItem(++iNextItem, count, create, update, uuid, itemkey, desc, amount, type));
 
 	Character::instance->setCredits(total + amount);
 
 	return uuid;
 }
 
-void CurrentData::addInvLogItem(const QString& desc, int amount, int type)
+void CurrentData::addInvLogItem(const QDateTime& create, const QDateTime& update, const QString& desc, int amount, int type)
 {
-	inventoryLog.append(InvLogItem(++iNextItem, 0, QString(), QString(), desc, amount, type));
+	inventoryLog.append(InvLogItem(++iNextItem, 0, create, update, QString(), QString(), desc, amount, type));
 }
 
 void CurrentData::inventoryChanged(const QString& uuid, const QString& itemkey, bool signal)
@@ -1851,6 +1867,8 @@ void CurrentData::writeCurrentData()
 	for (int i=0; i<experienceLog.size(); i++) {
 		data += QString("  <XP>");
 		data += QString("<Type>%1</Type>").arg(expTypeToString(experienceLog[i].type));
+		if (experienceLog[i].when.isValid())
+			data += QString("<Create>%1</Create>").arg(experienceLog[i].when.toTimeSpec(Qt::UTC).toString(Qt::ISODate));
 		if (!experienceLog[i].key.isEmpty())
 			data += QString("<Key>%1</Key>").arg(experienceLog[i].key);
 		if (!experienceLog[i].name.isEmpty())
@@ -1866,6 +1884,10 @@ void CurrentData::writeCurrentData()
 			data += QString("  <Item>");
 			if (inventoryLog[i].count != 0)
 				data += QString("<Count>%1</Count>").arg(inventoryLog[i].count);
+			if (inventoryLog[i].create.isValid())
+				data += QString("<Create>%1</Create>").arg(inventoryLog[i].create.toTimeSpec(Qt::UTC).toString(Qt::ISODate));
+			if (inventoryLog[i].update.isValid() && inventoryLog[i].update != inventoryLog[i].create)
+				data += QString("<Update>%1</Update>").arg(inventoryLog[i].update.toTimeSpec(Qt::UTC).toString(Qt::ISODate));
 			if (!inventoryLog[i].uuid.isEmpty() && inventoryLog[i].uuid != inventoryLog[i].itemkey)
 				data += QString("<Uuid>%1</Uuid>").arg(inventoryLog[i].uuid);
 			if (!inventoryLog[i].itemkey.isEmpty())

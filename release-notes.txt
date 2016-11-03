@@ -7,6 +7,8 @@ RELEASE NOTES
 1.0.12
 ------
 
+- Times of added and changed items are now stored in the .xpad files.
+
 - Force dice committed to upgrading attacks is now display correctly in the dice pools.
 
 - The number of force points not committed are now display in the force POINTS indicator.

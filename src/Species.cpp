@@ -108,7 +108,7 @@ bool Species::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/SkillKey/"))
 		iDieMod.skillKey = value;
 	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/SkillType/"))
-		iDieMod.skillKey = (value == "Knowledge") ? KNOWLEDGE : NO_SKILL_TYPE;
+		iDieMod.skillKey = strcmp(value, "Knowledge") == 0 ? KNOWLEDGE : NO_SKILL_TYPE;
 	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/BoostCount/"))
 		iDieMod.boostCount = toInt(value);
 	else if (path.endsWith("/Options/Option/DieModifiers/DieModifier/SetbackCount/"))

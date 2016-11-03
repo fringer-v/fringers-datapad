@@ -26,6 +26,7 @@
 #define __CurrentData_h__
 
 #include <QObject>
+#include <QDateTime>
 
 #include "DatXMLReader.h"
 #include "DataList.h"
@@ -141,6 +142,8 @@ class InvLogItem {
 public:
 	int ref;
 	int count;
+	QDateTime create;
+	QDateTime update;
 	QString uuid;
 	QString itemkey;
 	QString desc;
@@ -150,6 +153,8 @@ public:
 	InvLogItem() :
 		ref(0),
 		count(0),
+		create(),
+		update(),
 		uuid(),
 		itemkey(),
 		desc(),
@@ -157,9 +162,11 @@ public:
 		type(0) {
 	}
 
-	InvLogItem(int r, int c, const QString& u, const QString& k, const QString& d, int a, int t) :
+	InvLogItem(int r, int c, const QDateTime& cr, const QDateTime& up, const QString& u, const QString& k, const QString& d, int a, int t) :
 		ref(r),
 		count(c),
+		create(cr),
+		update(up),
 		uuid(u),
 		itemkey(k),
 		desc(d),
@@ -185,6 +192,7 @@ class ExpLogItem {
 public:
 	int ref;
 	int type;		// EXP_XP, EXP_DUTY, EXP_DUTY_RANK, EXP_MORALITY, EXP_OBLIGATION
+	QDateTime when;
 	QString key;	// Key of Duty or Obligation
 	QString name;	// Name of Duty or Obligation
 	QString desc;
@@ -193,15 +201,17 @@ public:
 	ExpLogItem() :
 		ref(0),
 		type(EXP_UNKNOWN),
+		when(),
 		key(),
 		name(),
 		desc(),
 		amount(0) {
 	}
 
-	ExpLogItem(int r, int t, const QString& k, const QString& n, const QString& d, int a) :
+	ExpLogItem(int r, int t, const QDateTime& w, const QString& k, const QString& n, const QString& d, int a) :
 		ref(r),
 		type(t),
+		when(w),
 		key(k),
 		name(n),
 		desc(d),
@@ -211,6 +221,7 @@ public:
 	void clear() {
 		ref = 0;
 		type = EXP_UNKNOWN;
+		when = QDateTime();
 		key.clear();
 		name.clear();
 		desc.clear();
@@ -374,11 +385,11 @@ private:
 	void setCriticalWound(int perc, int type);
 	void appendEmptyWound();
 	int findExpLogItem(int ref);
-	void setExpLogItem(int type, const QString& key, const QString& name, const QString& desc, int amount, bool loading);
-	void addExpLogItem(int type, const QString& key, const QString& name, const QString& desc, int amount);
+	void setExpLogItem(int type, const QDateTime& when, const QString& key, const QString& name, const QString& desc, int amount, bool loading);
+	void addExpLogItem(int type, const QDateTime& when, const QString& key, const QString& name, const QString& desc, int amount);
 	int findInvLogItem(int ref);
-	QString setInvLogItem(int count, const QString& uuid, const QString& itemkey, const QString& desc, int amount, bool loading);
-	void addInvLogItem(const QString& desc, int amount, int type);
+	QString setInvLogItem(int count, const QDateTime& create, const QDateTime& update, const QString& uuid, const QString& itemkey, const QString& desc, int amount, bool loading);
+	void addInvLogItem(const QDateTime& create, const QDateTime& update, const QString& desc, int amount, int type);
 	void inventoryChanged(const QString& uuid, const QString& itemkey, bool signal);
 	void setCheckItem(const QString& skillKey, const QString& pool, const QString& desc);
 	void addCheckItem(const QString& skillKey, int reference, const QString& pool, const QString& desc);
@@ -398,6 +409,8 @@ private:
 	int			iNextItem;
 	int			iItemCount;
 	QString		iItemUuid;
+	QDateTime	iItemCreate;
+	QDateTime	iItemUpdate;
 	QString		iItemKey;
 	QString		iItemDesc;
 	int			iItemAmount;
