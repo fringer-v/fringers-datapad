@@ -192,6 +192,7 @@ public:
 	Q_PROPERTY(int defenseRanged READ defenseRanged NOTIFY defenseRangedChanged)
 	Q_PROPERTY(int defenseMelee READ defenseMelee NOTIFY defenseMeleeChanged)
 	Q_PROPERTY(int force READ force NOTIFY forceChanged)
+	Q_PROPERTY(int forceCommitted READ forceCommitted NOTIFY forceCommittedChanged)
 	Q_PROPERTY(int totalXP READ totalXP NOTIFY totalXPChanged)
 	Q_PROPERTY(int newXP READ newXP NOTIFY newXPChanged)
 	Q_PROPERTY(int usedXP READ usedXP NOTIFY usedXPChanged)
@@ -301,6 +302,7 @@ public:
 	int defenseRanged() { return getAttribute(DRANGED); }
 	int defenseMelee() { return getAttribute(DMELEE); }
 	int force() { return getAttribute(FORCE); }
+	int forceCommitted() { return iCurrentData.commitCount(); }
 	int totalXP() {
 		if (iCurrentData.experienceTotal.contains(EXP_TOT_XP))
 			return iCurrentData.experienceTotal[EXP_TOT_XP].value;
@@ -468,6 +470,7 @@ signals:
 	void defenseRangedChanged(int value);
 	void defenseMeleeChanged(int value);
 	void forceChanged(int value);
+	void forceCommittedChanged(int value);
 	void totalXPChanged(int value);
 	void newXPChanged(int value);
 	void usedXPChanged(int value);
@@ -507,6 +510,7 @@ public:
 	void emitCharacterCountChanged();
 	void emitBrawnChanged();
 	void emitAgilityChanged();
+	void emitForceCommittedChanged();
 	int getAttribute(const QString& val);
 	CurrentData* currentData();
 	void setTemporaryStrain(int value);

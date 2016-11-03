@@ -276,6 +276,7 @@ Rectangle {
 						charName: "POINTS"
 						charLineColor: characterData.force > 0 ? "black" : Constant.DARK_GRAY
 						charValue: characterData.force
+						charCurrentValue: characterData.forceCommitted === 0 ? -1 : (characterData.force - characterData.forceCommitted)
 						onClicked: {
 							if (characterData.force > 0) {
 								checklist.checkListType = "skill"

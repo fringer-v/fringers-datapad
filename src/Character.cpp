@@ -23,8 +23,6 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 	if (!(character = Character::instance))
 		return "";
 
-if (key == "PILOTPL")
-	qDebug() << "heh?";
 	if (!skill) {
 		skill = Skill::getSkill(key);
 		if (!skill)
@@ -42,7 +40,6 @@ if (key == "PILOTPL")
 	int optionalUpgradeCount = 0;
 	int optionalDowngradeCount = 0;
 	int optionalBoost = 0;
-	int commitCount = 0;
 	int threatCount = 0;
 	bool defr = false;
 	bool defm = false;
@@ -50,19 +47,29 @@ if (key == "PILOTPL")
 	if (strcmp(skill->key, "DEFM") == 0) {
 		defm = true;
 		pool = DatUtil::repeat("S", character->defenseMelee());
-		commitCount = character->currentData()->isCommitted("SENSECONTROL1");
+		if (character->currentData()->isCommitted("SENSECONTROL1")) {
+			optionalDowngradeCount++;
+			if (character->talents.contains("SENSESTRENGTH"))
+				optionalDowngradeCount++;
+		}
 		threatCount = character->currentData()->isCommitted("MISDIRCONTROL3");
 	}
 	else if (strcmp(skill->key, "DEFR") == 0) {
 		defr = true;
 		pool = DatUtil::repeat("S", character->defenseRanged());
-		commitCount = character->currentData()->isCommitted("SENSECONTROL1");
+		if (character->currentData()->isCommitted("SENSECONTROL1")) {
+			optionalDowngradeCount++;
+			if (character->talents.contains("SENSESTRENGTH"))
+				optionalDowngradeCount++;
+		}
 		threatCount = character->currentData()->isCommitted("MISDIRCONTROL3");
 	}
 	else {
 		pool = DatUtil::getBasicDicePool(ranks, character->getAttribute(skill ? ch : 0));
-		if (skill->type == COMBAT)
-			commitCount = character->currentData()->isCommitted("SENSECONTROL3");
+		if (skill->type == COMBAT) {
+			if (character->currentData()->isCommitted("SENSECONTROL3"))
+				pool += "UU";
+		}
 	}
 
 	if (strcmp(skill->key, "REC") == 0) {
@@ -125,6 +132,11 @@ if (key == "PILOTPL")
 		}
 	}
 
+	if (key == "CHARM" || key == "COERC") {
+		if (Gear::instance.equipped("EXPJEWELRY"))
+			pool += "a";
+	}
+
 	pool += DatUtil::repeat("B", boostCount);
 	pool += DatUtil::repeat("N", setbackCount);
 	pool = DatUtil::normalizeDice(pool);
@@ -141,8 +153,7 @@ if (key == "PILOTPL")
 			pool = "|"+QString("D").repeated(m)+"|" + pool;
 	}
 
-	if (addForceDice + optionalRemoveSetback + optionalUpgradeCount + optionalDowngradeCount +
-		commitCount + optionalBoost) {
+	if (addForceDice + optionalRemoveSetback + optionalUpgradeCount + optionalDowngradeCount + optionalBoost) {
 		QString opt;
 		// Mark the optional dice
 		// Optional dice are just an indicator that something else
@@ -150,7 +161,6 @@ if (key == "PILOTPL")
 		opt += DatUtil::repeat("B", optionalBoost);
 		if (addForceDice > 0)
 			opt += DatUtil::repeat("F", character->nonCommitedForce());
-		opt += DatUtil::repeat("F", commitCount);
 		opt += DatUtil::repeat("N", optionalRemoveSetback);
 		opt += DatUtil::repeat("d", optionalUpgradeCount);
 		opt += DatUtil::repeat("u", optionalDowngradeCount);
@@ -269,6 +279,7 @@ void Character::clear(bool signal)
 		emit defenseRangedChanged(defenseRanged());
 		emit defenseMeleeChanged(defenseMelee());
 		emit forceChanged(force());
+		emit forceCommittedChanged(forceCommitted());
 		emit totalXPChanged(totalXP());
 		emit newXPChanged(newXP());
 		emit usedXPChanged(usedXP());
@@ -1803,6 +1814,11 @@ void Character::emitAgilityChanged()
 	emit agilityChanged(agility());
 }
 
+void Character::emitForceCommittedChanged()
+{
+	emit forceCommittedChanged(forceCommitted());
+}
+
 int Character::getAttribute(const QString& val)
 {
 	if (!iAttributes.contains(val))
@@ -1938,6 +1954,7 @@ void Character::reload()
 		emit defenseRangedChanged(defenseRanged());
 		emit defenseMeleeChanged(defenseMelee());
 		emit forceChanged(force());
+		emit forceCommittedChanged(forceCommitted());
 		emit totalXPChanged(totalXP());
 		emit newXPChanged(newXP());
 		emit usedXPChanged(usedXP());

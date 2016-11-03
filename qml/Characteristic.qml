@@ -10,6 +10,7 @@ Canvas {
 	property string charShortName: ""
 	property real charWidth: 148
 	property int charValue: 6
+	property int charCurrentValue: -1
 	property real charNameFontSize: 18
 	property real charNameMargin: 2
 	property real charValueFontSize: 40
@@ -18,6 +19,7 @@ Canvas {
 	signal clicked();
 
 	onCharValueChanged: requestPaint()
+	onCharCurrentValueChanged: requestPaint()
 
 	onPaint: {
 		var ctx = characteristic.getContext("2d");
@@ -32,7 +34,14 @@ Canvas {
 		Draw.drawCircle(ctx, 33.5, 13.5, 81, 1, charLineColor);
 
 		Draw.textBox(ctx, charName, 6, 111, 136, 27, "bold "+charNameFontSize+"px Arial", charLineColor, charNameMargin);
-		Draw.textBox(ctx, charValue === 0 ? "-" : charValue.toString(), 20, 0, 108, 108, "bold "+charValueFontSize+"px Verdana", charLineColor, 3);
+
+		var val = (charValue === 0 ? "-" : charValue.toString());
+		var font_val = charValueFontSize.toString();
+		if (charCurrentValue != -1) {
+			val = charCurrentValue.toString()+"/"+val;
+			font_val = (charValueFontSize*3/4).toString();
+		}
+		Draw.textBox(ctx, val, 20, 0, 108, 108, "bold "+font_val+"px Verdana", charLineColor, 3);
 
 		Draw.exit(ctx);
 	}

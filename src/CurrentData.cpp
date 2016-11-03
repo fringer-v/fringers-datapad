@@ -865,6 +865,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 {
 	bool combat = false;
 	bool ranged = false;
+	bool gunnery = false;
 	bool targeting_comp = false;
 	bool integrated_scanner = false;
 	bool mount_armor = false;
@@ -889,9 +890,14 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 	if (Character::instance->talents.contains("SENSEDURATION"))
 		send_mag = "twice";
 
-	if (skillKey == "RANGHVY" || skillKey == "RANGLT" || skillKey == "GUNN") {
+	if (skillKey == "RANGHVY" || skillKey == "RANGLT") {
 		combat = true;
 		ranged = true;
+	}
+	else if (skillKey == "GUNN") {
+		combat = true;
+		ranged = true;
+		gunnery = true;
 	}
 	else if (skillKey == "BRAWL" || skillKey == "MELEE" || skillKey == "LTSABER") {
 		combat = true;
@@ -906,12 +912,14 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 		autoCheckItems.plus("N", "[B]Brace:[b] Remove [SE] if due to any environmental effects, Duration: 1 Round", i == 0 ? 1 : 0, 0);
 
 	if (combat) {
+		/* Not required because upgdrade need not be optional!
 		if (isCommitted("SENSECONTROL3")) {
 			QString send_str = "U";
 			if (Character::instance->talents.contains("SENSESTRENGTH"))
 				send_str = "UU";
 			default_check = autoCheckItems.plus(send_str, QString("[B]Sense Control:[b] Upgrade ability of combat check %1 per round").arg(send_mag), 0, 0);
 		}
+		*/
 	}
 
 	if (charm || skillKey == "COERC" || skillKey == "NEG" ||
@@ -1180,7 +1188,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 		if (ranks > 0)
 			autoCheckItems.plus(QString("N").repeated(ranks), "[B]Disarming Smile:[b] Opposed Charm vs Target, Range: Short, Duration: Encounter, [B]Cost: Action[b]", 0, 0);
 
-		if (Character::instance->talents.contains("DEAD")) {
+		if (gunnery && Character::instance->talents.contains("DEAD")) {
 			int dam = Character::instance->agility();
 
 			if (!Character::instance->talents.contains("DEADIMP"))
@@ -1246,7 +1254,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			autoCheckItems.plus("NN", "[B]Enhanced Optics Suite:[b] Darkness, smoke or environmental effects that obscure vision", 0, 0);
 	}
 	if (hunting_goggles) {
-		if (combat && skillKey != "GUNN")
+		if (combat && !gunnery)
 			autoCheckItems.plus("NN", "[B]Hunting Googles:[b] Concealment, darkness, fog and mist", 0, 0);
 	}
 
@@ -1396,6 +1404,7 @@ void CurrentData::checkItem(int ref, const QString& skillKey, bool list_setup)
 					Character::instance->emitBrawnChanged();
 				else if (item->commitKey == "ENHANCECONT9")
 					Character::instance->emitAgilityChanged();
+				Character::instance->emitForceCommittedChanged();
 				Character::instance->characteristicsChanged();
 			}
 			CheckList::instance.rowCountChanged();
