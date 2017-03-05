@@ -423,7 +423,7 @@ bool ItemList::changeEquipment(const QString& uuid, int state, int stored)
 	if (iUuidList.contains(uuid)) {
 		Item item = iUuidList[uuid];
 
-		Character::instance->currentData()->storeItem(uuid, item.itemkey, stored, state, &item);
+		CurrentData::instance->storeItem(uuid, item.itemkey, stored, state, &item);
 		return true;
 	}
 	return false;

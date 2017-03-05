@@ -789,9 +789,9 @@ void Item::storageData(int& quantity, int& stored, int& state)
 	stored = originalStored;
 	state = originalState;
 
-	if (Character::instance->currentData()->invMod.contains(uuid)) {
+	if (CurrentData::instance->invMod.contains(uuid)) {
 		// Inventory overrides:
-		item = Character::instance->currentData()->invMod[uuid];
+		item = CurrentData::instance->invMod[uuid];
 
 		if (item.quantity != UNKNOWN_QUANTITY)
 			quantity = item.quantity;

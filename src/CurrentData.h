@@ -314,6 +314,8 @@ public:
 
 class CurrentData : public DatXMLReader {
 public:
+	static CurrentData* instance;
+
 	CurrentData() {
 		clear();
 	}

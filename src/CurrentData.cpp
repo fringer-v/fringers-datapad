@@ -35,6 +35,8 @@
 #include "Weapons.h"
 #include "CharacterList.h"
 
+CurrentData* CurrentData::instance;
+
 // CheckListData -------------------------
 
 void CheckListData::clear()
@@ -2024,8 +2026,8 @@ int CustomSkills::rowCount()
 QVariant CustomSkills::getValue(int row, int col)
 {
 	CustomSkill skill;
-	if (row < Character::instance->currentData()->customSkills.size())
-		skill = Character::instance->currentData()->customSkills[row];
+	if (row < CurrentData::instance->customSkills.size())
+		skill = CurrentData::instance->customSkills[row];
 
 	switch (col) {
 		case 0:
@@ -2062,9 +2064,9 @@ int CheckList::rowCount()
 	QString key = Character::instance->activeSkillKey();
 	int count = 0;
 
-	count = Character::instance->currentData()->autoCheckItems.items.count();
-	if (Character::instance->currentData()->checkLists.contains(key)) {
-		count += Character::instance->currentData()->checkLists[key].items.count();
+	count = CurrentData::instance->autoCheckItems.items.count();
+	if (CurrentData::instance->checkLists.contains(key)) {
+		count += CurrentData::instance->checkLists[key].items.count();
 	}
 	return count+1;
 }
@@ -2075,18 +2077,18 @@ QVariant CheckList::getValue(int row, int col)
 	CheckListItem*	item = NULL;
 
 	if (row >= 0) {
-		int c1 = Character::instance->currentData()->autoCheckItems.items.count();
+		int c1 = CurrentData::instance->autoCheckItems.items.count();
 
 		if (row < c1) {
-			item = &Character::instance->currentData()->autoCheckItems.items[row];
+			item = &CurrentData::instance->autoCheckItems.items[row];
 		}
 		else {
 			row -= c1;
-			if (Character::instance->currentData()->checkLists.contains(key)) {
-				int c2 = Character::instance->currentData()->checkLists[key].items.count();
+			if (CurrentData::instance->checkLists.contains(key)) {
+				int c2 = CurrentData::instance->checkLists[key].items.count();
 
 				if (row < c2)
-					item = &Character::instance->currentData()->checkLists[key].items[row];
+					item = &CurrentData::instance->checkLists[key].items[row];
 			}
 		}
 	}
@@ -2133,17 +2135,17 @@ InventoryLog::InventoryLog() :
 
 int InventoryLog::rowCount()
 {
-	return Character::instance->currentData()->inventoryLog.size() + 2;
+	return CurrentData::instance->inventoryLog.size() + 2;
 }
 
 QVariant InventoryLog::getValue(int row, int col)
 {
 	InvLogItem* item = NULL;
-	int count = Character::instance->currentData()->inventoryLog.size();
+	int count = CurrentData::instance->inventoryLog.size();
 
 	if (row >= 0) {
 		if (row < count)
-			item = &Character::instance->currentData()->inventoryLog[row];
+			item = &CurrentData::instance->inventoryLog[row];
 	}
 
 	if (item) {
@@ -2151,7 +2153,7 @@ QVariant InventoryLog::getValue(int row, int col)
 		InvModItem	mod_item;
 
 		if (!item->uuid.isEmpty())
-			mod_item = Character::instance->currentData()->invMod[item->uuid];
+			mod_item = CurrentData::instance->invMod[item->uuid];
 		if (!item->itemkey.isEmpty())
 			shop_item = Shop::instance.getItem(item->itemkey);
 

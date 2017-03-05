@@ -95,7 +95,7 @@ public:
 	static Character* instance;
 
 	explicit Character(QObject *parent = 0);
-	void clear(bool signal);
+	void clear();
 
 public:
 	// Data management ------------------
@@ -241,18 +241,18 @@ public:
 	Q_PROPERTY(int itemPierce READ itemPierce WRITE setItemPierce NOTIFY itemPierceChanged)
 	Q_PROPERTY(int imageProviderCount READ imageProviderCount WRITE setImageProviderCount NOTIFY imageProviderCountChanged)
 
-	int currentWounds() { return iCurrentData.wounds; }
-	int currentStrain() { return iCurrentData.strain+iCurrentData.temporaryStrain; }
-	int currentConflict() { return iCurrentData.conflict; }
-	QString woundHistory() { return iCurrentData.woundHistory; }
-	QString strainHistory() { return iCurrentData.strainHistory; }
-	QString conflictHistory() { return iCurrentData.conflictHistory; }
-	int woundDelta() { return iCurrentData.woundDelta; }
-	int strainDelta() { return iCurrentData.strainDelta; }
-	QString stimPacks() { return iCurrentData.stimPacks(); }
-	QString erps() { return iCurrentData.erps(); }
-	int stimPacksUsed() { return iCurrentData.stimPacksUsed; }
-	int erpsUsed() { return iCurrentData.erpsUsed; }
+	int currentWounds() { return CurrentData::instance->wounds; }
+	int currentStrain() { return CurrentData::instance->strain+CurrentData::instance->temporaryStrain; }
+	int currentConflict() { return CurrentData::instance->conflict; }
+	QString woundHistory() { return CurrentData::instance->woundHistory; }
+	QString strainHistory() { return CurrentData::instance->strainHistory; }
+	QString conflictHistory() { return CurrentData::instance->conflictHistory; }
+	int woundDelta() { return CurrentData::instance->woundDelta; }
+	int strainDelta() { return CurrentData::instance->strainDelta; }
+	QString stimPacks() { return CurrentData::instance->stimPacks(); }
+	QString erps() { return CurrentData::instance->erps(); }
+	int stimPacksUsed() { return CurrentData::instance->stimPacksUsed; }
+	int erpsUsed() { return CurrentData::instance->erpsUsed; }
 
 	int brawnDelta() { return iChDelta.get(V_BR); }
 	int agilityDelta() { return iChDelta.get(V_AG); }
@@ -284,8 +284,8 @@ public:
 	int cumbThreshold() { return iCumbThreshold; }
 	QString encText() { return iEncText; }
 	int morality() {
-		if (iCurrentData.experienceTotal.contains(EXP_TOT_MORALITY))
-			return iCurrentData.experienceTotal[EXP_TOT_MORALITY].value;
+		if (CurrentData::instance->experienceTotal.contains(EXP_TOT_MORALITY))
+			return CurrentData::instance->experienceTotal[EXP_TOT_MORALITY].value;
 		return getAttribute(MORALITY);
 	}
 	int brawn() { return getAttribute(BRAWN); } // Modifications must go into getAttribute()
@@ -328,10 +328,10 @@ public:
 	int defenseRanged() { return getAttribute(DRANGED); }
 	int defenseMelee() { return getAttribute(DMELEE); }
 	int force() { return getAttribute(FORCE); }
-	int forceCommitted() { return iCurrentData.commitCount(); }
+	int forceCommitted() { return CurrentData::instance->commitCount(); }
 	int totalXP() {
-		if (iCurrentData.experienceTotal.contains(EXP_TOT_XP))
-			return iCurrentData.experienceTotal[EXP_TOT_XP].value;
+		if (CurrentData::instance->experienceTotal.contains(EXP_TOT_XP))
+			return CurrentData::instance->experienceTotal[EXP_TOT_XP].value;
 		return getAttribute(XP);
 	}
 	int newXP() { return getAttribute(NEWXP); }
@@ -538,7 +538,6 @@ public:
 	void emitAgilityChanged();
 	void emitForceCommittedChanged();
 	int getAttribute(const QString& val);
-	CurrentData* currentData();
 	void setTemporaryStrain(int value);
 	int nonCommitedForce();
 
@@ -610,7 +609,7 @@ private:
 	int iModItemPierce;
 	int iModItemCrit;
 	int iModItemRange;
-	CurrentData iCurrentData;
+	//CurrentData iCurrentData;
 
 	Downloader iCharacterDownloader;
 	Downloader iDataSetDownloader;

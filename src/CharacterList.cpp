@@ -38,7 +38,7 @@ ExperienceList::ExperienceList() :
 
 int ExperienceList::rowCount()
 {
-	int count = Character::instance->currentData()->experienceLog.count();
+	int count = CurrentData::instance->experienceLog.count();
 	return count+1;
 }
 
@@ -50,7 +50,7 @@ QVariant ExperienceList::getValue(int row, int col)
 
 	if (row < 0)
 		return QVariant();
-	if (row >= Character::instance->currentData()->experienceLog.count()) {
+	if (row >= CurrentData::instance->experienceLog.count()) {
 		switch (col) {
 			case 0:
 				return 0;
@@ -81,9 +81,9 @@ QVariant ExperienceList::getValue(int row, int col)
 		return QVariant();
 	}
 
-	item = Character::instance->currentData()->experienceLog[row];
+	item = CurrentData::instance->experienceLog[row];
 	key = CurrentData::expTypeToString(item.type, item.key);
-	total = Character::instance->currentData()->experienceTotal[key];
+	total = CurrentData::instance->experienceTotal[key];
 
 	switch (col) {
 		case 0:
@@ -139,8 +139,8 @@ QVariant ObligationList::getValue(int row, int col)
 		case 1:
 			return item.name;
 		case 2:
-			if (Character::instance->currentData()->experienceTotal.contains(item.key))
-				return Character::instance->currentData()->experienceTotal[item.key].value;
+			if (CurrentData::instance->experienceTotal.contains(item.key))
+				return CurrentData::instance->experienceTotal[item.key].value;
 			return item.size;
 		case 3:
 			return item.notes;
@@ -153,8 +153,8 @@ int ObligationList::total()
 	int total = 0;
 
 	foreach (CharItem item, Character::instance->obligations.items) {
-		if (Character::instance->currentData()->experienceTotal.contains(item.key))
-			total += Character::instance->currentData()->experienceTotal[item.key].value;
+		if (CurrentData::instance->experienceTotal.contains(item.key))
+			total += CurrentData::instance->experienceTotal[item.key].value;
 		else
 			total += item.size;
 	}
@@ -191,8 +191,8 @@ QVariant DutyList::getValue(int row, int col)
 		case 1:
 			return item.name;
 		case 2:
-			if (Character::instance->currentData()->experienceTotal.contains(item.key))
-				return Character::instance->currentData()->experienceTotal[item.key].value;
+			if (CurrentData::instance->experienceTotal.contains(item.key))
+				return CurrentData::instance->experienceTotal[item.key].value;
 			return item.size;
 		case 3:
 			return item.notes;
@@ -205,8 +205,8 @@ int DutyList::total()
 	int total = 0;
 
 	foreach (CharItem item, Character::instance->duties.items) {
-		if (Character::instance->currentData()->experienceTotal.contains(item.key))
-			total += Character::instance->currentData()->experienceTotal[item.key].value;
+		if (CurrentData::instance->experienceTotal.contains(item.key))
+			total += CurrentData::instance->experienceTotal[item.key].value;
 		else
 			total += item.size;
 	}
@@ -260,7 +260,7 @@ InjuryList::InjuryList() :
 
 int InjuryList::rowCount()
 {
-	return Character::instance->currentData()->injuries.count();
+	return CurrentData::instance->injuries.count();
 }
 
 QVariant InjuryList::getValue(int row, int col)
@@ -269,10 +269,10 @@ QVariant InjuryList::getValue(int row, int col)
 
 	if (row < 0)
 		return QVariant();
-	if (row >= Character::instance->currentData()->injuries.count())
+	if (row >= CurrentData::instance->injuries.count())
 		return QVariant();
 
-	item = Character::instance->currentData()->injuries[row];
+	item = CurrentData::instance->injuries[row];
 	Injury* injury = NULL;
 
 	if (col >= 3)
