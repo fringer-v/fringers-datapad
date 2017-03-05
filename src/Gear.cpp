@@ -37,41 +37,63 @@ Gear Gear::instance = Gear(QStringList() << "uuid" << "itemkey" << "gear" << "qu
 						   << "carry_state" << "special" << "notes");
 
 Gear::Gear(QStringList columns) :
-	ItemList(columns)
+	AbstractDataList(columns)
 {
 }
 
-QVariant Gear::getValue(int row, const char* col)
+int Gear::rowCount()
 {
-	Item item = itemAt(row);
+	return Character::instance->gear.rowCount();
+}
 
-	if (strcmp(col, "gear") == 0)
-		return item.name();
+QVariant Gear::getValue(int row, int col)
+{
+	Item item;
 
-	if (strcmp(col, "encumbrance") == 0) {
-		ShopItem shop = Shop::instance.getItem(item.itemkey);
-		return QVariant(shop.encumbrance);
+	if (row < 0)
+		return QVariant();
+	if (row >= Character::instance->gear.rowCount())
+		return QVariant();
+
+	item = Character::instance->gear.itemAt(row);
+	switch (col) {
+		case 0: // uuid
+			return item.uuid;
+		case 1: // itemkey
+			return item.itemkey;
+		case 2: // gear
+			return item.name();
+		case 3: // quantity
+			return item.quantity();
+		case 4: // stored
+			return item.stored();
+		case 5: { // encumbrance
+			ShopItem shop = Shop::instance.getItem(item.itemkey);
+			return shop.encumbrance;
+		}
+		case 6: // carry_state
+			return item.state();
+		case 7: { // special
+			ShopItem	shop = Shop::instance.getItem(item.itemkey);
+			QString		special;
+			QString		features;
+
+			features = item.features();
+			if (!features.isEmpty())
+				DatUtil::appendToList(special, QString("[B]Features:[b] %1").arg(features), " ");
+			if (!item.attachments.isEmpty())
+				DatUtil::appendToList(special, QString("[B]Attachments:[b] %1").arg(item.attachments), " ");
+			if (!item.notes.isEmpty() && item.notes != shop.description)
+				DatUtil::appendToList(special, QString("[B]Notes:[b] %1").arg(item.notes), " ");
+
+			DatUtil::addDescription(special, shop.description, shop.books);
+
+			return special;
+		}
+		case 8: // notes
+			return item.notes;
 	}
-
-	if (strcmp(col, "special") == 0) {
-		ShopItem	shop = Shop::instance.getItem(item.itemkey);
-		QString		special;
-		QString		features;
-
-		features = item.features();
-		if (!features.isEmpty())
-			DatUtil::appendToList(special, QString("[B]Features:[b] %1").arg(features), " ");
-		if (!item.attachments.isEmpty())
-			DatUtil::appendToList(special, QString("[B]Attachments:[b] %1").arg(item.attachments), " ");
-		if (!item.notes.isEmpty() && item.notes != shop.description)
-			DatUtil::appendToList(special, QString("[B]Notes:[b] %1").arg(item.notes), " ");
-
-		DatUtil::addDescription(special, shop.description, shop.books);
-
-		return special;
-	}
-
-	return ItemList::getValue(row, col);
+	return QVariant();
 }
 
 // ShopGear -------------------------

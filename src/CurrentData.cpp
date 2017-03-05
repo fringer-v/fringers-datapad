@@ -486,24 +486,24 @@ void CurrentData::useErp(int delta)
 
 QString CurrentData::stimPacks()
 {
-	int quan = Gear::instance.quantity("STIMPACK");
-	return QString("%1/%2").arg(Gear::instance.carriedQuantity("STIMPACK")).arg(quan);
+	int quan = Character::instance->gear.quantity("STIMPACK");
+	return QString("%1/%2").arg(Character::instance->gear.carriedQuantity("STIMPACK")).arg(quan);
 }
 
 QString CurrentData::erps()
 {
-	int quan = Gear::instance.quantity("ERP");
-	return QString("%1/%2").arg(Gear::instance.carriedQuantity("ERP")).arg(quan);
+	int quan = Character::instance->gear.quantity("ERP");
+	return QString("%1/%2").arg(Character::instance->gear.carriedQuantity("ERP")).arg(quan);
 }
 
 int CurrentData::stimPackQuantity()
 {
-	return Gear::instance.quantity("STIMPACK");
+	return Character::instance->gear.quantity("STIMPACK");
 }
 
 int CurrentData::erpQuantity()
 {
-	return Gear::instance.quantity("ERP");
+	return Character::instance->gear.quantity("ERP");
 }
 
 bool CurrentData::setWoundDelta(int val)
@@ -718,11 +718,11 @@ bool CurrentData::removeItem(int ref)
 
 		shop_item = Shop::instance.getItem(log_item.itemkey);
 		if (shop_item.type == "GEAR")
-			list = &Gear::instance;
+			list = &Character::instance->gear;
 		else if (shop_item.type == "ARMOR")
-			list = &Armor::instance;
+			list = &Character::instance->armor;
 		else
-			list = &Weapons::instance;
+			list = &Character::instance->weapons;
 		Item item = list->getItemByUuid(log_item.uuid);
 
 		invMod[item.uuid].rowCount--;
@@ -741,8 +741,18 @@ bool CurrentData::removeItem(int ref)
 
 		if (quantity == 0 && item.originalQuantity == 0) {
 			list->removeItemByUuid(item.uuid);
-			list->setRowCountChanged();
-			list->setClean();
+			if (shop_item.type == "GEAR") {
+				Gear::instance.setRowCountChanged();
+				Gear::instance.setClean();
+			}
+			else if (shop_item.type == "ARMOR") {
+				Armor::instance.setRowCountChanged();
+				Armor::instance.setClean();
+			}
+			else {
+				Weapons::instance.setRowCountChanged();
+				Weapons::instance.setClean();
+			}
 		}
 	}
 
@@ -872,13 +882,13 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 	int ranks;
 	int force;
 	int default_check = 0;
-	Item weapon = Weapons::instance.getItemByUuid(uuid);
+	Item weapon = Character::instance->weapons.getItemByUuid(uuid);
 	QString weaponKey = weapon.itemkey;
 
 	uncheckAllItem(skillKey);
 	autoCheckItems.clear();
 
-	if (Gear::instance.equipped("HNTGOGGLE"))
+	if (Character::instance->gear.equipped("HNTGOGGLE"))
 		hunting_goggles = true;
 
 	if (Character::instance->talents.contains("SENSEDURATION"))
@@ -1220,8 +1230,8 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			autoCheckItems.plus("st", "[B]Set Trigger:[b] Add if this is the first combat check of the encounter", 0, 0);
 	}
 
-	for (int i = 0; i < Armor::instance.rowCount(); i++) {
-		Item item = Armor::instance.itemAt(i);
+	for (int i = 0; i < Character::instance->armor.rowCount(); i++) {
+		Item item = Character::instance->armor.itemAt(i);
 		if (item.equipped()) {
 			if (item.attachList.contains("TARGCOMP"))
 				targeting_comp = true;
@@ -1272,20 +1282,20 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 
 	// MEDPAC
 	if (skillKey == "MED") {
-		if (Gear::instance.equipped("MEDPAC"))
+		if (Character::instance->gear.equipped("MEDPAC"))
 			default_check = autoCheckItems.plus("B", "[B]Medpac:[b] Add to all Medicine checks when equipped", 0, 0);
 
-		if (Gear::instance.carriedQuantity("MEDAIDPATCH") > 0)
+		if (Character::instance->gear.carriedQuantity("MEDAIDPATCH") > 0)
 			autoCheckItems.plus("sa", "[B]Med-Aid Patch:[b] Maximum usage 1 per check, [B]Cost: 1x Med-Aid Patch[b]", 0, 0, 0, "MEDAIDPATCH");
 
-		if (Gear::instance.equipped("BLOODSCAN"))
+		if (Character::instance->gear.equipped("BLOODSCAN"))
 			autoCheckItems.plus("aa", "[B]Blood Scanner:[b] After use, add to next Medicine check, [B]Cost: Action[b]", 0, 0);
 
 		ranks = Character::instance->talents.ranks("SURG");
 		if (ranks > 0)
 			autoCheckItems.plus(QString("@Wound -%1").arg(ranks), "[B]Surgeon:[b] Add to Wounds recovered on successful check", 0, 0);
 
-		if (Gear::instance.carriedQuantity("DROIDMINIMED") > 0)
+		if (Character::instance->gear.carriedQuantity("DROIDMINIMED") > 0)
 			autoCheckItems.plus(QString("@Wound -%1").arg(ranks), "[B]Mini-med Droids:[b] Add to Wounds recovered on successful check", 1, 0);
 
 		autoCheckItems.plus("D", "[B]Easy Severity:[b] 1-40% Critical injury, 1-50% Wounds, [B]Cost: Action[b]", 0, 0);
@@ -1694,11 +1704,11 @@ QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDa
 		}
 
 		if (shop_item.type == "GEAR")
-			list = &Gear::instance;
+			list = &Character::instance->gear;
 		else if (shop_item.type == "ARMOR")
-			list = &Armor::instance;
+			list = &Character::instance->armor;
 		else
-			list = &Weapons::instance;
+			list = &Character::instance->weapons;
 
 		Item item;
 		item.clear();
@@ -1750,9 +1760,18 @@ QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDa
 				list->removeItemByUuid(uuid);
 		}
 
-		list->setRowCountChanged();
-		list->setClean();
-
+		if (shop_item.type == "GEAR") {
+			Gear::instance.setRowCountChanged();
+			Gear::instance.setClean();
+		}
+		else if (shop_item.type == "ARMOR") {
+			Armor::instance.setRowCountChanged();
+			Armor::instance.setClean();
+		}
+		else {
+			Weapons::instance.setRowCountChanged();
+			Weapons::instance.setClean();
+		}
 	}
 	else if (!desc.isEmpty()) {
 		// Free text has no count and no item ID:
@@ -1779,19 +1798,19 @@ void CurrentData::inventoryChanged(const QString& uuid, const QString& itemkey, 
 		return;
 
 	if (signal) {
-		if (Weapons::instance.containsByUuid(uuid)) {
+		if (Character::instance->weapons.containsByUuid(uuid)) {
 			//Weapons::instance.startChanges();
 			// "quantity" is taken dynamically from inventory!
 			// Just signal change!
 			Weapons::instance.rowCountChanged();
 		}
-		else if (Armor::instance.containsByUuid(uuid)) {
+		else if (Character::instance->armor.containsByUuid(uuid)) {
 			//Armor::instance.startChanges();
 			// "quantity" is taken dynamically from inventory!
 			// Just signal change!
 			Armor::instance.rowCountChanged();
 		}
-		else if (Gear::instance.containsByUuid(uuid)) {
+		else if (Character::instance->gear.containsByUuid(uuid)) {
 			//Gear::instance.startChanges();
 			// "quantity" is taken dynamically from inventory!
 			// Just signal change!

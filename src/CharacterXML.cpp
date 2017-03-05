@@ -54,16 +54,6 @@ void CharacterXML::start()
 
 	iNPC = false;
 
-	//CustomSkills::instance.clear();
-	// Talents::instance.clear();
-	//SpecialFeaturesList::instance.clear();
-	Weapons::instance.clear();
-	Armor::instance.clear();
-	Gear::instance.clear();
-	//InjuryList::instance.clear();
-	//DataList::motivation.clear();
-	//DataList::morality.clear();
-
 	SpecialFeaturesList::instance.rowCountChanged();
 	ObligationList::instance.rowCountChanged();
 	DutyList::instance.rowCountChanged();
@@ -88,12 +78,12 @@ void CharacterXML::end()
 	// Current Data!
 	Character::instance->loadCurrentData();
 
-	if (!Weapons::instance.containsByUuid("UNARMED")) {
+	if (!Character::instance->weapons.containsByUuid("UNARMED")) {
 		Item una;
 		una.clear();
 		una.itemkey = "UNARMED";
 		una.originalQuantity = 1;
-		Weapons::instance.aquireItem(una, true);
+		Character::instance->weapons.aquireItem(una, true);
 	}
 
 	GeneralSkills::instance.setDataChanged();
@@ -439,15 +429,15 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	}
 	else if (path.endsWith("/CharWeapon/#end")) {
 		if (!iItem.uuid.isEmpty())
-			Weapons::instance.aquireItem(iItem, true);
+			Character::instance->weapons.aquireItem(iItem, true);
 	}
 	else if (path.endsWith("/CharArmor/#end")) {
 		if (!iItem.uuid.isEmpty())
-			Armor::instance.aquireItem(iItem, true);
+			Character::instance->armor.aquireItem(iItem, true);
 	}
 	else if (path.endsWith("/CharGear/#end")) {
 		if (!iItem.uuid.isEmpty())
-			Gear::instance.aquireItem(iItem, true);
+			Character::instance->gear.aquireItem(iItem, true);
 	}
 
 	else if (path.endsWith("/AdvAbility/#open"))
@@ -495,7 +485,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		iItem.itemkey = "KEY_"+iShopItem.name.toUpper();
 		iShopItem.key = iItem.itemkey;
 		Shop::instance.addItem(iShopItem);
-		Gear::instance.aquireItem(iItem, true);
+		Character::instance->gear.aquireItem(iItem, true);
 	}
 
 	//	Character::instance->setCareer(value);

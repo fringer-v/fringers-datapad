@@ -76,14 +76,14 @@ private:
 	QList<DataRow> iRows;
 };
 
-class ItemList : public AbstractDataList
+class ItemList
 {
 public:
-	ItemList(QStringList colums);
+	ItemList();
 
-	virtual int rowCount();
-	virtual QVariant getValue(int row, int col);
-	virtual QVariant getValue(int row, const char* col);
+	int rowCount();
+	//virtual QVariant getValue(int row, int col);
+	//virtual QVariant getValue(int row, const char* col);
 
 	void clear();
 	void aquireItem(Item& item, bool loading);

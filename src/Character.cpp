@@ -113,8 +113,8 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 			optionalDowngradeCount += char_talent.ranks;
 	}
 
-	for (int i = 0; i<Armor::instance.rowCount(); i++) {
-		Item item = Armor::instance.itemAt(i);
+	for (int i = 0; i<character->armor.rowCount(); i++) {
+		Item item = character->armor.itemAt(i);
 		if (item.equipped()) {
 			if (item.dieModList.contains(key)) {
 				DieMod mod = item.dieModList.get(key);
@@ -133,7 +133,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 	}
 
 	if (key == "CHARM" || key == "COERC") {
-		if (Gear::instance.equipped("EXPJEWELRY"))
+		if (character->gear.equipped("EXPJEWELRY"))
 			pool += "a";
 	}
 
@@ -260,9 +260,9 @@ void Character::clear(bool signal)
 	specialFeatures.clear();
 	motivations.clear();
 	moralities.clear();
-	Weapons::instance.clear();
-	Armor::instance.clear();
-	Gear::instance.clear();
+	weapons.clear();
+	armor.clear();
+	gear.clear();
 
 	// These are not always set when reading XML, which
 	// results in a missing signal!
@@ -931,9 +931,16 @@ void Character::checkItem(int ref)
 
 void Character::changeEquipment(const QString& uuid, int state, int stored)
 {
-	bool weapons_changed = Weapons::instance.changeEquipment(uuid, state, stored);
-	bool armor_changed = Armor::instance.changeEquipment(uuid, state, stored);
-	bool gear_changed = Gear::instance.changeEquipment(uuid, state, stored);
+	bool weapons_changed = weapons.changeEquipment(uuid, state, stored);
+	bool armor_changed = armor.changeEquipment(uuid, state, stored);
+	bool gear_changed = gear.changeEquipment(uuid, state, stored);
+
+	if (weapons_changed)
+		Weapons::instance.setDataChanged();
+	if (armor_changed)
+		Armor::instance.setDataChanged();
+	if (gear_changed)
+		Gear::instance.setDataChanged();
 
 	inventoryChanged();
 
@@ -1582,12 +1589,12 @@ void Character::inventoryChanged()
 		burly = ch_talent.ranks * talent.burly;
 	}
 
-	if (Gear::instance.equipped(ShopGear::grenBandKey))
+	if (gear.equipped(ShopGear::grenBandKey))
 		grenade_bandolier = true;
 
 	mods.clear();
-	for (int i = 0; i < Weapons::instance.rowCount(); i++) {
-		Item item = Weapons::instance.itemAt(i);
+	for (int i = 0; i < weapons.rowCount(); i++) {
+		Item item = weapons.itemAt(i);
 		quantity = item.carriedQuantity();
 		if (quantity > 0) {
 			val = item.encCarriedVal(burly);
@@ -1614,8 +1621,8 @@ void Character::inventoryChanged()
 	}
 
 	maxArmorSoak = 0;
-	for (int i = 0; i < Armor::instance.rowCount(); i++) {
-		Item item = Armor::instance.itemAt(i);
+	for (int i = 0; i < armor.rowCount(); i++) {
+		Item item = armor.itemAt(i);
 		quantity = item.carriedQuantity();
 		if (quantity > 0) {
 			cumb += item.cumbersome(burly) * quantity;
@@ -1644,8 +1651,8 @@ void Character::inventoryChanged()
 		}
 	}
 
-	for (int i = 0; i < Gear::instance.rowCount(); i++) {
-		Item item = Gear::instance.itemAt(i);
+	for (int i = 0; i < gear.rowCount(); i++) {
+		Item item = gear.itemAt(i);
 		quantity = item.carriedQuantity();
 		if (quantity > 0) {
 			val = item.encCarriedVal(0);

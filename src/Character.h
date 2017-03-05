@@ -627,6 +627,9 @@ public:
 	QList<SpecialFeatureItem> specialFeatures;
 	QList<MotMorItem> motivations;
 	QList<MotMorItem> moralities;
+	ItemList weapons;
+	ItemList armor;
+	ItemList gear;
 };
 
 #endif // __Character_h__

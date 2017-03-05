@@ -39,34 +39,56 @@ Armor Armor::instance = Armor(QStringList() << "uuid" << "itemkey" << "armor" <<
 							  << "attachments" << "notes");
 
 Armor::Armor(QStringList columns) :
-	ItemList(columns)
+	AbstractDataList(columns)
 {
 }
 
-QVariant Armor::getValue(int row, const char* col)
+int Armor::rowCount()
 {
-	Item item = itemAt(row);
+	return Character::instance->armor.rowCount();
+}
 
-	if (strcmp(col, "armor") == 0)
-		return item.name();
+QVariant Armor::getValue(int row, int col)
+{
+	Item item;
 
-	if (strcmp(col, "features") == 0) {
-		return QVariant(item.features());
+	if (row < 0)
+		return QVariant();
+	if (row >= Character::instance->armor.rowCount())
+		return QVariant();
+
+	item = Character::instance->armor.itemAt(row);
+	switch (col) {
+		case 0: // uuid
+			return item.uuid;
+		case 1: // itemkey
+			return item.itemkey;
+		case 2: // armor
+			return item.name();
+		case 3: // quantity
+			return item.quantity();
+		case 4: // stored
+			return item.stored();
+		case 5: // soak
+			return QVariant(item.soakVal());
+		case 6: // mdef
+			return QVariant(item.meleeDef());
+		case 7: // rdef
+			return QVariant(item.rangeDef());
+		case 8: // encumbrance
+			return item.encumbrance();
+		case 9: // carry_state
+			return item.state();
+		case 10: // retricted
+			return item.restricted();
+		case 11: // features
+			return QVariant(item.features());
+		case 12: // attachments
+			return item.attachments;
+		case 13: // notes
+			return item.notes;
 	}
-
-	if (strcmp(col, "soak") == 0)
-		return QVariant(item.soakVal());
-
-	if (strcmp(col, "mdef") == 0)
-		return QVariant(item.meleeDef());
-
-	if (strcmp(col, "rdef") == 0)
-		return QVariant(item.rangeDef());
-
-	if (strcmp(col, "encumbrance") == 0)
-		return QVariant(item.encArmorValue());
-
-	return ItemList::getValue(row, col);
+	return QVariant();
 }
 
 // ShopArmor -------------------------
@@ -91,44 +113,6 @@ void ShopArmor::loadArmor()
 			readFromBuffer(data.constData(), data.length());
 		}
 	}
-
-	/*
-	QMap<QString, Item>::iterator i;
-	for (i = Character::instance->armor.begin(); i != Character::instance->armor.end(); i++) {
-		if (Shop::instance.contains(i.key())) {
-			ShopItem shop = Character::instance->shopItems[i.key()];
-			if (!i.value().loaded) {
-				i.value().loaded = true;
-				i.value().name = shop.name;
-				//i.value().encumbrance = shop.encumbrance;
-				//foreach (Mod mod, shop.modList) {
-				//	i.value().addMod(mod);
-				//	i.value().addQualityFromMod(mod);
-				//}
-				//i.value().mdef = shop.mdef;
-				//i.value().rdef = shop.rdef;
-				//i.value().soak = shop.soak;
-			}
-			Item item = i.value();
-			if (!DataList::armor.findSortedRow(row, "armor", item.name)) {
-				DataList::armor.insertRow(row);
-				DataList::armor.setValue(row, "key", item.key);
-				DataList::armor.setValue(row, "armor", item.name);
-				//DataList::armor.setValue(row, "features", item.modifications());
-				//DataList::armor.setValue(row, "quantity", item.quantity);
-				//DataList::armor.setValue(row, "soak", item.soakVal());
-				//DataList::armor.setValue(row, "mdef", item.meleeDef());
-				//DataList::armor.setValue(row, "rdef", item.rangeDef());
-				//DataList::armor.setValue(row, "encumbrance", item.encArmorValue());
-				//DataList::armor.setValue(row, "held", item.held);
-				//DataList::armor.setValue(row, "equipped", item.equipped);
-				//DataList::armor.setValue(row, "restricted", item.restricted);
-				//DataList::armor.setValue(row, "attachments", item.attachments);
-				//qDebug() << item.name << item.attachments;
-			}
-		}
-	}
-	*/
 }
 
 void ShopArmor::end()

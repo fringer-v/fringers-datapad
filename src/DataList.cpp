@@ -235,8 +235,7 @@ void DataList::setValue(int row, const char* col, bool value)
 
 // ItemList ------------------------------------
 
-ItemList::ItemList(QStringList columns) :
-	AbstractDataList(columns),
+ItemList::ItemList() :
 	iUuidList(),
 	iItemKeyList()
 {
@@ -247,6 +246,7 @@ int ItemList::rowCount()
 	return iUuidList.size();
 }
 
+/*
 QVariant ItemList::getValue(int row, int col)
 {
 	if (col < 0 || col >= colCount())
@@ -283,6 +283,7 @@ QVariant ItemList::getValue(int row, const char* col)
 
 	return QVariant();
 }
+*/
 
 void ItemList::clear()
 {
@@ -423,7 +424,6 @@ bool ItemList::changeEquipment(const QString& uuid, int state, int stored)
 		Item item = iUuidList[uuid];
 
 		Character::instance->currentData()->storeItem(uuid, item.itemkey, stored, state, &item);
-		setDataChanged();
 		return true;
 	}
 	return false;

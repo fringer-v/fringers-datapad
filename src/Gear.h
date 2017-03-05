@@ -30,13 +30,16 @@
 #include "DataList.h"
 #include "Shop.h"
 
-class Gear : public ItemList {
+class Gear : public AbstractDataList {
 public:
 	static Gear	instance;
 
 	Gear(QStringList columns);
 
-	virtual QVariant getValue(int row, const char* col);
+	virtual int rowCount();
+	virtual QVariant getValue(int row, int col);
+
+	//virtual QVariant getValue(int row, const char* col);
 };
 
 class ShopGear : public QObject, public DatXMLReader {

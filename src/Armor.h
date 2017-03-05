@@ -32,13 +32,16 @@
 #include "Item.h"
 #include "DataList.h"
 
-class Armor : public ItemList {
+class Armor : public AbstractDataList {
 public:
-	static Armor	instance;
+	static Armor instance;
 
 	Armor(QStringList columns);
 
-	virtual QVariant getValue(int row, const char* col);
+	virtual int rowCount();
+	virtual QVariant getValue(int row, int col);
+
+	//virtual QVariant getValue(int row, const char* col);
 };
 
 class ShopArmor : public QObject, public DatXMLReader {

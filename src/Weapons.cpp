@@ -39,47 +39,66 @@ Weapons Weapons::instance = Weapons(QStringList() << "uuid" << "itemkey" << "wea
 									<< "encumbrance" << "carry_state" << "restricted" << "attachments" << "critplus" << "pierce" << "notes");
 
 Weapons::Weapons(QStringList columns) :
-	ItemList(columns)
+	AbstractDataList(columns)
 {
 }
 
-QVariant Weapons::getValue(int row, const char* col)
+int Weapons::rowCount()
 {
-	Item item = itemAt(row);
+	return Character::instance->weapons.rowCount();
+}
 
-	if (strcmp(col, "weapon") == 0)
-		return item.name();
+QVariant Weapons::getValue(int row, int col)
+{
+	Item item;
 
-	if (strcmp(col, "skill") == 0) {
-		Skill* skill = Skill::getSkill(Shop::instance.getItem(item.itemkey).skillKey);
-		return skill ? skill->shortName : "?";
+	if (row < 0)
+		return QVariant();
+	if (row >= Character::instance->weapons.rowCount())
+		return QVariant();
+
+	item = Character::instance->weapons.itemAt(row);
+	switch (col) {
+		case 0: // uuid
+			return item.uuid;
+		case 1: // itemkey
+			return item.itemkey;
+		case 2: // weapon
+			return item.name();
+		case 3: { // skill
+			Skill* skill = Skill::getSkill(Shop::instance.getItem(item.itemkey).skillKey);
+			return skill ? skill->shortName : "?";
+		}
+		case 4: // range
+			return Shop::instance.getItem(item.itemkey).range;
+		case 5: // damage
+			return item.damageTotal();
+		case 6: // critical
+			return item.critTotal();
+		case 7: // dicePool
+			return item.dicePool();
+		case 8: // qualities
+			return item.qualities();
+		case 9: // quantity
+			return item.quantity();
+		case 10: // stored
+			return item.stored();
+		case 11: // encumbrance
+			return Shop::instance.getItem(item.itemkey).encumbrance;
+		case 12: // carry_state
+			return item.state();
+		case 13: // retricted
+			return item.restricted();
+		case 14: // attachments
+			return item.attachments;
+		case 15: // critplus
+			return item.critPlus();
+		case 16: // pierce
+			return item.pierce();
+		case 17: // notes
+			return item.notes;
 	}
-
-	if (strcmp(col, "encumbrance") == 0)
-		return Shop::instance.getItem(item.itemkey).encumbrance;
-
-	if (strcmp(col, "range") == 0)
-		return Shop::instance.getItem(item.itemkey).range;
-
-	if (strcmp(col, "damage") == 0)
-		return item.damageTotal();
-
-	if (strcmp(col, "critical") == 0)
-		return item.critTotal();
-
-	if (strcmp(col, "dicePool") == 0)
-		return item.dicePool();
-
-	if (strcmp(col, "qualities") == 0)
-		return item.qualities();
-
-	if (strcmp(col, "critplus") == 0)
-		return item.critPlus();
-
-	if (strcmp(col, "pierce") == 0)
-		return item.pierce();
-
-	return ItemList::getValue(row, col);
+	return QVariant();
 }
 
 // ShopWeapons -------------------------
