@@ -58,6 +58,32 @@ public:
 	CharItem findItem(const QString& key);
 };
 
+class SpecialFeatureItem {
+public:
+	QString title;
+	QString subtitle;
+	QString content;
+
+	void clear() {
+		title.clear();
+		subtitle.clear();
+		content.clear();
+	}
+};
+
+class MotMorItem {
+public:
+	QString name1;
+	QString name2;
+	QString notes;
+
+	void clear() {
+		name1.clear();
+		name2.clear();
+		notes.clear();
+	}
+};
+
 //#define DEFAULT_HOST	"localhost:8080/starwars"
 #define DEFAULT_HOST	"fringer.space/"
 
@@ -598,8 +624,9 @@ public:
 	QMap<QString, CharSkill> skills;
 	CharItemList obligations;
 	CharItemList duties;
-	//QMap<QString, ShopItem> shopItems;
-
+	QList<SpecialFeatureItem> specialFeatures;
+	QList<MotMorItem> motivations;
+	QList<MotMorItem> moralities;
 };
 
 #endif // __Character_h__

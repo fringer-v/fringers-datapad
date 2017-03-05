@@ -129,10 +129,11 @@ bool Species::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/Options/Option/#end")) {
 		if (!iOptionKey.isEmpty()) {
 			if (iChoices->value(iChoiceKey) == iOptionKey) {
-				iOptionsRow = DataList::speciesFeatures.appendRow();
-				DataList::speciesFeatures.setValue(iOptionsRow, "title", iOptionTitle);
-				DataList::speciesFeatures.setValue(iOptionsRow, "subtitle", iOptionSubTitle);
-				DataList::speciesFeatures.setValue(iOptionsRow, "content", iOptionContent);
+				SpecialFeatureItem s_i;
+				s_i.title = iOptionTitle;
+				s_i.subtitle = iOptionSubTitle;
+				s_i.content = iOptionContent;
+				Character::instance->specialFeatures.append(s_i);
 
 				if (iDieModList.count() > 0) {
 					Talent t;

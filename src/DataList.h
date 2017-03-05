@@ -72,13 +72,6 @@ public:
 	void setValue(int row, const char* col, uint value);
 	void setValue(int row, const char* col, bool value);
 
-	static DataList	speciesFeatures;
-	static DataList	injuries;
-	static DataList	xp;
-	static DataList	inventory;
-	static DataList	motivation;
-	static DataList	morality;
-
 private:
 	QList<DataRow> iRows;
 };

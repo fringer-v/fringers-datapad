@@ -3,12 +3,6 @@
 #include "DataList.h"
 #include "Character.h"
 
-DataList DataList::speciesFeatures = DataList(QStringList() << "title" << "subtitle" << "content");
-DataList DataList::injuries = DataList(QStringList() << "ref" << "percent" << "type" << "title"
-	<< "description" << "dice");
-DataList DataList::motivation = DataList(QStringList() << "name1" << "name2" << "notes");
-DataList DataList::morality = DataList(QStringList() << "name1" << "name2" << "notes");
-
 // AbstractDataList -----------------------------------
 
 AbstractDataList::AbstractDataList(QStringList columns) :

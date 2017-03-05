@@ -260,7 +260,7 @@ void CurrentData::loadCurrentData(const QString& name)
 {
 	clear();
 
-	DataList::injuries.clear();
+	injuries.clear();
 	for (int i=0; i<4; i++)
 		appendEmptyWound();
 
@@ -524,27 +524,6 @@ bool CurrentData::setStrainDelta(int val)
 		return true;
 	}
 	return false;
-}
-
-void CurrentData::addCriticalWound(int perc, int type)
-{
-	//DataList::injuries.startChanges();
-	setCriticalWound(perc, type);
-	DataList::injuries.rowCountChanged();
-	writeCurrentData();
-}
-
-void CurrentData::removeCriticalWound(int ref)
-{
-	//DataList::injuries.startChanges();
-	for (int i=0; i<DataList::injuries.rowCount(); i++) {
-		if (DataList::injuries.getValueAsInt(i, "ref") == ref) {
-			DataList::injuries.deleteRow(i);
-			break;
-		}
-	}
-	DataList::injuries.rowCountChanged();
-	writeCurrentData();
 }
 
 void CurrentData::addExperience(const QString& stype, const QString& key, const QString& name, const QString& desc, int amount)
@@ -1552,39 +1531,56 @@ QString CurrentData::expTypeToString(int type, const QString& key)
 	return QString();
 }
 
+void CurrentData::addCriticalWound(int perc, int type)
+{
+	setCriticalWound(perc, type);
+	InjuryList::instance.rowCountChanged();
+	writeCurrentData();
+}
+
+void CurrentData::removeCriticalWound(int ref)
+{
+	for (int i=0; i<injuries.count(); i++) {
+		if (injuries[i].ref == ref) {
+			injuries.removeAt(i);
+			if (injuries.count() < 4)
+				appendEmptyWound();
+			break;
+		}
+	}
+	InjuryList::instance.rowCountChanged();
+	writeCurrentData();
+}
+
 void CurrentData::setCriticalWound(int perc, int type)
 {
-	Injury* injury;
-	int row;
+	InjuryItem item;
 
 	if (!perc)
 		return;
 
-	for (row=0; row<DataList::injuries.rowCount(); row++) {
-		if (DataList::injuries.getValueAsInt(row, "ref") == 0)
-			break;
-	}
+	item.ref = ++iNextInjuryID;
+	item.percent = perc;
+	item.type = type;
 
-	injury = DatUtil::getInjury(perc, type);
-	DataList::injuries.setValue(row, "ref", ++iNextInjuryID);
-	DataList::injuries.setValue(row, "percent", perc);
-	DataList::injuries.setValue(row, "type", type);
-	DataList::injuries.setValue(row, "title", injury->title);
-	DataList::injuries.setValue(row, "description", injury->description);
-	DataList::injuries.setValue(row, "dice", injury->dice);
-	if (row == DataList::injuries.rowCount()-1)
-		appendEmptyWound();
+	for (int i=0; i<injuries.count(); i++) {
+		if (injuries[i].ref == 0) {
+			injuries[i] = item;
+			if (i >= 3)
+				appendEmptyWound();
+			return;
+		}
+	}
 }
 
 void CurrentData::appendEmptyWound()
 {
-	int row = DataList::injuries.appendRow();
-	DataList::injuries.setValue(row, "ref", 0);
-	DataList::injuries.setValue(row, "percent", 0);
-	DataList::injuries.setValue(row, "type", 0);
-	DataList::injuries.setValue(row, "title", "");
-	DataList::injuries.setValue(row, "description", "");
-	DataList::injuries.setValue(row, "dice", "EEEE");
+	InjuryItem item;
+
+	item.ref = 0;
+	item.percent = 0;
+	item.type = 0;
+	injuries.append(item);
 }
 
 int CurrentData::findExpLogItem(int ref)
@@ -1853,11 +1849,12 @@ void CurrentData::writeCurrentData()
 	data += QString(" <WoundDelta>%1</WoundDelta>\n").arg(woundDelta);
 	data += QString(" <StrainDelta>%1</StrainDelta>\n").arg(strainDelta);
 	data += QString(" <Injuries>\n");
-	for (int i=0; i<DataList::injuries.rowCount(); i++) {
-		if (DataList::injuries.getValueAsInt(i, "ref") > 0) {
+	for (int i=0; i<injuries.count(); i++) {
+		InjuryItem item = injuries[i];
+		if (item.ref > 0) {
 			data += QString("  <Injury>");
-			data += QString("<Percent>%1</Percent>").arg(DataList::injuries.getValueAsInt(i, "percent"));
-			data += QString("<Type>%1</Type>").arg(DataList::injuries.getValueAsInt(i, "type"));
+			data += QString("<Percent>%1</Percent>").arg(item.percent);
+			data += QString("<Type>%1</Type>").arg(item.type);
 			data += QString("</Injury>\n");
 		}
 	}

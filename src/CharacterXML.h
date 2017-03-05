@@ -57,9 +57,8 @@ private:
 	QString					iSpecializations;
 	QString					iAttribute;
 	int						iAttrValue;
-
-	int						iMotivationRow;
-	int						iMoralityRow;
+	MotMorItem				iMotItem;
+	MotMorItem				iMorItem;
 
 	QString					iSpeciesKey;
 	QString					iSubSpeciesKey;

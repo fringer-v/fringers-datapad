@@ -11,7 +11,7 @@ RELEASE NOTES
 
 - Force dice committed to upgrading attacks is now display correctly in the dice pools.
 
-- The number of force points not committed are now display in the force POINTS indicator.
+- The number of force points not committed are now display in the Force POINTS indicator.
 
 - Fixed display of force dice in sklll dice pools.
 
@@ -25,13 +25,13 @@ RELEASE NOTES
 
 - Implemented Military Belt Pouch which can carry 2 minor items.
 
-- Less than 10 minor items are not counted towards encumberance (10-19 is counted as 1 enc, 20-29 as 2, etc).
+- Less than 10 minor items are not counted towards encumbrance (10-19 is counted as 1 enc, 20-29 as 2, etc).
 
 - Reinforced Environment Gear was incorrectly adding 1 to BRAWN due to Armor.xml parsing error.
 
 - Zabrak's automatic Advantage on Coercion was not added to the dice pool.
 
-- Added support for some of Warde's force powers, Sense power range and magnitude, and dead to rights talent.
+- Added support for some of Warde's force powers, Sense power range and magnitude, and Dead to Rights talent.
 
 - Sometimes Datapad was not remembering that items were equipped or held.
 
@@ -43,7 +43,7 @@ RELEASE NOTES
 
 - Corrected some typos.
 
-- Change in Characterics (due to Enhance) was not changing dice pools.
+- Change in Characteristics (due to Enhance) was not changing dice pools.
 
 1.0.11
 ------

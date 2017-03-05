@@ -188,7 +188,7 @@ DatTalentList::DatTalentList(QObject *parent) :
 // DatSpeciesFeaturesList -----------------------------------
 
 DatSpeciesFeaturesList::DatSpeciesFeaturesList(QObject *parent) :
-	ListModel(&DataList::speciesFeatures, "DatSpeciesFeaturesList", parent)
+	ListModel(&SpecialFeaturesList::instance, "DatSpeciesFeaturesList", parent)
 {
 }
 
@@ -237,7 +237,7 @@ DatGearList::DatGearList(QObject *parent) :
 // DatInjuryList -----------------------------------
 
 DatInjuryList::DatInjuryList(QObject *parent) :
-	ListModel(&DataList::injuries, "DatInjuryList", parent)
+	ListModel(&InjuryList::instance, "DatInjuryList", parent)
 {
 }
 
@@ -265,14 +265,14 @@ DatCheckList::DatCheckList(QObject *parent) :
 // Motivation -----------------------------------
 
 DatMotivationList::DatMotivationList(QObject *parent) :
-	ListModel(&DataList::motivation, "DatMotivationList", parent)
+	ListModel(&MotivationList::instance, "DatMotivationList", parent)
 {
 }
 
 // Morality -----------------------------------
 
 DatMoralityList::DatMoralityList(QObject *parent) :
-	ListModel(&DataList::morality, "DatMoralityList", parent)
+	ListModel(&MoralityList::instance, "DatMoralityList", parent)
 {
 }
 

@@ -213,4 +213,161 @@ int DutyList::total()
 	return total;
 }
 
+// SpecialFeaturesList -------------------------------------------
+
+SpecialFeaturesList SpecialFeaturesList::instance = SpecialFeaturesList();
+
+SpecialFeaturesList::SpecialFeaturesList() :
+	AbstractDataList(QStringList() << "title" << "subtitle" << "content")
+{
+}
+
+int SpecialFeaturesList::rowCount()
+{
+	return Character::instance->specialFeatures.count();
+}
+
+QVariant SpecialFeaturesList::getValue(int row, int col)
+{
+	SpecialFeatureItem item;
+
+	if (row < 0)
+		return QVariant();
+	if (row >= Character::instance->specialFeatures.count())
+		return QVariant();
+
+	item = Character::instance->specialFeatures[row];
+	switch (col) {
+		case 0:
+			return item.title;
+		case 1:
+			return item.subtitle;
+		case 2:
+			return item.content;
+	}
+	return QVariant();
+}
+
+// InjuryList -------------------------------------------
+
+InjuryList InjuryList::instance = InjuryList();
+
+InjuryList::InjuryList() :
+	AbstractDataList(QStringList() << "ref" << "percent" << "type" << "title"
+								   << "description" << "dice")
+{
+}
+
+int InjuryList::rowCount()
+{
+	return Character::instance->currentData()->injuries.count();
+}
+
+QVariant InjuryList::getValue(int row, int col)
+{
+	InjuryItem item;
+
+	if (row < 0)
+		return QVariant();
+	if (row >= Character::instance->currentData()->injuries.count())
+		return QVariant();
+
+	item = Character::instance->currentData()->injuries[row];
+	Injury* injury = NULL;
+
+	if (col >= 3)
+		injury = DatUtil::getInjury(item.percent, item.type);
+	switch (col) {
+		case 0:
+			return item.ref;
+		case 1:
+			return item.percent;
+		case 2:
+			return item.type;
+		case 3:
+			if (injury)
+				return injury->title;
+			break;
+		case 4:
+			if (injury)
+				return injury->description;
+			break;
+		case 5:
+			if (injury)
+				return injury->dice;
+			return "EEEE";
+	}
+	return QVariant();
+}
+
+// MotivationList -------------------------------------------
+
+MotivationList MotivationList::instance = MotivationList();
+
+MotivationList::MotivationList() :
+	AbstractDataList(QStringList() << "name1" << "name2" << "notes")
+{
+}
+
+int MotivationList::rowCount()
+{
+	return Character::instance->motivations.count();
+}
+
+QVariant MotivationList::getValue(int row, int col)
+{
+	MotMorItem item;
+
+	if (row < 0)
+		return QVariant();
+	if (row >= Character::instance->motivations.count())
+		return QVariant();
+
+	item = Character::instance->motivations[row];
+	switch (col) {
+		case 0:
+			return item.name1;
+		case 1:
+			return item.name2;
+		case 2:
+			return item.notes;
+	}
+	return QVariant();
+}
+
+// MoralityList -------------------------------------------
+
+MoralityList MoralityList::instance = MoralityList();
+
+MoralityList::MoralityList() :
+	AbstractDataList(QStringList() << "name1" << "name2" << "notes")
+{
+}
+
+int MoralityList::rowCount()
+{
+	return Character::instance->moralities.count();
+}
+
+QVariant MoralityList::getValue(int row, int col)
+{
+	MotMorItem item;
+
+	if (row < 0)
+		return QVariant();
+	if (row >= Character::instance->moralities.count())
+		return QVariant();
+
+	item = Character::instance->moralities[row];
+	switch (col) {
+		case 0:
+			return item.name1;
+		case 1:
+			return item.name2;
+		case 2:
+			return item.notes;
+	}
+	return QVariant();
+}
+
 

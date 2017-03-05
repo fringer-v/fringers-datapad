@@ -53,30 +53,28 @@ void CharacterXML::start()
 	iChoices.clear();
 
 	iNPC = false;
-	iMotivationRow = -1;
-	iMoralityRow = -1;
 
 	//CustomSkills::instance.clear();
 	// Talents::instance.clear();
-	DataList::speciesFeatures.clear();
+	//SpecialFeaturesList::instance.clear();
 	Weapons::instance.clear();
 	Armor::instance.clear();
 	Gear::instance.clear();
-	DataList::injuries.clear();
-	DataList::motivation.clear();
-	DataList::morality.clear();
+	//InjuryList::instance.clear();
+	//DataList::motivation.clear();
+	//DataList::morality.clear();
 
-	DataList::speciesFeatures.rowCountChanged();
+	SpecialFeaturesList::instance.rowCountChanged();
 	ObligationList::instance.rowCountChanged();
 	DutyList::instance.rowCountChanged();
 	Talents::instance.rowCountChanged();
 	Weapons::instance.rowCountChanged();
 	Armor::instance.rowCountChanged();
 	Gear::instance.rowCountChanged();
-	DataList::injuries.rowCountChanged();
+	InjuryList::instance.rowCountChanged();
 	ExperienceList::instance.rowCountChanged();
-	DataList::motivation.rowCountChanged();
-	DataList::morality.rowCountChanged();
+	MotivationList::instance.rowCountChanged();
+	MoralityList::instance.rowCountChanged();
 	InventoryLog::instance.rowCountChanged();
 }
 
@@ -103,17 +101,17 @@ void CharacterXML::end()
 	KnowledgeSkills::instance.setDataChanged();
 	SpecialSkills::instance.setDataChanged();
 	CustomSkills::instance.setDataChanged();
-	DataList::speciesFeatures.setRowCountChanged();
+	SpecialFeaturesList::instance.setRowCountChanged();
 	ObligationList::instance.setRowCountChanged();
 	DutyList::instance.setRowCountChanged();
 	Talents::instance.setRowCountChanged();
 	Weapons::instance.setRowCountChanged();
 	Armor::instance.setRowCountChanged();
 	Gear::instance.setRowCountChanged();
-	DataList::injuries.setRowCountChanged();
+	InjuryList::instance.setRowCountChanged();
 	ExperienceList::instance.setRowCountChanged();
-	DataList::motivation.setRowCountChanged();
-	DataList::morality.setRowCountChanged();
+	MotivationList::instance.setRowCountChanged();
+	MoralityList::instance.setRowCountChanged();
 	InventoryLog::instance.setRowCountChanged();
 	Character::instance->emitStimPacksChanged();
 	Character::instance->emitErpsChanged();
@@ -292,32 +290,28 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		Character::instance->duties.items.append(iCharItem);
 
 	// Motivations -----------------------
-	else if (path.endsWith("/CharMotivation/#open")) {
-		iMotivationRow = DataList::motivation.appendRow();
-		DataList::motivation.setValue(iMotivationRow, "notes", "");
-	}
+	else if (path.endsWith("/CharMotivation/#open"))
+		iMotItem.clear();
 	else if (path.endsWith("/CharMotivation/Notes/"))
-		DataList::motivation.setValue(iMotivationRow, "notes", value);
+		iMotItem.notes = value;
 	else if (path.endsWith("/CharMotivation/MotiveKey/"))
-		DataList::motivation.setValue(iMotivationRow, "name1", Motivations::instance.motivationList[value]);
+		iMotItem.name1 = Motivations::instance.motivationList[value];
 	else if (path.endsWith("/CharMotivation/SpecMotiveKey/"))
-		DataList::motivation.setValue(iMotivationRow, "name2", Motivations::instance.motivationList[value]);
+		iMotItem.name2 = Motivations::instance.motivationList[value];
 	else if (path.endsWith("/CharMotivation/#end"))
-		iMotivationRow = -1;
+		Character::instance->motivations.append(iMotItem);
 
 	// Morality Pairs -----------------------
-	else if (path.endsWith("/MoralityPair/#open")) {
-		iMoralityRow = DataList::morality.appendRow();
-		DataList::morality.setValue(iMoralityRow, "notes", "");
-	}
+	else if (path.endsWith("/MoralityPair/#open"))
+		iMorItem.clear();
 	else if (path.endsWith("/MoralityPair/Notes/"))
-		DataList::morality.setValue(iMoralityRow, "notes", value);
+		iMorItem.notes = value;
 	else if (path.endsWith("/MoralityPair/StrengthKey/"))
-		DataList::morality.setValue(iMoralityRow, "name1", Moralities::instance.moralityList[value]);
+		iMorItem.name1 = Moralities::instance.moralityList[value];
 	else if (path.endsWith("/MoralityPair/WeaknessKey/"))
-		DataList::morality.setValue(iMoralityRow, "name2", Moralities::instance.moralityList[value]);
+		iMorItem.name2 = Moralities::instance.moralityList[value];
 	else if (path.endsWith("/MoralityPair/#end"))
-		iMoralityRow = -1;
+		Character::instance->moralities.append(iMorItem);
 
 	// Morality
 	else if (path.endsWith("/MoralityValue/"))

@@ -51,7 +51,6 @@ public:
 	int total();
 };
 
-
 class DutyList : public AbstractDataList {
 public:
 	static DutyList instance;
@@ -62,6 +61,46 @@ public:
 	virtual QVariant getValue(int row, int col);
 
 	int total();
+};
+
+class SpecialFeaturesList : public AbstractDataList {
+public:
+	static SpecialFeaturesList instance;
+
+	SpecialFeaturesList();
+
+	virtual int rowCount();
+	virtual QVariant getValue(int row, int col);
+};
+
+class InjuryList : public AbstractDataList {
+public:
+	static InjuryList instance;
+
+	InjuryList();
+
+	virtual int rowCount();
+	virtual QVariant getValue(int row, int col);
+};
+
+class MotivationList : public AbstractDataList {
+public:
+	static MotivationList instance;
+
+	MotivationList();
+
+	virtual int rowCount();
+	virtual QVariant getValue(int row, int col);
+};
+
+class MoralityList : public AbstractDataList {
+public:
+	static MoralityList instance;
+
+	MoralityList();
+
+	virtual int rowCount();
+	virtual QVariant getValue(int row, int col);
 };
 
 #endif // __CharacterList_h__

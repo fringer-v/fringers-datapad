@@ -257,6 +257,9 @@ void Character::clear(bool signal)
 	skills.clear();
 	obligations.items.clear();
 	duties.items.clear();
+	specialFeatures.clear();
+	motivations.clear();
+	moralities.clear();
 	Weapons::instance.clear();
 	Armor::instance.clear();
 	Gear::instance.clear();
@@ -550,8 +553,8 @@ void Character::setDataSet(const QString& data_set)
 		Weapons::instance.setDataChanged();
 		Armor::instance.setDataChanged();
 		Gear::instance.setDataChanged();
-		DataList::motivation.setDataChanged();
-		DataList::morality.setDataChanged();
+		MotivationList::instance.setDataChanged();
+		MoralityList::instance.setDataChanged();
 		emit dataSetChanged(iDataSet);
 	}
 }
@@ -945,15 +948,15 @@ void Character::changeEquipment(const QString& uuid, int state, int stored)
 
 void Character::showCharacteristics()
 {
-	DataList::injuries.setClean();
+	InjuryList::instance.setClean();
 }
 
 void Character::showDescription()
 {
 	ObligationList::instance.setClean();
 	DutyList::instance.setClean();
-	DataList::motivation.setClean();
-	DataList::morality.setClean();
+	MotivationList::instance.setClean();
+	MoralityList::instance.setClean();
 }
 
 void Character::showSkills()
@@ -968,7 +971,7 @@ void Character::showSkills()
 void Character::showTalents()
 {
 	ExperienceList::instance.setClean();
-	DataList::speciesFeatures.setClean();
+	SpecialFeaturesList::instance.setClean();
 	Talents::instance.setClean();
 }
 

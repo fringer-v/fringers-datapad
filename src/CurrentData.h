@@ -299,6 +299,19 @@ private:
 	int iRefCount;
 };
 
+class InjuryItem {
+public:
+	int ref;
+	int percent;
+	int type;
+
+	void clear() {
+		ref = 0;
+		percent = 0;
+		type = 0;
+	}
+};
+
 class CurrentData : public DatXMLReader {
 public:
 	CurrentData() {
@@ -325,6 +338,7 @@ public:
 	int dutyRank;
 	QList<ExpLogItem> experienceLog;
 	QMap<QString, ExpLogTotal> experienceTotal; // EXP_TOT_XP, etc.
+	QList<InjuryItem> injuries;
 
 	void clear();
 	QString getFile();
@@ -346,9 +360,6 @@ public:
 
 	bool setWoundDelta(int val);
 	bool setStrainDelta(int val);
-
-	void addCriticalWound(int perc, int type);
-	void removeCriticalWound(int ref);
 
 	void addExperience(const QString& type, const QString& key, const QString& name, const QString& desc, int amount);
 	void changeExperience(int ref, const QString& desc, int amount);
@@ -381,9 +392,13 @@ public:
 	static int expTypeToInt(const char* type);
 	static QString expTypeToString(int type, const QString& key = QString());
 
+	void addCriticalWound(int perc, int type);
+	void removeCriticalWound(int ref);
+
 private:
 	void setCriticalWound(int perc, int type);
 	void appendEmptyWound();
+
 	int findExpLogItem(int ref);
 	void setExpLogItem(int type, const QDateTime& when, const QString& key, const QString& name, const QString& desc, int amount, bool loading);
 	void addExpLogItem(int type, const QDateTime& when, const QString& key, const QString& name, const QString& desc, int amount);

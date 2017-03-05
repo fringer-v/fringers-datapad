@@ -8,9 +8,9 @@ ios {
 }
 android {
 }
-macx {
-	QMAKE_MAC_SDK = macosx10.11
-}
+#macx {
+#	QMAKE_MAC_SDK = macosx10.11
+#}
 
 QT += qml quick xml
 
