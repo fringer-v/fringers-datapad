@@ -30,6 +30,8 @@
 
 #include "DatXMLReader.h"
 #include "DataList.h"
+#include "Skills.h"
+#include "Talents.h"
 
 #define MAX_HISTORY_LEN			22
 
@@ -114,6 +116,73 @@ public:
 private:
 	const char* iSearchPath;
 	QString iResultValue;
+};
+
+class CharSkill {
+public:
+	QString key;
+	int		ranks;
+	bool	isCareer;
+
+	CharSkill() {
+		clear("");
+	}
+
+	void clear(QString k) {
+		key = k;
+		ranks = 0;
+		isCareer = false;
+	}
+
+	QString getDicePool(Skill* skill = NULL, QString ch = QString());
+};
+
+class CharItem {
+public:
+	QString key;
+	QString name;
+	int		size;
+	QString notes;
+
+	void clear() {
+		key.clear();
+		name.clear();
+		size = 0;
+		notes.clear();
+	}
+};
+
+class CharItemList {
+public:
+	QList<CharItem> items;
+
+	CharItem findItem(const QString& key);
+};
+
+class MotMorItem {
+public:
+	QString name1;
+	QString name2;
+	QString notes;
+
+	void clear() {
+		name1.clear();
+		name2.clear();
+		notes.clear();
+	}
+};
+
+class SpecialFeatureItem {
+public:
+	QString title;
+	QString subtitle;
+	QString content;
+
+	void clear() {
+		title.clear();
+		subtitle.clear();
+		content.clear();
+	}
 };
 
 #define UNKNOWN_QUANTITY		-2000000000
@@ -320,7 +389,10 @@ public:
 		clear();
 	}
 
-	// CHARACTER DATA
+	// DYNAMIC DATA:
+	CharMods attributeMods;		// Changes to attributes because of inventory
+
+	// CHARACTER XML DATA
 	QString name;
 	QString player;
 	QString gender;
@@ -331,10 +403,24 @@ public:
 	QString eyes;
 	QString features;
 	QString story;
-	QString species;
+	QString portrait;
+	int		credits;
+	int		originalCredits;
 	QString career;
 	QString specializations;
-	QString portrait;
+	QMap<QString, int> attributes;
+	QMap<QString, CharSkill> skills;
+	CharItemList obligations;
+	CharItemList duties;
+	QList<MotMorItem> motivations;
+	QList<MotMorItem> moralities;
+	CharTalentMap talents;
+	ItemList weapons;
+	ItemList armor;
+	ItemList gear;
+	QString species;
+	QList<SpeciesTalent> speciesTalents;
+	QList<SpecialFeatureItem> specialFeatures;
 
 	// CURRENT DATA
 	int wounds;

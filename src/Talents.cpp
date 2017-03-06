@@ -537,13 +537,13 @@ Talents::Talents() :
 int Talents::rowCount()
 {
 	bool exclude_hidden = Character::instance->hideCodedTalents();
-	return Character::instance->talents.size(exclude_hidden);
+	return CurrentData::instance->talents.size(exclude_hidden);
 }
 
 QVariant Talents::getValue(int row, int col)
 {
 	bool exclude_hidden = Character::instance->hideCodedTalents();
-	CharTalent& char_talent = Character::instance->talents.at(row, exclude_hidden);
+	CharTalent& char_talent = CurrentData::instance->talents.at(row, exclude_hidden);
 	Talent talent = AllTalents::instance()->getTalent(char_talent.key);
 
 	switch (col) {
@@ -585,34 +585,34 @@ QVariant Talents::getValue(int row, int col)
 				char_talent.key == "MOVECONTROL1" || char_talent.key == "MOVECONTROL2" ||
 				char_talent.key == "MOVECONTROL3" || char_talent.key == "MOVECONTROL4"
 				)
-				DatUtil::appendToList(desc, Character::instance->talents.forceUpgrades("INFLUENCEBASIC"), " [B]Upgrades:[b] ");
+				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades("INFLUENCEBASIC"), " [B]Upgrades:[b] ");
 			else if (char_talent.key == "INFLUENCECONTROL1")
-				DatUtil::appendToList(desc, Character::instance->talents.forceUpgrades("INFLUENCECONTROL1", RAN | MAG | DUR), " [B]Upgrades:[b] ");
+				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades("INFLUENCECONTROL1", RAN | MAG | DUR), " [B]Upgrades:[b] ");
 			else if (char_talent.key == "ENHANCECONT6") {
 				QString	text;
 				QString action = "an Action";
 				QString type = "horizontally";
 				QString range = "Short";
 
-				if (Character::instance->talents.contains("ENHANCECONT3"))
+				if (CurrentData::instance->talents.contains("ENHANCECONT3"))
 					type = "horizontally or vertically";
-				if (Character::instance->talents.contains("ENHANCECONT0"))
+				if (CurrentData::instance->talents.contains("ENHANCECONT0"))
 					action = "a Maneuver";
-				if (Character::instance->talents.contains("ENHANCERANGE"))
+				if (CurrentData::instance->talents.contains("ENHANCERANGE"))
 					range = "Medium";
 				text = QString("As %1 jump %2 to any location in %3 range").arg(action).arg(type).arg(range);
 				desc.clear();
 				DatUtil::addDescription(desc, text, talent.books);
 			}
 			else if (char_talent.key == "MISDIRBASIC") {
-				DatUtil::appendToList(desc, Character::instance->talents.forceUpgrades("MISDIRBASIC", RAN | MAG), " [B]Upgrades:[b] ");
-				DatUtil::appendToList(desc, Character::instance->talents.forceUpgrades("MISDIRBASIC", STR, 2), ", ");
+				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades("MISDIRBASIC", RAN | MAG), " [B]Upgrades:[b] ");
+				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades("MISDIRBASIC", STR, 2), ", ");
 			}
 			else if (char_talent.key == "WARFORBASIC") {
-				DatUtil::appendToList(desc, Character::instance->talents.forceUpgrades("WARFORBASIC", RAN), " [B]Upgrades:[b] ");
+				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades("WARFORBASIC", RAN), " [B]Upgrades:[b] ");
 			}
 			else if (char_talent.key == "SENSEBASIC" || char_talent.key == "SENSECONTROL2") {
-				DatUtil::appendToList(desc, Character::instance->talents.forceUpgrades(char_talent.key, RAN | MAG), " [B]Upgrades:[b] ");
+				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades(char_talent.key, RAN | MAG), " [B]Upgrades:[b] ");
 			}
 
 			return desc;
@@ -623,7 +623,7 @@ QVariant Talents::getValue(int row, int col)
 
 /*
 	// Talents:
-	for (QMap<QString, CharTalent>::iterator i = Character::instance->talents.begin(); i != Character::instance->talents.end(); i++) {
+	for (QMap<QString, CharTalent>::iterator i = CurrentData::instance->talents.begin(); i != CurrentData::instance->talents.end(); i++) {
 		AllTalents::instance()->addCharacterTalent(i.value());
 	}
 

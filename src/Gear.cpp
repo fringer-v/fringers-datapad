@@ -43,7 +43,7 @@ Gear::Gear(QStringList columns) :
 
 int Gear::rowCount()
 {
-	return Character::instance->gear.rowCount();
+	return CurrentData::instance->gear.rowCount();
 }
 
 QVariant Gear::getValue(int row, int col)
@@ -52,10 +52,10 @@ QVariant Gear::getValue(int row, int col)
 
 	if (row < 0)
 		return QVariant();
-	if (row >= Character::instance->gear.rowCount())
+	if (row >= CurrentData::instance->gear.rowCount())
 		return QVariant();
 
-	item = Character::instance->gear.itemAt(row);
+	item = CurrentData::instance->gear.itemAt(row);
 	switch (col) {
 		case 0: // uuid
 			return item.uuid;

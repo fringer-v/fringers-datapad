@@ -336,21 +336,21 @@ QString Item::damageTotal()
 	if (hasQuality("DAMADD"))
 		t += getQuality("DAMADD").count;
 
-	foreach (CharTalent char_talent, character->talents.charTalentMap) {
+	foreach (CharTalent char_talent, CurrentData::instance->talents.charTalentMap) {
 		Talent talent = AllTalents::instance()->getTalent(char_talent.key);
 
 		if (talent.addDamagePerSkillRank && char_talent.selectedSkills.contains(skillKey)) {
 			if (hasQuality("AUTOFIRE"))
-				oneHitDamage += character->skills[skillKey].ranks;
+				oneHitDamage += CurrentData::instance->skills[skillKey].ranks;
 			else
-				t += character->skills[skillKey].ranks;
+				t += CurrentData::instance->skills[skillKey].ranks;
 		}
 
 		if (talent.damageBonusSkills.contains(skillKey))
 			t += talent.damageBonus * char_talent.ranks;
 	}
 
-	foreach (SpeciesTalent st, character->speciesTalents) {
+	foreach (SpeciesTalent st, CurrentData::instance->speciesTalents) {
 		if (st.damageBonusSkill == skillKey)
 			t += st.damageBonus;
 	}
@@ -378,8 +378,8 @@ QString Item::dicePool()
 	ShopItem	shop = Shop::instance.getItem(itemkey);
 	QString		skillKey = shop.skillKey;
 
-	if (character->skills.contains(skillKey))
-		skill = character->skills[skillKey];
+	if (CurrentData::instance->skills.contains(skillKey))
+		skill = CurrentData::instance->skills[skillKey];
 	else
 		skill.key = skillKey;
 
@@ -431,8 +431,8 @@ int Item::critPlus()
 	if (hasQuality("VICIOUS"))
 		crit_plus = getQuality("VICIOUS").count;
 
-	if (character->talents.contains("LETHALBL"))
-		crit_plus += character->talents.get("LETHALBL").ranks;
+	if (CurrentData::instance->talents.contains("LETHALBL"))
+		crit_plus += CurrentData::instance->talents.get("LETHALBL").ranks;
 
 	return crit_plus;
 }
@@ -601,7 +601,7 @@ int Item::critTotal()
 	else
 		t = shop.critical;
 
-	foreach (SpeciesTalent st, Character::instance->speciesTalents) {
+	foreach (SpeciesTalent st, CurrentData::instance->speciesTalents) {
 		if (st.weaponsCrit && st.damageBonusSkill == shop.skillKey && t > st.weaponsCrit)
 			t = st.weaponsCrit;
 	}

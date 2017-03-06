@@ -45,7 +45,7 @@ Weapons::Weapons(QStringList columns) :
 
 int Weapons::rowCount()
 {
-	return Character::instance->weapons.rowCount();
+	return CurrentData::instance->weapons.rowCount();
 }
 
 QVariant Weapons::getValue(int row, int col)
@@ -54,10 +54,10 @@ QVariant Weapons::getValue(int row, int col)
 
 	if (row < 0)
 		return QVariant();
-	if (row >= Character::instance->weapons.rowCount())
+	if (row >= CurrentData::instance->weapons.rowCount())
 		return QVariant();
 
-	item = Character::instance->weapons.itemAt(row);
+	item = CurrentData::instance->weapons.itemAt(row);
 	switch (col) {
 		case 0: // uuid
 			return item.uuid;

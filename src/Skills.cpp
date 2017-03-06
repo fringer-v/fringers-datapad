@@ -158,11 +158,11 @@ QVariant Skills::getValue(int row, int col)
 	else {
 		key = skill.key;
 		if (strcmp(skill.key, "LTSABER") == 0)
-			ch = Character::instance->talents.getLightSaberChar();
+			ch = CurrentData::instance->talents.getLightSaberChar();
 	}
 
-	if (Character::instance->skills.contains(key))
-		char_skill = Character::instance->skills[key];
+	if (CurrentData::instance->skills.contains(key))
+		char_skill = CurrentData::instance->skills[key];
 
 	switch (col) {
 		case 0:

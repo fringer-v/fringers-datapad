@@ -50,7 +50,7 @@ public:
 	virtual bool xmlElement(const DatStringBuffer& path, const char* value);
 
 private:
-	QPointer<Species>		iSpecies;
+	QPointer<SpeciesXML>	iSpecies;
 
 	bool					iNPC;
 	QString					iSpecialization;

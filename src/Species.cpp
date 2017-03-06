@@ -33,9 +33,9 @@
 #include "Character.h"
 #include "DataSet.h"
 
-// Species -------------------------
+// SpeciesXML -------------------------
 
-QString Species::getName()
+QString SpeciesXML::getName()
 {
 	QString n = iName;
 
@@ -44,7 +44,7 @@ QString Species::getName()
 	return n;
 }
 
-void Species::loadSpecies(const QString& nkey, const QString& sub_nkey, QMap<QString, QString>* choices)
+void SpeciesXML::loadSpecies(const QString& nkey, const QString& sub_nkey, QMap<QString, QString>* choices)
 {
 	iKey = nkey;
 	iSubKey = sub_nkey;
@@ -58,11 +58,11 @@ void Species::loadSpecies(const QString& nkey, const QString& sub_nkey, QMap<QSt
 	readFromBuffer(data.constData(), data.length());
 }
 
-void Species::end()
+void SpeciesXML::end()
 {
 }
 
-bool Species::xmlElement(const DatStringBuffer& path, const char* value)
+bool SpeciesXML::xmlElement(const DatStringBuffer& path, const char* value)
 {
 	//qDebug() << "XML" << path << value;
 	if (path.endsWith("/Species/Name/"))
@@ -82,7 +82,7 @@ bool Species::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/TalentModifier/RankAdd/"))
 		iCharTalent.ranks = toInt(value);
 	else if (path.endsWith("/TalentModifier/#end")) {
-		Character::instance->talents.addTalent(iCharTalent);
+		CurrentData::instance->talents.addTalent(iCharTalent);
 	}
 
 	else if (path.endsWith("/OptionChoice/Key/")) {
@@ -133,7 +133,7 @@ bool Species::xmlElement(const DatStringBuffer& path, const char* value)
 				s_i.title = iOptionTitle;
 				s_i.subtitle = iOptionSubTitle;
 				s_i.content = iOptionContent;
-				Character::instance->specialFeatures.append(s_i);
+				CurrentData::instance->specialFeatures.append(s_i);
 
 				if (iDieModList.count() > 0) {
 					Talent t;
@@ -145,7 +145,7 @@ bool Species::xmlElement(const DatStringBuffer& path, const char* value)
 				iCharTalent.clear(iOptionKey);
 				iCharTalent.aquisition = iName;
 				iCharTalent.talentType = TALENT_SPECIES;
-				Character::instance->talents.addTalent(iCharTalent);
+				CurrentData::instance->talents.addTalent(iCharTalent);
 			}
 		}
 		iOptionKey.clear();
@@ -161,7 +161,7 @@ bool Species::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/WeaponModifiers/WeaponModifier/Crit/"))
 		iSpecTalent.weaponsCrit = toInt(value);
 	else if (path.endsWith("/WeaponModifiers/WeaponModifier/#end"))
-		Character::instance->speciesTalents.append(iSpecTalent);
+		CurrentData::instance->speciesTalents.append(iSpecTalent);
 
 	return true;
 }

@@ -208,6 +208,8 @@ void CheckListData::plusCustom(int ref, const QString& pool, const QString& desc
 
 void CurrentData::clear()
 {
+	attributeMods.clear();
+
 	name.clear();
 	player.clear();
 	gender.clear();
@@ -218,10 +220,24 @@ void CurrentData::clear()
 	eyes.clear();
 	features.clear();
 	story.clear();
-	species.clear();
+	portrait.clear();
+	credits = 0;
+	originalCredits = 0;
 	career.clear();
 	specializations.clear();
-	portrait.clear();
+	attributes.clear();
+	skills.clear();
+	obligations.items.clear();
+	duties.items.clear();
+	motivations.clear();
+	moralities.clear();
+	talents.clear();
+	weapons.clear();
+	armor.clear();
+	gear.clear();
+	species.clear();
+	speciesTalents.clear();
+	specialFeatures.clear();
 
 	wounds = 0;
 	strain = 0;
@@ -501,24 +517,24 @@ void CurrentData::useErp(int delta)
 
 QString CurrentData::stimPacks()
 {
-	int quan = Character::instance->gear.quantity("STIMPACK");
-	return QString("%1/%2").arg(Character::instance->gear.carriedQuantity("STIMPACK")).arg(quan);
+	int quan = CurrentData::instance->gear.quantity("STIMPACK");
+	return QString("%1/%2").arg(CurrentData::instance->gear.carriedQuantity("STIMPACK")).arg(quan);
 }
 
 QString CurrentData::erps()
 {
-	int quan = Character::instance->gear.quantity("ERP");
-	return QString("%1/%2").arg(Character::instance->gear.carriedQuantity("ERP")).arg(quan);
+	int quan = CurrentData::instance->gear.quantity("ERP");
+	return QString("%1/%2").arg(CurrentData::instance->gear.carriedQuantity("ERP")).arg(quan);
 }
 
 int CurrentData::stimPackQuantity()
 {
-	return Character::instance->gear.quantity("STIMPACK");
+	return CurrentData::instance->gear.quantity("STIMPACK");
 }
 
 int CurrentData::erpQuantity()
 {
-	return Character::instance->gear.quantity("ERP");
+	return CurrentData::instance->gear.quantity("ERP");
 }
 
 bool CurrentData::setWoundDelta(int val)
@@ -733,11 +749,11 @@ bool CurrentData::removeItem(int ref)
 
 		shop_item = Shop::instance.getItem(log_item.itemkey);
 		if (shop_item.type == "GEAR")
-			list = &Character::instance->gear;
+			list = &CurrentData::instance->gear;
 		else if (shop_item.type == "ARMOR")
-			list = &Character::instance->armor;
+			list = &CurrentData::instance->armor;
 		else
-			list = &Character::instance->weapons;
+			list = &CurrentData::instance->weapons;
 		Item item = list->getItemByUuid(log_item.uuid);
 
 		invMod[item.uuid].rowCount--;
@@ -775,7 +791,7 @@ bool CurrentData::removeItem(int ref)
 	inventoryLog.removeAt(row);
 	if (inventoryLog.size() == 1) {
 		inventoryLog.clear();
-		Character::instance->setCredits(Character::instance->originalCredits);
+		Character::instance->setCredits(CurrentData::instance->originalCredits);
 	}
 	else if (log_item.amount) {
 		int total = Character::instance->credits();
@@ -897,16 +913,16 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 	int ranks;
 	int force;
 	int default_check = 0;
-	Item weapon = Character::instance->weapons.getItemByUuid(uuid);
+	Item weapon = CurrentData::instance->weapons.getItemByUuid(uuid);
 	QString weaponKey = weapon.itemkey;
 
 	uncheckAllItem(skillKey);
 	autoCheckItems.clear();
 
-	if (Character::instance->gear.equipped("HNTGOGGLE"))
+	if (CurrentData::instance->gear.equipped("HNTGOGGLE"))
 		hunting_goggles = true;
 
-	if (Character::instance->talents.contains("SENSEDURATION"))
+	if (CurrentData::instance->talents.contains("SENSEDURATION"))
 		send_mag = "twice";
 
 	if (skillKey == "RANGHVY" || skillKey == "RANGLT") {
@@ -927,14 +943,14 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 	if (!skill || skill->type != SPECIAL)
 		autoCheckItems.plus("@+1 Move", "[B]Maneuver:[b] Perform an action that requires a maneuver", 1, 0);
 
-	for (int i=0; i<Character::instance->talents.ranks("BRA"); i++)
+	for (int i=0; i<CurrentData::instance->talents.ranks("BRA"); i++)
 		autoCheckItems.plus("N", "[B]Brace:[b] Remove [SE] if due to any environmental effects, Duration: 1 Round", i == 0 ? 1 : 0, 0);
 
 	if (combat) {
 		/* Not required because upgdrade need not be optional!
 		if (isCommitted("SENSECONTROL3")) {
 			QString send_str = "U";
-			if (Character::instance->talents.contains("SENSESTRENGTH"))
+			if (CurrentData::instance->talents.contains("SENSESTRENGTH"))
 				send_str = "UU";
 			default_check = autoCheckItems.plus(send_str, QString("[B]Sense Control:[b] Upgrade ability of combat check %1 per round").arg(send_mag), 0, 0);
 		}
@@ -944,206 +960,206 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 	if (charm || skillKey == "COERC" || skillKey == "NEG" ||
 		skillKey == "DECEP" || skillKey == "LEAD") {
 		force = Character::instance->nonCommitedForce();
-		if (force > 0 && Character::instance->talents.contains("INFLUENCECONTROL2"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Influence:[b] Spend [FP] to gain [SU] or [AD] vs 1 engaged target, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL2", RAN | MAG), 0, 0);
-		if (Character::instance->talents.contains("JUSTKID"))
+		if (force > 0 && CurrentData::instance->talents.contains("INFLUENCECONTROL2"))
+			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Influence:[b] Spend [FP] to gain [SU] or [AD] vs 1 engaged target, "+CurrentData::instance->talents.forceUpgrades("INFLUENCECONTROL2", RAN | MAG), 0, 0);
+		if (CurrentData::instance->talents.contains("JUSTKID"))
 			autoCheckItems.plus("-y", "[B]Just Kidding:[b] Once per round, Target: self or ally", 0, 0, 1);
 	}
 	else if (skillKey == "REC") {
 		force = Character::instance->nonCommitedForce();
-		if (force > 0 && Character::instance->talents.contains("BAL"))
+		if (force > 0 && CurrentData::instance->talents.contains("BAL"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Balance:[b] Gain +1 Strain per [FP]", 0, 0);
 	}
 	else if (skillKey == "ATHL") {
-		if (Character::instance->talents.contains("NIKTOSP2OC2OP1"))
+		if (CurrentData::instance->talents.contains("NIKTOSP2OC2OP1"))
 			autoCheckItems.plus("B", "[B]Climbing Claws:[b] Add when climbing trees and other surfaces their claws can pierce", 0, 0);
 		force = Character::instance->nonCommitedForce();
-		if (force > 0 && Character::instance->talents.contains("ENHANCEBASIC"))
+		if (force > 0 && CurrentData::instance->talents.contains("ENHANCEBASIC"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "COORD") {
 		force = Character::instance->nonCommitedForce();
-		if (force > 0 && Character::instance->talents.contains("ENHANCECONT1"))
+		if (force > 0 && CurrentData::instance->talents.contains("ENHANCECONT1"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "RESIL") {
 		force = Character::instance->nonCommitedForce();
-		if (force > 0 && Character::instance->talents.contains("ENHANCECONT2"))
+		if (force > 0 && CurrentData::instance->talents.contains("ENHANCECONT2"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "PILOTPL") {
 		force = Character::instance->nonCommitedForce();
-		if (force > 0 && Character::instance->talents.contains("ENHANCECONT4"))
+		if (force > 0 && CurrentData::instance->talents.contains("ENHANCECONT4"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "BRAWL") {
 		force = Character::instance->nonCommitedForce();
-		if (force > 0 && Character::instance->talents.contains("ENHANCECONT5"))
+		if (force > 0 && CurrentData::instance->talents.contains("ENHANCECONT5"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "PILOTSP") {
 		force = Character::instance->nonCommitedForce();
-		if (force > 0 && Character::instance->talents.contains("ENHANCECONT7"))
+		if (force > 0 && CurrentData::instance->talents.contains("ENHANCECONT7"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "ICOOL" || skillKey == "IVIG") {
 		force = Character::instance->nonCommitedForce();
 		if (force > 0) {
-			if (Character::instance->talents.contains("FORSEECONTROL1")) {
-				if (Character::instance->talents.contains("FORSEECONTROL3"))
+			if (CurrentData::instance->talents.contains("FORSEECONTROL1")) {
+				if (CurrentData::instance->talents.contains("FORSEECONTROL3"))
 					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [FP] to gain [SU], spend [FP] to grant free move to targets", 0, 0);
 				else
 					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [FP] to gain [SU] on initiative check", 0, 0);
 			}
-			if (Character::instance->talents.contains("WARFORCONTROL1")) {
-				if (Character::instance->talents.contains("WARFORMAGNITUDE"))
+			if (CurrentData::instance->talents.contains("WARFORCONTROL1")) {
+				if (CurrentData::instance->talents.contains("WARFORMAGNITUDE"))
 					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to self or ally's first check this encounter", 0, 0);
-				else if (Character::instance->talents.contains("WARFORCONTROL3"))
+				else if (CurrentData::instance->talents.contains("WARFORCONTROL3"))
 					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to first check this encounter", 0, 0);
 				else
 					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] per [FP] spent to first check this encounter", 0, 0);
 			}
 
 		}
-		for (int i=0; i<Character::instance->talents.ranks("RAPREA"); i++)
+		for (int i=0; i<CurrentData::instance->talents.ranks("RAPREA"); i++)
 			autoCheckItems.plus("s", "[B]Rapid Reaction:[b] Suffer straing to improve initiative", 0, 1);
 	}
 	else if (skillKey == "STEAL") {
-		ranks = Character::instance->talents.ranks("SLEIGHTMIND");
+		ranks = CurrentData::instance->talents.ranks("SLEIGHTMIND");
 		if (ranks > 0)
 			autoCheckItems.plus(QString("B").repeated(ranks), "[B]Sleight of Mind:[b] Add if opposition is not immune to Force powers", 0, 0);
 	}
 	else if (skillKey == "LTSABER") {
 		force = Character::instance->nonCommitedForce();
-		if (force > 0 && Character::instance->talents.ranks("HAWKSWOOP"))
+		if (force > 0 && CurrentData::instance->talents.ranks("HAWKSWOOP"))
 			autoCheckItems.plus(QString("F").repeated(force), "[B]Hawk Bat Swoop:[b] Spend [FP] to engage target, and [FP] to add [AD]", 0, 0);
 
-		if (force > 0 && Character::instance->talents.contains("SABERSW"))
+		if (force > 0 && CurrentData::instance->talents.contains("SABERSW"))
 			autoCheckItems.plus(QString("@Linked %1").arg(force), QString("[B]Saber Swarm:[b] Attack has linked %1 quality").arg(force), 1, 1);
 	}
 	else if (skillKey == "DISC") {
-		ranks = Character::instance->talents.ranks("HARDHD");
+		ranks = CurrentData::instance->talents.ranks("HARDHD");
 		if (ranks > 0) {
 			int dif = 4-ranks;
 
 			autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), "[B]Hard Headed:[b] Perfrom check to remove staggered or disoriented effect", 0, 0);
-			if (Character::instance->talents.contains("HARDHDIMP")) {
+			if (CurrentData::instance->talents.contains("HARDHDIMP")) {
 				dif = 6-ranks;
 				autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), QString("[B]Hard Headed (Improved):[b] Perfrom check to reduced straing to %1").arg(Character::instance->strain()-1), 0, 0);
 			}
 		}
 		force = Character::instance->nonCommitedForce();
 		if (force > 0) {
-			if (Character::instance->talents.contains("INFLUENCECONTROL1"))
-				autoCheckItems.plus(QString("F").repeated(force), "[B]Influence (Mind Trick):[b] vs Discipline, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
-			if (Character::instance->talents.contains("MOVECONTROL1")) {
+			if (CurrentData::instance->talents.contains("INFLUENCECONTROL1"))
+				autoCheckItems.plus(QString("F").repeated(force), "[B]Influence (Mind Trick):[b] vs Discipline, "+CurrentData::instance->talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
+			if (CurrentData::instance->talents.contains("MOVECONTROL1")) {
 				QString type = "Hurl";
 
-				if (Character::instance->talents.contains("MOVECONTROL2"))
+				if (CurrentData::instance->talents.contains("MOVECONTROL2"))
 					DatUtil::appendToList(type, "Pull", "/");
 
-				if (Character::instance->talents.contains("MOVECONTROL3"))
+				if (CurrentData::instance->talents.contains("MOVECONTROL3"))
 					DatUtil::appendToList(type, "Manipulate", "/");
 
-				autoCheckItems.plus(QString("F").repeated(force), "[B]Move:[b] "+type+" objects, "+Character::instance->talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
+				autoCheckItems.plus(QString("F").repeated(force), "[B]Move:[b] "+type+" objects, "+CurrentData::instance->talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
 			}
 		}
 	}
 
 	if (!skill || skill->type != SPECIAL) {
-		if (skillKey != "FORCE" && Character::instance->talents.contains("INTENSFOC"))
+		if (skillKey != "FORCE" && CurrentData::instance->talents.contains("INTENSFOC"))
 			autoCheckItems.plus("U", "[B]Intense Focus:[b] Upgrade the next skill check once", 1, 1);
 	}
 
 	if (skillKey == "COERC") {
-		for (int i=0; i<Character::instance->talents.ranks("INTIM"); i++) {
+		for (int i=0; i<CurrentData::instance->talents.ranks("INTIM"); i++) {
 			autoCheckItems.plus("d", "[B]Intimidating:[b] Downgrade the difficulty of the check", 0, 1);
 		}
 	}
 	else if (charm || skillKey == "NEG") {
-		for (int i=0; i<Character::instance->talents.ranks("CONGENIAL"); i++) {
+		for (int i=0; i<CurrentData::instance->talents.ranks("CONGENIAL"); i++) {
 			autoCheckItems.plus("d", "[B]Congenial:[b] Downgrade the difficulty of the check", 0, 1);
 		}
 	}
 	else if (skillKey == "DEFM" || skillKey == "DEFR") {
 		if (isCommitted("SENSECONTROL1")) {
 			QString send_str = "u";
-			if (Character::instance->talents.contains("SENSESTRENGTH"))
+			if (CurrentData::instance->talents.contains("SENSESTRENGTH"))
 				send_str = "uu";
 			default_check = autoCheckItems.plus(send_str, QString("[B]Sense Control:[b] Upgrade difficulty of incoming attack %1 per round").arg(send_mag), 0, 0);
 		}
 
-		for (int i=0; i<Character::instance->talents.ranks("DODGE"); i++)
+		for (int i=0; i<CurrentData::instance->talents.ranks("DODGE"); i++)
 			autoCheckItems.plus("u", "[B]Dodge:[b] Out-of-turn incedental", 0, 1);
 
-		ranks = Character::instance->talents.ranks("DURA");
+		ranks = CurrentData::instance->talents.ranks("DURA");
 		if (ranks > 0)
 			autoCheckItems.plus(QString("@-%1% Crits").arg(ranks*10), "[B]Durable:[b] Reduce critical hits", 0, 0);
 
 		if (skillKey == "DEFM") {
-			ranks = Character::instance->talents.ranks("PARRY");
+			ranks = CurrentData::instance->talents.ranks("PARRY");
 			if (ranks > 0) {
 				QString par = QString("[B]Parry:[b] Reduce damage by %1").arg(ranks+2);
 
-				if (Character::instance->talents.contains("PARRYIMP"))
+				if (CurrentData::instance->talents.contains("PARRYIMP"))
 					par = par + ", on [DE] or [TH][TH][TH] hit attacker";
 				autoCheckItems.plus(QString("@-%1 Damage").arg(ranks+2), par, 0, 3);
 			}
 
-			for (int i=0; i<Character::instance->talents.ranks("DEFSTA"); i++)
+			for (int i=0; i<CurrentData::instance->talents.ranks("DEFSTA"); i++)
 				autoCheckItems.plus("u", "[B]Defensive Stance:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
 
 			setNegativePool(iNegMelee, skillKey);
 		}
 		else {
-			ranks = Character::instance->talents.ranks("REFLECT");
+			ranks = CurrentData::instance->talents.ranks("REFLECT");
 			if (ranks > 0) {
 				QString par = QString("[B]Reflect:[b] vs Lightsaber, reduce damage by %1").arg(ranks+2);
 
-				if (Character::instance->talents.contains("REFLECTIMP"))
+				if (CurrentData::instance->talents.contains("REFLECTIMP"))
 					par = "[B]Reflect:[b] vs Lightsaber, on [DE] or [TH][TH][TH] damage apponent (Medium range)";
 				autoCheckItems.plus(QString("@-%1 Damage").arg(ranks+2), par, 0, 3);
 			}
 
-			for (int i=0; i<Character::instance->talents.ranks("SIDESTEP"); i++)
+			for (int i=0; i<CurrentData::instance->talents.ranks("SIDESTEP"); i++)
 				autoCheckItems.plus("u", "[B]Side Step:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
 
 			setNegativePool(iNegRanged, skillKey);
 		}
 
-		if (Character::instance->talents.contains("SENSEADV")) {
+		if (CurrentData::instance->talents.contains("SENSEADV")) {
 			autoCheckItems.plus("SS", "[B]Sense Advantage:[b] Add to NPC check, once per session", 0, 0);
 		}
 	}
 	else if (skillKey == "PILOTSP") {
 		piloting = true;
-		if (Character::instance->talents.contains("MASPIL"))
+		if (CurrentData::instance->talents.contains("MASPIL"))
 			autoCheckItems.plus("@+1 Action", QString("[B]Master Pilot:[b] Once per round, perform Action as Manuever"), 1, 2);
 	}
 	else if (skillKey == "FORCE") {
 		int ref;
 
-		if (Character::instance->talents.contains("SENSECONTROL1")) {
+		if (CurrentData::instance->talents.contains("SENSECONTROL1")) {
 			ref = autoCheckItems.plus("g", "[B]Sense Control:[b] Commit force dice to upgrade difficulty of incoming attacks", 0, 0, 0, "", "SENSECONTROL1", 1);
 			if (isCommitted("SENSECONTROL1"))
 				checkItem(ref, skillKey, true);
 		}
-		if (Character::instance->talents.contains("SENSECONTROL3")) {
+		if (CurrentData::instance->talents.contains("SENSECONTROL3")) {
 			ref = autoCheckItems.plus("g", "[B]Sense Control:[b] Commit force dice to upgrade abilty of combat checks", 0, 0, 0, "", "SENSECONTROL3", 1);
 			if (isCommitted("SENSECONTROL3"))
 				checkItem(ref, skillKey, true);
 		}
-		if (Character::instance->talents.contains("ENHANCECONT8")) {
+		if (CurrentData::instance->talents.contains("ENHANCECONT8")) {
 			ref = autoCheckItems.plus("g", "[B]Enhance:[b] Commit force dice to increase Brawn by one", 0, 0, 0, "", "ENHANCECONT8", 1);
 			if (isCommitted("ENHANCECONT8"))
 				checkItem(ref, skillKey, true);
 		}
-		if (Character::instance->talents.contains("ENHANCECONT9")) {
+		if (CurrentData::instance->talents.contains("ENHANCECONT9")) {
 			ref = autoCheckItems.plus("g", "[B]Enhance:[b] Commit force dice to increase Agility by one", 0, 0, 0, "", "ENHANCECONT9", 1);
 			if (isCommitted("ENHANCECONT9"))
 				checkItem(ref, skillKey, true);
 		}
-		if (Character::instance->talents.contains("MISDIRCONTROL3")) {
+		if (CurrentData::instance->talents.contains("MISDIRCONTROL3")) {
 			int count = isCommitted("MISDIRCONTROL3");
 			ranks = Character::instance->force();
 			for (int i=0; i<ranks; i++) {
@@ -1153,7 +1169,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			}
 		}
 
-		if (Character::instance->talents.contains("MISDIRDURATION")) {
+		if (CurrentData::instance->talents.contains("MISDIRDURATION")) {
 			ref = autoCheckItems.plus("gg", "[B]Misdirect Duration:[b] Sustain misdiration as long as target in range", 0, 0, 0, "", "MISDIRDURATION", 2);
 			if (isCommitted("MISDIRDURATION"))
 				checkItem(ref, skillKey, true);
@@ -1164,24 +1180,24 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 	}
 
 	if (charm) {
-		if (Character::instance->talents.contains("DONTSHOOT"))
+		if (CurrentData::instance->talents.contains("DONTSHOOT"))
 			autoCheckItems.plus("DDD", "[B]Don't Shoot!:[b] Once per session, cannot be attacked unless attack, Duration: Encounter", 0, 0);
 	}
 
 	if (piloting) {
 		int amount = 1;
 
-		if (Character::instance->talents.contains("FULLTHSUP"))
+		if (CurrentData::instance->talents.contains("FULLTHSUP"))
 			amount = 2;
-		if (Character::instance->talents.contains("FULLTH"))
+		if (CurrentData::instance->talents.contains("FULLTH"))
 			autoCheckItems.plus("DDD", QString("[B]Full Throttle:[b] Increase Speed by %1 for %2 rounds, [B]Cost: Action[b]").arg(amount).arg(Character::instance->cunning()), 0, 0);
-		if (Character::instance->talents.contains("FULLTHIMP"))
+		if (CurrentData::instance->talents.contains("FULLTHIMP"))
 			autoCheckItems.plus("DD", QString("[B]Full Throttle (Improved):[b] Increase Speed by %1 for %2 rounds").arg(amount).arg(Character::instance->cunning()), 1, 1);
 	}
 
 	if (combat) {
 		// Aim skills:
-		ranks = Character::instance->talents.ranks("TRUEAIM");
+		ranks = CurrentData::instance->talents.ranks("TRUEAIM");
 		if (ranged && ranks > 0)
 			autoCheckItems.plus("B" + QString("U").repeated(ranks), "[B]True Aim:[b] Once per round, use a maneuver to aim", 1, 0);
 		else
@@ -1193,24 +1209,24 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			autoCheckItems.plus("SS", "[B]Called Shot:[b] Use a maneuver to call a shot by aiming", 1, 0);
 		autoCheckItems.plus("N", "[B]Called Shot (2x Aim):[b] Use a 2nd maneuver to aim longer on a called shot", 1, 0);
 
-		for (int i=0; i<Character::instance->talents.ranks("PRECAIM"); i++) {
+		for (int i=0; i<CurrentData::instance->talents.ranks("PRECAIM"); i++) {
 			autoCheckItems.plus("N", "[B]Precise Aim:[b] Decrease apponents defense", i ? 0 : 1, 1);
 		}
-		ranks = Character::instance->talents.ranks("QUICKST");
+		ranks = CurrentData::instance->talents.ranks("QUICKST");
 		if (ranks > 0)
 			autoCheckItems.plus(QString("B").repeated(ranks), "[B]Quick Strike:[b] Add if target has not acted in this encounter yet", 0, 0);
 
-		if (!weaponKey.isEmpty() && weaponKey != "UNARMED" && Character::instance->talents.contains("TARGBL"))
+		if (!weaponKey.isEmpty() && weaponKey != "UNARMED" && CurrentData::instance->talents.contains("TARGBL"))
 			autoCheckItems.plus(QString("@Damage +%1").arg(Character::instance->agility()), "[B]Targeted Blow:[b] Add to damage on hit with non-vehicle weapon", 0, 0, 1);
 
-		ranks = Character::instance->talents.ranks("DISARMSMILE");
+		ranks = CurrentData::instance->talents.ranks("DISARMSMILE");
 		if (ranks > 0)
 			autoCheckItems.plus(QString("N").repeated(ranks), "[B]Disarming Smile:[b] Opposed Charm vs Target, Range: Short, Duration: Encounter, [B]Cost: Action[b]", 0, 0);
 
-		if (gunnery && Character::instance->talents.contains("DEAD")) {
+		if (gunnery && CurrentData::instance->talents.contains("DEAD")) {
 			int dam = Character::instance->agility();
 
-			if (!Character::instance->talents.contains("DEADIMP"))
+			if (!CurrentData::instance->talents.contains("DEADIMP"))
 				dam = (dam + 1) / 2;
 			autoCheckItems.plus(QString("@+%1 Damage").arg(dam), "[B]Dead to Rights:[b] Add to one hit with vehicle mounted weapon", 0, 0, 1);
 		}
@@ -1218,19 +1234,19 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 	if (ranged) {
 		bool extreme_range = Shop::instance.getItem(weaponKey).range == "Extreme";
 		if (!extreme_range) {
-			ranks = Character::instance->talents.ranks("SNIPSHOT");
+			ranks = CurrentData::instance->talents.ranks("SNIPSHOT");
 			if (ranks > 0)
 				autoCheckItems.plus("@Range +1", "[B]Sniper Shot:[b] Increase range (and difficulty) of next attack", 1, 0);
 		}
-		ranks = Character::instance->talents.ranks("POINTBL");
+		ranks = CurrentData::instance->talents.ranks("POINTBL");
 		if (ranks > 0)
 			autoCheckItems.plus(QString("@Damage +%1").arg(ranks), "[B]Point Blank:[b] Engaged or Short range", 0, 0);
-		if (Character::instance->talents.contains("RAINDEATH"))
+		if (CurrentData::instance->talents.contains("RAINDEATH"))
 			autoCheckItems.plus("@Auto-fire", "[B]Rain of Death:[b] Ignore increase difficulty due to auto-fire", 1, 0);
 		if (skillKey != "RANGLT") {
-			if (Character::instance->talents.contains("HEAVYHITTER"))
+			if (CurrentData::instance->talents.contains("HEAVYHITTER"))
 				autoCheckItems.plus("@Breach +1", "[B]Heavy Hitter:[b] Once per session use [TR] to add breach property", 1, 0);
-			ranks = Character::instance->talents.ranks("BAR");
+			ranks = CurrentData::instance->talents.ranks("BAR");
 			if (ranks > 0)
 				autoCheckItems.plus(QString("@Damage +%1").arg(ranks), "[B]Barrage:[b] Long or extreme range", 0, 0);
 		}
@@ -1245,8 +1261,8 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			autoCheckItems.plus("st", "[B]Set Trigger:[b] Add if this is the first combat check of the encounter", 0, 0);
 	}
 
-	for (int i = 0; i < Character::instance->armor.rowCount(); i++) {
-		Item item = Character::instance->armor.itemAt(i);
+	for (int i = 0; i < CurrentData::instance->armor.rowCount(); i++) {
+		Item item = CurrentData::instance->armor.itemAt(i);
 		if (item.equipped()) {
 			if (item.attachList.contains("TARGCOMP"))
 				targeting_comp = true;
@@ -1277,11 +1293,11 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			autoCheckItems.plus("NN", "[B]Hunting Googles:[b] Concealment, darkness, fog and mist", 0, 0);
 	}
 
-	if (Character::instance->talents.contains("TOUCH")) {
+	if (CurrentData::instance->talents.contains("TOUCH")) {
 		if (skillKey != "DEFM" && skillKey != "DEFR")
 			autoCheckItems.plus("BB", "[B]Touch of Fate:[b] May be used once per session", 0, 0);
 	}
-	if (Character::instance->talents.contains("SENSDANG")) {
+	if (CurrentData::instance->talents.contains("SENSDANG")) {
 		if (skillKey != "DEFM" && skillKey != "DEFR")
 			autoCheckItems.plus("NN", "[B]Sense Danger:[b] May be used once per session", 0, 0);
 	}
@@ -1297,20 +1313,20 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 
 	// MEDPAC
 	if (skillKey == "MED") {
-		if (Character::instance->gear.equipped("MEDPAC"))
+		if (CurrentData::instance->gear.equipped("MEDPAC"))
 			default_check = autoCheckItems.plus("B", "[B]Medpac:[b] Add to all Medicine checks when equipped", 0, 0);
 
-		if (Character::instance->gear.carriedQuantity("MEDAIDPATCH") > 0)
+		if (CurrentData::instance->gear.carriedQuantity("MEDAIDPATCH") > 0)
 			autoCheckItems.plus("sa", "[B]Med-Aid Patch:[b] Maximum usage 1 per check, [B]Cost: 1x Med-Aid Patch[b]", 0, 0, 0, "MEDAIDPATCH");
 
-		if (Character::instance->gear.equipped("BLOODSCAN"))
+		if (CurrentData::instance->gear.equipped("BLOODSCAN"))
 			autoCheckItems.plus("aa", "[B]Blood Scanner:[b] After use, add to next Medicine check, [B]Cost: Action[b]", 0, 0);
 
-		ranks = Character::instance->talents.ranks("SURG");
+		ranks = CurrentData::instance->talents.ranks("SURG");
 		if (ranks > 0)
 			autoCheckItems.plus(QString("@Wound -%1").arg(ranks), "[B]Surgeon:[b] Add to Wounds recovered on successful check", 0, 0);
 
-		if (Character::instance->gear.carriedQuantity("DROIDMINIMED") > 0)
+		if (CurrentData::instance->gear.carriedQuantity("DROIDMINIMED") > 0)
 			autoCheckItems.plus(QString("@Wound -%1").arg(ranks), "[B]Mini-med Droids:[b] Add to Wounds recovered on successful check", 1, 0);
 
 		autoCheckItems.plus("D", "[B]Easy Severity:[b] 1-40% Critical injury, 1-50% Wounds, [B]Cost: Action[b]", 0, 0);
@@ -1643,7 +1659,7 @@ void CurrentData::setExpLogItem(int type, const QDateTime& when, const QString& 
 				total = Character::instance->getAttribute(XP);
 				break;
 			case EXP_DUTY:
-				total = Character::instance->duties.findItem(key).size;
+				total = CurrentData::instance->duties.findItem(key).size;
 				break;
 			case EXP_DUTYRANK:
 				total = dutyRank;
@@ -1652,7 +1668,7 @@ void CurrentData::setExpLogItem(int type, const QDateTime& when, const QString& 
 				total = Character::instance->getAttribute(MORALITY);
 				break;
 			case EXP_OBLIGATION:
-				total = Character::instance->obligations.findItem(key).size;
+				total = CurrentData::instance->obligations.findItem(key).size;
 				break;
 		}
 
@@ -1719,11 +1735,11 @@ QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDa
 		}
 
 		if (shop_item.type == "GEAR")
-			list = &Character::instance->gear;
+			list = &CurrentData::instance->gear;
 		else if (shop_item.type == "ARMOR")
-			list = &Character::instance->armor;
+			list = &CurrentData::instance->armor;
 		else
-			list = &Character::instance->weapons;
+			list = &CurrentData::instance->weapons;
 
 		Item item;
 		item.clear();
@@ -1813,19 +1829,19 @@ void CurrentData::inventoryChanged(const QString& uuid, const QString& itemkey, 
 		return;
 
 	if (signal) {
-		if (Character::instance->weapons.containsByUuid(uuid)) {
+		if (CurrentData::instance->weapons.containsByUuid(uuid)) {
 			//Weapons::instance.startChanges();
 			// "quantity" is taken dynamically from inventory!
 			// Just signal change!
 			Weapons::instance.rowCountChanged();
 		}
-		else if (Character::instance->armor.containsByUuid(uuid)) {
+		else if (CurrentData::instance->armor.containsByUuid(uuid)) {
 			//Armor::instance.startChanges();
 			// "quantity" is taken dynamically from inventory!
 			// Just signal change!
 			Armor::instance.rowCountChanged();
 		}
-		else if (Character::instance->gear.containsByUuid(uuid)) {
+		else if (CurrentData::instance->gear.containsByUuid(uuid)) {
 			//Gear::instance.startChanges();
 			// "quantity" is taken dynamically from inventory!
 			// Just signal change!

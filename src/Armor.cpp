@@ -45,7 +45,7 @@ Armor::Armor(QStringList columns) :
 
 int Armor::rowCount()
 {
-	return Character::instance->armor.rowCount();
+	return CurrentData::instance->armor.rowCount();
 }
 
 QVariant Armor::getValue(int row, int col)
@@ -54,10 +54,10 @@ QVariant Armor::getValue(int row, int col)
 
 	if (row < 0)
 		return QVariant();
-	if (row >= Character::instance->armor.rowCount())
+	if (row >= CurrentData::instance->armor.rowCount())
 		return QVariant();
 
-	item = Character::instance->armor.itemAt(row);
+	item = CurrentData::instance->armor.itemAt(row);
 	switch (col) {
 		case 0: // uuid
 			return item.uuid;

@@ -19,8 +19,11 @@ int Character::iLoading;
 QString CharSkill::getDicePool(Skill* skill, QString ch)
 {
 	Character* character;
+	CurrentData* current_data;
 
 	if (!(character = Character::instance))
+		return "";
+	if (!(current_data = CurrentData::instance))
 		return "";
 
 	if (!skill) {
@@ -29,7 +32,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 			return "EE";
 		ch = skill->characteristic;
 		if (strcmp(skill->key, "LTSABER") == 0)
-			ch = character->talents.getLightSaberChar();
+			ch = current_data->talents.getLightSaberChar();
 	}
 
 	QString pool;
@@ -49,7 +52,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 		pool = DatUtil::repeat("S", character->defenseMelee());
 		if (CurrentData::instance->isCommitted("SENSECONTROL1")) {
 			optionalDowngradeCount++;
-			if (character->talents.contains("SENSESTRENGTH"))
+			if (current_data->talents.contains("SENSESTRENGTH"))
 				optionalDowngradeCount++;
 		}
 		threatCount = CurrentData::instance->isCommitted("MISDIRCONTROL3");
@@ -59,7 +62,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 		pool = DatUtil::repeat("S", character->defenseRanged());
 		if (CurrentData::instance->isCommitted("SENSECONTROL1")) {
 			optionalDowngradeCount++;
-			if (character->talents.contains("SENSESTRENGTH"))
+			if (current_data->talents.contains("SENSESTRENGTH"))
 				optionalDowngradeCount++;
 		}
 		threatCount = CurrentData::instance->isCommitted("MISDIRCONTROL3");
@@ -73,17 +76,17 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 	}
 
 	if (strcmp(skill->key, "REC") == 0) {
-		if (character->talents.contains("BAL"))
+		if (current_data->talents.contains("BAL"))
 			addForceDice++;
 	}
 	else if (strcmp(skill->key, "ICOOL") == 0 || strcmp(skill->key, "IVIG") == 0) {
-		if (character->talents.contains("FORSEECONTROL1") > 0)
+		if (current_data->talents.contains("FORSEECONTROL1") > 0)
 			addForceDice++;
-		else if (character->talents.contains("WARFORCONTROL1") > 0)
+		else if (current_data->talents.contains("WARFORCONTROL1") > 0)
 			addForceDice++;
 	}
 
-	foreach (CharTalent char_talent, character->talents.charTalentMap) {
+	foreach (CharTalent char_talent, current_data->talents.charTalentMap) {
 		Talent talent = AllTalents::instance()->getTalent(char_talent.key);
 
 		foreach (DieMod mod, talent.dieModList.modMap) {
@@ -113,8 +116,8 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 			optionalDowngradeCount += char_talent.ranks;
 	}
 
-	for (int i = 0; i<character->armor.rowCount(); i++) {
-		Item item = character->armor.itemAt(i);
+	for (int i = 0; i<current_data->armor.rowCount(); i++) {
+		Item item = current_data->armor.itemAt(i);
 		if (item.equipped()) {
 			if (item.dieModList.contains(key)) {
 				DieMod mod = item.dieModList.get(key);
@@ -133,7 +136,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 	}
 
 	if (key == "CHARM" || key == "COERC") {
-		if (character->gear.equipped("EXPJEWELRY"))
+		if (current_data->gear.equipped("EXPJEWELRY"))
 			pool += "a";
 	}
 
@@ -206,10 +209,8 @@ Character::Character(QObject *parent) :
 
 void Character::clear()
 {
-	iChMod.clear();
 	iChDelta.clear();
 
-	iCredits = 0;
 	iLastInvLine.clear();
 	iEncValue = 0;
 	iEncThreshold = 0;
@@ -217,7 +218,6 @@ void Character::clear()
 	iCumbThreshold = 0;
 	iEncText.clear();
 
-	iAttributes.clear();
 	iActiveSkill.clear();
 	iActiveSkillKey.clear();
 	iDicePool.clear();
@@ -239,18 +239,6 @@ void Character::clear()
 	iModItemPierce = 0;
 	iModItemCrit = 0;
 	iModItemRange = 0;
-
-	talents.clear();
-	speciesTalents.clear();
-	skills.clear();
-	obligations.items.clear();
-	duties.items.clear();
-	specialFeatures.clear();
-	motivations.clear();
-	moralities.clear();
-	weapons.clear();
-	armor.clear();
-	gear.clear();
 
 	CurrentData::instance->clear();
 }
@@ -877,9 +865,9 @@ void Character::checkItem(int ref)
 
 void Character::changeEquipment(const QString& uuid, int state, int stored)
 {
-	bool weapons_changed = weapons.changeEquipment(uuid, state, stored);
-	bool armor_changed = armor.changeEquipment(uuid, state, stored);
-	bool gear_changed = gear.changeEquipment(uuid, state, stored);
+	bool weapons_changed = CurrentData::instance->weapons.changeEquipment(uuid, state, stored);
+	bool armor_changed = CurrentData::instance->armor.changeEquipment(uuid, state, stored);
+	bool gear_changed = CurrentData::instance->gear.changeEquipment(uuid, state, stored);
 
 	if (weapons_changed)
 		Weapons::instance.setDataChanged();
@@ -1109,8 +1097,8 @@ void Character::setPortrait(const QString& portrait)
 
 void Character::setCredits(int c)
 {
-	if (iCredits != c) {
-		iCredits = c;
+	if (CurrentData::instance->credits != c) {
+		CurrentData::instance->credits = c;
 		emit creditsChanged(c);
 	}
 }
@@ -1165,19 +1153,21 @@ void Character::setEncText(const QString& t)
 
 void Character::setAttribute(QString ch, int val)
 {
-	if (!iAttributes.contains(ch) || iAttributes[ch] != val) {
+	QMap<QString, int>& attr = CurrentData::instance->attributes;
+
+	if (!attr.contains(ch) || attr[ch] != val) {
 		int before_mor = 50;
 
-		if (iAttributes.contains(MORALITY))
-			before_mor = iAttributes[MORALITY];
+		if (attr.contains(MORALITY))
+			before_mor = attr[MORALITY];
 
-		if ((ch == STRAIN || ch == WOUND) && iAttributes.contains(FORCE) && iAttributes[FORCE] > 0) {
+		if ((ch == STRAIN || ch == WOUND) && attr.contains(FORCE) && attr[FORCE] > 0) {
 			includeMorality(before_mor);
-			iAttributes[ch] = val;
+			attr[ch] = val;
 			excludeMorality(before_mor);
 		}
 		else
-			iAttributes[ch] = val;
+			attr[ch] = val;
 
 		if (ch == BRAWN)
 			emit brawnChanged(val);
@@ -1202,7 +1192,7 @@ void Character::setAttribute(QString ch, int val)
 		else if (ch == DMELEE)
 			emit defenseMeleeChanged(val);
 		else if (ch == FORCE) {
-			if (iAttributes[FORCE] > 0)
+			if (attr[FORCE] > 0)
 				excludeMorality(before_mor);
 			else
 				includeMorality(before_mor);
@@ -1215,7 +1205,7 @@ void Character::setAttribute(QString ch, int val)
 		else if (ch == USEDXP)
 			emit usedXPChanged(val);
 		else if (ch == MORALITY) {
-			if (iAttributes.contains(FORCE) && iAttributes[FORCE] > 0) {
+			if (attr.contains(FORCE) && attr[FORCE] > 0) {
 				includeMorality(before_mor);
 				excludeMorality(val);
 			}
@@ -1251,8 +1241,8 @@ void Character::setDicePool(const QString& t)
 	if (pool == "?") {
 		CharSkill char_skill;
 
-		if (skills.contains(iActiveSkillKey))
-			char_skill = skills[iActiveSkillKey];
+		if (CurrentData::instance->skills.contains(iActiveSkillKey))
+			char_skill = CurrentData::instance->skills[iActiveSkillKey];
 		else
 			char_skill.key = iActiveSkillKey;
 		pool = char_skill.getDicePool();
@@ -1385,13 +1375,13 @@ void Character::setImageProviderCount(int t)
 	}
 }
 
-int Character::setChMod(const CharMods& mods)
+int Character::setAttributeMods(const CharMods& mods)
 {
-	int changed = iChMod.set(mods);
+	int changed = CurrentData::instance->attributeMods.set(mods);
 	if (changed & BR_BIT)
 		emit brawnChanged(brawn());
 	if (changed & AG_BIT)
-		emit agilityChanged(agility() );
+		emit agilityChanged(agility());
 	if (changed & INT_BIT)
 		emit intellectChanged(intellect());
 	if (changed & CUN_BIT)
@@ -1408,25 +1398,6 @@ int Character::setChMod(const CharMods& mods)
 		emit defenseMeleeChanged(defenseMelee());
 	return changed;
 }
-
-/*
-void Character::setChDelta(const CharMods& mods)
-{
-	int changed = iChDelta.set(mods);
-	if (changed & BR_BIT)
-		emit brawnDeltaChanged(mods.get(V_BR));
-	if (changed & AG_BIT)
-		emit agilityDeltaChanged(mods.get(AG_BIT));
-	if (changed & INT_BIT)
-		emit intellectDeltaChanged(mods.get(INT_BIT));
-	if (changed & CUN_BIT)
-		emit cunningDeltaChanged(mods.get(CUN_BIT));
-	if (changed & WIL_BIT)
-		emit willpowerDeltaChanged(mods.get(WIL_BIT));
-	if (changed & PR_BIT)
-		emit presenceDeltaChanged(mods.get(PR_BIT));
-}
-*/
 
 void Character::setChangeDicePool(const QString& dice)
 {
@@ -1527,20 +1498,21 @@ void Character::inventoryChanged()
 	CharMods mods;
 	int burly = 0;
 	int val;
+	CurrentData* current_data = CurrentData::instance;
 
-	if (talents.contains("BURLY")) {
-		CharTalent& ch_talent = talents.get("BURLY");
+	if (current_data->talents.contains("BURLY")) {
+		CharTalent& ch_talent = current_data->talents.get("BURLY");
 		Talent talent = AllTalents::instance()->getTalent("BURLY");
 
 		burly = ch_talent.ranks * talent.burly;
 	}
 
-	if (gear.equipped(ShopGear::grenBandKey))
+	if (current_data->gear.equipped(ShopGear::grenBandKey))
 		grenade_bandolier = true;
 
 	mods.clear();
-	for (int i = 0; i < weapons.rowCount(); i++) {
-		Item item = weapons.itemAt(i);
+	for (int i = 0; i < current_data->weapons.rowCount(); i++) {
+		Item item = current_data->weapons.itemAt(i);
 		quantity = item.carriedQuantity();
 		if (quantity > 0) {
 			val = item.encCarriedVal(burly);
@@ -1567,8 +1539,8 @@ void Character::inventoryChanged()
 	}
 
 	maxArmorSoak = 0;
-	for (int i = 0; i < armor.rowCount(); i++) {
-		Item item = armor.itemAt(i);
+	for (int i = 0; i < current_data->armor.rowCount(); i++) {
+		Item item = current_data->armor.itemAt(i);
 		quantity = item.carriedQuantity();
 		if (quantity > 0) {
 			cumb += item.cumbersome(burly) * quantity;
@@ -1597,8 +1569,8 @@ void Character::inventoryChanged()
 		}
 	}
 
-	for (int i = 0; i < gear.rowCount(); i++) {
-		Item item = gear.itemAt(i);
+	for (int i = 0; i < current_data->gear.rowCount(); i++) {
+		Item item = current_data->gear.itemAt(i);
 		quantity = item.carriedQuantity();
 		if (quantity > 0) {
 			val = item.encCarriedVal(0);
@@ -1634,7 +1606,7 @@ void Character::inventoryChanged()
 	setCumbValue(cumb);
 
 	// Add armor talents:
-	foreach (CharTalent char_talent, talents.charTalentMap) {
+	foreach (CharTalent char_talent, current_data->talents.charTalentMap) {
 		Talent talent = AllTalents::instance()->getTalent(char_talent.key);
 
 		if (talent.soakValue > 0) {
@@ -1647,7 +1619,7 @@ void Character::inventoryChanged()
 	}
 
 	// Add defenses (which may depend on armor!
-	foreach (CharTalent char_talent, talents.charTalentMap) {
+	foreach (CharTalent char_talent, current_data->talents.charTalentMap) {
 		Talent talent = AllTalents::instance()->getTalent(char_talent.key);
 
 		if ((!talent.requirementWearingArmor || wearingArmor) &&
@@ -1659,7 +1631,7 @@ void Character::inventoryChanged()
 		}
 	}
 
-	setChMod(mods);
+	setAttributeMods(mods);
 	characteristicsChanged();
 
 	thr += brawn() + brawnDelta();
@@ -1777,9 +1749,11 @@ void Character::emitForceCommittedChanged()
 
 int Character::getAttribute(const QString& val)
 {
-	if (!iAttributes.contains(val))
+	QMap<QString, int>& attr = CurrentData::instance->attributes;
+
+	if (!attr.contains(val))
 		return 0;
-	int att = iAttributes[val] + iChMod.get(val);
+	int att = attr[val] + CurrentData::instance->attributeMods.get(val);
 	if (val == BRAWN) {
 		if (CurrentData::instance->isCommitted("ENHANCECONT8") && att < 6)
 			att++;
@@ -1805,38 +1779,42 @@ int Character::nonCommitedForce()
 // Use ths function to remove the morilty adjustment
 void Character::excludeMorality(int mor)
 {
-	if (iAttributes.contains(WOUND) && iAttributes.contains(STRAIN)) {
+	QMap<QString, int>& attr = CurrentData::instance->attributes;
+
+	if (attr.contains(WOUND) && attr.contains(STRAIN)) {
 		if (mor < 10) {
-			iAttributes[WOUND] -= 2;
-			iAttributes[STRAIN] += 2;
+			attr[WOUND] -= 2;
+			attr[STRAIN] += 2;
 		}
 		else if (mor < 20) {
-			iAttributes[WOUND] -= 1;
-			iAttributes[STRAIN] += 1;
+			attr[WOUND] -= 1;
+			attr[STRAIN] += 1;
 		}
 		else if (mor > 90)
-			iAttributes[STRAIN] -= 2;
+			attr[STRAIN] -= 2;
 		else if (mor > 80)
-			iAttributes[STRAIN] -= 1;
+			attr[STRAIN] -= 1;
 	}
 }
 
 // Use ths function to add the morality adjustment
 void Character::includeMorality(int mor)
 {
-	if (iAttributes.contains(WOUND) && iAttributes.contains(STRAIN)) {
+	QMap<QString, int>& attr = CurrentData::instance->attributes;
+
+	if (attr.contains(WOUND) && attr.contains(STRAIN)) {
 		if (mor < 10) {
-			iAttributes[WOUND] += 2;
-			iAttributes[STRAIN] -= 2;
+			attr[WOUND] += 2;
+			attr[STRAIN] -= 2;
 		}
 		else if (mor < 20) {
-			iAttributes[WOUND] += 1;
-			iAttributes[STRAIN] -= 1;
+			attr[WOUND] += 1;
+			attr[STRAIN] -= 1;
 		}
 		else if (mor > 90)
-			iAttributes[STRAIN] += 2;
+			attr[STRAIN] += 2;
 		else if (mor > 80)
-			iAttributes[STRAIN] += 1;
+			attr[STRAIN] += 1;
 	}
 }
 

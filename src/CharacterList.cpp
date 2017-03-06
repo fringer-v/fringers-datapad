@@ -119,7 +119,7 @@ ObligationList::ObligationList() :
 
 int ObligationList::rowCount()
 {
-	return Character::instance->obligations.items.count();
+	return CurrentData::instance->obligations.items.count();
 }
 
 QVariant ObligationList::getValue(int row, int col)
@@ -128,10 +128,10 @@ QVariant ObligationList::getValue(int row, int col)
 
 	if (row < 0)
 		return QVariant();
-	if (row >= Character::instance->obligations.items.count())
+	if (row >= CurrentData::instance->obligations.items.count())
 		return QVariant();
 
-	item = Character::instance->obligations.items[row];
+	item = CurrentData::instance->obligations.items[row];
 
 	switch (col) {
 		case 0:
@@ -152,7 +152,7 @@ int ObligationList::total()
 {
 	int total = 0;
 
-	foreach (CharItem item, Character::instance->obligations.items) {
+	foreach (CharItem item, CurrentData::instance->obligations.items) {
 		if (CurrentData::instance->experienceTotal.contains(item.key))
 			total += CurrentData::instance->experienceTotal[item.key].value;
 		else
@@ -172,7 +172,7 @@ DutyList::DutyList() :
 
 int DutyList::rowCount()
 {
-	return Character::instance->duties.items.count();
+	return CurrentData::instance->duties.items.count();
 }
 
 QVariant DutyList::getValue(int row, int col)
@@ -181,10 +181,10 @@ QVariant DutyList::getValue(int row, int col)
 
 	if (row < 0)
 		return QVariant();
-	if (row >= Character::instance->duties.items.count())
+	if (row >= CurrentData::instance->duties.items.count())
 		return QVariant();
 
-	item = Character::instance->duties.items[row];
+	item = CurrentData::instance->duties.items[row];
 	switch (col) {
 		case 0:
 			return item.key;
@@ -204,7 +204,7 @@ int DutyList::total()
 {
 	int total = 0;
 
-	foreach (CharItem item, Character::instance->duties.items) {
+	foreach (CharItem item, CurrentData::instance->duties.items) {
 		if (CurrentData::instance->experienceTotal.contains(item.key))
 			total += CurrentData::instance->experienceTotal[item.key].value;
 		else
@@ -224,7 +224,7 @@ SpecialFeaturesList::SpecialFeaturesList() :
 
 int SpecialFeaturesList::rowCount()
 {
-	return Character::instance->specialFeatures.count();
+	return CurrentData::instance->specialFeatures.count();
 }
 
 QVariant SpecialFeaturesList::getValue(int row, int col)
@@ -233,10 +233,10 @@ QVariant SpecialFeaturesList::getValue(int row, int col)
 
 	if (row < 0)
 		return QVariant();
-	if (row >= Character::instance->specialFeatures.count())
+	if (row >= CurrentData::instance->specialFeatures.count())
 		return QVariant();
 
-	item = Character::instance->specialFeatures[row];
+	item = CurrentData::instance->specialFeatures[row];
 	switch (col) {
 		case 0:
 			return item.title;
@@ -311,7 +311,7 @@ MotivationList::MotivationList() :
 
 int MotivationList::rowCount()
 {
-	return Character::instance->motivations.count();
+	return CurrentData::instance->motivations.count();
 }
 
 QVariant MotivationList::getValue(int row, int col)
@@ -320,10 +320,10 @@ QVariant MotivationList::getValue(int row, int col)
 
 	if (row < 0)
 		return QVariant();
-	if (row >= Character::instance->motivations.count())
+	if (row >= CurrentData::instance->motivations.count())
 		return QVariant();
 
-	item = Character::instance->motivations[row];
+	item = CurrentData::instance->motivations[row];
 	switch (col) {
 		case 0:
 			return item.name1;
@@ -346,7 +346,7 @@ MoralityList::MoralityList() :
 
 int MoralityList::rowCount()
 {
-	return Character::instance->moralities.count();
+	return CurrentData::instance->moralities.count();
 }
 
 QVariant MoralityList::getValue(int row, int col)
@@ -355,10 +355,10 @@ QVariant MoralityList::getValue(int row, int col)
 
 	if (row < 0)
 		return QVariant();
-	if (row >= Character::instance->moralities.count())
+	if (row >= CurrentData::instance->moralities.count())
 		return QVariant();
 
-	item = Character::instance->moralities[row];
+	item = CurrentData::instance->moralities[row];
 	switch (col) {
 		case 0:
 			return item.name1;

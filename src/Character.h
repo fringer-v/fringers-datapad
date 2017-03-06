@@ -17,73 +17,6 @@
 
 class Character;
 
-class CharSkill {
-public:
-	QString key;
-	int		ranks;
-	bool	isCareer;
-
-	CharSkill() {
-		clear("");
-	}
-
-	void clear(QString k) {
-		key = k;
-		ranks = 0;
-		isCareer = false;
-	}
-
-	QString getDicePool(Skill* skill = NULL, QString ch = QString());
-};
-
-class CharItem {
-public:
-	QString key;
-	QString name;
-	int		size;
-	QString notes;
-
-	void clear() {
-		key.clear();
-		name.clear();
-		size = 0;
-		notes.clear();
-	}
-};
-
-class CharItemList {
-public:
-	QList<CharItem> items;
-
-	CharItem findItem(const QString& key);
-};
-
-class SpecialFeatureItem {
-public:
-	QString title;
-	QString subtitle;
-	QString content;
-
-	void clear() {
-		title.clear();
-		subtitle.clear();
-		content.clear();
-	}
-};
-
-class MotMorItem {
-public:
-	QString name1;
-	QString name2;
-	QString notes;
-
-	void clear() {
-		name1.clear();
-		name2.clear();
-		notes.clear();
-	}
-};
-
 //#define DEFAULT_HOST	"localhost:8080/starwars"
 #define DEFAULT_HOST	"fringer.space/"
 
@@ -276,7 +209,7 @@ public:
 	QString career() { return CurrentData::instance->career; }
 	QString specializations() { return CurrentData::instance->specializations; }
 	QString portrait() { return CurrentData::instance->portrait; }
-	int credits() { return iCredits; }
+	int credits() { return CurrentData::instance->credits; }
 	QString lastInvLine() { return iLastInvLine; }
 	int encValue() { return iEncValue; }
 	int encThreshold() { return iEncThreshold; }
@@ -523,7 +456,7 @@ signals:
 	void alert(const QString& title, const QString& message);
 
 public:
-	int setChMod(const CharMods& mods);
+	int setAttributeMods(const CharMods& mods);
 	//void setChDelta(const CharMods& mods);
 	void setChangeDicePool(const QString& t);
 	void inventoryChanged();
@@ -560,14 +493,11 @@ private:
 	QString iDataSet;
 
 	// Current Data:
-	CharMods iChMod;
 	CharMods iChDelta;
 
 	// Fixed (Exported) Data:
 	QString iFile;
 
-
-	int		iCredits;
 	QString	iLastInvLine;
 	int		iEncValue;
 	int		iEncThreshold;
@@ -575,7 +505,6 @@ private:
 	int		iCumbThreshold;
 	QString iEncText;
 	int		iMorality;
-	QMap<QString, int> iAttributes;
 	QString iActiveSkill;
 	QString iActiveSkillKey;
 	QString iDicePool;
@@ -605,18 +534,6 @@ private:
 	Syncer iSyncer;
 
 public:
-	int originalCredits;
-	CharTalentMap talents;
-	QList<SpeciesTalent> speciesTalents;
-	QMap<QString, CharSkill> skills;
-	CharItemList obligations;
-	CharItemList duties;
-	QList<SpecialFeatureItem> specialFeatures;
-	QList<MotMorItem> motivations;
-	QList<MotMorItem> moralities;
-	ItemList weapons;
-	ItemList armor;
-	ItemList gear;
 };
 
 #endif // __Character_h__

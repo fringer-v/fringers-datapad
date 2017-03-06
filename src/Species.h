@@ -33,7 +33,7 @@
 
 class AllTalents;
 
-class Species : public QObject, public DatXMLReader {
+class SpeciesXML : public QObject, public DatXMLReader {
 	Q_OBJECT
 
 public:
