@@ -209,20 +209,6 @@ void Character::clear()
 	iChMod.clear();
 	iChDelta.clear();
 
-	iName.clear();
-	iPlayer.clear();
-	iGender.clear();
-	iAge.clear();
-	iHeight.clear();
-	iBuild.clear();
-	iHair.clear();
-	iEyes.clear();
-	iFeatures.clear();
-	iStory.clear();
-	iSpecies.clear();
-	iCareer.clear();
-	iSpecializations.clear();
-	iPortrait.clear();
 	iCredits = 0;
 	iLastInvLine.clear();
 	iEncValue = 0;
@@ -1004,96 +990,96 @@ void Character::setFile(const QString& file)
 
 void Character::setName(const QString& name)
 {
-	if (iName != name) {
-		iName = name;
+	if (CurrentData::instance->name != name) {
+		CurrentData::instance->name = name;
 		emit nameChanged(name);
 	}
 }
 
 void Character::setPlayer(const QString& player)
 {
-	if (iPlayer != player) {
-		iPlayer = player;
+	if (CurrentData::instance->player != player) {
+		CurrentData::instance->player = player;
 		emit playerChanged(player);
 	}
 }
 
 void Character::setGender(const QString& gender)
 {
-	if (iGender != gender) {
-		iGender = gender;
+	if (CurrentData::instance->gender != gender) {
+		CurrentData::instance->gender = gender;
 		emit genderChanged(gender);
 	}
 }
 
 void Character::setAge(const QString& age)
 {
-	if (iAge != age) {
-		iAge = age;
+	if (CurrentData::instance->age != age) {
+		CurrentData::instance->age = age;
 		emit ageChanged(age);
 	}
 }
 
 void Character::setHeight(const QString& height)
 {
-	if (iHeight != height) {
-		iHeight = height;
+	if (CurrentData::instance->height != height) {
+		CurrentData::instance->height = height;
 		emit heightChanged(height);
 	}
 }
 
 void Character::setBuild(const QString& build)
 {
-	if (iBuild != build) {
-		iBuild = build;
+	if (CurrentData::instance->build != build) {
+		CurrentData::instance->build = build;
 		emit buildChanged(build);
 	}
 }
 
 void Character::setHair(const QString& hair)
 {
-	if (iHair != hair) {
-		iHair = hair;
+	if (CurrentData::instance->hair != hair) {
+		CurrentData::instance->hair = hair;
 		emit hairChanged(hair);
 	}
 }
 
 void Character::setEyes(const QString& eyes)
 {
-	if (iEyes != eyes) {
-		iEyes = eyes;
+	if (CurrentData::instance->eyes != eyes) {
+		CurrentData::instance->eyes = eyes;
 		emit eyesChanged(eyes);
 	}
 }
 
 void Character::setFeatures(const QString& features)
 {
-	if (iFeatures != features) {
-		iFeatures = features;
+	if (CurrentData::instance->features != features) {
+		CurrentData::instance->features = features;
 		emit featuresChanged(features);
 	}
 }
 
 void Character::setStory(const QString& value)
 {
-	if (iStory != value) {
-		iStory = value;
+	if (CurrentData::instance->story != value) {
+		CurrentData::instance->story = value;
 		emit storyChanged(value);
 	}
 }
 
 void Character::setSpecies(const QString& species)
 {
-	if (iSpecies != species) {
-		iSpecies = species;
+	if (CurrentData::instance->species != species) {
+		CurrentData::instance->species = species;
 		emit speciesChanged(species);
 	}
 }
 
 void Character::setCareer(const QString& career)
 {
-	if (iCareer != career) {
-		iCareer = career;
+	if (CurrentData::instance->career != career) {
+		CurrentData::instance->career = career;
 		emit careerChanged(career);
 	}
 }
@@ -1107,16 +1093,16 @@ void Character::setSpecializations(const QString& specializations)
 		spec = spec.replace(", Force Sensitive Exile", "");
 		spec = spec.replace("Force Sensitive Exile", "");
 	}
-	if (iSpecializations != spec) {
-		iSpecializations = spec;
+	if (CurrentData::instance->specializations != spec) {
+		CurrentData::instance->specializations = spec;
 		emit specializationsChanged(spec);
 	}
 }
 
 void Character::setPortrait(const QString& portrait)
 {
-	if (iPortrait != portrait) {
-		iPortrait = portrait;
+	if (CurrentData::instance->portrait != portrait) {
+		CurrentData::instance->portrait = portrait;
 		emit portraitChanged(portrait);
 	}
 }
@@ -1743,7 +1729,7 @@ void Character::characteristicsChanged()
 
 void Character::loadCurrentData()
 {
-	CurrentData::instance->loadCurrentData(iName);
+	CurrentData::instance->loadCurrentData();
 	emit currentWoundsChanged(CurrentData::instance->wounds);
 	emit woundHistoryChanged(CurrentData::instance->woundHistory);
 	emit currentStrainChanged(CurrentData::instance->strain+CurrentData::instance->temporaryStrain);
@@ -1862,8 +1848,8 @@ void Character::reload()
 
 	clear();
 
-	emit featuresChanged(iFeatures);
-	emit storyChanged(iStory);
+	emit featuresChanged(CurrentData::instance->features);
+	emit storyChanged(CurrentData::instance->story);
 
 	emit brawnChanged(brawn());
 	emit agilityChanged(agility());

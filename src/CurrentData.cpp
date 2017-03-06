@@ -208,6 +208,21 @@ void CheckListData::plusCustom(int ref, const QString& pool, const QString& desc
 
 void CurrentData::clear()
 {
+	name.clear();
+	player.clear();
+	gender.clear();
+	age.clear();
+	height.clear();
+	build.clear();
+	hair.clear();
+	eyes.clear();
+	features.clear();
+	story.clear();
+	species.clear();
+	career.clear();
+	specializations.clear();
+	portrait.clear();
+
 	wounds = 0;
 	strain = 0;
 	temporaryStrain = 0;
@@ -258,10 +273,8 @@ QString CurrentData::getFile()
 	return iFileName;
 }
 
-void CurrentData::loadCurrentData(const QString& name)
+void CurrentData::loadCurrentData()
 {
-	clear();
-
 	injuries.clear();
 	for (int i=0; i<4; i++)
 		appendEmptyWound();

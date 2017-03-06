@@ -320,6 +320,23 @@ public:
 		clear();
 	}
 
+	// CHARACTER DATA
+	QString name;
+	QString player;
+	QString gender;
+	QString age;
+	QString height;
+	QString build;
+	QString hair;
+	QString eyes;
+	QString features;
+	QString story;
+	QString species;
+	QString career;
+	QString specializations;
+	QString portrait;
+
+	// CURRENT DATA
 	int wounds;
 	int strain;
 	int temporaryStrain;
@@ -344,7 +361,7 @@ public:
 
 	void clear();
 	QString getFile();
-	void loadCurrentData(const QString& name);
+	void loadCurrentData();
 	virtual bool xmlElement(const DatStringBuffer& path, const char* value);
 
 	void adjustWounds(int delta);

@@ -262,20 +262,20 @@ public:
 	int presenceDelta() { return iChDelta.get(V_PR); }
 
 	QString file() { return iFile; }
-	QString name() { return iName; }
-	QString player() { return iPlayer; }
-	QString gender() { return iGender; }
-	QString age() { return iAge; }
-	QString height() { return iHeight; }
-	QString build() { return iBuild; }
-	QString hair() { return iHair; }
-	QString eyes() { return iEyes; }
-	QString features() { return iFeatures; }
-	QString story() { return iStory; }
-	QString species() { return iSpecies; }
-	QString career() { return iCareer; }
-	QString specializations() { return iSpecializations; }
-	QString portrait() { return iPortrait; }
+	QString name() { return CurrentData::instance->name; }
+	QString player() { return CurrentData::instance->player; }
+	QString gender() { return CurrentData::instance->gender; }
+	QString age() { return CurrentData::instance->age; }
+	QString height() { return CurrentData::instance->height; }
+	QString build() { return CurrentData::instance->build; }
+	QString hair() { return CurrentData::instance->hair; }
+	QString eyes() { return CurrentData::instance->eyes; }
+	QString features() { return CurrentData::instance->features; }
+	QString story() { return CurrentData::instance->story; }
+	QString species() { return CurrentData::instance->species; }
+	QString career() { return CurrentData::instance->career; }
+	QString specializations() { return CurrentData::instance->specializations; }
+	QString portrait() { return CurrentData::instance->portrait; }
 	int credits() { return iCredits; }
 	QString lastInvLine() { return iLastInvLine; }
 	int encValue() { return iEncValue; }
@@ -565,20 +565,8 @@ private:
 
 	// Fixed (Exported) Data:
 	QString iFile;
-	QString iName;
-	QString iPlayer;
-	QString iGender;
-	QString iAge;
-	QString iHeight;
-	QString iBuild;
-	QString iHair;
-	QString iEyes;
-	QString iFeatures;
-	QString iStory;
-	QString iSpecies;
-	QString iCareer;
-	QString iSpecializations;
-	QString iPortrait;
+
+
 	int		iCredits;
 	QString	iLastInvLine;
 	int		iEncValue;
