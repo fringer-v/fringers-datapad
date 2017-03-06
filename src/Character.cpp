@@ -209,7 +209,6 @@ Character::Character(QObject *parent) :
 
 void Character::clear()
 {
-	iLastInvLine.clear();
 	iEncValue = 0;
 	iEncThreshold = 0;
 	iCumbValue = 0;
@@ -1101,14 +1100,6 @@ void Character::setCredits(int c)
 	}
 }
 
-void Character::setLastInvLine(const QString& v)
-{
-	if (iLastInvLine != v) {
-		iLastInvLine = v;
-		emit lastInvLineChanged(v);
-	}
-}
-
 void Character::setEncValue(int c)
 {
 	if (iEncValue != c) {
@@ -1892,7 +1883,6 @@ void Character::reload()
 		emit careerChanged(career());
 		emit specializationsChanged(specializations());
 		emit portraitChanged(portrait());
-		emit lastInvLineChanged(lastInvLine());
 		emit encTextChanged(encText());
 		emit moralityChanged(morality());
 

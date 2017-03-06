@@ -125,7 +125,6 @@ public:
 	Q_PROPERTY(QString specializations READ specializations WRITE setSpecializations NOTIFY specializationsChanged)
 	Q_PROPERTY(QString portrait READ portrait WRITE setPortrait NOTIFY portraitChanged)
 	Q_PROPERTY(int credits READ credits WRITE setCredits NOTIFY creditsChanged)
-	Q_PROPERTY(QString lastInvLine READ lastInvLine WRITE setLastInvLine NOTIFY lastInvLineChanged)
 	Q_PROPERTY(int encValue READ encValue WRITE setEncValue NOTIFY encValueChanged)
 	Q_PROPERTY(int encThreshold READ encThreshold WRITE setEncThreshold NOTIFY encThresholdChanged)
 	Q_PROPERTY(int cumbValue READ cumbValue WRITE setCumbValue NOTIFY cumbValueChanged)
@@ -196,7 +195,6 @@ public:
 	QString specializations() { return CurrentData::instance->specializations; }
 	QString portrait() { return CurrentData::instance->portrait; }
 	int credits() { return CurrentData::instance->credits; }
-	QString lastInvLine() { return iLastInvLine; }
 	int encValue() { return iEncValue; }
 	int encThreshold() { return iEncThreshold; }
 	int cumbValue() { return iCumbValue; }
@@ -334,7 +332,6 @@ public:
 	Q_INVOKABLE void setSpecializations(const QString& value);
 	Q_INVOKABLE void setPortrait(const QString& value);
 	Q_INVOKABLE void setCredits(int c);
-	Q_INVOKABLE void setLastInvLine(const QString& v);
 	Q_INVOKABLE void setEncValue(int c);
 	Q_INVOKABLE void setEncThreshold(int c);
 	Q_INVOKABLE void setCumbValue(int c);
@@ -389,7 +386,6 @@ signals:
 	void specializationsChanged(const QString& value);
 	void portraitChanged(const QString& value);
 	void creditsChanged(int c);
-	void lastInvLineChanged(const QString& v);
 	void encValueChanged(int value);
 	void encThresholdChanged(int value);
 	void cumbValueChanged(int value);
@@ -474,7 +470,6 @@ private:
 	// Fixed (Exported) Data:
 	QString iFile;
 
-	QString	iLastInvLine;
 	int		iEncValue;
 	int		iEncThreshold;
 	int		iCumbValue;

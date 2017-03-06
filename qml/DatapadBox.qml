@@ -6,9 +6,6 @@ TitleBox {
 	id: acquiredXp
 	boxTitle: "INVENTORY"
 	boxTitleWidth: 120
-	//boxText: characterData.lastInvLine + "Click here to view the inventory...";
-	//textIndent: 28
-	//boxText: "Click here to view the inventory...";
 
 	Image {
 		// parent.width - 60
