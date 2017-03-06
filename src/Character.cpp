@@ -209,8 +209,6 @@ Character::Character(QObject *parent) :
 
 void Character::clear()
 {
-	iChDelta.clear();
-
 	iLastInvLine.clear();
 	iEncValue = 0;
 	iEncThreshold = 0;
@@ -1634,7 +1632,7 @@ void Character::inventoryChanged()
 	setAttributeMods(mods);
 	characteristicsChanged();
 
-	thr += brawn() + brawnDelta();
+	thr += brawn();
 	setEncThreshold(thr);
 
 	QString enc_string;
@@ -1656,12 +1654,12 @@ void Character::inventoryChanged()
 		for (int i=0; i<amount; i++)
 			enc_string += "[SE]";
 		enc_string += " to all Brawn and Agility checks.";
-		if (amount > brawn() + brawnDelta())
+		if (amount > brawn())
 			enc_string += "[BR]You also loose your free maneuver.";
 	}
 
-	if (cumb > brawn() + brawnDelta()) {
-		int amount = cumb - (brawn() + brawnDelta());
+	if (cumb > brawn()) {
+		int amount = cumb - brawn();
 
 		enc_string += "[BR] Your weapon is too cumbersome, add ";
 		for (int i=0; i<amount; i++)
@@ -1670,7 +1668,7 @@ void Character::inventoryChanged()
 	}
 	setEncText(enc_string);
 
-	setCumbThreshold(brawn() + brawnDelta());
+	setCumbThreshold(brawn());
 }
 
 void Character::experienceChanged()
@@ -1881,13 +1879,6 @@ void Character::reload()
 		emit erpsChanged(erps());
 		emit stimPacksUsedChanged(stimPacksUsed());
 		emit erpsUsedChanged(erpsUsed());
-
-		emit brawnDeltaChanged(brawnDelta());
-		emit agilityDeltaChanged(agilityDelta());
-		emit intellectDeltaChanged(intellectDelta());
-		emit cunningDeltaChanged(cunningDelta());
-		emit willpowerDeltaChanged(willpowerDelta());
-		emit presenceDeltaChanged(presenceDelta());
 
 		emit nameChanged(name());
 		emit playerChanged(player());

@@ -109,13 +109,6 @@ public:
 	Q_PROPERTY(int stimPacksUsed READ stimPacksUsed NOTIFY stimPacksUsedChanged)
 	Q_PROPERTY(int erpsUsed READ erpsUsed NOTIFY erpsUsedChanged)
 
-	Q_PROPERTY(int brawnDelta READ brawnDelta NOTIFY brawnDeltaChanged)
-	Q_PROPERTY(int agilityDelta READ agilityDelta NOTIFY agilityDeltaChanged)
-	Q_PROPERTY(int intellectDelta READ intellectDelta NOTIFY intellectDeltaChanged)
-	Q_PROPERTY(int cunningDelta READ cunningDelta NOTIFY cunningDeltaChanged)
-	Q_PROPERTY(int willpowerDelta READ willpowerDelta NOTIFY willpowerDeltaChanged)
-	Q_PROPERTY(int presenceDelta READ presenceDelta NOTIFY presenceDeltaChanged)
-
 	Q_PROPERTY(QString file READ file WRITE setFile NOTIFY fileChanged)
 	Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
 	Q_PROPERTY(QString player READ player WRITE setPlayer NOTIFY playerChanged)
@@ -186,13 +179,6 @@ public:
 	QString erps() { return CurrentData::instance->erps(); }
 	int stimPacksUsed() { return CurrentData::instance->stimPacksUsed; }
 	int erpsUsed() { return CurrentData::instance->erpsUsed; }
-
-	int brawnDelta() { return iChDelta.get(V_BR); }
-	int agilityDelta() { return iChDelta.get(V_AG); }
-	int intellectDelta() { return iChDelta.get(V_INT); }
-	int cunningDelta() { return iChDelta.get(V_CUN); }
-	int willpowerDelta() { return iChDelta.get(V_WIL); }
-	int presenceDelta() { return iChDelta.get(V_PR); }
 
 	QString file() { return iFile; }
 	QString name() { return CurrentData::instance->name; }
@@ -387,13 +373,6 @@ signals:
 	void stimPacksUsedChanged(int val);
 	void erpsUsedChanged(int val);
 
-	void brawnDeltaChanged(int val);
-	void agilityDeltaChanged(int val);
-	void intellectDeltaChanged(int val);
-	void cunningDeltaChanged(int val);
-	void willpowerDeltaChanged(int val);
-	void presenceDeltaChanged(int val);
-
 	void fileChanged(const QString& file);
 	void nameChanged(const QString& name);
 	void playerChanged(const QString& player);
@@ -491,9 +470,6 @@ private:
 	static int iLoading;
 	QString iLastSystemDataUpdate;
 	QString iDataSet;
-
-	// Current Data:
-	CharMods iChDelta;
 
 	// Fixed (Exported) Data:
 	QString iFile;

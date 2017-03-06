@@ -37,7 +37,7 @@ Rectangle {
 					id: charBrawn
 					charName: "BRAWN"
 					charShortName: "Br"
-					charValue: characterData.brawn + characterData.brawnDelta
+					charValue: characterData.brawn
 					onClicked: {
 						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
@@ -55,7 +55,7 @@ Rectangle {
 				Characteristic {
 					charName: "AGILITY"
 					charShortName: "Ag"
-					charValue: characterData.agility + characterData.agilityDelta
+					charValue: characterData.agility
 					onClicked: {
 						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
@@ -73,7 +73,7 @@ Rectangle {
 				Characteristic {
 					charName: "INTELLECT"
 					charShortName: "Int"
-					charValue: characterData.intellect + characterData.intellectDelta
+					charValue: characterData.intellect
 					onClicked: {
 						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
@@ -91,7 +91,7 @@ Rectangle {
 				Characteristic {
 					charName: "CUNNING"
 					charShortName: "Cun"
-					charValue: characterData.cunning + characterData.cunningDelta
+					charValue: characterData.cunning
 					onClicked: {
 						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
@@ -109,7 +109,7 @@ Rectangle {
 				Characteristic {
 					charName: "WILLPOWER"
 					charShortName: "Wil"
-					charValue: characterData.willpower + characterData.willpowerDelta
+					charValue: characterData.willpower
 					onClicked: {
 						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
@@ -127,7 +127,7 @@ Rectangle {
 				Characteristic {
 					charName: "PRESENCE"
 					charShortName: "Pr"
-					charValue: characterData.presence + characterData.presenceDelta
+					charValue: characterData.presence
 					onClicked: {
 						checklist.checkListType = "skill"
 						characterData.itemUuid = "";
