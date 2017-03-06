@@ -390,7 +390,15 @@ public:
 	}
 
 	// DYNAMIC DATA:
-	CharMods attributeMods;		// Changes to attributes because of inventory
+	// Changes to attributes because of inventory
+	CharMods attributeMods;
+
+	// Current encumbrance and cumbersome values, change because of inventory changes
+	int		encumbranceValue;
+	int		encumbranceThreshold;
+	int		cumbersomeValue;
+	int		cumbersomeThreshold;
+	QString encumbranceText;
 
 	// CHARACTER XML DATA
 	QString name;

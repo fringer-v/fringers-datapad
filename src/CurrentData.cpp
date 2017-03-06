@@ -210,6 +210,12 @@ void CurrentData::clear()
 {
 	attributeMods.clear();
 
+	encumbranceValue = 0;
+	encumbranceThreshold = 0;
+	cumbersomeValue = 0;
+	cumbersomeThreshold = 0;
+	encumbranceText.clear();
+
 	name.clear();
 	player.clear();
 	gender.clear();

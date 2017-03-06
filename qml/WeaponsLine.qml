@@ -304,6 +304,7 @@ Rectangle {
 	function useWeapon()
 	{
 		checklist.checkListType = "weapon"
+
 		characterData.itemUuid = uuid;
 		characterData.itemItemKey = itemkey;
 		characterData.itemName = weapon;
@@ -319,6 +320,7 @@ Rectangle {
 		characterData.itemPierce = pierce;
 		characterData.activeSkill = skill;
 		characterData.dicePool = dicePool;
+
 		characterData.showCheckList();
 		controller.state = "checkout";
 	}

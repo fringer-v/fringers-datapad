@@ -195,11 +195,11 @@ public:
 	QString specializations() { return CurrentData::instance->specializations; }
 	QString portrait() { return CurrentData::instance->portrait; }
 	int credits() { return CurrentData::instance->credits; }
-	int encValue() { return iEncValue; }
-	int encThreshold() { return iEncThreshold; }
-	int cumbValue() { return iCumbValue; }
-	int cumbThreshold() { return iCumbThreshold; }
-	QString encText() { return iEncText; }
+	int encValue() { return CurrentData::instance->encumbranceValue; }
+	int encThreshold() { return CurrentData::instance->encumbranceThreshold; }
+	int cumbValue() { return CurrentData::instance->cumbersomeValue; }
+	int cumbThreshold() { return CurrentData::instance->cumbersomeThreshold; }
+	QString encText() { return CurrentData::instance->encumbranceText; }
 	int morality() {
 		if (CurrentData::instance->experienceTotal.contains(EXP_TOT_MORALITY))
 			return CurrentData::instance->experienceTotal[EXP_TOT_MORALITY].value;
@@ -470,12 +470,7 @@ private:
 	// Fixed (Exported) Data:
 	QString iFile;
 
-	int		iEncValue;
-	int		iEncThreshold;
-	int		iCumbValue;
-	int		iCumbThreshold;
-	QString iEncText;
-	int		iMorality;
+	// Attributes used to run the Check List dialog:
 	QString iActiveSkill;
 	QString iActiveSkillKey;
 	QString iDicePool;
@@ -490,14 +485,17 @@ private:
 	QString iItemAttachments;
 	int iItemCritPlus;
 	int iItemPierce;
-	int iImageProviderCount;
+
+	// Changes to the Check List dice pool, and other checklist items:
 	QString iChangeDicePool;
 	QString iModDicePool;
 	int iModItemDamage;
 	int iModItemPierce;
 	int iModItemCrit;
 	int iModItemRange;
-	//CurrentData iCurrentData;
+
+	// A mod number used to indicate that the image database has changed
+	int iImageProviderCount;
 
 	Downloader iCharacterDownloader;
 	Downloader iDataSetDownloader;

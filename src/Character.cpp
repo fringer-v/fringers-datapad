@@ -209,12 +209,6 @@ Character::Character(QObject *parent) :
 
 void Character::clear()
 {
-	iEncValue = 0;
-	iEncThreshold = 0;
-	iCumbValue = 0;
-	iCumbThreshold = 0;
-	iEncText.clear();
-
 	iActiveSkill.clear();
 	iActiveSkillKey.clear();
 	iDicePool.clear();
@@ -228,14 +222,16 @@ void Character::clear()
 	iItemAttachments.clear();
 	iItemCritPlus = 0;
 	iItemPierce = 0;
-	if (!signal)
-		iImageProviderCount = 0;
+
 	iChangeDicePool.clear();
 	iModDicePool.clear();
 	iModItemDamage = 0;
 	iModItemPierce = 0;
 	iModItemCrit = 0;
 	iModItemRange = 0;
+
+	if (!signal)
+		iImageProviderCount = 0;
 
 	CurrentData::instance->clear();
 }
@@ -1102,40 +1098,40 @@ void Character::setCredits(int c)
 
 void Character::setEncValue(int c)
 {
-	if (iEncValue != c) {
-		iEncValue = c;
+	if (CurrentData::instance->encumbranceValue != c) {
+		CurrentData::instance->encumbranceValue = c;
 		emit encValueChanged(c);
 	}
 }
 
 void Character::setEncThreshold(int c)
 {
-	if (iEncThreshold != c) {
-		iEncThreshold = c;
+	if (CurrentData::instance->encumbranceThreshold != c) {
+		CurrentData::instance->encumbranceThreshold = c;
 		emit encThresholdChanged(c);
 	}
 }
 
 void Character::setCumbValue(int c)
 {
-	if (iCumbValue != c) {
-		iCumbValue = c;
+	if (CurrentData::instance->cumbersomeValue != c) {
+		CurrentData::instance->cumbersomeValue = c;
 		emit cumbValueChanged(c);
 	}
 }
 
 void Character::setCumbThreshold(int c)
 {
-	if (iCumbThreshold != c) {
-		iCumbThreshold = c;
+	if (CurrentData::instance->cumbersomeThreshold != c) {
+		CurrentData::instance->cumbersomeThreshold = c;
 		emit cumbThresholdChanged(c);
 	}
 }
 
 void Character::setEncText(const QString& t)
 {
-	if (iEncText != t) {
-		iEncText = t;
+	if (CurrentData::instance->encumbranceText != t) {
+		CurrentData::instance->encumbranceText = t;
 		emit encTextChanged(t);
 	}
 }
