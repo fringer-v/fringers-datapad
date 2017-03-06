@@ -202,6 +202,9 @@ Rectangle {
 
 	Component.onCompleted: {
 		characterData.portraitChanged.connect(characterPortraitChanged);
+		// Like the pictures in the character list, this does not want to
+		// update correctly!
+		characterData.imageProviderCountChanged.connect(characterPortraitChanged);
 	}
 
 	function characterPortraitChanged() {
