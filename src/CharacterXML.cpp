@@ -76,7 +76,7 @@ void CharacterXML::end()
 	Character::instance->setSpecies(iSpecies->getName());				// species
 
 	// Current Data!
-	Character::instance->loadCurrentData();
+	CurrentData::instance->loadCurrentData();
 
 	if (!CurrentData::instance->weapons.containsByUuid("UNARMED")) {
 		Item una;

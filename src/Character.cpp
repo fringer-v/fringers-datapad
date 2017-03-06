@@ -50,27 +50,27 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 	if (strcmp(skill->key, "DEFM") == 0) {
 		defm = true;
 		pool = DatUtil::repeat("S", character->defenseMelee());
-		if (CurrentData::instance->isCommitted("SENSECONTROL1")) {
+		if (current_data->isCommitted("SENSECONTROL1")) {
 			optionalDowngradeCount++;
 			if (current_data->talents.contains("SENSESTRENGTH"))
 				optionalDowngradeCount++;
 		}
-		threatCount = CurrentData::instance->isCommitted("MISDIRCONTROL3");
+		threatCount = current_data->isCommitted("MISDIRCONTROL3");
 	}
 	else if (strcmp(skill->key, "DEFR") == 0) {
 		defr = true;
 		pool = DatUtil::repeat("S", character->defenseRanged());
-		if (CurrentData::instance->isCommitted("SENSECONTROL1")) {
+		if (current_data->isCommitted("SENSECONTROL1")) {
 			optionalDowngradeCount++;
 			if (current_data->talents.contains("SENSESTRENGTH"))
 				optionalDowngradeCount++;
 		}
-		threatCount = CurrentData::instance->isCommitted("MISDIRCONTROL3");
+		threatCount = current_data->isCommitted("MISDIRCONTROL3");
 	}
 	else {
 		pool = DatUtil::getBasicDicePool(ranks, character->getAttribute(skill ? ch : 0));
 		if (skill->type == COMBAT) {
-			if (CurrentData::instance->isCommitted("SENSECONTROL3"))
+			if (current_data->isCommitted("SENSECONTROL3"))
 				pool += "UU";
 		}
 	}
@@ -147,7 +147,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 	if (defr || defm) {
 		int r, m;
 
-		CurrentData::instance->negetiveDefence(r, m);
+		current_data->negetiveDefence(r, m);
 		r = NEG_PURPLE_COUNT(r);
 		m = NEG_PURPLE_COUNT(m);
 		if (defr)
@@ -163,7 +163,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 		// can be added to the pool
 		opt += DatUtil::repeat("B", optionalBoost);
 		if (addForceDice > 0)
-			opt += DatUtil::repeat("F", character->nonCommitedForce());
+			opt += DatUtil::repeat("F", current_data->nonCommitedForce());
 		opt += DatUtil::repeat("N", optionalRemoveSetback);
 		opt += DatUtil::repeat("d", optionalUpgradeCount);
 		opt += DatUtil::repeat("u", optionalDowngradeCount);
@@ -1360,6 +1360,24 @@ void Character::setImageProviderCount(int t)
 	}
 }
 
+int Character::getAttribute(const QString& val)
+{
+	QMap<QString, int>& attr = CurrentData::instance->attributes;
+
+	if (!attr.contains(val))
+		return 0;
+	int att = attr[val] + CurrentData::instance->attributeMods.get(val);
+	if (val == BRAWN) {
+		if (CurrentData::instance->isCommitted("ENHANCECONT8") && att < 6)
+			att++;
+	}
+	else if (val == AGILITY) {
+		if (CurrentData::instance->isCommitted("ENHANCECONT9") && att < 6)
+			att++;
+	}
+	return att;
+}
+
 int Character::setAttributeMods(const CharMods& mods)
 {
 	int changed = CurrentData::instance->attributeMods.set(mods);
@@ -1668,38 +1686,11 @@ void Character::experienceChanged()
 
 void Character::characteristicsChanged()
 {
-	/*
-	for (int i=0; i<DataList::weapons.rowCount(); i++) {
-		Item item = weapons[DataList::weapons.getValueAsString(i, "key")];
-		if (!item.key.isEmpty()) {
-			DataList::weapons.setValue(i, "damage", item.damageTotal());
-			DataList::weapons.setValue(i, "dicePool", item.dicePool());
-		}
-	}
-	*/
 	Weapons::instance.setDataChanged();
 	GeneralSkills::instance.setDataChanged();
 	CombatSkills::instance.setDataChanged();
 	KnowledgeSkills::instance.setDataChanged();
 	SpecialSkills::instance.setDataChanged();
-}
-
-void Character::loadCurrentData()
-{
-	CurrentData::instance->loadCurrentData();
-	emit currentWoundsChanged(CurrentData::instance->wounds);
-	emit woundHistoryChanged(CurrentData::instance->woundHistory);
-	emit currentStrainChanged(CurrentData::instance->strain+CurrentData::instance->temporaryStrain);
-	emit strainHistoryChanged(CurrentData::instance->strainHistory);
-	emit currentConflictChanged(CurrentData::instance->conflict);
-	emit conflictHistoryChanged(CurrentData::instance->conflictHistory);
-	emit woundDeltaChanged(CurrentData::instance->woundDelta);
-	emit strainDeltaChanged(CurrentData::instance->strainDelta);
-}
-
-QString Character::getCurrentDataFile()
-{
-	return CurrentData::instance->getFile();
 }
 
 void Character::emitStimPacksChanged()
@@ -1732,33 +1723,9 @@ void Character::emitForceCommittedChanged()
 	emit forceCommittedChanged(forceCommitted());
 }
 
-int Character::getAttribute(const QString& val)
+void Character::emitCurrentStrainChanged()
 {
-	QMap<QString, int>& attr = CurrentData::instance->attributes;
-
-	if (!attr.contains(val))
-		return 0;
-	int att = attr[val] + CurrentData::instance->attributeMods.get(val);
-	if (val == BRAWN) {
-		if (CurrentData::instance->isCommitted("ENHANCECONT8") && att < 6)
-			att++;
-	}
-	else if (val == AGILITY) {
-		if (CurrentData::instance->isCommitted("ENHANCECONT9") && att < 6)
-			att++;
-	}
-	return att;
-}
-
-void Character::setTemporaryStrain(int value)
-{
-	CurrentData::instance->temporaryStrain = value;
-	emit currentStrainChanged(CurrentData::instance->strain+CurrentData::instance->temporaryStrain);
-}
-
-int Character::nonCommitedForce()
-{
-	return force() - CurrentData::instance->CurrentData::instance->commitCount();
+	emit currentStrainChanged(currentStrain());
 }
 
 // Use ths function to remove the morilty adjustment
@@ -1853,15 +1820,17 @@ void Character::reload()
 
 	//loader->parse(data);
 	loader->readFromBuffer(data.constData(), data.length());
+
+	emit currentWoundsChanged(currentWounds());
+	emit currentStrainChanged(currentStrain());
+	emit currentConflictChanged(currentConflict());
+	emit woundHistoryChanged(woundHistory());
+	emit strainHistoryChanged(strainHistory());
+	emit conflictHistoryChanged(conflictHistory());
+	emit woundDeltaChanged(woundDelta());
+	emit strainDeltaChanged(strainDelta());
+
 	if (data.isEmpty()) {
-		emit currentWoundsChanged(currentWounds());
-		emit currentStrainChanged(currentStrain());
-		emit currentConflictChanged(currentConflict());
-		emit woundHistoryChanged(woundHistory());
-		emit strainHistoryChanged(strainHistory());
-		emit conflictHistoryChanged(conflictHistory());
-		emit woundDeltaChanged(woundDelta());
-		emit strainDeltaChanged(strainDelta());
 		emit stimPacksChanged(stimPacks());
 		emit erpsChanged(erps());
 		emit stimPacksUsedChanged(stimPacksUsed());

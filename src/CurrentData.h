@@ -381,7 +381,9 @@ public:
 	}
 };
 
-class CurrentData : public DatXMLReader {
+class CurrentData {
+	friend class CurrentDataXML;
+
 public:
 	static CurrentData* instance;
 
@@ -394,10 +396,10 @@ public:
 	CharMods attributeMods;
 
 	// Current encumbrance and cumbersome values, change because of inventory changes
-	int		encumbranceValue;
-	int		encumbranceThreshold;
-	int		cumbersomeValue;
-	int		cumbersomeThreshold;
+	int encumbranceValue;
+	int encumbranceThreshold;
+	int cumbersomeValue;
+	int cumbersomeThreshold;
 	QString encumbranceText;
 
 	// CHARACTER XML DATA
@@ -412,8 +414,8 @@ public:
 	QString features;
 	QString story;
 	QString portrait;
-	int		credits;
-	int		originalCredits;
+	int credits;
+	int originalCredits;
 	QString career;
 	QString specializations;
 	QMap<QString, int> attributes;
@@ -454,9 +456,9 @@ public:
 	QList<InjuryItem> injuries;
 
 	void clear();
-	QString getFile();
 	void loadCurrentData();
-	virtual bool xmlElement(const DatStringBuffer& path, const char* value);
+
+	QString getFile();
 
 	void adjustWounds(int delta);
 	void adjustStrain(int delta);
@@ -508,6 +510,8 @@ public:
 	void addCriticalWound(int perc, int type);
 	void removeCriticalWound(int ref);
 
+	int nonCommitedForce();
+
 private:
 	void setCriticalWound(int perc, int type);
 	void appendEmptyWound();
@@ -525,16 +529,30 @@ private:
 	void writeCurrentData();
 	void changeWounds(int delta);
 	void changeStrain(int delta);
+	void setTemporaryStrain(int value);
 
 	QString		iFileName;
 
-	int			iNextInjuryID;
+	int			iNegativeCheck;
+	int			iNegMelee;
+	int			iNegRanged;
+
+	// Counter used to generate unique IDs and references:
+	int			iReferenceCounter;
+};
+
+class CurrentDataXML : public DatXMLReader {
+public:
+	CurrentDataXML(CurrentData* current_data);
+
+	virtual bool xmlElement(const DatStringBuffer& path, const char* value);
+
+private:
+	CurrentData*iCurrentData;
 	int			iInjuryPercent;
 
-	int			iExpNextRef;
 	ExpLogItem	iExpItem;
 
-	int			iNextItem;
 	int			iItemCount;
 	QString		iItemUuid;
 	QDateTime	iItemCreate;
@@ -548,7 +566,6 @@ private:
 	int			iStoreItemAmount;
 	int			iStoreItemState; // UNDEFINED, NOT_CARRIED, IS_HELD, IS_EQUIPPED
 
-	int			iNextCheckItem;
 	QString		iItemPool;
 	QString		iItemSkill;
 
@@ -556,9 +573,6 @@ private:
 	QString		iSkillChar;
 	int			iSkillRank;
 
-	int			iNegativeCheck;
-	int			iNegMelee;
-	int			iNegRanged;
 };
 
 class CustomSkills : public AbstractDataList {

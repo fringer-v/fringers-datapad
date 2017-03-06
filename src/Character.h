@@ -431,23 +431,19 @@ signals:
 	void alert(const QString& title, const QString& message);
 
 public:
+	int getAttribute(const QString& val);
 	int setAttributeMods(const CharMods& mods);
-	//void setChDelta(const CharMods& mods);
 	void setChangeDicePool(const QString& t);
 	void inventoryChanged();
 	void experienceChanged();
 	void characteristicsChanged();
-	void loadCurrentData();
-	QString getCurrentDataFile();
 	void emitStimPacksChanged();
 	void emitErpsChanged();
 	void emitCharacterCountChanged();
 	void emitBrawnChanged();
 	void emitAgilityChanged();
 	void emitForceCommittedChanged();
-	int getAttribute(const QString& val);
-	void setTemporaryStrain(int value);
-	int nonCommitedForce();
+	void emitCurrentStrainChanged();
 
 private:
 	void excludeMorality(int mor);
