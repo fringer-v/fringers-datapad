@@ -61,7 +61,7 @@ void ListModel::setRowCountChanged()
 	iRowCountChanged = true;
 }
 
-void ListModel::setClean()
+void ListModel::makeClean()
 {
 	if (iDataChanged) {
 		iDataChanged = false;

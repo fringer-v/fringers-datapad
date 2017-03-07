@@ -20,7 +20,7 @@ public:
 
 	void setDataChanged();
 	void setRowCountChanged();
-	void setClean();
+	void makeClean();
 
 	virtual int rowCount(const QModelIndex & parent = QModelIndex()) const;
 	virtual QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;

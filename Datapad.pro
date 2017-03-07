@@ -76,7 +76,8 @@ SOURCES += \
     src/DatXmlReader.cc \
     src/pxml.cc \
     src/DataSet.cpp \
-    src/CharacterList.cpp
+    src/CharacterList.cpp \
+    src/CharCache.cpp
 
 RESOURCES += qml.qrc javascript.qrc data.qrc images.qrc
 
@@ -125,4 +126,5 @@ HEADERS += \
     src/DatXmlReader.h \
     src/pxml.h \
     src/DataSet.h \
-    src/CharacterList.h
+    src/CharacterList.h \
+    src/CharCache.h

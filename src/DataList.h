@@ -21,7 +21,7 @@ public:
 	void rowCountChanged();
 	void setDataChanged();
 	void setRowCountChanged();
-	void setClean();
+	void makeClean();
 	int colCount();
 	QString getColName(int col);
 	QString getValueAsString(int row, const char* col);

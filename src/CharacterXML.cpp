@@ -40,71 +40,44 @@
 
 // CharacterXML -------------------------
 
-CharacterXML::CharacterXML()
+CharacterXML::CharacterXML(CurrentData* current_data)
 {
+	iCurrentData = current_data;
 	iSpecies = new SpeciesXML;
+	iSpeciesKey.clear();
+	iSubSpeciesKey.clear();
+	iChoices.clear();
+	iNPC = false;
 }
 
 void CharacterXML::start()
 {
-	// These tags may be missing
-	iSpeciesKey.clear();
-	iSubSpeciesKey.clear();
-	iChoices.clear();
-
-	iNPC = false;
-
-	SpecialFeaturesList::instance.rowCountChanged();
-	ObligationList::instance.rowCountChanged();
-	DutyList::instance.rowCountChanged();
-	Talents::instance.rowCountChanged();
-	Weapons::instance.rowCountChanged();
-	Armor::instance.rowCountChanged();
-	Gear::instance.rowCountChanged();
-	InjuryList::instance.rowCountChanged();
-	ExperienceList::instance.rowCountChanged();
-	MotivationList::instance.rowCountChanged();
-	MoralityList::instance.rowCountChanged();
-	InventoryLog::instance.rowCountChanged();
 }
 
 void CharacterXML::end()
 {
-	Character::instance->setSpecializations(iSpecializations);
+	if (iSpecializations.contains("Force Sensitive Exile") && iSpecializations.contains("Force Sensitive Emergent")) {
+		iSpecializations = iSpecializations.replace("Force Sensitive Emergent", "Force Sensitive Emergent/Exile");
+		iSpecializations = iSpecializations.replace(", Force Sensitive Exile", "");
+		iSpecializations = iSpecializations.replace("Force Sensitive Exile", "");
+	}
+
+	iCurrentData->specializations = iSpecializations;
 
 	iSpecies->loadSpecies(iSpeciesKey, iSubSpeciesKey, &iChoices);		// speciesTalents, specialFeatures
-	Character::instance->setSpecies(iSpecies->getName());				// species
+	CurrentData::instance->species = iSpecies->getName();				// species
 
-	// Current Data!
-	CurrentData::instance->loadCurrentData();
+	// Load Current Data:
+	iCurrentData->loadCurrentData();
 
-	if (!CurrentData::instance->weapons.containsByUuid("UNARMED")) {
+	// Add unarmed:
+	if (!iCurrentData->weapons.containsByUuid("UNARMED")) {
 		Item una;
 		una.clear();
 		una.itemkey = "UNARMED";
 		una.originalQuantity = 1;
-		CurrentData::instance->weapons.aquireItem(una, true);
+		iCurrentData->weapons.aquireItem(una, true);
 	}
-
-	GeneralSkills::instance.setDataChanged();
-	CombatSkills::instance.setDataChanged();
-	KnowledgeSkills::instance.setDataChanged();
-	SpecialSkills::instance.setDataChanged();
-	CustomSkills::instance.setDataChanged();
-	SpecialFeaturesList::instance.setRowCountChanged();
-	ObligationList::instance.setRowCountChanged();
-	DutyList::instance.setRowCountChanged();
-	Talents::instance.setRowCountChanged();
-	Weapons::instance.setRowCountChanged();
-	Armor::instance.setRowCountChanged();
-	Gear::instance.setRowCountChanged();
-	InjuryList::instance.setRowCountChanged();
-	ExperienceList::instance.setRowCountChanged();
-	MotivationList::instance.setRowCountChanged();
-	MoralityList::instance.setRowCountChanged();
-	InventoryLog::instance.setRowCountChanged();
-	Character::instance->emitStimPacksChanged();
-	Character::instance->emitErpsChanged();
 }
 
 bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
@@ -120,42 +93,42 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		// Ignore vehicle info
 		;
 	else if (path.endsWith("/Description/CharName/"))
-		Character::instance->setName(value);
+		iCurrentData->name = value;
 	else if (path.endsWith("/Adversary/Name/")) {
-		Character::instance->setName(value);				// name
+		iCurrentData->name = value;							// name
 		iNPC = true;
 	}
 	else if (path.endsWith("/Description/PlayerName/"))
-		Character::instance->setPlayer(value);				// player
+		iCurrentData->player = value;							// player
 	else if (path.endsWith("/Description/Gender/"))
-		Character::instance->setGender(value);				// gender
+		iCurrentData->gender = value;				// gender
 	else if (path.endsWith("/Description/Age/"))
-		Character::instance->setAge(value);					// age
+		iCurrentData->age = value;					// age
 	else if (path.endsWith("/Description/Height/"))
-		Character::instance->setHeight(value);				// height
+		iCurrentData->height = value;				// height
 	else if (path.endsWith("/Description/Build/"))
-		Character::instance->setBuild(value);				// build
+		iCurrentData->build = value;				// build
 	else if (path.endsWith("/Description/Hair/"))
-		Character::instance->setHair(value);				// hair
+		iCurrentData->hair = value;				// hair
 	else if (path.endsWith("/Description/Eyes/"))
-		Character::instance->setEyes(value);				// eyes
+		iCurrentData->eyes = value;				// eyes
 	else if (path.endsWith("/Description/OtherFeatures/"))
-		Character::instance->setFeatures(value);			// features
+		iCurrentData->features = value;			// features
 	else if (path.endsWith("/Character/Story/"))
-		Character::instance->setStory(value);				// story
+		iCurrentData->story = value;				// story
 	else if (path.endsWith("/Portrait/")) {
 		//QByteArray data = QByteArray::fromBase64(value.toUtf8());
 		QByteArray data = QByteArray::fromBase64(value);
 		QString id = DatUtil::lastLeft(Character::instance->file(), ".");
 		ImageProvider::setImage(id, data);
-		Character::instance->setPortrait(id);				// portrait
+		iCurrentData->portrait = id;				// portrait
 	}
 	else if (path.endsWith("/Credits/")) {
-		Character::instance->setCredits(toInt(value));		// credits
-		CurrentData::instance->originalCredits = toInt(value);
+		iCurrentData->credits = toInt(value);		// credits
+		iCurrentData->originalCredits = toInt(value);
 	}
 	else if (path.endsWith("/Career/CareerKey/"))
-		Character::instance->setCareer(DataSet::instance.careers[value]);	// career
+		iCurrentData->career = DataSet::instance.careers[value];	// career
 	else if (path.endsWith("/CharSpecialization/Name/")) {
 		iSpecialization = value;
 		if (!iSpecializations.isEmpty())
@@ -195,7 +168,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		iAttrValue = 0;
 	}
 	else if (path.endsWith("/Experience/UsedExperience/"))
-		Character::instance->setAttribute(USEDXP, toInt(value));
+		iCurrentData->attributes[USEDXP] = toInt(value);
 	else if (path.endsWith("/CharCharacteristic/#end")||
 		path.endsWith("/Attributes/SoakValue/#end") ||
 		path.endsWith("/Attributes/WoundThreshold/#end") ||
@@ -204,7 +177,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		path.endsWith("/Attributes/DefenseMelee/#end") ||
 		path.endsWith("/Attributes/ForceRating/#end") ||
 		path.endsWith("/Experience/ExperienceRanks/#end")) {
-		Character::instance->setAttribute(iAttribute, iAttrValue); // attributes
+		iCurrentData->attributes[iAttribute] = iAttrValue; // attributes
 	}
 
 	// Skills -----------------------
@@ -217,7 +190,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	}
 	else if (path.endsWith("/CharSkill/#end")) {
 		iCharSkill.ranks = iAttrValue;
-		CurrentData::instance->skills[iCharSkill.key] = iCharSkill; // skills
+		iCurrentData->skills[iCharSkill.key] = iCharSkill; // skills
 	}
 
 	else if (path.endsWith("/StartingRanks/"))
@@ -263,7 +236,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/CharObligation/Notes/"))
 		iCharItem.notes = value;
 	else if (path.endsWith("/CharObligation/#end"))
-		CurrentData::instance->obligations.items.append(iCharItem);	// obligations
+		iCurrentData->obligations.items.append(iCharItem);	// obligations
 
 	// Duties -----------------------
 	else if (path.endsWith("/CharDuty/#open"))
@@ -277,7 +250,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/CharDuty/Notes/"))
 		iCharItem.notes = value;
 	else if (path.endsWith("/CharDuty/#end"))
-		CurrentData::instance->duties.items.append(iCharItem);		// duties
+		iCurrentData->duties.items.append(iCharItem);		// duties
 
 	// Motivations -----------------------
 	else if (path.endsWith("/CharMotivation/#open"))
@@ -289,7 +262,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/CharMotivation/SpecMotiveKey/"))
 		iMotItem.name2 = Motivations::instance.motivationList[value];
 	else if (path.endsWith("/CharMotivation/#end"))
-		CurrentData::instance->motivations.append(iMotItem);			// motivations
+		iCurrentData->motivations.append(iMotItem);			// motivations
 
 	// Morality Pairs -----------------------
 	else if (path.endsWith("/MoralityPair/#open"))
@@ -301,11 +274,11 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/MoralityPair/WeaknessKey/"))
 		iMorItem.name2 = Moralities::instance.moralityList[value];
 	else if (path.endsWith("/MoralityPair/#end"))
-		CurrentData::instance->moralities.append(iMorItem);			// moralities
+		iCurrentData->moralities.append(iMorItem);			// moralities
 
 	// Morality
 	else if (path.endsWith("/MoralityValue/"))
-		Character::instance->setAttribute(MORALITY, toInt(value));
+		iCurrentData->attributes[MORALITY] = toInt(value);
 
 	// Talents -----------------------
 	else if (path.endsWith("/CharTalent/Purchased/"))
@@ -320,7 +293,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		DatUtil::appendToList(iCharTalent.selectedCharacteristics, value);
 	else if (path.endsWith("/CharTalent/#end")) {
 		if (iPurchased)
-			CurrentData::instance->talents.addTalent(iCharTalent);
+			iCurrentData->talents.addTalent(iCharTalent);
 		iPurchased = false;
 	}
 
@@ -333,7 +306,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	}
 	else if (path.endsWith("/CharForceAbility/#end")) {
 		if (iPurchased)
-			CurrentData::instance->talents.addTalent(iCharTalent);	// talents
+			iCurrentData->talents.addTalent(iCharTalent);	// talents
 		iPurchased = false;
 	}
 
@@ -429,15 +402,15 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	}
 	else if (path.endsWith("/CharWeapon/#end")) {
 		if (!iItem.uuid.isEmpty())
-			CurrentData::instance->weapons.aquireItem(iItem, true);		// weapons
+			iCurrentData->weapons.aquireItem(iItem, true);		// weapons
 	}
 	else if (path.endsWith("/CharArmor/#end")) {
 		if (!iItem.uuid.isEmpty())
-			CurrentData::instance->armor.aquireItem(iItem, true);		// armor
+			iCurrentData->armor.aquireItem(iItem, true);		// armor
 	}
 	else if (path.endsWith("/CharGear/#end")) {
 		if (!iItem.uuid.isEmpty())
-			CurrentData::instance->gear.aquireItem(iItem, true);		// gear
+			iCurrentData->gear.aquireItem(iItem, true);		// gear
 	}
 
 	else if (path.endsWith("/AdvAbility/#open"))
@@ -460,7 +433,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 			iTalent.key = "KEY_"+iTalent.name.toUpper();
 			iCharTalent.key = iTalent.key;
 			AllTalents::instance()->addTalent(iTalent);
-			CurrentData::instance->talents.addTalent(iCharTalent);
+			iCurrentData->talents.addTalent(iCharTalent);
 		}
 	}
 
@@ -485,7 +458,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		iItem.itemkey = "KEY_"+iShopItem.name.toUpper();
 		iShopItem.key = iItem.itemkey;
 		Shop::instance.addItem(iShopItem);
-		CurrentData::instance->gear.aquireItem(iItem, true);
+		iCurrentData->gear.aquireItem(iItem, true);
 	}
 
 	return true;

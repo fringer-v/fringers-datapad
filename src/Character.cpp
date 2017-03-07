@@ -196,19 +196,6 @@ Character::Character(QObject *parent) :
 	iLocked = 0;
 	iHideCodedTalents = 0;
 
-	clear();
-
-	connect(&iCharacterDownloader, SIGNAL(downloaded(bool)), SLOT(characterDownloaded(bool)));
-	connect(&iDataSetDownloader, SIGNAL(downloaded(bool)), SLOT(dataSetDownloaded(bool)));
-	connect(&iSystemDataDownloader, SIGNAL(downloaded(bool)), SLOT(systemDataDownloaded(bool)));
-
-	setLastSystemDataUpdate(DataAccess::getSystemDataLastUpdate());
-
-	Character::instance = this;
-}
-
-void Character::clear()
-{
 	iActiveSkill.clear();
 	iActiveSkillKey.clear();
 	iDicePool.clear();
@@ -230,10 +217,15 @@ void Character::clear()
 	iModItemCrit = 0;
 	iModItemRange = 0;
 
-	if (!signal)
-		iImageProviderCount = 0;
+	iImageProviderCount = 0;
 
-	CurrentData::instance->clear();
+	connect(&iCharacterDownloader, SIGNAL(downloaded(bool)), SLOT(characterDownloaded(bool)));
+	connect(&iDataSetDownloader, SIGNAL(downloaded(bool)), SLOT(dataSetDownloaded(bool)));
+	connect(&iSystemDataDownloader, SIGNAL(downloaded(bool)), SLOT(systemDataDownloaded(bool)));
+
+	setLastSystemDataUpdate(DataAccess::getSystemDataLastUpdate());
+
+	Character::instance = this;
 }
 
 void Character::init(void)
@@ -246,115 +238,6 @@ void Character::init(void)
 	emit hideCodedTalentsChanged(iHideCodedTalents);
 	setDataSet(DataAccess::selectedDataSet());
 	setFile(DataAccess::selectedCharacter());
-}
-
-void Character::downloadCharacter(const QString& url)
-{
-	if (url.isEmpty())
-		return;
-	setLoading(true);
-	iCharacterDownloader.setUrl(url);
-}
-
-void Character::downloadDataSet(const QString& url)
-{
-	if (url.isEmpty())
-		return;
-	setLoading(true);
-	iDataSetDownloader.setUrl(url);
-}
-
-void Character::downloadSystemData(const QString& url)
-{
-	if (url.isEmpty())
-		return;
-	setLoading(true);
-	iSystemDataDownloader.setUrl(url);
-}
-
-void Character::syncWithServer()
-{
-	setLoading(true);
-	QString error = iSyncer.sync();
-	if (!error.isEmpty())
-		emit alert("Sync with Server Failed", error);
-
-	if (iSyncer.currentChanged()) {
-		iFile = "x";
-		setDataSet(DataAccess::selectedDataSet(iDataSet));
-		setFile(DataAccess::selectedCharacter());
-	}
-	else {
-		setDataSet(DataAccess::selectedDataSet(iDataSet));
-	}
-
-	setLoading(false);
-}
-
-QString Character::host()
-{
-	if (iHost.isEmpty())
-		return DEFAULT_HOST;
-	return iHost;
-}
-
-QString Character::email()
-{
-	return iEmail;
-}
-
-QString Character::currentEmail()
-{
-	return iCurrentEmail;
-}
-
-QString Character::password()
-{
-	return iPassword;
-}
-
-QString Character::currentPassword()
-{
-	return iCurrentPassword;
-}
-
-int Character::locked()
-{
-	return iLocked;
-}
-
-int Character::hideCodedTalents()
-{
-	return iHideCodedTalents;
-}
-
-bool Character::loading()
-{
-	return iLoading != 0;
-}
-
-bool Character::isIOS()
-{
-#if defined(Q_OS_IOS)
-	return true;
-#else
-	return false;
-#endif
-}
-
-QString Character::lastSystemDataUpdate()
-{
-	return iLastSystemDataUpdate;
-}
-
-QString Character::dataSet()
-{
-	return iDataSet;
-}
-
-int Character::characterCount()
-{
-	return DataAccess::characters.rowCount();
 }
 
 void Character::setCurrentEmailAndPassword(const QString& v, const QString& p)
@@ -436,6 +319,30 @@ void Character::setLastSystemDataUpdate(const QString& la)
 	}
 }
 
+void Character::setFile(const QString& file)
+{
+	if (iFile.isNull() || iFile != file) {
+		setLoading(true);
+		iFile = file;
+		if (iFile.isEmpty())
+			iFile = "";
+		if (!iDataSet.isNull()) {
+			if (!iFile.isEmpty() && iDataSet.isEmpty() && DataAccess::dataSets.rowCount() > 0) {
+				// Automatically select a data set:
+				QString data_set = DataAccess::dataSets.getValueAsString(0, "file") + "/" + DataAccess::dataSets.getValueAsString(0, "name");
+				setDataSet(data_set);
+				goto selected;
+			}
+			reload();
+		}
+
+		selected:
+		DataAccess::setSelectedCharacter(iFile);
+		setLoading(false);
+		emit fileChanged(iFile);
+	}
+}
+
 void Character::setDataSet(const QString& data_set)
 {
 	if (iDataSet.isNull() || iDataSet != data_set) {
@@ -484,6 +391,49 @@ void Character::setDataSet(const QString& data_set)
 		MoralityList::instance.setDataChanged();
 		emit dataSetChanged(iDataSet);
 	}
+}
+
+void Character::downloadCharacter(const QString& url)
+{
+	if (url.isEmpty())
+		return;
+	setLoading(true);
+	iCharacterDownloader.setUrl(url);
+}
+
+void Character::downloadDataSet(const QString& url)
+{
+	if (url.isEmpty())
+		return;
+	setLoading(true);
+	iDataSetDownloader.setUrl(url);
+}
+
+void Character::downloadSystemData(const QString& url)
+{
+	if (url.isEmpty())
+		return;
+	setLoading(true);
+	iSystemDataDownloader.setUrl(url);
+}
+
+void Character::syncWithServer()
+{
+	setLoading(true);
+	QString error = iSyncer.sync();
+	if (!error.isEmpty())
+		emit alert("Sync with Server Failed", error);
+
+	if (iSyncer.currentChanged()) {
+		iFile = "x";
+		setDataSet(DataAccess::selectedDataSet(iDataSet));
+		setFile(DataAccess::selectedCharacter());
+	}
+	else {
+		setDataSet(DataAccess::selectedDataSet(iDataSet));
+	}
+
+	setLoading(false);
 }
 
 void Character::characterDownloaded(bool ok)
@@ -872,57 +822,57 @@ void Character::changeEquipment(const QString& uuid, int state, int stored)
 	inventoryChanged();
 
 	if (weapons_changed || armor_changed) {
-		Weapons::instance.setClean();
-		Armor::instance.setClean();
+		Weapons::instance.makeClean();
+		Armor::instance.makeClean();
 	}
 
 	if (gear_changed)
-		Gear::instance.setClean();
+		Gear::instance.makeClean();
 }
 
 void Character::showCharacteristics()
 {
-	InjuryList::instance.setClean();
+	InjuryList::instance.makeClean();
 }
 
 void Character::showDescription()
 {
-	ObligationList::instance.setClean();
-	DutyList::instance.setClean();
-	MotivationList::instance.setClean();
-	MoralityList::instance.setClean();
+	ObligationList::instance.makeClean();
+	DutyList::instance.makeClean();
+	MotivationList::instance.makeClean();
+	MoralityList::instance.makeClean();
 }
 
 void Character::showSkills()
 {
-	GeneralSkills::instance.setClean();
-	CombatSkills::instance.setClean();
-	KnowledgeSkills::instance.setClean();
-	SpecialSkills::instance.setClean();
-	CustomSkills::instance.setClean();
+	GeneralSkills::instance.makeClean();
+	CombatSkills::instance.makeClean();
+	KnowledgeSkills::instance.makeClean();
+	SpecialSkills::instance.makeClean();
+	CustomSkills::instance.makeClean();
 }
 
 void Character::showTalents()
 {
-	ExperienceList::instance.setClean();
-	SpecialFeaturesList::instance.setClean();
-	Talents::instance.setClean();
+	ExperienceList::instance.makeClean();
+	SpecialFeaturesList::instance.makeClean();
+	Talents::instance.makeClean();
 }
 
 void Character::showWeaponsAndArmor()
 {
-	Weapons::instance.setClean();
-	Armor::instance.setClean();
+	Weapons::instance.makeClean();
+	Armor::instance.makeClean();
 }
 
 void Character::showGear()
 {
-	Gear::instance.setClean();
+	Gear::instance.makeClean();
 }
 
 void Character::showInventory()
 {
-	InventoryLog::instance.setClean();
+	InventoryLog::instance.makeClean();
 }
 
 void Character::showCheckList()
@@ -930,7 +880,7 @@ void Character::showCheckList()
 	iModDicePool.clear();
 	CurrentData::instance->clearAutoCheckItems(iActiveSkillKey);
 	CheckList::instance.setRowCountChanged();
-	CheckList::instance.setClean();
+	CheckList::instance.makeClean();
 }
 
 void Character::hideCheckList()
@@ -942,31 +892,7 @@ void Character::fillCheckList()
 {
 	CurrentData::instance->setupAutoCheckItems(iActiveSkillKey, iItemUuid);
 	CheckList::instance.setRowCountChanged();
-	CheckList::instance.setClean();
-}
-
-void Character::setFile(const QString& file)
-{
-	if (iFile.isNull() || iFile != file) {
-		setLoading(true);
-		iFile = file;
-		if (iFile.isEmpty())
-			iFile = "";
-		if (!iDataSet.isNull()) {
-			if (!iFile.isEmpty() && iDataSet.isEmpty() && DataAccess::dataSets.rowCount() > 0) {
-				// Automatically select a data set:
-				QString data_set = DataAccess::dataSets.getValueAsString(0, "file") + "/" + DataAccess::dataSets.getValueAsString(0, "name");
-				setDataSet(data_set);
-				goto selected;
-			}
-			reload();
-		}
-
-		selected:
-		DataAccess::setSelectedCharacter(iFile);
-		setLoading(false);
-		emit fileChanged(iFile);
-	}
+	CheckList::instance.makeClean();
 }
 
 void Character::setName(const QString& name)
@@ -1065,15 +991,8 @@ void Character::setCareer(const QString& career)
 	}
 }
 
-void Character::setSpecializations(const QString& specializations)
+void Character::setSpecializations(const QString& spec)
 {
-	QString spec = specializations;
-
-	if (spec.contains("Force Sensitive Exile") && spec.contains("Force Sensitive Emergent")) {
-		spec = spec.replace("Force Sensitive Emergent", "Force Sensitive Emergent/Exile");
-		spec = spec.replace(", Force Sensitive Exile", "");
-		spec = spec.replace("Force Sensitive Exile", "");
-	}
 	if (CurrentData::instance->specializations != spec) {
 		CurrentData::instance->specializations = spec;
 		emit specializationsChanged(spec);
@@ -1133,71 +1052,6 @@ void Character::setEncText(const QString& t)
 	if (CurrentData::instance->encumbranceText != t) {
 		CurrentData::instance->encumbranceText = t;
 		emit encTextChanged(t);
-	}
-}
-
-void Character::setAttribute(QString ch, int val)
-{
-	QMap<QString, int>& attr = CurrentData::instance->attributes;
-
-	if (!attr.contains(ch) || attr[ch] != val) {
-		int before_mor = 50;
-
-		if (attr.contains(MORALITY))
-			before_mor = attr[MORALITY];
-
-		if ((ch == STRAIN || ch == WOUND) && attr.contains(FORCE) && attr[FORCE] > 0) {
-			includeMorality(before_mor);
-			attr[ch] = val;
-			excludeMorality(before_mor);
-		}
-		else
-			attr[ch] = val;
-
-		if (ch == BRAWN)
-			emit brawnChanged(val);
-		else if (ch == AGILITY)
-			emit agilityChanged(val);
-		else if (ch == INTELLECT)
-			emit intellectChanged(val);
-		else if (ch == CUNNING)
-			emit cunningChanged(val);
-		else if (ch == WILLPOWER)
-			emit willpowerChanged(val);
-		else if (ch == PRESENCE)
-			emit presenceChanged(val);
-		else if (ch == SOAK)
-			emit soakChanged(val);
-		else if (ch == WOUND)
-			emit woundChanged(wound());
-		else if (ch == STRAIN)
-			emit strainChanged(strain());
-		else if (ch == DRANGED)
-			emit defenseRangedChanged(val);
-		else if (ch == DMELEE)
-			emit defenseMeleeChanged(val);
-		else if (ch == FORCE) {
-			if (attr[FORCE] > 0)
-				excludeMorality(before_mor);
-			else
-				includeMorality(before_mor);
-			emit forceChanged(val);
-		}
-		else if (ch == XP)
-			emit totalXPChanged(val);
-		else if (ch == NEWXP)
-			emit newXPChanged(val);
-		else if (ch == USEDXP)
-			emit usedXPChanged(val);
-		else if (ch == MORALITY) {
-			if (attr.contains(FORCE) && attr[FORCE] > 0) {
-				includeMorality(before_mor);
-				excludeMorality(val);
-			}
-			emit moralityChanged(val);
-			emit strainChanged(strain());
-			emit woundChanged(wound());
-		}
 	}
 }
 
@@ -1362,20 +1216,7 @@ void Character::setImageProviderCount(int t)
 
 int Character::getAttribute(const QString& val)
 {
-	QMap<QString, int>& attr = CurrentData::instance->attributes;
-
-	if (!attr.contains(val))
-		return 0;
-	int att = attr[val] + CurrentData::instance->attributeMods.get(val);
-	if (val == BRAWN) {
-		if (CurrentData::instance->isCommitted("ENHANCECONT8") && att < 6)
-			att++;
-	}
-	else if (val == AGILITY) {
-		if (CurrentData::instance->isCommitted("ENHANCECONT9") && att < 6)
-			att++;
-	}
-	return att;
+	return CurrentData::instance->getAttribute(val);
 }
 
 int Character::setAttributeMods(const CharMods& mods)
@@ -1695,12 +1536,12 @@ void Character::characteristicsChanged()
 
 void Character::emitStimPacksChanged()
 {
-	emit stimPacksChanged(CurrentData::instance->stimPacks());
+	emit stimPacksChanged(stimPacks());
 }
 
 void Character::emitErpsChanged()
 {
-	emit erpsChanged(CurrentData::instance->erps());
+	emit erpsChanged(erps());
 }
 
 void Character::emitCharacterCountChanged()
@@ -1728,131 +1569,42 @@ void Character::emitCurrentStrainChanged()
 	emit currentStrainChanged(currentStrain());
 }
 
-// Use ths function to remove the morilty adjustment
-void Character::excludeMorality(int mor)
-{
-	QMap<QString, int>& attr = CurrentData::instance->attributes;
-
-	if (attr.contains(WOUND) && attr.contains(STRAIN)) {
-		if (mor < 10) {
-			attr[WOUND] -= 2;
-			attr[STRAIN] += 2;
-		}
-		else if (mor < 20) {
-			attr[WOUND] -= 1;
-			attr[STRAIN] += 1;
-		}
-		else if (mor > 90)
-			attr[STRAIN] -= 2;
-		else if (mor > 80)
-			attr[STRAIN] -= 1;
-	}
-}
-
-// Use ths function to add the morality adjustment
-void Character::includeMorality(int mor)
-{
-	QMap<QString, int>& attr = CurrentData::instance->attributes;
-
-	if (attr.contains(WOUND) && attr.contains(STRAIN)) {
-		if (mor < 10) {
-			attr[WOUND] += 2;
-			attr[STRAIN] -= 2;
-		}
-		else if (mor < 20) {
-			attr[WOUND] += 1;
-			attr[STRAIN] -= 1;
-		}
-		else if (mor > 90)
-			attr[STRAIN] += 2;
-		else if (mor > 80)
-			attr[STRAIN] += 1;
-	}
-}
-
 void Character::reload()
 {
+	QByteArray data;
+
+	if (CurrentData::instance->characterFile == iFile)
+		return;
+
 	setLoading(true);
-	QScopedPointer<CharacterXML> loader(new CharacterXML());
-	QByteArray data = DataAccess::readFile(DatUtil::getCharacterFolder() + iFile);
 
-	clear();
+	if (!CurrentData::instance->characterFile.isEmpty())
+		iCharDataList.append(CurrentData::instance);
+	CurrentData::instance = NULL;
+	foreach(CurrentData* c_data, iCharDataList) {
+		if (c_data->characterFile == iFile) {
+			CurrentData::instance = c_data;
+			iCharDataList.removeAll(c_data);
+			break;
+		}
+	}
 
-	emit featuresChanged(CurrentData::instance->features);
-	emit storyChanged(CurrentData::instance->story);
+	if (!CurrentData::instance) {
+		CurrentData::instance = new CurrentData();
+		CurrentData::instance->characterFile = iFile;
 
-	emit brawnChanged(brawn());
-	emit agilityChanged(agility());
-	emit intellectChanged(intellect());
-	emit cunningChanged(cunning());
-	emit willpowerChanged(willpower());
-	emit presenceChanged(presence());
-	emit soakChanged(soak());
-	emit woundChanged(wound());
-	emit strainChanged(strain());
-	emit defenseRangedChanged(defenseRanged());
-	emit defenseMeleeChanged(defenseMelee());
-	emit forceChanged(force());
-	emit forceCommittedChanged(forceCommitted());
-	emit totalXPChanged(totalXP());
-	emit newXPChanged(newXP());
-	emit usedXPChanged(usedXP());
-
-	emit creditsChanged(credits());
-
-	emit encValueChanged(encValue());
-	emit encThresholdChanged(encThreshold());
-	emit cumbValueChanged(cumbValue());
-	emit cumbThresholdChanged(cumbThreshold());
-
-	emit activeSkillChanged(activeSkill());
-	emit dicePoolChanged(dicePool());
-	emit negativePoolChanged(negativePool());
-	emit itemUuidChanged(itemUuid());
-	emit itemItemKeyChanged(itemItemKey());
-	emit itemNameChanged(itemName());
-	emit itemRangeChanged(itemRange());
-	emit itemSkillChanged(itemSkill());
-	emit itemDamageChanged(itemDamage());
-	emit itemCriticalChanged(itemCritical());
-	emit itemQualitiesChanged(itemQualities());
-	emit itemAttachmentsChanged(itemAttachments());
-
-	//loader->parse(data);
-	loader->readFromBuffer(data.constData(), data.length());
-
-	emit currentWoundsChanged(currentWounds());
-	emit currentStrainChanged(currentStrain());
-	emit currentConflictChanged(currentConflict());
-	emit woundHistoryChanged(woundHistory());
-	emit strainHistoryChanged(strainHistory());
-	emit conflictHistoryChanged(conflictHistory());
-	emit woundDeltaChanged(woundDelta());
-	emit strainDeltaChanged(strainDelta());
-
-	if (data.isEmpty()) {
-		emit stimPacksChanged(stimPacks());
-		emit erpsChanged(erps());
-		emit stimPacksUsedChanged(stimPacksUsed());
-		emit erpsUsedChanged(erpsUsed());
-
-		emit nameChanged(name());
-		emit playerChanged(player());
-		emit genderChanged(gender());
-		emit ageChanged(age());
-		emit heightChanged(height());
-		emit buildChanged(build());
-		emit hairChanged(hair());
-		emit eyesChanged(eyes());
-		emit speciesChanged(species());
-		emit careerChanged(career());
-		emit specializationsChanged(specializations());
-		emit portraitChanged(portrait());
-		emit encTextChanged(encText());
-		emit moralityChanged(morality());
+		QScopedPointer<CharacterXML> loader(new CharacterXML(CurrentData::instance));
+		data = DataAccess::readFile(DatUtil::getCharacterFolder() + iFile);
 
 		emit featuresChanged(features());
 		emit storyChanged(story());
+
+		emit creditsChanged(credits());
+		emit encValueChanged(encValue());
+		emit encThresholdChanged(encThreshold());
+		emit cumbValueChanged(cumbValue());
+		emit cumbThresholdChanged(cumbThreshold());
+		emit encTextChanged(encText());
 
 		emit brawnChanged(brawn());
 		emit agilityChanged(agility());
@@ -1871,13 +1623,113 @@ void Character::reload()
 		emit newXPChanged(newXP());
 		emit usedXPChanged(usedXP());
 
-		emit creditsChanged(credits());
+		emit activeSkillChanged(activeSkill());
+		emit dicePoolChanged(dicePool());
+		emit negativePoolChanged(negativePool());
+		emit itemUuidChanged(itemUuid());
+		emit itemItemKeyChanged(itemItemKey());
+		emit itemNameChanged(itemName());
+		emit itemRangeChanged(itemRange());
+		emit itemSkillChanged(itemSkill());
+		emit itemDamageChanged(itemDamage());
+		emit itemCriticalChanged(itemCritical());
+		emit itemQualitiesChanged(itemQualities());
+		emit itemAttachmentsChanged(itemAttachments());
+		emit itemManeuversChanged(itemManeuvers());
+		emit itemStrainChanged(itemStrain());
 
-		emit encValueChanged(encValue());
-		emit encThresholdChanged(encThreshold());
-		emit cumbValueChanged(cumbValue());
-		emit cumbThresholdChanged(cumbThreshold());
+		SpecialFeaturesList::instance.rowCountChanged();
+		ObligationList::instance.rowCountChanged();
+		DutyList::instance.rowCountChanged();
+		Talents::instance.rowCountChanged();
+		Weapons::instance.rowCountChanged();
+		Armor::instance.rowCountChanged();
+		Gear::instance.rowCountChanged();
+		InjuryList::instance.rowCountChanged();
+		ExperienceList::instance.rowCountChanged();
+		MotivationList::instance.rowCountChanged();
+		MoralityList::instance.rowCountChanged();
+		InventoryLog::instance.rowCountChanged();
+
+		//loader->parse(data);
+		loader->readFromBuffer(data.constData(), data.length());
+
+		Character::instance->inventoryChanged();
+		Character::instance->experienceChanged();
 	}
+
+	emit currentWoundsChanged(currentWounds());
+	emit currentStrainChanged(currentStrain());
+	emit currentConflictChanged(currentConflict());
+	emit woundHistoryChanged(woundHistory());
+	emit strainHistoryChanged(strainHistory());
+	emit conflictHistoryChanged(conflictHistory());
+	emit woundDeltaChanged(woundDelta());
+	emit strainDeltaChanged(strainDelta());
+	emit stimPacksChanged(stimPacks());
+	emit erpsChanged(erps());
+	emit stimPacksUsedChanged(stimPacksUsed());
+	emit erpsUsedChanged(erpsUsed());
+
+	emit nameChanged(name());
+	emit playerChanged(player());
+	emit genderChanged(gender());
+	emit ageChanged(age());
+	emit heightChanged(height());
+	emit buildChanged(build());
+	emit hairChanged(hair());
+	emit eyesChanged(eyes());
+	emit featuresChanged(features());
+	emit storyChanged(story());
+	emit speciesChanged(species());
+	emit careerChanged(career());
+	emit specializationsChanged(specializations());
+	emit portraitChanged(portrait());
+	emit creditsChanged(credits());
+	emit encValueChanged(encValue());
+	emit encThresholdChanged(encThreshold());
+	emit cumbValueChanged(cumbValue());
+	emit cumbThresholdChanged(cumbThreshold());
+	emit encTextChanged(encText());
+
+	emit moralityChanged(morality());
+
+	emit brawnChanged(brawn());
+	emit agilityChanged(agility());
+	emit intellectChanged(intellect());
+	emit cunningChanged(cunning());
+	emit willpowerChanged(willpower());
+	emit presenceChanged(presence());
+	emit soakChanged(soak());
+	emit woundChanged(wound());
+	emit strainChanged(strain());
+	emit defenseRangedChanged(defenseRanged());
+	emit defenseMeleeChanged(defenseMelee());
+	emit forceChanged(force());
+	emit forceCommittedChanged(forceCommitted());
+	emit totalXPChanged(totalXP());
+	emit newXPChanged(newXP());
+	emit usedXPChanged(usedXP());
+
+	GeneralSkills::instance.setDataChanged();
+	CombatSkills::instance.setDataChanged();
+	KnowledgeSkills::instance.setDataChanged();
+	SpecialSkills::instance.setDataChanged();
+	CustomSkills::instance.setDataChanged();
+
+	SpecialFeaturesList::instance.setRowCountChanged();
+	ObligationList::instance.setRowCountChanged();
+	DutyList::instance.setRowCountChanged();
+	Talents::instance.setRowCountChanged();
+	Weapons::instance.setRowCountChanged();
+	Armor::instance.setRowCountChanged();
+	Gear::instance.setRowCountChanged();
+	InjuryList::instance.setRowCountChanged();
+	ExperienceList::instance.setRowCountChanged();
+	MotivationList::instance.setRowCountChanged();
+	MoralityList::instance.setRowCountChanged();
+	InventoryLog::instance.setRowCountChanged();
+
 	setLoading(false);
 }
 

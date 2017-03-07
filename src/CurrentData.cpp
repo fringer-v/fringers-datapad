@@ -208,6 +208,8 @@ void CheckListData::plusCustom(int ref, const QString& pool, const QString& desc
 
 void CurrentData::clear()
 {
+	characterFile.clear();
+
 	attributeMods.clear();
 
 	encumbranceValue = 0;
@@ -304,14 +306,61 @@ void CurrentData::loadCurrentData()
 		QByteArray data = DataAccess::getCurrentData(iFileName);
 		xml.readFromBuffer(data.constData(), data.length());
 	}
+}
 
-	QMap<QString, InvModItem>::iterator i;
-	for (i = invMod.begin(); i != invMod.end(); i++) {
-		inventoryChanged(i.value().uuid, i.value().itemkey, false);
+int CurrentData::getAttribute(const QString& val)
+{
+	int adjust = 0;
+
+	if (val == MORALITY) {
+		if (experienceTotal.contains(EXP_TOT_MORALITY))
+			return experienceTotal[EXP_TOT_MORALITY].value;
 	}
-	Character::instance->inventoryChanged();
-	Character::instance->experienceChanged();
-	Talents::instance.setRowCountChanged();
+	if (val == XP) {
+		if (experienceTotal.contains(EXP_TOT_XP))
+			return experienceTotal[EXP_TOT_XP].value;
+	}
+
+	if (!attributes.contains(val)) {
+		if (val == MORALITY)
+			return 50;
+		return 0;
+	}
+
+	int att = attributes[val] + attributeMods.get(val);
+	if (val == BRAWN) {
+		if (isCommitted("ENHANCECONT8") && att < 6)
+			att++;
+	}
+	else if (val == AGILITY) {
+		if (isCommitted("ENHANCECONT9") && att < 6)
+			att++;
+	}
+	else if (val == WOUND) {
+		if (getAttribute(FORCE) > 0) {
+			int mor = getAttribute(MORALITY);
+
+			if (mor < 10)
+				adjust = 2;
+			else if (mor < 20)
+				adjust = 1;
+		}
+	}
+	else if (val == STRAIN) {
+		if (getAttribute(FORCE) > 0) {
+			int mor = getAttribute(MORALITY);
+
+			if (mor > 90)
+				adjust = 2;
+			else if (mor > 80)
+				adjust = 1;
+			else if (mor < 10)
+				adjust = -2;
+			else if (mor < 20)
+				adjust = -1;
+		}
+	}
+	return att + adjust;
 }
 
 void CurrentData::adjustWounds(int delta)
@@ -546,7 +595,7 @@ void CurrentData::addItem(int count, const QString& itemkey, const QString& desc
 	InventoryLog::instance.setRowCountChanged();
 	QDateTime create = QDateTime::currentDateTime();
 	QString uuid = setInvLogItem(count, create, create, QString(), itemkey, desc, amount, false);
-	InventoryLog::instance.setClean();
+	InventoryLog::instance.makeClean();
 	writeCurrentData();
 	inventoryChanged(uuid, itemkey, true);
 	Character::instance->inventoryChanged();
@@ -593,7 +642,7 @@ void CurrentData::updateItem(int ref, int count, const QString& desc, int amount
 		int total = Character::instance->credits();
 		Character::instance->setCredits(total + (amount - old_amount));
 	}
-	InventoryLog::instance.setClean();
+	InventoryLog::instance.makeClean();
 	writeCurrentData();
 	if (count - old_count) {
 		inventoryChanged(item.uuid, item.itemkey, true);
@@ -645,15 +694,15 @@ bool CurrentData::removeItem(int ref)
 			list->removeItemByUuid(item.uuid);
 			if (shop_item.type == "GEAR") {
 				Gear::instance.setRowCountChanged();
-				Gear::instance.setClean();
+				Gear::instance.makeClean();
 			}
 			else if (shop_item.type == "ARMOR") {
 				Armor::instance.setRowCountChanged();
-				Armor::instance.setClean();
+				Armor::instance.makeClean();
 			}
 			else {
 				Weapons::instance.setRowCountChanged();
-				Weapons::instance.setClean();
+				Weapons::instance.makeClean();
 			}
 		}
 	}
@@ -669,7 +718,7 @@ bool CurrentData::removeItem(int ref)
 		Character::instance->setCredits(total - log_item.amount);
 	}
 	writeCurrentData();
-	InventoryLog::instance.setClean();
+	InventoryLog::instance.makeClean();
 	inventoryChanged(log_item.uuid, log_item.itemkey, true);
 	Character::instance->inventoryChanged();
 	return true;
@@ -1532,7 +1581,7 @@ void CurrentData::setExpLogItem(int type, const QDateTime& when, const QString& 
 		int total;
 		switch (type) {
 			case EXP_XP:
-				total = Character::instance->getAttribute(XP);
+				total = attributes[XP];
 				break;
 			case EXP_DUTY:
 				total = duties.findItem(key).size;
@@ -1541,7 +1590,7 @@ void CurrentData::setExpLogItem(int type, const QDateTime& when, const QString& 
 				total = dutyRank;
 				break;
 			case EXP_MORALITY:
-				total = Character::instance->getAttribute(MORALITY);
+				total = attributes[MORALITY];
 				break;
 			case EXP_OBLIGATION:
 				total = obligations.findItem(key).size;
@@ -1564,7 +1613,6 @@ void CurrentData::setExpLogItem(int type, const QDateTime& when, const QString& 
 void CurrentData::addExpLogItem(int type, const QDateTime& when, const QString& key, const QString& name, const QString& desc, int amount)
 {
 	experienceLog.append(ExpLogItem(++iReferenceCounter, type, when, key, name, desc, amount));
-// 	Character::instance->setAttribute("NEWXP", total + amount - Character::instance->totalXP());
 }
 
 int CurrentData::findInvLogItem(int ref)
@@ -1669,15 +1717,15 @@ QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDa
 
 		if (shop_item.type == "GEAR") {
 			Gear::instance.setRowCountChanged();
-			Gear::instance.setClean();
+			Gear::instance.makeClean();
 		}
 		else if (shop_item.type == "ARMOR") {
 			Armor::instance.setRowCountChanged();
-			Armor::instance.setClean();
+			Armor::instance.makeClean();
 		}
 		else {
 			Weapons::instance.setRowCountChanged();
-			Weapons::instance.setClean();
+			Weapons::instance.makeClean();
 		}
 	}
 	else if (!desc.isEmpty()) {

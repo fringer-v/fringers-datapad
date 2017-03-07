@@ -62,48 +62,6 @@
 								(((x) & NEG_CHECK_3_PURPLE) ? 3 : 0) + \
 								(((x) & NEG_CHECK_4_PURPLE) ? 4 : 0))
 
-/*
-#define EXTRA_MAN				-100
-#define AIM						-101
-#define AIM_TWICE				-102
-#define CALLED_SHOT				-103
-#define CALLED_SHOT_AIMED		-104
-#define QUICK_STRIKE			-105
-#define TARGET_BLOW				-106
-#define SNIP_SHOT				-107
-#define TELE_OP_SIGHT			-108
-#define TARGET_COMP				-109
-#define SETTRIGGER				-110
-#define INTENSE_FOCUS			-111
-#define DISARMING_SMILE			-112
-#define INFLUENCE_SKILLS		-113
-#define FULL_THROTTLE			-114
-#define FULL_THROTTLE_IMP		-115
-#define JUST_KIDDING			-114
-#define DONT_SHOOT				-115
-#define DC_1					-116
-#define DC_2					-117
-#define DC_3					-118
-#define GTA_1					-119
-#define GTA_2					-120
-#define GTA_3					-121
-#define GTA_4					-122
-#define CP						-123
-#define BS						-124
-#define ENHANCEBASIC			-125
-#define ENHANCECONT1			-126
-#define ENHANCECONT2			-127
-#define ENHANCECONT4			-128
-#define ENHANCECONT7			-129
-#define ENHANCECONT5			-130
-
-// Ranked, so the need "space"
-#define PREC_AIM				-1000
-#define DODGE					-1100
-#define CONGENIAL				-1200
-#define INTIMIDATING			-1300
-*/
-
 class Character;
 
 class FindTag : public QObject, public DatXMLReader {
@@ -391,6 +349,8 @@ public:
 		clear();
 	}
 
+	QString characterFile;
+
 	// DYNAMIC DATA:
 	// Changes to attributes because of inventory
 	CharMods attributeMods;
@@ -459,6 +419,8 @@ public:
 	void loadCurrentData();
 
 	QString getFile();
+
+	int getAttribute(const QString& val);
 
 	void adjustWounds(int delta);
 	void adjustStrain(int delta);

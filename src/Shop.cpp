@@ -126,7 +126,7 @@ void Shop::search(const QString& search)
 			}
 		}
 	}
-	setClean();
+	makeClean();
 }
 
 void Shop::addSortedItem(const ShopItem& item)

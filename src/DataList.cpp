@@ -28,7 +28,7 @@ void AbstractDataList::dataChanged()
 {
 	if (iModel) {
 		iModel->setDataChanged();
-		iModel->setClean();
+		iModel->makeClean();
 	}
 }
 
@@ -42,7 +42,7 @@ void AbstractDataList::rowCountChanged()
 {
 	if (iModel) {
 		iModel->setRowCountChanged();
-		iModel->setClean();
+		iModel->makeClean();
 	}
 }
 
@@ -52,10 +52,10 @@ void AbstractDataList::setRowCountChanged()
 		iModel->setRowCountChanged();
 }
 
-void AbstractDataList::setClean()
+void AbstractDataList::makeClean()
 {
 	if (iModel)
-		iModel->setClean();
+		iModel->makeClean();
 }
 
 int AbstractDataList::colCount()

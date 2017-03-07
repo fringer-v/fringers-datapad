@@ -42,14 +42,15 @@
 
 class CharacterXML : public DatXMLReader {
 public:
-	CharacterXML();
+	CharacterXML(CurrentData* current_data);
 
 	void start();
 	void end();
-	//virtual bool xmlElement(const QString& path, const QString& value);
 	virtual bool xmlElement(const DatStringBuffer& path, const char* value);
 
 private:
+	CurrentData*			iCurrentData;
+
 	QPointer<SpeciesXML>	iSpecies;
 
 	bool					iNPC;

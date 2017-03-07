@@ -14,6 +14,7 @@
 #include "Syncer.h"
 #include "Talents.h"
 #include "Shop.h"
+#include "DataAccess.h"
 
 class Character;
 
@@ -28,7 +29,6 @@ public:
 	static Character* instance;
 
 	explicit Character(QObject *parent = 0);
-	void clear();
 
 public:
 	// Data management ------------------
@@ -39,34 +39,40 @@ public:
 	Q_PROPERTY(QString password READ password WRITE setPassword NOTIFY passwordChanged)
 	Q_PROPERTY(int locked READ locked WRITE setLocked NOTIFY lockedChanged)
 	Q_PROPERTY(int hideCodedTalents READ hideCodedTalents WRITE setHideCodedTalents NOTIFY hideCodedTalentsChanged)
-
 	Q_PROPERTY(bool loading READ loading WRITE setLoading NOTIFY loadingChanged)
 	Q_PROPERTY(bool isIOS READ isIOS NOTIFY isIOSChanged)
 	Q_PROPERTY(QString lastSystemDataUpdate
 		READ lastSystemDataUpdate
 		WRITE setLastSystemDataUpdate
 		NOTIFY lastSystemDataUpdateChanged)
+	Q_PROPERTY(QString file READ file WRITE setFile NOTIFY fileChanged)
 	Q_PROPERTY(QString dataSet READ dataSet WRITE setDataSet NOTIFY dataSetChanged)
 	Q_PROPERTY(int characterCount READ characterCount NOTIFY characterCountChanged)
 
-	Q_INVOKABLE void downloadCharacter(const QString& url);
-	Q_INVOKABLE void downloadDataSet(const QString& url);
-	Q_INVOKABLE void downloadSystemData(const QString& url);
-	Q_INVOKABLE void syncWithServer();
+	QString host() {
+		if (iHost.isEmpty())
+			return DEFAULT_HOST;
+		return iHost;
+	}
+	QString email() { return iEmail; }
+	QString currentEmail() { return iCurrentEmail; }
+	QString password() { return iPassword; }
+	QString currentPassword() { return iCurrentPassword; }
+	int locked() { return iLocked; }
+	int hideCodedTalents() { return iHideCodedTalents; }
+	bool loading() { return iLoading != 0; }
+	bool isIOS() {
+#if defined(Q_OS_IOS)
+		return true;
+#else
+		return false;
+#endif
+	}
+	QString lastSystemDataUpdate() { return iLastSystemDataUpdate; }
+	QString file() { return iFile; }
+	QString dataSet() { return iDataSet; }
+	int characterCount() { return DataAccess::characters.rowCount(); }
 
-	QString host();
-	QString email();
-	QString currentEmail();
-	QString password();
-	QString currentPassword();
-	int locked();
-	int hideCodedTalents();
-
-	bool loading();
-	bool isIOS();
-	QString lastSystemDataUpdate();
-	QString dataSet();
-	int characterCount();
 	void setCurrentEmailAndPassword(const QString& v, const QString& p);
 
 	Q_INVOKABLE void setHost(const QString& v);
@@ -77,15 +83,24 @@ public:
 
 	Q_INVOKABLE void setLoading(bool v);
 	Q_INVOKABLE void setLastSystemDataUpdate(const QString& la);
+	Q_INVOKABLE void setFile(const QString& value);
 	Q_INVOKABLE void setDataSet(const QString& file);
+
+	Q_INVOKABLE void downloadCharacter(const QString& url);
+	Q_INVOKABLE void downloadDataSet(const QString& url);
+	Q_INVOKABLE void downloadSystemData(const QString& url);
+	Q_INVOKABLE void syncWithServer();
 
 signals:
 	void hostChanged(QString v);
 	void emailChanged(QString v);
 	void passwordChanged(QString v);
+	void lockedChanged(int value);
+	void hideCodedTalentsChanged(bool value);
 	void loadingChanged(bool v);
 	void isIOSChanged(bool v);
 	void lastSystemDataUpdateChanged(const QString& lastup);
+	void fileChanged(const QString& file);
 	void dataSetChanged(const QString& dset);
 	void characterCountChanged(int v);
 
@@ -109,7 +124,6 @@ public:
 	Q_PROPERTY(int stimPacksUsed READ stimPacksUsed NOTIFY stimPacksUsedChanged)
 	Q_PROPERTY(int erpsUsed READ erpsUsed NOTIFY erpsUsedChanged)
 
-	Q_PROPERTY(QString file READ file WRITE setFile NOTIFY fileChanged)
 	Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
 	Q_PROPERTY(QString player READ player WRITE setPlayer NOTIFY playerChanged)
 	Q_PROPERTY(QString gender READ gender WRITE setGender NOTIFY genderChanged)
@@ -131,6 +145,7 @@ public:
 	Q_PROPERTY(int cumbThreshold READ cumbThreshold WRITE setCumbThreshold NOTIFY cumbThresholdChanged)
 	Q_PROPERTY(QString encText READ encText WRITE setEncText NOTIFY encTextChanged)
 	Q_PROPERTY(int morality READ morality NOTIFY moralityChanged)
+
 	Q_PROPERTY(int brawn READ brawn NOTIFY brawnChanged)
 	Q_PROPERTY(int agility READ agility NOTIFY agilityChanged)
 	Q_PROPERTY(int intellect READ intellect NOTIFY intellectChanged)
@@ -162,6 +177,7 @@ public:
 	Q_PROPERTY(QString itemAttachments READ itemAttachments WRITE setItemAttachments NOTIFY itemAttachmentsChanged)
 	Q_PROPERTY(QString itemManeuvers READ itemManeuvers WRITE setItemManeuvers NOTIFY itemManeuversChanged)
 	Q_PROPERTY(QString itemStrain READ itemStrain WRITE setItemStrain NOTIFY itemStrainChanged)
+
 	Q_PROPERTY(int itemCritPlus READ itemCritPlus WRITE setItemCritPlus NOTIFY itemCritPlusChanged)
 	Q_PROPERTY(int itemPierce READ itemPierce WRITE setItemPierce NOTIFY itemPierceChanged)
 	Q_PROPERTY(int imageProviderCount READ imageProviderCount WRITE setImageProviderCount NOTIFY imageProviderCountChanged)
@@ -179,7 +195,6 @@ public:
 	int stimPacksUsed() { return CurrentData::instance->stimPacksUsed; }
 	int erpsUsed() { return CurrentData::instance->erpsUsed; }
 
-	QString file() { return iFile; }
 	QString name() { return CurrentData::instance->name; }
 	QString player() { return CurrentData::instance->player; }
 	QString gender() { return CurrentData::instance->gender; }
@@ -200,11 +215,7 @@ public:
 	int cumbValue() { return CurrentData::instance->cumbersomeValue; }
 	int cumbThreshold() { return CurrentData::instance->cumbersomeThreshold; }
 	QString encText() { return CurrentData::instance->encumbranceText; }
-	int morality() {
-		if (CurrentData::instance->experienceTotal.contains(EXP_TOT_MORALITY))
-			return CurrentData::instance->experienceTotal[EXP_TOT_MORALITY].value;
-		return getAttribute(MORALITY);
-	}
+	int morality() { return getAttribute(MORALITY); }
 	int brawn() { return getAttribute(BRAWN); } // Modifications must go into getAttribute()
 	int agility() { return getAttribute(AGILITY); }
 	int intellect() { return getAttribute(INTELLECT); }
@@ -212,45 +223,13 @@ public:
 	int willpower() { return getAttribute(WILLPOWER); }
 	int presence() { return getAttribute(PRESENCE); }
 	int soak() { return getAttribute(SOAK); }
-	int wound() {
-		int wound_adj = 0;
-
-		if (getAttribute(FORCE) > 0) {
-			int mor = morality();
-
-			if (mor < 10)
-				wound_adj = 2;
-			else if (mor < 20)
-				wound_adj = 1;
-		}
-		return getAttribute(WOUND) + wound_adj;
-	}
-	int  strain(){
-		int strain_adj = 0;
-
-		if (getAttribute(FORCE) > 0) {
-			int mor = morality();
-
-			if (mor > 90)
-				strain_adj = 2;
-			else if (mor > 80)
-				strain_adj = 1;
-			else if (mor < 10)
-				strain_adj = -2;
-			else if (mor < 20)
-				strain_adj = -1;
-		}
-		return getAttribute(STRAIN) + strain_adj;
-	}
+	int wound() { return getAttribute(WOUND); }
+	int strain() { return getAttribute(STRAIN); }
 	int defenseRanged() { return getAttribute(DRANGED); }
 	int defenseMelee() { return getAttribute(DMELEE); }
 	int force() { return getAttribute(FORCE); }
 	int forceCommitted() { return CurrentData::instance->commitCount(); }
-	int totalXP() {
-		if (CurrentData::instance->experienceTotal.contains(EXP_TOT_XP))
-			return CurrentData::instance->experienceTotal[EXP_TOT_XP].value;
-		return getAttribute(XP);
-	}
+	int totalXP() { return getAttribute(XP); }
 	int newXP() { return getAttribute(NEWXP); }
 	int usedXP() { return getAttribute(USEDXP); }
 	QString activeSkill();
@@ -316,7 +295,6 @@ public:
 	Q_INVOKABLE void hideCheckList();
 	Q_INVOKABLE void fillCheckList();
 
-	Q_INVOKABLE void setFile(const QString& value);
 	Q_INVOKABLE void setName(const QString& value);
 	Q_INVOKABLE void setPlayer(const QString& value);
 	Q_INVOKABLE void setGender(const QString& value);
@@ -337,7 +315,6 @@ public:
 	Q_INVOKABLE void setCumbValue(int c);
 	Q_INVOKABLE void setCumbThreshold(int c);
 	Q_INVOKABLE void setEncText(const QString& t);
-	Q_INVOKABLE void setAttribute(QString ch, int val);
 	Q_INVOKABLE void setActiveSkill(const QString& t);
 	Q_INVOKABLE void setDicePool(const QString& t);
 	Q_INVOKABLE void setNegativePool(int t);
@@ -370,7 +347,6 @@ signals:
 	void stimPacksUsedChanged(int val);
 	void erpsUsedChanged(int val);
 
-	void fileChanged(const QString& file);
 	void nameChanged(const QString& name);
 	void playerChanged(const QString& player);
 	void genderChanged(const QString& gender);
@@ -392,6 +368,7 @@ signals:
 	void cumbThresholdChanged(int value);
 	void encTextChanged(const QString& t);
 	void moralityChanged(int value);
+
 	void brawnChanged(int value);
 	void agilityChanged(int value);
 	void intellectChanged(int value);
@@ -408,6 +385,7 @@ signals:
 	void totalXPChanged(int value);
 	void newXPChanged(int value);
 	void usedXPChanged(int value);
+
 	void activeSkillChanged(const QString& value);
 	void dicePoolChanged(const QString& value);
 	void negativePoolChanged(int value);
@@ -425,8 +403,6 @@ signals:
 	void itemCritPlusChanged(int value);
 	void itemPierceChanged(int value);
 	void imageProviderCountChanged(int value);
-	void lockedChanged(int value);
-	void hideCodedTalentsChanged(bool value);
 
 	void alert(const QString& title, const QString& message);
 
@@ -446,25 +422,21 @@ public:
 	void emitCurrentStrainChanged();
 
 private:
-	void excludeMorality(int mor);
-	void includeMorality(int mor);
 	void reload();
 	QString processDownload(const QString& url, const QByteArray& data, const QString& to_dir, QString& err_msg);
 
+	// Fixed (Exported) Data:
 	QString iHost;
 	QString iEmail;
 	QString iCurrentEmail; // The user from which we last loaded data
 	QString iPassword;
 	QString iCurrentPassword;
-	int		iLocked;
-	int		iHideCodedTalents;
-
+	int iLocked;
+	int iHideCodedTalents;
 	static int iLoading;
 	QString iLastSystemDataUpdate;
-	QString iDataSet;
-
-	// Fixed (Exported) Data:
 	QString iFile;
+	QString iDataSet;
 
 	// Attributes used to run the Check List dialog:
 	QString iActiveSkill;
@@ -493,12 +465,12 @@ private:
 	// A mod number used to indicate that the image database has changed
 	int iImageProviderCount;
 
+	QList<CurrentData*> iCharDataList;
+
 	Downloader iCharacterDownloader;
 	Downloader iDataSetDownloader;
 	Downloader iSystemDataDownloader;
 	Syncer iSyncer;
-
-public:
 };
 
 #endif // __Character_h__
