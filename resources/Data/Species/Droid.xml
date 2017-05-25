@@ -23,8 +23,6 @@
     <StrainThreshold>10</StrainThreshold>
     <Experience>175</Experience>
   </StartingAttrs>
-  <SkillModifiers>
-  </SkillModifiers>
   <TalentModifiers>
     <TalentModifier>
       <Key>ENDUR</Key>
@@ -63,7 +61,7 @@
       <Options>
         <Option>
           <Key>DROIDAB2OP1</Key>
-          <Name>Features</Name>
+          <Name>Feature</Name>
           <Description>Droids do not need to eat, sleep, or breath, and are unaffected by vacuum, toxins, and poisons.</Description>
         </Option>
       </Options>

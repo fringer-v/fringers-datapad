@@ -81,8 +81,17 @@ Please see page 59 of the Stay on Target Sourcebook for details.</Description>
       <Turret>false</Turret>
       <Location>Forward</Location>
       <Retractable>false</Retractable>
-      <Qualities />
-      <Key>MONCALMISSILE</Key>
+      <Qualities>
+        <Quality>
+          <Key>LIMITEDAMMO</Key>
+          <Count>12</Count>
+        </Quality>
+        <Quality>
+          <Key>LINKED</Key>
+          <Count>3</Count>
+        </Quality>
+      </Qualities>
+      <Key>CML</Key>
       <Count>1</Count>
     </VehicleWeapon>
     <VehicleWeapon>
@@ -101,28 +110,10 @@ Please see page 59 of the Stay on Target Sourcebook for details.</Description>
         <Quality>
           <Key>LIMITEDAMMO</Key>
           <Count>16</Count>
-          <Index>0</Index>
-          <MiscDesc />
-          <DefZone />
-          <QualReplace>false</QualReplace>
-          <SkillIsCareer>false</SkillIsCareer>
-          <SkillIsRanked>false</SkillIsRanked>
-          <VehicleWeaponUpgrades />
-          <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
-          <DieModifiers />
         </Quality>
         <Quality>
           <Key>LINKED</Key>
           <Count>1</Count>
-          <Index>0</Index>
-          <MiscDesc />
-          <DefZone />
-          <QualReplace>false</QualReplace>
-          <SkillIsCareer>false</SkillIsCareer>
-          <SkillIsRanked>false</SkillIsRanked>
-          <VehicleWeaponUpgrades />
-          <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
-          <DieModifiers />
         </Quality>
       </Qualities>
       <Key>PROTONBOMB</Key>

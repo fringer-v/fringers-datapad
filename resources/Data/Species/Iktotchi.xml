@@ -30,23 +30,13 @@
     <OptionChoice>
       <Key>IKTOTCHICH1</Key>
       <Name>Initiative</Name>
-      <Description />
-      <Source />
-      <Sources />
-      <Custom>Base</Custom>
       <Options>
         <Option>
           <Key>IKTOTCHICH1OP1</Key>
           <Name>Precognition</Name>
           <Description>In addition to seeing flashes of the future at the GM's discretion, an Iktotchi may spend [TR] on an Initiative check to perform a free maneuver, or have an ally within short range perform a free maneuver, before the encounter begins.</Description>
-          <StartingSkillTraining />
-          <SkillModifiers />
-          <TalentModifiers />
-          <DieModifiers />
         </Option>
       </Options>
     </OptionChoice>
   </OptionChoices>
-  <WeaponModifiers />
-  <SubSpeciesList />
 </Species>

@@ -57,15 +57,6 @@ Please see page 61 of the Stay on Target Sourcebook for details.</Description>
         <Quality>
           <Key>LINKED</Key>
           <Count>1</Count>
-          <Index>0</Index>
-          <MiscDesc />
-          <DefZone />
-          <QualReplace>false</QualReplace>
-          <SkillIsCareer>false</SkillIsCareer>
-          <SkillIsRanked>false</SkillIsRanked>
-          <VehicleWeaponUpgrades />
-          <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
-          <DieModifiers />
         </Quality>
       </Qualities>
       <Key>LASERLT</Key>
@@ -87,15 +78,6 @@ Please see page 61 of the Stay on Target Sourcebook for details.</Description>
         <Quality>
           <Key>LINKED</Key>
           <Count>1</Count>
-          <Index>0</Index>
-          <MiscDesc />
-          <DefZone />
-          <QualReplace>false</QualReplace>
-          <SkillIsCareer>false</SkillIsCareer>
-          <SkillIsRanked>false</SkillIsRanked>
-          <VehicleWeaponUpgrades />
-          <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
-          <DieModifiers />
         </Quality>
       </Qualities>
       <Key>LASERLT</Key>
@@ -117,15 +99,6 @@ Please see page 61 of the Stay on Target Sourcebook for details.</Description>
         <Quality>
           <Key>LINKED</Key>
           <Count>1</Count>
-          <Index>0</Index>
-          <MiscDesc />
-          <DefZone />
-          <QualReplace>false</QualReplace>
-          <SkillIsCareer>false</SkillIsCareer>
-          <SkillIsRanked>false</SkillIsRanked>
-          <VehicleWeaponUpgrades />
-          <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
-          <DieModifiers />
         </Quality>
       </Qualities>
       <Key>VL6</Key>

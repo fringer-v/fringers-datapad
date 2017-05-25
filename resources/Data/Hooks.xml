@@ -140,7 +140,7 @@
       Please see page 13 of Enter the Unknown Sourcebook, or page 17 of the Stay on Target Sourcebook, for details.
     </Description>
     <Sources>
-      <Source Page="13">Stay on Target Sourcebook</Source>
+      <Source Page="13">Stay on Target</Source>
     </Sources>
   </Hook>
   <Hook>
@@ -175,9 +175,12 @@
     <Name>Wanderer</Name>
     <Description>
       [H4]Wanderer[h4]
-      Please see page 18 of Enter the Unknown Sourcebook for details.
+      Please see page 18 of Enter the Unknown Sourcebook, or page 15 of the Savage Spirits Sourcebook, for details.
     </Description>
-    <Source Page="18">Enter the Unknown</Source>
+    <Sources>
+      <Source Page="18">Enter the Unknown</Source>
+      <Source Page="15">Savage Spirits</Source>
+    </Sources>
   </Hook>
   <Hook>
     <Key>YESTERDAYSHERO</Key>
@@ -196,7 +199,7 @@
       Please see page 13 of Dangerous Covenants Sourcebook, or page 14 of the Fly Casual Sourcebook, for details.
     </Description>
     <Sources>
-      <Source Page="13">Fly Casual Sourcebook</Source>
+      <Source Page="13">Fly Casual</Source>
     </Sources>
   </Hook>
   <Hook>
@@ -204,9 +207,12 @@
     <Name>The Avenger</Name>
     <Description>
       [H4]The Avenger[h4]
-      Please see page 14 of Dangerous Covenants Sourcebook for details.
+      Please see page 14 of Dangerous Covenants Sourcebook, or page 12 of the Forged in Battle Sourcebook, for details.
     </Description>
-    <Source Page="14">Dangerous Covenants</Source>
+    <Sources>
+      <Source Page="14">Dangerous Covenants</Source>
+      <Source Page="12">Forged in Battle</Source>
+    </Sources>
   </Hook>
   <Hook>
     <Key>SCIONOFALEGACY</Key>
@@ -303,18 +309,24 @@
     <Name>Clone Wars Veteran</Name>
     <Description>
       [H4]Clone Wars Veteran[h4]
-      Please see page 15 of the Stay on Target Sourcebook for details.
+      Please see page 15 of the Stay on Target Sourcebook, or page 16 of the Forged in Battle Sourcebook, for details.
     </Description>
-    <Source Page="15">Stay on Target</Source>
+    <Sources>
+      <Source Page="15">Stay on Target</Source>
+      <Source Page="16">Forged in Battle</Source>
+    </Sources>
   </Hook>
   <Hook>
     <Key>SOTIMPDEF</Key>
     <Name>Imperial Defector</Name>
     <Description>
       [H4]Imperial Defector[h4]
-      Please see page 16 of the Stay on Target Sourcebook for details.
+      Please see page 16 of the Stay on Target Sourcebook, or page 15 of the Forged in Battle Sourcebook, for details.
     </Description>
-    <Source Page="16">Stay on Target</Source>
+    <Sources>
+      <Source Page="16">Stay on Target</Source>
+      <Source Page="15">Forged in Battle</Source>
+    </Sources>
   </Hook>
   <Hook>
     <Key>DISADV</Key>
@@ -498,4 +510,145 @@
     </Description>
     <Source Page="16">Special Modifications</Source>
   </Hook>
+  <Hook>
+    <Key>EXILE</Key>
+    <Name>Exile</Name>
+    <Description>
+      [H4]Exile[h4]
+      See page 12 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="12">Savage Spirits</Source>
+  </Hook>
+  <Hook>
+    <Key>QUESTER</Key>
+    <Name>Quester</Name>
+    <Description>
+      [H4]Quester[h4]
+      See page 13 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="13">Savage Spirits</Source>
+  </Hook>
+  <Hook>
+    <Key>RECLUSE</Key>
+    <Name>Recluse</Name>
+    <Description>
+      [H4]Recluse[h4]
+      See page 14 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="14">Savage Spirits</Source>
+  </Hook>
+  <Hook>
+    <Key>SURVIVOR</Key>
+    <Name>Survivor</Name>
+    <Description>
+      [H4]Survivor[h4]
+      See page 14 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="14">Savage Spirits</Source>
+  </Hook>
+  <Hook>
+    <Key>IDEALREC</Key>
+    <Name>Idealistic Recruit</Name>
+    <Description>
+      [H4]Idealistic Recruit[h4]
+      See page 14 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="14">Forged in Battle</Source>
+  </Hook>
+  <Hook>
+    <Key>MERC</Key>
+    <Name>Mercenary</Name>
+    <Description>
+      [H4]Mercenary[h4]
+      See page 15 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="15">Forged in Battle</Source>
+  </Hook>
+  
+  <!-- Endless Vigil -->
+
+  <Hook>
+    <Key>ACTIV</Key>
+    <Name>Activist</Name>
+    <Description>
+      [H4]Activist[h4]
+      See page 10 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="10">Endless Vigil</Source>
+  </Hook>
+  <Hook>
+    <Key>ARISTO</Key>
+    <Name>Aristocrat</Name>
+    <Description>
+      [H4]Aristocrat[h4]
+      See page 11 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="11">Endless Vigil</Source>
+  </Hook>
+  <Hook>
+    <Key>GANGL</Key>
+    <Name>Gang Leader</Name>
+    <Description>
+      [H4]Gang Leader[h4]
+      See page 12 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="12">Endless Vigil</Source>
+  </Hook>
+  <Hook>
+    <Key>LABOR</Key>
+    <Name>Laborer</Name>
+    <Description>
+      [H4]Laborer[h4]
+      See page 13 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="13">Endless Vigil</Source>
+  </Hook>
+  <Hook>
+    <Key>OFFICIAL</Key>
+    <Name>Official</Name>
+    <Description>
+      [H4]Official[h4]
+      See page 14 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="14">Endless Vigil</Source>
+  </Hook>
+  <Hook>
+    <Key>REFUGEE</Key>
+    <Name>Refugee</Name>
+    <Description>
+      [H4]Refugee[h4]
+      See page 14 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="14">Endless Vigil</Source>
+  </Hook>
+
+  <Hook>
+    <Key>INITMONEY</Key>
+    <Name>In It for the Money</Name>
+    <Description>
+      [H4]In It for the Money[h4]
+      Please see page 15 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="15">No Disintegrations</Source>
+  </Hook>
+  <Hook>
+    <Key>LAWBRINGER</Key>
+    <Name>Lawbringer</Name>
+    <Description>
+      [H4]Lawbringer[h4]
+      Please see page 16 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="16">No Disintegrations</Source>
+  </Hook>
+  <Hook>
+    <Key>THRILLHUNT</Key>
+    <Name>Thrill of the Hunt</Name>
+    <Description>
+      [H4]Thrill of the Hunt[h4]
+      Please see page 16 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="16">No Disintegrations</Source>
+  </Hook>
+
+
 </Hooks>

@@ -6,8 +6,8 @@
   Please see page 20 of the Keeping the Peace sourcebook, or page 23 of the Lead by Example sourcebook, for details.
 </Description>
   <Sources>
-    <Source Page="20">Keeping the Peace sourcebook</Source>
-    <Source Page="23">Lead by Example sourcebook</Source>
+    <Source Page="20">Keeping the Peace</Source>
+    <Source Page="23">Lead by Example</Source>
   </Sources>
   <StartingChars>
     <Brawn>2</Brawn>
@@ -28,28 +28,17 @@
       <RankStart>1</RankStart>
     </SkillModifier>
   </SkillModifiers>
-  <TalentModifiers />
   <OptionChoices>
     <OptionChoice>
       <Key>LANNIKCH1</Key>
       <Name>Remove Setback</Name>
-      <Description />
-      <Source />
-      <Sources />
-      <Custom>Base</Custom>
       <Options>
         <Option>
           <Key>LANNIKCH1OP1</Key>
           <Name>Indomitable</Name>
           <Description>A Lannik removes up to [SE][SE] caused by Critical Injuries, the disoriented condition, and fear from all checks he makes.</Description>
-          <StartingSkillTraining />
-          <SkillModifiers />
-          <TalentModifiers />
-          <DieModifiers />
         </Option>
       </Options>
     </OptionChoice>
   </OptionChoices>
-  <WeaponModifiers />
-  <SubSpeciesList />
 </Species>

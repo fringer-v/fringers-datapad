@@ -21,5 +21,8 @@
     <Key>ASSAS</Key>
     <Key>GADG</Key>
     <Key>SURV</Key>
+    <Key>MARTIALARTIST</Key>
+    <Key>OPERATOR</Key>
+    <Key>SKIPTRACER</Key>
   </Specializations>
 </Career>

@@ -88,6 +88,7 @@ Please see page 30 of the Special Modifications Sourcebook for details.</Descrip
         </Direction>
         <Direction>
           <Up>true</Up>
+          <Down>true</Down>
         </Direction>
       </Directions>
     </TalentRow>
@@ -115,6 +116,7 @@ Please see page 30 of the Special Modifications Sourcebook for details.</Descrip
         </Direction>
         <Direction>
           <Left>true</Left>
+          <Up>true</Up>
           <Down>true</Down>
         </Direction>
       </Directions>

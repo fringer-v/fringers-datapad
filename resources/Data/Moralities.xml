@@ -15,6 +15,14 @@
         <Name>Keeping the Peace</Name>
         <WeakKey>RECKLESSNESS</WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey>RECKLESSNESS</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey>DEFIANCE</WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -27,6 +35,12 @@
     <Source Page="50">Force and Destiny Core Rulebook</Source>
     <Type>Strength</Type>
     <WeakKey>JEALOUSY</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
   </Morality>
   <Morality>
     <Key>CAUTION</Key>
@@ -55,6 +69,16 @@
     <Source Page="17">Keeping the Peace</Source>
     <Type>Strength</Type>
     <WeakKey>OBSTINATENESS</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
   </Morality>
   <Morality>
     <Key>ENTHUSIASM</Key>
@@ -72,6 +96,36 @@
         <WeakKey>
         </WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey>DISARRAY</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>EMPATHY</Key>
+    <Name>Empathy</Name>
+    <Description>
+      [H4]Empathy (Strength)[h4]
+      Please see page 17 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="17">Savage Spirits</Source>
+    <Type>Strength</Type>
+    <WeakKey>VENGEANCE</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey>
+        </WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -84,6 +138,12 @@
     <Source Page="50">Force and Destiny Core Rulebook</Source>
     <Type>Strength</Type>
     <WeakKey>HATRED</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
   </Morality>
   <Morality>
     <Key>MERCY</Key>
@@ -100,6 +160,14 @@
         <Name>Keeping the Peace</Name>
         <WeakKey>NAIVETE</WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey>WEARINESS</WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -107,11 +175,42 @@
     <Name>Dedication</Name>
     <Description>
       [H4]Dedication (Strength)[h4]
-      Please see page 17 of the Keeping the Peace sourcebook for details.
+      Please see page 17 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="17">Keeping the Peace</Source>
     <Type>Strength</Type>
     <WeakKey>OBSESSION</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>ASSERTIVENESS</Key>
+    <Name>Assertiveness</Name>
+    <Description>
+      [H4]Assertiveness (Strength)[h4]
+      Please see page 17 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="17">Savage Spirits</Source>
+    <Type>Strength</Type>
+    <WeakKey>OBSTINACY</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
   </Morality>
   <Morality>
     <Key>CURIOSITY</Key>
@@ -129,6 +228,10 @@
         <WeakKey>
         </WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -141,6 +244,12 @@
     <Source Page="50">Force and Destiny Core Rulebook</Source>
     <Type>Strength</Type>
     <WeakKey>ARROGANCE</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey>DISDAIN</WeakKey>
+      </MoralityPair>
+    </Pairs>
   </Morality>
   <Morality>
     <Key>INDEPENDENCE</Key>
@@ -152,6 +261,16 @@
     <Source Page="50">Force and Destiny Core Rulebook</Source>
     <Type>Strength</Type>
     <WeakKey>COLDNESS</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey>ARROGANCE</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
   </Morality>
   <Morality>
     <Key>AMBITION</Key>
@@ -168,6 +287,14 @@
         <Name>Keeping the Peace</Name>
         <WeakKey>IMPATIENCE</WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey>COLDHEART</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -180,6 +307,12 @@
     <Source Page="50">Force and Destiny Core Rulebook</Source>
     <Type>Strength</Type>
     <WeakKey>CRUELTY</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey>MERCILESSNESS</WeakKey>
+      </MoralityPair>
+    </Pairs>
   </Morality>
   <Morality>
     <Key>DISCIPLINE</Key>
@@ -196,8 +329,144 @@
         <Name>Keeping the Peace</Name>
         <WeakKey>INTOLERANCE</WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey>CLOSEDMIND</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
+  <Morality>
+    <Key>FRUGAL</Key>
+    <Name>Frugality</Name>
+    <Description>
+      [H4]Frugality (Strength)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Strength</Type>
+    <WeakKey>CONDEMN</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>WONDER</Key>
+    <Name>Wonder</Name>
+    <Description>
+      [H4]Wonder (Strength)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Strength</Type>
+    <WeakKey>ALIENATION</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>RIGHT</Key>
+    <Name>Righteousness</Name>
+    <Description>
+      [H4]Righteousness (Strength)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Strength</Type>
+    <WeakKey>SPITE</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>MODESTY</Key>
+    <Name>Modesty</Name>
+    <Description>
+      [H4]Modesty (Strength)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Strength</Type>
+    <WeakKey>VANITY</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>TRUST</Key>
+    <Name>Trust</Name>
+    <Description>
+      [H4]Trust (Strength)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Strength</Type>
+    <WeakKey>GUARDED</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>MALLEAB</Key>
+    <Name>Malleability</Name>
+    <Description>
+      [H4]Malleability (Strength)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Strength</Type>
+    <WeakKey>DOGMATIC</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+
+  <!-- Weaknesses -->
   <Morality>
     <Key>ANGER</Key>
     <Name>Anger</Name>
@@ -323,7 +592,7 @@
     <Name>Indecision</Name>
     <Description>
       [H4]Indecision (Weakness)[h4]
-      Please see page 17 of the Keeping the Peace sourcebook for details.
+      Please see page 17 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="17">Keeping the Peace</Source>
     <Type>Weakness</Type>
@@ -333,7 +602,7 @@
     <Name>Naïveté</Name>
     <Description>
       [H4]Naïveté (Weakness)[h4]
-      Please see page 17 of the Keeping the Peace sourcebook for details.
+      Please see page 17 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="17">Keeping the Peace</Source>
     <Type>Weakness</Type>
@@ -343,7 +612,7 @@
     <Name>Impatience</Name>
     <Description>
       [H4]Impatience (Weakness)[h4]
-      Please see page 17 of the Keeping the Peace sourcebook for details.
+      Please see page 17 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="17">Keeping the Peace</Source>
     <Type>Weakness</Type>
@@ -353,9 +622,159 @@
     <Name>Intolerance</Name>
     <Description>
       [H4]Intolerance (Weakness)[h4]
-      Please see page 17 of the Keeping the Peace sourcebook for details.
+      Please see page 17 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="17">Keeping the Peace</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>DISARRAY</Key>
+    <Name>Disarray</Name>
+    <Description>
+      [H4]Disarray (Weakness)[h4]
+      Please see page 17 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="17">Savage Spirits</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>VENGEANCE</Key>
+    <Name>Vengeance</Name>
+    <Description>
+      [H4]Vengeance (Weakness)[h4]
+      Please see page 17 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="17">Savage Spirits</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>OBSTINACY</Key>
+    <Name>Obstinacy</Name>
+    <Description>
+      [H4]Obstinacy (Weakness)[h4]
+      Please see page 17 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="17">Savage Spirits</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>DISDAIN</Key>
+    <Name>Disdain</Name>
+    <Description>
+      [H4]Disdain (Weakness)[h4]
+      Please see page 17 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="17">Savage Spirits</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>COLDHEART</Key>
+    <Name>Cold-Heartedness</Name>
+    <Description>
+      [H4]Cold-heartedness (Weakness)[h4]
+      Please see page 17 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="17">Savage Spirits</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>MERCILESSNESS</Key>
+    <Name>Mercilessness</Name>
+    <Description>
+      [H4]Mercilessness (Weakness)[h4]
+      Please see page 17 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="17">Savage Spirits</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>CLOSEDMIND</Key>
+    <Name>Closed-mindedness</Name>
+    <Description>
+      [H4]Closed-mindedness (Weakness)[h4]
+      Please see page 17 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="17">Savage Spirits</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>DEFIANCE</Key>
+    <Name>Defiance</Name>
+    <Description>
+      [H4]Defiance (Weakness)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>CONDEMN</Key>
+    <Name>Condemnation</Name>
+    <Description>
+      [H4]Condemnation (Weakness)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>ALIENATION</Key>
+    <Name>Alienation</Name>
+    <Description>
+      [H4]Alienation (Weakness)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>WEARINESS</Key>
+    <Name>Weariness</Name>
+    <Description>
+      [H4]Weariness (Weakness)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>SPITE</Key>
+    <Name>Spite</Name>
+    <Description>
+      [H4]Spite (Weakness)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>VANITY</Key>
+    <Name>Vanity</Name>
+    <Description>
+      [H4]Vanity (Weakness)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>GUARDED</Key>
+    <Name>Guardedness</Name>
+    <Description>
+      [H4]Guardedness (Weakness)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>DOGMATIC</Key>
+    <Name>Dogmatic</Name>
+    <Description>
+      [H4]Dogmatic (Weakness)[h4]
+      Please see page 17 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="17">Endless Vigil</Source>
     <Type>Weakness</Type>
   </Morality>
 </Moralities>

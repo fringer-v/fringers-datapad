@@ -98,7 +98,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>3</Crit>
     <RangeValue>wrShort</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>STUNSETTING</Key>
@@ -131,7 +130,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>4</Crit>
     <RangeValue>wrShort</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>LIMITEDAMMO</Key>
@@ -177,7 +175,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>3</Crit>
     <RangeValue>wrShort</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>STUNSETTING</Key>
@@ -214,7 +211,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>5</Crit>
     <RangeValue>wrShort</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>INFERIOR</Key>
@@ -250,7 +246,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>3</Crit>
     <RangeValue>wrMedium</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>ACCURATE</Key>
@@ -291,7 +286,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>4</Crit>
     <RangeValue>wrShort</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>STUNSETTING</Key>
@@ -1050,7 +1044,6 @@
         <Key>STUNSETTING</Key>
       </Quality>
     </Qualities>
-    <Range>Medium</Range>
   </Weapon>
   <Weapon>
     <Key>X30LANCER</Key>
@@ -1198,7 +1191,36 @@
       </Quality>
     </Qualities>
   </Weapon>
-
+  <Weapon>
+    <Key>SE14C</Key>
+    <Name>SE-14C Blaster Pistol</Name>
+    <Description>
+      [H3]BlasTech SE-14C Blaster Pistol[h3]
+      Please see page 42 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="42">Forged in Battle</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Blaster Pistol</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>2</HP>
+    <Price>650</Price>
+    <Rarity>6</Rarity>
+    <SkillKey>RANGLT</SkillKey>
+    <Damage>5</Damage>
+    <Crit>4</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>AUTOFIRE</Key>
+      </Quality>
+      <Quality>
+        <Key>STUNSETTING</Key>
+      </Quality>
+    </Qualities>
+  </Weapon>
 
   <Weapon>
     <Key>MONCALBAT</Key>
@@ -1468,6 +1490,67 @@
     </Qualities>
   </Weapon>
   <Weapon>
+    <Key>DH17</Key>
+    <Name>DH-17 Blaster Carbine</Name>
+    <Description>
+      [H3]DH-17 Blaster Carbine[h3]
+      Please see page 43 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="43">Forged in Battle</Source>
+    <Type>Energy Weapon</Type>
+    <Categories />
+    <Encumbrance>2</Encumbrance>
+    <HP>3</HP>
+    <Price>900</Price>
+    <Rarity>6</Rarity>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>8</Damage>
+    <Crit>3</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrMedium</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>AUTOFIRE</Key>
+      </Quality>
+      <Quality>
+        <Key>INACCURATE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>STUNSETTING</Key>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>GALAAR15</Key>
+    <Name>GALAAR-15 Blaster Carbine</Name>
+    <Description>
+      [H3]GALAAR-15 Blaster Carbine[h3]
+      Please see page 36 of the Friends Like These Adventure Module for details.
+    </Description>
+    <Source Page="36">Friends Like These</Source>
+    <Type>Energy Weapon</Type>
+    <Categories />
+    <Encumbrance>3</Encumbrance>
+    <HP>3</HP>
+    <Price>1500</Price>
+    <Rarity>7</Rarity>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>9</Damage>
+    <Crit>2</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>ACCURATE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>STUNSETTING</Key>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
     <Key>BLASTRIF</Key>
     <Name>Blaster Rifle</Name>
     <Description>
@@ -1596,7 +1679,49 @@
     <BaseMods>
     </BaseMods>
   </Weapon>
-
+  <Weapon>
+    <Key>PULSECAN</Key>
+    <Name>Pulse Cannon</Name>
+    <Description>
+      [H3]Pulse Cannon[h3]
+      Please see page 43 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="43">Forged in Battle</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Heavy Rifle</Category>
+    </Categories>
+    <Encumbrance>5</Encumbrance>
+    <HP>1</HP>
+    <Price>2750</Price>
+    <Rarity>6</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>As a maneuver, a character wielding a pulse cannon may prime the weapon to expend all of its ammunition in a single, devastating shot. The next time the weapon is fired this encounter, it counts as having the Breach 1 and Vicious 3 qualities. After being discharged this way, the weapon runs out of ammunition.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>9</Damage>
+    <Crit>3</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrExtreme</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>SLOWFIRING</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
   <Weapon>
     <Key>BLASTRIFDDCMR6</Key>
     <Name>DDC-MR6 Modular Rifle</Name>
@@ -1739,7 +1864,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>6</Crit>
     <RangeValue>wrLong</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>CONCUSSIVE</Key>
@@ -1832,6 +1956,47 @@
         <Index>0</Index>
         <MiscDesc />
         <DefZone />
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>A280</Key>
+    <Name>A280 Heavy Blaster Rifle</Name>
+    <Description>
+      [H3]BlasTech A280 Heavy Blaster Rifle[h3]
+      Please see page 43 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="43">Forged in Battle</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Heavy Blaster Rifle</Category>
+    </Categories>
+    <Encumbrance>5</Encumbrance>
+    <HP>2</HP>
+    <Price>1800</Price>
+    <Rarity>7</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Reduce the difficulty of Mechanics checks to repair a BlasTech A280 heavy blaster rifle by 1 (to a minimum of [B]Simple [-][b]).</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>9</Damage>
+    <Crit>4</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>ACCURATE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>STUNSETTING</Key>
       </Quality>
     </Qualities>
   </Weapon>
@@ -1936,6 +2101,153 @@
       </Quality>
     </Qualities>
   </Weapon>
+
+  
+  <Weapon>
+    <Key>M300</Key>
+    <Name>M-300 Hunting Blaster</Name>
+    <Description>
+      [H3]BlasTech M-300 Hunting Blaster[h3]
+      Please see page 40 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="40">Savage Spirits</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Rifle</Category>
+      <Category>Blaster</Category>
+      <Category>Blaster Rifle</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>8</Damage>
+    <DamageAdd>0</DamageAdd>
+    <Crit>3</Crit>
+    <RangeValue>wrExtreme</RangeValue>
+    <Encumbrance>4</Encumbrance>
+    <HP>1</HP>
+    <Price>1600</Price>
+    <Rarity>6</Rarity>
+    <Qualities>
+      <Quality>
+        <Key>ACCURATE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>STUNSETTING</Key>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Reduce the difficulty of combat checks made with this weapon by one against targets at long or extreme range.</MiscDesc>
+      </Mod>      
+    </BaseMods>
+  </Weapon>
+  
+  <Weapon>
+    <Key>CR8</Key>
+    <Name>CR-8 Takedown Rifle</Name>
+    <Description>
+      [H3]Corellian Arms CR-8 Takedown Rifle[h3]
+      Please see page 40 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="40">Savage Spirits</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Rifle</Category>
+      <Category>Blaster</Category>
+      <Category>Blaster Rifle</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>9</Damage>
+    <DamageAdd>0</DamageAdd>
+    <Crit>3</Crit>
+    <RangeValue>wrExtreme</RangeValue>
+    <Encumbrance>4</Encumbrance>
+    <HP>1</HP>
+    <Price>3250</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <Qualities>
+      <Quality>
+        <Key>ACCURATE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>PREPARE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>SLOWFIRING</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>When CR-8 is properly broken down and concealed, add [SE][SE] to Perception checks made to find it on a person.</MiscDesc>
+      </Mod>      
+    </BaseMods>
+  </Weapon>
+    
+  <Weapon>
+    <Key>NIGHTBOW</Key>
+    <Name>Nightsister Energy Bow</Name>
+    <Description>
+      [H3]Nightsister Energy Bow[h3]
+      Please see page 40 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="40">Savage Spirits</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Rifle</Category>
+      <Category>Ranged</Category>
+      <Category>Bow</Category>
+    </Categories>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>8</Damage>
+    <DamageAdd>0</DamageAdd>
+    <Crit>2</Crit>
+    <RangeValue>wrMedium</RangeValue>
+    <Encumbrance>4</Encumbrance>
+    <HP>2</HP>
+    <Price>2800</Price>
+    <Rarity>8</Rarity>
+    <Restricted>true</Restricted>
+    <Qualities>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>4</Count>
+      </Quality>
+      <Quality>
+        <Key>UNWIELDY</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>2</Count>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+    </BaseMods>
+  </Weapon>
+    
+    
+  
+    
+    
+  
   <Weapon>
     <Key>BLASTLTREP</Key>
     <Name>Light Repeating Blaster</Name>
@@ -2025,6 +2337,50 @@
         <Index>0</Index>
         <MiscDesc />
         <DefZone />
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>SHUKUR05BLASTLTREP</Key>
+    <Name>SHUKUR-05 Light Repeater</Name>
+    <Description>
+      [H3]SHUKUR-05 Light Repeater[h3]
+      Please see page 49 of the Friends Like These Adventure Module for details.
+    </Description>
+    <Source Page="49">Friends Like These</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Blaster</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>7</Encumbrance>
+    <HP>2</HP>
+    <Price>1800</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>RANGLT</SkillKey>
+    <Damage>9</Damage>
+    <Crit>3</Crit>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>AUTOFIRE</Key>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>4</Count>
+      </Quality>
+      <Quality>
+        <Key>INACCURATE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>SLOWFIRING</Key>
+        <Count>2</Count>
       </Quality>
     </Qualities>
   </Weapon>
@@ -2193,6 +2549,159 @@
       </Quality>
     </Qualities>
   </Weapon>
+  <Weapon>
+    <Key>Z6ROTBLASTCAN</Key>
+    <Name>Z-6 Rotary Blaster Cannon</Name>
+    <Description>
+      [H3]Z-6 Rotary Blaster Cannon[h3]
+      Please see page 44 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="44">Forged in Battle</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Blaster</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>6</Encumbrance>
+    <HP>3</HP>
+    <Price>3000</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>This weapon can only be used in Auto-fire mode.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>The GM may spend [DE] or [TH][TH] from any combat check made with this weapon to have it overheat; the wielder suffers 2 strain and the weapon becomes damaged one step: from undamaged to Minor, Minor to Moderate, or Moderate to Major.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>12</Damage>
+    <Crit>4</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>AUTOFIRE</Key>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>PREPARE</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>J10DUALBLASTCAN</Key>
+    <Name>J-10 Dual Blaster Cannon</Name>
+    <Description>
+      [H3]J-10 Dual Blaster Cannon[h3]
+      Please see page 45 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="45">Forged in Battle</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Portable Gunnery</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>8</Encumbrance>
+    <HP>3</HP>
+    <Price>6750</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>The GM may spend [DE] or [TH][TH] from any combat check made with this weapon to have it overheat; the wielder suffers 2 strain and the weapon becomes damaged one step: from undamaged to Minor, Minor to Moderate, or Moderate to Major.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>GUNN</SkillKey>
+    <Damage>13</Damage>
+    <Crit>2</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>5</Count>
+      </Quality>
+      <Quality>
+        <Key>INACCURATE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>LINKED</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+
+  <Weapon>
+    <Key>RECIPQUADBLASTCAN</Key>
+    <Name>Reciprocating Quad Blaster Cannon</Name>
+    <Description>
+      [H3]Reciprocating Quad Blaster Cannon[h3]
+      Please see page 45 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="45">Forged in Battle</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Portable Gunnery</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>8</Encumbrance>
+    <HP>4</HP>
+    <Price>9950</Price>
+    <Rarity>8</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>This weapon can only be used in Auto-fire mode.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>The GM may spend [DE] or [TH][TH][TH][TH] from a combat check with this weapon to have the wielder suffer a Critical injury with -50 to the roll, to a minimum of 1.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>GUNN</SkillKey>
+    <Damage>10</Damage>
+    <Crit>2</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>AUTOFIRE</Key>
+      </Quality>
+      <Quality>
+        <Key>BREACH</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>4</Count>
+      </Quality>
+      <Quality>
+        <Key>INACCURATE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>LINKED</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>PREPARE</Key>
+        <Count>2</Count>
+      </Quality>
+    </Qualities>
+    <Range>Long</Range>
+  </Weapon>
+
   <Weapon>
     <Key>D29REPULSOR</Key>
     <Name>D-29 Repulsor Rifle</Name>
@@ -2363,6 +2872,41 @@
     </Qualities>
   </Weapon>
   <Weapon>
+    <Key>KYUZOBOW</Key>
+    <Name>Kyuzo Energy Bow</Name>
+    <Description>
+      [H3]Kyuzo Energy Bow[h3]
+      Please see page 44 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="44">Forged in Battle</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>6</Encumbrance>
+    <HP>1</HP>
+    <Price>2400</Price>
+    <Rarity>8</Rarity>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>9</Damage>
+    <Crit>4</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>KNOCKDOWN</Key>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>5</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
     <Key>BLASTION</Key>
     <Name>Ion Blaster</Name>
     <Description>
@@ -2499,6 +3043,63 @@
         <Count>5</Count>
       </Quality>
     </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>T7DISR </Key>
+    <Name>T-7 Ion Disruptor</Name>
+    <Description>
+      [H3]T-7 Ion Disruptor[h3]
+      Please see page 44 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="44">Forged in Battle</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Rifle</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>6</Encumbrance>
+    <HP>2</HP>
+    <Price>8000</Price>
+    <Rarity>9</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Whenever a living target is hit with a T-7 ion disruptor, any Crititcal Injury results in a "Crippled" effect unless the roll on the Critical Injury table would result in a more grievous injury.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Whenever a vehicle or starship is hit with a T-7 ion distruptor, any Critical Hit results in a "Component Hit" effect, unless the roll on the Critical Hit table would result in a more serious effect.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>12</Damage>
+    <Crit>2</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>6</Count>
+      </Quality>
+      <Quality>
+        <Key>BREACH</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>SLOWFIRING</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>6</Count>
+      </Quality>
+    </Qualities>
+    <Range>Long</Range>
   </Weapon>
   <Weapon>
     <Key>SLUGPIS</Key>
@@ -2668,6 +3269,48 @@
       </Mod>
     </BaseMods>
   </Weapon>
+  <Weapon>
+    <Key>SH9</Key>
+    <Name>SH-9 Slugthrower Pistol</Name>
+    <Description>
+      [H3]SH-9 Slugthrower Pistol[h3]
+      Please see page 46 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="46">Forged in Battle</Source>
+    <Type>Slugthrower</Type>
+    <Categories>
+      <Category>Pistol</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <Price>250</Price>
+    <Rarity>4</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Add [SE] to Perception checks to find an SH-9 slugthrower pistol on a person's body.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Add [SE] to Perception or Vigilance checks made to locate a concealed shooter firing an SH-9 slugthrower pistol.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGLT</SkillKey>
+    <Damage>4</Damage>
+    <Crit>5</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>5</Count>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>2</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+
   <Weapon>
     <Key>VODRANRIFLE</Key>
     <Name>Vodran Hunting Rifle</Name>
@@ -3161,6 +3804,228 @@
       </Quality>
     </Qualities>
   </Weapon>
+  
+  <Weapon>
+    <Key>MODEL57</Key>
+    <Name>Model 57 "Homesteader" Hunting Rifle</Name>
+    <Description>
+      [H3]Czerka Arms Model 57 "Homesteader" Hunting Rifle[h3]
+      Please see page 41 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="41">Savage Spirits</Source>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>7</Damage>
+    <Crit>5</Crit>
+    <RangeValue>wrLong</RangeValue>
+    <Encumbrance>5</Encumbrance>
+    <HP>4</HP>
+    <Price>500</Price>
+    <Rarity>6</Rarity>
+    <Type>Slugthrower</Type>
+    <Categories>
+      <Category>Rifle</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Qualities>
+      <Quality>
+        <Key>ACCURATE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>2</Count>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+    </BaseMods>
+  </Weapon>
+  <Weapon>
+    <Key>MODEL57DET</Key>
+    <Name>Model 57 "Homesteader" Hunting Rifle (Detonator)</Name>
+    <Description>
+      [H3]Czerka Arms Model 57 "Homesteader" Hunting Rifle (Detonator)[h3]
+      Please see page 41 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="41">Savage Spirits</Source>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>7</Damage>
+    <Crit>5</Crit>
+    <RangeValue>wrLong</RangeValue>
+    <Encumbrance>5</Encumbrance>
+    <HP>4</HP>
+    <Price>500</Price>
+    <Rarity>6</Rarity>
+    <Type>Slugthrower</Type>
+    <Categories>
+      <Category>Rifle</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Qualities>
+      <Quality>
+        <Key>ACCURATE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>4</Count>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>KNOCKDOWN</Key>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+    </BaseMods>
+  </Weapon>  
+  <Weapon>
+    <Key>MODEL77</Key>
+    <Name>Model 77 Air Rifle</Name>
+    <Description>
+      [H3]Field Sports Model 77 Air Rifle[h3]
+      Please see page 41 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="41">Savage Spirits</Source>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>6</Damage>
+    <Crit>0</Crit>
+    <RangeValue>wrLong</RangeValue>
+    <Encumbrance>3</Encumbrance>
+    <HP>3</HP>
+    <Price>1100</Price>
+    <Rarity>6</Rarity>
+    <Type>Slugthrower</Type>
+    <Categories>
+      <Category>Rifle</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Qualities>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>4</Count>
+      </Quality>
+      <Quality>
+        <Key>STUNDAMAGE</Key>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+    </BaseMods>
+  </Weapon>
+  <Weapon>
+    <Key>BERSERKERRIF</Key>
+    <Name>Berserker Rifle</Name>
+    <Description>
+      [H3]Berserker Rifle[h3]
+      Please see page 46 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="46">Forged in Battle</Source>
+    <Type>Slugthrower</Type>
+    <Categories>
+      <Category>Ranged</Category>
+      <Category>Rifle</Category>
+    </Categories>
+    <Encumbrance>4</Encumbrance>
+    <Price>600</Price>
+    <Rarity>5</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>7</Damage>
+    <Crit>4</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrMedium</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BURN</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>DISORIENT</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>BERSERKERRIF</Key>
+    <Name>Berserker Rifle</Name>
+    <Description>
+      [H3]Berserker Rifle[h3]
+      Please see page 46 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="46">Forged in Battle</Source>
+    <Type>Slugthrower</Type>
+    <Categories>
+      <Category>Ranged</Category>
+      <Category>Rifle</Category>
+    </Categories>
+    <Encumbrance>4</Encumbrance>
+    <Price>600</Price>
+    <Rarity>5</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>7</Damage>
+    <Crit>4</Crit>
+    <RangeValue>wrMedium</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BURN</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>DISORIENT</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>HEAVYREPEATER</Key>
+    <Name>Imperial Heavy Repeater</Name>
+    <Description>
+      [H3]Imperial Heavy Repeater[h3]
+      Please see page 46 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="46">Forged in Battle</Source>
+    <Type>Slugthrower</Type>
+    <Categories>
+      <Category>Ranged</Category>
+      <Category>Heavy Rifle</Category>
+    </Categories>
+    <Encumbrance>3</Encumbrance>
+    <HP>2</HP>
+    <Price>1500</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>As a maneuver, user may prime the weapon to expend all of its ammunition in a single, devastating burst. The next time the weapon is fired this encounter, it counts as having the Blast 7 and Concussive 1 quality. After being discharged this way, the weapon runs out of ammunition.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>8</Damage>
+    <Crit>4</Crit>
+    <RangeValue>wrMedium</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>AUTOFIRE</Key>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>4</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+
+
   <Weapon>
     <Key>BOLA</Key>
     <Name>Bola/Net</Name>
@@ -3231,6 +4096,8 @@
       </Quality>
     </Qualities>
   </Weapon>
+  
+   
   <Weapon>
     <Key>FLAME</Key>
     <Name>Flame Projector</Name>
@@ -3369,31 +4236,64 @@
     <Name>AO14 "Aranea" Net Gun</Name>
     <Description>
       [H3]AO14 "Aranea" Net Gun[h3]
-      Please see page 42 of the Enter the Unknown Sourcebook for details.
+      Please see page 42 of the Enter the Unknown Sourcebook, or page 41 of the Savage Spirits Sourcebook, for details.
     </Description>
+    <Sources>
     <Source Page="42">Enter the Unknown</Source>
+    <Source Page="41">Savage Spirits</Source>
+    </Sources>
     <Type>Explosives/Other</Type>
     <Categories>
       <Category>Ranged</Category>
     </Categories>
     <Encumbrance>4</Encumbrance>
     <HP>2</HP>
-    <Price>750</Price>
+    <Price>775</Price>
     <Rarity>5</Rarity>
     <SkillKey>RANGHVY</SkillKey>
     <Damage>3</Damage>
     <DamageAdd>0</DamageAdd>
     <Crit>0</Crit>
-    <SizeLow>0</SizeLow>
-    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrMedium</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>ENSNARE</Key>
+        <Count>5</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>ELECTRONETLAUNCHER</Key>
+    <Name>Electronet Launcher</Name>
+    <Description>
+      [H3]Electronet Launcher[h3]
+      Please see page 60 of the Friends Like These Adventure Module for details.
+    </Description>
+    <Sources>
+      <Source Page="60">Friends Like These</Source>
+    </Sources>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>6</Encumbrance>
+    <HP>3</HP>
+    <Price>2000</Price>
+    <Rarity>7</Rarity>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>6</Damage>
+    <Crit>0</Crit>
     <RangeValue>wrShort</RangeValue>
     <Qualities>
       <Quality>
         <Key>ENSNARE</Key>
         <Count>5</Count>
-        <Index>0</Index>
-        <MiscDesc />
-        <DefZone />
+      </Quality>
+      <Quality>
+        <Key>STUNDAMAGE</Key>
       </Quality>
     </Qualities>
   </Weapon>
@@ -3422,7 +4322,6 @@
     <SizeLow>0</SizeLow>
     <SizeHigh>10</SizeHigh>
     <RangeValue>wrLong</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>ACCURATE</Key>
@@ -3466,7 +4365,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>0</Crit>
     <RangeValue>wrMedium</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>BLAST</Key>
@@ -3505,7 +4403,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>4</Crit>
     <RangeValue>wrShort</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>ENSNARE</Key>
@@ -4358,6 +5255,126 @@
     </BaseMods>
   </Weapon>
   <Weapon>
+    <Key>SHAPEDTHERMALGREN</Key>
+    <Name>Shaped Thermal Grenade</Name>
+    <Description>
+      [H3]Shaped Thermal Grenade[h3]
+      Please see page 47 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="47">Forged in Battle</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Grenade</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <Price>3500</Price>
+    <Rarity>8</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>RANGLT</SkillKey>
+    <Damage>20</Damage>
+    <Crit>2</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BREACH</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>5</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>CSPL12GREN</Key>
+    <Name>CSPL-12 Projectile Launcher (Frag Grenade)</Name>
+    <Description>
+      [H3]CSPL-12 Projectile Launcher (Frag Grenade)[h3]
+      Please see page 47 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="47">Forged in Battle</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>2</Encumbrance>
+    <HP>2</HP>
+    <Price>1200</Price>
+    <Rarity>6</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>The GM may spend [DE] from a combat check with this weapon to cause it to jam, detonating the contents, inflicting a hit from the loaded grenade on the wielder and each character at engaged range, and damaging the weapon two steps. The GM may spend additional [DE] to trigger one of the loaded grenade's qualities.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGLT</SkillKey>
+    <Damage>8</Damage>
+    <Crit>4</Crit>
+    <RangeValue>wrMedium</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>6</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>3</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>LJ50CONCRIF</Key>
+    <Name>LJ-50 Concussion Rifle</Name>
+    <Description>
+      [H3]LJ-50 Concussion Rifle[h3]
+      Please see page 47 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="47">Forged in Battle</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Rifle</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>6</Encumbrance>
+    <HP>2</HP>
+    <Price>2000</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>10</Damage>
+    <Crit>2</Crit>
+    <RangeValue>wrMedium</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>4</Count>
+      </Quality>
+      <Quality>
+        <Key>CONCUSSIVE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>KNOCKDOWN</Key>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>4</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+
+
+  <Weapon>
     <Key>CONCMISSILEMK10</Key>
     <Name>Mk.10 Concussion Missile</Name>
     <Description>
@@ -4781,6 +5798,188 @@
       </Quality>
     </Qualities>
   </Weapon>
+  
+    
+  <Weapon>
+    <Key>FS19COMPBOWBROAD</Key>
+    <Name>FS19 Compound Bow (Broadhead Arrow)</Name>
+    <Description>
+      [H3]Field Sports FS19 Compound Bow (Broadhead Arrow)[h3]
+      Please see page 41 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="41">Savage Spirits</Source>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>5</Damage>
+    <Crit>4</Crit>
+    <RangeValue>wrMedium</RangeValue>
+    <Encumbrance>4</Encumbrance>
+    <HP>2</HP>
+    <Price>500</Price>
+    <Rarity>7</Rarity>
+    <Type>Explosives/Other</Type>
+    <Qualities>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>    
+  <Weapon>
+    <Key>FS19COMPBOWEXPL</Key>
+    <Name>FS19 Compound Bow (Explosive Tipped Arrow)</Name>
+    <Description>
+      [H3]Field Sports FS19 Compound Bow (Explosive Tipped Arrow)[h3]
+      Please see page 41 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="41">Savage Spirits</Source>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>6</Damage>
+    <Crit>3</Crit>
+    <RangeValue>wrMedium</RangeValue>
+    <Encumbrance>4</Encumbrance>
+    <HP>2</HP>
+    <Price>500</Price>
+    <Rarity>7</Rarity>
+    <Type>Explosives/Other</Type>
+    <Qualities>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>4</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>    
+  <Weapon>
+    <Key>FS19COMPBOWINCEN</Key>
+    <Name>FS19 Compound Bow (Incendiary Arrow)</Name>
+    <Description>
+      [H3]Field Sports FS19 Compound Bow (Incendiary Arrow)[h3]
+      Please see page 41 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="41">Savage Spirits</Source>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>6</Damage>
+    <Crit>5</Crit>
+    <RangeValue>wrMedium</RangeValue>
+    <Encumbrance>4</Encumbrance>
+    <HP>2</HP>
+    <Price>500</Price>
+    <Rarity>7</Rarity>
+    <Type>Explosives/Other</Type>
+    <Qualities>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>BURN</Key>
+        <Count>2</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>    
+  <Weapon>
+    <Key>FS19COMPBOWNET</Key>
+    <Name>FS19 Compound Bow (Net Arrow)</Name>
+    <Description>
+      [H3]Field Sports FS19 Compound Bow (Net Arrow)[h3]
+      Please see page 41 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="41">Savage Spirits</Source>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>2</Damage>
+    <Crit>0</Crit>
+    <RangeValue>wrMedium</RangeValue>
+    <Encumbrance>4</Encumbrance>
+    <HP>2</HP>
+    <Price>500</Price>
+    <Rarity>7</Rarity>
+    <Type>Explosives/Other</Type>
+    <Qualities>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>ENSNARE</Key>
+        <Count>2</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>    
+  <Weapon>
+    <Key>FS19COMPBOWSTUN</Key>
+    <Name>FS19 Compound Bow (Stun Arrow)</Name>
+    <Description>
+      [H3]Field Sports FS19 Compound Bow (Stun Arrow)[h3]
+      Please see page 41 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="41">Savage Spirits</Source>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>6</Damage>
+    <Crit>0</Crit>
+    <RangeValue>wrMedium</RangeValue>
+    <Encumbrance>4</Encumbrance>
+    <HP>2</HP>
+    <Price>500</Price>
+    <Rarity>7</Rarity>
+    <Type>Explosives/Other</Type>
+    <Qualities>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>STUNDAMAGE</Key>
+      </Quality>
+    </Qualities>
+  </Weapon>    
+    
+      
   <Weapon>
     <Key>STYANAX</Key>
     <Name>Styanax Lance</Name>
@@ -5016,7 +6215,7 @@
     <Name>Z50 Grenade Launcher</Name>
     <Description>
       [H3]Z50 Grenade Launcher[h3]
-      Please see page 42 of Dangerous Covenants Sourcebook for details.
+      Please see page 42 of the Dangerous Covenants Sourcebook for details.
     </Description>
     <Source Page="42">Dangerous Covenants</Source>
     <Type>Explosives/Other</Type>
@@ -5335,6 +6534,8 @@
       </Quality>
     </Qualities>
   </Weapon>
+
+
   <Weapon>
     <Key>AURBOOM</Key>
     <Name>Aurateran Boomerang</Name>
@@ -5805,7 +7006,6 @@
     <DamageAdd>1</DamageAdd>
     <Crit>3</Crit>
     <RangeValue>wrEngaged</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>CONCUSSIVE</Key>
@@ -5862,6 +7062,7 @@
     <Type>Brawling</Type>
     <Categories>
       <Category>Shield</Category>
+      <Category>Bludgeoning Brawl</Category>
     </Categories>
     <Encumbrance>1</Encumbrance>
     <HP>0</HP>
@@ -5911,6 +7112,87 @@
     <Categories>
       <Category>Cutting Edge Melee</Category>
     </Categories>
+  </Weapon>
+  <Weapon>
+    <Key>EXPKNIFE</Key>
+    <Name>Explorer's Knife</Name>
+    <Description>
+      [H3]Explorer's Knife[h3]
+      Please see page 43 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Sources>
+      <Source Page="43">Savage Spirits</Source>
+    </Sources>
+    <SkillKey>MELEE</SkillKey>
+    <Damage>0</Damage>
+    <DamageAdd>1</DamageAdd>
+    <Crit>3</Crit>
+    <RangeValue>wrEngaged</RangeValue>
+    <Encumbrance>2</Encumbrance>
+    <HP>0</HP>
+    <Price>100</Price>
+    <Rarity>3</Rarity>
+    <Type>Melee</Type>
+    <Categories>
+      <Category>Cutting Edge Melee</Category>
+    </Categories>
+    <Qualities>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Grants [BO] to all Survival checks.</MiscDesc>
+        <Count>1</Count>
+        <DieModifiers>
+          <DieModifier>
+            <SkillKey>SURV</SkillKey>
+            <BoostCount>1</BoostCount>
+          </DieModifier>
+        </DieModifiers>
+      </Mod>
+    </BaseMods>
+  </Weapon>
+  <Weapon>
+    <Key>MSW12</Key>
+    <Name>MSW-12 NanoDagger</Name>
+    <Description>
+      [H3]Xana Exotic Arms MSW-12 NanoDagger[h3]
+      Please see page 44 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Sources>
+      <Source Page="44">Savage Spirits</Source>
+    </Sources>
+    <SkillKey>MELEE</SkillKey>
+    <Damage>0</Damage>
+    <DamageAdd>1</DamageAdd>
+    <Crit>2</Crit>
+    <RangeValue>wrEngaged</RangeValue>
+    <Encumbrance>1</Encumbrance>
+    <HP>0</HP>
+    <Price>700</Price>
+    <Rarity>6</Rarity>
+    <Type>Melee</Type>
+    <Categories>
+      <Category>Cutting Edge Melee</Category>
+    </Categories>
+    <Qualities>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>5</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>May spend [TH][TH][TH] or [DE] from combat checks with this weapon to have it become damaged one step.</MiscDesc>
+      </Mod>
+    </BaseMods>
   </Weapon>
   <Weapon>
     <Key>CUTLASSCOR</Key>
@@ -5968,6 +7250,37 @@
       <Quality>
         <Key>ENSNARE</Key>
         <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>STUNDAMAGE</Key>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>SHOCKWHIP</Key>
+    <Name>Shock Whip</Name>
+    <Description>
+      [H3]Shock Whip[h3]
+      Please see page 60 of the Friends Like These Adventure Module for details.
+    </Description>
+    <Source Page="60">Friends Like These</Source>
+    <Categories>
+    </Categories>
+    <SkillKey>MELEE</SkillKey>
+    <Damage>4</Damage>
+    <DamageAdd>0</DamageAdd>
+    <Crit>4</Crit>
+    <NoMelee>true</NoMelee>
+    <RangeValue>wrShort</RangeValue>
+    <Encumbrance>3</Encumbrance>
+    <HP>2</HP>
+    <Price>600</Price>
+    <Rarity>8</Rarity>
+    <Type>Melee</Type>
+    <Qualities>
+      <Quality>
+        <Key>ENSNARE</Key>
+        <Count>3</Count>
       </Quality>
       <Quality>
         <Key>STUNDAMAGE</Key>
@@ -6118,6 +7431,7 @@
     <Source Page="172">Force and Destiny Core Rulebook</Source>
     <Categories>
       <Category>Shield</Category>
+      <Category>Bludgeoning Melee</Category>
     </Categories>
     <SkillKey>MELEE</SkillKey>
     <Damage>0</Damage>
@@ -6409,9 +7723,12 @@
     <Name>Energy Lance</Name>
     <Description>
       [H3]Mon Calamari Energy Lance[h3]
-      Please see page 108 of the Strongholds of Resistance Sourcebook for details.
+      Please see page 108 of the Strongholds of Resistance Sourcebook, or page 44 of the Savage Spirits Sourcebook, for details.
     </Description>
-    <Source Page="108">Strongholds of Resistance</Source>
+    <Sources>
+      <Source Page="108">Strongholds of Resistance</Source>
+      <Source Page="44">Savage Spirits</Source>
+    </Sources>
     <SkillKey>MELEE</SkillKey>
     <Damage>0</Damage>
     <DamageAdd>3</DamageAdd>
@@ -6553,6 +7870,55 @@
       </Quality>
     </Qualities>
   </Weapon>
+
+  <Weapon>
+    <Key>SHISBLADE</Key>
+    <Name>Shistavanen Combat Utility Vibroblade</Name>
+    <Description>
+      [H3]Shistavanen Combat Utility Vibroblade[h3]
+      Please see page 48 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="48">Forged in Battle</Source>
+    <Type>Melee</Type>
+    <Categories>
+      <Category>Cutting Edge Melee</Category>
+      <Category>Powered Melee</Category>
+    </Categories>
+    <Encumbrance>2</Encumbrance>
+    <Price>600</Price>
+    <Rarity>7</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>The Combat Utility Vibroblade serves as a tool kit to allow Mechanics checks to repair devices and to "heal" droids, but adds [SE] to such checks.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Adds [BO] to the character's Survival checks.</MiscDesc>
+        <DieModifiers>
+          <DieModifier>
+            <SkillKey>SURV</SkillKey>
+            <BoostCount>1</BoostCount>
+          </DieModifier>
+        </DieModifiers>
+      </Mod>
+    </BaseMods>
+    <SkillKey>MELEE</SkillKey>
+    <DamageAdd>1</DamageAdd>
+    <Crit>2</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrEngaged</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
   <Weapon>
     <Key>PARRDAGG</Key>
     <Name>Parrying Dagger</Name>
@@ -6632,6 +7998,7 @@
     <Type>Melee</Type>
     <Categories>
       <Category>Shield</Category>
+      <Category>Bludgeoning Melee</Category>
     </Categories>
     <Encumbrance>3</Encumbrance>
     <HP>2</HP>
@@ -7138,6 +8505,7 @@
     <Rarity>10</Rarity>
     <Restricted>true</Restricted>
     <Type>Lightsaber</Type>
+    <AttachCostMult>2</AttachCostMult>
     <Categories>
       <Category>Lightsaber</Category>
     </Categories>
@@ -7413,6 +8781,7 @@
     <Restricted>false</Restricted>
     <Type>Lightsaber</Type>
     <NoMelee>true</NoMelee>
+    <AttachCostMult>2</AttachCostMult>
     <Categories>
       <Category>Lightsaber</Category>
       <Category>Lightsaber Hilt</Category>
@@ -7580,7 +8949,6 @@
     <SizeLow>0</SizeLow>
     <SizeHigh>10</SizeHigh>
     <RangeValue>wrEngaged</RangeValue>
-    <Ordnance>false</Ordnance>
     <NoMelee>true</NoMelee>
     <Qualities>
       <Quality>
@@ -7915,6 +9283,44 @@
     </Qualities>
   </Weapon>
   <Weapon>
+    <Key>POLEAXE</Key>
+    <Name>Trailbreaker Poleaxe</Name>
+    <Description>
+      [H3]LaserHone Trailbreaker Poleaxe[h3]
+      Please see page 43 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Sources>
+      <Source Page="43">Savage Spirits</Source>
+    </Sources>
+    <SkillKey>MELEE</SkillKey>
+    <Damage>0</Damage>
+    <DamageAdd>3</DamageAdd>
+    <Crit>3</Crit>
+    <RangeValue>wrEngaged</RangeValue>
+    <Encumbrance>5</Encumbrance>
+    <HP>1</HP>
+    <Price>610</Price>
+    <Rarity>4</Rarity>
+    <Type>Melee</Type>
+    <Categories>
+      <Category>Cutting Edge Melee</Category>
+    </Categories>
+    <Qualities>
+      <Quality>
+        <Key>DEFENSIVE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>UNWIELDY</Key>
+        <Count>2</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
     <Key>VIBAX</Key>
     <Name>Vibro-ax</Name>
     <Description>
@@ -8202,6 +9608,89 @@
     </Qualities>
   </Weapon>
   <Weapon>
+    <Key>MODEL14VIBROSP</Key>
+    <Name>Model 14 "Stalker" Vibrospear</Name>
+    <Description>
+      [H3]Mer-Sonn Model 14 "Stalker" Vibrospear[h3]
+      Please see page 43 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Sources>
+      <Source Page="43">Savage Spirits</Source>
+    </Sources>
+    <SkillKey>MELEE</SkillKey>
+    <Damage>0</Damage>
+    <DamageAdd>2</DamageAdd>
+    <Crit>2</Crit>
+    <RangeValue>wrEngaged</RangeValue>
+    <Encumbrance>4</Encumbrance>
+    <HP>2</HP>
+    <Price>490</Price>
+    <Rarity>6</Rarity>
+    <Type>Melee</Type>
+    <Hands>whTwoHanded</Hands>
+    <Categories>
+      <Category>Cutting Edge Melee</Category>
+      <Category>Powered Melee</Category>
+    </Categories>
+    <Qualities>
+      <Quality>
+        <Key>DEFENSIVE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>2</Count>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>May spend [TH][TH] from any combat check with this weapon to have it produce a loud noise, spooking nearby animals and adding [SE][SE] to user's next Survival check in this area to hunt or track prey.</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </Weapon>
+  <Weapon>
+    <Key>VIBROMACH</Key>
+    <Name>Vibro-Machete</Name>
+    <Description>
+      [H3]Vibro-Machete[h3]
+      Please see page 43 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Sources>
+      <Source Page="43">Savage Spirits</Source>
+    </Sources>
+    <SkillKey>MELEE</SkillKey>
+    <Damage>0</Damage>
+    <DamageAdd>2</DamageAdd>
+    <Crit>2</Crit>
+    <RangeValue>wrEngaged</RangeValue>
+    <Encumbrance>2</Encumbrance>
+    <HP>1</HP>
+    <Price>550</Price>
+    <Rarity>4</Rarity>
+    <Type>Melee</Type>
+    <Categories>
+      <Category>Cutting Edge Melee</Category>
+      <Category>Powered Melee</Category>
+    </Categories>
+    <Qualities>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>SUNDER</Key>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
     <Key>FUSCUT</Key>
     <Name>Fusion Cutter</Name>
     <Description>
@@ -8329,6 +9818,7 @@
     <SizeLow>0</SizeLow>
     <SizeHigh>10</SizeHigh>
     <RangeValue>wrEngaged</RangeValue>
+    <Hands>whTwoHanded</Hands>
     <Qualities>
       <Quality>
         <Key>DEFENSIVE</Key>
@@ -8412,6 +9902,7 @@
     <Source Page="42">Far Horizons</Source>
     <Type>Melee</Type>
     <Categories>
+      <Category>Shield</Category>
       <Category>Bludgeoning Melee</Category>
     </Categories>
     <Encumbrance>5</Encumbrance>
@@ -8425,7 +9916,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>6</Crit>
     <RangeValue>wrEngaged</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>CUMBERSOME</Key>
@@ -8445,6 +9935,104 @@
       </Quality>
     </Qualities>
   </Weapon>
+
+  <Weapon>
+    <Key>KYUZOSHIELD</Key>
+    <Name>Kyuzo War Shield (Melee)</Name>
+    <Description>
+      [H3]Kyuzo War Shield[h3]
+      Please see page 48 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="48">Forged in Battle</Source>
+    <Type>Melee</Type>
+    <Categories>
+      <Category>Shield</Category>
+      <Category>Bludgeoning Melee</Category>
+    </Categories>
+    <Encumbrance>3</Encumbrance>
+    <Price>750</Price>
+    <Rarity>8</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>User may spend [AD][AD][AD] from any combat check to throw the weapon to cause the shield to ricochet back to their grasp.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>MELEE</SkillKey>
+    <DamageAdd>1</DamageAdd>
+    <Crit>4</Crit>
+    <RangeValue>wrEngaged</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>DEFENSIVE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>DEFLECTION</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>DISORIENT</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>KYUZOSHIELDTHROW</Key>
+    <Name>Kyuzo War Shield (Thrown)</Name>
+    <Description>
+      [H3]Kyuzo War Shield[h3]
+      Please see page 48 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="48">Forged in Battle</Source>
+    <Type>Thrown</Type>
+    <Categories>
+      <Category>Shield</Category>
+      <Category>Bludgeoning Melee</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>3</Encumbrance>
+    <Price>750</Price>
+    <Rarity>8</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>User may spend [AD][AD][AD] from any combat check to throw the weapon to cause the shield to ricochet back to their grasp.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGLT</SkillKey>
+    <DamageAdd>1</DamageAdd>
+    <Crit>4</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>DEFENSIVE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>DEFLECTION</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>DISORIENT</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>  
+  
+  
   <Weapon>
     <Key>MOLSTILETTO</Key>
     <Name>Molecular Stiletto</Name>
@@ -8473,7 +10061,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>2</Crit>
     <RangeValue>wrEngaged</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>PIERCE</Key>
@@ -8506,7 +10093,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>6</Crit>
     <RangeValue>wrEngaged</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>DISORIENT</Key>
@@ -8539,7 +10125,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>3</Crit>
     <RangeValue>wrEngaged</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>CONCUSSIVE</Key>
@@ -8622,6 +10207,89 @@
       </Quality>
     </Qualities>
   </Weapon>
+  <Weapon>
+    <Key>SHISBLADE</Key>
+    <Name>Shistavanen Combat Utility Vibroblade</Name>
+    <Description>
+      [H3]Shistavanen Combat Utility Vibroblade[h3]
+      Please see page 48 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="48">Forged in Battle</Source>
+    <Type>Melee</Type>
+    <Categories>
+      <Category>Cutting Edge Melee</Category>
+      <Category>Powered Melee</Category>
+    </Categories>
+    <Encumbrance>2</Encumbrance>
+    <Price>600</Price>
+    <Rarity>7</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>The Combat Utility Vibroblade serves as a tool kit to allow Mechanics checks to repair devices and to "heal" droids, but adds [SE] to such checks.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Adds [BO] to the character's Survival checks.</MiscDesc>
+        <DieModifiers>
+          <DieModifier>
+            <SkillKey>SURV</SkillKey>
+            <BoostCount>1</BoostCount>
+          </DieModifier>
+        </DieModifiers>
+      </Mod>
+    </BaseMods>
+    <SkillKey>MELEE</SkillKey>
+    <DamageAdd>1</DamageAdd>
+    <Crit>2</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrEngaged</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+
+  <Weapon>
+    <Key>AKRABDAG</Key>
+    <Name>aKraB Clip-Point Vibrodagger</Name>
+    <Description>
+      [H3]aKraB Clip-Point Vibrodagger[h3]
+      Please see page 48 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="48">Forged in Battle</Source>
+    <Type>Melee</Type>
+    <Categories>
+      <Category>Cutting Edge Melee</Category>
+      <Category>Powered Melee</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>550</Price>
+    <Rarity>5</Rarity>
+    <SkillKey>MELEE</SkillKey>
+    <DamageAdd>1</DamageAdd>
+    <Crit>2</Crit>
+    <RangeValue>wrEngaged</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+
+
   <Weapon>
     <Key>MORCORTSTAFF</Key>
     <Name>Morgukai Cortosis Staff</Name>
@@ -9625,49 +11293,6 @@
     </Qualities>
   </Weapon>
   <Weapon>
-    <Key>RIOTSHIELD</Key>
-    <Name>Riot Shield</Name>
-    <Description>
-      [H3]Riot Shield[h3]
-      Please see page 42 of the Far Horizons Sourcebook for details.
-    </Description>
-    <Source Page="42">Far Horizons</Source>
-    <Type>Melee</Type>
-    <Categories>
-      <Category>Bludgeoning Melee</Category>
-    </Categories>
-    <Encumbrance>5</Encumbrance>
-    <HP>1</HP>
-    <Price>300</Price>
-    <Rarity>4</Rarity>
-    <Restricted>false</Restricted>
-    <BaseMods />
-    <SkillKey>MELEE</SkillKey>
-    <Damage>0</Damage>
-    <DamageAdd>0</DamageAdd>
-    <Crit>6</Crit>
-    <RangeValue>wrEngaged</RangeValue>
-    <Ordnance>false</Ordnance>
-    <Qualities>
-      <Quality>
-        <Key>CUMBERSOME</Key>
-        <Count>3</Count>
-      </Quality>
-      <Quality>
-        <Key>DEFENSIVE</Key>
-        <Count>2</Count>
-      </Quality>
-      <Quality>
-        <Key>DEFLECTION</Key>
-        <Count>2</Count>
-      </Quality>
-      <Quality>
-        <Key>DISORIENT</Key>
-        <Count>1</Count>
-      </Quality>
-    </Qualities>
-  </Weapon>
-  <Weapon>
     <Key>MOLSTILETTO</Key>
     <Name>Molecular Stiletto</Name>
     <Description>
@@ -9694,7 +11319,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>2</Crit>
     <RangeValue>wrEngaged</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>PIERCE</Key>
@@ -9727,7 +11351,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>6</Crit>
     <RangeValue>wrEngaged</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>DISORIENT</Key>
@@ -9758,7 +11381,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>3</Crit>
     <RangeValue>wrEngaged</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>CONCUSSIVE</Key>
@@ -9795,7 +11417,6 @@
     <SizeLow>3</SizeLow>
     <SizeHigh>10</SizeHigh>
     <RangeValue>wrClose</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>BLAST</Key>
@@ -10172,8 +11793,7 @@
     <Crit>0</Crit>
     <SizeLow>2</SizeLow>
     <SizeHigh>10</SizeHigh>
-    <Range>
-    </Range>
+    <RangeValue>wrNoRange</RangeValue>
     <Qualities>
       <Quality>
         <Key>LIMITEDAMMO</Key>
@@ -10220,8 +11840,7 @@
     <Crit>0</Crit>
     <SizeLow>2</SizeLow>
     <SizeHigh>10</SizeHigh>
-    <Range>
-    </Range>
+    <RangeValue>wrNoRange</RangeValue>
     <Qualities>
       <Quality>
         <Key>LIMITEDAMMO</Key>
@@ -10268,8 +11887,7 @@
     <Crit>0</Crit>
     <SizeLow>1</SizeLow>
     <SizeHigh>10</SizeHigh>
-    <Range>
-    </Range>
+    <RangeValue>wrNoRange</RangeValue>
     <Qualities>
       <Quality>
         <Key>LIMITEDAMMO</Key>
@@ -10620,7 +12238,6 @@
     <SizeLow>0</SizeLow>
     <SizeHigh>10</SizeHigh>
     <RangeValue>wrExtreme</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>AUTOFIRE</Key>
@@ -10655,7 +12272,6 @@
     <SizeLow>0</SizeLow>
     <SizeHigh>10</SizeHigh>
     <RangeValue>wrExtreme</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>INACCURATE</Key>
@@ -10671,8 +12287,8 @@
       Please see page 49 of the Stay on Target Sourcebook, or page 53 of the Lead by Example Sourcebook, for details.
     </Description>
     <Sources>
-      <Source Page="49">Stay on Target Sourcebook</Source>
-      <Source Page="53">Lead by Example Sourcebook</Source>
+      <Source Page="49">Stay on Target</Source>
+      <Source Page="53">Lead by Example</Source>
     </Sources>
     <Type>Vehicle</Type>
     <Categories>
@@ -10690,7 +12306,6 @@
     <SizeLow>4</SizeLow>
     <SizeHigh>10</SizeHigh>
     <RangeValue>wrClose</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>BLAST</Key>
@@ -10714,8 +12329,8 @@
       Please see page 49 of the Stay on Target Sourcebook, or page 53 of the Lead by Example Sourcebook, for details.
     </Description>
     <Sources>
-      <Source Page="49">Stay on Target Sourcebook</Source>
-      <Source Page="53">Lead by Example Sourcebook</Source>
+      <Source Page="49">Stay on Target</Source>
+      <Source Page="53">Lead by Example</Source>
     </Sources>
     <Type>Vehicle</Type>
     <Categories>
@@ -10733,7 +12348,6 @@
     <SizeLow>5</SizeLow>
     <SizeHigh>10</SizeHigh>
     <RangeValue>wrShort</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>BLAST</Key>
@@ -10757,8 +12371,8 @@
       Please see page 49 of the Stay on Target Sourcebook, or page 53 of the Lead by Example Sourcebook, for details.
     </Description>
     <Sources>
-      <Source Page="49">Stay on Target Sourcebook</Source>
-      <Source Page="53">Lead by Example Sourcebook</Source>
+      <Source Page="49">Stay on Target</Source>
+      <Source Page="53">Lead by Example</Source>
     </Sources>
     <Type>Vehicle</Type>
     <Categories>
@@ -10776,7 +12390,6 @@
     <SizeLow>6</SizeLow>
     <SizeHigh>10</SizeHigh>
     <RangeValue>wrShort</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>BLAST</Key>
@@ -10814,7 +12427,6 @@
     <SizeLow>0</SizeLow>
     <SizeHigh>10</SizeHigh>
     <RangeValue>wrShort</RangeValue>
-    <Ordnance>false</Ordnance>
     <Qualities>
       <Quality>
         <Key>BLAST</Key>
@@ -11074,7 +12686,7 @@
       <Category>Pistol</Category>
       <Category>Ranged</Category>
     </Categories>
-    <Encumbrance>3</Encumbrance>
+    <Encumbrance>2</Encumbrance>
     <HP>3</HP>
     <Price>950</Price>
     <Rarity>4</Rarity>
@@ -11094,6 +12706,38 @@
       </Quality>
     </Qualities>
   </Weapon>
+  <Weapon>
+    <Key>GHOVOR22</Key>
+    <Name>GHOVOR-22 Blaster Pistol</Name>
+    <Description>
+      [H3]GHOVOR-22 Blaster Pistol[h3]
+      Please see page 47 of the Friends Like These Adventure Module for details.
+    </Description>
+    <Source Page="47">Friends Like These</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Blaster Pistol</Category>
+      <Category>Blaster</Category>
+      <Category>Pistol</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>2</Encumbrance>
+    <HP>2</HP>
+    <Price>300</Price>
+    <Rarity>6</Rarity>
+    <Restricted>false</Restricted>
+    <BaseMods />
+    <SkillKey>RANGLT</SkillKey>
+    <Damage>6</Damage>
+    <Crit>4</Crit>
+    <RangeValue>wrMedium</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>STUNSETTING</Key>
+      </Quality>
+    </Qualities>
+  </Weapon>
+
   <Weapon>
     <Key>HBT4HUNTING</Key>
     <Name>HBt-4 Hunting Blaster</Name>
@@ -11449,10 +13093,11 @@
     <Price>1250</Price>
     <Rarity>5</Rarity>
     <Restricted>false</Restricted>
+    <Hands>whNone</Hands>
     <BaseMods>
       <Mod>
         <Count>1</Count>
-        <MiscDesc>Do not require a hand to wield.  Add [SE] to a Perception checks to notice they are a weapon.</MiscDesc>
+        <MiscDesc>Add [SE] to a Perception checks to notice they are a weapon.</MiscDesc>
       </Mod>
     </BaseMods>
     <SkillKey>BRAWL</SkillKey>
@@ -11460,7 +13105,6 @@
     <DamageAdd>0</DamageAdd>
     <Crit>5</Crit>
     <RangeValue>wrEngaged</RangeValue>
-    <Ordnance>false</Ordnance>
     <NoMelee>false</NoMelee>
     <Qualities>
       <Quality>
@@ -11556,6 +13200,7 @@
     <Type>Melee</Type>
     <Categories>
       <Category>Cutting Edge Melee</Category>
+      <Category>Powered Melee</Category>
     </Categories>
     <Encumbrance>2</Encumbrance>
     <HP>2</HP>
@@ -11661,10 +13306,12 @@ Please see page 119 of the Strongholds of Resistance Sourcebook for details.</De
       <Category>Proton Torpedo</Category>
     </Categories>
     <HP>0</HP>
-    <Price>0</Price>
-    <Rarity>6</Rarity>
+    <Price>11250</Price>
+    <Rarity>8</Rarity>
     <Restricted>true</Restricted>
-    <BaseMods />
+    <Type>Vehicle</Type>
+    <SizeLow>5</SizeLow>
+    <SizeHigh>10</SizeHigh>
     <SkillKey>GUNN</SkillKey>
     <Damage>10</Damage>
     <Crit>2</Crit>
@@ -11963,10 +13610,135 @@ Please see page 119 of the Strongholds of Resistance Sourcebook for details.</De
     </BaseMods>
     <WeaponModifiers />
   </Weapon>
-  
-<!-- Templates -->
 
   <Weapon>
+    <Key>MASSDRIVERCANNON</Key>
+    <Name>Mass-Driver Cannon</Name>
+    <Description>
+      [H3]Mass-Driver Cannon[h3]
+      Please see page 57 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="57">Forged in Battle</Source>
+    <Type>Vehicle</Type>
+    <Categories />
+    <SkillKey>GUNN</SkillKey>
+    <Damage>7</Damage>
+    <Crit>3</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BREACH</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>SLOWFIRING</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>ATGAR18FD</Key>
+    <Name>1.8 FD Anti-Infantry Autoturret</Name>
+    <Description>
+      [H3]Atgar SpaceDefense 1.8 FD Anti-Infantry Autoturret[h3]
+      Please see page 45 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="45">Forged in Battle</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Portable Gunnery</Category>
+    </Categories>
+    <Encumbrance>25</Encumbrance>
+    <Price>12000</Price>
+    <Rarity>6</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>While attached to a suitable power source (such as a base's power grid or a similarly-sized generator), this wweapon loses the Limited Ammo 8 quality. Wiring the weapon into a power source requires several minutes and an [B]Easy ([DI]) Mechanics check[b].</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>GUNN</SkillKey>
+    <Damage>17</Damage>
+    <Crit>2</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrExtreme</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>AUTOFIRE</Key>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>8</Count>
+      </Quality>
+      <Quality>
+        <Key>SLOWFIRING</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>ANTIAIR</Key>
+    <Name>Anti-Air Rockets</Name>
+    <Description>
+      [H3]Anti-Air Rockets[h3]
+      Please see page 62 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="62">Forged in Battle</Source>
+    <Type>Vehicle</Type>
+    <Categories />
+    <SkillKey>GUNN</SkillKey>
+    <Damage>4</Damage>
+    <Crit>3</Crit>
+    <RangeValue>wrClose</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>BREACH</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>4</Count>
+      </Quality>
+      <Quality>
+        <Key>LINKED</Key>
+        <Count>3</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>ANTIPERSLASER</Key>
+    <Name>Anti-Personnel Laser</Name>
+    <Description>
+      [H3]Anti-Personnel Laser[h3]
+      Please see page 62 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="62">Forged in Battle</Source>
+    <Type>Vehicle</Type>
+    <Categories />
+    <SkillKey>GUNN</SkillKey>
+    <Damage>1</Damage>
+    <Crit>4</Crit>
+    <RangeValue>wrClose</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>AUTOFIRE</Key>
+      </Quality>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <Range>Close</Range>
+  </Weapon>
+
+  <!-- Templates -->
+
+  <!--<Weapon>
     <Key>BMWEAPTEMP1</Key>
     <Name>Fist Weapon (Template)</Name>
     <Description>
@@ -12471,5 +14243,1122 @@ Please see page 119 of the Strongholds of Resistance Sourcebook for details.</De
         <Count>1</Count>
       </Quality>
     </Qualities>
+  </Weapon>-->
+
+  <!-- Endless Vigil -->
+  <Weapon>
+    <Key>BR219</Key>
+    <Name>BR-219 Heavy Blaster Pistol</Name>
+    <Description>
+      [H3]BR-219 Heavy Blaster Pistol[h3]
+      Please see page 40 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="40">Endless Vigil</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Heavy Blaster Pistol</Category>
+      <Category>Blaster</Category>
+      <Category>Pistol</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>2</Encumbrance>
+    <HP>2</HP>
+    <Price>625</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>GM may spend [TH][TH] to damage weapon one step.</MiscDesc>
+      </Mod>
+      <Mod>
+        <MiscDesc>GM may spend [DE] to cause weapon to meltdown and expload, destroying weapon and causing base damage to wielder.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGLT</SkillKey>
+    <Damage>8</Damage>
+    <Crit>3</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>STUNSETTING</Key>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>2</Count>
+      </Quality>
+    </Qualities>
   </Weapon>
+  <Weapon>
+    <Key>GLXFIRE</Key>
+    <Name>GLX Firelance</Name>
+    <Description>
+      [H3]GLX Firelance Blaster Rifle[h3]
+      Please see page 40 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="40">Endless Vigil</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Rifle</Category>
+      <Category>Blaster</Category>
+      <Category>Blaster Rifle</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>3</Encumbrance>
+    <HP>3</HP>
+    <Price>1600</Price>
+    <Rarity>6</Rarity>
+    <Restricted>false</Restricted>
+    <BaseMods />
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>7</Damage>
+    <DamageAdd>0</DamageAdd>
+    <Crit>3</Crit>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>AUTOFIRE</Key>
+      </Quality>
+      <Quality>
+        <Key>DISORIENT</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>STUNSETTING</Key>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>LD1TARG</Key>
+    <Name>LD-1 Target Rifle</Name>
+    <Description>
+      [H3]LD-1 Target Rifle[h3]
+      Please see page 40 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="40">Endless Vigil</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Rifle</Category>
+      <Category>Blaster</Category>
+      <Category>Blaster Rifle</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>6</Encumbrance>
+    <HP>3</HP>
+    <Price>1275</Price>
+    <Rarity>7</Rarity>
+    <Restricted>false</Restricted>
+    <BaseMods />
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>9</Damage>
+    <DamageAdd>0</DamageAdd>
+    <Crit>4</Crit>
+    <RangeValue>wrExtreme</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>ACCURATE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>SLOWFIRING</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>SSGMKII</Key>
+    <Name>SSG Mk II Paladin</Name>
+    <Description>
+      [H3]SSG Mk II Paladin[h3]
+      Please see page 41 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="41">Endless Vigil</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Rifle</Category>
+      <Category>Blaster</Category>
+      <Category>Blaster Rifle</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>4</Encumbrance>
+    <HP>2</HP>
+    <Price>3250</Price>
+    <Rarity>8</Rarity>
+    <Restricted>false</Restricted>
+    <BaseMods />
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>7</Damage>
+    <DamageAdd>0</DamageAdd>
+    <Crit>3</Crit>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>AUTOFIRE</Key>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>STUNSETTING</Key>
+      </Quality>
+      <Quality>
+        <Key>SUPERIOR</Key>
+      </Quality>
+    </Qualities>
+    <WeaponModifiers>
+      <WeaponModifier>
+        <UnarmedName>Stun Prod</UnarmedName>
+        <SkillKey>MELEE</SkillKey>
+        <DamageAdd>2</DamageAdd>
+        <Crit>6</Crit>
+        <Qualities>
+          <Quality>
+            <Key>DISORIENT</Key>
+            <Count>2</Count>
+          </Quality>
+          <Quality>
+            <Key>STUNDAMAGE</Key>
+          </Quality>
+        </Qualities>
+        <RangeValue>wrEngaged</RangeValue>
+      </WeaponModifier>
+    </WeaponModifiers>
+  </Weapon>
+  <Weapon>
+    <Key>KWSMKI</Key>
+    <Name>KWS Mk I Saberdart</Name>
+    <Description>
+      [H3]KWS Mk I Saberdart[h3]
+      Please see page 41 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="41">Endless Vigil</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>1600</Price>
+    <Rarity>9</Rarity>
+    <Restricted>false</Restricted>
+    <BaseMods />
+    <SkillKey>RANGLT</SkillKey>
+    <Damage>1</Damage>
+    <DamageAdd>0</DamageAdd>
+    <Crit>0</Crit>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>May be loaded with 1 dose of synthetic neuroparalytic or any other poison.  Whenever wielder successfully attacks a target, even if no damage is dealt, the target suffers the effects of the poison.</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </Weapon>
+  <Weapon>
+    <Key>NX14</Key>
+    <Name>NX-14 Needler</Name>
+    <Description>
+      [H3]NX-14 Needler[h3]
+      Please see page 42 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="42">Endless Vigil</Source>
+    <Type>Slugthrower</Type>
+    <Categories>
+      <Category>Pistol</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>650</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Removes all [SE] added by a personal deflector shield.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Adds [SE] to Perception checks to find a concealed needler on an individual.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGLT</SkillKey>
+    <Damage>5</Damage>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>3</Count>
+      </Quality>
+    </Qualities>
+    <Range>Short</Range>
+  </Weapon>
+  <Weapon>
+    <Key>LTSABERCROSSG</Key>
+    <Name>Crossguard Lightsaber</Name>
+    <Description>
+      [H3]Crossguard Lightsaber[h3]
+      Please see page 42 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="42">Endless Vigil</Source>
+    <Type>Lightsaber</Type>
+    <Categories>
+      <Category>Lightsaber</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>4</HP>
+    <Price>9700</Price>
+    <Rarity>10</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>May spend [DE] or [TH][TH][TH] on enemy Melee or Lightsaber check to disarm enemy.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>LTSABER</SkillKey>
+    <Damage>6</Damage>
+    <Crit>2</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrEngaged</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BREACH</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>DEFENSIVE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>SUNDER</Key>
+      </Quality>
+    </Qualities>
+    <Range>Engaged</Range>
+  </Weapon>
+  <Weapon>
+    <Key>LTSABERWHIP</Key>
+    <Name>Lightwhip</Name>
+    <Description>
+      [H3]Lightwhip[h3]
+      Please see page 42 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="42">Endless Vigil</Source>
+    <Type>Lightwhip</Type>
+    <Categories>
+      <Category>Lightsaber</Category>
+      <Category>Whip</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>11400</Price>
+    <Rarity>10</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>May spend [AD][AD] or [TR] to prevent opponent from using Parry to reduce damage.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>LTSABER</SkillKey>
+    <Damage>4</Damage>
+    <Crit>4</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>ENSNARE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>5</Count>
+      </Quality>
+      <Quality>
+        <Key>UNWIELDY</Key>
+        <Count>4</Count>
+      </Quality>
+    </Qualities>
+    <Range>Short</Range>
+  </Weapon>
+  <Weapon>
+    <Key>PHIPHKNIFE</Key>
+    <Name>Philaxian Phase-Knife</Name>
+    <Description>
+      [H3]Philaxian Phase-Knife[h3]
+      Please see page 43 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="43">Endless Vigil</Source>
+    <Type>Melee</Type>
+    <Categories>
+      <Category>Cutting Edge Melee</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>1500</Price>
+    <Rarity>8</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>When used with the Saber Throw talent, may spend [AD][AD] or [TR] instead of [FP] to have phase-knife return to the wielder's hand.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>LTSABER</SkillKey>
+    <DamageAdd>1</DamageAdd>
+    <Crit>3</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrEngaged</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>4</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>LTSABERCROSSHILT</Key>
+    <Name>Crossguard Lightsaber Hilt</Name>
+    <Description>
+      [H3]Crossguard Lightsaber Hilt[h3]
+      Please see page 43 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="43">Endless Vigil</Source>
+    <Type>Lightsaber</Type>
+    <Categories>
+      <Category>Lightsaber</Category>
+      <Category>Lightsaber Hilt</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>4</HP>
+    <Price>900</Price>
+    <Rarity>10</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>May spend [DE] or [TH][TH][TH] on enemy Melee or Lightsaber check to disarm enemy.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>LTSABER</SkillKey>
+    <Crit>1</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrEngaged</RangeValue>
+    <NoMelee>true</NoMelee>
+    <Qualities>
+      <Quality>
+        <Key>DEFENSIVE</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <Range>Engaged</Range>
+  </Weapon>
+  
+  
+  <Weapon>
+    <Key>MINECONC</Key>
+    <Name>Concussion Mine</Name>
+    <Description>
+      [H3]Concussion Mine[h3]
+      Please see page 64 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="64">No Disintegrations</Source>
+    <Type>Vehicle</Type>
+    <Categories>
+      <Category>Space Mine</Category>
+    </Categories>
+    <Price>500</Price>
+    <Rarity>5</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>MECH</SkillKey>
+    <Damage>12</Damage>
+    <Crit>3</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Ordnance>true</Ordnance>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>8</Count>
+      </Quality>
+      <Quality>
+        <Key>BREACH</Key>
+        <Count>4</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>MINENET</Key>
+    <Name>Connor Net Mine</Name>
+    <Description>
+      [H3]Connor Net Mine[h3]
+      Please see page 64 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="64">No Disintegrations</Source>
+    <Type>Vehicle</Type>
+    <Categories>
+      <Category>Space Mine</Category>
+    </Categories>
+    <Price>1200</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>MECH</SkillKey>
+    <Damage>20</Damage>
+    <Crit>4</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Ordnance>true</Ordnance>
+    <Qualities>
+      <Quality>
+        <Key>ION</Key>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>MINEFIREC</Key>
+    <Name>Firecracker Mine</Name>
+    <Description>
+      [H3]Firecracker Mine[h3]
+      Please see page 64 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="64">No Disintegrations</Source>
+    <Type>Vehicle</Type>
+    <Categories>
+      <Category>Space Mine</Category>
+    </Categories>
+    <Price>400</Price>
+    <Rarity>4</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>MECH</SkillKey>
+    <Damage>1</Damage>
+    <Crit>0</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Ordnance>true</Ordnance>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>8</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>When a vessel is struck by a firecracker mine, each occupant is disoriented for three rounds.</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </Weapon>
+  <Weapon>
+    <Key>MINEGRAV</Key>
+    <Name>Gravity Mine</Name>
+    <Description>
+      [H3]Gravity Mine[h3]
+      Please see page 64 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="64">No Disintegrations</Source>
+    <Type>Vehicle</Type>
+    <Categories>
+      <Category>Space Mine</Category>
+    </Categories>
+    <Price>1000</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>MECH</SkillKey>
+    <Damage>2</Damage>
+    <Crit>4</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Ordnance>true</Ordnance>
+    <Qualities>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Creates a gravitic bubble, preventing all ships within long range from entering hyperspace.</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </Weapon>
+  <Weapon>
+    <Key>MINEION</Key>
+    <Name>Ion Mine</Name>
+    <Description>
+      [H3]Ion Mine[h3]
+      Please see page 64 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="64">No Disintegrations</Source>
+    <Type>Vehicle</Type>
+    <Categories>
+      <Category>Space Mine</Category>
+    </Categories>
+    <Price>600</Price>
+    <Rarity>5</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>MECH</SkillKey>
+    <Damage>12</Damage>
+    <Crit>4</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Ordnance>true</Ordnance>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>8</Count>
+      </Quality>
+      <Quality>
+        <Key>ION</Key>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+  </Weapon>
+  <Weapon>
+    <Key>MINESEEK</Key>
+    <Name>Seeker Mine</Name>
+    <Description>
+      [H3]Seeker Mine[h3]
+      Please see page 64 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="64">No Disintegrations</Source>
+    <Type>Vehicle</Type>
+    <Categories>
+      <Category>Space Mine</Category>
+    </Categories>
+    <Price>1300</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>MECH</SkillKey>
+    <Damage>16</Damage>
+    <Crit>3</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Ordnance>true</Ordnance>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>4</Count>
+      </Quality>
+      <Quality>
+        <Key>BREACH</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <BaseMods>
+      <Mod>
+        <MiscDesc>Character who set mine can spend [TH][TH] from target pilot's [B]Piloting (Space) check[b] to force the pilot to repeat the check at one less difficulty.</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </Weapon>
+
+  <Weapon>
+    <Key>PRECXMARK</Key>
+    <Name>"Precision-X" Marksman Rifle</Name>
+    <Description>
+      [H3]"Precision-X" Marksman Rifle[h3]
+      Please see page 44 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="44">No Disintegrations</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Blaster</Category>
+      <Category>Blaster Rifle</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>5</Encumbrance>
+    <HP>1</HP>
+    <Price>1500</Price>
+    <Rarity>8</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>When set to stun, range changes to medium.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>9</Damage>
+    <Crit>3</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrLong</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>STUNSETTING</Key>
+      </Quality>
+    </Qualities>
+    <Range>Long</Range>
+  </Weapon>
+  <Weapon>
+    <Key>SUBDRIOTBLAST</Key>
+    <Name>"Subduer-9" Riot Blaster</Name>
+    <Description>
+      [H3]"Subduer-9" Riot Blaster[h3]
+      Please see page 44 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="44">No Disintegrations</Source>
+    <Type>Energy Weapon</Type>
+    <Categories>
+      <Category>Blaster</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>6</Encumbrance>
+    <HP>3</HP>
+    <Price>1250</Price>
+    <Rarity>5</Rarity>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>10</Damage>
+    <Crit>6</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>6</Count>
+      </Quality>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>STUNDAMAGE</Key>
+      </Quality>
+    </Qualities>
+    <Range>Short</Range>
+  </Weapon>
+  <Weapon>
+    <Key>FIRECALLFLAMEPROJ</Key>
+    <Name>"Firecaller" Light Flame Projector</Name>
+    <Description>
+      [H3]"Firecaller" Light Flame Projector[h3]
+      Please see page 44 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="44">No Disintegrations</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>4</Encumbrance>
+    <HP>1</HP>
+    <Price>1200</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <SkillKey>RANGLT</SkillKey>
+    <Damage>5</Damage>
+    <Crit>2</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>BURN</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>3</Count>
+      </Quality>
+    </Qualities>
+    <Range>Short</Range>
+  </Weapon>
+  <Weapon>
+    <Key>GRAPHARPLAU</Key>
+    <Name>Grapnel-Harpoon Launcher</Name>
+    <Description>
+      [H3]Grapnel-Harpoon Launcher[h3]
+      Please see page 45 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="45">No Disintegrations</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>2</Encumbrance>
+    <Price>450</Price>
+    <Rarity>5</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>As an action, make an [B]Average ([DI][DI]) Ranged (Light) check[b] to secure hook to an object within medium range.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Once secured, the cord may be reeled in as an action.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>To pull another character aloft, must succeed in an [B]Average ([DI][DI]) Athletics check[b].</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGLT</SkillKey>
+    <Damage>3</Damage>
+    <Crit>5</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrMedium</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>ENSNARE</Key>
+        <Count>5</Count>
+      </Quality>
+    </Qualities>
+    <Range>Medium</Range>
+  </Weapon>
+  <Weapon>
+    <Key>IMPREPCAN</Key>
+    <Name>"Impact" Repulsor Cannon</Name>
+    <Description>
+      [H3]Nova Design "Impact" Repulsor Cannon[h3]
+      Please see page 45 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="45">No Disintegrations</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>5</Encumbrance>
+    <HP>1</HP>
+    <Price>1000</Price>
+    <Rarity>7</Rarity>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>3</Damage>
+    <Crit>6</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrMedium</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>CONCUSSIVE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>KNOCKDOWN</Key>
+      </Quality>
+      <Quality>
+        <Key>PREPARE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>SLOWFIRING</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <Range>Medium</Range>
+  </Weapon>
+  <Weapon>
+    <Key>MICROROCKAA</Key>
+    <Name>Anti-Armor Micro-Rocket</Name>
+    <Description>
+      [H3]Anti-Armor Micro-Rocket[h3]
+      Please see page 46 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="46">No Disintegrations</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Micro-Rocket</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>300</Price>
+    <Rarity>5</Rarity>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>8</Damage>
+    <Crit>4</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BREACH</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <Range>Short</Range>
+  </Weapon>
+  <Weapon>
+    <Key>MICROROCKEXP</Key>
+    <Name>Explosive Micro-Rocket</Name>
+    <Description>
+      [H3]Explosive Micro-Rocket[h3]
+      Please see page 46 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="46">No Disintegrations</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Micro-Rocket</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>150</Price>
+    <Rarity>4</Rarity>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>7</Damage>
+    <Crit>2</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>6</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <Range>Short</Range>
+  </Weapon>
+  <Weapon>
+    <Key>MICROROCKFLE</Key>
+    <Name>Flechette Micro-Rocket</Name>
+    <Description>
+      [H3]Flechette Micro-Rocket[h3]
+      Please see page 46 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="46">No Disintegrations</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Micro-Rocket</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>175</Price>
+    <Rarity>5</Rarity>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>6</Damage>
+    <Crit>2</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>5</Count>
+      </Quality>
+      <Quality>
+        <Key>VICIOUS</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <Range>Short</Range>
+  </Weapon>
+  <Weapon>
+    <Key>MICROROCKINC</Key>
+    <Name>Incendiary Micro-Rocket</Name>
+    <Description>
+      [H3]Incendiary Micro-Rocket[h3]
+      Please see page 46 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="46">No Disintegrations</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Micro-Rocket</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>175</Price>
+    <Rarity>5</Rarity>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>6</Damage>
+    <Crit>3</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>BLAST</Key>
+        <Count>6</Count>
+      </Quality>
+      <Quality>
+        <Key>BURN</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <Range>Short</Range>
+  </Weapon>
+  <Weapon>
+    <Key>MICROROCKION</Key>
+    <Name>Ion Micro-Rocket</Name>
+    <Description>
+      [H3]Ion Micro-Rocket[h3]
+      Please see page 47 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="47">No Disintegrations</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Micro-Rocket</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>100</Price>
+    <Rarity>6</Rarity>
+    <SkillKey>RANGHVY</SkillKey>
+    <Damage>10</Damage>
+    <Crit>3</Crit>
+    <RangeValue>wrShort</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>ION</Key>
+      </Quality>
+      <Quality>
+        <Key>SUNDER</Key>
+      </Quality>
+      <Quality>
+        <Key>LIMITEDAMMO</Key>
+        <Count>1</Count>
+      </Quality>
+    </Qualities>
+    <Range>Short</Range>
+  </Weapon>
+  <Weapon>
+    <Key>PEACESTUNBAT</Key>
+    <Name>"Peacekeeper" Stun Baton</Name>
+    <Description>
+      [H3]Czerka "Peacekeeper" Stun Baton[h3]
+      Please see page 48 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="48">No Disintegrations</Source>
+    <Type>Melee</Type>
+    <Categories>
+      <Category>Bludgeoning Melee</Category>
+    </Categories>
+    <Encumbrance>3</Encumbrance>
+    <HP>2</HP>
+    <Price>500</Price>
+    <Rarity>3</Rarity>
+    <SkillKey>MELEE</SkillKey>
+    <DamageAdd>2</DamageAdd>
+    <Crit>4</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrEngaged</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>CUMBERSOME</Key>
+        <Count>3</Count>
+      </Quality>
+      <Quality>
+        <Key>DISORIENT</Key>
+        <Count>2</Count>
+      </Quality>
+      <Quality>
+        <Key>STUN</Key>
+        <Count>3</Count>
+      </Quality>
+    </Qualities>
+    <Range>Engaged</Range>
+  </Weapon>
+  <Weapon>
+    <Key>IONPIKE</Key>
+    <Name>Ion Pike</Name>
+    <Description>
+      [H3]Ion Pike[h3]
+      Please see page 48 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="48">No Disintegrations</Source>
+    <Type>Melee</Type>
+    <Categories>
+      <Category>Powered Melee</Category>
+    </Categories>
+    <Encumbrance>2</Encumbrance>
+    <HP>1</HP>
+    <Price>750</Price>
+    <Rarity>6</Rarity>
+    <SkillKey>MELEE</SkillKey>
+    <Damage>10</Damage>
+    <Crit>3</Crit>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrEngaged</RangeValue>
+    <Qualities>
+      <Quality>
+        <Key>INACCURATE</Key>
+        <Count>1</Count>
+      </Quality>
+      <Quality>
+        <Key>ION</Key>
+      </Quality>
+      <Quality>
+        <Key>PIERCE</Key>
+        <Count>4</Count>
+      </Quality>
+    </Qualities>
+    <Range>Engaged</Range>
+  </Weapon>
+  <Weapon>
+    <Key>MICROROCKPISTOL</Key>
+    <Name>Micro-Rocket Launcher Pistol</Name>
+    <Description>
+      [H3]Micro-Rocket Launcher Pistol[h3]
+      Please see page 47 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="47">No Disintegrations</Source>
+    <Type>Explosives/Other</Type>
+    <Categories>
+      <Category>Pistol</Category>
+      <Category>Ranged</Category>
+    </Categories>
+    <Encumbrance>3</Encumbrance>
+    <Price>500</Price>
+    <Rarity>7</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Up to three micro-rockets can be loaded into the launcher.  Use the fired rocket's profile, but the launcher's range, if longer.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <SkillKey>RANGLT</SkillKey>
+    <SizeHigh>10</SizeHigh>
+    <RangeValue>wrMedium</RangeValue>
+    <NoMelee>true</NoMelee>
+    <Range>Medium</Range>
+  </Weapon>
+
+
 </Weapons>

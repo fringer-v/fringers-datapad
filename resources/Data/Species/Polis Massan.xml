@@ -47,7 +47,7 @@
       <SubSpeciesKey />
       <RankStart>1</RankStart>
       <RankAdd>0</RankAdd>
-      <RankLimit>0</RankLimit>
+      <RankLimit>2</RankLimit>
       <isCareer>false</isCareer>
     </SkillModifier>
   </SkillModifiers>

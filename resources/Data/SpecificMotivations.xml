@@ -231,9 +231,13 @@
     <Name>Overthrow the Empire</Name>
     <Description>
       [H4]Overthrow the Empire[h4]
-      Please see page 95 of the Edge of the Empire Core Rulebook for details.
+      Please see page 95 of the Edge of the Empire Core Rulebook, or page 106 of the Force and Destiny Core Rulebook, for details.
+      for details.
     </Description>
-    <Source Page="95">Edge of the Empire Core Rulebook</Source>
+    <Sources>
+      <Source Page="95">Edge of the Empire Core Rulebook</Source>
+      <Source Page="106">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
@@ -367,16 +371,6 @@
     <Motivation>Cause</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
-    <Key>CAUOVEREMP</Key>
-    <Name>Overthrow the Empire</Name>
-    <Description>
-      [H4]Overthrow the Empire[h4]
-      Please see page 106 of the Force and Destiny Core Rulebook for details.
-    </Description>
-    <Source Page="106">Force and Destiny Core Rulebook</Source>
-    <Motivation>Cause</Motivation>
-  </SpecificMotivation>
-  <SpecificMotivation>
     <Key>CAUKNOW</Key>
     <Name>Knowledge</Name>
     <Description>
@@ -486,6 +480,47 @@
     <Source Page="96">Edge of the Empire Core Rulebook</Source>
     <Motivation>Relationship</Motivation>
   </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>RELLOCALCIV</Key>
+    <Name>Local Civilian</Name>
+    <Description>
+      [H4]Local Civilian[h4]
+      Please see page 36 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="36">Forged in Battle</Source>
+    <Motivation>Relationship</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>RELLOVER</Key>
+    <Name>Lover</Name>
+    <Description>
+      [H4]Lover[h4]
+      Please see page 36 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="36">Forged in Battle</Source>
+    <Motivation>Relationship</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>RELRIVAL</Key>
+    <Name>Rival</Name>
+    <Description>
+      [H4]Rival[h4]
+      Please see page 36 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="36">Forged in Battle</Source>
+    <Motivation>Relationship</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>RELTECH</Key>
+    <Name>Tech</Name>
+    <Description>
+      [H4]Tech[h4]
+      Please see page 36 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="36">Forged in Battle</Source>
+    <Motivation>Relationship</Motivation>
+  </SpecificMotivation>
+
   <SpecificMotivation>
     <Key>BELREPUBLIC</Key>
     <Name>The Republic</Name>
@@ -974,7 +1009,8 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
+      <Source Page="34">Dangerous Covenants</Source>
+      <Source Page="34">Stay on Target</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -986,7 +1022,8 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
+      <Source Page="34">Dangerous Covenants</Source>
+      <Source Page="34">Stay on Target</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -1018,7 +1055,8 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
+      <Source Page="34">Dangerous Covenants</Source>
+      <Source Page="34">Stay on Target</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -1040,7 +1078,8 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
+      <Source Page="34">Dangerous Covenants</Source>
+      <Source Page="34">Stay on Target</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -1062,7 +1101,8 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
+      <Source Page="34">Dangerous Covenants</Source>
+      <Source Page="34">Stay on Target</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -1074,7 +1114,8 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
+      <Source Page="34">Dangerous Covenants</Source>
+      <Source Page="34">Stay on Target</Source>
     </Sources>
     <Motivation>Conflict</Motivation>
   </SpecificMotivation>
@@ -1623,10 +1664,10 @@
     <Motivation>Drive</Motivation>
   </SpecificMotivation>
   <SpecificMotivation>
-    <Key>DROVECOMMAND</Key>
+    <Key>DRIVECOMMAND</Key>
     <Name>Command</Name>
     <Description>
-      [H4]The Republic[h4]
+      [H4]Command[h4]
       Please see page 37 of the Lead by Example Sourcebook for details.
     </Description>
     <Source Page="37">Lead by Example</Source>
@@ -2011,5 +2052,309 @@
     </Description>
     <Source Page="37">Special Modifications</Source>
     <Motivation>Innovation</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>PURSUIT1</Key>
+    <Name>Justice</Name>
+    <Description>
+      [H4]Justice[h4]
+      Please see page 32 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="32">Savage Spirits</Source>
+    <Motivation>Pursuit</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>PURSUIT2</Key>
+    <Name>Wealth</Name>
+    <Description>
+      [H4]Wealth[h4]
+      Please see page 32 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="32">Savage Spirits</Source>
+    <Motivation>Pursuit</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>PURSUIT3</Key>
+    <Name>Knowledge</Name>
+    <Description>
+      [H4]Knowledge[h4]
+      Please see page 32 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="32">Savage Spirits</Source>
+    <Motivation>Pursuit</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>PURSUIT4</Key>
+    <Name>Deadliness</Name>
+    <Description>
+      [H4]Deadliness[h4]
+      Please see page 32 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="32">Savage Spirits</Source>
+    <Motivation>Pursuit</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>PURSUIT5</Key>
+    <Name>Happiness</Name>
+    <Description>
+      [H4]Happiness[h4]
+      Please see page 32 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="32">Savage Spirits</Source>
+    <Motivation>Pursuit</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>PURSUIT6</Key>
+    <Name>Exploration</Name>
+    <Description>
+      [H4]Exploration[h4]
+      Please see page 32 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="32">Savage Spirits</Source>
+    <Motivation>Pursuit</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>PURSUIT7</Key>
+    <Name>The Force</Name>
+    <Description>
+      [H4]The Force[h4]
+      Please see page 32 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="32">Savage Spirits</Source>
+    <Motivation>Pursuit</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>PURSUIT8</Key>
+    <Name>Self-Reliance</Name>
+    <Description>
+      [H4]Self-Reliance[h4]
+      Please see page 32 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="32">Savage Spirits</Source>
+    <Motivation>Pursuit</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>PURSUIT9</Key>
+    <Name>Efficiency</Name>
+    <Description>
+      [H4]Efficiency[h4]
+      Please see page 32 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="32">Savage Spirits</Source>
+    <Motivation>Pursuit</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>PURSUIT10</Key>
+    <Name>Vengeance</Name>
+    <Description>
+      [H4]Vengeance[h4]
+      Please see page 32 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="32">Savage Spirits</Source>
+    <Motivation>Pursuit</Motivation>
+  </SpecificMotivation>
+
+  <SpecificMotivation>
+    <Key>INJUSTICE1</Key>
+    <Name>Disenfranchisement</Name>
+    <Description>
+      [H4]Disenfranchisement[h4]
+      Please see page 32 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="32">Endless Vigil</Source>
+    <Motivation>Injustice</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INJUSTICE2</Key>
+    <Name>Displacement</Name>
+    <Description>
+      [H4]Displacement[h4]
+      Please see page 32 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="32">Endless Vigil</Source>
+    <Motivation>Injustice</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INJUSTICE3</Key>
+    <Name>Hunger</Name>
+    <Description>
+      [H4]Hunger[h4]
+      Please see page 32 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="32">Endless Vigil</Source>
+    <Motivation>Injustice</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INJUSTICE4</Key>
+    <Name>Illness</Name>
+    <Description>
+      [H4]Illness[h4]
+      Please see page 32 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="32">Endless Vigil</Source>
+    <Motivation>Injustice</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INJUSTICE5</Key>
+    <Name>Imprisonment</Name>
+    <Description>
+      [H4]Imprisonment[h4]
+      Please see page 32 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="32">Endless Vigil</Source>
+    <Motivation>Injustice</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INJUSTICE6</Key>
+    <Name>Oppression</Name>
+    <Description>
+      [H4]Oppression[h4]
+      Please see page 32 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="32">Endless Vigil</Source>
+    <Motivation>Injustice</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INJUSTICE7</Key>
+    <Name>Poverty</Name>
+    <Description>
+      [H4]Poverty[h4]
+      Please see page 32 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="32">Endless Vigil</Source>
+    <Motivation>Injustice</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INJUSTICE8</Key>
+    <Name>Prejudice</Name>
+    <Description>
+      [H4]Prejudice[h4]
+      Please see page 32 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="32">Endless Vigil</Source>
+    <Motivation>Injustice</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INJUSTICE9</Key>
+    <Name>Slavery</Name>
+    <Description>
+      [H4]Slavery[h4]
+      Please see page 32 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="32">Endless Vigil</Source>
+    <Motivation>Injustice</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>INJUSTICE10</Key>
+    <Name>Violence</Name>
+    <Description>
+      [H4]Violence[h4]
+      Please see page 32 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="32">Endless Vigil</Source>
+    <Motivation>Injustice</Motivation>
+  </SpecificMotivation>
+  
+  <!-- No Disintegrations -->
+
+  <SpecificMotivation>
+    <Key>CODERULE</Key>
+    <Name>Rule of Law</Name>
+    <Description>
+      [H4]Rule of Law[h4]
+      Please see page 37 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="37">No Disintegrations</Source>
+    <Motivation>Code</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CODESCORE</Key>
+    <Name>The Only Score that Matters</Name>
+    <Description>
+      [H4]The Only Score that Matters[h4]
+      Please see page 37 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="37">No Disintegrations</Source>
+    <Motivation>Code</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CODESURV</Key>
+    <Name>Survival</Name>
+    <Description>
+      [H4]Survival[h4]
+      Please see page 37 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="37">No Disintegrations</Source>
+    <Motivation>Code</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CODEPAID</Key>
+    <Name>Always Get Paid</Name>
+    <Description>
+      [H4]Always Get Paid[h4]
+      Please see page 37 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="37">No Disintegrations</Source>
+    <Motivation>Code</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CODENEVER</Key>
+    <Name>Never Again</Name>
+    <Description>
+      [H4]Never Again[h4]
+      Please see page 37 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="37">No Disintegrations</Source>
+    <Motivation>Code</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CODEQUIET</Key>
+    <Name>Quiet Professionalism</Name>
+    <Description>
+      [H4]Quiet Professionalism[h4]
+      Please see page 37 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="37">No Disintegrations</Source>
+    <Motivation>Code</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CODEREP</Key>
+    <Name>Reputation is Everything</Name>
+    <Description>
+      [H4]Reputation is Everything[h4]
+      Please see page 37 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="37">No Disintegrations</Source>
+    <Motivation>Code</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CODELIVE</Key>
+    <Name>Live Capture</Name>
+    <Description>
+      [H4]Live Capture[h4]
+      Please see page 37 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="37">No Disintegrations</Source>
+    <Motivation>Code</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CODECOLL</Key>
+    <Name>No Collateral Damage</Name>
+    <Description>
+      [H4]No Collateral Damage[h4]
+      Please see page 37 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="37">No Disintegrations</Source>
+    <Motivation>Code</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CODEFINISH</Key>
+    <Name>Finish the Job</Name>
+    <Description>
+      [H4]Finish the Job[h4]
+      Please see page 37 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="37">No Disintegrations</Source>
+    <Motivation>Code</Motivation>
   </SpecificMotivation>
 </SpecificMotivations>

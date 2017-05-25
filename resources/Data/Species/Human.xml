@@ -25,10 +25,6 @@
     <StrainThreshold>10</StrainThreshold>
     <Experience>110</Experience>
   </StartingAttrs>
-  <SkillModifiers>
-  </SkillModifiers>
-  <TalentModifiers>
-  </TalentModifiers>
   <OptionChoices>
     <OptionChoice>
       <Key>HUMANAB</Key>

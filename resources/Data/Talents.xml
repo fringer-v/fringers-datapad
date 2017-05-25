@@ -25,8 +25,11 @@
   <Talent>
     <Key>ALLTERDRIV</Key>
     <Name>All-Terrain Driver</Name>
-    <Description>Please see page 142 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source Page="142">Age of Rebellion Core Rulebook</Source>
+    <Description>Please see page 142 of the Age of Rebellion Core Rulebook, or page 34 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="142">Age of Rebellion Core Rulebook</Source>
+      <Source Page="34">No Disintegrations</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -104,8 +107,11 @@
     <Key>BAR</Key>
     <Name>Barrage</Name>
     <Ranked>true</Ranked>
-    <Description>Please see page 132 of the Edge of the Empire Core Rulebook for details.</Description>
-    <Source Page="132">Edge of the Empire Core Rulebook</Source>
+    <Description>Please see page 132 of the Edge of the Empire Core Rulebook, or page 34 of the Forged in Battle Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="132">Edge of the Empire Core Rulebook</Source>
+      <Source Page="34">Forged in Battle</Source>
+    </Sources>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
   <Talent>
@@ -158,8 +164,11 @@
   <Talent>
     <Key>BOUGHT</Key>
     <Name>Bought Info</Name>
-    <Description>Please see page 143 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source Page="143">Age of Rebellion Core Rulebook</Source>
+    <Description>Please see page 143 of the Age of Rebellion Core Rulebook, or page 34 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="143">Age of Rebellion Core Rulebook</Source>
+      <Source Page="34">No Disintegrations</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -202,15 +211,16 @@
     <Description>Please see page 144 of the Age of Rebellion Core Rulebook for details.</Description>
     <Source Page="144">Age of Rebellion Core Rulebook</Source>
     <Ranked>false</Ranked>
-    <ActivationValue>taIncidental</ActivationValue>
+    <ActivationValue>taAction</ActivationValue>
   </Talent>
   <Talent>
     <Key>CLEVERSOLN</Key>
     <Name>Clever Solution</Name>
-    <Description>Please see page 144 of the Age of Rebellion Core Rulebook, or page 32 of the Fly Casual Sourcebook, for details.</Description>
+    <Description>Please see page 144 of the Age of Rebellion Core Rulebook, page 32 of the Fly Casual Sourcebook, or page 30 of the Endless Vigil Sourcebook, for details.</Description>
     <Sources>
       <Source Page="144">Age of Rebellion Core Rulebook</Source>
-      <Source Page="32">Fly Casual Sourcebook</Source>
+      <Source Page="32">Fly Casual</Source>
+      <Source Page="30">Endless Vigil</Source>
     </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -315,7 +325,7 @@
     <Name>Coordinated Assault</Name>
     <Description>Please see page 145 of the Age of Rebellion Core Rulebook for details.</Description>
     <Source Page="145">Age of Rebellion Core Rulebook</Source>
-    <Ranked>false</Ranked>
+    <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
   <Talent>
@@ -380,8 +390,11 @@
   <Talent>
     <Key>DEPSHOT</Key>
     <Name>Debilitating Shot</Name>
-    <Description>Please see page 145 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source Page="145">Age of Rebellion Core Rulebook</Source>
+    <Description>Please see page 145 of the Age of Rebellion Core Rulebook, or page 34 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="145">Age of Rebellion Core Rulebook</Source>
+      <Source Page="34">No Disintegrations</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -652,16 +665,22 @@
   <Talent>
     <Key>FRENZ</Key>
     <Name>Frenzied Attack</Name>
-    <Description>Please see page 135 of the Core Rulebook for details.</Description>
-    <Source Page="135">Core Rulebook</Source>
+    <Description>Please see page 135 of the Edge of the Empire Core Rulebook, or page 147 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Sources>
+      <Source Page="135">Edge of the Empire Core Rulebook</Source>
+      <Source Page="147">Age of Rebellion Core Rulebook</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
   <Talent>
     <Key>FULLSTOP</Key>
     <Name>Full Stop</Name>
-    <Description>Please see page 147 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source Page="147">Age of Rebellion Core Rulebook</Source>
+    <Description>Please see page 147 of the Age of Rebellion Core Rulebook, or page 30 of the Enter the Unknown Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="147">Age of Rebellion Core Rulebook</Source>
+      <Source Page="30">Enter the Unknown</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -680,10 +699,11 @@
   <Talent>
     <Key>FULLTHIMP</Key>
     <Name>Full Throttle (Improved)</Name>
-    <Description>Please see page 136 of the Edge of the Empire Core Rulebook, or page 148 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Description>Please see page 136 of the Edge of the Empire Core Rulebook, page 148 of the Age of Rebellion Core Rulebook, or page 30 of the Endless Vigil Sourcebook, for details.</Description>
     <Sources>
       <Source Page="136">Edge of the Empire Core Rulebook</Source>
       <Source Page="148">Age of Rebellion Core Rulebook</Source>
+      <Source Page="30">Endless Vigil</Source>
     </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
@@ -691,10 +711,11 @@
   <Talent>
     <Key>FULLTHSUP</Key>
     <Name>Full Throttle (Supreme)</Name>
-    <Description>Please see page 136 of the Edge of the Empire Core Rulebook, or page 148 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Description>Please see page 136 of the Edge of the Empire Core Rulebook, page 148 of the Age of Rebellion Core Rulebook, or page 31 of the Endless Vigil Sourcebook, for details.</Description>
     <Sources>
       <Source Page="136">Edge of the Empire Core Rulebook</Source>
       <Source Page="148">Age of Rebellion Core Rulebook</Source>
+      <Source Page="31">Endless Vigil</Source>
     </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -727,6 +748,7 @@
     </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
+    <ModPercentDiscount>50</ModPercentDiscount>
     <DieModifiers>
       <DieModifier>
         <SkillKey>MECH</SkillKey>
@@ -1081,10 +1103,11 @@
   <Talent>
     <Key>LETHALBL</Key>
     <Name>Lethal Blows</Name>
-    <Description>Please see page 138 of the Edge of the Empire Core Rulebook, or page 151 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Description>Please see page 138 of the Edge of the Empire Core Rulebook, page 151 of the Age of Rebellion Core Rulebook, or page 30 of the Savage Spirits Sourcebook, for details.</Description>
     <Sources>
       <Source Page="138">Edge of the Empire Core Rulebook</Source>
       <Source Page="151">Age of Rebellion Core Rulebook</Source>
+      <Source Page="30">Savage Spirits</Source>
     </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -1114,7 +1137,7 @@
     <Description>Please see page 151 of the Age of Rebellion Core Rulebook, or page 32 of the Dangerous Covenants Sourcebook, for details.</Description>
     <Sources>
       <Source Page="151">Age of Rebellion Core Rulebook</Source>
-      <Source Page="32">Dangerous Covenants Sourcebook</Source>
+      <Source Page="32">Dangerous Covenants</Source>
     </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -1175,10 +1198,11 @@
   <Talent>
     <Key>MASSTAR</Key>
     <Name>Master Starhopper</Name>
-    <Description>Please see page 139 of the Edge of the Empire Core Rulebook, or page 151 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Description>Please see page 139 of the Edge of the Empire Core Rulebook, page 151 of the Age of Rebellion Core Rulebook, or page 31 of the Savage Spirits Sourcebook, for details.</Description>
     <Sources>
       <Source Page="139">Edge of the Empire Core Rulebook</Source>
       <Source Page="151">Age of Rebellion Core Rulebook</Source>
+      <Source Page="31">Savage Spirits</Source>
     </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -1399,8 +1423,11 @@
   <Talent>
     <Key>OVERDEF</Key>
     <Name>Overwhelm Defenses</Name>
-    <Description>Please see page 154 of the Age of Rebellion Core Rulebook for details.</Description>
-    <Source Page="154">Age of Rebellion Core Rulebook</Source>
+    <Description>Please see page 154 of the Age of Rebellion Core Rulebook, or page 35 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="154">Age of Rebellion Core Rulebook</Source>
+      <Source Page="35">No Disintegrations</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -1462,12 +1489,33 @@
     <Source Page="154">Age of Rebellion Core Rulebook</Source>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
+    <ItemChanges>
+      <ItemChange>
+        <ItemType>Weapon</ItemType>
+        <QualityChanges>
+          <Quality>
+            <Key>BLAST</Key>
+            <Count>1</Count>
+          </Quality>
+        </QualityChanges>
+      </ItemChange>
+      <ItemChange>
+        <ItemType>Weapon</ItemType>
+        <DamageChange>1</DamageChange>
+        <SkillKeys>
+          <Key>MECH</Key>
+        </SkillKeys>
+      </ItemChange>
+    </ItemChanges>
   </Talent>
   <Talent>
     <Key>PRECAIM</Key>
     <Name>Precise Aim</Name>
-    <Description>Please see page 141 of the Edge of the Empire Core Rulebook for details.</Description>
+    <Description>Please see page 141 of the Edge of the Empire Core Rulebook, or page 31 of the Savage Spirits Sourcebook, for details.</Description>
+    <Sources>
     <Source Page="141">Edge of the Empire Core Rulebook</Source>
+      <Source Page="31">Savage Spirits</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
@@ -1680,11 +1728,13 @@
   </Talent>
   <Talent>
     <Key>SHORTCUT</Key>
-    <Name>Short Cut</Name>
-    <Description>Please see page 142 of the Edge of the Empire Core Rulebook, or page 155 of the Age of Rebellion Core Rulebook, for details.</Description>
+    <Name>Shortcut</Name>
+    <Description>Please see page 142 of the Edge of the Empire Core Rulebook, page 155 of the Age of Rebellion Core Rulebook, page 31 of the Savage Spirits Sourcebook, or page 31 of the Endless Vigil Sourcebook, for details.</Description>
     <Sources>
       <Source Page="142">Edge of the Empire Core Rulebook</Source>
       <Source Page="155">Age of Rebellion Core Rulebook</Source>
+      <Source Page="31">Savage Spirits</Source>
+      <Source Page="31">Endless Vigil</Source>
     </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -1766,7 +1816,7 @@
       <Source Page="152">Force and Destiny Core Rulebook</Source>
     </Sources>
     <Ranked>true</Ranked>
-    <ActivationValue>taIncidental</ActivationValue>
+    <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>true</ForceTalent>
     <DieModifiers>
       <DieModifier>
@@ -2326,8 +2376,11 @@
   <Talent>
     <Key>HUNTERQUARRY</Key>
     <Name>Hunter's Quarry</Name>
-    <Description>Please see page 30 of Enter the Unknown for details.</Description>
-    <Source Page="30">Enter the Unknown</Source>
+    <Description>Please see page 30 of Enter the Unknown, or page 30 of Savage Spirits, for details.</Description>
+    <Sources>
+      <Source Page="30">Enter the Unknown</Source>
+      <Source Page="30">Savage Spirits</Source>
+    </Sources>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
@@ -2335,11 +2388,12 @@
   <Talent>
     <Key>HUNTQIMP</Key>
     <Name>Hunter's Quarry (Improved)</Name>
-    <Description>
-      Please see page 30 of Enter the Unknown for details.
-    </Description>
-    <Source Page="30">Enter the Unknown</Source>
-    <AddlHP>0</AddlHP>
+      <Description>Please see page 30 of Enter the Unknown, or page 30 of Savage Spirits, for details.</Description>
+      <Sources>
+        <Source Page="30">Enter the Unknown</Source>
+        <Source Page="30">Savage Spirits</Source>
+      </Sources>
+      <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -2348,22 +2402,27 @@
     <Key>BURLY</Key>
     <Name>Burly</Name>
     <Description>
-      Please see page 32 of Dangerous Covenants for details.
+      Please see page 32 of the Dangerous Covenants Sourcebook, or page 34 of the Forged in Battle Sourcebook, for details.
     </Description>
-    <Source Page="32">Dangerous Covenants</Source>
+    <Sources>
+      <Source Page="32">Dangerous Covenants</Source>
+      <Source Page="34">Forged in Battle</Source>
+    </Sources>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
-    <ItemChange>
-      <ItemType>Weapon</ItemType>
-      <EncumChange>-1</EncumChange>
-      <QualityChanges>
-        <Quality>
-          <Key>CUMBERSOME</Key>
-          <Count>-1</Count>
-        </Quality>
-      </QualityChanges>
-    </ItemChange>
+    <ItemChanges>
+      <ItemChange>
+        <ItemType>Weapon</ItemType>
+        <EncumChange>-1</EncumChange>
+        <QualityChanges>
+          <Quality>
+            <Key>CUMBERSOME</Key>
+            <Count>-1</Count>
+          </Quality>
+        </QualityChanges>
+      </ItemChange>
+    </ItemChanges>
   </Talent>
   <Talent>
     <Key>FEARSOME</Key>
@@ -2382,9 +2441,12 @@
     <Key>HEAVYHITTER</Key>
     <Name>Heavy Hitter</Name>
     <Description>
-      Please see page 32 of Dangerous Covenants for details.
+      Please see page 32 of the Dangerous Covenants Sourcebook, or page 35 of the Forged in Battle Sourcebook, for details.
     </Description>
-    <Source Page="32">Dangerous Covenants</Source>
+    <Sources>
+      <Source Page="32">Dangerous Covenants</Source>
+      <Source Page="35">Forged in Battle</Source>
+    </Sources>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -2393,9 +2455,12 @@
     <Key>HEROICRES</Key>
     <Name>Heroic Resilience</Name>
     <Description>
-      Please see page 32 of Dangerous Covenants for details.
+      Please see page 32 of the Dangerous Covenants Sourcebook, or page 35 of the Forged in Battle Sourcebook, for details.
     </Description>
-    <Source Page="32">Dangerous Covenants</Source>
+    <Sources>
+      <Source Page="32">Dangerous Covenants</Source>
+      <Source Page="35">Forged in Battle</Source>
+    </Sources>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -2437,9 +2502,12 @@
     <Key>RAINDEATH</Key>
     <Name>Rain of Death</Name>
     <Description>
-      Please see page 32 of Dangerous Covenants for details.
+      Please see page 32 of the Dangerous Covenants Sourcebook, or page 35 of the Forged in Battle Sourcebook, for details.
     </Description>
-    <Source Page="32">Dangerous Covenants</Source>
+    <Sources>
+      <Source Page="32">Dangerous Covenants</Source>
+      <Source Page="35">Forged in Battle</Source>
+    </Sources>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
@@ -2469,10 +2537,12 @@
     <Key>TALKTALK</Key>
     <Name>Talk the Talk</Name>
     <Description>
-      Please see page 33 of Dangerous Covenants for details.
+      Please see page 33 of Dangerous Covenants, or page 31 of the Endless Vigil Sourcebook, for details.
     </Description>
-    <Source Page="33">Dangerous Covenants</Source>
-    <AddlHP>0</AddlHP>
+    <Sources>
+      <Source Page="33">Dangerous Covenants</Source>
+      <Source Page="31">Endless Vigil</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -2522,6 +2592,17 @@
     <ForceTalent>true</ForceTalent>
   </Talent>
   <Talent>
+    <Key>ANIMALBONDIMP</Key>
+    <Name>Animal Bond (Improved)</Name>
+    <Description>
+      Please see page 30 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="30">Savage Spirits</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  <Talent>
     <Key>ANIMALEMP</Key>
     <Name>Animal Empathy</Name>
     <Description>
@@ -2553,12 +2634,27 @@
     <Key>BODIMP</Key>
     <Name>Body Guard (Improved)</Name>
     <Description>
-      Please see page 140 of the Force and Destiny Core Rulebook for details.
+      Please see page 140 of the Force and Destiny Core Rulebook, or page 34 of the Forged in Battle Sourcebook, for details.
     </Description>
-    <Source Page="140">Force and Destiny Core Rulebook</Source>
+    <Sources>
+      <Source Page="140">Force and Destiny Core Rulebook</Source>
+      <Source Page="34">Forged in Battle</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>false</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>BODSUP</Key>
+    <Name>Body Guard (Supreme)</Name>
+    <Description>
+      Please see page 34 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Sources>
+      <Source Page="34">Forged in Battle</Source>
+    </Sources>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
   </Talent>
   <Talent>
     <Key>CALMAURA</Key>
@@ -2630,9 +2726,12 @@
     <Key>CONDITIONED</Key>
     <Name>Conditioned</Name>
     <Description>
-      Please see page 141 of the Force and Destiny Core Rulebook for details.
+      Please see page 141 of the Force and Destiny Core Rulebook, or page 34 of the Forged in Battle Sourcebook, for details.
     </Description>
-    <Source Page="141">Force and Destiny Core Rulebook</Source>
+    <Sources>
+      <Source Page="141">Force and Destiny Core Rulebook</Source>
+      <Source Page="34">Forged in Battle</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <DieModifiers>
@@ -2653,7 +2752,8 @@
       Please see page 33 of the Desperate Allies Sourcebook or page 141 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source Page="33">Desperate Allies Sourcebook or page 141 of the Force and Destiny Core Rulebook</Source>
+      <Source Page="33">Desperate Allies</Source>
+      <Source Page="141">Force and Destiny Core Rulebook</Source>
     </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
@@ -2690,21 +2790,23 @@
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>false</ForceTalent>
-    <ItemChange>
-      <ItemType>Weapon</ItemType>
-      <QualityChanges>
-        <Quality>
-          <Key>DEFENSIVE</Key>
-          <Count>1</Count>
-        </Quality>
-      </QualityChanges>
-      <SkillKeys>
-        <Key>MELEE</Key>
-        <Key>LTSABER</Key>
-        <Key>BRAWL</Key>
-      </SkillKeys>
-      <AddNewQualities>true</AddNewQualities>
-    </ItemChange>
+    <ItemChanges>
+      <ItemChange>
+        <ItemType>Weapon</ItemType>
+        <QualityChanges>
+          <Quality>
+            <Key>DEFENSIVE</Key>
+            <Count>1</Count>
+          </Quality>
+        </QualityChanges>
+        <SkillKeys>
+          <Key>MELEE</Key>
+          <Key>LTSABER</Key>
+          <Key>BRAWL</Key>
+        </SkillKeys>
+        <AddNewQualities>true</AddNewQualities>
+      </ItemChange>
+    </ItemChanges>
   </Talent>
   <Talent>
     <Key>DISRUPSTRIKE</Key>
@@ -3112,9 +3214,12 @@
     <Key>PARRY</Key>
     <Name>Parry</Name>
     <Description>
-      Please see page 149 of the Force and Destiny Core Rulebook for details.
+      Please see page 149 of the Force and Destiny Core Rulebook, or page 35 of the No Disintegrations Sourcebook, for details.
     </Description>
-    <Source Page="149">Force and Destiny Core Rulebook</Source>
+    <Sources>
+      <Source Page="149">Force and Destiny Core Rulebook</Source>
+      <Source Page="35">No Disintegrations</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -3167,9 +3272,12 @@
     <Key>PREYWEAK</Key>
     <Name>Prey on the Weak</Name>
     <Description>
-      Please see page 149 of the Force and Destiny Core Rulebook for details.
+      Please see page 149 of the Force and Destiny Core Rulebook, or page 35 of the Forged in Battle Sourcebook, for details.
     </Description>
-    <Source Page="149">Force and Destiny Core Rulebook</Source>
+    <Sources>
+      <Source Page="149">Force and Destiny Core Rulebook</Source>
+      <Source Page="35">Forged in Battle</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
     <ForceTalent>false</ForceTalent>
@@ -3414,7 +3522,7 @@
       Please see page 34 of the Desperate Allies Sourcebook, and page 153 of the Force and Destiny Core Rulebook, for details.
     </Description>
     <Sources>
-      <Source Page="34">Desperate Allies Sourcebook</Source>
+      <Source Page="34">Desperate Allies</Source>
       <Source Page="153">Force and Destiny Core Rulebook</Source>
     </Sources>
     <Ranked>false</Ranked>
@@ -3450,8 +3558,8 @@
         Please see page 32 of the Far Horizons Sourcebook, or page 32 of the Fly Casual Sourcebook, for details.
       </Description>
     <Sources>
-      <Source Page="32">Far Horizons Sourcebook</Source>
-      <Source Page="32">Fly Casual Sourcebook</Source>
+      <Source Page="32">Far Horizons</Source>
+      <Source Page="32">Fly Casual</Source>
     </Sources>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
@@ -3461,9 +3569,12 @@
     <Key>COORDODGE</Key>
     <Name>Coordination Dodge</Name>
     <Description>
-        Please see page 32 of the Far Horizons Sourcebook for details.
+        Please see page 32 of the Far Horizons Sourcebook, or page 34 of the No Disintegrations Sourcebook, for details.
       </Description>
-    <Source Page="32">Far Horizons</Source>
+    <Sources>
+      <Source Page="32">Far Horizons</Source>
+      <Source Page="34">No Disintegrations</Source>
+    </Sources>
     <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -3506,9 +3617,12 @@
     <Key>GOODCOP</Key>
     <Name>Good Cop</Name>
     <Description>
-        Please see page 33 of the Far Horizons Sourcebook for details.
+        Please see page 33 of the Far Horizons Sourcebook, or page 34 of the No Disintegrations Sourcebook, for details.
       </Description>
-    <Source Page="33">Far Horizons</Source>
+    <Sources>
+      <Source Page="33">Far Horizons</Source>
+      <Source Page="34">No Disintegrations</Source>
+    </Sources>
     <AddlHP>0</AddlHP>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -3554,16 +3668,14 @@
     <Key>UNRELSKEP</Key>
     <Name>Unrelenting Skeptic</Name>
     <Description>
-        Please see page 33 of the Far Horizons Sourcebook for details.
+        Please see page 33 of the Far Horizons Sourcebook, or page 31 of the Endless Vigil Sourcebook, for details.
       </Description>
-    <Source Page="33">Far Horizons Sourcebook</Source>
     <Sources>
-      <Source>Far Horizons</Source>
+    <Source Page="33">Far Horizons</Source>
+    <Source Page="31">Endless Vigil</Source>
     </Sources>
-    <AddlHP>0</AddlHP>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
-    <JuryRigged>false</JuryRigged>
   </Talent>
   <Talent>
     <Key>UNRELSKEPIMP</Key>
@@ -3817,9 +3929,12 @@
     <Key>SOOTHTONE</Key>
     <Name>Soothing Tone</Name>
     <Description>
-      Please see page 33 of the Stay on Target Sourcebook for details.
+      Please see page 33 of the Stay on Target Sourcebook, or page 31 of Savage Spirits, for details.
     </Description>
-    <Source Page="33">Stay on Target</Source>
+    <Sources>
+      <Source Page="33">Stay on Target</Source>
+      <Source Page="31">Savage Spirits</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taAction</ActivationValue>
   </Talent>
@@ -3950,7 +4065,7 @@
   </Talent>
   <Talent>
     <Key>QUICKDRIMP</Key>
-    <Name>Quickdraw (Improved)</Name>
+    <Name>Quick Draw (Improved)</Name>
     <Description>Please see page 33 of the Fly Casual Sourcebook for details.</Description>
     <Source Page="33">Fly Casual</Source>
     <Ranked>false</Ranked>
@@ -3961,8 +4076,8 @@
     <Name>Second Chances</Name>
     <Description>Please see  page 33 of the Stay on Target Sourcebook, or page 33 of the Fly Casual Sourcebook, for details.</Description>
     <Sources>
-      <Source Page="33">Stay on Target Sourcebook</Source>
-      <Source Page="33">Fly Casual Sourcebook</Source>
+      <Source Page="33">Stay on Target</Source>
+      <Source Page="33">Fly Casual</Source>
     </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
@@ -4066,8 +4181,11 @@
   <Talent>
     <Key>INFORM</Key>
     <Name>Informant</Name>
-    <Description>Please see page 33 of the Desperate Allies Sourcebook for details.</Description>
-    <Source Page="33">Desperate Allies</Source>
+    <Description>Please see page 33 of the Desperate Allies Sourcebook, or page 34 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="33">Desperate Allies</Source>
+      <Source Page="34">No Disintegrations</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidental</ActivationValue>
   </Talent>
@@ -4154,7 +4272,7 @@
   <Talent>
     <Key>ARMSUP</Key>
     <Name>Armor Master (Supreme)</Name>
-    <Description>Please see page 30 of the Keeping the Peace sourcebook for details.</Description>
+    <Description>Please see page 30 of the Keeping the Peace Sourcebook for details.</Description>
     <Source Page="30">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
@@ -4162,7 +4280,7 @@
   <Talent>
     <Key>BALEGAZE</Key>
     <Name>Baleful Gaze</Name>
-    <Description>Please see page 30 of the Keeping the Peace sourcebook for details.</Description>
+    <Description>Please see page 30 of the Keeping the Peace Sourcebook for details.</Description>
     <Source Page="30">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
@@ -4172,23 +4290,29 @@
   <Talent>
     <Key>BLINDSPOT</Key>
     <Name>Blind Spot</Name>
-    <Description>Please see page 30 of the Keeping the Peace sourcebook for details.</Description>
-    <Source Page="30">Keeping the Peace</Source>
+    <Description>Please see page 30 of the Keeping the Peace Sourcebook, or page 34 of the Forged in Battle Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="30">Keeping the Peace</Source>
+      <Source Page="34">Forged in Battle</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
   <Talent>
     <Key>GRAPPLE</Key>
     <Name>Grapple</Name>
-    <Description>Please see page 30 of the Keeping the Peace sourcebook for details.</Description>
-    <Source Page="30">Keeping the Peace</Source>
+    <Description>Please see page 30 of the Keeping the Peace Sourcebook, or page 34 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="30">Keeping the Peace</Source>
+      <Source Page="34">No Disintegrations</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
   </Talent>
   <Talent>
     <Key>NOESC</Key>
     <Name>No Escape</Name>
-    <Description>Please see page 30 of the Keeping the Peace sourcebook for details.</Description>
+    <Description>Please see page 30 of the Keeping the Peace Sourcebook for details.</Description>
     <Source Page="30">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -4197,31 +4321,40 @@
   <Talent>
     <Key>OVERBAL</Key>
     <Name>Overbalance</Name>
-    <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
-    <Source Page="31">Keeping the Peace</Source>
+    <Description>Please see page 31 of the Keeping the Peace Sourcebook, or page 35 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="31">Keeping the Peace</Source>
+      <Source Page="35">No Disintegrations</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
   <Talent>
     <Key>PRECSTR</Key>
     <Name>Precision Strike</Name>
-    <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
-    <Source Page="31">Keeping the Peace</Source>
+    <Description>Please see page 31 of the Keeping the Peace Sourcebook, or page 35 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="31">Keeping the Peace</Source>
+      <Source Page="35">No Disintegrations</Source>
+    </Sources>
     <Ranked>false</Ranked>
     <ActivationValue>taIncidentalOOT</ActivationValue>
   </Talent>
   <Talent>
     <Key>PRIMEPOS</Key>
     <Name>Prime Positions</Name>
-    <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
-    <Source Page="31">Keeping the Peace</Source>
+    <Description>Please see page 31 of the Keeping the Peace Sourcebook, or page 35 of the Forged in Battle Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="31">Keeping the Peace</Source>
+      <Source Page="35">Forged in Battle</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
   <Talent>
     <Key>PRESSHOT</Key>
     <Name>Prescient Shot</Name>
-    <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
+    <Description>Please see page 31 of the Keeping the Peace Sourcebook for details.</Description>
     <Source Page="31">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -4230,7 +4363,7 @@
   <Talent>
     <Key>PROPAIM</Key>
     <Name>Prophetic Aim</Name>
-    <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
+    <Description>Please see page 31 of the Keeping the Peace Sourcebook for details.</Description>
     <Source Page="31">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
@@ -4239,7 +4372,7 @@
   <Talent>
     <Key>REINITEM</Key>
     <Name>Reinforce Item</Name>
-    <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
+    <Description>Please see page 31 of the Keeping the Peace Sourcebook for details.</Description>
     <Source Page="31">Keeping the Peace</Source>
     <Ranked>false</Ranked>
     <ActivationValue>taManeuver</ActivationValue>
@@ -4248,8 +4381,11 @@
   <Talent>
     <Key>SUPPRFIRE</Key>
     <Name>Suppressing Fire</Name>
-    <Description>Please see page 31 of the Keeping the Peace sourcebook for details.</Description>
-    <Source Page="31">Keeping the Peace</Source>
+    <Description>Please see page 31 of the Keeping the Peace Sourcebook, or page 35 of the Forged in Battle Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="31">Keeping the Peace</Source>
+      <Source Page="35">Forged in Battle</Source>
+    </Sources>
     <Ranked>true</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
@@ -4430,7 +4566,7 @@
   </Talent>
   <Talent>
     <Key>OVERCHARGEIMP</Key>
-    <Name>Improved Overcharge</Name>
+    <Name>Overcharge (Improved)</Name>
     <Description>See page 35 of the Special Modifications Sourcebook for details.</Description>
     <Source Page="35">Special Modifications</Source>
     <Ranked>false</Ranked>
@@ -4462,7 +4598,7 @@
   </Talent>
   <Talent>
     <Key>SPKBINIMP</Key>
-    <Name>Improved Speaks Binary</Name>
+    <Name>Speaks Binary (Improved)</Name>
     <Description>See page 35 of the Special Modifications Sourcebook for details.</Description>
     <Source Page="35">Special Modifications</Source>
     <Ranked>false</Ranked>
@@ -4470,10 +4606,455 @@
   </Talent>
   <Talent>
     <Key>SPKBINSUP</Key>
-    <Name>Supreme Speaks Binary</Name>
+    <Name>Speaks Binary (Supreme)</Name>
     <Description>See page 35 of the Special Modifications Sourcebook for details.</Description>
     <Source Page="35">Special Modifications</Source>
     <Ranked>false</Ranked>
+    <ActivationValue>taManeuver</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>DEATHBLOW</Key>
+    <Name>Deathblow</Name>
+    <Description>See page 30 of the Savage Spirits Sourcebook for details.</Description>
+    <Source Page="30">Savage Spirits</Source>
+    <Ranked>false</Ranked>
     <ActivationValue>taPassive</ActivationValue>
   </Talent>
+  <Talent>
+    <Key>ESSENKILL</Key>
+    <Name>Essential Kill</Name>
+    <Description>See page 30 of the Savage Spirits Sourcebook for details.</Description>
+    <Source Page="30">Savage Spirits</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>FORCECONN</Key>
+    <Name>Force Connection</Name>
+    <Description>See page 30 of the Savage Spirits Sourcebook for details.</Description>
+    <Source Page="30">Savage Spirits</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+    <DieModifiers>
+      <DieModifier>
+        <SkillKey>SURV</SkillKey>
+        <ForceCount>1</ForceCount>
+      </DieModifier>
+      <DieModifier>
+        <SkillKey>XEN</SkillKey>
+        <ForceCount>1</ForceCount>
+      </DieModifier>
+    </DieModifiers>
+  </Talent>
+  <Talent>
+    <Key>HARASS</Key>
+    <Name>Harass</Name>
+    <Description>See page 30 of the Savage Spirits Sourcebook for details.</Description>
+    <Source Page="30">Savage Spirits</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>HOLNAV</Key>
+    <Name>Holistic Navigation</Name>
+    <Description>See page 30 of the Savage Spirits Sourcebook for details.</Description>
+    <Source Page="30">Savage Spirits</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>INTUITNAV</Key>
+    <Name>Intuitive Navigation</Name>
+    <Description>See page 30 of the Savage Spirits Sourcebook for details.</Description>
+    <Source Page="30">Savage Spirits</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+    <DieModifiers>
+      <DieModifier>
+        <SkillKey>ASTRO</SkillKey>
+        <ForceCount>1</ForceCount>
+      </DieModifier>
+      <DieModifier>
+        <SkillKey>OUT</SkillKey>
+        <ForceCount>1</ForceCount>
+      </DieModifier>
+    </DieModifiers>
+  </Talent>
+  <Talent>
+    <Key>MARKDEATH</Key>
+    <Name>Marked for Death</Name>
+    <Description>See page 30 of the Savage Spirits Sourcebook for details.</Description>
+    <Source Page="30">Savage Spirits</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taManeuver</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>MENACE</Key>
+    <Name>Menace</Name>
+    <Description>See page 31 of the Savage Spirits Sourcebook for details.</Description>
+    <Source Page="31">Savage Spirits</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taManeuver</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>MINDMAT</Key>
+    <Name>Mind Over Matter</Name>
+    <Description>See page 31 of the Savage Spirits Sourcebook, or page 35 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="31">Savage Spirits</Source>
+      <Source Page="35">No Disintegrations</Source>
+    </Sources>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidentalOOT</ActivationValue>
+    <ForceTalent>false</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>ONENAT</Key>
+    <Name>One with Nature</Name>
+    <Description>See page 31 of the Savage Spirits Sourcebook, or page 35 of the Forged in Battle Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="31">Savage Spirits</Source>
+      <Source Page="35">Forged in Battle</Source>
+    </Sources>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <ForceTalent>false</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>PLANMAP</Key>
+    <Name>Planet Mapper</Name>
+    <Description>See page 31 of the Savage Spirits Sourcebook, or page 35 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="31">Savage Spirits</Source>
+      <Source Page="35">No Disintegrations</Source>
+    </Sources>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <ForceTalent>false</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>SHORTCUTIMP</Key>
+    <Name>Shortcut (Improved)</Name>
+    <Description>See page 31 of the Savage Spirits Sourcebook, page 31 of the Endless Vigil Sourcebook, or page 36 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="31">Savage Spirits</Source>
+      <Source Page="31">Endless Vigil</Source>
+      <Source Page="36">No Disintegrations</Source>
+    </Sources>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <ForceTalent>false</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>STUDPLOT</Key>
+    <Name>Studious Plotting</Name>
+    <Description>See page 31 of the Savage Spirits Sourcebook for details.</Description>
+    <Source Page="31">Savage Spirits</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <ForceTalent>false</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>SURVFIT</Key>
+    <Name>Survival of the Fittest</Name>
+    <Description>See page 31 of the Savage Spirits Sourcebook for details.</Description>
+    <Source Page="31">Savage Spirits</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>TERRKILL</Key>
+    <Name>Terrifying Kill</Name>
+    <Description>See page 31 of the Savage Spirits Sourcebook for details.</Description>
+    <Source Page="31">Savage Spirits</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+    <Conflict>1</Conflict>
+  </Talent>
+  <Talent>
+    <Key>AMBUSH</Key>
+    <Name>Ambush</Name>
+    <Description>See page 34 of the Forged in Battle Sourcebook for details.</Description>
+    <Source Page="34">Forged in Battle</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taManeuver</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>CUNNSNARE</Key>
+    <Name>Cunning Snare</Name>
+    <Description>See page 34 of the Forged in Battle Sourcebook for details.</Description>
+    <Source Page="34">Forged in Battle</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>MOVTARGET</Key>
+    <Name>Moving Target</Name>
+    <Description>See page 35 of the Forged in Battle Sourcebook for details.</Description>
+    <Source Page="35">Forged in Battle</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>SEIZEINIT</Key>
+    <Name>Seize the Initiative</Name>
+    <Description>See page 35 of the Forged in Battle Sourcebook for details.</Description>
+    <Source Page="35">Forged in Battle</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taManeuver</ActivationValue>
+  </Talent>
+
+
+
+
+  <!-- Mount Talents-->
+  <Talent>
+    <Key>MOUNTDOMEST</Key>
+    <Name>Domesticable</Name>
+    <Description>Downgrade the difficulty of checks to train this mount by 1 per rank.</Description>
+    <Source Page="83">Stay on Target</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>MOUNTTRAINED</Key>
+    <Name>Trained Mount</Name>
+    <Description>Add [BO] per rank to a rider's Survival checks while mounted on this mount.</Description>
+    <Source Page="83">Stay on Target</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>MOUNTBURDEN</Key>
+    <Name>Beast of Burden</Name>
+    <Description>Add 1 per rank to the mount's encumbrance threshold.</Description>
+    <Source Page="83">Stay on Target</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>MOUNTSTUBBORN</Key>
+    <Name>Stubborn</Name>
+    <Description>Upgrade the difficulty of checks to train this mount by 1 per rank.</Description>
+    <Source Page="85">Stay on Target</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>MOUNTDOMESTED</Key>
+    <Name>Domesticated</Name>
+    <Description>Difficulty for training this beast is not upgraded.</Description>
+    <Source Page="85">Stay on Target</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>MOUNTFLY</Key>
+    <Name>Flyer</Name>
+    <Description>This mount can fly.  When on the ground, it's Speed is reduced to 1.</Description>
+    <Source Page="85">Stay on Target</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>BETTERLUCK</Key>
+    <Name>Better Luck Next Time</Name>
+    <Description>Please see page 30 of the Endless Vigil Sourcebook for details.</Description>
+    <Source Page="30">Endless Vigil</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>CONSTVIGIL</Key>
+    <Name>Constant Vigilance</Name>
+    <Description>Please see page 30 of the Endless Vigil Sourcebook for details.</Description>
+    <Source Page="30">Endless Vigil</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>FEARSHAD</Key>
+    <Name>Fear the Shadows</Name>
+    <Description>Please see page 30 of the Endless Vigil Sourcebook for details.</Description>
+    <Source Page="30">Endless Vigil</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+    <Conflict>1</Conflict>
+  </Talent>
+  <Talent>
+    <Key>FREERUN</Key>
+    <Name>Freerunning</Name>
+    <Description>Please see page 30 of the Endless Vigil Sourcebook for details.</Description>
+    <Source Page="30">Endless Vigil</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>FREERUNIMP</Key>
+    <Name>Freerunning (Improved)</Name>
+    <Description>Please see page 30 of the Endless Vigil Sourcebook for details.</Description>
+    <Source Page="30">Endless Vigil</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>IMPOSFALL</Key>
+    <Name>Impossible Fall</Name>
+    <Description>Please see page 31 of the Endless Vigil Sourcebook for details.</Description>
+    <Source Page="31">Endless Vigil</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidentalOOT</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>RECSCENE</Key>
+    <Name>Reconstruct the Scene</Name>
+    <Description>Please see page 31 of the Endless Vigil Sourcebook, or page 36 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="31">Endless Vigil</Source>
+      <Source Page="36">No Disintegrations</Source>
+    </Sources>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>SABERTHROWIMP</Key>
+    <Name>Saber Throw (Improved)</Name>
+    <Description>Please see page 31 of the Endless Vigil Sourcebook for details.</Description>
+    <Source Page="31">Endless Vigil</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>SENSESCENE</Key>
+    <Name>Sense the Scene</Name>
+    <Description>Please see page 31 of the Endless Vigil Sourcebook for details.</Description>
+    <Source Page="31">Endless Vigil</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  <Talent>
+    <Key>STRSMARTIMP</Key>
+    <Name>Street Smarts (Improved)</Name>
+    <Description>Please see page 31 of the Endless Vigil Sourcebook, or page 36 of the No Disintegrations Sourcebook, for details.</Description>
+    <Sources>
+      <Source Page="31">Endless Vigil</Source>
+      <Source Page="36">No Disintegrations</Source>
+    </Sources>
+    <Ranked>false</Ranked>
+    <ActivationValue>taAction</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>SUPHUMAN</Key>
+    <Name>Superhuman Reflexes</Name>
+    <Description>Please see page 31 of the Endless Vigil Sourcebook for details.</Description>
+    <Source Page="31">Endless Vigil</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+    <ForceTalent>true</ForceTalent>
+  </Talent>
+  
+  <!-- No Disintegrations -->
+
+    <Talent>
+    <Key>HARDBOILED</Key>
+    <Name>Hard-Boiled</Name>
+    <Description>Please see page 34 of the No Disintegrations Sourcebook for details.</Description>
+    <Source Page="34">No Disintegrations</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>HINDERSHOT</Key>
+    <Name>Hindering Shot</Name>
+    <Description>Please see page 34 of the No Disintegrations Sourcebook for details.</Description>
+    <Source Page="34">No Disintegrations</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>IRONBODY</Key>
+    <Name>Iron Body</Name>
+    <Description>Please see page 34 of the No Disintegrations Sourcebook for details.</Description>
+    <Source Page="34">No Disintegrations</Source>
+    <Ranked>true</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+    <DieModifiers>
+      <DieModifier>
+        <SkillKey>COORD</SkillKey>
+        <SetbackCount>1</SetbackCount>
+      </DieModifier>
+      <DieModifier>
+        <SkillKey>RESIL</SkillKey>
+        <SetbackCount>1</SetbackCount>
+      </DieModifier>
+    </DieModifiers>
+    <ItemChanges>
+      <ItemChange>
+        <UnarmedOnly>true</UnarmedOnly>
+        <CritChange>-1</CritChange>
+      </ItemChange>
+    </ItemChanges>
+  </Talent>
+  <Talent>
+    <Key>MARTIALGRACE</Key>
+    <Name>Martial Grace</Name>
+    <Description>Please see page 35 of the No Disintegrations Sourcebook for details.</Description>
+    <Source Page="35">No Disintegrations</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidental</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>OFFDRIVE</Key>
+    <Name>Offensive Driving</Name>
+    <Description>Please see page 35 of the No Disintegrations Sourcebook for details.</Description>
+    <Source Page="35">No Disintegrations</Source>
+    <Ranked>false</Ranked>
+    <ActivationValue>taManeuver</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>PRECSTRIMP</Key>
+    <Name>Precision Strike (Improved)</Name>
+    <Description>Please see page 35 of the No Disintegrations Sourcebook for details.</Description>
+    <Sources>
+      <Source Page="35">No Disintegrations</Source>
+    </Sources>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidentalOOT</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>PRECSTRSUP</Key>
+    <Name>Precision Strike (Supreme)</Name>
+    <Description>Please see page 36 of the No Disintegrations Sourcebook for details.</Description>
+    <Sources>
+      <Source Page="36">No Disintegrations</Source>
+    </Sources>
+    <Ranked>false</Ranked>
+    <ActivationValue>taIncidentalOOT</ActivationValue>
+  </Talent>
+  <Talent>
+    <Key>UNARMPARRY</Key>
+    <Name>Unarmed Parry</Name>
+    <Description>Please see page 36 of the No Disintegrations Sourcebook for details.</Description>
+    <Sources>
+      <Source Page="36">No Disintegrations</Source>
+    </Sources>
+    <Ranked>false</Ranked>
+    <ActivationValue>taPassive</ActivationValue>
+  </Talent>
+
+
 </Talents>

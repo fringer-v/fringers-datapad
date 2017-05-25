@@ -4,6 +4,11 @@
     <Key>PILOT</Key>
     <Name>Pilot</Name>
     <Description></Description>
+    <Sources>
+      <Source Page="237">Edge of the Empire Core Rulebook</Source>
+      <Source Page="248">Age of Rebellion Core Rulebook</Source>
+      <Source Page="241">Force and Destiny Core Rulebook</Source>
+    </Sources>
     <Actions>
       <Key>ACCDEC</Key>
       <Key>FLYDRIVE</Key>
@@ -98,4 +103,18 @@
     </Actions>
     <ForWeapon>false</ForWeapon>
   </VehPosition>
+    <VehPosition>
+    <Key>MOUNT</Key>
+    <Name>Mount Rider</Name>
+    <Description></Description>
+    <Actions>
+      <Key>ACCDEC</Key>
+      <Key>FLYDRIVE</Key>
+      <Key>EVASMAN</Key>
+      <Key>STAY</Key>
+      <Key>PUNCH</Key>
+    </Actions>
+    <ForMount>true</ForMount>
+  </VehPosition>
+
 </VehPositions>

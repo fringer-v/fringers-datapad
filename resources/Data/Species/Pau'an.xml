@@ -26,92 +26,26 @@ Utapese is the language of the Pau'ans on the planet Utapau. Most Pau'ans speak 
     <Cunning>2</Cunning>
     <Willpower>2</Willpower>
     <Presence>3</Presence>
-    <Requirement>
-      <WearingArmor>false</WearingArmor>
-      <Career>false</Career>
-      <Specialization>false</Specialization>
-      <NonCareer>false</NonCareer>
-      <SoakAtLeast>0</SoakAtLeast>
-    </Requirement>
   </StartingChars>
   <StartingAttrs>
     <WoundThreshold>10</WoundThreshold>
     <StrainThreshold>11</StrainThreshold>
-    <DefenseRanged>0</DefenseRanged>
-    <DefenseMelee>0</DefenseMelee>
-    <SoakValue>0</SoakValue>
     <Experience>100</Experience>
-    <ForceRating>0</ForceRating>
-    <Requirement>
-      <WearingArmor>false</WearingArmor>
-      <Career>false</Career>
-      <Specialization>false</Specialization>
-      <NonCareer>false</NonCareer>
-      <SoakAtLeast>0</SoakAtLeast>
-    </Requirement>
   </StartingAttrs>
-  <SkillModifiers />
-  <TalentModifiers />
   <OptionChoices>
     <OptionChoice>
       <Key>PAUANCH1</Key>
       <Name>Skills</Name>
-      <Description />
-      <Source />
-      <Custom>Base</Custom>
       <Options>
         <Option>
           <Key>PAUANCH1OP1</Key>
           <Name>Coercion</Name>
           <Description>Pau'ans may begin the game with one free rank in Coercion.</Description>
-          <Source />
-          <Custom>Base</Custom>
-          <StartingChars>
-            <Brawn>1</Brawn>
-            <Agility>1</Agility>
-            <Intellect>1</Intellect>
-            <Cunning>1</Cunning>
-            <Willpower>1</Willpower>
-            <Presence>1</Presence>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingChars>
-          <StartingAttributes>
-            <WoundThreshold>0</WoundThreshold>
-            <StrainThreshold>0</StrainThreshold>
-            <DefenseRanged>0</DefenseRanged>
-            <DefenseMelee>0</DefenseMelee>
-            <SoakValue>0</SoakValue>
-            <Experience>0</Experience>
-            <ForceRating>0</ForceRating>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingAttributes>
-          <StartingSkillTraining />
           <SkillModifiers>
             <SkillModifier>
               <Key>COERC</Key>
               <RankStart>1</RankStart>
-              <RankAdd>0</RankAdd>
-              <RankLimit>0</RankLimit>
-              <isCareer>false</isCareer>
-              <Requirement>
-                <WearingArmor>false</WearingArmor>
-                <Career>false</Career>
-                <Specialization>false</Specialization>
-                <NonCareer>false</NonCareer>
-                <SoakAtLeast>0</SoakAtLeast>
-              </Requirement>
+              <RankLimit>2</RankLimit>
             </SkillModifier>
           </SkillModifiers>
           <TalentModifiers />
@@ -120,54 +54,11 @@ Utapese is the language of the Pau'ans on the planet Utapau. Most Pau'ans speak 
           <Key>PAUANCH1OP2</Key>
           <Name>Negotiation</Name>
           <Description>Pau'an may begin the game with one free rank in Negotiation.</Description>
-          <Source />
-          <Custom>Base</Custom>
-          <StartingChars>
-            <Brawn>1</Brawn>
-            <Agility>1</Agility>
-            <Intellect>1</Intellect>
-            <Cunning>1</Cunning>
-            <Willpower>1</Willpower>
-            <Presence>1</Presence>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingChars>
-          <StartingAttributes>
-            <WoundThreshold>0</WoundThreshold>
-            <StrainThreshold>0</StrainThreshold>
-            <DefenseRanged>0</DefenseRanged>
-            <DefenseMelee>0</DefenseMelee>
-            <SoakValue>0</SoakValue>
-            <Experience>0</Experience>
-            <ForceRating>0</ForceRating>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingAttributes>
-          <StartingSkillTraining />
           <SkillModifiers>
             <SkillModifier>
               <Key>NEG</Key>
               <RankStart>1</RankStart>
-              <RankAdd>0</RankAdd>
-              <RankLimit>0</RankLimit>
-              <isCareer>false</isCareer>
-              <Requirement>
-                <WearingArmor>false</WearingArmor>
-                <Career>false</Career>
-                <Specialization>false</Specialization>
-                <NonCareer>false</NonCareer>
-                <SoakAtLeast>0</SoakAtLeast>
-              </Requirement>
+              <RankLimit>2</RankLimit>
             </SkillModifier>
           </SkillModifiers>
           <TalentModifiers />
@@ -175,6 +66,4 @@ Utapese is the language of the Pau'ans on the planet Utapau. Most Pau'ans speak 
       </Options>
     </OptionChoice>
   </OptionChoices>
-  <WeaponModifiers />
-  <NoForceAbilities>false</NoForceAbilities>
 </Species>

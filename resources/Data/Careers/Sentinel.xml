@@ -17,6 +17,9 @@ Please see page 90 of the Force and Destiny Core Rulebook for details.</Descript
     <Key>ARTISAN</Key>
     <Key>SHADOW</Key>
     <Key>SHIEN</Key>
+    <Key>INVESTIGATOR</Key>
+    <Key>RACER</Key>
+    <Key>SENTRY</Key>
   </Specializations>
   <Attributes>
     <WoundThreshold>0</WoundThreshold>

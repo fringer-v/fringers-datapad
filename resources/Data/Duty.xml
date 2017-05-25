@@ -131,9 +131,12 @@
     <Name>Placard Hunter</Name>
     <Description>
       [H4]Placard Hunter[h4]
-      Please see page 19 of the Stay on Target Sourcebook for details.
+      Please see page 19 of the Stay on Target Sourcebook, or page 17 of the Forged in Battle Sourcebook, for details.
     </Description>
-    <Source Page="19">Stay on Target</Source>
+    <Sources>
+      <Source Page="19">Stay on Target</Source>
+      <Source Page="17">Forged in Battle</Source>
+    </Sources>
   </Duty>
   <Duty>
     <Key>TECHSUPERIORITY</Key>
@@ -198,4 +201,33 @@
     </Description>
     <Source Page="17">Lead by Example</Source>
   </Duty>
+  <Duty>
+    <Key>CLEARSKIES</Key>
+    <Name>Clear Skies</Name>
+    <Description>
+      [H4]Clear Skies[h4]
+      See page 17 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="17">Forged in Battle</Source>
+  </Duty>
+  <Duty>
+    <Key>MORALE</Key>
+    <Name>Morale</Name>
+    <Description>
+      [H4]Morale[h4]
+      See page 17 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="17">Forged in Battle</Source>
+  </Duty>
+  <Duty>
+    <Key>PSYCHWAR</Key>
+    <Name>Psychological Warfare</Name>
+    <Description>
+      [H4]Psychological Warfare[h4]
+      See page 17 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="17">Forged in Battle</Source>
+  </Duty>
+
+
 </Duties>

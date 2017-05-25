@@ -5,7 +5,8 @@
   <Description>[H3]Baudo-Class Star Yacht[h3]
       Please see page 57 of the Fly Casual Sourcebook and page 60 of the Desperate Allies Sourcebook for details.</Description>
   <Sources>
-    <Source Page="57">Fly Casual Sourcebook and page 60 of the Desperate Allies Sourcebook</Source>
+    <Source Page="57">Fly Casual</Source>
+    <Source Page="60">Desperate Allies</Source>
   </Sources>
   <Type>Yacht</Type>
   <Categories>

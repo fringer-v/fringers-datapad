@@ -21,5 +21,8 @@
     <Key>COMMANDO</Key>
     <Key>MEDIC</Key>
     <Key>SHARPSHOOTER</Key>
+    <Key>HEAVY</Key>
+    <Key>TRAILBLAZER</Key>
+    <Key>VANGUARD</Key>
   </Specializations>
 </Career>

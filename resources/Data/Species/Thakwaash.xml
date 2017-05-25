@@ -20,29 +20,11 @@ Thakwaese or Thakwaashi is the native language of the Thakwaash species. The ver
     <Cunning>2</Cunning>
     <Willpower>2</Willpower>
     <Presence>1</Presence>
-    <Requirement>
-      <WearingArmor>false</WearingArmor>
-      <Career>false</Career>
-      <Specialization>false</Specialization>
-      <NonCareer>false</NonCareer>
-      <SoakAtLeast>0</SoakAtLeast>
-    </Requirement>
   </StartingChars>
   <StartingAttrs>
     <WoundThreshold>12</WoundThreshold>
     <StrainThreshold>10</StrainThreshold>
-    <DefenseRanged>0</DefenseRanged>
-    <DefenseMelee>0</DefenseMelee>
-    <SoakValue>0</SoakValue>
     <Experience>100</Experience>
-    <ForceRating>0</ForceRating>
-    <Requirement>
-      <WearingArmor>false</WearingArmor>
-      <Career>false</Career>
-      <Specialization>false</Specialization>
-      <NonCareer>false</NonCareer>
-      <SoakAtLeast>0</SoakAtLeast>
-    </Requirement>
   </StartingAttrs>
   <SkillModifiers />
   <TalentModifiers />
@@ -50,54 +32,13 @@ Thakwaese or Thakwaashi is the native language of the Thakwaash species. The ver
     <OptionChoice>
       <Key>THAKWAASHCH1</Key>
       <Name>Checks</Name>
-      <Description />
-      <Source />
-      <Custom>Base</Custom>
       <Options>
         <Option>
           <Key>THAKWAASHCH1OP1</Key>
           <Name>Multiple Personalities</Name>
           <Description>At the start of their turn, Thakwaash can choose to suffer 2 strain to upgrade the dice pool once for a specific skill until the start of their next turn.</Description>
-          <Source />
-          <Custom>Base</Custom>
-          <StartingChars>
-            <Brawn>1</Brawn>
-            <Agility>1</Agility>
-            <Intellect>1</Intellect>
-            <Cunning>1</Cunning>
-            <Willpower>1</Willpower>
-            <Presence>1</Presence>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingChars>
-          <StartingAttributes>
-            <WoundThreshold>0</WoundThreshold>
-            <StrainThreshold>0</StrainThreshold>
-            <DefenseRanged>0</DefenseRanged>
-            <DefenseMelee>0</DefenseMelee>
-            <SoakValue>0</SoakValue>
-            <Experience>0</Experience>
-            <ForceRating>0</ForceRating>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingAttributes>
-          <StartingSkillTraining />
-          <SkillModifiers />
-          <TalentModifiers />
         </Option>
       </Options>
     </OptionChoice>
   </OptionChoices>
-  <WeaponModifiers />
-  <NoForceAbilities>false</NoForceAbilities>
 </Species>

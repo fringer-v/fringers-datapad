@@ -33,7 +33,33 @@
     <ModDesc>Increase doses by 1</ModDesc>
     <QualDesc>Increase doses by {0}</QualDesc>
   </ItemDescriptor>
-
+  <ItemDescriptor>
+    <Key>HOLSTER3</Key>
+    <Name>Hoster Weapon up to Encumbrance 3 Mod</Name>
+    <Description></Description>
+    <Type>Armor</Type>
+    <ModDesc>Holster Weapon up to Encumbrance 3</ModDesc>
+    <QualDesc>Holster {0} Weapon(s) up to Encumbrance 3</QualDesc>
+    <ChooseItemsForStorage>true</ChooseItemsForStorage>
+    <ItemsForStorage>
+      <EncLimit>3</EncLimit>
+      <TypeLimit>
+        <Type>Weapon</Type>
+      </TypeLimit>
+    </ItemsForStorage>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>CARRY1</Key>
+    <Name>Carry Items up to Encumbrance 1 Mod</Name>
+    <Description></Description>
+    <Type>Armor</Type>
+    <ModDesc>Carry Items up to Encumbrance 1</ModDesc>
+    <QualDesc>Carry {0} Item(s) up to Encumbrance 1</QualDesc>
+    <ChooseItemsForStorage>true</ChooseItemsForStorage>
+    <ItemsForStorage>
+      <EncLimit>1</EncLimit>
+    </ItemsForStorage>
+  </ItemDescriptor>
 
 
 
@@ -47,12 +73,36 @@
     <QualDesc>Add {0} [ADVANTAGE] to Successful Check</QualDesc>
   </ItemDescriptor>
   <ItemDescriptor>
+    <Key>ADVADDCOM</Key>
+    <Name>Add Advantage to Combat Check Mod</Name>
+    <Description></Description>
+    <Type>Weapon</Type>
+    <ModDesc>Add One [ADVANTAGE] to Combat Check</ModDesc>
+    <QualDesc>Add {0} [ADVANTAGE] to Combat Check</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
     <Key>THRADD</Key>
     <Name>Add Threat to Check Mod</Name>
     <Description></Description>
     <Type>Weapon</Type>
     <ModDesc>Add One [THREAT] to Check</ModDesc>
     <QualDesc>Add {0} [THREAT] to Check</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>THRCANCEL</Key>
+    <Name>Cancel Threat from Check Mod</Name>
+    <Description></Description>
+    <Type>Weapon</Type>
+    <ModDesc>Cancel One [THREAT] from Check</ModDesc>
+    <QualDesc>Cancel {0} [THREAT] from Check</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>UPGRADEDIFF</Key>
+    <Name>Upgrade Difficulty of Check Mod</Name>
+    <Description></Description>
+    <Type>Weapon</Type>
+    <ModDesc>Upgrade Difficulty of Check Once</ModDesc>
+    <QualDesc>Upgrade Difficulty of Check {0} time(s)</QualDesc>
   </ItemDescriptor>
   <ItemDescriptor>
     <Key>ADVADDINIT</Key>
@@ -70,7 +120,7 @@
     <Description></Description>
     <Type></Type>
     <ModDesc>Add One Hard Point to Item</ModDesc>
-    <QualDesc>Add {0} Hard Point(s) to Itme</QualDesc>
+    <QualDesc>Add {0} Hard Point(s) to Item</QualDesc>
   </ItemDescriptor>
   <ItemDescriptor>
     <Key>HPSUB</Key>
@@ -78,10 +128,8 @@
     <Description></Description>
     <Type></Type>
     <ModDesc>Remove One Hard Point from Item</ModDesc>
-    <QualDesc>Remove {0} Hard Point(s) from Itme</QualDesc>
+    <QualDesc>Remove {0} Hard Point(s) from Item</QualDesc>
   </ItemDescriptor>
-
-
 
 
 
@@ -120,6 +168,13 @@
     <QualDesc>Decreases weapon's range by {0} Range Band(s)</QualDesc>
   </ItemDescriptor>
   <ItemDescriptor>
+    <Key>ENCTOTSUB</Key>
+    <Name>Decreases Total Encumbrance Mod</Name>
+    <Description></Description>
+    <ModDesc>Decrease Total Encumbrance by 1</ModDesc>
+    <QualDesc>Decrease Total Encumbrance by {0}</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
     <Key>ENCSUB</Key>
     <Name>Decreases Encumbrance Mod</Name>
     <Description></Description>
@@ -146,6 +201,20 @@
     <Description></Description>
     <ModDesc>Increase Encumbrance Threshold by 1</ModDesc>
     <QualDesc>Increase Encumbrance Threshold by {0}</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>ENCTBRADD</Key>
+    <Name>Increases Brawn for Determining Encumbrance Threshold Mod</Name>
+    <Description></Description>
+    <ModDesc>Increase Brawn for Determining Encumbrance Threshold by 1</ModDesc>
+    <QualDesc>Increase Brawn for Determining Encumbrance Threshold by {0}</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>ENCTADD3</Key>
+    <Name>Increases Encumbrance Threshold by 3 Mod</Name>
+    <Description></Description>
+    <ModDesc>Increase Encumbrance Threshold by 3</ModDesc>
+    <QualDesc>Increase Encumbrance Threshold by 3</QualDesc>
   </ItemDescriptor>
   <ItemDescriptor>
     <Key>ENCTSUB</Key>
@@ -291,7 +360,19 @@
     <ModDesc>Add Additional Crystal with no HP Cost</ModDesc>
     <QualDesc>Add {0} Additional Crystal(s) with no HP Cost</QualDesc>
   </ItemDescriptor>
-  
+
+
+  <ItemDescriptor>
+    <Key>PRICEHALF</Key>
+    <Name>Item is Half Price Mod</Name>
+    <Description>Item costs half its asking price</Description>
+    <ModDesc>Item costs half its asking price</ModDesc>
+    <QualDesc>Item costs half its asking price</QualDesc>
+    <IsBoolean>true</IsBoolean>
+  </ItemDescriptor>
+
+
+
   <!-- Nexus of Power -->
   
   <ItemDescriptor>
@@ -313,7 +394,7 @@
   </ItemDescriptor>
 
 
-  <ItemDescriptor>
+  <!--<ItemDescriptor>
     <Key>SPEMBCHARM</Key>
     <Name>Special Embelishment (Charm) Mod</Name>
     <Description>Add </Description>
@@ -360,9 +441,9 @@
     <Type>Armor</Type>
     <ModDesc>Add automatic [ADVANTAGE] to Stealth checks.</ModDesc>
     <QualDesc>Add automatic [ADVANTAGE] to Stealth checks.</QualDesc>
-  </ItemDescriptor>
+  </ItemDescriptor>-->
 
-  <ItemDescriptor>
+  <!--<ItemDescriptor>
     <Key>RESTARMATHL</Key>
     <Name>Restrictive (Athletics) Mod</Name>
     <Description>Add </Description>
@@ -401,7 +482,7 @@
     <Type>Armor</Type>
     <ModDesc>Add automatic [TH] to Vigilance checks.</ModDesc>
     <QualDesc>Add automatic [TH] to Vigilance checks.</QualDesc>
-  </ItemDescriptor>
+  </ItemDescriptor>-->
 
   <ItemDescriptor>
     <Key>RANGEREDMED</Key>
@@ -630,6 +711,67 @@
     <ModDesc>Changes Massive Setting</ModDesc>
     <QualDesc>Changes Massive Setting to {0}</QualDesc>
   </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>ADDALT50</Key>
+    <Name>Increase Altitude by 50 Mod</Name>
+    <Description></Description>
+    <Type>Vehicle</Type>
+    <ModDesc>Increases Altitude by 50</ModDesc>
+    <QualDesc>Increases Altitude by 50</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>SETDEFFORE</Key>
+    <Name>Sets Forward Defense Mod</Name>
+    <Description></Description>
+    <Type>Vehicle</Type>
+    <ModDesc>Sets Forward Defense</ModDesc>
+    <QualDesc>Sets Forward Defense to {0}</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>SETDEFAFT</Key>
+    <Name>Sets Aft Defense Mod</Name>
+    <Description></Description>
+    <Type>Vehicle</Type>
+    <ModDesc>Sets Aft Defense</ModDesc>
+    <QualDesc>Sets Aft Defense to {0}</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>SETHAND</Key>
+    <Name>Sets Handling Mod</Name>
+    <Description></Description>
+    <Type>Vehicle</Type>
+    <ModDesc>Sets Handling</ModDesc>
+    <QualDesc>Sets Handling to {0}</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>SETSPEED</Key>
+    <Name>Sets Speed Mod</Name>
+    <Description></Description>
+    <Type>Vehicle</Type>
+    <ModDesc>Sets Speed</ModDesc>
+    <QualDesc>Sets Speed to {0}</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>SETARMOR</Key>
+    <Name>Set Armor Mod</Name>
+    <Type>Vehicle</Type>
+    <ModDesc>Sets Armor value</ModDesc>
+    <QualDesc>Sets Armor value to {0}</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>ADDDEFFORE</Key>
+    <Name>Increase Forward Defense Mod</Name>
+    <Type>Vehicle</Type>
+    <ModDesc>Increase Forward Defense by 1</ModDesc>
+    <QualDesc>Increase Forward Defense by {0}</QualDesc>
+  </ItemDescriptor>
+  <ItemDescriptor>
+    <Key>ADDDEFAFT</Key>
+    <Name>Increase Aft Defense Mod</Name>
+    <Type>Vehicle</Type>
+    <ModDesc>Increase Aft Defense by 1</ModDesc>
+    <QualDesc>Increase Aft Defense by {0}</QualDesc>
+  </ItemDescriptor>
 
 
   <ItemDescriptor>
@@ -793,7 +935,33 @@
     <QualDesc>Upgrade ability of Gunnery checks {0}</QualDesc>
   </ItemDescriptor>
 
+  <ItemDescriptor>
+    <Key>VAKSAI</Key>
+    <Name>Replace Light Blaster Cannons with Light Laser Cannons Mod</Name>
+    <Description></Description>
+    <Type>Vehicle</Type>
+    <ModDesc>Replace Light Blaster Cannons with Light Laser Cannons</ModDesc>
+    <QualDesc>Replace Light Blaster Cannons with Light Laser Cannons</QualDesc>
+    <WeaponUpgrades>
+      <WeaponUpgrade>
+        <AttachKey />
+        <WeapKey>LASERLT</WeapKey>
+        <ReplacementIndex>0</ReplacementIndex>
+        <Properties>
+          <Location>WingMounted</Location>
+          <Qualities>
+            <Quality>
+              <Key>LINKED</Key>
+              <Count>1</Count>
+            </Quality>
+          </Qualities>
+        </Properties>
+      </WeaponUpgrade>
+    </WeaponUpgrades>
 
+  </ItemDescriptor>
+  
+  
   <!-- Qualities -->
   
   <ItemDescriptor>

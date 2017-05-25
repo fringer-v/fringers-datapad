@@ -22,92 +22,26 @@ Ugnaught is the native language of the Ugnaught species from Gentes. It is mainl
     <Cunning>3</Cunning>
     <Willpower>2</Willpower>
     <Presence>2</Presence>
-    <Requirement>
-      <WearingArmor>false</WearingArmor>
-      <Career>false</Career>
-      <Specialization>false</Specialization>
-      <NonCareer>false</NonCareer>
-      <SoakAtLeast>0</SoakAtLeast>
-    </Requirement>
   </StartingChars>
   <StartingAttrs>
     <WoundThreshold>10</WoundThreshold>
     <StrainThreshold>10</StrainThreshold>
-    <DefenseRanged>0</DefenseRanged>
-    <DefenseMelee>0</DefenseMelee>
-    <SoakValue>0</SoakValue>
     <Experience>100</Experience>
-    <ForceRating>0</ForceRating>
-    <Requirement>
-      <WearingArmor>false</WearingArmor>
-      <Career>false</Career>
-      <Specialization>false</Specialization>
-      <NonCareer>false</NonCareer>
-      <SoakAtLeast>0</SoakAtLeast>
-    </Requirement>
   </StartingAttrs>
-  <SkillModifiers />
-  <TalentModifiers />
   <OptionChoices>
     <OptionChoice>
       <Key>UGNAUGHTSCH1</Key>
       <Name>Skills</Name>
-      <Description />
-      <Source />
-      <Custom>Base</Custom>
       <Options>
         <Option>
           <Key>UGNAUGHTSCH1OP1</Key>
           <Name>Mechanics</Name>
           <Description>Ugnaughts may begin the game with one free rank in Mechanics.</Description>
-          <Source />
-          <Custom>Base</Custom>
-          <StartingChars>
-            <Brawn>1</Brawn>
-            <Agility>1</Agility>
-            <Intellect>1</Intellect>
-            <Cunning>1</Cunning>
-            <Willpower>1</Willpower>
-            <Presence>1</Presence>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingChars>
-          <StartingAttributes>
-            <WoundThreshold>0</WoundThreshold>
-            <StrainThreshold>0</StrainThreshold>
-            <DefenseRanged>0</DefenseRanged>
-            <DefenseMelee>0</DefenseMelee>
-            <SoakValue>0</SoakValue>
-            <Experience>0</Experience>
-            <ForceRating>0</ForceRating>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingAttributes>
-          <StartingSkillTraining />
           <SkillModifiers>
             <SkillModifier>
               <Key>MECH</Key>
               <RankStart>1</RankStart>
-              <RankAdd>0</RankAdd>
-              <RankLimit>0</RankLimit>
-              <isCareer>false</isCareer>
-              <Requirement>
-                <WearingArmor>false</WearingArmor>
-                <Career>false</Career>
-                <Specialization>false</Specialization>
-                <NonCareer>false</NonCareer>
-                <SoakAtLeast>0</SoakAtLeast>
-              </Requirement>
+              <RankLimit>2</RankLimit>
             </SkillModifier>
           </SkillModifiers>
           <TalentModifiers />
@@ -116,54 +50,11 @@ Ugnaught is the native language of the Ugnaught species from Gentes. It is mainl
           <Key>UGNAUGHTSCH1OP2</Key>
           <Name>Negotiation</Name>
           <Description>Ugnaughts may begin the game with one free rank in Negotiation.</Description>
-          <Source />
-          <Custom>Base</Custom>
-          <StartingChars>
-            <Brawn>1</Brawn>
-            <Agility>1</Agility>
-            <Intellect>1</Intellect>
-            <Cunning>1</Cunning>
-            <Willpower>1</Willpower>
-            <Presence>1</Presence>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingChars>
-          <StartingAttributes>
-            <WoundThreshold>0</WoundThreshold>
-            <StrainThreshold>0</StrainThreshold>
-            <DefenseRanged>0</DefenseRanged>
-            <DefenseMelee>0</DefenseMelee>
-            <SoakValue>0</SoakValue>
-            <Experience>0</Experience>
-            <ForceRating>0</ForceRating>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingAttributes>
-          <StartingSkillTraining />
           <SkillModifiers>
             <SkillModifier>
               <Key>NEG</Key>
               <RankStart>1</RankStart>
-              <RankAdd>0</RankAdd>
-              <RankLimit>0</RankLimit>
-              <isCareer>false</isCareer>
-              <Requirement>
-                <WearingArmor>false</WearingArmor>
-                <Career>false</Career>
-                <Specialization>false</Specialization>
-                <NonCareer>false</NonCareer>
-                <SoakAtLeast>0</SoakAtLeast>
-              </Requirement>
+              <RankLimit>2</RankLimit>
             </SkillModifier>
           </SkillModifiers>
           <TalentModifiers />
@@ -173,9 +64,6 @@ Ugnaught is the native language of the Ugnaught species from Gentes. It is mainl
     <OptionChoice>
       <Key>UGNAUGHTSCH2</Key>
       <Name>Resilience</Name>
-      <Description />
-      <Source />
-      <Custom>Base</Custom>
       <Options>
         <Option>
           <Key>UGNAUGHTSCH2OP1</Key>
@@ -193,54 +81,13 @@ Ugnaught is the native language of the Ugnaught species from Gentes. It is mainl
     <OptionChoice>
       <Key>UGNAUGHTSCH3</Key>
       <Name>Size</Name>
-      <Description />
-      <Source />
-      <Custom>Base</Custom>
       <Options>
         <Option>
           <Key>UGNAUGHTSCH3OP1</Key>
           <Name>Silhouette</Name>
           <Description>Ugnaughts have a Silhouette of 0.</Description>
-          <Source />
-          <Custom>Base</Custom>
-          <StartingChars>
-            <Brawn>1</Brawn>
-            <Agility>1</Agility>
-            <Intellect>1</Intellect>
-            <Cunning>1</Cunning>
-            <Willpower>1</Willpower>
-            <Presence>1</Presence>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingChars>
-          <StartingAttributes>
-            <WoundThreshold>0</WoundThreshold>
-            <StrainThreshold>0</StrainThreshold>
-            <DefenseRanged>0</DefenseRanged>
-            <DefenseMelee>0</DefenseMelee>
-            <SoakValue>0</SoakValue>
-            <Experience>0</Experience>
-            <ForceRating>0</ForceRating>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingAttributes>
-          <StartingSkillTraining />
-          <SkillModifiers />
-          <TalentModifiers />
         </Option>
       </Options>
     </OptionChoice>
   </OptionChoices>
-  <WeaponModifiers />
-  <NoForceAbilities>false</NoForceAbilities>
 </Species>

@@ -33,20 +33,16 @@ The Klatooinian language was once the native language of the Klatooinians, the n
     <StrainThreshold>10</StrainThreshold>
     <Experience>100</Experience>
   </StartingAttrs>
-  <SkillModifiers>
-  </SkillModifiers>
-  <TalentModifiers>
-  </TalentModifiers>
   <OptionChoices>
     <OptionChoice>
       <Key>KLATOC1</Key>
-      <Name>Skill</Name>
+      <Name>Non-Career</Name>
       <Options>
         <Option>
           <Key>KLATOC1OP1</Key>
           <Name>Additional Non-Career Skill</Name>
           <Description>
-            Klatooninians start the game with one additional rank of one non career skill of his choice.
+            Klatooninians start the game with one additional rank of one non-career skill of his choice.
           </Description>
           <StartingSkillTraining>
             <SkillTraining>
@@ -61,7 +57,7 @@ The Klatooinian language was once the native language of the Klatooinians, the n
     </OptionChoice>
     <OptionChoice>
       <Key>KLATOC2</Key>
-      <Name>Skills</Name>
+      <Name>Combat</Name>
       <Options>
         <Option>
           <Key>KLATOC2OP1</Key>

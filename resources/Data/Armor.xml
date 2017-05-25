@@ -103,7 +103,7 @@
     <Sources>
       <Source Page="170">Edge of the Empire Core Rulebook</Source>
       <Source Page="184">Age of Rebellion Core Rulebook</Source>
-      <Source Page="47">Keeping the Peace sourcebook</Source>
+      <Source Page="47">Keeping the Peace</Source>
     </Sources>
     <Categories>
       <Category>Sealable</Category>
@@ -246,8 +246,8 @@
       Please see page 45 of the Enter the Unknown Sourcebook, or page 42 of the Stay on Target Sourcebook, for details.
     </Description>
     <Sources>
-      <Source Page="45">Enter the Unknown Sourcebook</Source>
-      <Source Page="42">Stay on Target Sourcebook</Source>
+      <Source Page="45">Enter the Unknown</Source>
+      <Source Page="42">Stay on Target</Source>
     </Sources>
     <Defense>0</Defense>
     <Soak>2</Soak>
@@ -411,9 +411,12 @@
     <Name>Beast-Hide Armor</Name>
     <Description>
       [H3]Beast-Hide Armor[h3]
-      Please see page 49 of the Dangerous Covenants Sourcebook for details.
+      Please see page 49 of the Dangerous Covenants Sourcebook, or page 44 of the Savage Spirits Sourcebook, for details.
     </Description>
-    <Source Page="49">Dangerous Covenants</Source>
+    <Sources>
+      <Source Page="49">Dangerous Covenants</Source>
+      <Source Page="44">Savage Spirits</Source>
+    </Sources>
     <Type />
     <Categories>
       <Category>Heavy</Category>
@@ -429,6 +432,16 @@
       <Mod>
         <Count>1</Count>
         <MiscDesc>Add [ADVANTAGE] to Coercion checks and [THREAT] to Charm checks. </MiscDesc>
+        <DieModifiers>
+          <DieModifier>
+            <SkillKey>COERC</SkillKey>
+            <AdvantageCount>1</AdvantageCount>
+          </DieModifier>
+          <DieModifier>
+            <SkillKey>CHARM</SkillKey>
+            <ThreatCount>1</ThreatCount>
+          </DieModifier>
+        </DieModifiers>
       </Mod>
     </BaseMods>
   </Armor>
@@ -1054,10 +1067,10 @@
   </Armor>
   <Armor>
     <Key>CARGOCL</Key>
-    <Name>Cargo Apparel</Name>
+    <Name>Cargo Clothing</Name>
     <Description>
-      [H3]Cargo Apparel[h3]
-      Please see page 47 of the Desperate Allies Sourcebook for details.
+      [H3]Cargo Clothing[h3]
+      Please see page 47 of the Desperate Allies Sourcebook for details.[P][I]
     </Description>
     <Source Page="47">Desperate Allies</Source>
     <Type />
@@ -1072,8 +1085,8 @@
     <Restricted>false</Restricted>
     <BaseMods>
       <Mod>
-        <Count>1</Count>
-        <MiscDesc>Can carry three items of enumbrance 1 without it affecting encumbrance value.</MiscDesc>
+        <Count>3</Count>
+        <Key>CARRY1</Key>
       </Mod>
     </BaseMods>
   </Armor>
@@ -1158,6 +1171,12 @@
       <Mod>
         <Count>1</Count>
         <MiscDesc>Upgrade difficulty of combat checks twice.</MiscDesc>
+        <DieModifiers>
+          <DieModifier>
+            <SkillType>Combat</SkillType>
+            <UpgradeDifficultyCount>2</UpgradeDifficultyCount>
+          </DieModifier>
+        </DieModifiers>
       </Mod>
     </BaseMods>
   </Armor>
@@ -1542,7 +1561,7 @@
     <Name>Cresh "Luck" Armor</Name>
     <Description>
       [H3]Cresh "Luck" Armor[h3]
-      Please see page 47 of the Keeping the Peace sourcebook for details.
+      Please see page 47 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="47">Keeping the Peace</Source>
     <Type />
@@ -1578,7 +1597,7 @@
     <Name>Jedi Battle Armor</Name>
     <Description>
       [H3]Jedi Battle Armor[h3]
-      Please see page 47 of the Keeping the Peace sourcebook for details.
+      Please see page 47 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="47">Keeping the Peace</Source>
     <Type />
@@ -1613,7 +1632,7 @@
     <Name>Jedi Temple Guard Armor</Name>
     <Description>
       [H3]Jedi Temple Guard Armor[h3]
-      Please see page 48 of the Keeping the Peace sourcebook for details.
+      Please see page 48 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="48">Keeping the Peace</Source>
     <Type />
@@ -1645,7 +1664,7 @@
     <Name>Jedi Training Suit (Weighted)</Name>
     <Description>
       [H3]Jedi Training Suit (Weighted)[h3]
-      Please see page 48 of the Keeping the Peace sourcebook for details.
+      Please see page 48 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="48">Keeping the Peace</Source>
     <Type />
@@ -1674,7 +1693,7 @@
     <Name>Jedi Training Suit (Unweighted)</Name>
     <Description>
       [H3]Jedi Training Suit (Unweighted)[h3]
-      Please see page 48 of the Keeping the Peace sourcebook for details.
+      Please see page 48 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="48">Keeping the Peace</Source>
     <Type />
@@ -1698,7 +1717,7 @@
     <Name>Kav-Dann Power Armor</Name>
     <Description>
       [H3]Kav-Dann Power Armor[h3]
-      Please see page 48 of the Keeping the Peace sourcebook for details.
+      Please see page 48 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="48">Keeping the Peace</Source>
     <Type />
@@ -1740,7 +1759,7 @@
     <Name>Koromondian Half-Vest</Name>
     <Description>
       [H3]Koromondian Half-Vest[h3]
-      Please see page 49 of the Keeping the Peace sourcebook for details.
+      Please see page 49 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="49">Keeping the Peace</Source>
     <Type />
@@ -1766,7 +1785,7 @@
     <Name>Riot Armor</Name>
     <Description>
       [H3]Riot Armor[h3]
-      Please see page 49 of the Keeping the Peace sourcebook for details.
+      Please see page 49 of the Keeping the Peace Sourcebook for details.
     </Description>
     <Source Page="49">Keeping the Peace</Source>
     <Type />
@@ -1786,7 +1805,7 @@
     <Soak>2</Soak>
   </Armor>
   <!-- Armor Templates from Keeping the Peace -->
-  <Armor>
+  <!--<Armor>
     <Key>ARMTEMP1</Key>
     <Name>Reinforced Clothing (Template)</Name>
     <Description>
@@ -1956,7 +1975,7 @@
     <WeaponModifiers />
     <Defense>2</Defense>
     <Soak>2</Soak>
-  </Armor>
+  </Armor>-->
   
   <!-- Special Modifications -->
   <Armor>
@@ -1964,7 +1983,7 @@
     <Name>Cloaking Coat</Name>
     <Description>
       [H3]Cloaking Coat[h3]
-      Please see page 47 of the Special Modifications sourcebook for details.
+      Please see page 47 of the Special Modifications Sourcebook for details.
     </Description>
     <Source Page="47">Special Modifications</Source>
     <Type />
@@ -1990,7 +2009,7 @@
     <Name>Mechanic's Utility Suit</Name>
     <Description>
       [H3]Mechanic's Utility Suit[h3]
-      Please see page 48 of the Special Modifications sourcebook for details.
+      Please see page 48 of the Special Modifications Sourcebook for details.
     </Description>
     <Source Page="48">Special Modifications</Source>
     <Type />
@@ -2016,7 +2035,7 @@
     <Name>N-57 Armor</Name>
     <Description>
       [H3]Merr-Sonn N-57 Armor[h3]
-      Please see page 48 of the Special Modifications sourcebook for details.
+      Please see page 48 of the Special Modifications Sourcebook for details.
     </Description>
     <Source Page="48">Special Modifications</Source>
     <Type />
@@ -2048,7 +2067,7 @@
     <Name>P-14 Hazardous Industry Suit</Name>
     <Description>
       [H3]SoroSuub P-14 Hazardous Industry Suit[h3]
-      Please see page 48 of the Special Modifications sourcebook for details.
+      Please see page 48 of the Special Modifications Sourcebook for details.
     </Description>
     <Source Page="48">Special Modifications</Source>
     <Type />
@@ -2084,8 +2103,464 @@
       </Mod>
     </BaseMods>
   </Armor>
+
+
+  <Armor>
+    <Key>ANIPRO</Key>
+    <Name>AniPro Layered Beast Armor</Name>
+    <Description>
+      [H3]VeTech AniPro Layered Beast Armor[h3]
+      Please see page 44 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="44">Savage Spirits</Source>
+    <Type />
+    <Categories>
+      <Category>Half Body</Category>
+    </Categories>
+    <Defense>1</Defense>
+    <Soak>1</Soak>
+    <Price>2500</Price>
+    <Encumbrance>4</Encumbrance>
+    <HP>0</HP>
+    <Rarity>5</Rarity>
+    <Restricted>false</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>May only be worn by a beast.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>May ride a beast without suffering bareback penalty.</MiscDesc>
+      </Mod>
+    </BaseMods>
+  </Armor>
+  <Armor>
+    <Key>CHITIN</Key>
+    <Name>Chitin Armor</Name>
+    <Description>
+      [H3]Chitin Armor[h3]
+      Please see page 45 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="45">Savage Spirits</Source>
+    <Type />
+    <Categories>
+      <Category>Hard</Category>
+    </Categories>
+    <Defense>0</Defense>
+    <Soak>2</Soak>
+    <Price>600</Price>
+    <Encumbrance>4</Encumbrance>
+    <HP>1</HP>
+    <Rarity>6</Rarity>
+    <Restricted>false</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Add [ADVANTAGE] to Coercion checks and [THREAT] to Charm checks. </MiscDesc>
+        <DieModifiers>
+          <DieModifier>
+            <SkillKey>COERC</SkillKey>
+            <AdvantageCount>1</AdvantageCount>
+          </DieModifier>
+          <DieModifier>
+            <SkillKey>CHARM</SkillKey>
+            <ThreatCount>1</ThreatCount>
+          </DieModifier>
+        </DieModifiers>
+      </Mod>
+    </BaseMods>
+  </Armor>
+  <Armor>
+    <Key>SURVIVALARMOR</Key>
+    <Name>Survivalist Armor</Name>
+    <Description>
+      [H3]Creshaldyne Survivalist Armor[h3]
+      Please see page 45 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="45">Savage Spirits</Source>
+    <Type />
+    <Categories>
+      <Category>Full Body</Category>
+    </Categories>
+    <Defense>0</Defense>
+    <Soak>1</Soak>
+    <Price>350</Price>
+    <Encumbrance>3</Encumbrance>
+    <HP>2</HP>
+    <Rarity>6</Rarity>
+    <Restricted>false</Restricted>
+    <BaseMods>
+      <Mod>
+        <Key>ENCTADD</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+  </Armor>
+  
+  <!-- Forged in Battle -->
+
+  <Armor>
+    <Key>ALLIANCELTSTEALTH</Key>
+    <Name>Alliance Light Stealth Armor</Name>
+    <Description>
+      [H3]Alliance Light Stealth Armor[h3]
+      Please see page 49 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="49">Forged in Battle</Source>
+    <Categories>
+      <Category>Sealable</Category>
+      <Category>Full Body</Category>
+      <Category>Hard Full Body</Category>
+      <Category>Hard</Category>
+      <Category>Resistant</Category>
+    </Categories>
+    <Encumbrance>3</Encumbrance>
+    <HP>2</HP>
+    <Price>2200</Price>
+    <Rarity>7</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Adds [BO] to the wearer's Stealth checks.</MiscDesc>
+        <DieModifiers>
+          <DieModifier>
+            <SkillKey>STEAL</SkillKey>
+            <BoostCount>1</BoostCount>
+          </DieModifier>
+        </DieModifiers>
+      </Mod>
+    </BaseMods>
+    <Soak>2</Soak>
+  </Armor>
+  <Armor>
+    <Key>IMPHAZARD</Key>
+    <Name>Imperial Hazard Trooper Armor</Name>
+    <Description>
+      [H3]Imperial Hazard Trooper Armor[h3]
+      Please see page 49 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="49">Forged in Battle</Source>
+    <Categories>
+      <Category>Full Body</Category>
+      <Category>Hard Full Body</Category>
+      <Category>Hard</Category>
+      <Category>Heavy</Category>
+      <Category>Powered</Category>
+      <Category>Sealed</Category>
+      <Category>Resistant</Category>
+    </Categories>
+    <Encumbrance>4</Encumbrance>
+    <HP>3</HP>
+    <Price>18000</Price>
+    <Rarity>8</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Remove [SE][SE] due to darkness, smoke or similar environmental factors that obscure vision from the wearer's Perception, Vigilance, and combat checks.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <Soak>3</Soak>
+  </Armor>
+  <Armor>
+    <Key>IMPSTORMCOMM</Key>
+    <Name>Imperial Storm Commando Armor</Name>
+    <Description>
+      [H3]Imperial Storm Commando Armor[h3]
+      Please see page 49 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="49">Forged in Battle</Source>
+    <Categories>
+      <Category>Sealable</Category>
+      <Category>Full Body</Category>
+      <Category>Hard Full Body</Category>
+      <Category>Hard</Category>
+      <Category>Heavy</Category>
+      <Category>Resistant</Category>
+    </Categories>
+    <Encumbrance>4</Encumbrance>
+    <HP>4</HP>
+    <Price>5000</Price>
+    <Rarity>9</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Helmet is equipped with macrobinoculars, scanner goggles, and a comlink.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>While wearing storm commando armor, a character removes [SE] due to darkness, smoke, or similar environmental factors that obscure vision from all Perception, Vigilance, and combat checks.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Adds [SE] to other characters' Perception checks to detect the wearer.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <Soak>2</Soak>
+  </Armor>
+  <Armor>
+    <Key>REBELHEAVY</Key>
+    <Name>Rebel Heavy Battle Armor</Name>
+    <Description>
+      [H3]Rebel Heavy Battle Armor[h3]
+      Please see page 50 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="50">Forged in Battle</Source>
+    <Categories>
+      <Category>Full Body</Category>
+      <Category>Hard Full Body</Category>
+      <Category>Hard</Category>
+      <Category>Resistant</Category>
+    </Categories>
+    <Encumbrance>5</Encumbrance>
+    <HP>5</HP>
+    <Price>6000</Price>
+    <Rarity>8</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Equipped with a helmet-fitted breath mask and respirator.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <Defense>1</Defense>
+    <Soak>2</Soak>
+  </Armor>
+  <Armor>
+    <Key>THINSUIT</Key>
+    <Name>Karflo Thinsuit</Name>
+    <Description>
+      [H3]Karflo Thinsuit[h3]
+      Please see page 50 of the Forged in Battle Sourcebook for details.
+    </Description>
+    <Source Page="50">Forged in Battle</Source>
+    <Categories>
+      <Category>Full Body</Category>
+      <Category>Resistant</Category>
+    </Categories>
+    <Price>1200</Price>
+    <Rarity>6</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Remove [SE][SE] from checks imposed by environment in which the user is currently operating.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <Soak>1</Soak>
+  </Armor>  
+  
+  <!-- Endless Vigil -->
+
+  <Armor>
+    <Key>CRASHGEAR</Key>
+    <Name>Crash Gear</Name>
+    <Description>
+      [H3]Crash Gear[h3]
+      Please see page 43 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="43">Endless Vigil</Source>
+    <Categories>
+      <Category>Full Body</Category>
+      <Category>Resistant</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>550</Price>
+    <Rarity>3</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Wearer ignores the effects of ongoing Critical Injuries on any Intellect- or Cunning-related checks, but still suffers from the injuries.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <Soak>1</Soak>
+  </Armor>
+  <Armor>
+    <Key>GSUIT</Key>
+    <Name>G-Suit</Name>
+    <Description>
+      [H3]G-Suit[h3]
+      Please see page 44 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="44">Endless Vigil</Source>
+    <Categories>
+      <Category>Full Body</Category>
+      <Category>Resistant</Category>
+    </Categories>
+    <Encumbrance>2</Encumbrance>
+    <HP>1</HP>
+    <Price>2000</Price>
+    <Rarity>3</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Wearer reduces strain cost to perfrom a second Pilot Only maneuver by 1.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <Soak>1</Soak>
+  </Armor>
+  <Armor>
+    <Key>PITCREWCOV</Key>
+    <Name>Pit Crew Coveralls</Name>
+    <Description>
+      [H3]Pit Crew Coveralls[h3]
+      Please see page 44 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="44">Endless Vigil</Source>
+    <Categories>
+      <Category>Full Body</Category>
+    </Categories>
+    <Encumbrance>1</Encumbrance>
+    <HP>1</HP>
+    <Price>150</Price>
+    <Rarity>2</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Reduce damage from fires and weapons with the Burn quality by 1.</MiscDesc>
+      </Mod>
+      <Mod>
+        <Key>ENCTADD</Key>
+        <Count>1</Count>
+      </Mod>
+    </BaseMods>
+    <Soak>1</Soak>
+  </Armor>
+  <Armor>
+    <Key>ZEPHYRSTEALTH</Key>
+    <Name>Zephyr Stealth Suit</Name>
+    <Description>
+      [H3]Zephyr Stealth Suit[h3]
+      Please see page 44 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="44">Endless Vigil</Source>
+    <Categories>
+      <Category>Full Body</Category>
+    </Categories>
+    <Encumbrance>2</Encumbrance>
+    <HP>1</HP>
+    <Price>5500</Price>
+    <Rarity>8</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Wearer upgrades the ability of any Stealth check once.</MiscDesc>
+        <DieModifiers>
+          <DieModifier>
+            <SkillKey>STEAL</SkillKey>
+            <UpgradeAbilityCount>1</UpgradeAbilityCount>
+          </DieModifier>
+        </DieModifiers>
+      </Mod>
+    </BaseMods>
+    <Defense>1</Defense>
+    <Soak>1</Soak>
+  </Armor>
+
+
+  <Armor>
+    <Key>HUNTTROPHARM</Key>
+    <Name>Hunter's Trophy Armor</Name>
+    <Description>
+      [H3]Hunter's Trophy Armor[h3]
+      Please see page 49 of the No Disintegrations Sourcebook for details.
+      [P][I]Note:  If making your own suit from owned hides, price/rarity drops to 1000/6.[i]
+    </Description>
+    <Source Page="49">No Disintegrations</Source>
+    <Categories>
+      <Category>Half Body</Category>
+    </Categories>
+    <Encumbrance>4</Encumbrance>
+    <HP>1</HP>
+    <Price>2000</Price>
+    <Rarity>9</Rarity>
+    <Restricted>true</Restricted>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Wearer suffers [SE] to Charm checks.</MiscDesc>
+        <DieModifiers>
+          <DieModifier>
+            <SkillKey>CHARM</SkillKey>
+            <AddSetbackCount>1</AddSetbackCount>
+          </DieModifier>
+        </DieModifiers>
+      </Mod>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>Wearer gains [BO][BO] to Coercion checks due to armor's intimidating appearance.</MiscDesc>
+        <DieModifiers>
+          <DieModifier>
+            <SkillKey>COERC</SkillKey>
+            <BoostCount>2</BoostCount>
+          </DieModifier>
+        </DieModifiers>
+      </Mod>
+    </BaseMods>
+    <Soak>2</Soak>
+  </Armor>
+  <Armor>
+    <Key>ARMDROPSUIT</Key>
+    <Name>Armored Drop Suit</Name>
+    <Description>
+      [H3]Armored Drop Suit[h3]
+      Please see page 49 of the No Disintegrations Sourcebook for details.
+      [P][I]Note:  A vehicle version of this armor exists with the same name.[i]
+    </Description>
+    <Source Page="49">No Disintegrations</Source>
+    <Categories>
+      <Category>Full Body</Category>
+      <Category>Hard</Category>
+      <Category>Hard Full Body</Category>
+      <Category>Powered</Category>
+      <Category>Resistant</Category>
+      <Category>Sealable</Category>
+      <Category>Heavy</Category>
+    </Categories>
+    <Encumbrance>6</Encumbrance>
+    <HP>2</HP>
+    <Price>7500</Price>
+    <Rarity>7</Rarity>
+    <BaseMods>
+      <Mod>
+        <Count>1</Count>
+        <MiscDesc>While conscious and flight systems are engaged, wearer cannot suffer falling damage.</MiscDesc>
+      </Mod>
+    </BaseMods>
+    <Defense>1</Defense>
+    <Soak>1</Soak>
+  </Armor>
+  <Armor>
+    <Key>MANDOARM</Key>
+    <Name>Mandalorian Armor</Name>
+    <Description>
+      [H3]Mandalorian Armor[h3]
+      Please see page 50 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="50">No Disintegrations</Source>
+    <Categories>
+      <Category>Full Body</Category>
+      <Category>Hard Full Body</Category>
+      <Category>Heavy</Category>
+      <Category>Sealable</Category>
+      <Category>Hard</Category>
+    </Categories>
+    <Encumbrance>6</Encumbrance>
+    <HP>5</HP>
+    <Price>6000</Price>
+    <Rarity>8</Rarity>
+    <Restricted>true</Restricted>
+    <Defense>1</Defense>
+    <Soak>2</Soak>
+  </Armor>
+
 </Armors>
-      <!--<Category>Sealable</Category>
+      <!--
+      <Category>Sealable</Category>
       <Category>Full Body</Category>
       <Category>Hard Full Body</Category>
       <Category>Hard</Category>
@@ -2094,4 +2569,5 @@
       <Category>Powered</Category>
       <Category>Sealable</Category>
       <Category>Sealed</Category>
-      <Category>Resistant</Category>-->
+      <Category>Resistant</Category>
+      -->

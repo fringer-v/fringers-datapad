@@ -62,7 +62,6 @@
       <Key>CAUEQUAL</Key>
       <Key>CAUHELPLESS</Key>
       <Key>CAUFREEENT</Key>
-      <Key>CAUOVEREMP</Key>
       <Key>CAUKNOW</Key>
     </SpecificMotivations>
   </Motivation>
@@ -84,6 +83,10 @@
       <Key>RELFAMILY</Key>
       <Key>RELDROID</Key>
       <Key>RELNEMESIS</Key>
+      <Key>RELLOCALCIV</Key>
+      <Key>RELLOVER</Key>
+      <Key>RELRIVAL</Key>
+      <Key>RELTECH</Key>
     </SpecificMotivations>
   </Motivation>
   <Motivation>
@@ -188,7 +191,8 @@
       Please see page 34 of the Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook for details.
     </Description>
     <Sources>
-      <Source Page="34">Dangerous Covenants Sourcebook or page 34 of the Stay on Target Sourcebook</Source>
+      <Source Page="34">Dangerous Covenants</Source>
+      <Source Page="34">Stay on Target</Source>
     </Sources>
     <SpecificMotivations>
       <Key>CONFLICT1</Key>
@@ -472,6 +476,69 @@
       <Key>INNOVTECHHIST</Key>
       <Key>INNOVTECHNECESS</Key>
       <Key>INNOVTECHRIVAL</Key>
+    </SpecificMotivations>
+  </Motivation>
+  <Motivation>
+    <Key>PURSUIT</Key>
+    <Name>Pursuit</Name>
+    <Description>
+      [H4]Pursuit[h4]
+      Please see page 32 of the Savage Spirits Sourcebook for details.
+    </Description>
+    <Source Page="32">Savage Spirits</Source>
+    <SpecificMotivations>
+      <Key>PURSUIT1</Key>
+      <Key>PURSUIT2</Key>
+      <Key>PURSUIT3</Key>
+      <Key>PURSUIT4</Key>
+      <Key>PURSUIT5</Key>
+      <Key>PURSUIT6</Key>
+      <Key>PURSUIT7</Key>
+      <Key>PURSUIT8</Key>
+      <Key>PURSUIT9</Key>
+      <Key>PURSUIT10</Key>
+    </SpecificMotivations>
+  </Motivation>
+  <Motivation>
+    <Key>INJUSTICE</Key>
+    <Name>Injustice</Name>
+    <Description>
+      [H4]Injustice[h4]
+      Please see page 32 of the Endless Vigil Sourcebook for details.
+    </Description>
+    <Source Page="32">Endless Vigil</Source>
+    <SpecificMotivations>
+      <Key>INJUSTICE1</Key>
+      <Key>INJUSTICE2</Key>
+      <Key>INJUSTICE3</Key>
+      <Key>INJUSTICE4</Key>
+      <Key>INJUSTICE5</Key>
+      <Key>INJUSTICE6</Key>
+      <Key>INJUSTICE7</Key>
+      <Key>INJUSTICE8</Key>
+      <Key>INJUSTICE9</Key>
+      <Key>INJUSTICE10</Key>
+    </SpecificMotivations>
+  </Motivation>
+  <Motivation>
+    <Key>CODE</Key>
+    <Name>Code</Name>
+    <Description>
+      [H4]Code[h4]
+      Please see page 37 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="37">No Disintegrations</Source>
+    <SpecificMotivations>
+      <Key>CODEPAID</Key>
+      <Key>CODEFINISH</Key>
+      <Key>CODELIVE</Key>
+      <Key>CODENEVER</Key>
+      <Key>CODECOLL</Key>
+      <Key>CODEQUIET</Key>
+      <Key>CODEREP</Key>
+      <Key>CODERULE</Key>
+      <Key>CODESURV</Key>
+      <Key>CODESCORE</Key>
     </SpecificMotivations>
   </Motivation>
 </Motivations>

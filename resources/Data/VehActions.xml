@@ -7,6 +7,7 @@
     <Sources>
       <Source Page="232">Edge of the Empire Core Rulebook</Source>
       <Source Page="245">Age of Rebellion Core Rulebook</Source>
+      <Source Page="238">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaManeuver</ActionTypeValue>
     <PilotOnly>true</PilotOnly>
@@ -25,6 +26,7 @@
     <Sources>
       <Source Page="232">Edge of the Empire Core Rulebook</Source>
       <Source Page="245">Age of Rebellion Core Rulebook</Source>
+      <Source Page="238">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaManeuver</ActionTypeValue>
     <PilotOnly>true</PilotOnly>
@@ -43,6 +45,7 @@
     <Sources>
       <Source Page="232">Edge of the Empire Core Rulebook</Source>
       <Source Page="245">Age of Rebellion Core Rulebook</Source>
+      <Source Page="238">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaManeuver</ActionTypeValue>
     <PilotOnly>true</PilotOnly>
@@ -62,6 +65,7 @@
     <Sources>
       <Source Page="233">Edge of the Empire Core Rulebook</Source>
       <Source Page="245">Age of Rebellion Core Rulebook</Source>
+      <Source Page="239">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaManeuver</ActionTypeValue>
     <PilotOnly>true</PilotOnly>
@@ -80,6 +84,7 @@
     <Sources>
       <Source Page="233">Edge of the Empire Core Rulebook</Source>
       <Source Page="246">Age of Rebellion Core Rulebook</Source>
+      <Source Page="239">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaManeuver</ActionTypeValue>
     <PilotOnly>true</PilotOnly>
@@ -98,6 +103,7 @@
     <Sources>
       <Source Page="233">Edge of the Empire Core Rulebook</Source>
       <Source Page="246">Age of Rebellion Core Rulebook</Source>
+      <Source Page="239">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaManeuver</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -105,6 +111,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
     </Skills>
   </VehAction>
@@ -112,7 +119,7 @@
     <Key>MECHINCPOW</Key>
     <Name>Increase Power</Name>
     <Description>Please see page 72 of the Stay on Target Sourcebook for details</Description>
-    <Source Page="72">Stay on Target Sourcebook</Source>
+    <Source Page="72">Stay on Target</Source>
     <ActionTypeValue>vaManeuver</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
     <SilhLow>-1</SilhLow>
@@ -121,6 +128,7 @@
     <SpeedHigh>-1</SpeedHigh>
     <Active>true</Active>
     <RequiresSpeed>true</RequiresSpeed>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
     </Skills>
   </VehAction>
@@ -135,6 +143,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>3</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>GUNN</Key>
     </Skills>
@@ -150,6 +159,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>3</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>GUNN</Key>
     </Skills>
@@ -165,6 +175,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>3</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>GUNN</Key>
     </Skills>
@@ -176,6 +187,7 @@
     <Sources>
       <Source Page="233">Edge of the Empire Core Rulebook</Source>
       <Source Page="247">Age of Rebellion Core Rulebook</Source>
+      <Source Page="240">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -194,6 +206,7 @@
     <Sources>
       <Source Page="234">Edge of the Empire Core Rulebook</Source>
       <Source Page="247">Age of Rebellion Core Rulebook</Source>
+      <Source Page="240">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>true</PilotOnly>
@@ -215,6 +228,7 @@
     <Sources>
       <Source Page="234">Edge of the Empire Core Rulebook</Source>
       <Source Page="249">Age of Rebellion Core Rulebook</Source>
+      <Source Page="241">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -232,6 +246,7 @@
     <Sources>
       <Source Page="237">Edge of the Empire Core Rulebook</Source>
       <Source Page="248">Age of Rebellion Core Rulebook</Source>
+      <Source Page="241">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -239,6 +254,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>ASTRO</Key>
       <Key>PERC</Key>
@@ -251,6 +267,7 @@
     <Sources>
       <Source Page="237">Edge of the Empire Core Rulebook</Source>
       <Source Page="248">Age of Rebellion Core Rulebook</Source>
+      <Source Page="241">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -259,6 +276,7 @@
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
     <RequiresSpeed>true</RequiresSpeed>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>PILOTPL</Key>
       <Key>PILOTSP</Key>
@@ -271,6 +289,7 @@
     <Sources>
       <Source Page="237">Edge of the Empire Core Rulebook</Source>
       <Source Page="248">Age of Rebellion Core Rulebook</Source>
+      <Source Page="241">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -278,6 +297,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>COMP</Key>
     </Skills>
@@ -289,6 +309,7 @@
     <Sources>
       <Source Page="237">Edge of the Empire Core Rulebook</Source>
       <Source Page="248">Age of Rebellion Core Rulebook</Source>
+      <Source Page="241">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -296,6 +317,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>MECH</Key>
     </Skills>
@@ -307,6 +329,7 @@
     <Sources>
       <Source Page="237">Edge of the Empire Core Rulebook</Source>
       <Source Page="248">Age of Rebellion Core Rulebook</Source>
+      <Source Page="241">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -314,6 +337,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>ATHL</Key>
     </Skills>
@@ -325,6 +349,7 @@
     <Sources>
       <Source Page="237">Edge of the Empire Core Rulebook</Source>
       <Source Page="248">Age of Rebellion Core Rulebook</Source>
+      <Source Page="241">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -332,6 +357,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>DISC</Key>
       <Key>LEAD</Key>
@@ -344,6 +370,7 @@
     <Sources>
       <Source Page="237">Edge of the Empire Core Rulebook</Source>
       <Source Page="248">Age of Rebellion Core Rulebook</Source>
+      <Source Page="241">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -351,6 +378,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>PERC</Key>
     </Skills>
@@ -362,6 +390,7 @@
     <Sources>
       <Source Page="237">Edge of the Empire Core Rulebook</Source>
       <Source Page="248">Age of Rebellion Core Rulebook</Source>
+      <Source Page="241">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -369,6 +398,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>COMP</Key>
     </Skills>
@@ -380,6 +410,7 @@
     <Sources>
       <Source Page="237">Edge of the Empire Core Rulebook</Source>
       <Source Page="248">Age of Rebellion Core Rulebook</Source>
+      <Source Page="241">Force and Destiny Core Rulebook</Source>
     </Sources>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
@@ -387,6 +418,7 @@
     <SilhHigh>-1</SilhHigh>
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>COMP</Key>
       <Key>VIGIL</Key>
@@ -396,7 +428,7 @@
     <Key>MECHWATCHBACK</Key>
     <Name>Watch Your Back!</Name>
     <Description>Please see page 73 of the Stay on Target Sourcebook for details</Description>
-    <Source Page="73">Stay on Target Sourcebook</Source>
+    <Source Page="73">Stay on Target</Source>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
     <SilhLow>-1</SilhLow>
@@ -404,6 +436,7 @@
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
     <Active>true</Active>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>COMP</Key>
     </Skills>
@@ -412,7 +445,7 @@
     <Key>MECHTARGETLOCK</Key>
     <Name>Target Lock</Name>
     <Description>Please see page 73 of the Stay on Target Sourcebook for details</Description>
-    <Source Page="73">Stay on Target Sourcebook</Source>
+    <Source Page="73">Stay on Target</Source>
     <ActionTypeValue>vaAction</ActionTypeValue>
     <PilotOnly>false</PilotOnly>
     <SilhLow>-1</SilhLow>
@@ -420,6 +453,7 @@
     <SpeedLow>-1</SpeedLow>
     <SpeedHigh>-1</SpeedHigh>
     <Active>true</Active>
+    <VehicleOnly>true</VehicleOnly>
     <Skills>
       <Key>COMP</Key>
     </Skills>

@@ -7,7 +7,10 @@
     Please see page 47 of the Edge of the Empire Core Rulebook for details.
 
   </Description>
-  <Source Page="47">Edge of the Empire Core Rulebook</Source>
+  <Sources>
+    <Source Page="47">Edge of the Empire Core Rulebook</Source>
+    <Source Page="18">Endless Vigil</Source>
+  </Sources>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>2</Agility>

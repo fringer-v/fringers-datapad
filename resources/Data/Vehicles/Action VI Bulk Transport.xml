@@ -29,6 +29,7 @@
   <Rarity>5</Rarity>
   <Categories>
     <Category>Non-Fighter Starship</Category>
+    <Category>Bulk Transport</Category>
   </Categories>
   <Type>Transport</Type>
   <Starship>true</Starship>

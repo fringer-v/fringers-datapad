@@ -19,7 +19,7 @@
     </Description>
     <Sources>
       <Source Page="39">Edge of the Empire Core Rulebook</Source>
-      <Source Page="17">Fly Casual Sourcebook</Source>
+      <Source Page="17">Fly Casual</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -41,8 +41,8 @@
     </Description>
     <Sources>
       <Source Page="39">Edge of the Empire Core Rulebook</Source>
-      <Source Page="17">Far Horizons Sourcebook</Source>
-      <Source Page="17">Fly Casual Sourcebook</Source>
+      <Source Page="17">Far Horizons</Source>
+      <Source Page="17">Fly Casual</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -54,7 +54,7 @@
     </Description>
     <Sources>
       <Source Page="39">Edge of the Empire Core Rulebook</Source>
-      <Source Page="17">Fly Casual Sourcebook</Source>
+      <Source Page="17">Fly Casual</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -66,8 +66,8 @@
     </Description>
     <Sources>
       <Source Page="39">Edge of the Empire Core Rulebook</Source>
-      <Source Page="17">Far Horizons Sourcebook</Source>
-      <Source Page="17">Fly Casual Sourcebook</Source>
+      <Source Page="17">Far Horizons</Source>
+      <Source Page="17">Fly Casual</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -88,8 +88,8 @@
     </Description>
     <Sources>
       <Source Page="39">Edge of the Empire Core Rulebook</Source>
-      <Source Page="17">Far Horizons Sourcebook</Source>
-      <Source Page="17">Fly Casual Sourcebook</Source>
+      <Source Page="17">Far Horizons</Source>
+      <Source Page="17">Fly Casual</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -101,8 +101,8 @@
     </Description>
     <Sources>
       <Source Page="39">Edge of the Empire Core Rulebook</Source>
-      <Source Page="17">Far Horizons Sourcebook</Source>
-      <Source Page="17">Fly Casual Sourcebook</Source>
+      <Source Page="17">Far Horizons</Source>
+      <Source Page="17">Fly Casual</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -133,7 +133,7 @@
     </Description>
     <Sources>
       <Source Page="39">Edge of the Empire Core Rulebook</Source>
-      <Source Page="17">Far Horizons Sourcebook</Source>
+      <Source Page="17">Far Horizons</Source>
     </Sources>
   </Obligation>
   <Obligation>
@@ -330,9 +330,12 @@
     <Name>Contract</Name>
     <Description>
       [H4]Contract[h4]
-      Please see page 18 of the Special Modifications Sourcebook for details.
+      Please see page 18 of the Special Modifications Sourcebook, or page 19 of the No Disintegrations Sourcebook, for details.
     </Description>
-    <Source Page="18">Special Modifications</Source>
+    <Sources>
+      <Source Page="18">Special Modifications</Source>
+      <Source Page="19">No Disintegrations</Source>
+    </Sources>
   </Obligation>
   <Obligation>
     <Key>FAILEDREP</Key>
@@ -352,4 +355,53 @@
     </Description>
     <Source Page="18">Special Modifications</Source>
   </Obligation>
+  
+  <!-- No Disintegrationws -->
+
+  <Obligation>
+    <Key>THRILLSEEK</Key>
+    <Name>Thrill Seeker</Name>
+    <Description>
+      [H4]Thrill Seeker[h4]
+      Please see page 19 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="19">No Disintegrations</Source>
+  </Obligation>
+  <Obligation>
+    <Key>VIGILANTE</Key>
+    <Name>Vigilante</Name>
+    <Description>
+      [H4]Vigilante[h4]
+      Please see page 19 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="19">No Disintegrations</Source>
+  </Obligation>
+  <Obligation>
+    <Key>RULEBREAKER</Key>
+    <Name>Rule Breaker</Name>
+    <Description>
+      [H4]Rule Breaker[h4]
+      Please see page 19 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="19">No Disintegrations</Source>
+  </Obligation>
+  <Obligation>
+    <Key>KEEPERFAITH</Key>
+    <Name>Keeper of the Faith</Name>
+    <Description>
+      [H4]Keeper of the Faith[h4]
+      Please see page 19 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="19">No Disintegrations</Source>
+  </Obligation>
+  <Obligation>
+    <Key>FAME</Key>
+    <Name>Fame</Name>
+    <Description>
+      [H4]Fame[h4]
+      Please see page 19 of the No Disintegrations Sourcebook for details.
+    </Description>
+    <Source Page="19">No Disintegrations</Source>
+  </Obligation>
+
 </Obligations>

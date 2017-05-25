@@ -123,6 +123,7 @@
         </Direction>
         <Direction>
           <Right>true</Right>
+          <Left>true</Left>
           <Down>true</Down>
           <Up>true</Up>
         </Direction>

@@ -24,44 +24,17 @@ Talz or Talzzi is the native language of the Talz species from Alzoc III. It is 
     <Cunning>2</Cunning>
     <Willpower>2</Willpower>
     <Presence>2</Presence>
-    <Requirement>
-      <WearingArmor>false</WearingArmor>
-      <Career>false</Career>
-      <Specialization>false</Specialization>
-      <NonCareer>false</NonCareer>
-      <SoakAtLeast>0</SoakAtLeast>
-    </Requirement>
   </StartingChars>
   <StartingAttrs>
     <WoundThreshold>12</WoundThreshold>
     <StrainThreshold>9</StrainThreshold>
-    <DefenseRanged>0</DefenseRanged>
-    <DefenseMelee>0</DefenseMelee>
-    <SoakValue>0</SoakValue>
     <Experience>90</Experience>
-    <ForceRating>0</ForceRating>
-    <Requirement>
-      <WearingArmor>false</WearingArmor>
-      <Career>false</Career>
-      <Specialization>false</Specialization>
-      <NonCareer>false</NonCareer>
-      <SoakAtLeast>0</SoakAtLeast>
-    </Requirement>
   </StartingAttrs>
   <SkillModifiers>
     <SkillModifier>
       <Key>PERC</Key>
       <RankStart>1</RankStart>
-      <RankAdd>0</RankAdd>
-      <RankLimit>0</RankLimit>
-      <isCareer>false</isCareer>
-      <Requirement>
-        <WearingArmor>false</WearingArmor>
-        <Career>false</Career>
-        <Specialization>false</Specialization>
-        <NonCareer>false</NonCareer>
-        <SoakAtLeast>0</SoakAtLeast>
-      </Requirement>
+      <RankLimit>2</RankLimit>
     </SkillModifier>
   </SkillModifiers>
   <TalentModifiers />
@@ -69,67 +42,20 @@ Talz or Talzzi is the native language of the Talz species from Alzoc III. It is 
     <OptionChoice>
       <Key>TALZCH1</Key>
       <Name>Environment</Name>
-      <Description />
-      <Source />
-      <Custom>Base</Custom>
       <Options>
         <Option>
           <Key>TALZCH1OP1</Key>
           <Name>Insulated fur</Name>
           <Description>When making skill checks, Talz remove [SETBACK] imposed due to actic or cold environmental conditions.</Description>
-          <Source />
-          <Custom>Base</Custom>
-          <StartingChars>
-            <Brawn>1</Brawn>
-            <Agility>1</Agility>
-            <Intellect>1</Intellect>
-            <Cunning>1</Cunning>
-            <Willpower>1</Willpower>
-            <Presence>1</Presence>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingChars>
-          <StartingAttributes>
-            <WoundThreshold>0</WoundThreshold>
-            <StrainThreshold>0</StrainThreshold>
-            <DefenseRanged>0</DefenseRanged>
-            <DefenseMelee>0</DefenseMelee>
-            <SoakValue>0</SoakValue>
-            <Experience>0</Experience>
-            <ForceRating>0</ForceRating>
-            <Requirement>
-              <WearingArmor>false</WearingArmor>
-              <Career>false</Career>
-              <Specialization>false</Specialization>
-              <NonCareer>false</NonCareer>
-              <SoakAtLeast>0</SoakAtLeast>
-            </Requirement>
-          </StartingAttributes>
-          <StartingSkillTraining />
-          <SkillModifiers />
-          <TalentModifiers />
         </Option>
       </Options>
     </OptionChoice>
   </OptionChoices>
   <WeaponModifiers>
     <WeaponModifier>
-      <Unarmed>false</Unarmed>
-      <UnarmedName />
-      <SkillKey />
       <AllSkillKey>BRAWL</AllSkillKey>
-      <Damage>0</Damage>
       <DamageAdd>1</DamageAdd>
       <Crit>3</Crit>
-      <CritSub>0</CritSub>
-      <Range />
-      <Qualities />
     </WeaponModifier>
   </WeaponModifiers>
-  <NoForceAbilities>false</NoForceAbilities>
 </Species>

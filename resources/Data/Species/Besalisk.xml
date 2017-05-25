@@ -33,7 +33,7 @@ Besalisk, or Ojom, is the language used by the Besalisk species on their native 
       <Key>RESIL</Key>
       <RankStart>1</RankStart>
       <RankAdd>0</RankAdd>
-      <RankLimit>0</RankLimit>
+      <RankLimit>2</RankLimit>
       <isCareer>false</isCareer>
     </SkillModifier>
   </SkillModifiers>     
