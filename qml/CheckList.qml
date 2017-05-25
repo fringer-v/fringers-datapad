@@ -239,7 +239,7 @@ Rectangle {
 			if (checkItemRef != 0)
 				characterData.updateCheckItem(checkItemRef, checkListItemDialogDicePool.pool.trim(), checkListItemDialogText.boxText.trim());
 			else
-				characterData.addCheckItem(checkListItemDialogDicePool.pool.trim(), checkListItemDialogText.boxText.trim());
+				characterData.appendCheckItem(checkListItemDialogDicePool.pool.trim(), checkListItemDialogText.boxText.trim());
 		}
 		clearAll();
 		Qt.inputMethod.hide();

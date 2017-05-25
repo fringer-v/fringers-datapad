@@ -358,5 +358,36 @@
         <file>resources/Data/Specializations/Gunslinger.xml</file>
         <file>resources/Data/Specializations/Propagandist.xml</file>
         <file>resources/Data/SpecificMotivations.xml</file>
+
+        <file>resources/Data/Force Powers/Farsight.xml</file>
+        <file>resources/Data/Force Powers/Manipulate.xml</file>
+        <file>resources/Data/SigAbilities/Always Get My Mark.xml</file>
+        <file>resources/Data/SigAbilities/My City.xml</file>
+        <file>resources/Data/SigAbilities/The Bigger They Are....xml</file>
+        <file>resources/Data/SigAbilities/Unexpected Demise.xml</file>
+        <file>resources/Data/SigAbilities/Unmatched Courage.xml</file>
+        <file>resources/Data/SigAbilities/Unmatched Devastation.xml</file>
+        <file>resources/Data/SigAbilities/Unmatched Pursuit.xml</file>
+        <file>resources/Data/SigAbilities/Unmatched Vigilance.xml</file>
+        <file>resources/Data/Specializations/Executioner.xml</file>
+        <file>resources/Data/Specializations/Hermit.xml</file>
+        <file>resources/Data/Specializations/Investigator.xml</file>
+        <file>resources/Data/Specializations/Martial Artist.xml</file>
+        <file>resources/Data/Specializations/Navigator.xml</file>
+        <file>resources/Data/Specializations/Operator.xml</file>
+        <file>resources/Data/Specializations/Racer.xml</file>
+        <file>resources/Data/Specializations/Sentry.xml</file>
+        <file>resources/Data/Specializations/Skip Tracer.xml</file>
+        <file>resources/Data/Specializations/Trailblazer.xml</file>
+        <file>resources/Data/Specializations/Vanguard.xml</file>
+        <file>resources/Data/Species/Anx.xml</file>
+        <file>resources/Data/Species/Elom.xml</file>
+        <file>resources/Data/Species/Elomin.xml</file>
+        <file>resources/Data/Species/Kalleran.xml</file>
+        <file>resources/Data/Species/Kyuzo.xml</file>
+        <file>resources/Data/Species/Mandalorian Human.xml</file>
+        <file>resources/Data/Species/Muun.xml</file>
+        <file>resources/Data/Species/Pantoran.xml</file>
+        <file>resources/Data/Species/Quermian.xml</file>
     </qresource>
 </RCC>

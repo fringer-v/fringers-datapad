@@ -33,34 +33,34 @@
 
 class AllTalents;
 
-class SpeciesXML : public QObject, public DatXMLReader {
-	Q_OBJECT
-
+class SpeciesXML : public DatXMLReader {
 public:
-	QString getName();
+	SpeciesXML(CurrentData* current_data);
 
-	void loadSpecies(const QString& nkey, const QString& sub_nkey, QMap<QString, QString>* choices);
+	QString loadSpecies(const QString& nkey, const QString& sub_nkey, QMap<QString, QString>* choices);
 
 	virtual void end();
 	virtual bool xmlElement(const DatStringBuffer& path, const char* value);
 
 private:
-	QString		iKey;
-	QString		iSubKey;
-	QString		iName;
-	QString		iSubName;
-	DieMod		iDieMod;
-	DieModList	iDieModList;
-	CharTalent	iCharTalent;
-	QMap<QString, QString>*	iChoices;
-	bool		iSubKeyMatched;
-	int			iOptionsRow;
+	CurrentData* iCurrentData;
 
-	QString		iChoiceKey;
-	QString		iOptionKey;
-	QString		iOptionTitle;
-	QString		iOptionSubTitle;
-	QString		iOptionContent;
+	QString iKey;
+	QString	iSubKey;
+	QString iName;
+	QString	iSubName;
+	DieMod iDieMod;
+	DieModList iDieModList;
+	CharTalent iCharTalent;
+	QMap<QString, QString>*	iChoices;
+	bool iSubKeyMatched;
+	int iOptionsRow;
+
+	QString iChoiceKey;
+	QString iOptionKey;
+	QString iOptionTitle;
+	QString iOptionSubTitle;
+	QString iOptionContent;
 
 	SpeciesTalent iSpecTalent;
 };

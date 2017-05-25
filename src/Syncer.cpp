@@ -92,7 +92,7 @@ QString Syncer::syncNow(bool upload_only)
 		return error;
 
 	createList(server_list, "cdata/", data);
-	error = syncDirectory(last_sync_time, DatUtil::getCurrentFolder(), "cdata/", DataAccess::currentData, server_list, CurrentData::instance->getFile(), upload_only);
+	error = syncDirectory(last_sync_time, DatUtil::getCurrentFolder(), "cdata/", DataAccess::currentData, server_list, CurrentData::instance->fileName, upload_only);
 	if (!error.isEmpty())
 		return error;
 

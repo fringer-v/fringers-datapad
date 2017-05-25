@@ -36,6 +36,7 @@
 #include "CharacterList.h"
 
 CurrentData* CurrentData::instance;
+int CurrentData::iReferenceCounter;
 
 // CheckListData -------------------------
 
@@ -208,6 +209,7 @@ void CheckListData::plusCustom(int ref, const QString& pool, const QString& desc
 
 void CurrentData::clear()
 {
+	fileName.clear();
 	characterFile.clear();
 
 	attributeMods.clear();
@@ -219,6 +221,7 @@ void CurrentData::clear()
 	encumbranceText.clear();
 
 	name.clear();
+	npc = false;
 	player.clear();
 	gender.clear();
 	age.clear();
@@ -267,45 +270,14 @@ void CurrentData::clear()
 	dutyRank = 0;
 	experienceLog.clear();
 	experienceTotal.clear();
-
-	iFileName.clear();
-
-	iNegativeCheck = 0;
-	iNegMelee = NEG_CHECK_2_PURPLE;
-	iNegRanged = NEG_CHECK_2_PURPLE;
-
-	iReferenceCounter = 0;
-}
-
-QString CurrentData::getFile()
-{
-	return iFileName;
-}
-
-void CurrentData::loadCurrentData()
-{
 	injuries.clear();
 	for (int i=0; i<4; i++)
 		appendEmptyWound();
 
-	if (name.isEmpty())
-		iFileName.clear();
-	else {
-		CurrentDataXML xml(this);
-
-		iFileName = name.toLower();
-		iFileName.replace(" ", "-");
-		iFileName.replace("\"", "-");
-		while (iFileName.contains("--"))
-			iFileName.replace("--", "-");
-
-		if (QFile().exists(DatUtil::getCurrentFolder() + iFileName + ".tri"))
-			iFileName += ".tri";
-		else
-			iFileName += ".xpad";
-		QByteArray data = DataAccess::getCurrentData(iFileName);
-		xml.readFromBuffer(data.constData(), data.length());
-	}
+	iNextInCache = NULL;
+	iNegativeCheck = 0;
+	iNegMelee = NEG_CHECK_2_PURPLE;
+	iNegRanged = NEG_CHECK_2_PURPLE;
 }
 
 int CurrentData::getAttribute(const QString& val)
@@ -386,7 +358,7 @@ void CurrentData::adjustConflict(int delta)
 	writeCurrentData();
 }
 
-void CurrentData::useStimPack(int delta)
+void CurrentData::useStimPack(Character* charac, int delta)
 {
 	if (!delta)
 		return;
@@ -401,7 +373,7 @@ void CurrentData::useStimPack(int delta)
 		if (stimPackQuantity() > 0) {
 			if (delta > stimPackQuantity())
 				delta = stimPackQuantity();
-			addItem(-delta, "STIMPACK", QString(), 0);
+			addItem(charac, -delta, "STIMPACK", QString(), 0);
 		}
 	}
 	else {
@@ -412,7 +384,7 @@ void CurrentData::useStimPack(int delta)
 	writeCurrentData();
 }
 
-void CurrentData::useErp(int delta)
+void CurrentData::useErp(Character* charac, int delta)
 {
 	if (!delta)
 		return;
@@ -424,7 +396,7 @@ void CurrentData::useErp(int delta)
 		if (erpQuantity() > 0) {
 			if (delta > erpQuantity())
 				delta = erpQuantity();
-			addItem(-delta, "ERP", QString(), 0);
+			addItem(charac, -delta, "ERP", QString(), 0);
 		}
 	}
 	else {
@@ -477,19 +449,19 @@ bool CurrentData::setStrainDelta(int val)
 	return false;
 }
 
-void CurrentData::addExperience(const QString& stype, const QString& key, const QString& name, const QString& desc, int amount)
+void CurrentData::addExperience(Character* charac, const QString& stype, const QString& key, const QString& name, const QString& desc, int amount)
 {
 	int type = expTypeToInt(stype.toUtf8().constData());
 
 	setExpLogItem(type, QDateTime::currentDateTime(), key, name, desc, amount, false);
 	writeCurrentData();
-	Character::instance->experienceChanged();
+	charac->emitExperienceChanged();
 	ExperienceList::instance.rowCountChanged();
 	ObligationList::instance.dataChanged();
 	DutyList::instance.dataChanged();
 }
 
-void CurrentData::changeExperience(int ref, const QString& desc, int amount)
+void CurrentData::changeExperience(Character* charac, int ref, const QString& desc, int amount)
 {
 	int idx = findExpLogItem(ref);
 	if (idx < 0)
@@ -503,13 +475,13 @@ void CurrentData::changeExperience(int ref, const QString& desc, int amount)
 	experienceTotal[type].value += amount - item.amount;
 
 	writeCurrentData();
-	Character::instance->experienceChanged();
+	charac->emitExperienceChanged();
 	ExperienceList::instance.dataChanged();
 	ObligationList::instance.dataChanged();
 	DutyList::instance.dataChanged();
 }
 
-void CurrentData::removeExperience(int ref)
+void CurrentData::removeExperience(Character* charac, int ref)
 {
 	int idx = findExpLogItem(ref);
 	if (idx < 0)
@@ -555,30 +527,30 @@ void CurrentData::removeExperience(int ref)
 	}
 
 	writeCurrentData();
-	Character::instance->experienceChanged();
+	charac->emitExperienceChanged();
 	ExperienceList::instance.rowCountChanged();
 	ObligationList::instance.dataChanged();
 	DutyList::instance.dataChanged();
 }
 
-void CurrentData::addCustomSkill(const QString& name, const QString& charac, int ranks, bool loading)
+void CurrentData::addCustomSkill(Character* charac, const QString& name, const QString& characteristic, int ranks)
 {
-	if (name.isEmpty() || charac.isEmpty())
+	if (name.isEmpty() || characteristic.isEmpty())
 		return;
 
 	CustomSkill skill;
 
 	skill.name = name;
-	skill.characteristic = charac;
+	skill.characteristic = characteristic;
 	skill.rank = ranks;
 	customSkills.append(skill);
-	if (!loading) {
+	if (charac) {
 		CustomSkills::instance.dataChanged();
 		writeCurrentData();
 	}
 }
 
-void CurrentData::removeCustomSkill(const QString& name)
+void CurrentData::removeCustomSkill(Character* charac, const QString& name)
 {
 	for (int i=0; i<customSkills.size(); i++) {
 		if (customSkills[i].name == name) {
@@ -586,22 +558,27 @@ void CurrentData::removeCustomSkill(const QString& name)
 			break;
 		}
 	}
-	CustomSkills::instance.dataChanged();
-	writeCurrentData();
+	if (charac) {
+		CustomSkills::instance.dataChanged();
+		writeCurrentData();
+	}
 }
 
-void CurrentData::addItem(int count, const QString& itemkey, const QString& desc, int amount)
+void CurrentData::addItem(Character* charac, int count, const QString& itemkey, const QString& desc, int amount)
 {
 	InventoryLog::instance.setRowCountChanged();
 	QDateTime create = QDateTime::currentDateTime();
 	QString uuid = setInvLogItem(count, create, create, QString(), itemkey, desc, amount, false);
-	InventoryLog::instance.makeClean();
 	writeCurrentData();
-	inventoryChanged(uuid, itemkey, true);
-	Character::instance->inventoryChanged();
+	inventoryChanged(charac, uuid, itemkey, true);
+	charac->inventoryChanged();
+	InventoryLog::instance.makeClean();
+	Gear::instance.makeClean();
+	Armor::instance.makeClean();
+	Weapons::instance.makeClean();
 }
 
-void CurrentData::updateItem(int ref, int count, const QString& desc, int amount)
+void CurrentData::updateItem(Character* charac, int ref, int count, const QString& desc, int amount)
 {
 	int row = findInvLogItem(ref);
 	if (row < 0)
@@ -639,18 +616,18 @@ void CurrentData::updateItem(int ref, int count, const QString& desc, int amount
 	inventoryLog[row].desc = desc;
 	inventoryLog[row].amount = amount;
 	if (amount - old_amount) {
-		int total = Character::instance->credits();
-		Character::instance->setCredits(total + (amount - old_amount));
+		int total = charac->credits();
+		charac->setCredits(total + (amount - old_amount));
 	}
 	InventoryLog::instance.makeClean();
 	writeCurrentData();
 	if (count - old_count) {
-		inventoryChanged(item.uuid, item.itemkey, true);
-		Character::instance->inventoryChanged();
+		inventoryChanged(charac, item.uuid, item.itemkey, true);
+		charac->inventoryChanged();
 	}
 }
 
-bool CurrentData::removeItem(int ref)
+bool CurrentData::removeItem(Character* charac, int ref)
 {
 	int row = findInvLogItem(ref);
 	if (row < 0)
@@ -692,18 +669,12 @@ bool CurrentData::removeItem(int ref)
 
 		if (quantity == 0 && item.originalQuantity == 0) {
 			list->removeItemByUuid(item.uuid);
-			if (shop_item.type == "GEAR") {
-				Gear::instance.setRowCountChanged();
-				Gear::instance.makeClean();
-			}
-			else if (shop_item.type == "ARMOR") {
-				Armor::instance.setRowCountChanged();
-				Armor::instance.makeClean();
-			}
-			else {
-				Weapons::instance.setRowCountChanged();
-				Weapons::instance.makeClean();
-			}
+			if (shop_item.type == "GEAR")
+				Gear::instance.rowCountChanged();
+			else if (shop_item.type == "ARMOR")
+				Armor::instance.rowCountChanged();
+			else
+				Weapons::instance.rowCountChanged();
 		}
 	}
 
@@ -711,16 +682,16 @@ bool CurrentData::removeItem(int ref)
 	inventoryLog.removeAt(row);
 	if (inventoryLog.size() == 1) {
 		inventoryLog.clear();
-		Character::instance->setCredits(originalCredits);
+		charac->setCredits(originalCredits);
 	}
 	else if (log_item.amount) {
-		int total = Character::instance->credits();
-		Character::instance->setCredits(total - log_item.amount);
+		int total = charac->credits();
+		charac->setCredits(total - log_item.amount);
 	}
 	writeCurrentData();
 	InventoryLog::instance.makeClean();
-	inventoryChanged(log_item.uuid, log_item.itemkey, true);
-	Character::instance->inventoryChanged();
+	inventoryChanged(charac, log_item.uuid, log_item.itemkey, true);
+	charac->inventoryChanged();
 	return true;
 }
 
@@ -768,16 +739,11 @@ void CurrentData::storeItem(const QString& in_uuid, const QString& itemkey, int 
 			invMod.remove(uuid);
 		writeCurrentData();
 	}
-
-	if (itemkey == "STIMPACK")
-		Character::instance->emitStimPacksChanged();
-	else if (itemkey == "ERP")
-		Character::instance->emitErpsChanged();
 }
 
-void CurrentData::clearAutoCheckItems(const QString& skillKey)
+void CurrentData::clearAutoCheckItems(Character* charac, const QString& skillKey)
 {
-	uncheckAllItem(skillKey);
+	uncheckAllItem(charac, skillKey);
 	autoCheckItems.clear();
 }
 
@@ -816,7 +782,7 @@ static void setup_talent_checks()
 	}
 }
 
-void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uuid)
+void CurrentData::setupAutoCheckItems(Character* charac, const QString& skillKey, const QString& uuid)
 {
 	bool combat = false;
 	bool ranged = false;
@@ -836,7 +802,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 	Item weapon = weapons.getItemByUuid(uuid);
 	QString weaponKey = weapon.itemkey;
 
-	uncheckAllItem(skillKey);
+	uncheckAllItem(charac, skillKey);
 	autoCheckItems.clear();
 
 	if (gear.equipped("HNTGOGGLE"))
@@ -879,51 +845,51 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 
 	if (charm || skillKey == "COERC" || skillKey == "NEG" ||
 		skillKey == "DECEP" || skillKey == "LEAD") {
-		force = nonCommitedForce();
+		force = nonCommitedForce(charac);
 		if (force > 0 && talents.contains("INFLUENCECONTROL2"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Influence:[b] Spend [FP] to gain [SU] or [AD] vs 1 engaged target, "+talents.forceUpgrades("INFLUENCECONTROL2", RAN | MAG), 0, 0);
 		if (talents.contains("JUSTKID"))
 			autoCheckItems.plus("-y", "[B]Just Kidding:[b] Once per round, Target: self or ally", 0, 0, 1);
 	}
 	else if (skillKey == "REC") {
-		force = nonCommitedForce();
+		force = nonCommitedForce(charac);
 		if (force > 0 && talents.contains("BAL"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Balance:[b] Gain +1 Strain per [FP]", 0, 0);
 	}
 	else if (skillKey == "ATHL") {
 		if (talents.contains("NIKTOSP2OC2OP1"))
 			autoCheckItems.plus("B", "[B]Climbing Claws:[b] Add when climbing trees and other surfaces their claws can pierce", 0, 0);
-		force = nonCommitedForce();
+		force = nonCommitedForce(charac);
 		if (force > 0 && talents.contains("ENHANCEBASIC"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "COORD") {
-		force = nonCommitedForce();
+		force = nonCommitedForce(charac);
 		if (force > 0 && talents.contains("ENHANCECONT1"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "RESIL") {
-		force = nonCommitedForce();
+		force = nonCommitedForce(charac);
 		if (force > 0 && talents.contains("ENHANCECONT2"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "PILOTPL") {
-		force = nonCommitedForce();
+		force = nonCommitedForce(charac);
 		if (force > 0 && talents.contains("ENHANCECONT4"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "BRAWL") {
-		force = nonCommitedForce();
+		force = nonCommitedForce(charac);
 		if (force > 0 && talents.contains("ENHANCECONT5"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "PILOTSP") {
-		force = nonCommitedForce();
+		force = nonCommitedForce(charac);
 		if (force > 0 && talents.contains("ENHANCECONT7"))
 			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
 	}
 	else if (skillKey == "ICOOL" || skillKey == "IVIG") {
-		force = nonCommitedForce();
+		force = nonCommitedForce(charac);
 		if (force > 0) {
 			if (talents.contains("FORSEECONTROL1")) {
 				if (talents.contains("FORSEECONTROL3"))
@@ -950,7 +916,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			autoCheckItems.plus(QString("B").repeated(ranks), "[B]Sleight of Mind:[b] Add if opposition is not immune to Force powers", 0, 0);
 	}
 	else if (skillKey == "LTSABER") {
-		force = nonCommitedForce();
+		force = nonCommitedForce(charac);
 		if (force > 0 && talents.ranks("HAWKSWOOP"))
 			autoCheckItems.plus(QString("F").repeated(force), "[B]Hawk Bat Swoop:[b] Spend [FP] to engage target, and [FP] to add [AD]", 0, 0);
 
@@ -965,10 +931,10 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), "[B]Hard Headed:[b] Perfrom check to remove staggered or disoriented effect", 0, 0);
 			if (talents.contains("HARDHDIMP")) {
 				dif = 6-ranks;
-				autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), QString("[B]Hard Headed (Improved):[b] Perfrom check to reduced straing to %1").arg(Character::instance->strain()-1), 0, 0);
+				autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), QString("[B]Hard Headed (Improved):[b] Perfrom check to reduced straing to %1").arg(charac->strain()-1), 0, 0);
 			}
 		}
-		force = nonCommitedForce();
+		force = nonCommitedForce(charac);
 		if (force > 0) {
 			if (talents.contains("INFLUENCECONTROL1"))
 				autoCheckItems.plus(QString("F").repeated(force), "[B]Influence (Mind Trick):[b] vs Discipline, "+talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
@@ -1029,7 +995,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			for (int i=0; i<talents.ranks("DEFSTA"); i++)
 				autoCheckItems.plus("u", "[B]Defensive Stance:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
 
-			setNegativePool(iNegMelee, skillKey);
+			setNegativePool(charac, iNegMelee, skillKey);
 		}
 		else {
 			ranks = talents.ranks("REFLECT");
@@ -1044,7 +1010,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			for (int i=0; i<talents.ranks("SIDESTEP"); i++)
 				autoCheckItems.plus("u", "[B]Side Step:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
 
-			setNegativePool(iNegRanged, skillKey);
+			setNegativePool(charac, iNegRanged, skillKey);
 		}
 
 		if (talents.contains("SENSEADV")) {
@@ -1062,37 +1028,37 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 		if (talents.contains("SENSECONTROL1")) {
 			ref = autoCheckItems.plus("g", "[B]Sense Control:[b] Commit force dice to upgrade difficulty of incoming attacks", 0, 0, 0, "", "SENSECONTROL1", 1);
 			if (isCommitted("SENSECONTROL1"))
-				checkItem(ref, skillKey, true);
+				checkItem(charac, ref, skillKey, true);
 		}
 		if (talents.contains("SENSECONTROL3")) {
 			ref = autoCheckItems.plus("g", "[B]Sense Control:[b] Commit force dice to upgrade abilty of combat checks", 0, 0, 0, "", "SENSECONTROL3", 1);
 			if (isCommitted("SENSECONTROL3"))
-				checkItem(ref, skillKey, true);
+				checkItem(charac, ref, skillKey, true);
 		}
 		if (talents.contains("ENHANCECONT8")) {
 			ref = autoCheckItems.plus("g", "[B]Enhance:[b] Commit force dice to increase Brawn by one", 0, 0, 0, "", "ENHANCECONT8", 1);
 			if (isCommitted("ENHANCECONT8"))
-				checkItem(ref, skillKey, true);
+				checkItem(charac, ref, skillKey, true);
 		}
 		if (talents.contains("ENHANCECONT9")) {
 			ref = autoCheckItems.plus("g", "[B]Enhance:[b] Commit force dice to increase Agility by one", 0, 0, 0, "", "ENHANCECONT9", 1);
 			if (isCommitted("ENHANCECONT9"))
-				checkItem(ref, skillKey, true);
+				checkItem(charac, ref, skillKey, true);
 		}
 		if (talents.contains("MISDIRCONTROL3")) {
 			int count = isCommitted("MISDIRCONTROL3");
-			ranks = Character::instance->force();
+			ranks = charac->force();
 			for (int i=0; i<ranks; i++) {
 				ref = autoCheckItems.plus("g", "[B]Misdirect Control:[b] Add [TH] to all incoming attacks", 0, 0, 0, "", "MISDIRCONTROL3", 1);
 				if (i < count)
-					checkItem(ref, skillKey, true);
+					checkItem(charac, ref, skillKey, true);
 			}
 		}
 
 		if (talents.contains("MISDIRDURATION")) {
 			ref = autoCheckItems.plus("gg", "[B]Misdirect Duration:[b] Sustain misdiration as long as target in range", 0, 0, 0, "", "MISDIRDURATION", 2);
 			if (isCommitted("MISDIRDURATION"))
-				checkItem(ref, skillKey, true);
+				checkItem(charac, ref, skillKey, true);
 		}
 	}
 	else if (skillKey == "PILOTPL") {
@@ -1110,9 +1076,9 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 		if (talents.contains("FULLTHSUP"))
 			amount = 2;
 		if (talents.contains("FULLTH"))
-			autoCheckItems.plus("DDD", QString("[B]Full Throttle:[b] Increase Speed by %1 for %2 rounds, [B]Cost: Action[b]").arg(amount).arg(Character::instance->cunning()), 0, 0);
+			autoCheckItems.plus("DDD", QString("[B]Full Throttle:[b] Increase Speed by %1 for %2 rounds, [B]Cost: Action[b]").arg(amount).arg(charac->cunning()), 0, 0);
 		if (talents.contains("FULLTHIMP"))
-			autoCheckItems.plus("DD", QString("[B]Full Throttle (Improved):[b] Increase Speed by %1 for %2 rounds").arg(amount).arg(Character::instance->cunning()), 1, 1);
+			autoCheckItems.plus("DD", QString("[B]Full Throttle (Improved):[b] Increase Speed by %1 for %2 rounds").arg(amount).arg(charac->cunning()), 1, 1);
 	}
 
 	if (combat) {
@@ -1137,14 +1103,14 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 			autoCheckItems.plus(QString("B").repeated(ranks), "[B]Quick Strike:[b] Add if target has not acted in this encounter yet", 0, 0);
 
 		if (!weaponKey.isEmpty() && weaponKey != "UNARMED" && talents.contains("TARGBL"))
-			autoCheckItems.plus(QString("@Damage +%1").arg(Character::instance->agility()), "[B]Targeted Blow:[b] Add to damage on hit with non-vehicle weapon", 0, 0, 1);
+			autoCheckItems.plus(QString("@Damage +%1").arg(charac->agility()), "[B]Targeted Blow:[b] Add to damage on hit with non-vehicle weapon", 0, 0, 1);
 
 		ranks = talents.ranks("DISARMSMILE");
 		if (ranks > 0)
 			autoCheckItems.plus(QString("N").repeated(ranks), "[B]Disarming Smile:[b] Opposed Charm vs Target, Range: Short, Duration: Encounter, [B]Cost: Action[b]", 0, 0);
 
 		if (gunnery && talents.contains("DEAD")) {
-			int dam = Character::instance->agility();
+			int dam = charac->agility();
 
 			if (!talents.contains("DEADIMP"))
 				dam = (dam + 1) / 2;
@@ -1227,7 +1193,7 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 		foreach (CheckItem* item, talentChecks[skillKey].checks) {
 			int ref = autoCheckItems.plus(item->pool, item->desc, item->move, item->strain, item->dpoint);
 			if (item->default_check)
-				checkItem(ref, skillKey, true);
+				checkItem(charac, ref, skillKey, true);
 		}
 	}
 
@@ -1272,33 +1238,34 @@ void CurrentData::setupAutoCheckItems(const QString& skillKey, const QString& uu
 		checkLists[skillKey].checkAll(false);
 
 	if (default_check)
-		checkItem(default_check, skillKey, true);
+		checkItem(charac, default_check, skillKey, true);
 }
 
-void CurrentData::exitAutoCheckItems(const QString& skillKey)
+void CurrentData::exitAutoCheckItems(Character* charac, const QString& skillKey)
 {
 	int		strain = 0;
 	QString	consumable;
 
-	setTemporaryStrain(0);
+	setTemporaryStrain(charac, 0);
 	if (checkLists.contains(skillKey))
 		strain = checkLists[skillKey].strainUsed(consumable);
 	strain += autoCheckItems.strainUsed(consumable);
 	if (strain > 0)
-		Character::instance->adjustStrain(strain);
+		charac->adjustStrain(strain);
 	if (!consumable.isEmpty())
-		addItem(-1, consumable, QString(), 0);
+		addItem(charac, -1, consumable, QString(), 0);
 }
 
-void CurrentData::addCheckItem(const QString& skillKey, const QString& pool, const QString& desc)
+void CurrentData::appendCheckItem(Character* charac, const QString& skillKey, const QString& pool, const QString& desc)
 {
 	//CheckList::instance.startChanges();
 	setCheckItem(skillKey, pool, desc);
-	CheckList::instance.rowCountChanged();
+	if (charac)
+		CheckList::instance.rowCountChanged();
 	writeCurrentData();
 }
 
-void CurrentData::updateCheckItem(int ref, const QString& skillKey, const QString& pool, const QString& desc)
+void CurrentData::updateCheckItem(Character* charac, int ref, const QString& skillKey, const QString& pool, const QString& desc)
 {
 	if (checkLists.contains(skillKey)) {
 		CheckListItem* item = checkLists[skillKey].findItem(ref);
@@ -1307,24 +1274,24 @@ void CurrentData::updateCheckItem(int ref, const QString& skillKey, const QStrin
 			item->dice = pool;
 			item->description = desc;
 			CheckList::instance.rowCountChanged();
-			checkChecked(skillKey);
+			checkChecked(charac, skillKey);
 			writeCurrentData();
 		}
 	}
 }
 
-void CurrentData::removeCheckItem(int ref, const QString& skillKey)
+void CurrentData::removeCheckItem(Character* charac, int ref, const QString& skillKey)
 {
 	if (checkLists.contains(skillKey)) {
 		//CheckList::instance.startChanges();
 		checkLists[skillKey].deleteItem(ref);
 		CheckList::instance.rowCountChanged();
-		checkChecked(skillKey);
+		checkChecked(charac, skillKey);
 		writeCurrentData();
 	}
 }
 
-void CurrentData::uncheckAllItem(const QString& skillKey)
+void CurrentData::uncheckAllItem(Character* charac,const QString& skillKey)
 {
 	iNegativeCheck = 0;
 	//CheckList::instance.startChanges();
@@ -1332,10 +1299,10 @@ void CurrentData::uncheckAllItem(const QString& skillKey)
 	if (checkLists.contains(skillKey))
 		checkLists[skillKey].checkAll(false);
 	CheckList::instance.rowCountChanged();
-	Character::instance->setChangeDicePool(QString());
+	charac->setChangeDicePool(QString());
 }
 
-void CurrentData::checkItem(int ref, const QString& skillKey, bool list_setup)
+void CurrentData::checkItem(Character* charac, int ref, const QString& skillKey, bool list_setup)
 {
 	CheckListItem* item;
 
@@ -1348,24 +1315,24 @@ void CurrentData::checkItem(int ref, const QString& skillKey, bool list_setup)
 		item->checked = !item->checked;
 		if (item->reduceStrain) {
 			if (item->checked)
-				setTemporaryStrain(temporaryStrain + item->reduceStrain);
+				setTemporaryStrain(charac, temporaryStrain + item->reduceStrain);
 			else
-				setTemporaryStrain(temporaryStrain - item->reduceStrain);
+				setTemporaryStrain(charac, temporaryStrain - item->reduceStrain);
 		}
 		if (!list_setup) {
 			if (!item->commitKey.isEmpty()) {
 				forceCommitted[item->commitKey] += item->checked ? item->forceCost : -item->forceCost;
 				if (item->commitKey == "ENHANCECONT8")
-					Character::instance->emitBrawnChanged();
+					charac->emitBrawnChanged();
 				else if (item->commitKey == "ENHANCECONT9")
-					Character::instance->emitAgilityChanged();
-				Character::instance->emitForceCommittedChanged();
-				Character::instance->characteristicsChanged();
+					charac->emitAgilityChanged();
+				charac->emitForceCommittedChanged();
+				charac->characteristicsChanged();
 			}
 			CheckList::instance.rowCountChanged();
 		}
 	}
-	checkChecked(skillKey);
+	checkChecked(charac, skillKey);
 }
 
 int CurrentData::negativePool()
@@ -1373,7 +1340,7 @@ int CurrentData::negativePool()
 	return iNegativeCheck;
 }
 
-void CurrentData::setNegativePool(int bit, const QString& skillKey)
+void CurrentData::setNegativePool(Character* charac, int bit, const QString& skillKey)
 {
 	if (bit == 0)
 		iNegativeCheck = 0;
@@ -1393,7 +1360,7 @@ void CurrentData::setNegativePool(int bit, const QString& skillKey)
 			SpecialSkills::instance.setDataChanged();
 		}
 	}
-	checkChecked(skillKey);
+	checkChecked(charac, skillKey);
 }
 
 void CurrentData::negetiveDefence(int& r, int &m)
@@ -1419,41 +1386,6 @@ int CurrentData::isCommitted(const QString& key)
 	if (forceCommitted.contains(key))
 		return forceCommitted[key];
 	return 0;
-}
-
-void CurrentData::checkChecked(const QString& skillKey)
-{
-	QString new_curr_pool;
-
-	new_curr_pool = autoCheckItems.getCurrentPool();
-	if (checkLists.contains(skillKey))
-		new_curr_pool += checkLists[skillKey].getCurrentPool();
-
-	if ((iNegativeCheck & NEG_CHECK_1_BLACK) != 0)
-		new_curr_pool += "S";
-	if ((iNegativeCheck & NEG_CHECK_2_BLACK) != 0)
-		new_curr_pool += "SS";
-	if ((iNegativeCheck & NEG_CHECK_3_BLACK) != 0)
-		new_curr_pool += "SSS";
-	if ((iNegativeCheck & NEG_CHECK_1_PURPLE) != 0)
-		new_curr_pool += "D";
-	if ((iNegativeCheck & NEG_CHECK_2_PURPLE) != 0)
-		new_curr_pool += "DD";
-	if ((iNegativeCheck & NEG_CHECK_3_PURPLE) != 0)
-		new_curr_pool += "DDD";
-	if ((iNegativeCheck & NEG_CHECK_4_PURPLE) != 0)
-		new_curr_pool += "DDDD";
-	if ((iNegativeCheck & NEG_CHECK_1_RED) != 0)
-		new_curr_pool += "C";
-	if ((iNegativeCheck & NEG_CHECK_2_RED) != 0)
-		new_curr_pool += "CC";
-	if ((iNegativeCheck & NEG_CHECK_3_RED) != 0)
-		new_curr_pool += "CCC";
-	if ((iNegativeCheck & NEG_CHECK_1_UPGRADE) != 0)
-		new_curr_pool += "u";
-	if ((iNegativeCheck & NEG_CHECK_2_UPGRADE) != 0)
-		new_curr_pool += "uu";
-	Character::instance->setChangeDicePool(new_curr_pool);
 }
 
 int CurrentData::expTypeToInt(const char* type)
@@ -1492,14 +1424,15 @@ QString CurrentData::expTypeToString(int type, const QString& key)
 	return QString();
 }
 
-void CurrentData::addCriticalWound(int perc, int type)
+void CurrentData::addCriticalWound(Character* charac, int perc, int type)
 {
 	setCriticalWound(perc, type);
-	InjuryList::instance.rowCountChanged();
+	if (charac)
+		InjuryList::instance.rowCountChanged();
 	writeCurrentData();
 }
 
-void CurrentData::removeCriticalWound(int ref)
+void CurrentData::removeCriticalWound(Character* charac, int ref)
 {
 	for (int i=0; i<injuries.count(); i++) {
 		if (injuries[i].ref == ref) {
@@ -1509,13 +1442,14 @@ void CurrentData::removeCriticalWound(int ref)
 			break;
 		}
 	}
-	InjuryList::instance.rowCountChanged();
+	if (charac)
+		InjuryList::instance.rowCountChanged();
 	writeCurrentData();
 }
 
-int CurrentData::nonCommitedForce()
+int CurrentData::nonCommitedForce(Character* charac)
 {
-	return Character::instance->force() - commitCount();
+	return charac->force() - commitCount();
 }
 
 void CurrentData::setCriticalWound(int perc, int type)
@@ -1626,7 +1560,7 @@ int CurrentData::findInvLogItem(int ref)
 
 QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDateTime& update, const QString& in_uuid, const QString& itemkey, const QString& desc, int amount, bool loading)
 {
-	int total = Character::instance->credits();
+	int total = credits;
 	int type = ITEM_AMOUNT;
 	ItemList* list = NULL;
 	QString uuid;
@@ -1634,9 +1568,9 @@ QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDa
 	if (inventoryLog.size() == 0) {
 		// Record, or add orignal credits total:
 		if (loading) {
-			// The first entry loaded myst be the original credit total:
+			// The first entry loaded must be the original credit total:
 			inventoryLog.append(InvLogItem(++iReferenceCounter, count, create, update, in_uuid, itemkey, desc, amount, ITEM_START));
-			Character::instance->setCredits(amount);
+			credits = amount;
 			return in_uuid;
 		}
 
@@ -1715,18 +1649,12 @@ QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDa
 				list->removeItemByUuid(uuid);
 		}
 
-		if (shop_item.type == "GEAR") {
+		if (shop_item.type == "GEAR")
 			Gear::instance.setRowCountChanged();
-			Gear::instance.makeClean();
-		}
-		else if (shop_item.type == "ARMOR") {
+		else if (shop_item.type == "ARMOR")
 			Armor::instance.setRowCountChanged();
-			Armor::instance.makeClean();
-		}
-		else {
+		else
 			Weapons::instance.setRowCountChanged();
-			Weapons::instance.makeClean();
-		}
 	}
 	else if (!desc.isEmpty()) {
 		// Free text has no count and no item ID:
@@ -1737,7 +1665,7 @@ QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDa
 
 	inventoryLog.append(InvLogItem(++iReferenceCounter, count, create, update, uuid, itemkey, desc, amount, type));
 
-	Character::instance->setCredits(total + amount);
+	credits = total + amount;
 
 	return uuid;
 }
@@ -1747,12 +1675,12 @@ void CurrentData::addInvLogItem(const QDateTime& create, const QDateTime& update
 	inventoryLog.append(InvLogItem(++iReferenceCounter, 0, create, update, QString(), QString(), desc, amount, type));
 }
 
-void CurrentData::inventoryChanged(const QString& uuid, const QString& itemkey, bool signal)
+void CurrentData::inventoryChanged(Character* charac, const QString& uuid, const QString& itemkey, bool signal)
 {
 	if (!invMod.contains(uuid))
 		return;
 
-	if (signal) {
+	if (charac && signal) {
 		if (weapons.containsByUuid(uuid)) {
 			//Weapons::instance.startChanges();
 			// "quantity" is taken dynamically from inventory!
@@ -1774,14 +1702,13 @@ void CurrentData::inventoryChanged(const QString& uuid, const QString& itemkey, 
 	}
 
 	if (itemkey == "STIMPACK")
-		Character::instance->emitStimPacksChanged();
+		charac->emitStimPacksChanged();
 	else if (itemkey == "ERP")
-		Character::instance->emitErpsChanged();
+		charac->emitErpsChanged();
 }
 
 void CurrentData::setCheckItem(const QString& skillKey, const QString& pool, const QString& desc)
 {
-
 	if (skillKey.isEmpty()) {
 		// Add to all combat skills:
 		setCheckItem("BRAWL", pool, desc);
@@ -1794,6 +1721,41 @@ void CurrentData::setCheckItem(const QString& skillKey, const QString& pool, con
 	}
 
 	addCheckItem(skillKey, ++iReferenceCounter, pool, desc);
+}
+
+void CurrentData::checkChecked(Character* charac, const QString& skillKey)
+{
+	QString new_curr_pool;
+
+	new_curr_pool = autoCheckItems.getCurrentPool();
+	if (checkLists.contains(skillKey))
+		new_curr_pool += checkLists[skillKey].getCurrentPool();
+
+	if ((iNegativeCheck & NEG_CHECK_1_BLACK) != 0)
+		new_curr_pool += "S";
+	if ((iNegativeCheck & NEG_CHECK_2_BLACK) != 0)
+		new_curr_pool += "SS";
+	if ((iNegativeCheck & NEG_CHECK_3_BLACK) != 0)
+		new_curr_pool += "SSS";
+	if ((iNegativeCheck & NEG_CHECK_1_PURPLE) != 0)
+		new_curr_pool += "D";
+	if ((iNegativeCheck & NEG_CHECK_2_PURPLE) != 0)
+		new_curr_pool += "DD";
+	if ((iNegativeCheck & NEG_CHECK_3_PURPLE) != 0)
+		new_curr_pool += "DDD";
+	if ((iNegativeCheck & NEG_CHECK_4_PURPLE) != 0)
+		new_curr_pool += "DDDD";
+	if ((iNegativeCheck & NEG_CHECK_1_RED) != 0)
+		new_curr_pool += "C";
+	if ((iNegativeCheck & NEG_CHECK_2_RED) != 0)
+		new_curr_pool += "CC";
+	if ((iNegativeCheck & NEG_CHECK_3_RED) != 0)
+		new_curr_pool += "CCC";
+	if ((iNegativeCheck & NEG_CHECK_1_UPGRADE) != 0)
+		new_curr_pool += "u";
+	if ((iNegativeCheck & NEG_CHECK_2_UPGRADE) != 0)
+		new_curr_pool += "uu";
+	charac->setChangeDicePool(new_curr_pool);
 }
 
 void CurrentData::addCheckItem(const QString& skillKey, int ref, const QString& pool, const QString& desc)
@@ -1925,13 +1887,13 @@ void CurrentData::writeCurrentData()
 	data += QString(" </CustomSkills>\n");
 	data += "</CurrentData>\n";
 
-	if (!iFileName.isEmpty()) {
-		DataAccess::writeFile(DatUtil::getCurrentFolder() + iFileName, data.toUtf8());
+	if (!fileName.isEmpty()) {
+		DataAccess::writeFile(DatUtil::getCurrentFolder() + fileName, data.toUtf8());
 		//DataAccess::currentData.startChanges();
-		int row = DataAccess::currentData.findRow("file", iFileName);
+		int row = DataAccess::currentData.findRow("file", fileName);
 		if (row < 0)
 			row = DataAccess::currentData.appendRow();
-		DataAccess::setCurrentDataRow(row, iFileName);
+		DataAccess::setCurrentDataRow(row, fileName);
 		DataAccess::currentData.rowCountChanged();
 	}
 }
@@ -1962,13 +1924,13 @@ void CurrentData::changeStrain(int delta)
 		strainHistory = DatUtil::right(strainHistory, " ");
 }
 
-void CurrentData::setTemporaryStrain(int value)
+void CurrentData::setTemporaryStrain(Character* charac, int value)
 {
 	temporaryStrain = value;
-	Character::instance->emitCurrentStrainChanged();
+	charac->emitCurrentStrainChanged();
 }
 
-// CustomSkills -------------------------------------------
+// CurrentDataXML -------------------------------------------
 
 CurrentDataXML::CurrentDataXML(CurrentData* current_data)
 {
@@ -2105,7 +2067,7 @@ bool CurrentDataXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/Skill/Rank/"))
 		iSkillRank = toInt(value);
 	else if (path.endsWith("/CustomSkills/Skill/#end"))
-		iCurrentData->addCustomSkill(iSkillName, iSkillChar, iSkillRank, true);
+		iCurrentData->addCustomSkill(NULL, iSkillName, iSkillChar, iSkillRank);
 
 	return true;
 }
@@ -2290,7 +2252,7 @@ QVariant InventoryLog::getValue(int row, int col)
 				case 4:
 					return "[B]Current Total Credits[b]";
 				case 5:
-					return Character::instance->credits();
+					return CurrentData::instance->credits;
 				case 6:
 					return ITEM_TOTAL;
 			}

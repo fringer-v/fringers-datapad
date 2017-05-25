@@ -11,6 +11,7 @@
 #include "md5.h"
 #include "DataSet.h"
 #include "CharacterList.h"
+#include "CharCache.h"
 
 int Character::iLoading;
 
@@ -163,7 +164,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 		// can be added to the pool
 		opt += DatUtil::repeat("B", optionalBoost);
 		if (addForceDice > 0)
-			opt += DatUtil::repeat("F", current_data->nonCommitedForce());
+			opt += DatUtil::repeat("F", current_data->nonCommitedForce(Character::instance));
 		opt += DatUtil::repeat("N", optionalRemoveSetback);
 		opt += DatUtil::repeat("d", optionalUpgradeCount);
 		opt += DatUtil::repeat("u", optionalDowngradeCount);
@@ -421,6 +422,7 @@ void Character::syncWithServer()
 {
 	setLoading(true);
 	QString error = iSyncer.sync();
+	CharCache::instance.clearCache();
 	if (!error.isEmpty())
 		emit alert("Sync with Server Failed", error);
 
@@ -689,7 +691,7 @@ void Character::adjustConflict(int delta)
 
 void Character::useStimPack(int delta)
 {
-	CurrentData::instance->useStimPack(delta);
+	CurrentData::instance->useStimPack(this, delta);
 	emit stimPacksUsedChanged(CurrentData::instance->stimPacksUsed);
 	emit currentWoundsChanged(CurrentData::instance->wounds);
 	emit woundHistoryChanged(CurrentData::instance->woundHistory);
@@ -697,7 +699,7 @@ void Character::useStimPack(int delta)
 
 void Character::useErp(int delta)
 {
-	CurrentData::instance->useErp(delta);
+	CurrentData::instance->useErp(this, delta);
 	emit erpsUsedChanged(CurrentData::instance->erpsUsed);
 	emit currentWoundsChanged(CurrentData::instance->wounds);
 	emit woundHistoryChanged(CurrentData::instance->woundHistory);
@@ -717,54 +719,56 @@ void Character::setStrainDelta(int val)
 
 void Character::addCriticalWound(int perc, int type)
 {
-	CurrentData::instance->addCriticalWound(perc, type);
+	CurrentData::instance->addCriticalWound(this, perc, type);
 }
 
 void Character::removeCriticalWound(int ref)
 {
-	CurrentData::instance->removeCriticalWound(ref);
+	CurrentData::instance->removeCriticalWound(this, ref);
 }
 
 void Character::addExperience(const QString& type, const QString& key, const QString& name, const QString& desc, int amount)
 {
-	CurrentData::instance->addExperience(type, key, name, desc, amount);
+	CurrentData::instance->addExperience(this, type, key, name, desc, amount);
 }
 
 void Character::changeExperience(int ref, const QString& desc, int amount)
 {
-	CurrentData::instance->changeExperience(ref, desc, amount);
+	CurrentData::instance->changeExperience(this, ref, desc, amount);
 }
 
 void Character::removeExperience(int ref)
 {
-	CurrentData::instance->removeExperience(ref);
+	CurrentData::instance->removeExperience(this, ref);
 }
 
-void Character::addCustomSkill(const QString& name, const QString& charac, int ranks)
+void Character::addCustomSkill(const QString& name, const QString& characteristic, int ranks)
 {
-	CurrentData::instance->addCustomSkill(name, charac, ranks, false);
+	CurrentData::instance->addCustomSkill(this, name, characteristic, ranks);
 }
 
 void Character::removeCustomSkill(const QString& name)
 {
-	CurrentData::instance->removeCustomSkill(name);
+	CurrentData::instance->removeCustomSkill(this, name);
 }
 
 void Character::addInvItem(int count, const QString& itemkey, const QString& desc, int amount)
 {
 	if (!itemkey.isEmpty() && !desc.isEmpty())
 		return;
-	CurrentData::instance->addItem(count, itemkey, desc, amount);
+	CurrentData::instance->addItem(this, count, itemkey, desc, amount);
+	if (amount != 0)
+		emit creditsChanged(credits());
 }
 
 void Character::updateInvItem(int ref, int count, const QString& desc, int amount)
 {
-	CurrentData::instance->updateItem(ref, count, desc, amount);
+	CurrentData::instance->updateItem(this, ref, count, desc, amount);
 }
 
 bool Character::removeInvItem(int ref)
 {
-	return CurrentData::instance->removeItem(ref);
+	return CurrentData::instance->removeItem(this, ref);
 }
 
 int Character::getPrice(const QString& key)
@@ -786,24 +790,24 @@ void Character::searchShop(QString search_string)
 	Shop::instance.search(search_string);
 }
 
-void Character::addCheckItem(const QString& pool, const QString& desc)
+void Character::appendCheckItem(const QString& pool, const QString& desc)
 {
-	return CurrentData::instance->addCheckItem(iActiveSkillKey, pool, desc);
+	return CurrentData::instance->appendCheckItem(this, iActiveSkillKey, pool, desc);
 }
 
 void Character::updateCheckItem(int ref, const QString& pool, const QString& desc)
 {
-	return CurrentData::instance->updateCheckItem(ref, iActiveSkillKey, pool, desc);
+	return CurrentData::instance->updateCheckItem(this, ref, iActiveSkillKey, pool, desc);
 }
 
 void Character::removeCheckItem(int ref)
 {
-	CurrentData::instance->removeCheckItem(ref, iActiveSkillKey);
+	CurrentData::instance->removeCheckItem(this, ref, iActiveSkillKey);
 }
 
 void Character::checkItem(int ref)
 {
-	CurrentData::instance->checkItem(ref, iActiveSkillKey, false);
+	CurrentData::instance->checkItem(this, ref, iActiveSkillKey, false);
 }
 
 void Character::changeEquipment(const QString& uuid, int state, int stored)
@@ -878,19 +882,19 @@ void Character::showInventory()
 void Character::showCheckList()
 {
 	iModDicePool.clear();
-	CurrentData::instance->clearAutoCheckItems(iActiveSkillKey);
+	CurrentData::instance->clearAutoCheckItems(this, iActiveSkillKey);
 	CheckList::instance.setRowCountChanged();
 	CheckList::instance.makeClean();
 }
 
 void Character::hideCheckList()
 {
-	CurrentData::instance->exitAutoCheckItems(iActiveSkillKey);
+	CurrentData::instance->exitAutoCheckItems(this, iActiveSkillKey);
 }
 
 void Character::fillCheckList()
 {
-	CurrentData::instance->setupAutoCheckItems(iActiveSkillKey, iItemUuid);
+	CurrentData::instance->setupAutoCheckItems(this, iActiveSkillKey, iItemUuid);
 	CheckList::instance.setRowCountChanged();
 	CheckList::instance.makeClean();
 }
@@ -1104,7 +1108,7 @@ void Character::setDicePool(const QString& t)
 
 void Character::setNegativePool(int t)
 {
-	CurrentData::instance->setNegativePool(t, iActiveSkillKey);
+	CurrentData::instance->setNegativePool(this, t, iActiveSkillKey);
 	emit negativePoolChanged(negativePool());
 }
 
@@ -1517,7 +1521,7 @@ void Character::inventoryChanged()
 	setCumbThreshold(brawn());
 }
 
-void Character::experienceChanged()
+void Character::emitExperienceChanged()
 {
 	emit totalXPChanged(totalXP());
 	emit moralityChanged(morality());
@@ -1571,93 +1575,37 @@ void Character::emitCurrentStrainChanged()
 
 void Character::reload()
 {
-	QByteArray data;
-
-	if (CurrentData::instance->characterFile == iFile)
-		return;
-
 	setLoading(true);
 
-	if (!CurrentData::instance->characterFile.isEmpty())
-		iCharDataList.append(CurrentData::instance);
-	CurrentData::instance = NULL;
-	foreach(CurrentData* c_data, iCharDataList) {
-		if (c_data->characterFile == iFile) {
-			CurrentData::instance = c_data;
-			iCharDataList.removeAll(c_data);
-			break;
-		}
+	if (iFile.isEmpty()) {
+		if (!CurrentData::instance->characterFile.isEmpty())
+			CurrentData::instance = CharCache::instance.loadCharFile(iFile);
 	}
-
-	if (!CurrentData::instance) {
-		CurrentData::instance = new CurrentData();
-		CurrentData::instance->characterFile = iFile;
-
-		QScopedPointer<CharacterXML> loader(new CharacterXML(CurrentData::instance));
-		data = DataAccess::readFile(DatUtil::getCharacterFolder() + iFile);
-
-		emit featuresChanged(features());
-		emit storyChanged(story());
-
-		emit creditsChanged(credits());
-		emit encValueChanged(encValue());
-		emit encThresholdChanged(encThreshold());
-		emit cumbValueChanged(cumbValue());
-		emit cumbThresholdChanged(cumbThreshold());
-		emit encTextChanged(encText());
-
-		emit brawnChanged(brawn());
-		emit agilityChanged(agility());
-		emit intellectChanged(intellect());
-		emit cunningChanged(cunning());
-		emit willpowerChanged(willpower());
-		emit presenceChanged(presence());
-		emit soakChanged(soak());
-		emit woundChanged(wound());
-		emit strainChanged(strain());
-		emit defenseRangedChanged(defenseRanged());
-		emit defenseMeleeChanged(defenseMelee());
-		emit forceChanged(force());
-		emit forceCommittedChanged(forceCommitted());
-		emit totalXPChanged(totalXP());
-		emit newXPChanged(newXP());
-		emit usedXPChanged(usedXP());
-
-		emit activeSkillChanged(activeSkill());
-		emit dicePoolChanged(dicePool());
-		emit negativePoolChanged(negativePool());
-		emit itemUuidChanged(itemUuid());
-		emit itemItemKeyChanged(itemItemKey());
-		emit itemNameChanged(itemName());
-		emit itemRangeChanged(itemRange());
-		emit itemSkillChanged(itemSkill());
-		emit itemDamageChanged(itemDamage());
-		emit itemCriticalChanged(itemCritical());
-		emit itemQualitiesChanged(itemQualities());
-		emit itemAttachmentsChanged(itemAttachments());
-		emit itemManeuversChanged(itemManeuvers());
-		emit itemStrainChanged(itemStrain());
-
-		SpecialFeaturesList::instance.rowCountChanged();
-		ObligationList::instance.rowCountChanged();
-		DutyList::instance.rowCountChanged();
-		Talents::instance.rowCountChanged();
-		Weapons::instance.rowCountChanged();
-		Armor::instance.rowCountChanged();
-		Gear::instance.rowCountChanged();
-		InjuryList::instance.rowCountChanged();
-		ExperienceList::instance.rowCountChanged();
-		MotivationList::instance.rowCountChanged();
-		MoralityList::instance.rowCountChanged();
-		InventoryLog::instance.rowCountChanged();
-
-		//loader->parse(data);
-		loader->readFromBuffer(data.constData(), data.length());
-
+	else {
+		if (CurrentData::instance->characterFile.isEmpty())
+			delete CurrentData::instance;
+		CurrentData::instance = NULL; // Crash if addressed during load!
+		CurrentData::instance = CharCache::instance.loadCharFile(iFile);
 		Character::instance->inventoryChanged();
-		Character::instance->experienceChanged();
+		Character::instance->emitExperienceChanged();
 	}
 
+	/*
+	emit activeSkillChanged(activeSkill());
+	emit dicePoolChanged(dicePool());
+	emit negativePoolChanged(negativePool());
+	emit itemUuidChanged(itemUuid());
+	emit itemItemKeyChanged(itemItemKey());
+	emit itemNameChanged(itemName());
+	emit itemRangeChanged(itemRange());
+	emit itemSkillChanged(itemSkill());
+	emit itemDamageChanged(itemDamage());
+	emit itemCriticalChanged(itemCritical());
+	emit itemQualitiesChanged(itemQualities());
+	emit itemAttachmentsChanged(itemAttachments());
+	emit itemManeuversChanged(itemManeuvers());
+	emit itemStrainChanged(itemStrain());
+	*/
 	emit currentWoundsChanged(currentWounds());
 	emit currentStrainChanged(currentStrain());
 	emit currentConflictChanged(currentConflict());

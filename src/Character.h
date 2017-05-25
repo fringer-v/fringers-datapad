@@ -268,7 +268,7 @@ public:
 	Q_INVOKABLE void changeExperience(int ref, const QString& desc, int amount);
 	Q_INVOKABLE void removeExperience(int ref);
 
-	Q_INVOKABLE void addCustomSkill(const QString& name, const QString& charac, int ranks);
+	Q_INVOKABLE void addCustomSkill(const QString& name, const QString& characteristic, int ranks);
 	Q_INVOKABLE void removeCustomSkill(const QString& name);
 
 	Q_INVOKABLE void addInvItem(int count, const QString& itemkey, const QString& desc, int amount);
@@ -278,7 +278,7 @@ public:
 	Q_INVOKABLE int getRarity(const QString& key);
 	Q_INVOKABLE void searchShop(QString search_string);
 
-	Q_INVOKABLE void addCheckItem(const QString& pool, const QString& desc);
+	Q_INVOKABLE void appendCheckItem(const QString& pool, const QString& desc);
 	Q_INVOKABLE void updateCheckItem(int ref, const QString& pool, const QString& desc);
 	Q_INVOKABLE void removeCheckItem(int ref);
 	Q_INVOKABLE void checkItem(int ref);
@@ -411,7 +411,7 @@ public:
 	int setAttributeMods(const CharMods& mods);
 	void setChangeDicePool(const QString& t);
 	void inventoryChanged();
-	void experienceChanged();
+	void emitExperienceChanged();
 	void characteristicsChanged();
 	void emitStimPacksChanged();
 	void emitErpsChanged();

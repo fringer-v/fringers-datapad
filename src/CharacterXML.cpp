@@ -43,11 +43,9 @@
 CharacterXML::CharacterXML(CurrentData* current_data)
 {
 	iCurrentData = current_data;
-	iSpecies = new SpeciesXML;
 	iSpeciesKey.clear();
 	iSubSpeciesKey.clear();
 	iChoices.clear();
-	iNPC = false;
 }
 
 void CharacterXML::start()
@@ -64,11 +62,30 @@ void CharacterXML::end()
 
 	iCurrentData->specializations = iSpecializations;
 
-	iSpecies->loadSpecies(iSpeciesKey, iSubSpeciesKey, &iChoices);		// speciesTalents, specialFeatures
-	CurrentData::instance->species = iSpecies->getName();				// species
+	SpeciesXML species_xml(iCurrentData);
+
+	// species, speciesTalents, specialFeatures
+	iCurrentData->species = species_xml.loadSpecies(iSpeciesKey, iSubSpeciesKey, &iChoices);
 
 	// Load Current Data:
-	iCurrentData->loadCurrentData();
+	if (!iCurrentData->name.isEmpty()) {
+		CurrentDataXML current_xml(iCurrentData);
+		QString file_name;
+
+		file_name = iCurrentData->name.toLower();
+		file_name.replace(" ", "-");
+		file_name.replace("\"", "-");
+		while (file_name.contains("--"))
+			file_name.replace("--", "-");
+
+		if (QFile().exists(DatUtil::getCurrentFolder() + file_name + ".tri"))
+			file_name += ".tri";
+		else
+			file_name += ".xpad";
+		iCurrentData->fileName = file_name;
+		QByteArray data = DataAccess::getCurrentData(file_name);
+		current_xml.readFromBuffer(data.constData(), data.length());
+	}
 
 	// Add unarmed:
 	if (!iCurrentData->weapons.containsByUuid("UNARMED")) {
@@ -96,7 +113,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		iCurrentData->name = value;
 	else if (path.endsWith("/Adversary/Name/")) {
 		iCurrentData->name = value;							// name
-		iNPC = true;
+		iCurrentData->npc = true;
 	}
 	else if (path.endsWith("/Description/PlayerName/"))
 		iCurrentData->player = value;							// player
@@ -282,7 +299,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 
 	// Talents -----------------------
 	else if (path.endsWith("/CharTalent/Purchased/"))
-		iPurchased = iNPC || isTrue(value);
+		iPurchased = iCurrentData->npc || isTrue(value);
 	else if (path.endsWith("/CharTalent/Key/")) {
 		iCharTalent.clear(value);
 		iCharTalent.aquisition = iSpecialization;
@@ -299,7 +316,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 
 	// Force Abilities -----------------------
 	else if (path.endsWith("/CharForceAbility/Purchased/"))
-		iPurchased = iNPC || isTrue(value);
+		iPurchased = iCurrentData->npc || isTrue(value);
 	else if (path.endsWith("/CharForceAbility/Key/")) {
 		iCharTalent.clear(value);
 		iCharTalent.aquisition = iSpecialization;

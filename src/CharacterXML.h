@@ -51,9 +51,6 @@ public:
 private:
 	CurrentData*			iCurrentData;
 
-	QPointer<SpeciesXML>	iSpecies;
-
-	bool					iNPC;
 	QString					iSpecialization;
 	QString					iSpecializations;
 	QString					iAttribute;

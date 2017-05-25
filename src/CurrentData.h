@@ -341,6 +341,7 @@ public:
 
 class CurrentData {
 	friend class CurrentDataXML;
+	friend class CharCache;
 
 public:
 	static CurrentData* instance;
@@ -349,7 +350,8 @@ public:
 		clear();
 	}
 
-	QString characterFile;
+	QString fileName;       // Name of the current data file
+	QString characterFile;	// Name of the character file
 
 	// DYNAMIC DATA:
 	// Changes to attributes because of inventory
@@ -363,7 +365,8 @@ public:
 	QString encumbranceText;
 
 	// CHARACTER XML DATA
-	QString name;
+	QString name;			// Name of the character
+	bool npc;
 	QString player;
 	QString gender;
 	QString age;
@@ -416,9 +419,6 @@ public:
 	QList<InjuryItem> injuries;
 
 	void clear();
-	void loadCurrentData();
-
-	QString getFile();
 
 	int getAttribute(const QString& val);
 
@@ -426,8 +426,8 @@ public:
 	void adjustStrain(int delta);
 	void adjustConflict(int delta);
 
-	void useStimPack(int delta);
-	void useErp(int delta);
+	void useStimPack(Character* charac, int delta);
+	void useErp(Character* charac, int delta);
 
 	QString stimPacks();
 	QString erps();
@@ -438,29 +438,29 @@ public:
 	bool setWoundDelta(int val);
 	bool setStrainDelta(int val);
 
-	void addExperience(const QString& type, const QString& key, const QString& name, const QString& desc, int amount);
-	void changeExperience(int ref, const QString& desc, int amount);
-	void removeExperience(int ref);
+	void addExperience(Character* charac, const QString& type, const QString& key, const QString& name, const QString& desc, int amount);
+	void changeExperience(Character* charac, int ref, const QString& desc, int amount);
+	void removeExperience(Character* charac, int ref);
 
-	void addCustomSkill(const QString& name, const QString& charac, int ranks, bool loading = false);
-	void removeCustomSkill(const QString& name);
+	void addCustomSkill(Character* charac, const QString& name, const QString& characteristic, int ranks);
+	void removeCustomSkill(Character* charac, const QString& name);
 
-	void addItem(int count, const QString& itemkey, const QString& desc, int amount);
-	void updateItem(int ref, int count, const QString& desc, int amount);
-	bool removeItem(int ref);
+	void addItem(Character* charac, int count, const QString& itemkey, const QString& desc, int amount);
+	void updateItem(Character* charac, int ref, int count, const QString& desc, int amount);
+	bool removeItem(Character* charac, int ref);
 	void storeItem(const QString& uuid, const QString& itemkey, int count, int state, Item* item);
 
-	void clearAutoCheckItems(const QString& skillKey);
-	void setupAutoCheckItems(const QString& skillKey, const QString& uuid);
-	void exitAutoCheckItems(const QString& skillKey);
-	void addCheckItem(const QString& skillKey, const QString& pool, const QString& desc);
-	void updateCheckItem(int ref, const QString& skillKey, const QString& pool, const QString& desc);
-	void removeCheckItem(int ref, const QString& skillKey);
-	void uncheckAllItem(const QString& skillKey);
-	void checkItem(int ref, const QString& skillKey, bool list_setup);
+	void clearAutoCheckItems(Character* charac, const QString& skillKey);
+	void setupAutoCheckItems(Character* charac, const QString& skillKey, const QString& uuid);
+	void exitAutoCheckItems(Character* charac, const QString& skillKey);
+	void appendCheckItem(Character* charac, const QString& skillKey, const QString& pool, const QString& desc);
+	void updateCheckItem(Character* charac, int ref, const QString& skillKey, const QString& pool, const QString& desc);
+	void removeCheckItem(Character* charac, int ref, const QString& skillKey);
+	void uncheckAllItem(Character* charac, const QString& skillKey);
+	void checkItem(Character* charac, int ref, const QString& skillKey, bool list_setup);
 
 	int negativePool();
-	void setNegativePool(int bit, const QString& skillKey);
+	void setNegativePool(Character* charac, int bit, const QString& skillKey);
 	void negetiveDefence(int& r, int &m);
 
 	int commitCount();
@@ -469,10 +469,10 @@ public:
 	static int expTypeToInt(const char* type);
 	static QString expTypeToString(int type, const QString& key = QString());
 
-	void addCriticalWound(int perc, int type);
-	void removeCriticalWound(int ref);
+	void addCriticalWound(Character* charac, int perc, int type);
+	void removeCriticalWound(Character* charac, int ref);
 
-	int nonCommitedForce();
+	int nonCommitedForce(Character* charac);
 
 private:
 	void setCriticalWound(int perc, int type);
@@ -484,23 +484,22 @@ private:
 	int findInvLogItem(int ref);
 	QString setInvLogItem(int count, const QDateTime& create, const QDateTime& update, const QString& uuid, const QString& itemkey, const QString& desc, int amount, bool loading);
 	void addInvLogItem(const QDateTime& create, const QDateTime& update, const QString& desc, int amount, int type);
-	void inventoryChanged(const QString& uuid, const QString& itemkey, bool signal);
+	void inventoryChanged(Character* charac, const QString& uuid, const QString& itemkey, bool signal);
 	void setCheckItem(const QString& skillKey, const QString& pool, const QString& desc);
 	void addCheckItem(const QString& skillKey, int reference, const QString& pool, const QString& desc);
-	void checkChecked(const QString& skillKey);
+	void checkChecked(Character* charac, const QString& skillKey);
 	void writeCurrentData();
 	void changeWounds(int delta);
 	void changeStrain(int delta);
-	void setTemporaryStrain(int value);
+	void setTemporaryStrain(Character* charac, int value);
 
-	QString		iFileName;
-
-	int			iNegativeCheck;
-	int			iNegMelee;
-	int			iNegRanged;
+	CurrentData* iNextInCache;
+	int iNegativeCheck;
+	int iNegMelee;
+	int iNegRanged;
 
 	// Counter used to generate unique IDs and references:
-	int			iReferenceCounter;
+	static int iReferenceCounter;
 };
 
 class CurrentDataXML : public DatXMLReader {

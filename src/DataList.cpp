@@ -424,6 +424,10 @@ bool ItemList::changeEquipment(const QString& uuid, int state, int stored)
 		Item item = iUuidList[uuid];
 
 		CurrentData::instance->storeItem(uuid, item.itemkey, stored, state, &item);
+		if (item.itemkey == "STIMPACK")
+			Character::instance->emitStimPacksChanged();
+		else if (item.itemkey == "ERP")
+			Character::instance->emitErpsChanged();
 		return true;
 	}
 	return false;
