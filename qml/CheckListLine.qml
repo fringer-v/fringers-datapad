@@ -16,7 +16,7 @@ Rectangle {
 	property int minimumHeight: 25
 	property int lastLineHeigth: 40
 	property int checkWidth: minimumHeight - 5 + 10
-	property int dicePoolWidth: 120
+	property int dicePoolWidth: 132
 	property int spacer: 10
 	property int fontSize: 14
 	property bool boxChecked: checked

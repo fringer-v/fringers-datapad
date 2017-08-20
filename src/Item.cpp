@@ -6,6 +6,7 @@
 #include "Talents.h"
 #include "ItemDescriptors.h"
 #include "DatUtil.h"
+#include "Shop.h"
 
 // Quality ----------------------------------------
 
@@ -278,11 +279,30 @@ void ModList::attachments(QString& list)
 
 // Item ----------------------------------------
 
+void Item::clear()
+{
+	uuid.clear();
+	itemkey.clear();
+	rename.clear();
+	notes.clear();
+	attachments.clear();
+	shown = true;
+	isCustom = false;
+	dieModList.clear();
+	attachList.clear();
+
+	originalQuantity = 0;
+	originalStored = 0;
+	originalState = NOT_CARRIED;
+
+	iModList.clear();
+}
+
 QString Item::name() const
 {
 	if (!rename.isEmpty())
 		return rename;
-	ShopItem shop = Shop::instance.getItem(itemkey);
+	const ShopItem shop = shopItem();
 	if (shop.name.isEmpty())
 		return itemkey;
 	return shop.name;
@@ -303,7 +323,6 @@ bool Item::unmodified()
 
 bool Item::restricted()
 {
-	ShopItem shop = Shop::instance.getItem(itemkey);
 	return false;
 }
 
@@ -315,8 +334,8 @@ bool Item::restricted()
 // Although I would exclude blast because other hits have fixed damage.
 QString Item::damageTotal()
 {
-	Character*	character = Character::instance;
-	ShopItem	shop = Shop::instance.getItem(itemkey);
+	Character* character = Character::instance;
+	const ShopItem shop = shopItem();
 	int			t;
 	int			oneHitDamage = 0;
 	QString		skillKey = shop.skillKey;
@@ -330,11 +349,13 @@ QString Item::damageTotal()
 	if (hasQuality("DAMSET"))
 		t = getQuality("DAMSET").count;
 
-	if (hasQuality("SUPERIOR"))
+	if (hasQuality("SUPERIOR", false))
 		t += 1;
 
 	if (hasQuality("DAMADD"))
 		t += getQuality("DAMADD").count;
+	if (hasQuality("DAMSUB"))
+		t -= getQuality("DAMSUB").count;
 
 	foreach (CharTalent char_talent, CurrentData::instance->talents.charTalentMap) {
 		Talent talent = AllTalents::instance()->getTalent(char_talent.key);
@@ -367,7 +388,6 @@ QString Item::damageTotal()
 
 QString Item::dicePool()
 {
-	Character*	character = Character::instance;
 	CharSkill	skill;
 	int			accuracy = 0;
 	int			superior = 0;
@@ -375,7 +395,7 @@ QString Item::dicePool()
 	int			adv_add = 0;
 	int			remove_setback = 0;
 	QString		pool;
-	ShopItem	shop = Shop::instance.getItem(itemkey);
+	const ShopItem shop = shopItem();
 	QString		skillKey = shop.skillKey;
 
 	if (CurrentData::instance->skills.contains(skillKey))
@@ -425,8 +445,7 @@ QString Item::dicePool()
 
 int Item::critPlus()
 {
-	Character*	character = Character::instance;
-	int			crit_plus = 0;
+	int crit_plus = 0;
 
 	if (hasQuality("VICIOUS"))
 		crit_plus = getQuality("VICIOUS").count;
@@ -469,21 +488,27 @@ int Item::cumbersome(int burly)
 QString Item::qualities()
 {
 	QString list;
+	Quality qual;
 
 	for (int i=0; i<iModList.count(); i++) {
 		Mod mod = iModList.itemAt(i);
-		Quality qual;
 
 		qual.key = mod.key;
 		qual.count = mod.count * mod.number;
 		DatUtil::appendToList(list, qual.quality());
 	}
 
-	if (Shop::instance.contains(itemkey)) {
-		ShopItem shop = Shop::instance.getItem(itemkey);
+	const ShopItem shop = shopItem();
+	foreach (Quality qual, shop.qualityList)
+		DatUtil::appendToList(list, qual.quality());
 
-		foreach (Quality qual, shop.qualityList)
+	if (itemkey != "UNARMED" && shop.isMeleeWeapon()) {
+		int ranks = CurrentData::instance->talents.ranks("DEFTRAIN");
+		if (ranks > 0) {
+			qual.key = "DEFENSIVE";
+			qual.count = ranks;
 			DatUtil::appendToList(list, qual.quality());
+		}
 	}
 
 	return list;
@@ -491,15 +516,12 @@ QString Item::qualities()
 
 QString Item::features()
 {
-	ModList		m;
-	QString		list;
+	ModList	m;
+	QString	list;
 
-	if (Shop::instance.contains(itemkey)) {
-		ShopItem shop = Shop::instance.getItem(itemkey);
-
-		foreach (Mod mod, shop.modList)
-			m.addItem(mod);
-	}
+	const ShopItem shop = shopItem();
+	foreach (Mod mod, shop.modList)
+		m.addItem(mod);
 
 	for (int i=0; i<m.count(); i++) {
 		QString desc = m.itemAt(i).modText();
@@ -547,17 +569,17 @@ QString Item::encArmorValue()
 
 int Item::soakVal()
 {
-	ShopItem shop = Shop::instance.getItem(itemkey);
+	const ShopItem shop = shopItem();
 
 	int s = shop.soak;
-	if (hasQuality("SUPERIOR"))
+	if (hasQuality("SUPERIOR", false))
 		s += 1;
 	return s;
 }
 
 int Item::meleeDef()
 {
-	ShopItem shop = Shop::instance.getItem(itemkey);
+	const ShopItem shop = shopItem();
 
 	int def = shop.mdef;
 	if (hasQuality("MELEEDEFADD"))
@@ -567,7 +589,7 @@ int Item::meleeDef()
 
 int Item::rangeDef()
 {
-	ShopItem shop = Shop::instance.getItem(itemkey);
+	const ShopItem shop = shopItem();
 
 	int def = shop.rdef;
 	if (hasQuality("RANGEDEFADD"))
@@ -593,7 +615,7 @@ void Item::characteristicDelta(CharMods& mods)
 
 int Item::critTotal()
 {
-	ShopItem	shop = Shop::instance.getItem(itemkey);
+	const ShopItem shop = shopItem();
 	int			t;
 
 	if (hasQuality("CRITSET"))
@@ -690,14 +712,19 @@ int Item::stored()
 
 bool Item::isGrenade()
 {
-	ShopItem shop = Shop::instance.getItem(itemkey);
+	const ShopItem shop = shopItem();
 	return (shop.gearType & (GEAR_TYPE_GRENADE | GEAR_TYPE_RANGED)) == (GEAR_TYPE_GRENADE | GEAR_TYPE_RANGED);
 }
 
 bool Item::canBeWorn()
 {
-	ShopItem shop = Shop::instance.getItem(itemkey);
+	const ShopItem shop = shopItem();
 	return (shop.gearType & (GEAR_TYPE_CYBERNETICS | GEAR_TYPE_STORAGE)) != 0;
+}
+
+QString Item::range()
+{
+	return shopItem().range;
 }
 
 void Item::addMod(Mod mod)
@@ -714,45 +741,37 @@ void Item::addMod(const ModList& mod_list)
 
 bool Item::hasMod(const QString& qkey)
 {
-	if (!iModList.contains(qkey)) {
-		if (Shop::instance.contains(itemkey)) {
-			ShopItem shop = Shop::instance.getItem(itemkey);
+	if (iModList.contains(qkey))
+		return true;
 
-			return shop.modList.contains(qkey);
-		}
-	}
-
-	return true;
+	const ShopItem shop = shopItem();
+	return shop.modList.contains(qkey);
 }
 
 Mod Item::getMod(const QString& qkey)
 {
 	Mod mod = iModList.get(qkey);
-	if (Shop::instance.contains(itemkey)) {
-		ShopItem shop = Shop::instance.getItem(itemkey);
+	const ShopItem shop = shopItem();
 
-		if (shop.modList.contains(qkey)) {
-			if (mod.key.isEmpty())
-				mod = shop.modList[qkey];
-			else
-				mod.number++;
-		}
+	if (shop.modList.contains(qkey)) {
+		if (mod.key.isEmpty())
+			mod = shop.modList[qkey];
+		else
+			mod.number++;
 	}
 	return mod;
 }
 
-bool Item::hasQuality(const QString& qkey)
+bool Item::hasQuality(const QString& qkey, bool including_shop)
 {
 	if (iModList.contains(qkey))
 		return true;
 
-	if (Shop::instance.contains(itemkey)) {
-		ShopItem shop = Shop::instance.getItem(itemkey);
+	if (!including_shop)
+		return false;
 
-		return shop.qualityList.contains(qkey);
-	}
-
-	return true;
+	const ShopItem shop = shopItem();
+	return shop.qualityList.contains(qkey);
 }
 
 Quality Item::getQuality(const QString& qkey)
@@ -764,19 +783,24 @@ Quality Item::getQuality(const QString& qkey)
 	Mod mod = iModList.get(qkey);
 	qual.count += mod.count * mod.number;
 
-	if (Shop::instance.contains(itemkey)) {
-		ShopItem shop = Shop::instance.getItem(itemkey);
-		if (shop.qualityList.contains(qkey))
-			qual.count += shop.qualityList[qkey].count;
-	}
+	const ShopItem shop = shopItem();
+	if (shop.qualityList.contains(qkey))
+		qual.count += shop.qualityList[qkey].count;
 
 	return qual;
 }
 
 int Item::encumbrance()
 {
-	ShopItem shop = Shop::instance.getItem(itemkey);
+	const ShopItem shop = shopItem();
 	return shop.encumbrance;
+}
+
+const ShopItem Item::shopItem() const
+{
+	if (isCustom)
+		return CurrentData::instance->customItems[uuid];
+	return Shop::instance.getItem(itemkey);
 }
 
 void Item::storageData(int& quantity, int& stored, int& state)

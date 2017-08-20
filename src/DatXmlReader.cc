@@ -31,7 +31,7 @@
 #include "DatXmlReader.h"
 #include "DatUtil.h"
 
-DatXMLReader::DatXMLReader() :
+DatXmlReader::DatXmlReader() :
 	iCurrentChar(0),
 	iFile(0),
 	iBuffer(0),
@@ -44,11 +44,11 @@ DatXMLReader::DatXMLReader() :
 {
 }
 
-DatXMLReader::~DatXMLReader()
+DatXmlReader::~DatXmlReader()
 {
 }
 
-bool DatXMLReader::readFromFile(const char *file_iName, bool* file_not_found)
+bool DatXmlReader::readFromFile(const char *file_iName, bool* file_not_found)
 {
 	iFile = fopen(file_iName, "rb");
 	if (!iFile) {
@@ -77,7 +77,7 @@ bool DatXMLReader::readFromFile(const char *file_iName, bool* file_not_found)
 	return ok;
 }
 
-bool DatXMLReader::readFromBuffer(const char* buffer, size_t length)
+bool DatXmlReader::readFromBuffer(const char* buffer, size_t length)
 {
 	iBuffer = buffer;
 	iBufLen = length;
@@ -108,15 +108,15 @@ bool DatXMLReader::readFromBuffer(const char* buffer, size_t length)
 	return ok;
 }
 
-void DatXMLReader::start()
+void DatXmlReader::start()
 {
 }
 
-void DatXMLReader::end()
+void DatXmlReader::end()
 {
 }
 
-bool DatXMLReader::openNode(const DatStringBuffer& path, const char* value)
+bool DatXmlReader::openNode(const DatStringBuffer& path, const char* value)
 {
 	//qDebug() << "=====OPEN " << path << value;
 	bool ok = true;
@@ -136,7 +136,7 @@ bool DatXMLReader::openNode(const DatStringBuffer& path, const char* value)
 	return ok;
 }
 
-bool DatXMLReader::closeNode(const DatStringBuffer& path)
+bool DatXmlReader::closeNode(const DatStringBuffer& path)
 {
 	//qDebug() << "----CLOSE " << path;
 	if (path.endsWith("/"))
@@ -148,35 +148,35 @@ bool DatXMLReader::closeNode(const DatStringBuffer& path)
 	return ok;
 }
 
-bool DatXMLReader::addAttribute(const DatStringBuffer&, const char*, const char*)
+bool DatXmlReader::addAttribute(const DatStringBuffer&, const char*, const char*)
 {
 	return true;
 }
 
-int DatXMLReader::toInt(const char* value) const
+int DatXmlReader::toInt(const char* value) const
 {
 	return atoi(value);
 }
 
-bool DatXMLReader::isTrue(const char* value) const
+bool DatXmlReader::isTrue(const char* value) const
 {
 	return strcmp(value, "true") == 0;
 }
 
 /*
-bool DatXMLReader::readFromBuffer(const char *buffer)
+bool DatXmlReader::readFromBuffer(const char *buffer)
 {
 	readFromBuffer(buffer, strlen(buffer));
 	return parseXML();
 }
 
-bool DatXMLReader::readFromBuffer(const char* buffer, size_t length)
+bool DatXmlReader::readFromBuffer(const char* buffer, size_t length)
 {
 	return parseXML();
 }
 */
 
-bool DatXMLReader::addChars(DatStringBuffer* s, size_t size, UniChar *buffer, bool to_lower)
+bool DatXmlReader::addChars(DatStringBuffer* s, size_t size, UniChar *buffer, bool to_lower)
 {
 	UniChar ch;
 
@@ -195,12 +195,12 @@ bool DatXMLReader::addChars(DatStringBuffer* s, size_t size, UniChar *buffer, bo
 	return true;
 }
 
-bool DatXMLReader::addCString(DatStringBuffer* s, const char* string)
+bool DatXmlReader::addCString(DatStringBuffer* s, const char* string)
 {
 	return s->append(string);
 }
 
-void DatXMLReader::setEmpty(DatStringBuffer* s)
+void DatXmlReader::setEmpty(DatStringBuffer* s)
 {
 	s->setLength(0);
 }
@@ -221,7 +221,7 @@ void DatXMLReader::setEmpty(DatStringBuffer* s)
 #define IS_XML_OPEN_BRACKET			9
 #define IS_XML_CLOSE_BRACKET		10
 
-int DatXMLReader::getNodeType(const char* pname)
+int DatXmlReader::getNodeType(const char* pname)
 {
 	if (pname) {
 		switch (*pname) {
@@ -258,7 +258,7 @@ int DatXMLReader::getNodeType(const char* pname)
 	return(IS_XML_CDATA);
 }
 
-bool DatXMLReader::doCloseNode(const char* pname, bool single)
+bool DatXmlReader::doCloseNode(const char* pname, bool single)
 {
 	bool	done = single;
 	char	*ptr;
@@ -287,7 +287,7 @@ bool DatXMLReader::doCloseNode(const char* pname, bool single)
 	return true;
 }
 
-bool DatXMLReader::doOpenNode(const char* pname)
+bool DatXmlReader::doOpenNode(const char* pname)
 {	
 	//qDebug() << "*  OPEN: " << pname << iPath.getCString();
 	//if (iPath.length() == 0)
@@ -363,7 +363,7 @@ FSTATIC void dump_op(int op, UniChar ch)
 }
 */
 
-bool DatXMLReader::parseXML()
+bool DatXmlReader::parseXML()
 {
 	bool	ok;
 	bool	error_occurred;
@@ -507,7 +507,7 @@ bool DatXMLReader::parseXML()
 	return !error_occurred;
 }
 
-bool DatXMLReader::nextChar(bool *error_occurred)
+bool DatXmlReader::nextChar(bool *error_occurred)
 {
 	char ch;
 
@@ -546,7 +546,7 @@ bool DatXMLReader::nextChar(bool *error_occurred)
 	return true;
 }
 
-UniChar DatXMLReader::currentChar()
+UniChar DatXmlReader::currentChar()
 {
 	return iCurrentChar;
 }

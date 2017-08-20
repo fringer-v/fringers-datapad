@@ -36,7 +36,8 @@
 
 Weapons Weapons::instance = Weapons(QStringList() << "uuid" << "itemkey" << "weapon" << "skill" << "range"
 									<< "damage" << "critical" << "dicePool" << "qualities" << "quantity" << "stored"
-									<< "encumbrance" << "carry_state" << "restricted" << "attachments" << "critplus" << "pierce" << "notes");
+									<< "encumbrance" << "carry_state" << "restricted" << "attachments" << "critplus"
+									<< "pierce" << "notes" << "features");
 
 Weapons::Weapons(QStringList columns) :
 	AbstractDataList(columns)
@@ -66,11 +67,11 @@ QVariant Weapons::getValue(int row, int col)
 		case 2: // weapon
 			return item.name();
 		case 3: { // skill
-			Skill* skill = Skill::getSkill(Shop::instance.getItem(item.itemkey).skillKey);
+			Skill* skill = Skill::getSkill(item.shopItem().skillKey);
 			return skill ? skill->shortName : "?";
 		}
 		case 4: // range
-			return Shop::instance.getItem(item.itemkey).range;
+			return item.shopItem().range;
 		case 5: // damage
 			return item.damageTotal();
 		case 6: // critical
@@ -84,7 +85,7 @@ QVariant Weapons::getValue(int row, int col)
 		case 10: // stored
 			return item.stored();
 		case 11: // encumbrance
-			return Shop::instance.getItem(item.itemkey).encumbrance;
+			return item.shopItem().encumbrance;
 		case 12: // carry_state
 			return item.state();
 		case 13: // retricted
@@ -97,9 +98,43 @@ QVariant Weapons::getValue(int row, int col)
 			return item.pierce();
 		case 17: // notes
 			return item.notes;
+		case 18: { // features
+			const ShopItem shop = item.shopItem();
+			QString features;
+
+			features = item.features();
+			DatUtil::appendToList(features, shop.description, " ");
+			return features;
+		}
 	}
 	return QVariant();
 }
+
+QString Weapons::toRangeText(int range)
+{
+	// Engaged, short, medium, long, extreme.
+	switch (range) {
+		case 0:
+			return "Engaged";
+		case 1:
+			return "Short";
+		case 2:
+			return "Medium";
+		case 3:
+			return "Long";
+	}
+	if (range < 0)
+		return "Engaged";
+	return "Extreme";
+}
+
+QString Weapons::toRangeText(int range, int range2)
+{
+	if (range2 < 0)
+		return toRangeText(range);
+	return QString("%1 (%2)").arg(toRangeText(range)).arg(toRangeText(range2));
+}
+
 
 // ShopWeapons -------------------------
 

@@ -276,7 +276,7 @@ Rectangle {
 			anchors.horizontalCenter: parent.horizontalCenter
 			font.family: "Arial"
 			color: "darkgray"
-			text: "Fringer's Datapad 1.0.10, compatible with Oggdude's SWCharGen 1.7.0"
+			text: "Fringer's Datapad 1.0.14, compatible with Oggdude's SWCharGen 2.2.0.0"
 		}
 	}
 

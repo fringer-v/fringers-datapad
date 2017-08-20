@@ -28,7 +28,7 @@
 #include <QPointer>
 
 #include "DatXML.h"
-#include "DatXMLReader.h"
+#include "DatXmlReader.h"
 #include "Item.h"
 #include "Character.h"
 #include "Talents.h"
@@ -40,7 +40,7 @@
 #include "Talents.h"
 #include "Shop.h"
 
-class CharacterXML : public DatXMLReader {
+class CharacterXML : public DatXmlReader {
 public:
 	CharacterXML(CurrentData* current_data);
 
@@ -74,10 +74,11 @@ private:
 	QString					iAttachment;
 	ModList					iModList;
 	DieMod					iDieMod;
+	Quality					iQuality;
 	ShopItem				iShopItem;
 };
 
-class ListCharXML : public DatXMLReader {
+class ListCharXML : public DatXmlReader {
 public:
 	void load(const QByteArray& data, const QString& file);
 	virtual bool xmlElement(const DatStringBuffer& path, const char* value);

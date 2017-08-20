@@ -2,6 +2,29 @@
 
 .import "../js/constants.js" as Constant
 
+// Dice sequence:
+// F=Force (white)
+// P=Proficiency (yellow)
+// A=Ability (green)
+// B=Boost (blue)
+// C=Challenge (red)
+// D=Difficulty (purple)
+// S=Setback (black)
+// E=empty
+// N=Negative Setback (black with red dash)
+// U=Upgrade Ability
+// u=Upgrade Difficulty
+
+// Font:
+// Z = white
+// a = advantage
+// f = failure
+// s = success
+// t = threat
+// x = triumph
+// y = despair
+// z = black
+
 var symbolCodes = [];
 
 symbolCodes["[ABILITY]"] = 'A';
@@ -35,11 +58,12 @@ symbolCodes["[DARK]"] = 'z';
 symbolCodes["[DA]"] = 'z';
 symbolCodes["[REMSETBACK]"] = 'N';
 symbolCodes["[RS]"] = 'N';
-symbolCodes["[UPGABILITY]"] = 'U';
+symbolCodes["[UPGABILITY]"] = 'U'; // Upgrade ability (Add "yellow")
 symbolCodes["[UA]"] = 'U';
-symbolCodes["[UPGDIFFICULTY"] = 'u';
+symbolCodes["[UPGDIFFICULTY"] = 'u'; // Upgrdae difficulty (Add "red")
+symbolCodes["[UP]"] = 'u';
 symbolCodes["[UD]"] = 'u';
-symbolCodes["[DWNDIFFICULTY"] = 'd';
+symbolCodes["[DWNDIFFICULTY"] = 'd'; // Downgrade difficulty (Remove "red")
 symbolCodes["[DD]"] = 'd';
 symbolCodes["[FORCE]"] = 'F';
 symbolCodes["[FO]"] = 'F';
@@ -49,7 +73,10 @@ symbolCodes["[FORCEPOINT]"] = '.'; //'.';
 symbolCodes["[FP]"] = '.'; //'.';
 symbolCodes["[RESTRICTED]"] = '=';
 symbolCodes["[RE]"] = '=';
-
+symbolCodes["[ADDIFFICULTY"] = 'D'; // Add difficulty (Add "purple")
+symbolCodes["[FF]"] = 'D';
+symbolCodes["[REMDIFFICULTY"] = 'r'; // Downgrade difficulty (Remove "purple")
+symbolCodes["[RD]"] = 'r';
 
 function pixel(p)
 {
@@ -326,9 +353,11 @@ function diceWidth(ctx, height, spacing, dice, pixelSize)
 {
 	var total_width = 0;
 	var shape_width = 0;
+	var escape;
 
 	dice = dice.replaceAll("|", "");
 	for (var i=0; i<dice.length; i++) {
+		escape = false;
 		switch (dice[i]) {
 			case "F":
 			case "P":
@@ -345,6 +374,26 @@ function diceWidth(ctx, height, spacing, dice, pixelSize)
 			case "N": shape_width = squareWidth(height); break;
 			case ".":
 			case "=": shape_width = circleWidth(height); break;
+			case 'Z':
+			case 'a':
+			case 'f':
+			case 's':
+			case 't':
+			case 'x':
+			case 'y':
+			case 'z':
+				ctx.save();
+				if (pixelSize === undefined)
+					pixelSize = height * 14.0 / 16.0;
+				ctx.font = Math.round(pixelSize) + "px 'EotE Symbol'";
+				shape_width = ctx.measureText(dice[i]).width;
+				ctx.restore();
+				break;
+			case "\\":
+				if (i+1<dice.length) {
+					i++;
+					escape = true;
+				}
 			default:
 				ctx.save();
 				if (pixelSize === undefined)
@@ -355,20 +404,25 @@ function diceWidth(ctx, height, spacing, dice, pixelSize)
 				break;
 		}
 		total_width += shape_width;
+		if (escape)
+			continue;
 		switch (dice[i]) {
 			case 'F':
 			case 'P':
-			case 'A':
-			case 'B':
 			case 'C':
-			case 'D':
-			case 'S':
-			case 'E':
-			case 'N':
 			case 'U':
 			case 'u':
 			case "g":
 			case 'd':
+			case 'A':
+			case 'D':
+			case 'E':
+			case 'B':
+			case 'S':
+			case 'N':
+			case ".":
+			case "=":
+			case 'r':
 				total_width += symbolSpace(height)*2;
 				break;
 		}
@@ -376,28 +430,6 @@ function diceWidth(ctx, height, spacing, dice, pixelSize)
 	return total_width;
 }
 
-// Dice sequence:
-// F=Force (white)
-// P=Proficiency (yellow)
-// A=Ability (green)
-// B=Boost (blue)
-// C=Challenge (red)
-// D=Difficulty (purple)
-// S=Setback (black)
-// E=empty
-// N=Negative Setback (black with red dash)
-// U=Upgrade Ability
-// u=Upgrade Difficulty
-
-// Font:
-// Z = white
-// a = advantage
-// f = failure
-// s = success
-// t = threat
-// x = triumph
-// y = despair
-// z = black
 function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 {
 	var i;
@@ -405,6 +437,7 @@ function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 	var shape_width = 0;
 	var line_width;
 	var saveFillStyle = ctx.fillStyle;
+	var escape;
 
 	dice = dice.replaceAll("|", "");
 	var total_width = diceWidth(ctx, height, spacing, dice, pixelSize);
@@ -431,20 +464,24 @@ function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 	else
 		line_width = 1;
 	for (i=0; i<dice.length; i++) {
+		escape = false;
 		switch (dice[i]) {
 			case 'F':
 			case 'P':
-			case 'A':
-			case 'B':
 			case 'C':
-			case 'D':
-			case 'S':
-			case 'E':
-			case 'N':
 			case 'U':
 			case 'u':
-			case 'g':
+			case "g":
 			case 'd':
+			case 'A':
+			case 'D':
+			case 'E':
+			case 'B':
+			case 'S':
+			case 'N':
+			case ".":
+			case "=":
+			case 'r':
 				x += symbolSpace(height);
 				break;
 		}
@@ -484,9 +521,13 @@ function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 				shape_width = hexagon(ctx, x, y_mid, height, line_width, "black", "white");
 				drawBox(ctx, x + shape_width / 5.0, y_mid - (shape_width / 5.0) / 2.0, shape_width * 3.0 / 5.0, shape_width / 5.0, 0.5, "grey", "black");
 				break;
-			case 'd':
+			case 'd': // Remove upgrade
 				shape_width = hexagon(ctx, x, y_mid, height, line_width, "black", Constant.DICE_RED);
 				drawBox(ctx, x + shape_width / 5.0, y_mid - (shape_width / 5.0) / 2.0, shape_width * 3.0 / 5.0, shape_width / 5.0, 0.5, "orange", "purple");
+				break;
+			case 'r':
+				shape_width = diamond(ctx, x, y_mid, height, line_width, "black", Constant.DICE_PURPLE);
+				drawBox(ctx, x + shape_width / 5.0, y_mid - (shape_width / 5.0) / 2.0, shape_width * 3.0 / 5.0, shape_width / 5.0, 0.5, "white", "green");
 				break;
 			case 'Z':
 			case 'a':
@@ -506,6 +547,11 @@ function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 				shape_width = ctx.measureText(dice[i]).width;
 				ctx.restore();
 				break;
+			case '\\':
+				if (i+1<dice.length) {
+					i++;
+					escape = true;
+				}
 			default:
 				ctx.save();
 				if (pixelSize === undefined)
@@ -519,20 +565,25 @@ function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 				break;
 		}
 		x += shape_width;
+		if (escape)
+			continue;
 		switch (dice[i]) {
 			case 'F':
 			case 'P':
-			case 'A':
-			case 'B':
 			case 'C':
-			case 'D':
-			case 'S':
-			case 'E':
-			case 'N':
 			case 'U':
 			case 'u':
-			case 'g':
+			case "g":
 			case 'd':
+			case 'A':
+			case 'D':
+			case 'E':
+			case 'B':
+			case 'S':
+			case 'N':
+			case ".":
+			case "=":
+			case 'r':
 				x += symbolSpace(height);
 				break;
 		}
@@ -798,27 +849,33 @@ function setText(ctx, textData, x, y, width, lineHeight, font, pixelSize, bold, 
 		if (word.length === 0)
 			break;
 		tw = wordLength(ctx, word, lineHeight, format);
-		if (width > 0 && tx + tw > width) {
+		if (tx > 0 && width > 0 && tx + tw > width) {
 			tx = 0;
 			ty += lineHeight;
 			lineCount++;
-			while (word.length > 0 && isSpace(word)) {
-				word = nextWord(ctx, text, format);
+			if (isSpace(word)) {
+				do {
+					word = nextWord(ctx, text, format);
+				}
+				while (word.length > 0 && isSpace(word));
+				if (word.length === 0)
+					break;
+				tw = wordLength(ctx, word, lineHeight, format);
 			}
-			if (word.length === 0)
-				break;
-			tw = wordLength(ctx, word, lineHeight, font, pixelSize, bold);
 			newl = true;
 		}
 		else
 			newl = false;
 		if (word === "[P]" || word === "[BR]") {
 			tx = 0;
-			if (!newl)
+			if (!newl) {
 				ty += lineHeight;
-			if (word === "[P]")
+				lineCount++;
+			}
+			if (word === "[P]") {
 				ty += lineHeight;
-			lineCount += newl ? 1 : 2;
+				lineCount++;
+			}
 			while (word.length > 0) {
 				word = nextWord(ctx, text, format);
 				if (word === "[P]" || word === "[BR]") {
@@ -830,7 +887,7 @@ function setText(ctx, textData, x, y, width, lineHeight, font, pixelSize, bold, 
 			}
 			if (word.length === 0)
 				break;
-			tw = wordLength(ctx, word, lineHeight, font, pixelSize, bold);
+			tw = wordLength(ctx, word, lineHeight, format);
 		}
 		if (draw)
 			drawWord(ctx, word, x+tx, y+ty, lineHeight, format);

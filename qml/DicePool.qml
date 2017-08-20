@@ -40,20 +40,22 @@ Rectangle {
 			ctx.scale(pixelRatio, pixelRatio)
 			if (backgroundColor != undefined && backgroundColor.length != 0)
 				Draw.drawBox(ctx, 0, 0, parent.width, parent.height, 1, backgroundColor, backgroundColor);
-			if (pool.substring(0, 1) == "@") {
-				Draw.textBox(ctx, pool.substring(1), 0, margin, parent.width, ht, Math.round(pixelSize) + "px Arial", "black", 0, center ? "center": "left", "bottom");
+			//if (pool.substring(0, 1) == "@") {
+			//	Draw.textBox(ctx, pool.substring(1), 0, margin, parent.width, ht, Math.round(pixelSize) + "px Arial", "black", 0, center ? "center": "left", "bottom");
+			//}
+			//else {
+			//}
+			if (pool.substring(0, 1) == "@")
+				pool = pool.substring(1);
+			if (pool === "" && placeHolderText !== "") {
+				Draw.textBox(ctx, placeHolderText, 0, margin, parent.width, ht, Math.round(pixelSize) + "px Arial", "darkgrey", 0, center ? "center": "left", "bottom");
 			}
 			else {
-				if (pool === "" && placeHolderText !== "") {
-					Draw.textBox(ctx, placeHolderText, 0, margin, parent.width, ht, Math.round(pixelSize) + "px Arial", "darkgrey", 0, center ? "center": "left", "bottom");
-				}
+				if (center)
+					Draw.dice(ctx, 0, margin, parent.width, ht, spacing, pool);
 				else {
-					if (center)
-						Draw.dice(ctx, 0, margin, parent.width, ht, spacing, pool);
-					else {
-						var w = Draw.diceWidth(ctx, ht, spacing, pool);
-						Draw.dice(ctx, 0, margin, w, ht, spacing, pool);
-					}
+					var w = Draw.diceWidth(ctx, ht, spacing, pool);
+					Draw.dice(ctx, 0, margin, w, ht, spacing, pool);
 				}
 			}
 			ctx.restore();

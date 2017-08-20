@@ -6,7 +6,7 @@ import "../js/utilities.js" as Util
 Rectangle {
 	id: poolItem
 	width: checklist.width - 20
-	height: infoLine.height * 4 + 8 + 24 + (characterData.itemAttachments !== "" ? attachmentText.height : 0)
+	height: infoLine.height * 4 + 8 + 24 + (characterData.itemAttachDesc !== "" ? attachmentText.height : 0)
 
 	property int leftWidth: 200
 	property int roghtWidth: 300
@@ -44,7 +44,7 @@ Rectangle {
 			InfoLine {
 				width: leftWidth
 				infoTitle: "SKILL:"
-				infoText: characterData.itemSkill
+				infoText: characterData.activeSkill
 				infoType: "check-item,clear2"
 			}
 
@@ -62,8 +62,8 @@ Rectangle {
 			InfoLine {
 				width: roghtWidth
 				infoTitle: "MANEUVERS:"
-				infoText: Util.left(characterData.itemManeuvers, "|")
-				infoComment: Util.right(characterData.itemManeuvers, "|")
+				infoText: "  "+Util.left(characterData.itemManeuvers, "|")
+				infoComment: Util.right(characterData.itemManeuvers, "|")+"  "
 				infoType: "check-item,right,clear"
 			}
 		}
@@ -81,7 +81,7 @@ Rectangle {
 			InfoLine {
 				width: (poolItem.width - 24 - 6)  - 2*spaceBetween - leftWidth - roghtWidth
 				infoTitle: "CRITICAL:"
-				infoText: characterData.itemCritical
+				infoText: characterData.itemCritLevel
 				infoType: "check-item,right,dice,clear"
 			}
 
@@ -90,8 +90,8 @@ Rectangle {
 			InfoLine {
 				width: roghtWidth
 				infoTitle: "STRAIN:"
-				infoText: Util.left(characterData.itemStrain, "|")
-				infoComment: Util.right(characterData.itemStrain, "|")
+				infoText: "  "+Util.left(characterData.itemStrain, "|")
+				infoComment: Util.right(characterData.itemStrain, "|")+"  "
 				infoType: "check-item,right,clear"
 			}
 		}
@@ -109,22 +109,22 @@ Rectangle {
 			InfoLine {
 				width: (poolItem.width - 24 - 6)  - 10 - leftWidth
 				infoTitle: "QUALITIES:"
-				infoText: characterData.itemQualities
+				infoText: characterData.itemQualMag
 				infoType: "check-item,right,clear2"
 			}
 		}
 
 		Vspacer {
 			size: 10
-			visible: characterData.itemAttachments !== ""
+			visible: characterData.itemAttachDesc !== ""
 		}
 
 		FlowText {
 			id: attachmentText
 			width: poolItem.width - 35
-			text: characterData.itemAttachments
+			text: characterData.itemAttachDesc
 			clearColor: "white"
-			visible: characterData.itemAttachments !== ""
+			visible: characterData.itemAttachDesc !== ""
 		}
 	}
 }

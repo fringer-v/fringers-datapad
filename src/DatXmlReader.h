@@ -56,10 +56,10 @@ private:
 	size_t myStrLen;
 };
 
-class DatXMLReader {
+class DatXmlReader {
 public:
-	DatXMLReader();
-	virtual ~DatXMLReader();
+	DatXmlReader();
+	virtual ~DatXmlReader();
 
 	bool readFromFile(const char* file_name, bool* file_not_found = NULL);
 	bool readFromBuffer(const char* buffer, size_t length);

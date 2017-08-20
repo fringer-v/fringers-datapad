@@ -28,10 +28,11 @@
 #include <QObject>
 #include <QDateTime>
 
-#include "DatXMLReader.h"
+#include "DatXmlReader.h"
 #include "DataList.h"
 #include "Skills.h"
 #include "Talents.h"
+#include "Shop.h"
 
 #define MAX_HISTORY_LEN			22
 
@@ -62,9 +63,23 @@
 								(((x) & NEG_CHECK_3_PURPLE) ? 3 : 0) + \
 								(((x) & NEG_CHECK_4_PURPLE) ? 4 : 0))
 
+#define ESC_DAMAGE				"\\D\\am\\a\\ge"
+#define ESC_RANGE				"R\\an\\ge"
+#define ESC_COMMIT				"\\Commi\\t"
+#define ESC_BREACH				"\\B\\re\\ach"
+#define ESC_AUTOFIRE			"\\Auto-fi\\re"
+#define ESC_ACTION				"\\A\\c\\tion"
+#define ESC_COMMIT				"\\Commi\\t"
+#define ESC_LINKED				"Linked"
+#define ESC_RANGE				"R\\an\\ge"
+#define ESC_WOUND				"Wound"
+#define ESC_MOVE				"Move"
+#define ESC_CRITS				"\\C\\ri\\t\\s"
+#define ESC_DESTINY				"\\De\\s\\tin\\y"
+
 class Character;
 
-class FindTag : public QObject, public DatXMLReader {
+class FindTag : public QObject, public DatXmlReader {
 	Q_OBJECT
 
 public:
@@ -92,7 +107,9 @@ public:
 		isCareer = false;
 	}
 
-	QString getDicePool(Skill* skill = NULL, QString ch = QString());
+	QString getBasicPool(Character* charac);
+	double poolRating(Character* charac);
+	QString getDicePool(MethodID base_skill_id = KM_UNKNOWN);
 };
 
 class CharItem {
@@ -291,7 +308,13 @@ public:
 		moveRequired(),
 		consumable(),
 		commitKey(),
-		forceCost(1) {
+		forceCost(1),
+		commitCount(0),
+		plusRange(0),
+		plusMagnitude(0),
+		plusStrength(0),
+		plusDuration(0)
+	{
 	}
 
 	int reference;		// < 0 if Added automatically!
@@ -303,6 +326,12 @@ public:
 	QString consumable;
 	QString commitKey;
 	int forceCost;
+
+	int commitCount;
+	int plusRange;
+	int plusMagnitude;
+	int plusStrength;
+	int plusDuration;
 };
 
 class CheckListData {
@@ -321,6 +350,12 @@ public:
 	int plus(const QString& pool, const QString& desc, int move, int strain,
 		int dpoint = 0, const QString& consumable = QString(), const QString& commit_key = QString(), int force_cost = 0);
 	void plusCustom(int ref, const QString& pool, const QString& desc);
+
+	void commitCount(int ref, int count);
+	void plusRange(int ref, int count);
+	void plusMagnitude(int ref, int count);
+	void plusStrength(int ref, int count);
+	void plusDuration(int ref, int count);
 
 private:
 	int iRefCount;
@@ -394,6 +429,7 @@ public:
 	QString species;
 	QList<SpeciesTalent> speciesTalents;
 	QList<SpecialFeatureItem> specialFeatures;
+	QMap<QString, ShopItem> customItems;
 
 	// CURRENT DATA
 	int wounds;
@@ -451,8 +487,9 @@ public:
 	void storeItem(const QString& uuid, const QString& itemkey, int count, int state, Item* item);
 
 	void clearAutoCheckItems(Character* charac, const QString& skillKey);
-	void setupAutoCheckItems(Character* charac, const QString& skillKey, const QString& uuid);
-	void exitAutoCheckItems(Character* charac, const QString& skillKey);
+	QString plurize(const QString& thing, int val);
+	void setupAutoCheckItems(Character* charac, const QString& checktype, const QString& skillKey, const QString& talentKey, const QString& uuid);
+	void exitAutoCheckItems(Character* charac, const QString& skillKey, int commit_count);
 	void appendCheckItem(Character* charac, const QString& skillKey, const QString& pool, const QString& desc);
 	void updateCheckItem(Character* charac, int ref, const QString& skillKey, const QString& pool, const QString& desc);
 	void removeCheckItem(Character* charac, int ref, const QString& skillKey);
@@ -487,7 +524,7 @@ private:
 	void inventoryChanged(Character* charac, const QString& uuid, const QString& itemkey, bool signal);
 	void setCheckItem(const QString& skillKey, const QString& pool, const QString& desc);
 	void addCheckItem(const QString& skillKey, int reference, const QString& pool, const QString& desc);
-	void checkChecked(Character* charac, const QString& skillKey);
+	void checkChecked(Character* charac, const QString& skillKey, bool list_setup, CheckListItem* item);
 	void writeCurrentData();
 	void changeWounds(int delta);
 	void changeStrain(int delta);
@@ -502,7 +539,7 @@ private:
 	static int iReferenceCounter;
 };
 
-class CurrentDataXML : public DatXMLReader {
+class CurrentDataXML : public DatXmlReader {
 public:
 	CurrentDataXML(CurrentData* current_data);
 
@@ -528,7 +565,7 @@ private:
 	int			iStoreItemState; // UNDEFINED, NOT_CARRIED, IS_HELD, IS_EQUIPPED
 
 	QString		iItemPool;
-	QString		iItemSkill;
+	QString		iItemCheckSkill;
 
 	QString		iSkillName;
 	QString		iSkillChar;

@@ -25,7 +25,7 @@
 #ifndef __Weapons_h__
 #define __Weapons_h__
 
-#include "DatXMLReader.h"
+#include "DatXmlReader.h"
 #include "Item.h"
 #include "DataList.h"
 #include "Shop.h"
@@ -39,10 +39,13 @@ public:
 	virtual int rowCount();
 	virtual QVariant getValue(int row, int col);
 
+	static QString toRangeText(int range);
+	static QString toRangeText(int range, int range2);
+
 	//virtual QVariant getValue(int row, const char* col);
 };
 
-class ShopWeapons : public QObject, public DatXMLReader {
+class ShopWeapons : public QObject, public DatXmlReader {
 	Q_OBJECT
 
 public:

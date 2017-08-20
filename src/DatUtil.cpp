@@ -821,6 +821,7 @@ QString DatUtil::normalizeDice(const QString& dice)
 	int black = 0;
 	int upgrade_diff = 0;
 	int downgrade_diff = 0;
+	int pips = 0;
 	//int threat = 0;
 	int white = 0;
 	QString additional;
@@ -848,6 +849,7 @@ QString DatUtil::normalizeDice(const QString& dice)
 			case 'f': neg ? success++ : success--; break;
 			case 'F': neg ? white-- : white++; break;
 			case 'g': neg ? white++ : white--; break;
+			case 'r': neg ? purple++ : purple--; break;
 			case ' ': break;
 			case '-':
 				if (i+1<dice.length()) {
@@ -868,6 +870,9 @@ QString DatUtil::normalizeDice(const QString& dice)
 			case 'y':
 			case 'z':
 				additional += dice[i];
+				break;
+			case '.':
+				pips++;
 				break;
 			default:
 				break;
@@ -959,7 +964,10 @@ QString DatUtil::normalizeDice(const QString& dice)
 	if (advantage > 0)
 		new_dice += QString("a").repeated(advantage);
 	new_dice += QString("C").repeated(red);
-	new_dice += QString("D").repeated(purple);
+	if (purple < 0)
+		new_dice += QString("r").repeated(-purple);
+	else
+		new_dice += QString("D").repeated(purple);
 	new_dice += QString("S").repeated(black);
 	if (success < 0)
 		new_dice += QString("f").repeated(-success);
@@ -967,7 +975,19 @@ QString DatUtil::normalizeDice(const QString& dice)
 		new_dice += QString("t").repeated(-advantage);
 	if (downgrade_diff > 0)
 		new_dice += QString("d").repeated(downgrade_diff);
-	return new_dice + additional;
+	new_dice += additional;
+	if (pips > 0) {
+		new_dice += " ➤ ";
+		new_dice += QString(".").repeated(pips);
+	}
+	return new_dice;
+}
+
+int DatUtil::betterThan(const QString& skill1, const QString& skill2, Character* charac)
+{
+	double p1 = CurrentData::instance->skills[skill1].poolRating(charac);
+	double p2 = CurrentData::instance->skills[skill2].poolRating(charac);
+	return p1 > p2 ? 1 : (p1 < p2 ? -1 : 0);
 }
 
 QString DatUtil::base64(const QString& text)

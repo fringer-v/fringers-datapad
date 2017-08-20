@@ -53,8 +53,8 @@ Rectangle {
 			InfoLine {
 				width: leftWidth
 				infoTitle: "MANEUVERS:"
-				infoText: Util.left(characterData.itemManeuvers, "|")
-				infoComment: Util.right(characterData.itemManeuvers, "|")
+				infoText: "  "+Util.left(characterData.itemManeuvers, "|")
+				infoComment: Util.right(characterData.itemManeuvers, "|")+"  "
 				infoType: "check-item,right,clear"
 			}
 
@@ -63,56 +63,11 @@ Rectangle {
 			InfoLine {
 				width: rightWidth
 				infoTitle: "STRAIN:"
-				infoText: Util.left(characterData.itemStrain, "|")
-				infoComment: Util.right(characterData.itemStrain, "|")
+				infoText: "  "+Util.left(characterData.itemStrain, "|")
+				infoComment: Util.right(characterData.itemStrain, "|")+"  "
 				infoType: "check-item,clear"
 			}
 
 		}
 	}
 }
-/*
-Rectangle {
-	id: checker
-	width: checklist.width - 20
-	height: 60
-
-	Row {
-		TitleBox {
-			height: checker.height
-			width: checker.width - 400 - 20
-			boxTitle: characterData.activeSkill.toUpperCase()
-			boxText: characterData.dicePool
-			boxTitleWidth: 240
-			boxCornerHeight: 20
-			displayDicePool: true
-		}
-
-		Hspacer { size: 10 }
-
-		TitleBox {
-			height: checker.height
-			width: 200
-			boxTitle: "MANEUVERS"
-			boxText: Util.left(characterData.itemManeuvers, "|")
-			boxComment: Util.right(characterData.itemManeuvers, "|")
-			boxTitleWidth: 100
-			boxCornerHeight: 20
-			displayText: true
-		}
-
-		Hspacer { size: 10 }
-
-		TitleBox {
-			height: checker.height
-			width: 200
-			boxTitle: "STRAIN"
-			boxText: Util.left(characterData.itemStrain, "|")
-			boxComment: Util.right(characterData.itemStrain, "|")
-			boxTitleWidth: 100
-			boxCornerHeight: 20
-			displayText: true
-		}
-	}
-}
-*/

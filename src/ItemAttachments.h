@@ -28,7 +28,7 @@
 #include <QObject>
 #include <QMap>
 
-#include "DatXMLReader.h"
+#include "DatXmlReader.h"
 
 class ItemAttachment {
 public:
@@ -38,7 +38,7 @@ public:
 	void clear();
 };
 
-class ItemAttachments : public QObject, public DatXMLReader {
+class ItemAttachments : public QObject, public DatXmlReader {
 	Q_OBJECT
 
 public:

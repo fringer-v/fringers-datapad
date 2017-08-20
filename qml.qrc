@@ -102,5 +102,7 @@
         <file>qml/ShopListLine.qml</file>
         <file>qml/DatapadDialog.qml</file>
         <file>qml/ExperienceDialog.qml</file>
+        <file>qml/ForceCheck.qml</file>
+        <file>qml/TalentCheck.qml</file>
     </qresource>
 </RCC>

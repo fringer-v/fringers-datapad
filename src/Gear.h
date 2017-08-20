@@ -25,7 +25,7 @@
 #ifndef __Gear_h__
 #define __Gear_h__
 
-#include "DatXMLReader.h"
+#include "DatXmlReader.h"
 #include "Item.h"
 #include "DataList.h"
 #include "Shop.h"
@@ -42,7 +42,7 @@ public:
 	//virtual QVariant getValue(int row, const char* col);
 };
 
-class ShopGear : public QObject, public DatXMLReader {
+class ShopGear : public QObject, public DatXmlReader {
 	Q_OBJECT
 
 public:

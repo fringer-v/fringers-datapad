@@ -74,6 +74,10 @@ public:
 		modList.clear();
 		qualityList.clear();
 	}
+
+	bool isMeleeWeapon() const {
+		return skillKey == "LTSABER" || skillKey == "BRAWL" || skillKey == "MELEE";
+	}
 };
 
 class Shop : public AbstractDataList
@@ -88,18 +92,19 @@ public:
 	virtual QVariant getValue(int row, const char* col);
 
 	void clear();
-	void addItem(const ShopItem& item);
+	void addItem(const ShopItem item);
 	ShopItem itemAt(int i);
-	bool contains(const QString& key);
-	ShopItem getItem(const QString& key);
+	bool contains(const QString& key) const;
+	const ShopItem getItem(const QString& key) const;
 	void search(const QString& key);
 
 protected:
-	void addSortedItem(const ShopItem& item);
+	void addSortedItem(const ShopItem item);
 
 	QMap<QString, ShopItem>	iList;
 	QStringList				iSortedKeys;
 	QStringList				iSelection;
+	ShopItem				iEmptyItem;
 };
 
 

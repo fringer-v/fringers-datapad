@@ -14,7 +14,7 @@ function str_right($str, $search) {
 	$pos = strpos($str, $search);
 	if ($pos === false)
 		return "";
-	return substr($str, $pos+1);
+	return substr($str, $pos+strlen($search));
 }
 
 function get_contents($email, $section)

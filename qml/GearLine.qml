@@ -6,7 +6,7 @@ import "../js/constants.js" as Constant
 
 Rectangle {
 	id: gearLine
-	width: parent.width
+	width: parent === null ? 500 : parent.width // To avoid timing error: TypeError: Cannot read property of null
 	height: Math.max(gearText.height, specialText.height) + topMargin + bottomMargin
 
 	property var colWidths: adjustedlColWidths

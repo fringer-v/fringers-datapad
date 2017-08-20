@@ -73,6 +73,14 @@ void DataAccess::init()
 			row = dataSets.appendRow();
 			setDataSetRow(row, file, name);
 		}
+		else {
+			QFileInfo info = QFileInfo(DatUtil::getDataSetFolder() + file);
+
+			if (info.isFile())
+				DataAccess::deleteFile(DatUtil::getDataSetFolder() + file);
+			else
+				DataAccess::removeDir(DatUtil::getDataSetFolder() + file);
+		}
 	}
 	dataSets.rowCountChanged();
 

@@ -28,9 +28,9 @@
 #include <QObject>
 #include <QMap>
 
-#include "DatXMLReader.h"
+#include "DatXmlReader.h"
 
-class Motivations : public DatXMLReader {
+class Motivations : public DatXmlReader {
 public:
 	static Motivations instance;
 

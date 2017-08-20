@@ -167,16 +167,18 @@ public:
 	Q_PROPERTY(QString dicePool READ dicePool WRITE setDicePool NOTIFY dicePoolChanged)
 	Q_PROPERTY(int negativePool READ negativePool WRITE setNegativePool NOTIFY negativePoolChanged)
 	Q_PROPERTY(QString itemUuid READ itemUuid WRITE setItemUuid NOTIFY itemUuidChanged)
-	Q_PROPERTY(QString itemItemKey READ itemItemKey WRITE setItemItemKey NOTIFY itemItemKeyChanged)
-	Q_PROPERTY(QString itemName READ itemName WRITE setItemName NOTIFY itemNameChanged)
-	Q_PROPERTY(QString itemRange READ itemRange WRITE setItemRange NOTIFY itemRangeChanged)
-	Q_PROPERTY(QString itemSkill READ itemSkill WRITE setItemSkill NOTIFY itemSkillChanged)
+	Q_PROPERTY(QString itemItemKey READ itemItemKey WRITE setItemItemKey NOTIFY itemItemKeyChanged) // Key
+	Q_PROPERTY(QString itemName READ itemName WRITE setItemName NOTIFY itemNameChanged) // Name
+	Q_PROPERTY(QString itemRange READ itemRange WRITE setItemRange NOTIFY itemRangeChanged) // Range
+	Q_PROPERTY(QString itemSkill READ itemSkill WRITE setItemSkill NOTIFY itemSkillChanged) // Skill
 	Q_PROPERTY(QString itemDamage READ itemDamage WRITE setItemDamage NOTIFY itemDamageChanged)
-	Q_PROPERTY(QString itemCritical READ itemCritical WRITE setItemCritical NOTIFY itemCriticalChanged)
-	Q_PROPERTY(QString itemQualities READ itemQualities WRITE setItemQualities NOTIFY itemQualitiesChanged)
-	Q_PROPERTY(QString itemAttachments READ itemAttachments WRITE setItemAttachments NOTIFY itemAttachmentsChanged)
-	Q_PROPERTY(QString itemManeuvers READ itemManeuvers WRITE setItemManeuvers NOTIFY itemManeuversChanged)
-	Q_PROPERTY(QString itemStrain READ itemStrain WRITE setItemStrain NOTIFY itemStrainChanged)
+	Q_PROPERTY(QString itemCritLevel READ itemCritLevel WRITE setItemCritLevel NOTIFY itemCritLevelChanged)  // Strength
+	Q_PROPERTY(QString itemQualMag READ itemQualMag WRITE setItemQualMag NOTIFY itemQualMagChanged) // Magnitude
+	Q_PROPERTY(QString itemPowerStr READ itemPowerStr WRITE setItemPowerStr NOTIFY itemPowerStrChanged) // Strength
+	Q_PROPERTY(QString itemDuration READ itemDuration WRITE setItemDuration NOTIFY itemDurationChanged) // Duration
+	Q_PROPERTY(QString itemAttachDesc READ itemAttachDesc WRITE setitemAttachDesc NOTIFY itemAttachDescChanged) //
+	Q_PROPERTY(QString itemManeuvers READ itemManeuvers WRITE setItemManeuvers NOTIFY itemManeuversChanged) // Maneuvers
+	Q_PROPERTY(QString itemStrain READ itemStrain WRITE setItemStrain NOTIFY itemStrainChanged) // Strain
 
 	Q_PROPERTY(int itemCritPlus READ itemCritPlus WRITE setItemCritPlus NOTIFY itemCritPlusChanged)
 	Q_PROPERTY(int itemPierce READ itemPierce WRITE setItemPierce NOTIFY itemPierceChanged)
@@ -242,9 +244,11 @@ public:
 	QString itemRange();
 	QString itemSkill();
 	QString itemDamage();
-	QString itemCritical();
-	QString itemQualities();
-	QString itemAttachments();
+	QString itemCritLevel();
+	QString itemQualMag();
+	QString itemPowerStr();
+	QString itemDuration();
+	QString itemAttachDesc();
 	QString itemManeuvers();
 	QString itemStrain();
 	int itemCritPlus();
@@ -291,9 +295,9 @@ public:
 	Q_INVOKABLE void showWeaponsAndArmor(); // weapons
 	Q_INVOKABLE void showGear(); // inventory
 	Q_INVOKABLE void showInventory(); // cashout
-	Q_INVOKABLE void showCheckList();
+	Q_INVOKABLE QString showCheckList(QString skill_name, QString key, QString talent_key, QString dice_pool);
 	Q_INVOKABLE void hideCheckList();
-	Q_INVOKABLE void fillCheckList();
+	Q_INVOKABLE void fillCheckList(const QString& check_list_type);
 
 	Q_INVOKABLE void setName(const QString& value);
 	Q_INVOKABLE void setPlayer(const QString& value);
@@ -324,9 +328,11 @@ public:
 	Q_INVOKABLE void setItemRange(const QString& t);
 	Q_INVOKABLE void setItemSkill(const QString& t);
 	Q_INVOKABLE void setItemDamage(const QString& t);
-	Q_INVOKABLE void setItemCritical(const QString& t);
-	Q_INVOKABLE void setItemQualities(const QString& t);
-	Q_INVOKABLE void setItemAttachments(const QString& t);
+	Q_INVOKABLE void setItemCritLevel(const QString& t);
+	Q_INVOKABLE void setItemQualMag(const QString& t);
+	Q_INVOKABLE void setItemPowerStr(const QString& t);
+	Q_INVOKABLE void setItemDuration(const QString& t);
+	Q_INVOKABLE void setitemAttachDesc(const QString& t);
 	Q_INVOKABLE void setItemManeuvers(const QString& t);
 	Q_INVOKABLE void setItemStrain(const QString& t);
 	Q_INVOKABLE void setItemCritPlus(int t);
@@ -395,9 +401,11 @@ signals:
 	void itemRangeChanged(const QString& value);
 	void itemSkillChanged(const QString& value);
 	void itemDamageChanged(const QString& value);
-	void itemCriticalChanged(const QString& value);
-	void itemQualitiesChanged(const QString& value);
-	void itemAttachmentsChanged(const QString& value);
+	void itemCritLevelChanged(const QString& value);
+	void itemQualMagChanged(const QString& value);
+	void itemPowerStrChanged(const QString& value);
+	void itemDurationChanged(const QString& value);
+	void itemAttachDescChanged(const QString& value);
 	void itemManeuversChanged(const QString& value);
 	void itemStrainChanged(const QString& value);
 	void itemCritPlusChanged(int value);
@@ -409,7 +417,8 @@ signals:
 public:
 	int getAttribute(const QString& val);
 	int setAttributeMods(const CharMods& mods);
-	void setChangeDicePool(const QString& t);
+	int getItemRange(int& range1, int&range2);
+	void setChangeDicePool(const QString& t, bool list_setup, CheckListItem* item);
 	void inventoryChanged();
 	void emitExperienceChanged();
 	void characteristicsChanged();
@@ -441,6 +450,7 @@ private:
 	// Attributes used to run the Check List dialog:
 	QString iActiveSkill;
 	QString iActiveSkillKey;
+	QString iActiveTalentKey;
 	QString iDicePool;
 	QString iItemUuid;
 	QString iItemItemKey;
@@ -448,9 +458,11 @@ private:
 	QString iItemRange;
 	QString iItemSkill;
 	QString iItemDamage;
-	QString iItemCritical;
-	QString iItemQualities;
-	QString iItemAttachments;
+	QString iItemCritLevel;
+	QString iItemQualMag;
+	QString iItemPowerStr;
+	QString iItemDuration;
+	QString iitemAttachDesc;
 	int iItemCritPlus;
 	int iItemPierce;
 
@@ -461,6 +473,10 @@ private:
 	int iModItemPierce;
 	int iModItemCrit;
 	int iModItemRange;
+	int iModItemCommit;
+	int iModItemMagnitude;
+	int iModItemStrength;
+	int iModItemDuration;
 
 	// A mod number used to indicate that the image database has changed
 	int iImageProviderCount;

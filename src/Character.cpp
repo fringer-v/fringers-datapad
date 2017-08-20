@@ -17,24 +17,47 @@ int Character::iLoading;
 
 // CharSkill -------------------------------------
 
-QString CharSkill::getDicePool(Skill* skill, QString ch)
+QString CharSkill::getBasicPool(Character* charac)
+{
+	Skill* skill = Skill::getSkill(key);
+
+	return DatUtil::getBasicDicePool(ranks, charac->getAttribute(skill->characteristic));
+}
+
+double CharSkill::poolRating(Character* charac)
+{
+	Skill* skill = Skill::getSkill(key);
+
+	int char_value = charac->getAttribute(skill->characteristic);
+	int s_ranks = ranks;
+
+	if (s_ranks > char_value) {
+		int tmp = char_value;
+		char_value = s_ranks;
+		s_ranks = tmp;
+	}
+
+	// Yellow is worth a bit more than 1.5 of a green:
+	return (s_ranks * 1.501) + (char_value-s_ranks);
+}
+
+QString CharSkill::getDicePool(MethodID base_skill_id)
 {
 	Character* character;
 	CurrentData* current_data;
+	Skill* skill;
+	QString ch;
 
 	if (!(character = Character::instance))
 		return "";
 	if (!(current_data = CurrentData::instance))
 		return "";
+	if (!(skill = Skill::getSkill(key)))
+		return "EE";
 
-	if (!skill) {
-		skill = Skill::getSkill(key);
-		if (!skill)
-			return "EE";
-		ch = skill->characteristic;
-		if (strcmp(skill->key, "LTSABER") == 0)
-			ch = current_data->talents.getLightSaberChar();
-	}
+	ch = skill->characteristic;
+	if (skill->method_id == KM_LTSABER)
+		ch = current_data->talents.getLightSaberChar();
 
 	QString pool;
 	int boostCount = 0;
@@ -44,47 +67,55 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 	int optionalUpgradeCount = 0;
 	int optionalDowngradeCount = 0;
 	int optionalBoost = 0;
+	int optionalReduceDiffCount = 0;
 	int threatCount = 0;
 	bool defr = false;
 	bool defm = false;
 
-	if (strcmp(skill->key, "DEFM") == 0) {
-		defm = true;
-		pool = DatUtil::repeat("S", character->defenseMelee());
-		if (current_data->isCommitted("SENSECONTROL1")) {
-			optionalDowngradeCount++;
-			if (current_data->talents.contains("SENSESTRENGTH"))
+	switch (skill->method_id) {
+		case KM_DEFM:
+			defm = true;
+			pool = DatUtil::repeat("S", character->defenseMelee());
+			if (current_data->isCommitted("SENSECONTROL1")) {
 				optionalDowngradeCount++;
-		}
-		threatCount = current_data->isCommitted("MISDIRCONTROL3");
-	}
-	else if (strcmp(skill->key, "DEFR") == 0) {
-		defr = true;
-		pool = DatUtil::repeat("S", character->defenseRanged());
-		if (current_data->isCommitted("SENSECONTROL1")) {
-			optionalDowngradeCount++;
-			if (current_data->talents.contains("SENSESTRENGTH"))
+				if (current_data->talents.contains("SENSESTRENGTH"))
+					optionalDowngradeCount++;
+			}
+			threatCount = current_data->isCommitted("MISDIRCONTROL3");
+			break;
+		case KM_DEFR:
+			defr = true;
+			pool = DatUtil::repeat("S", character->defenseRanged());
+			if (current_data->isCommitted("SENSECONTROL1")) {
 				optionalDowngradeCount++;
-		}
-		threatCount = current_data->isCommitted("MISDIRCONTROL3");
-	}
-	else {
-		pool = DatUtil::getBasicDicePool(ranks, character->getAttribute(skill ? ch : 0));
-		if (skill->type == COMBAT) {
-			if (current_data->isCommitted("SENSECONTROL3"))
-				pool += "UU";
-		}
+				if (current_data->talents.contains("SENSESTRENGTH"))
+					optionalDowngradeCount++;
+			}
+			threatCount = current_data->isCommitted("MISDIRCONTROL3");
+			break;
+		default:
+			pool = DatUtil::getBasicDicePool(ranks, character->getAttribute(skill ? ch : 0));
+			if (skill->type == COMBAT) {
+				if (current_data->isCommitted("SENSECONTROL3"))
+					pool += "UU";
+			}
+			break;
 	}
 
-	if (strcmp(skill->key, "REC") == 0) {
-		if (current_data->talents.contains("BAL"))
-			addForceDice++;
-	}
-	else if (strcmp(skill->key, "ICOOL") == 0 || strcmp(skill->key, "IVIG") == 0) {
-		if (current_data->talents.contains("FORSEECONTROL1") > 0)
-			addForceDice++;
-		else if (current_data->talents.contains("WARFORCONTROL1") > 0)
-			addForceDice++;
+	switch (skill->method_id) {
+		case KM_REC:
+			if (current_data->talents.contains("BAL"))
+				addForceDice++;
+			break;
+		case KM_ICOOL:
+		case KM_IVIG:
+			if (current_data->talents.contains("FORSEECONTROL1") > 0)
+				addForceDice++;
+			else if (current_data->talents.contains("WARFORCONTROL1") > 0)
+				addForceDice++;
+			break;
+		default:
+			break;
 	}
 
 	foreach (CharTalent char_talent, current_data->talents.charTalentMap) {
@@ -107,14 +138,18 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 			}
 		}
 
-		if (char_talent.key == "INTIM" && key == "COERC")
+		if (char_talent.key == "INTIM" && skill->method_id == KM_COERC)
 			optionalUpgradeCount += char_talent.ranks;
 		if (char_talent.key == "CONGENIAL" &&
-			(key == "CHARM" || key == "NEG"))
+			(skill->method_id == KM_CHARM || skill->method_id == KM_NEG))
 			optionalUpgradeCount += char_talent.ranks;
 		if (char_talent.key == "DODGE" &&
-			(key == "DEFM" || key == "DEFR"))
+			(skill->method_id == KM_DEFM || skill->method_id == KM_DEFR))
 			optionalDowngradeCount += char_talent.ranks;
+		if (char_talent.key == "INTIM" && skill->method_id == KM_COERC)
+			optionalUpgradeCount += char_talent.ranks;
+		if (char_talent.key == "CONF" && base_skill_id == KM_FDISC)
+			optionalReduceDiffCount += char_talent.ranks;
 	}
 
 	for (int i = 0; i<current_data->armor.rowCount(); i++) {
@@ -136,9 +171,14 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 		}
 	}
 
-	if (key == "CHARM" || key == "COERC") {
-		if (current_data->gear.equipped("EXPJEWELRY"))
-			pool += "a";
+	switch (skill->method_id) {
+		case KM_CHARM:
+		case KM_COERC:
+			if (current_data->gear.equipped("EXPJEWELRY"))
+				pool += "a";
+			break;
+		default:
+			break;
 	}
 
 	pool += DatUtil::repeat("B", boostCount);
@@ -157,7 +197,8 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 			pool = "|"+QString("D").repeated(m)+"|" + pool;
 	}
 
-	if (addForceDice + optionalRemoveSetback + optionalUpgradeCount + optionalDowngradeCount + optionalBoost) {
+	if (addForceDice + optionalRemoveSetback + optionalUpgradeCount +
+		optionalDowngradeCount + optionalBoost + optionalReduceDiffCount) {
 		QString opt;
 		// Mark the optional dice
 		// Optional dice are just an indicator that something else
@@ -168,6 +209,7 @@ QString CharSkill::getDicePool(Skill* skill, QString ch)
 		opt += DatUtil::repeat("N", optionalRemoveSetback);
 		opt += DatUtil::repeat("d", optionalUpgradeCount);
 		opt += DatUtil::repeat("u", optionalDowngradeCount);
+		opt += DatUtil::repeat("r", optionalReduceDiffCount);
 		pool += "|"+opt+"|"; // These will be hidden in the display
 	}
 
@@ -199,15 +241,18 @@ Character::Character(QObject *parent) :
 
 	iActiveSkill.clear();
 	iActiveSkillKey.clear();
+	iActiveTalentKey.clear();
 	iDicePool.clear();
 	iItemUuid.clear();
 	iItemItemKey.clear();
 	iItemName.clear();
 	iItemSkill.clear();
 	iItemDamage.clear();
-	iItemCritical.clear();
-	iItemQualities.clear();
-	iItemAttachments.clear();
+	iItemCritLevel.clear();
+	iItemQualMag.clear();
+	iItemPowerStr.clear();
+	iItemDuration.clear();
+	iitemAttachDesc.clear();
 	iItemCritPlus = 0;
 	iItemPierce = 0;
 
@@ -217,6 +262,10 @@ Character::Character(QObject *parent) :
 	iModItemPierce = 0;
 	iModItemCrit = 0;
 	iModItemRange = 0;
+	iModItemCommit = 0;
+	iModItemMagnitude = 0;
+	iModItemStrength = 0;
+	iModItemDuration = 0;
 
 	iImageProviderCount = 0;
 
@@ -542,46 +591,17 @@ QString Character::itemName()
 	return iItemName;
 }
 
+// showCheckList() <---- Initialise power
 QString Character::itemRange()
 {
-	if (iModItemRange) {
-		int range = 0;
+	int range, range2;
 
-		// Engaged, short, medium, long, extreme.
-		switch (iItemRange[0].unicode()) {
-			case 'E':
-				if (iItemRange[1].unicode() == 'x')
-					range = 4;
-				else
-					range = 0;
-				break;
-			case 'S':
-				range = 1;
-				break;
-			case 'M':
-				range = 2;
-				break;
-			case 'L':
-				range = 3;
-				break;
-		}
-		range += iModItemRange;
-		switch (range) {
-			case 0:
-				return "Engaged";
-			case 1:
-				return "Short";
-			case 2:
-				return "Medium";
-			case 3:
-				return "Long";
-			default:
-				if (range < 0)
-					return "Short";
-				return "Extreme";
-		}
-	}
-	return iItemRange;
+	getItemRange(range, range2); // Initial range
+	range += iModItemRange;
+	if (range2 >= 0)
+		range2 += iModItemRange;
+
+	return Weapons::toRangeText(range, range2);
 }
 
 QString Character::itemSkill()
@@ -592,7 +612,6 @@ QString Character::itemSkill()
 QString Character::itemDamage()
 {
 	QString damage = iItemDamage;
-
 
 	if (iModItemDamage) {
 		QString val = iItemDamage;
@@ -617,28 +636,114 @@ QString Character::itemDamage()
 	return damage;
 }
 
-QString Character::itemCritical()
+QString Character::itemCritLevel()
 {
-	QString crit_dice = DatUtil::repeat("a", iItemCritical.toInt());
+	QString crit_dice = DatUtil::repeat("a", iItemCritLevel.toInt());
 
 	if (!crit_dice.isEmpty() && iItemCritPlus > 0)
 		return crit_dice + QString(" +%1%").arg(iItemCritPlus*10+iModItemCrit);
 	return crit_dice;
 }
 
-QString Character::itemQualities()
+QString Character::itemQualMag()
 {
-	return iItemQualities;
+	MethodID talent_id = KeyMethod::instance.getID(iActiveTalentKey);
+
+	switch (talent_id) {
+		case KM_BINDBASIC:
+		case KM_INFLUENCEBASIC:
+		case KM_INFLUENCECONTROL1:
+		case KM_ENHANCEBASIC:
+		case KM_MISDIRBASIC:
+		case KM_MISDIRCONTROL1:
+		case KM_SENSEBASIC:
+		case KM_SENSECONTROL2:
+		case KM_MOVEBASIC:
+		case KM_MOVECONTROL1:
+		case KM_MOVECONTROL2:
+		case KM_MOVECONTROL3:
+			if (iModItemMagnitude == 0)
+				return "1 Target";
+			return QString("%1 Targets").arg(iModItemMagnitude+1);
+		default:
+			break;
+	}	
+	return iItemQualMag;
 }
 
-QString Character::itemAttachments()
+QString Character::itemPowerStr()
 {
-	return iItemAttachments;
+	MethodID talent_id = KeyMethod::instance.getID(iActiveTalentKey);
+	int silhouette = 0;
+
+	switch (talent_id) {
+		case KM_BINDBASIC:
+			if (iModItemStrength == 0)
+				return "-";
+			return QString("Disorient target(s) for %1 rounds").arg(iModItemStrength+1);
+		case KM_INFLUENCEBASIC:
+			if (CurrentData::instance->talents.contains("INFLUENCESTRENGTH"))
+				return QString("Inflict 2 strain");
+			return "Inflict 1 strain";
+		case KM_MISDIRBASIC:
+		case KM_MISDIRCONTROL1:
+			silhouette = 1;
+			// No break!
+		case KM_MOVEBASIC:
+		case KM_MOVECONTROL1:
+		case KM_MOVECONTROL2:
+		case KM_MOVECONTROL3:
+			return QString("Effect silhouette %1 or smaller").arg(silhouette+iModItemStrength > 9 ? 9 : silhouette+iModItemStrength);
+		default:
+			break;
+	}
+	return iItemPowerStr;
+}
+
+QString Character::itemDuration()
+{
+	MethodID talent_id = KeyMethod::instance.getID(iActiveTalentKey);
+	switch (talent_id) {
+		case KM_BINDBASIC:
+			if (iModItemDuration == 0)
+				return "End of user's next turn";
+			return "Sustained until [FO][FO][FO] uncommitted";
+		case KM_INFLUENCECONTROL1:
+			if (iModItemDuration == 0)
+				return "1 round or 5 minutes";
+			return QString("%1 rounds or %2 minutes").arg(iModItemDuration+1).arg(iModItemDuration+5);
+		case KM_MISDIRBASIC:
+		case KM_MISDIRCONTROL1:
+			if (iModItemDuration == 0)
+				return "Beginning of user's next turn";
+			return "Sustained until [FO][FO] uncommitted";
+		default:
+			break;
+	}
+	return iItemDuration;
+}
+
+QString Character::itemAttachDesc()
+{
+	return iitemAttachDesc;
 }
 
 QString Character::itemManeuvers()
 {
-	QString val = QString("  %1|/ 2  ").arg(CurrentData::instance->autoCheckItems.movesUsed());
+	MethodID talent_id = KeyMethod::instance.getID(iActiveTalentKey);
+	int add_man = 0;
+
+	switch (talent_id) {
+		case KM_ENHANCECONT0:
+		case KM_ENHANCECONT6:
+		case KM_ENHANCECONT3:
+			if (CurrentData::instance->talents.contains("ENHANCECONT0"))
+				add_man = 1;
+			break;
+		default:
+			break;
+	}
+	QString val = QString("%1|/ 2").arg(add_man + CurrentData::instance->autoCheckItems.movesUsed());
 	return val;
 }
 
@@ -646,7 +751,7 @@ QString Character::itemStrain()
 {
 	QString cons;
 
-	QString val = QString("  %1|(%2 / %3)  ")
+	QString val = QString("%1|(%2 / %3)")
 		.arg(CurrentData::instance->autoCheckItems.strainUsed(cons))
 		.arg(currentStrain())
 		.arg(strain());
@@ -773,16 +878,12 @@ bool Character::removeInvItem(int ref)
 
 int Character::getPrice(const QString& key)
 {
-	if (Shop::instance.contains(key))
-		return Shop::instance.getItem(key).price;
-	return 0;
+	return Shop::instance.getItem(key).price;
 }
 
 int Character::getRarity(const QString& key)
 {
-	if (Shop::instance.contains(key))
-		return Shop::instance.getItem(key).rarity;
-	return 0;
+	return Shop::instance.getItem(key).rarity;
 }
 
 void Character::searchShop(QString search_string)
@@ -879,22 +980,192 @@ void Character::showInventory()
 	InventoryLog::instance.makeClean();
 }
 
-void Character::showCheckList()
+//characterData.activeSkill = skill;
+//characterData.dicePool = dicePool;
+QString Character::showCheckList(QString skill_name, QString skill_key, QString talent_key, QString dice_pool)
 {
+	QString check_list_type;
+	Skill* skill;
+	QString pool_plus;
+
 	iModDicePool.clear();
-	CurrentData::instance->clearAutoCheckItems(this, iActiveSkillKey);
+	iModItemRange = 0;
+	iModItemCommit = 0;
+	iModItemMagnitude = 0;
+	iModItemStrength = 0;
+	iModItemDuration = 0;
+
+	if (skill_key.isEmpty() && !skill_name.isEmpty()) {
+		if ((skill = Skill::getSkillByName(skill_name)))
+			skill_key = skill->key;
+	}
+
+	if (!talent_key.isEmpty() && AllTalents::instance()->isTalent(talent_key)) {
+		Talent talent = AllTalents::instance()->getTalent(talent_key);
+		MethodID talent_id = KeyMethod::instance.getID(talent_key);
+		QString desc;
+
+		DatUtil::addDescription(desc, talent.description, talent.books);
+		setitemAttachDesc(desc);
+
+		if (talent.force) {
+			check_list_type = "force";
+
+			switch (talent_id) {
+				case KM_ENHANCEBASIC:
+					skill_key = "ATHL";
+					break;
+				case KM_ENHANCECONT1:
+					skill_key = "COORD";
+					break;
+				case KM_ENHANCECONT2:
+					skill_key = "RESIL";
+					break;
+				case KM_ENHANCECONT4:
+					skill_key = "PILOTPL";
+					break;
+				case KM_ENHANCECONT5:
+					skill_key = "BRAWL";
+					break;
+				case KM_ENHANCECONT7:
+					skill_key = "PILOTSP";
+					break;
+				case KM_ENHANCECONT8:
+					skill_key = "BR";
+					break;
+				case KM_ENHANCECONT9:
+					skill_key = "AG";
+					break;
+				case KM_MOVECONTROL1:
+				case KM_INFLUENCECONTROL1:
+					pool_plus += QString("F").repeated(force() - forceCommitted()) + ".";
+					skill_key = "DISC";
+					break;
+				case KM_ENHANCECONT0:
+					check_list_type = "";
+					break;
+				default:
+					skill_name = "Force";
+					dice_pool = QString("F").repeated(force() - forceCommitted()) + ".";
+					break;
+			}
+
+			if (talent_key.endsWith("STRENGTH") ||
+				talent_key.endsWith("DURATION") ||
+				talent_key.endsWith("RANGE") ||
+				talent_key.endsWith("MAGNITUDE"))
+				check_list_type = "";
+		}
+		else {
+			check_list_type = "talent";
+
+			switch (talent_id) {
+				case KM_BRI:
+					skill_key = "PILOTSP";
+					break;
+				case KM_DONTSHOOT:
+					skill_key = "CHARM";
+					pool_plus = "DDD";
+					break;
+				case KM_FEARSOME: {
+					int ranks = CurrentData::instance->talents.get("FEARSOME").ranks;
+					pool_plus = QString("D").repeated(ranks);
+					break;
+				}
+				case KM_BYP:
+					skill_key = DatUtil::betterThan("COMP", "SKUL", this) > 0 ? "COMP" : "SKUL";
+					break;
+				case KM_COD:
+				case KM_TECHAPT:
+					skill_key = "COMP";
+					break;
+				case KM_CONDITIONED:
+					skill_key = DatUtil::betterThan("ATHL", "COORD", this) > 0 ? "ATHL" : "COORD";
+					break;
+				case KM_SLEIGHTMIND:
+					skill_key = "STEAL";
+					break;
+				case KM_REFLECT:
+					skill_key = "DEFR";
+					break;
+				case KM_CONF:
+					skill_key = "FDISC";
+					break;
+				case KM_DEFTRAIN:
+					skill_key = "DEFM";
+					break;
+				case KM_EXHPORT:
+					skill_key = "GUNN";
+					break;
+				case KM_GALMAP:
+					skill_key = "ASTRO";
+					break;
+				case KM_INTIM:
+					skill_key = "COERC";
+					break;
+				case KM_INTUITEVA:
+					skill_name = "FORCE";
+					skill_key = "FORCE";
+					pool_plus = QString("F").repeated(force() - forceCommitted());
+					break;
+				case KM_GRIT:
+				case KM_INDIS:
+				case KM_QUICKDR:
+				case KM_TRICK:
+				case KM_JUSTKID:
+				case KM_HERO:
+				case KM_HEROICRES:
+				case KM_FORCEALLY:
+				case KM_CRIPV:
+				case KM_DEDI:
+				case KM_DURA:
+					check_list_type = "";
+					break;
+				default:
+					break;
+			}
+		}
+
+		skill = Skill::getSkill(skill_key);
+
+		setItemName(talent.name);
+		setItemManeuvers("");
+		setItemStrain("");
+	}
+
+	if (skill_name.isEmpty() && (skill = Skill::getSkill(skill_key)))
+		skill_name = skill->name;
+
+	// This means set to the active skill!
+	if (dice_pool.isEmpty()) {
+		CharSkill char_skill;
+
+		if (CurrentData::instance->skills.contains(skill_key))
+			char_skill = CurrentData::instance->skills[skill_key];
+		else
+			char_skill.key = skill_key;
+		dice_pool = char_skill.getDicePool();
+	}
+
+	setActiveSkill(skill_name); // setItemSkill(skill ? skill->name : "");
+	setDicePool(dice_pool + pool_plus);
+	iActiveSkillKey = skill_key;
+	iActiveTalentKey = talent_key;
+
+	CurrentData::instance->clearAutoCheckItems(this, skill_key);
 	CheckList::instance.setRowCountChanged();
 	CheckList::instance.makeClean();
+	return check_list_type;
 }
 
 void Character::hideCheckList()
 {
-	CurrentData::instance->exitAutoCheckItems(this, iActiveSkillKey);
+	CurrentData::instance->exitAutoCheckItems(this, iActiveSkillKey, iModItemCommit);
 }
 
-void Character::fillCheckList()
+void Character::fillCheckList(const QString& check_list_type)
 {
-	CurrentData::instance->setupAutoCheckItems(this, iActiveSkillKey, iItemUuid);
+	CurrentData::instance->setupAutoCheckItems(this, check_list_type, iActiveSkillKey, iActiveTalentKey, iItemUuid);
 	CheckList::instance.setRowCountChanged();
 	CheckList::instance.makeClean();
 }
@@ -1062,34 +1333,14 @@ void Character::setEncText(const QString& t)
 void Character::setActiveSkill(const QString& t)
 {
 	if (iActiveSkill != t) {
-		Skill* skill;
-
 		iActiveSkill = t;
-		if ((skill = Skill::getSkillByName(t)))
-			iActiveSkillKey = skill->key;
-		else {
-			iActiveSkillKey = t;
-			if ((skill = Skill::getSkill(t)))
-				iActiveSkill = skill->name;
-		}
 		emit activeSkillChanged(iActiveSkill);
 	}
 }
 
 void Character::setDicePool(const QString& t)
 {
-	QString pool =  t;
-
-	// This means set to the active skill!
-	if (pool == "?") {
-		CharSkill char_skill;
-
-		if (CurrentData::instance->skills.contains(iActiveSkillKey))
-			char_skill = CurrentData::instance->skills[iActiveSkillKey];
-		else
-			char_skill.key = iActiveSkillKey;
-		pool = char_skill.getDicePool();
-	}
+	QString pool = t;
 
 	// ab|cd|12|xx|34 = ab1234...
 	while (DatUtil::contains(pool, "|")) {
@@ -1160,35 +1411,51 @@ void Character::setItemDamage(const QString& t)
 	}
 }
 
-void Character::setItemCritical(const QString& t)
+void Character::setItemCritLevel(const QString& t)
 {
-	if (iItemCritical != t) {
-		iItemCritical = t;
-		emit itemCriticalChanged(itemCritical());
+	if (iItemCritLevel != t) {
+		iItemCritLevel = t;
+		emit itemCritLevelChanged(itemCritLevel());
 	}
 }
 
-void Character::setItemQualities(const QString& t)
+void Character::setItemQualMag(const QString& t)
 {
-	if (iItemQualities != t) {
-		iItemQualities = t;
-		emit itemQualitiesChanged(t);
+	if (iItemQualMag != t) {
+		iItemQualMag = t;
+		emit itemQualMagChanged(t);
 	}
 }
 
-void Character::setItemAttachments(const QString& t)
+void Character::setItemPowerStr(const QString& t)
 {
-	if (iItemAttachments != t) {
-		iItemAttachments = t;
-		emit itemAttachmentsChanged(t);
+	if (iItemPowerStr != t) {
+		iItemPowerStr = t;
+		emit itemPowerStrChanged(t);
 	}
 }
 
-void Character::setItemManeuvers(const QString& t)
+void Character::setItemDuration(const QString& t)
+{
+	if (iItemDuration != t) {
+		iItemDuration = t;
+		emit itemDurationChanged(t);
+	}
+}
+
+void Character::setitemAttachDesc(const QString& t)
+{
+	if (iitemAttachDesc != t) {
+		iitemAttachDesc = t;
+		emit itemAttachDescChanged(t);
+	}
+}
+
+void Character::setItemManeuvers(const QString&)
 {
 }
 
-void Character::setItemStrain(const QString& t)
+void Character::setItemStrain(const QString&)
 {
 }
 
@@ -1196,7 +1463,7 @@ void Character::setItemCritPlus(int t)
 {
 	if (iItemCritPlus != t) {
 		iItemCritPlus = t;
-		emit itemCriticalChanged(itemCritical());
+		emit itemCritLevelChanged(itemCritLevel());
 		emit itemCritPlusChanged(t);
 	}
 }
@@ -1247,7 +1514,59 @@ int Character::setAttributeMods(const CharMods& mods)
 	return changed;
 }
 
-void Character::setChangeDicePool(const QString& dice)
+int Character::getItemRange(int& range1, int&range2)
+{
+	MethodID talent_id = KeyMethod::instance.getID(iActiveTalentKey);
+	range1 = 0, range2 = -1;
+
+	switch (talent_id) {
+		case KM_BINDBASIC:
+		case KM_MISDIRBASIC:
+		case KM_MISDIRCONTROL1:
+		case KM_MOVEBASIC:
+		case KM_MOVECONTROL1:
+		case KM_MOVECONTROL2:
+		case KM_MOVECONTROL3:
+			range1 = 1;
+			break;
+		case KM_INFLUENCEBASIC:
+		case KM_INFLUENCECONTROL1:
+		case KM_SENSECONTROL2:
+			range1 = 0;
+			break;
+		case KM_SENSEBASIC:
+			range1 = 1;
+			range2 = 0;
+			break;
+		default:
+			switch (iItemRange[0].unicode()) {
+				case 'E':
+					if (iItemRange[1].unicode() == 'x')
+						range1 = 4; // Extreme
+					else
+						range1 = 0; // Engaged
+					break;
+				case 'S':
+					range1 = 1;
+					break;
+				case 'M':
+					range1 = 2;
+					break;
+				case 'L':
+					range1 = 3;
+					break;
+			}
+			break;
+	}
+
+	int range = range1;
+	if (range2 >= 0 && range2 < range)
+		range = range2;
+
+	return range;
+}
+
+void Character::setChangeDicePool(const QString& dice, bool list_setup, CheckListItem* item)
 {
 	if (iChangeDicePool != dice) {
 		iChangeDicePool = dice;
@@ -1255,7 +1574,6 @@ void Character::setChangeDicePool(const QString& dice)
 		iModItemDamage = 0;
 		iModItemPierce = 0;
 		iModItemCrit = 0;
-		iModItemRange = 0;
 
 		int i=0;
 		while (i<dice.length()) {
@@ -1283,10 +1601,6 @@ void Character::setChangeDicePool(const QString& dice)
 					iModItemCrit += val;
 					i++;
 				}
-				else if (i<dice.length() && dice[i].unicode() == 'R') {
-					iModItemRange += val;
-					i++;
-				}
 				else if (i<dice.length() && dice[i].unicode() == 'M')
 					i++;
 				else
@@ -1303,32 +1617,49 @@ void Character::setChangeDicePool(const QString& dice)
 				}
 				if (i<dice.length())
 					i++;
-				if (str == "Breach +1")
+				if (str == ESC_BREACH " +1")
 					iModItemPierce += 10;
-				if (str.startsWith("Damage ")) {
-					int v = DatUtil::right(str, "Damage ").toInt();
+				if (str.startsWith(ESC_DAMAGE " ")) {
+					int v = DatUtil::right(str, ESC_DAMAGE " ").toInt();
 					iModItemDamage += v;
-				}
-				else if (str.startsWith("Range ")) {
-					int v = DatUtil::right(str, "Range ").toInt();
-					iModItemRange += v;
 				}
 			}
 			else {
 				iModDicePool.append(dice[i]);
 				i++;
 			}
-
 		}
-
-		emit dicePoolChanged(dicePool());
-		emit negativePoolChanged(negativePool());
-		emit itemCriticalChanged(itemCritical());
-		emit itemDamageChanged(itemDamage());
-		emit itemRangeChanged(itemRange());
 	}
+
+	if (!list_setup && item) {
+		if (item->checked) {
+			iModItemCommit += item->commitCount;
+			iModItemRange += item->plusRange;
+			iModItemMagnitude += item->plusMagnitude;
+			iModItemStrength += item->plusStrength;
+			iModItemDuration += item->plusDuration;
+		}
+		else {
+			iModItemCommit -= item->commitCount;
+			iModItemRange -= item->plusRange;
+			iModItemMagnitude -= item->plusMagnitude;
+			iModItemStrength -= item->plusStrength;
+			iModItemDuration -= item->plusDuration;
+		}
+	}
+
+	emit dicePoolChanged(dicePool());
+	emit negativePoolChanged(negativePool());
+
 	emit itemManeuversChanged(itemManeuvers());
 	emit itemStrainChanged(itemStrain());
+
+	emit itemCritLevelChanged(itemCritLevel());
+	emit itemDamageChanged(itemDamage());
+	emit itemRangeChanged(itemRange());
+	emit itemQualMagChanged(itemQualMag());
+	emit itemPowerStrChanged(itemPowerStr());
+	emit itemDurationChanged(itemDuration());
 }
 
 void Character::inventoryChanged()
@@ -1358,6 +1689,8 @@ void Character::inventoryChanged()
 	if (current_data->gear.equipped(ShopGear::grenBandKey))
 		grenade_bandolier = true;
 
+	int mdef_ranks = CurrentData::instance->talents.ranks("DEFTRAIN");
+
 	mods.clear();
 	for (int i = 0; i < current_data->weapons.rowCount(); i++) {
 		Item item = current_data->weapons.itemAt(i);
@@ -1367,8 +1700,14 @@ void Character::inventoryChanged()
 			enc += val * quantity;
 			cumb += item.cumbersome(burly) * quantity;
 
-			if (item.equipped())
+			if (item.equipped()) {
 				item.characteristicDelta(mods);
+				if (mdef_ranks > 0) {
+					const ShopItem shop = item.shopItem();
+					if (item.itemkey != "UNARMED" && shop.isMeleeWeapon())
+						mods.inc(V_DMELEE, mdef_ranks);
+				}
+			}
 
 			if (val > 0) {
 				if (grenade_bandolier && grenade_count<5) {
@@ -1600,9 +1939,9 @@ void Character::reload()
 	emit itemRangeChanged(itemRange());
 	emit itemSkillChanged(itemSkill());
 	emit itemDamageChanged(itemDamage());
-	emit itemCriticalChanged(itemCritical());
-	emit itemQualitiesChanged(itemQualities());
-	emit itemAttachmentsChanged(itemAttachments());
+	emit itemCritLevelChanged(itemCritLevel());
+	emit itemQualMagChanged(itemQualMag());
+	emit itemAttachDescChanged(itemAttachDesc());
 	emit itemManeuversChanged(itemManeuvers());
 	emit itemStrainChanged(itemStrain());
 	*/

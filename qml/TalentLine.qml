@@ -1,10 +1,11 @@
 import QtQuick 2.0
 import "../js/drawing.js" as Draw
 import "../js/constants.js" as Constant
+import "../js/utilities.js" as Util
 
 Rectangle {
 	id: talentLine
-	width: parent.width
+	width: parent === null ? 500 : parent.width // To avoid timing error: TypeError: Cannot read property of null
 	height: textHeight + topMargin + bottomMargin + 1
 
 	property var colWidths: adjustedlColWidths
@@ -119,6 +120,15 @@ Rectangle {
 			width: talentLine.width
 			height: 1
 			color: Constant.LIST_UNDERLINE_GRAY
+		}
+	}
+
+	MouseArea {
+		anchors.fill: parent
+		onClicked: {
+			checklist.checkListType = characterData.showCheckList("", "", talentkey, "");
+			if (checklist.checkListType !== "")
+				controller.state = "checkout";
 		}
 	}
 }

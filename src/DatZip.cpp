@@ -118,11 +118,14 @@ QString DatZip::uncompress(const QString& in_file, const QString& to_dir, QStrin
 
 	*err_msg = 0;
 
-	if (!(uf = unzOpen64(in_file.toUtf8().constData())))
-		return "Cannot open file: " + in_file;
-
-	result_dir = unpackArchive(uf, to_dir.toUtf8().constData(), err_msg);
-	unzClose(uf);
+	if ((uf = unzOpen64(in_file.toUtf8().constData()))) {
+		result_dir = unpackArchive(uf, to_dir.toUtf8().constData(), err_msg);
+		unzClose(uf);
+	}
+	else {
+		yv_strcpy(ERR_MSG_SIZE, err_msg, "Cannot open file: ");
+		yv_strcat(ERR_MSG_SIZE, err_msg, in_file.toUtf8().constData());
+	}
 
 	err = QString(err_msg);
 	return result_dir;

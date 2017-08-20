@@ -28,7 +28,7 @@
 #include <QObject>
 #include <QMap>
 
-#include "DatXMLReader.h"
+#include "DatXmlReader.h"
 
 class ItemDescriptor {
 public:
@@ -47,7 +47,7 @@ public:
 	void clear(const QString& k = QString());
 };
 
-class ItemDescriptors : public QObject, public DatXMLReader {
+class ItemDescriptors : public QObject, public DatXmlReader {
 	Q_OBJECT
 
 public:

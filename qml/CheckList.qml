@@ -47,6 +47,14 @@ Rectangle {
 						visible: checkListType === "weapon"
 					}
 
+					ForceCheck {
+						visible: checkListType === "force"
+					}
+
+					TalentCheck {
+						visible: checkListType === "talent"
+					}
+
 					Vspacer { size: panels.lineSpace }
 
 				}
@@ -174,7 +182,7 @@ Rectangle {
 
 	onXChanged: {
 		if (x == panels.x + (panels.width - checklist.width)/2) {
-			characterData.fillCheckList();
+			characterData.fillCheckList(checkListType);
 		}
 		else if (x > panels.x + (panels.width - checklist.width)/2 + checklist.width/2) {
 			if (checkListItemDialog.visible) {

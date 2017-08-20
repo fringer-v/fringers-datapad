@@ -93,9 +93,7 @@ Rectangle {
 					characterData.itemUuid = "";
 					characterData.itemItemKey = "";
 					characterData.itemName = "";
-					characterData.activeSkill = skill;
-					characterData.dicePool = dice;
-					characterData.showCheckList();
+					characterData.showCheckList(skill, key, "", dice);
 					controller.state = "checkout";
 				}
 			}

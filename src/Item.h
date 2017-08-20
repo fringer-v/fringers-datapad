@@ -57,6 +57,7 @@
 #define IS_EQUIPPED	3
 
 class Character;
+class ShopItem;
 
 class Quality {
 public:
@@ -226,12 +227,14 @@ public:
 	QString		notes;
 	QString		attachments;
 	bool		shown;
+	bool		isCustom;
 	DieModList	dieModList;
 	QStringList	attachList;
 	int			originalQuantity;
 	int			originalStored;
 	int			originalState;
 
+	void clear();
 	QString name() const;
 	bool unmodified();
 	bool restricted();
@@ -260,33 +263,19 @@ public:
 	int stored();
 	bool isGrenade();
 	bool canBeWorn();
+	QString range();
 
 	void addMod(Mod mod);
 	void addMod(const ModList& mod_list);
 	bool hasMod(const QString& qkey);
 	Mod getMod(const QString& key);
 
-	bool hasQuality(const QString& key);
+	bool hasQuality(const QString& key, bool including_shop = true);
 	Quality getQuality(const QString& key);
 
 	int encumbrance();
 
-	void clear() {
-		uuid.clear();
-		itemkey.clear();
-		rename.clear();
-		notes.clear();
-		attachments.clear();
-		shown = true;
-		dieModList.clear();
-		attachList.clear();
-
-		originalQuantity = 0;
-		originalStored = 0;
-		originalState = NOT_CARRIED;
-
-		iModList.clear();
-	}
+	const ShopItem shopItem() const;
 
 private:
 	void storageData(int& quantity, int& stored, int& state);

@@ -359,7 +359,8 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/CharWeapon/Rename/") || path.endsWith("/CharArmor/Rename/") || path.endsWith("/CharGear/Rename/"))
 		iItem.rename = value;
 	else if (path.endsWith("/CharWeapon/Shown/"))
-		iItem.shown = isTrue(value);
+		iItem.shown = isTrue(value);	
+
 	else if (path.endsWith("/PurchasedAttachments/CharItemAttachment/AttachKey/")) {
 		QString attachment_name = ItemAttachments::instance()->attachment(value).name;
 
@@ -430,6 +431,80 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 			iCurrentData->gear.aquireItem(iItem, true);		// gear
 	}
 
+	// Custom Weapons --------------------------
+	else if (path.endsWith("/CharWeapon/CustomWeap/#open"))
+		iShopItem.clear(iItem.uuid);
+	else if (path.endsWith("/CustomWeap/Name/"))
+		iShopItem.name = value;
+	else if (path.endsWith("/CustomWeap/SkillKey/")) {
+		iShopItem.skillKey = value;
+		if (strcmp(value, "RANGLT") == 0 || strcmp(value, "RANGHV") == 0 || strcmp(value, "GUNN") == 0)
+			iShopItem.gearType |= GEAR_TYPE_RANGED;
+	}
+	else if (path.endsWith("/CustomWeap/Damage/")) {
+		if (toInt(value) > 0)
+			iShopItem.damage = toInt(value);
+	}
+	else if (path.endsWith("/CustomWeap/DamageAdd/")) {
+		if (toInt(value) > 0)
+			iShopItem.addDamage = toInt(value);
+	}
+	else if (path.endsWith("/CustomWeap/Crit/"))
+		iShopItem.critical = toInt(value);
+	else if (path.endsWith("/CustomWeap/RangeValue/")) {
+		if (value[0] == 'w' && value[1] == 'r')
+			value += 2;
+		iShopItem.range = value;
+	}
+	else if (path.endsWith("/CustomWeap/Range/")) {
+		if (*value && iShopItem.range.isEmpty())
+			iShopItem.range = value;
+	}
+	else if (path.endsWith("/CustomWeap/Categories/Category/")) {
+		if (strcmp(value, "Ranged") == 0)
+			iShopItem.gearType |= GEAR_TYPE_RANGED;
+	}
+	else if (path.endsWith("/CustomWeap/Encumbrance/"))
+		iShopItem.encumbrance = toInt(value);
+	else if (path.endsWith("/CustomWeap/Price/"))
+		iShopItem.price = toInt(value);
+	else if (path.endsWith("/CustomWeap/Rarity/"))
+		iShopItem.rarity = toInt(value);
+	else if (path.endsWith("/CustomWeap/Qualities/Quality/Key/"))
+		iQuality.clear(value);
+	else if (path.endsWith("/CustomWeap/Qualities/Quality/Count/"))
+		iQuality.count = toInt(value);
+	else if (path.endsWith("/CustomWeap/Qualities/Quality/#end"))
+		iShopItem.qualityList[iQuality.key] = iQuality;
+	else if (path.endsWith("/CustomWeap/Type/"))
+		iShopItem.type = value;
+	else if (path.endsWith("/CustomWeap/BaseMods/Mod/#open"))
+		iMod.clear();
+	else if (path.endsWith("/CustomWeap/BaseMods/Mod/Key/"))
+		iMod.clear(value);
+	else if (path.endsWith("/CustomWeap/BaseMods/Mod/Count/"))
+		iMod.count = toInt(value);
+	else if (path.endsWith("/CustomWeap/BaseMods/Mod/MiscDesc/"))
+		iMod.miscDesc = QString::fromUtf8(value).trimmed(); // value.trimmed();
+	else if (path.endsWith("/CustomWeap/BaseMods/Mod/#end")) {
+		if (!iMod.key.isEmpty()) {
+			iShopItem.modList[iMod.key] = iMod;
+			iShopItem.qualityList[iMod.key].key = iMod.key;
+			iShopItem.qualityList[iMod.key].count = iMod.count * iMod.number;
+		}
+		else if (!iMod.miscDesc.isEmpty()) {
+			// Add the MiscDesc to the description
+			if (!iMod.miscDesc.endsWith(".") &&
+				!iMod.miscDesc.endsWith(";") &&
+				!iMod.miscDesc.endsWith(","))
+				iMod.miscDesc += ".";
+			DatUtil::appendToList(iShopItem.description, iMod.miscDesc, " ");
+		}
+	}
+	else if (path.endsWith("/CharWeapon/CustomWeap/#end")) {
+		iItem.isCustom = true;
+		iCurrentData->customItems[iShopItem.key] = iShopItem;
+	}
 	else if (path.endsWith("/AdvAbility/#open"))
 		iTalent.clear(QString());
 	else if (path.endsWith("/AdvAbility/Name/"))
@@ -455,10 +530,11 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	}
 
 	else if (path.endsWith("/AdvItem/#open")) {
-		iShopItem.clear(QString());
-		iShopItem.type = "GEAR";
 		iItem.clear();
 		iItem.originalQuantity = 1;
+		iItem.isCustom = true;
+		iShopItem.clear(QString());
+		iShopItem.type = "GEAR";
 	}
 	else if (path.endsWith("/AdvItem/Name/"))
 		iShopItem.name = value;
@@ -472,10 +548,10 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 			iShopItem.description = iShopItem.name;
 			iShopItem.name = word_1 + (!word_2.isEmpty() ? " " + word_2 : "");
 		}
-		iItem.itemkey = "KEY_"+iShopItem.name.toUpper();
-		iShopItem.key = iItem.itemkey;
-		Shop::instance.addItem(iShopItem);
+		iItem.uuid = "KEY_"+iShopItem.name.toUpper();
+		iShopItem.key = iItem.uuid;
 		iCurrentData->gear.aquireItem(iItem, true);
+		iCurrentData->customItems[iShopItem.key] = iShopItem;
 	}
 
 	return true;

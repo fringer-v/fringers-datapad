@@ -28,7 +28,7 @@
 #include <QObject>
 
 #include "Character.h"
-#include "DatXMLReader.h"
+#include "DatXmlReader.h"
 #include "Item.h"
 #include "DataList.h"
 
@@ -44,7 +44,7 @@ public:
 	//virtual QVariant getValue(int row, const char* col);
 };
 
-class ShopArmor : public QObject, public DatXMLReader {
+class ShopArmor : public QObject, public DatXmlReader {
 	Q_OBJECT
 
 public:

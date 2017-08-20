@@ -28,6 +28,7 @@
 #include "DatXML.h"
 #include "Item.h"
 #include "DataList.h"
+#include "KeyMethods.h"
 
 #define NO_SKILL_TYPE	-1
 #define GENERAL			0
@@ -44,11 +45,14 @@
 #define DEFENSE		"DE"
 
 struct Skill {
+	MethodID method_id;
 	const char* key;
 	const char* name;
 	const char* shortName;
 	const char* characteristic;
 	int type;
+
+	QString underlyingSkill();
 
 	static Skill* getSkill(const QString& key);
 	static Skill* getSkillByName(const QString& skill_name);
@@ -60,6 +64,8 @@ public:
 
 	virtual int rowCount();
 	virtual QVariant getValue(int row, int col);
+
+	static void init();
 
 private:
 	QList<Skill> iSkillList;

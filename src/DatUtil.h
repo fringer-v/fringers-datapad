@@ -77,6 +77,8 @@ struct Injury {
 	const char* dice;
 };
 
+class Character;
+
 class DatUtil
 {
 public:
@@ -131,6 +133,7 @@ public:
 	static Injury* getInjury(int perc, int d10);
 
 	static QString normalizeDice(const QString& dice);
+	static int betterThan(const QString& skill1, const QString& skill2, Character* charac);
 	static QString base64(const QString& text);
 	static void yield();
 	static QString pageSummary(QString page_desc);

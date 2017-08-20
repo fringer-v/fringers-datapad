@@ -300,7 +300,7 @@ void ItemList::aquireItem(Item& item, bool loading)
 			return;
 		}
 
-		// For example UNARMED!
+		// For example UNARMED, and custom items?!
 		item.itemkey = item.uuid;
 	}
 

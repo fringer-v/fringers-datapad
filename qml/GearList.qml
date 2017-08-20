@@ -14,6 +14,7 @@ BaseList {
 
 	Component {
 		id: gearLine
+
 		GearLine {
 		}
 	}

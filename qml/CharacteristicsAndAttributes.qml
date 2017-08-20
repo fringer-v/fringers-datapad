@@ -43,9 +43,7 @@ Rectangle {
 						characterData.itemUuid = "";
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
-						characterData.activeSkill = charName;
-						characterData.dicePool = Util.repeat("A", charValue);
-						characterData.showCheckList();
+						characterData.showCheckList(charName, "BR", "", Util.repeat("A", charValue));
 						controller.state = "checkout";
 					}
 				}
@@ -62,8 +60,7 @@ Rectangle {
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
 						characterData.activeSkill = charName;
-						characterData.dicePool = Util.repeat("A", charValue);
-						characterData.showCheckList();
+						characterData.showCheckList(charName, "AG", "", Util.repeat("A", charValue));
 						controller.state = "checkout";
 					}
 				}
@@ -79,9 +76,7 @@ Rectangle {
 						characterData.itemUuid = "";
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
-						characterData.activeSkill = charName;
-						characterData.dicePool = Util.repeat("A", charValue);
-						characterData.showCheckList();
+						characterData.showCheckList(charName, "INT", "", Util.repeat("A", charValue));
 						controller.state = "checkout";
 					}
 				}
@@ -97,9 +92,7 @@ Rectangle {
 						characterData.itemUuid = "";
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
-						characterData.activeSkill = charName;
-						characterData.dicePool = Util.repeat("A", charValue);
-						characterData.showCheckList();
+						characterData.showCheckList(charName, "CUN", "", Util.repeat("A", charValue));
 						controller.state = "checkout";
 					}
 				}
@@ -115,9 +108,7 @@ Rectangle {
 						characterData.itemUuid = "";
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
-						characterData.activeSkill = charName;
-						characterData.dicePool = Util.repeat("A", charValue);
-						characterData.showCheckList();
+						characterData.showCheckList(charName, "WIL", "", Util.repeat("A", charValue));
 						controller.state = "checkout";
 					}
 				}
@@ -133,9 +124,7 @@ Rectangle {
 						characterData.itemUuid = "";
 						characterData.itemItemKey = "";
 						characterData.itemName = "";
-						characterData.activeSkill = charName;
-						characterData.dicePool = Util.repeat("A", charValue);
-						characterData.showCheckList();
+						characterData.showCheckList(charName, "PR", "", Util.repeat("A", charValue));
 						controller.state = "checkout";
 					}
 				}
@@ -208,9 +197,7 @@ Rectangle {
 								characterData.itemItemKey = "";
 								characterData.itemUuid = "";
 								characterData.itemName = "";
-								characterData.activeSkill = "DEFR";
-								characterData.dicePool = "?";
-								characterData.showCheckList();
+								characterData.showCheckList("", "DEFR", "", "");
 								controller.state = "checkout";
 							}
 						}
@@ -225,9 +212,7 @@ Rectangle {
 								characterData.itemUuid = "";
 								characterData.itemItemKey = "";
 								characterData.itemName = "";
-								characterData.activeSkill = "DEFM";
-								characterData.dicePool = "?";
-								characterData.showCheckList();
+								characterData.showCheckList("", "DEFM", "", "");
 								controller.state = "checkout";
 							}
 						}
@@ -283,9 +268,7 @@ Rectangle {
 								characterData.itemUuid = "";
 								characterData.itemItemKey = "";
 								characterData.itemName = "";
-								characterData.activeSkill = "FORCE";
-								characterData.dicePool = Util.repeat("F", characterData.force);
-								characterData.showCheckList();
+								characterData.showCheckList("FORCE", "FORCE", "", Util.repeat("F", characterData.force));
 								controller.state = "checkout";
 							}
 						}

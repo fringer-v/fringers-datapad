@@ -33,63 +33,77 @@
 // Skill -------------------------
 
 Skill skills[] = {
-	{ "ASTRO", "Astrogation", "Astrogation", INTELLECT, GENERAL },
-	{ "ATHL", "Athletics", "Athletics", BRAWN, GENERAL },
-	{ "BRAWL", "Brawl", "Brawl", BRAWN, COMBAT },
-	{ "CHARM", "Charm", "Charm", PRESENCE, GENERAL },
-	{ "COERC", "Coercion", "Coercion", WILLPOWER, GENERAL },
-	{ "COMP", "Computers", "Computers", INTELLECT, GENERAL },
-	{ "COOL", "Cool", "Cool", PRESENCE, GENERAL },
-	{ "COORD", "Coordination", "Coordination", AGILITY, GENERAL },
-	{ "CORE", "Core Worlds", "Core Worlds", INTELLECT, KNOWLEDGE },
-	{ "DECEP", "Deception", "Deception", CUNNING, GENERAL },
-	{ "DISC", "Discipline", "Discipline", WILLPOWER, GENERAL },
-	{ "EDU", "Education", "Education", INTELLECT, KNOWLEDGE },
-	{ "GUNN", "Gunnery", "Gunnery", AGILITY, COMBAT },
-	{ "LEAD", "Leadership", "Leadership", PRESENCE, GENERAL },
-	{ "LTSABER", "Lightsaber", "Saber", BRAWN, COMBAT },
-	{ "LORE", "Lore", "Lore", INTELLECT, KNOWLEDGE },
-	{ "MECH", "Mechanics", "Mechanics", INTELLECT, GENERAL },
-	{ "MED", "Medicine", "Medicine", INTELLECT, GENERAL },
-	{ "MELEE", "Melee", "Melee", BRAWN, COMBAT },
-	{ "NEG", "Negotiation", "Negotiation", PRESENCE, GENERAL },
-	{ "OUT", "Outer Rim", "Outer Rim", INTELLECT, KNOWLEDGE },
-	{ "PERC", "Perception", "Perception", CUNNING, GENERAL },
-	{ "PILOTPL", "Piloting - Planetary", "Planetary", AGILITY, GENERAL },
-	{ "PILOTSP", "Piloting - Space", "Space", AGILITY, GENERAL },
-	{ "RANGHVY", "Ranged - Heavy", "Heavy", AGILITY, COMBAT },
-	{ "RANGLT", "Ranged - Light", "Light", AGILITY, COMBAT },
-	{ "RESIL", "Resilience", "Resilience", BRAWN, GENERAL },
-	{ "SKUL", "Skulduggery", "Skulduggery", CUNNING, GENERAL },
-	{ "STEAL", "Stealth", "Stealth", AGILITY, GENERAL },
-	{ "SW", "Streetwise", "Streetwise", CUNNING, GENERAL },
-	{ "SURV", "Survival", "Survival", CUNNING, GENERAL },
-	{ "UND", "Underworld", "Underworld", INTELLECT, KNOWLEDGE },
-	{ "VIGIL", "Vigilance", "Vigilance", WILLPOWER, GENERAL },
-	{ "XEN", "Xenology", "Xenology", INTELLECT, KNOWLEDGE },
-	{ "WARF", "Warfare", "Warfare", INTELLECT, KNOWLEDGE },
-
-	{ "ICOOL", "Initiative - Cool", "Init Cool", PRESENCE, SPECIAL },
-	{ "IVIG", "Initiative - Vigilance", "Init Vig", WILLPOWER, SPECIAL },
-	{ "DEFM", "Defense - Melee", "Def Melee", "", SPECIAL },
-	{ "DEFR", "Defense - Ranged", "Def Ranged", "", SPECIAL },
-	{ "REC", "Recovery - Cool", "Recovery", PRESENCE, SPECIAL },
-	{ "FDISC", "Fear - Discipline", "Fear Disc", WILLPOWER, SPECIAL },
-	{ "FCOOL", "Fear - Cool", "Fear Cool", PRESENCE, SPECIAL },
+	{ KM_ASTRO, "ASTRO", "Astrogation", "Astrogation", INTELLECT, GENERAL },
+	{ KM_ATHL, "ATHL", "Athletics", "Athletics", BRAWN, GENERAL },
+	{ KM_BRAWL, "BRAWL", "Brawl", "Brawl", BRAWN, COMBAT },
+	{ KM_CHARM, "CHARM", "Charm", "Charm", PRESENCE, GENERAL },
+	{ KM_COERC, "COERC", "Coercion", "Coercion", WILLPOWER, GENERAL },
+	{ KM_COMP, "COMP", "Computers", "Computers", INTELLECT, GENERAL },
+	{ KM_COOL, "COOL", "Cool", "Cool", PRESENCE, GENERAL },
+	{ KM_COORD, "COORD", "Coordination", "Coordination", AGILITY, GENERAL },
+	{ KM_CORE, "CORE", "Core Worlds", "Core Worlds", INTELLECT, KNOWLEDGE },
+	{ KM_DECEP, "DECEP", "Deception", "Deception", CUNNING, GENERAL },
+	{ KM_DISC, "DISC", "Discipline", "Discipline", WILLPOWER, GENERAL },
+	{ KM_EDU, "EDU", "Education", "Education", INTELLECT, KNOWLEDGE },
+	{ KM_GUNN, "GUNN", "Gunnery", "Gunnery", AGILITY, COMBAT },
+	{ KM_LEAD, "LEAD", "Leadership", "Leadership", PRESENCE, GENERAL },
+	{ KM_LTSABER, "LTSABER", "Lightsaber", "Saber", BRAWN, COMBAT },
+	{ KM_LORE, "LORE", "Lore", "Lore", INTELLECT, KNOWLEDGE },
+	{ KM_MECH, "MECH", "Mechanics", "Mechanics", INTELLECT, GENERAL },
+	{ KM_MED, "MED", "Medicine", "Medicine", INTELLECT, GENERAL },
+	{ KM_MELEE, "MELEE", "Melee", "Melee", BRAWN, COMBAT },
+	{ KM_NEG, "NEG", "Negotiation", "Negotiation", PRESENCE, GENERAL },
+	{ KM_OUT, "OUT", "Outer Rim", "Outer Rim", INTELLECT, KNOWLEDGE },
+	{ KM_PERC, "PERC", "Perception", "Perception", CUNNING, GENERAL },
+	{ KM_PILOTPL, "PILOTPL", "Piloting - Planetary", "Planetary", AGILITY, GENERAL },
+	{ KM_PILOTSP, "PILOTSP", "Piloting - Space", "Space", AGILITY, GENERAL },
+	{ KM_RANGHVY, "RANGHVY", "Ranged - Heavy", "Heavy", AGILITY, COMBAT },
+	{ KM_RANGLT, "RANGLT", "Ranged - Light", "Light", AGILITY, COMBAT },
+	{ KM_RESIL, "RESIL", "Resilience", "Resilience", BRAWN, GENERAL },
+	{ KM_SKUL, "SKUL", "Skulduggery", "Skulduggery", CUNNING, GENERAL },
+	{ KM_STEAL, "STEAL", "Stealth", "Stealth", AGILITY, GENERAL },
+	{ KM_SW, "SW", "Streetwise", "Streetwise", CUNNING, GENERAL },
+	{ KM_SURV, "SURV", "Survival", "Survival", CUNNING, GENERAL },
+	{ KM_UND, "UND", "Underworld", "Underworld", INTELLECT, KNOWLEDGE },
+	{ KM_VIGIL, "VIGIL", "Vigilance", "Vigilance", WILLPOWER, GENERAL },
+	{ KM_XEN, "XEN", "Xenology", "Xenology", INTELLECT, KNOWLEDGE },
+	{ KM_WARF, "WARF", "Warfare", "Warfare", INTELLECT, KNOWLEDGE },
+	{ KM_ICOOL, "ICOOL", "Initiative - Cool", "Init Cool", PRESENCE, SPECIAL },
+	{ KM_IVIG, "IVIG", "Initiative - Vigilance", "Init Vig", WILLPOWER, SPECIAL },
+	{ KM_DEFM, "DEFM", "Defense - Melee", "Def Melee", "", SPECIAL },
+	{ KM_DEFR, "DEFR", "Defense - Ranged", "Def Ranged", "", SPECIAL },
+	{ KM_REC, "REC", "Recovery - Cool", "Recovery", PRESENCE, SPECIAL },
+	{ KM_FDISC, "FDISC", "Fear - Discipline", "Fear Disc", WILLPOWER, SPECIAL },
+	{ KM_FCOOL, "FCOOL", "Fear - Cool", "Fear Cool", PRESENCE, SPECIAL },
 	// Track commited force dice, show force pool when click on force rating, subtract committed force dice from other features!
 
-	{ NULL, NULL, NULL, 0, 0 }
+	{ KM_UNKNOWN, NULL, NULL, NULL, 0, 0 }
 };
+
+QString Skill::underlyingSkill()
+{
+	switch (method_id) {
+		case KM_ICOOL:
+			return "COOL";
+		case KM_IVIG:
+			return "VIGIL";
+		case KM_REC:
+			return "COOL";
+		case KM_FDISC:
+			return "DISC";
+		case KM_FCOOL:
+			return "COOL";
+		default:
+			break;
+	}
+	return key;
+}
 
 Skill* Skill::getSkill(const QString& key)
 {
-	const char* ckey = key.toUtf8().constData();
-
-	for (int i=0; skills[i].key; i++) {
-		if (strcmp(skills[i].key, ckey) == 0) {
-			return &skills[i];
-		}
-	}
+	MethodID method_id = KeyMethod::instance.getID(key);
+	if (KeyMethod::isSkillID(method_id))
+		return &skills[(int) method_id];
 	return NULL;
 }
 
@@ -122,8 +136,9 @@ Skills::Skills(int type) :
 	AbstractDataList(QStringList() << "key" << "skill" << "career" << "rank" << "dice")
 {
 	for (int i=0; skills[i].key; i++) {
-		if (skills[i].type == type)
+		if (skills[i].type == type) {
 			iSkillList.append(skills[i]);
+		}
 	}
 }
 
@@ -137,32 +152,11 @@ QVariant Skills::getValue(int row, int col)
 	Skill		skill = iSkillList.at(row);
 	CharSkill	char_skill;
 	QString		ch;
-	QString		key;
 
-	ch = skill.characteristic;
-
-	if (strcmp(skill.key, "ICOOL") == 0)
-		key = "COOL";
-	else if (strcmp(skill.key, "IVIG") == 0)
-		key = "VIGIL";
-	else if (strcmp(skill.key, "DEFM") == 0)
-		char_skill.key = "DEFM";
-	else if (strcmp(skill.key, "DEFR") == 0)
-		char_skill.key = "DEFR";
-	else if (strcmp(skill.key, "REC") == 0)
-		key = "COOL";
-	else if (strcmp(skill.key, "FDISC") == 0)
-		key = "DISC";
-	else if (strcmp(skill.key, "FCOOL") == 0)
-		key = "COOL";
-	else {
-		key = skill.key;
-		if (strcmp(skill.key, "LTSABER") == 0)
-			ch = CurrentData::instance->talents.getLightSaberChar();
-	}
-
-	if (CurrentData::instance->skills.contains(key))
-		char_skill = CurrentData::instance->skills[key];
+	if (CurrentData::instance->skills.contains(skill.underlyingSkill()))
+		char_skill = CurrentData::instance->skills[skill.underlyingSkill()];
+	else
+		char_skill.key = skill.key;
 
 	switch (col) {
 		case 0:
@@ -176,7 +170,14 @@ QVariant Skills::getValue(int row, int col)
 		case 3:
 			return char_skill.ranks;
 		case 4:
-			return char_skill.getDicePool(&skill, ch);
+			return char_skill.getDicePool(skill.method_id);
 	}
 	return QVariant();
+}
+
+void Skills::init()
+{
+	for (int i=0; skills[i].key; i++) {
+		KeyMethod::instance.append(skills[i].key, skills[i].method_id);
+	}
 }

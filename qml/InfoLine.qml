@@ -60,14 +60,30 @@ Rectangle {
 				Draw.dice(ctx, infoLeftMargin+infoTextIndent, parent.height - diceHeight - 3,
 					/*parent.width-infoLeftMargin-infoTextIndent*/0, diceHeight, spacing, infoText);
 			else {
-				Draw.textBox(ctx, infoText, infoLeftMargin+infoTextIndent, 0, parent.width-infoLeftMargin-infoTextIndent,
-					parent.height, infoTextFont, infoColor, infoTextMargin, "left", "bottom");
+				if (infoType.indexOf("flow-text") >= 0) {
+					//var hMargin=0;
+					var vMargin=0;
+					var lineCount=1;
+					var font="Comic Sans MS";
+					var pixelSize=13;
+					var lineHeight=pixelSize+4;
+					var bold=false;
+					var textColor="black";
+					var shiftText=0;
+					var clip=false;
+					var y = parent.height - lineHeight / 2 - 1;
+					Draw.flowText(ctx, infoText, infoLeftMargin+infoTextIndent, y, parent.width, parent.height-vMargin*2,
+						lineHeight, font, pixelSize, bold, textColor, shiftText, clip);
+				}
+				else {
+					Draw.textBox(ctx, infoText, infoLeftMargin+infoTextIndent, 0, parent.width-infoLeftMargin-infoTextIndent,
+						parent.height, infoTextFont, infoColor, infoTextMargin, "left", "bottom");
+				}
 				if (infoComment !== "") {
 					Draw.textBox(ctx, infoComment, infoLeftMargin+infoTextIndent, 0, parent.width-infoLeftMargin-infoTextIndent,
 						parent.height, infoTextFont, "darkgrey", infoTextMargin, "right", "bottom");
 				}
 			}
-
 			ctx.restore();
 		}
 	}

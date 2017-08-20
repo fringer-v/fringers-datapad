@@ -67,16 +67,14 @@ QVariant Gear::getValue(int row, int col)
 			return item.quantity();
 		case 4: // stored
 			return item.stored();
-		case 5: { // encumbrance
-			ShopItem shop = Shop::instance.getItem(item.itemkey);
-			return shop.encumbrance;
-		}
+		case 5: // encumbrance
+			return item.shopItem().encumbrance;
 		case 6: // carry_state
 			return item.state();
 		case 7: { // special
-			ShopItem	shop = Shop::instance.getItem(item.itemkey);
-			QString		special;
-			QString		features;
+			const ShopItem shop = item.shopItem();
+			QString special;
+			QString features;
 
 			features = item.features();
 			if (!features.isEmpty())
@@ -87,7 +85,6 @@ QVariant Gear::getValue(int row, int col)
 				DatUtil::appendToList(special, QString("[B]Notes:[b] %1").arg(item.notes), " ");
 
 			DatUtil::addDescription(special, shop.description, shop.books);
-
 			return special;
 		}
 		case 8: // notes

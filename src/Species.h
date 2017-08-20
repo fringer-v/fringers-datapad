@@ -28,12 +28,12 @@
 #include <QObject>
 #include <QMap>
 
-#include "DatXMLReader.h"
+#include "DatXmlReader.h"
 #include "Character.h"
 
 class AllTalents;
 
-class SpeciesXML : public DatXMLReader {
+class SpeciesXML : public DatXmlReader {
 public:
 	SpeciesXML(CurrentData* current_data);
 

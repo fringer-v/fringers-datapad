@@ -224,6 +224,7 @@ QString Syncer::downloadFile(const QString& file_path, const QString& prefix, ui
 {
 	QString args;
 	QString dest_obj;
+	bool added = false;
 
 	QString file_name = DatUtil::lastNameOfPath(file_path);
 	args = QString("download=%1&user=%2&time=%3&tver=%4")
@@ -236,39 +237,55 @@ QString Syncer::downloadFile(const QString& file_path, const QString& prefix, ui
 		return "Failed to download file: "+file_name;
 	}
 
-	if (file_name.endsWith(".zip")) {
-		QString tmp_file = DatUtil::getTempFolder() + file_name;
-		DataAccess::writeFile(tmp_file, data);
+	if (prefix == "chars/") {
+		if (file_name.endsWith(".xml")) {
+			DataAccess::writeFile(file_path, data);
+			added = true;
+		}
+	}
+	else if (prefix == "dsets/") {
+		if (file_name.endsWith(".zip")) {
+			QString tmp_file = DatUtil::getTempFolder() + file_name;
+			DataAccess::writeFile(tmp_file, data);
 
-		QDir dir;
-		if (dir.exists(file_path))
-			DataAccess::removeDir(file_path);
-		if (!DataAccess::makeDir(file_path, false))
-			return "Unable to create directory: "+file_name;
+			QDir dir;
+			if (dir.exists(file_path))
+				DataAccess::removeDir(file_path);
+			if (!DataAccess::makeDir(file_path, false))
+				return "Unable to create directory: "+file_name;
 
-		QString err_msg;
-		dest_obj = DatZip::uncompress(tmp_file, file_path, err_msg);
-		DataAccess::deleteFile(tmp_file);
-		if (!err_msg.isEmpty())
-			return err_msg;
+			QString err_msg;
+			dest_obj = DatZip::uncompress(tmp_file, file_path, err_msg);
+			DataAccess::deleteFile(tmp_file);
+			if (!err_msg.isEmpty()) {
+				DataAccess::removeDir(file_path);
+				return err_msg;
+			}
+			added = true;
+		}
 	}
 	else {
-		DataAccess::writeFile(file_path, data);
+		if (file_name.endsWith(".xml") || file_name.endsWith(".tri")) {
+			DataAccess::writeFile(file_path, data);
+			added = true;
+		}
 	}
 
-	int err = DataAccess::setFileModificationTime(file_path, modt);
-	if (err != 0)
-		return QString("Unable to set modification time on file: %1 (%2)").arg(file_name).arg(err);
+	if (added) {
+		int err = DataAccess::setFileModificationTime(file_path, modt);
+		if (err != 0)
+			return QString("Unable to set modification time on file: %1 (%2)").arg(file_name).arg(err);
 
-	int local_row = local_list.findRow("file", file_name);
-	if (local_row < 0)
-		local_row = local_list.appendRow();
-	if (prefix == "chars/")
-		DataAccess::setCharacterRow(local_row, file_name, data);
-	else if (prefix == "dsets/")
-		DataAccess::setDataSetRow(local_row, file_name, dest_obj);
-	else
-		DataAccess::setCurrentDataRow(local_row, file_name);
+		int local_row = local_list.findRow("file", file_name);
+		if (local_row < 0)
+			local_row = local_list.appendRow();
+		if (prefix == "chars/")
+			DataAccess::setCharacterRow(local_row, file_name, data);
+		else if (prefix == "dsets/")
+			DataAccess::setDataSetRow(local_row, file_name, dest_obj);
+		else
+			DataAccess::setCurrentDataRow(local_row, file_name);
+	}
 	return QString();
 }
 

@@ -205,6 +205,41 @@ void CheckListData::plusCustom(int ref, const QString& pool, const QString& desc
 	items.append(item);
 }
 
+void CheckListData::commitCount(int ref, int count)
+{
+	CheckListItem* item;
+	if ((item = findItem(ref)))
+		item->commitCount = count;
+}
+
+void CheckListData::plusRange(int ref, int count)
+{
+	CheckListItem* item;
+	if ((item = findItem(ref)))
+		item->plusRange = count;
+}
+
+void CheckListData::plusMagnitude(int ref, int count)
+{
+	CheckListItem* item;
+	if ((item = findItem(ref)))
+		item->plusMagnitude = count;
+}
+
+void CheckListData::plusStrength(int ref, int count)
+{
+	CheckListItem* item;
+	if ((item = findItem(ref)))
+		item->plusStrength = count;
+}
+
+void CheckListData::plusDuration(int ref, int count)
+{
+	CheckListItem* item;
+	if ((item = findItem(ref)))
+		item->plusDuration = count;
+}
+
 // CurrentData -------------------------
 
 void CurrentData::clear()
@@ -249,6 +284,7 @@ void CurrentData::clear()
 	species.clear();
 	speciesTalents.clear();
 	specialFeatures.clear();
+	customItems.clear();
 
 	wounds = 0;
 	strain = 0;
@@ -637,15 +673,19 @@ bool CurrentData::removeItem(Character* charac, int ref)
 		return false;
 
 	if (!log_item.uuid.isEmpty() && invMod.contains(log_item.uuid)) {
-		ShopItem	shop_item;
-		ItemList*	list;
-		int			quantity = 0;
+		ItemList* list;
+		int quantity = 0;
+		ShopItem shop_item;
 
 		if (log_item.type == ITEM_ORIG_STOCK && invMod[log_item.uuid].rowCount > 1)
 			return false;
 
-		shop_item = Shop::instance.getItem(log_item.itemkey);
-		if (shop_item.type == "GEAR")
+		if (customItems.contains(log_item.uuid))
+			shop_item = customItems[log_item.uuid];
+		else
+			shop_item = Shop::instance.getItem(log_item.itemkey);
+
+		if (shop_item.type == "GEAR" || shop_item.type.isEmpty())
 			list = &gear;
 		else if (shop_item.type == "ARMOR")
 			list = &armor;
@@ -669,7 +709,7 @@ bool CurrentData::removeItem(Character* charac, int ref)
 
 		if (quantity == 0 && item.originalQuantity == 0) {
 			list->removeItemByUuid(item.uuid);
-			if (shop_item.type == "GEAR")
+			if (shop_item.type == "GEAR" || shop_item.type.isEmpty())
 				Gear::instance.rowCountChanged();
 			else if (shop_item.type == "ARMOR")
 				Armor::instance.rowCountChanged();
@@ -782,303 +822,507 @@ static void setup_talent_checks()
 	}
 }
 
-void CurrentData::setupAutoCheckItems(Character* charac, const QString& skillKey, const QString& uuid)
+QString CurrentData::plurize(const QString& thing, int val)
 {
-	bool combat = false;
-	bool ranged = false;
-	bool gunnery = false;
-	bool targeting_comp = false;
-	bool integrated_scanner = false;
-	bool mount_armor = false;
-	bool hunting_goggles = false;
-	bool eos = false;
-	bool piloting = false;
-	bool charm = false;
+	return (val == 1 ? thing : thing+"s").arg(val);
+}
+
+// showCheckList() <---- Initialise power
+void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_list_type*/, const QString& skillKey, const QString& talentKey, const QString& uuid)
+{
 	Skill* skill = Skill::getSkill(skillKey);
-	QString send_mag = "once";
-	int ranks;
-	int force;
-	int default_check = 0;
+	MethodID skill_id = KeyMethod::instance.getID(skillKey);
+	MethodID talent_id = KeyMethod::instance.getID(talentKey);
 	Item weapon = weapons.getItemByUuid(uuid);
-	QString weaponKey = weapon.itemkey;
+	int ranks;
+	int default_check = 0;
 
 	uncheckAllItem(charac, skillKey);
 	autoCheckItems.clear();
 
-	if (gear.equipped("HNTGOGGLE"))
-		hunting_goggles = true;
+	// MANEUVER -------------------------------------------------
 
-	if (talents.contains("SENSEDURATION"))
-		send_mag = "twice";
+	if (!skill || skill->type != SPECIAL)
+		autoCheckItems.plus("@+1 " ESC_MOVE, "[B]Maneuver:[b] Perform an action that requires a maneuver", 1, 0);
 
-	if (skillKey == "RANGHVY" || skillKey == "RANGLT") {
+	// TALENT CHECK LISTS -------------------------------------------------
+
+	if (AllTalents::instance()->isTalent(talentKey)) {
+		QString power;
+		int ref;
+		bool opposed_dicip = false;
+		CharSkill char_skill = skills["DISC"];
+
+		int power_id = CharTalentMap::forcePower(talentKey, power);
+		int range = talents.get(power + "RANGE").ranks;
+		int magnitude = talents.get(power + "MAGNITUDE").ranks;
+		int strength = talents.get(power + "STRENGTH").ranks;
+		int duration = talents.get(power + "DURATION").ranks;
+		int force_dice = charac->force() - charac->forceCommitted();
+		if (range > 0) {
+			int r1, r2;
+			int r = charac->getItemRange(r1, r2);
+			do {
+				ref = autoCheckItems.plus(".", plurize("[B]Range:[b] Increase range by %1 range band", range), 0, 0);
+				autoCheckItems.plusRange(ref, range);
+				r += range;
+			}
+			while (r < 4);
+		}
+
+		// showCheckList() <---- Initialise power
+		QString pips = ".";
+		switch (talent_id) {
+			case KM_BINDBASIC:
+				pips += ".";
+				// No break!
+			// itemQualMag()
+			case KM_MISDIRBASIC:
+			case KM_MISDIRCONTROL1:
+				magnitude = magnitude * charac->presence();
+				// No break!
+			case KM_INFLUENCEBASIC:
+			case KM_INFLUENCECONTROL1:
+			case KM_MOVEBASIC:
+			case KM_MOVECONTROL1:
+			case KM_MOVECONTROL2:
+			case KM_MOVECONTROL3:
+				if (magnitude > 0) {
+					for (int i=0; i<(force_dice+1)/2; i++) {
+						ref = autoCheckItems.plus(pips, plurize("[B]Magnitude:[b] Effect %1 additional target", magnitude), 0, 0);
+						autoCheckItems.plusMagnitude(ref, magnitude);
+					}
+				}
+				break;
+			default:
+				break;
+		}
+
+		switch (talent_id) {
+			case KM_BINDBASIC:
+				if (strength > 0) {
+					for (int i=0; i<(force_dice+1)/2; i++) {
+						ref = autoCheckItems.plus(".", plurize("[B]Strength:[b] Disorient targets for %1 round", strength), 0, 0);
+						autoCheckItems.plusStrength(ref, strength);
+					}
+				}
+
+				if (talents.contains("BINDCONTROL1")) {
+					autoCheckItems.plus(".", QString("[B]Control:[b] All targets suffer %1 Strain when taking an action").arg(charac->willpower()), 0, 0);
+				}
+
+				if (talents.contains("BINDCONTROL2")) {
+					autoCheckItems.plus(".", "[B]Control:[b] Move target 1 range band closer or further away", 0, 0);
+				}
+
+				if (duration > 0) {
+					// itemDuration()
+					ref = autoCheckItems.plus("@" ESC_COMMIT " FFF", "[B]Duration:[b] Sustain all ongoing effects", 0, 0);
+					autoCheckItems.commitCount(ref, 3);
+					autoCheckItems.plusDuration(ref, 1);
+				}
+
+				if (talents.contains("BINDMASTERY"))
+					autoCheckItems.plus(char_skill.getBasicPool(charac), "[B]Master:[b] If [LI] used, Stagger targets, if [DA] used, cause Crit +10% for each [FP] spent", 0, 0);
+				else
+					opposed_dicip = true;
+				break;
+			case KM_INFLUENCECONTROL1:
+				if (duration > 0) {
+					for (int i=0; i<(force_dice+1)/2; i++) {
+						ref = autoCheckItems.plus(".", duration > 1 ?
+							QString("[B]Duration:[b] Increase by %1 rounds/minutes").arg(duration) :
+							"[B]Duration:[b] Increase by 1 round/minute", 0, 0);
+						autoCheckItems.plusDuration(ref, duration);
+					}
+				}
+				break;
+			case KM_MISDIRBASIC:
+			case KM_MISDIRCONTROL1:
+			case KM_MOVEBASIC:
+			case KM_MOVECONTROL1:
+			case KM_MOVECONTROL2:
+			case KM_MOVECONTROL3:
+				if (strength > 0) {
+					for (int i=0; i<(force_dice+1)/2; i++) {
+						ref = autoCheckItems.plus(".", QString("[B]Strength:[b] Increase silhouette by %1").arg(strength), 0, 0);
+						autoCheckItems.plusStrength(ref, strength);
+						if (i*strength+1 > 9) // Max silhouette!
+							break;
+					}
+				}
+
+				if (duration > 0) {
+					// itemDuration()
+					ref = autoCheckItems.plus("@" ESC_COMMIT " FF", "[B]Duration:[b] Sustain all ongoing effects", 0, 0);
+					autoCheckItems.commitCount(ref, 2);
+					autoCheckItems.plusDuration(ref, 1);
+				}
+
+				if (talents.contains("MISDIRMASTERY")) {
+					int cunn_decep = charac->cunning() + skills["DECEP"].ranks;
+					autoCheckItems.plus("..", QString("[B]Mastery:[b] Obscure additional %1 objects or create %1 more illusions").arg(cunn_decep), 0, 0);
+				}
+				else if (talent_id != KM_MOVECONTROL1)
+					opposed_dicip = true;
+				break;
+			case KM_SENSEBASIC:
+			case KM_SENSECONTROL2:
+			case KM_INFLUENCEBASIC:
+			case KM_WARFORBASIC:
+			case KM_FEARSOME:
+				opposed_dicip = true;
+				break;
+			default:
+				break;
+		}
+
+		if (opposed_dicip) {
+			autoCheckItems.plus(char_skill.getBasicPool(charac), "[B]Opposed Check:[b] vs Discipline, if target is a PC or important NPC", 0, 0);
+			//if (talent_id == KM_MOVECONTROL1)
+			//	default_check = dc;
+		}
+	}
+
+	// FORCE POWER ITEMS -------------------------------------------------
+
+	int force = nonCommitedForce(charac);
+
+	switch (skill_id) {
+		case KM_CHARM:
+		case KM_COERC:
+		case KM_NEG:
+		case KM_DECEP:
+		case KM_LEAD:
+		//case KM_DONTSHOOT:
+			if (force > 0 && talents.contains("INFLUENCECONTROL2"))
+				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Influence:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
+
+			if (talents.contains("JUSTKID"))
+				autoCheckItems.plus("-y", "[B]Just Kidding:[b] Once per round, Target: self or ally", 0, 0, 1);
+			break;
+		case KM_REC:
+			if (force > 0 && talents.contains("BAL"))
+				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Balance:[b] Gain +1 Strain per [FP]", 0, 0);
+			break;
+		case KM_ATHL:
+			if (talents.contains("NIKTOSP2OC2OP1"))
+				autoCheckItems.plus("B", "[B]Climbing Claws:[b] Add when climbing trees and other surfaces their claws can pierce", 0, 0);
+			if (force > 0 && talents.contains("ENHANCEBASIC"))
+				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
+			break;
+		case KM_COORD:
+			if (force > 0 && talents.contains("ENHANCECONT1"))
+				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
+			break;
+		case KM_RESIL:
+			if (force > 0 && talents.contains("ENHANCECONT2"))
+				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
+			break;
+		case KM_PILOTPL:
+			if (force > 0 && talents.contains("ENHANCECONT4"))
+				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
+			break;
+		case KM_BRAWL:
+			if (force > 0 && talents.contains("ENHANCECONT5"))
+				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
+			break;
+		case KM_BRI:
+		case KM_PILOTSP:
+			if (force > 0 && talents.contains("ENHANCECONT7"))
+				default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
+			break;
+		case KM_ICOOL:
+		case KM_IVIG:
+			if (force > 0) {
+				if (talents.contains("FORSEECONTROL1")) {
+					if (talents.contains("FORSEECONTROL3"))
+						default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [FP] to gain [SU], spend [FP] to grant free move to targets", 0, 0);
+					else
+						default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [FP] to gain [SU] on initiative check", 0, 0);
+				}
+				if (talents.contains("WARFORCONTROL1")) {
+					if (talents.contains("WARFORMAGNITUDE"))
+						default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to self or ally's first check this encounter", 0, 0);
+					else if (talents.contains("WARFORCONTROL3"))
+						default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to first check this encounter", 0, 0);
+					else
+						default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] per [FP] spent to first check this encounter", 0, 0);
+				}
+
+			}
+			break;
+		case KM_STEAL:
+		//case KM_SLEIGHTMIND:
+			ranks = talents.ranks("SLEIGHTMIND");
+			if (ranks > 0) {
+				int dc = autoCheckItems.plus(QString("B").repeated(ranks), "[B]Sleight of Mind:[b] Add if opposition is not immune to Force powers", 0, 0);
+				if (talent_id == KM_SLEIGHTMIND)
+					default_check = dc;
+			}
+			break;
+		case KM_LTSABER:
+			if (force > 0 && talents.ranks("HAWKSWOOP"))
+				autoCheckItems.plus(QString("F").repeated(force), "[B]Hawk Bat Swoop:[b] Spend [FP] to engage target, and [FP] to add [AD]", 0, 0);
+
+			if (force > 0 && talents.contains("SABERSW"))
+				autoCheckItems.plus(QString("@" ESC_LINKED " %1").arg(force), QString("[B]Saber Swarm:[b] Attack has linked %1 quality").arg(force), 1, 1);
+			break;
+		case KM_DEFM:
+		case KM_DEFR:
+		//case KM_REFLECT:
+			if (isCommitted("SENSECONTROL1")) {
+				QString send_mag = "once";
+				if (talents.contains("SENSEDURATION"))
+					send_mag = "twice";
+
+				QString send_str = "u";
+				if (talents.contains("SENSESTRENGTH"))
+					send_str = "uu";
+				default_check = autoCheckItems.plus(send_str, QString("[B]Sense Control:[b] Upgrade difficulty of incoming attack %1 per round").arg(send_mag), 0, 0);
+			}
+			break;
+		case KM_FORCE: {
+			int ref;
+			QString twice = talents.contains("SENSESTRENGTH") ? " (twice)" : "";
+
+			if (talents.contains("SENSECONTROL1")) {
+				ref = autoCheckItems.plus("g", "[B]Sense Control:[b] Commit force dice to upgrade difficulty of incoming attacks" + twice, 0, 0, 0, "", "SENSECONTROL1", 1);
+				if (isCommitted("SENSECONTROL1"))
+					checkItem(charac, ref, skillKey, true);
+			}
+			if (talents.contains("SENSECONTROL3")) {
+				ref = autoCheckItems.plus("g", "[B]Sense Control:[b] Commit force dice to upgrade abilty of combat checks" + twice, 0, 0, 0, "", "SENSECONTROL3", 1);
+				if (isCommitted("SENSECONTROL3"))
+					checkItem(charac, ref, skillKey, true);
+			}
+			if (talents.contains("ENHANCECONT8")) {
+				ref = autoCheckItems.plus("g", "[B]Enhance:[b] Commit force dice to increase Brawn by one", 0, 0, 0, "", "ENHANCECONT8", 1);
+				if (isCommitted("ENHANCECONT8"))
+					checkItem(charac, ref, skillKey, true);
+			}
+			if (talents.contains("ENHANCECONT9")) {
+				ref = autoCheckItems.plus("g", "[B]Enhance:[b] Commit force dice to increase Agility by one", 0, 0, 0, "", "ENHANCECONT9", 1);
+				if (isCommitted("ENHANCECONT9"))
+					checkItem(charac, ref, skillKey, true);
+			}
+			if (talents.contains("MISDIRCONTROL3")) {
+				int count = isCommitted("MISDIRCONTROL3");
+				ranks = charac->force() - 1;
+				ref = autoCheckItems.plus("g", "[B]Misdirect Control:[b] Add [TH] to all incoming attacks", 0, 0, 0, "", "MISDIRCONTROL3", 1);
+				if (count > 0) {
+					checkItem(charac, ref, skillKey, true);
+					count--;
+				}
+				if ((ranks & 1) != 0) {
+					ref = autoCheckItems.plus("g", "[B]Misdirect Control:[b] Add [TH] to all incoming attacks", 0, 0, 0, "", "MISDIRCONTROL3", 1);
+					if (count > 0 && (count & 1) != 0) {
+						checkItem(charac, ref, skillKey, true);
+						count--;
+					}
+					ranks--;
+				}
+				for (int i=0; i<ranks/2; i++) {
+					ref = autoCheckItems.plus("gg", "[B]Misdirect Control:[b] Add [TH][TH] to all incoming attacks", 0, 0, 0, "", "MISDIRCONTROL3", 2);
+					if (count > 0) {
+						checkItem(charac, ref, skillKey, true);
+						count -= 2;
+					}
+				}
+			}
+
+			if (talents.contains("MISDIRDURATION")) {
+				ref = autoCheckItems.plus("gg", "[B]Misdirect Duration:[b] Sustain misdiration as long as target in range", 0, 0, 0, "", "MISDIRDURATION", 2);
+				if (isCommitted("MISDIRDURATION"))
+					checkItem(charac, ref, skillKey, true);
+			}
+
+			if (talents.contains("BINDDURATION")) {
+				ref = autoCheckItems.plus("ggg", "[B]Bind Duration:[b] Sustain all bind effects as long as target in range", 0, 0, 0, "", "BINDDURATION", 3);
+				if (isCommitted("BINDDURATION"))
+					checkItem(charac, ref, skillKey, true);
+			}
+
+			ranks = talents.ranks("INTUITEVA");
+			if (ranks > 0) {
+				int count = isCommitted("INTUITEVA");
+				if (talent_id == KM_INTUITEVA && count < charac->force()) {
+					count++;
+				}
+				for (int i=0; i<ranks; i++) {
+					ref = autoCheckItems.plus("g", "[B]Intuitive Evasion:[b] Upgrade combat checks vs vehicle, cost 1 strain per round", 1, 1, 0, "", "INTUITEVA", 1);
+					if (count > 0) {
+						checkItem(charac, ref, skillKey, true);
+						count--;
+					}
+				}
+			}
+			break;
+		}
+		default:
+			break;
+	}
+
+	// TALENT ITEMS -------------------------------------------------
+	// showCheckList() <---- Initialise power
+
+	switch (skill_id) {
+		case KM_COERC:
+			for (int i=0; i<talents.ranks("INTIM"); i++) {
+				int dc = autoCheckItems.plus("d", "[B]Intimidating:[b] Downgrade the difficulty of the check", 0, 1);
+				if (talent_id == KM_INTIM)
+					default_check = dc;
+			}
+			break;
+		case KM_CHARM:
+		case KM_NEG:
+			for (int i=0; i<talents.ranks("CONGENIAL"); i++) {
+				autoCheckItems.plus("d", "[B]Congenial:[b] Downgrade the difficulty of the check", 0, 1);
+			}
+			break;
+		case KM_DEFM:
+		case KM_DEFR:
+		//case KM_REFLECT:
+			for (int i=0; i<talents.ranks("DODGE"); i++)
+				autoCheckItems.plus("u", "[B]Dodge:[b] Out-of-turn incedental", 0, 1);
+
+			ranks = talents.ranks("DURA");
+			if (ranks > 0)
+				autoCheckItems.plus(QString("@-%1% " ESC_CRITS).arg(ranks*10), "[B]Durable:[b] Reduce critical hits", 0, 0);
+
+			if (skill_id == KM_DEFM) {
+				ranks = talents.ranks("PARRY");
+				if (ranks > 0) {
+					QString par = QString("[B]Parry:[b] Reduce damage by %1").arg(ranks+2);
+
+					if (talents.contains("PARRYIMP"))
+						par = par + ", on [DE] or [TH][TH][TH] hit attacker";
+					autoCheckItems.plus(QString("@-%1 " ESC_DAMAGE).arg(ranks+2), par, 0, 3);
+				}
+
+				for (int i=0; i<talents.ranks("DEFSTA"); i++)
+					autoCheckItems.plus("u", "[B]Defensive Stance:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
+
+				setNegativePool(charac, iNegMelee, skillKey);
+			}
+			else {
+				ranks = talents.ranks("REFLECT");
+				if (ranks > 0) {
+					QString par = QString("[B]Reflect:[b] vs Lightsaber, reduce damage by %1").arg(ranks+2);
+
+					if (talents.contains("REFLECTIMP"))
+						par = "[B]Reflect:[b] vs Lightsaber, on [DE] or [TH][TH][TH] damage apponent (Medium range)";
+					autoCheckItems.plus(QString("@-%1 " ESC_DAMAGE).arg(ranks+2), par, 0, 3);
+				}
+
+				for (int i=0; i<talents.ranks("SIDESTEP"); i++)
+					autoCheckItems.plus("u", "[B]Side Step:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
+
+				setNegativePool(charac, iNegRanged, skillKey);
+			}
+
+			if (talents.contains("SENSEADV")) {
+				autoCheckItems.plus("SS", "[B]Sense Advantage:[b] Add to NPC check, once per session", 0, 0);
+			}
+			break;
+		case KM_PILOTSP:
+			if (talents.contains("MASPIL"))
+				autoCheckItems.plus("@+1 " ESC_ACTION, QString("[B]Master Pilot:[b] Once per round, perform Action as Manuever"), 1, 2);
+			break;
+		case KM_DISC:
+			ranks = talents.ranks("HARDHD");
+			if (ranks > 0) {
+				int dif = 4-ranks;
+
+				autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), "[B]Hard Headed:[b] Perform check to remove staggered or disoriented effect", 0, 0);
+				if (talents.contains("HARDHDIMP")) {
+					dif = 6-ranks;
+					autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), QString("[B]Hard Headed (Improved):[b] Perfrom check to reduced straing to %1").arg(charac->strain()-1), 0, 0);
+				}
+			}
+			// No break!
+		case KM_FDISC:
+			ranks = talents.ranks("CONF");
+			if (ranks > 0) {
+				int dc = autoCheckItems.plus(QString("r").repeated(ranks), "[B]Confidence:[b] May descrease difficulty of fear checks", 0, 0);
+				if (skill_id == KM_FDISC)
+					default_check = dc;
+			}
+			break;
+		case KM_ICOOL:
+		case KM_IVIG:
+			for (int i=0; i<talents.ranks("RAPREA"); i++)
+				autoCheckItems.plus("s", "[B]Rapid Reaction:[b] Suffer strain to improve initiative", 0, 1);
+			break;
+		case KM_SKUL:
+		case KM_COMP:
+		//case KM_BYP:
+			ranks = talents.ranks("BYP");
+			if (ranks > 0) {
+				int dc = autoCheckItems.plus(QString("N").repeated(ranks), QString("[B]Bypass Security:[b] Disable security device or open a locked door"), 0, 0);
+				if (talent_id == KM_BYP)
+					default_check = dc;
+			}
+			break;
+		case KM_ATHL:
+		case KM_COORD:
+		//case KM_CONDITIONED:
+			ranks = talents.ranks("CONDITIONED");
+			if (ranks > 0)
+				autoCheckItems.plus(QString("@-%1 " ESC_DAMAGE).arg(ranks), QString("[B]Conditioned:[b] Reduce damage and strain by %1 from falling").arg(ranks), 0, 0);
+			break;
+		default:
+			break;
+	}
+
+	switch (skill_id) {
+		case KM_CHARM:
+			if (talents.contains("DONTSHOOT"))
+				autoCheckItems.plus("DDD", "[B]Don't Shoot!:[b] Once per session, cannot be attacked unless attack, Duration: Encounter", 0, 0);
+			break;
+		case KM_PILOTSP:
+		case KM_PILOTPL: {
+			int amount = 1;
+
+			if (talents.contains("FULLTHSUP"))
+				amount = 2;
+			if (talents.contains("FULLTH"))
+				autoCheckItems.plus("DDD", QString("[B]Full Throttle:[b] Increase Speed by %1 for %2 rounds, [B]Cost: Action[b]").arg(amount).arg(charac->cunning()), 0, 0);
+			if (talents.contains("FULLTHIMP"))
+				autoCheckItems.plus("DD", QString("[B]Full Throttle (Improved):[b] Increase Speed by %1 for %2 rounds").arg(amount).arg(charac->cunning()), 1, 1);
+			break;
+		}
+		case KM_COMP:
+		case KM_INT:
+		//case KM_COD:
+			ranks = talents.ranks("COD");
+			if (ranks > 0) {
+				int dc = autoCheckItems.plus("r"+QString("N").repeated(ranks), QString("[B]Codebreaker:[b] Break code or decrypt communications"), 0, 0);
+				if (talent_id == KM_COD)
+					default_check = dc;
+			}
+			break;
+		default:
+			break;
+	}
+
+	// GENERAL COMBAT -------------------------------------------------
+	// showCheckList() <---- Initialise power
+
+	bool combat = false;
+	bool ranged = false;
+	bool gunnery = false;
+	if (skill_id == KM_RANGHVY || skill_id == KM_RANGLT) {
 		combat = true;
 		ranged = true;
 	}
-	else if (skillKey == "GUNN") {
+	else if (skill_id == KM_GUNN) {
 		combat = true;
 		ranged = true;
 		gunnery = true;
 	}
-	else if (skillKey == "BRAWL" || skillKey == "MELEE" || skillKey == "LTSABER") {
+	else if (skill_id == KM_BRAWL || skill_id == KM_MELEE || skill_id == KM_LTSABER) {
 		combat = true;
-	}
-	else if (skillKey == "CHARM")
-		charm = true;
-
-	if (!skill || skill->type != SPECIAL)
-		autoCheckItems.plus("@+1 Move", "[B]Maneuver:[b] Perform an action that requires a maneuver", 1, 0);
-
-	for (int i=0; i<talents.ranks("BRA"); i++)
-		autoCheckItems.plus("N", "[B]Brace:[b] Remove [SE] if due to any environmental effects, Duration: 1 Round", i == 0 ? 1 : 0, 0);
-
-	if (combat) {
-		/* Not required because upgdrade need not be optional!
-		if (isCommitted("SENSECONTROL3")) {
-			QString send_str = "U";
-			if (talents.contains("SENSESTRENGTH"))
-				send_str = "UU";
-			default_check = autoCheckItems.plus(send_str, QString("[B]Sense Control:[b] Upgrade ability of combat check %1 per round").arg(send_mag), 0, 0);
-		}
-		*/
-	}
-
-	if (charm || skillKey == "COERC" || skillKey == "NEG" ||
-		skillKey == "DECEP" || skillKey == "LEAD") {
-		force = nonCommitedForce(charac);
-		if (force > 0 && talents.contains("INFLUENCECONTROL2"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Influence:[b] Spend [FP] to gain [SU] or [AD] vs 1 engaged target, "+talents.forceUpgrades("INFLUENCECONTROL2", RAN | MAG), 0, 0);
-		if (talents.contains("JUSTKID"))
-			autoCheckItems.plus("-y", "[B]Just Kidding:[b] Once per round, Target: self or ally", 0, 0, 1);
-	}
-	else if (skillKey == "REC") {
-		force = nonCommitedForce(charac);
-		if (force > 0 && talents.contains("BAL"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Balance:[b] Gain +1 Strain per [FP]", 0, 0);
-	}
-	else if (skillKey == "ATHL") {
-		if (talents.contains("NIKTOSP2OC2OP1"))
-			autoCheckItems.plus("B", "[B]Climbing Claws:[b] Add when climbing trees and other surfaces their claws can pierce", 0, 0);
-		force = nonCommitedForce(charac);
-		if (force > 0 && talents.contains("ENHANCEBASIC"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
-	}
-	else if (skillKey == "COORD") {
-		force = nonCommitedForce(charac);
-		if (force > 0 && talents.contains("ENHANCECONT1"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
-	}
-	else if (skillKey == "RESIL") {
-		force = nonCommitedForce(charac);
-		if (force > 0 && talents.contains("ENHANCECONT2"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
-	}
-	else if (skillKey == "PILOTPL") {
-		force = nonCommitedForce(charac);
-		if (force > 0 && talents.contains("ENHANCECONT4"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
-	}
-	else if (skillKey == "BRAWL") {
-		force = nonCommitedForce(charac);
-		if (force > 0 && talents.contains("ENHANCECONT5"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
-	}
-	else if (skillKey == "PILOTSP") {
-		force = nonCommitedForce(charac);
-		if (force > 0 && talents.contains("ENHANCECONT7"))
-			default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]", 0, 0);
-	}
-	else if (skillKey == "ICOOL" || skillKey == "IVIG") {
-		force = nonCommitedForce(charac);
-		if (force > 0) {
-			if (talents.contains("FORSEECONTROL1")) {
-				if (talents.contains("FORSEECONTROL3"))
-					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [FP] to gain [SU], spend [FP] to grant free move to targets", 0, 0);
-				else
-					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Foresee:[b] Spend [FP] to gain [SU] on initiative check", 0, 0);
-			}
-			if (talents.contains("WARFORCONTROL1")) {
-				if (talents.contains("WARFORMAGNITUDE"))
-					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to self or ally's first check this encounter", 0, 0);
-				else if (talents.contains("WARFORCONTROL3"))
-					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to first check this encounter", 0, 0);
-				else
-					default_check = autoCheckItems.plus(QString("F").repeated(force), "[B]Warde's Foresight:[b] Add [SU] per [FP] spent to first check this encounter", 0, 0);
-			}
-
-		}
-		for (int i=0; i<talents.ranks("RAPREA"); i++)
-			autoCheckItems.plus("s", "[B]Rapid Reaction:[b] Suffer straing to improve initiative", 0, 1);
-	}
-	else if (skillKey == "STEAL") {
-		ranks = talents.ranks("SLEIGHTMIND");
-		if (ranks > 0)
-			autoCheckItems.plus(QString("B").repeated(ranks), "[B]Sleight of Mind:[b] Add if opposition is not immune to Force powers", 0, 0);
-	}
-	else if (skillKey == "LTSABER") {
-		force = nonCommitedForce(charac);
-		if (force > 0 && talents.ranks("HAWKSWOOP"))
-			autoCheckItems.plus(QString("F").repeated(force), "[B]Hawk Bat Swoop:[b] Spend [FP] to engage target, and [FP] to add [AD]", 0, 0);
-
-		if (force > 0 && talents.contains("SABERSW"))
-			autoCheckItems.plus(QString("@Linked %1").arg(force), QString("[B]Saber Swarm:[b] Attack has linked %1 quality").arg(force), 1, 1);
-	}
-	else if (skillKey == "DISC") {
-		ranks = talents.ranks("HARDHD");
-		if (ranks > 0) {
-			int dif = 4-ranks;
-
-			autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), "[B]Hard Headed:[b] Perfrom check to remove staggered or disoriented effect", 0, 0);
-			if (talents.contains("HARDHDIMP")) {
-				dif = 6-ranks;
-				autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), QString("[B]Hard Headed (Improved):[b] Perfrom check to reduced straing to %1").arg(charac->strain()-1), 0, 0);
-			}
-		}
-		force = nonCommitedForce(charac);
-		if (force > 0) {
-			if (talents.contains("INFLUENCECONTROL1"))
-				autoCheckItems.plus(QString("F").repeated(force), "[B]Influence (Mind Trick):[b] vs Discipline, "+talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
-			if (talents.contains("MOVECONTROL1")) {
-				QString type = "Hurl";
-
-				if (talents.contains("MOVECONTROL2"))
-					DatUtil::appendToList(type, "Pull", "/");
-
-				if (talents.contains("MOVECONTROL3"))
-					DatUtil::appendToList(type, "Manipulate", "/");
-
-				autoCheckItems.plus(QString("F").repeated(force), "[B]Move:[b] "+type+" objects, "+talents.forceUpgrades("INFLUENCECONTROL1", MAG | RAN | DUR), 0, 0);
-			}
-		}
-	}
-
-	if (!skill || skill->type != SPECIAL) {
-		if (skillKey != "FORCE" && talents.contains("INTENSFOC"))
-			autoCheckItems.plus("U", "[B]Intense Focus:[b] Upgrade the next skill check once", 1, 1);
-	}
-
-	if (skillKey == "COERC") {
-		for (int i=0; i<talents.ranks("INTIM"); i++) {
-			autoCheckItems.plus("d", "[B]Intimidating:[b] Downgrade the difficulty of the check", 0, 1);
-		}
-	}
-	else if (charm || skillKey == "NEG") {
-		for (int i=0; i<talents.ranks("CONGENIAL"); i++) {
-			autoCheckItems.plus("d", "[B]Congenial:[b] Downgrade the difficulty of the check", 0, 1);
-		}
-	}
-	else if (skillKey == "DEFM" || skillKey == "DEFR") {
-		if (isCommitted("SENSECONTROL1")) {
-			QString send_str = "u";
-			if (talents.contains("SENSESTRENGTH"))
-				send_str = "uu";
-			default_check = autoCheckItems.plus(send_str, QString("[B]Sense Control:[b] Upgrade difficulty of incoming attack %1 per round").arg(send_mag), 0, 0);
-		}
-
-		for (int i=0; i<talents.ranks("DODGE"); i++)
-			autoCheckItems.plus("u", "[B]Dodge:[b] Out-of-turn incedental", 0, 1);
-
-		ranks = talents.ranks("DURA");
-		if (ranks > 0)
-			autoCheckItems.plus(QString("@-%1% Crits").arg(ranks*10), "[B]Durable:[b] Reduce critical hits", 0, 0);
-
-		if (skillKey == "DEFM") {
-			ranks = talents.ranks("PARRY");
-			if (ranks > 0) {
-				QString par = QString("[B]Parry:[b] Reduce damage by %1").arg(ranks+2);
-
-				if (talents.contains("PARRYIMP"))
-					par = par + ", on [DE] or [TH][TH][TH] hit attacker";
-				autoCheckItems.plus(QString("@-%1 Damage").arg(ranks+2), par, 0, 3);
-			}
-
-			for (int i=0; i<talents.ranks("DEFSTA"); i++)
-				autoCheckItems.plus("u", "[B]Defensive Stance:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
-
-			setNegativePool(charac, iNegMelee, skillKey);
-		}
-		else {
-			ranks = talents.ranks("REFLECT");
-			if (ranks > 0) {
-				QString par = QString("[B]Reflect:[b] vs Lightsaber, reduce damage by %1").arg(ranks+2);
-
-				if (talents.contains("REFLECTIMP"))
-					par = "[B]Reflect:[b] vs Lightsaber, on [DE] or [TH][TH][TH] damage apponent (Medium range)";
-				autoCheckItems.plus(QString("@-%1 Damage").arg(ranks+2), par, 0, 3);
-			}
-
-			for (int i=0; i<talents.ranks("SIDESTEP"); i++)
-				autoCheckItems.plus("u", "[B]Side Step:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
-
-			setNegativePool(charac, iNegRanged, skillKey);
-		}
-
-		if (talents.contains("SENSEADV")) {
-			autoCheckItems.plus("SS", "[B]Sense Advantage:[b] Add to NPC check, once per session", 0, 0);
-		}
-	}
-	else if (skillKey == "PILOTSP") {
-		piloting = true;
-		if (talents.contains("MASPIL"))
-			autoCheckItems.plus("@+1 Action", QString("[B]Master Pilot:[b] Once per round, perform Action as Manuever"), 1, 2);
-	}
-	else if (skillKey == "FORCE") {
-		int ref;
-
-		if (talents.contains("SENSECONTROL1")) {
-			ref = autoCheckItems.plus("g", "[B]Sense Control:[b] Commit force dice to upgrade difficulty of incoming attacks", 0, 0, 0, "", "SENSECONTROL1", 1);
-			if (isCommitted("SENSECONTROL1"))
-				checkItem(charac, ref, skillKey, true);
-		}
-		if (talents.contains("SENSECONTROL3")) {
-			ref = autoCheckItems.plus("g", "[B]Sense Control:[b] Commit force dice to upgrade abilty of combat checks", 0, 0, 0, "", "SENSECONTROL3", 1);
-			if (isCommitted("SENSECONTROL3"))
-				checkItem(charac, ref, skillKey, true);
-		}
-		if (talents.contains("ENHANCECONT8")) {
-			ref = autoCheckItems.plus("g", "[B]Enhance:[b] Commit force dice to increase Brawn by one", 0, 0, 0, "", "ENHANCECONT8", 1);
-			if (isCommitted("ENHANCECONT8"))
-				checkItem(charac, ref, skillKey, true);
-		}
-		if (talents.contains("ENHANCECONT9")) {
-			ref = autoCheckItems.plus("g", "[B]Enhance:[b] Commit force dice to increase Agility by one", 0, 0, 0, "", "ENHANCECONT9", 1);
-			if (isCommitted("ENHANCECONT9"))
-				checkItem(charac, ref, skillKey, true);
-		}
-		if (talents.contains("MISDIRCONTROL3")) {
-			int count = isCommitted("MISDIRCONTROL3");
-			ranks = charac->force();
-			for (int i=0; i<ranks; i++) {
-				ref = autoCheckItems.plus("g", "[B]Misdirect Control:[b] Add [TH] to all incoming attacks", 0, 0, 0, "", "MISDIRCONTROL3", 1);
-				if (i < count)
-					checkItem(charac, ref, skillKey, true);
-			}
-		}
-
-		if (talents.contains("MISDIRDURATION")) {
-			ref = autoCheckItems.plus("gg", "[B]Misdirect Duration:[b] Sustain misdiration as long as target in range", 0, 0, 0, "", "MISDIRDURATION", 2);
-			if (isCommitted("MISDIRDURATION"))
-				checkItem(charac, ref, skillKey, true);
-		}
-	}
-	else if (skillKey == "PILOTPL") {
-		piloting = true;
-	}
-
-	if (charm) {
-		if (talents.contains("DONTSHOOT"))
-			autoCheckItems.plus("DDD", "[B]Don't Shoot!:[b] Once per session, cannot be attacked unless attack, Duration: Encounter", 0, 0);
-	}
-
-	if (piloting) {
-		int amount = 1;
-
-		if (talents.contains("FULLTHSUP"))
-			amount = 2;
-		if (talents.contains("FULLTH"))
-			autoCheckItems.plus("DDD", QString("[B]Full Throttle:[b] Increase Speed by %1 for %2 rounds, [B]Cost: Action[b]").arg(amount).arg(charac->cunning()), 0, 0);
-		if (talents.contains("FULLTHIMP"))
-			autoCheckItems.plus("DD", QString("[B]Full Throttle (Improved):[b] Increase Speed by %1 for %2 rounds").arg(amount).arg(charac->cunning()), 1, 1);
 	}
 
 	if (combat) {
@@ -1102,45 +1346,89 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& skillKey
 		if (ranks > 0)
 			autoCheckItems.plus(QString("B").repeated(ranks), "[B]Quick Strike:[b] Add if target has not acted in this encounter yet", 0, 0);
 
-		if (!weaponKey.isEmpty() && weaponKey != "UNARMED" && talents.contains("TARGBL"))
-			autoCheckItems.plus(QString("@Damage +%1").arg(charac->agility()), "[B]Targeted Blow:[b] Add to damage on hit with non-vehicle weapon", 0, 0, 1);
+		if (!weapon.itemkey.isEmpty() && weapon.itemkey != "UNARMED" && talents.contains("TARGBL"))
+			autoCheckItems.plus(QString("@" ESC_DAMAGE " +%1").arg(charac->agility()), "[B]Targeted Blow:[b] Add to damage on hit with non-vehicle weapon", 0, 0, 1);
 
 		ranks = talents.ranks("DISARMSMILE");
 		if (ranks > 0)
 			autoCheckItems.plus(QString("N").repeated(ranks), "[B]Disarming Smile:[b] Opposed Charm vs Target, Range: Short, Duration: Encounter, [B]Cost: Action[b]", 0, 0);
 
-		if (gunnery && talents.contains("DEAD")) {
-			int dam = charac->agility();
+		if (talent_id != KM_EXHPORT) {
+			ranks = talents.ranks("CRIPV");
+			if (ranks > 0)
+				autoCheckItems.plus("D", "[B]Crippling Blow:[b] If check deals damage, target suffers 1 strain per move for encounter", 0, 0);
+		}
 
-			if (!talents.contains("DEADIMP"))
-				dam = (dam + 1) / 2;
-			autoCheckItems.plus(QString("@+%1 Damage").arg(dam), "[B]Dead to Rights:[b] Add to one hit with vehicle mounted weapon", 0, 0, 1);
+		if (gunnery) {
+			if (talents.contains("DEAD")) {
+				int dam = charac->agility();
+
+				if (!talents.contains("DEADIMP"))
+					dam = (dam + 1) / 2;
+				autoCheckItems.plus(QString("@+%1 " ESC_DAMAGE).arg(dam), "[B]Dead to Rights:[b] Add to one hit with vehicle mounted weapon", 0, 0, 1);
+			}
+
+			if (talents.contains("EXHPORT")) {
+				autoCheckItems.plus("@-1 " ESC_DESTINY, "[B]Exhaust Port:[b] Ignore the effects of Massive", 0, 0, 1);
+			}
+
 		}
 	}
 	if (ranged) {
-		bool extreme_range = Shop::instance.getItem(weaponKey).range == "Extreme";
+		bool extreme_range = weapon.range() == "Extreme";
 		if (!extreme_range) {
 			ranks = talents.ranks("SNIPSHOT");
-			if (ranks > 0)
-				autoCheckItems.plus("@Range +1", "[B]Sniper Shot:[b] Increase range (and difficulty) of next attack", 1, 0);
+			if (ranks > 0) {
+				int ref = autoCheckItems.plus("@" ESC_RANGE " +1", "[B]Sniper Shot:[b] Increase range (and difficulty) of next attack", 1, 0);
+				autoCheckItems.plusRange(ref, 1);
+			}
 		}
 		ranks = talents.ranks("POINTBL");
 		if (ranks > 0)
-			autoCheckItems.plus(QString("@Damage +%1").arg(ranks), "[B]Point Blank:[b] Engaged or Short range", 0, 0);
+			autoCheckItems.plus(QString("@" ESC_DAMAGE " +%1").arg(ranks), "[B]Point Blank:[b] Engaged or Short range", 0, 0);
 		if (talents.contains("RAINDEATH"))
-			autoCheckItems.plus("@Auto-fire", "[B]Rain of Death:[b] Ignore increase difficulty due to auto-fire", 1, 0);
+			autoCheckItems.plus("@" ESC_AUTOFIRE, "[B]Rain of Death:[b] Ignore increase difficulty due to auto-fire", 1, 0);
 		if (skillKey != "RANGLT") {
 			if (talents.contains("HEAVYHITTER"))
-				autoCheckItems.plus("@Breach +1", "[B]Heavy Hitter:[b] Once per session use [TR] to add breach property", 1, 0);
+				autoCheckItems.plus("@" ESC_BREACH " +1", "[B]Heavy Hitter:[b] Once per session use [TR] to add breach property", 1, 0);
 			ranks = talents.ranks("BAR");
 			if (ranks > 0)
-				autoCheckItems.plus(QString("@Damage +%1").arg(ranks), "[B]Barrage:[b] Long or extreme range", 0, 0);
+				autoCheckItems.plus(QString("@" ESC_DAMAGE" +%1").arg(ranks), "[B]Barrage:[b] Long or extreme range", 0, 0);
 		}
 	}
 
-	if (!weaponKey.isEmpty()) {
+	// GENERALLY APPLICABLE -------------------------------------------------
+
+	for (int i=0; i<talents.ranks("BRA"); i++)
+		autoCheckItems.plus("N", "[B]Brace:[b] Remove [SE] if due to any environmental effects, Duration: 1 Round", i == 0 ? 1 : 0, 0);
+
+	if (!skill || skill->type != SPECIAL) {
+		if (skillKey != "FORCE" && talents.contains("INTENSFOC"))
+			autoCheckItems.plus("U", "[B]Intense Focus:[b] Upgrade the next skill check once", 1, 1);
+	}
+	if (talents.contains("TOUCH")) {
+		if (skillKey != "DEFM" && skillKey != "DEFR")
+			autoCheckItems.plus("BB", "[B]Touch of Fate:[b] May be used once per session", 0, 0);
+	}
+	if (talents.contains("SENSDANG")) {
+		if (skillKey != "DEFM" && skillKey != "DEFR")
+			autoCheckItems.plus("NN", "[B]Sense Danger:[b] May be used once per session", 0, 0);
+	}
+
+	// EQUIPMENT BASED MODS -------------------------------------------------
+
+	bool targeting_comp = false;
+	bool integrated_scanner = false;
+	bool mount_armor = false;
+	bool hunting_goggles = false;
+	bool eos = false;
+
+	if (gear.equipped("HNTGOGGLE"))
+		hunting_goggles = true;
+
+	if (!weapon.itemkey.isEmpty()) {
 		if (weapon.attachList.contains("TOS"))
-			autoCheckItems.plus("-D", "[B]Telescopic Optical Sight:[b] Reduce difficulty by 1 at Long or Extreme range", 0, 0);
+			autoCheckItems.plus("r", "[B]Telescopic Optical Sight:[b] Reduce difficulty by 1 at Long or Extreme range", 0, 0);
 		if (weapon.hasMod("SETTRIGGER_EXTRA_MOD"))
 			autoCheckItems.plus("sst", "[B]Set Trigger:[b] Add if this is the first combat check of the encounter", 0, 0);
 		else if (weapon.hasMod("SETTRIGGER_BASE_MOD"))
@@ -1160,18 +1448,18 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& skillKey
 				mount_armor = true;
 		}
 	}
-	if (mount_armor && skillKey == "ATHL")
+	if (mount_armor && skill_id == KM_ATHL)
 		autoCheckItems.plus("BB", "[B]Mountaineer Armour:[b] Add to all climb or rappel checks", 0, 0);
 	if (targeting_comp && ranged)
 		autoCheckItems.plus("B", "[B]Targeting Computer:[b] Add Boost dice at Long and Extreme range", 0, 0);
-	else if ((integrated_scanner || hunting_goggles) && skillKey == "PERC") {
+	else if ((integrated_scanner || hunting_goggles) && skill_id == KM_PERC) {
 		if (integrated_scanner)
 			autoCheckItems.plus("B", "[B]OmniScan 3 Scanner:[b] To detect movement or hidden enemies", 0, 0);
 		if (hunting_goggles)
 			autoCheckItems.plus("B", "[B]Hunting Goggles:[b] Add when locating prey", 0, 0);
 	}
 	if (eos) {
-		if (combat || skillKey == "PERC" || skillKey == "VIGIL" || skillKey == "IVIG")
+		if (combat || skill_id == KM_PERC || skill_id == KM_VIGIL || skill_id == KM_IVIG)
 			autoCheckItems.plus("NN", "[B]Enhanced Optics Suite:[b] Darkness, smoke or environmental effects that obscure vision", 0, 0);
 	}
 	if (hunting_goggles) {
@@ -1179,26 +1467,7 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& skillKey
 			autoCheckItems.plus("NN", "[B]Hunting Googles:[b] Concealment, darkness, fog and mist", 0, 0);
 	}
 
-	if (talents.contains("TOUCH")) {
-		if (skillKey != "DEFM" && skillKey != "DEFR")
-			autoCheckItems.plus("BB", "[B]Touch of Fate:[b] May be used once per session", 0, 0);
-	}
-	if (talents.contains("SENSDANG")) {
-		if (skillKey != "DEFM" && skillKey != "DEFR")
-			autoCheckItems.plus("NN", "[B]Sense Danger:[b] May be used once per session", 0, 0);
-	}
-
-	setup_talent_checks();
-	if (talentChecks.contains(skillKey)) {
-		foreach (CheckItem* item, talentChecks[skillKey].checks) {
-			int ref = autoCheckItems.plus(item->pool, item->desc, item->move, item->strain, item->dpoint);
-			if (item->default_check)
-				checkItem(charac, ref, skillKey, true);
-		}
-	}
-
-	// MEDPAC
-	if (skillKey == "MED") {
+	if (skill_id == KM_MED) {
 		if (gear.equipped("MEDPAC"))
 			default_check = autoCheckItems.plus("B", "[B]Medpac:[b] Add to all Medicine checks when equipped", 0, 0);
 
@@ -1210,28 +1479,48 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& skillKey
 
 		ranks = talents.ranks("SURG");
 		if (ranks > 0)
-			autoCheckItems.plus(QString("@Wound -%1").arg(ranks), "[B]Surgeon:[b] Add to Wounds recovered on successful check", 0, 0);
+			autoCheckItems.plus(QString("@" ESC_WOUND " -%1").arg(ranks), "[B]Surgeon:[b] Add to Wounds recovered on successful check", 0, 0);
 
 		if (gear.carriedQuantity("DROIDMINIMED") > 0)
-			autoCheckItems.plus(QString("@Wound -%1").arg(ranks), "[B]Mini-med Droids:[b] Add to Wounds recovered on successful check", 1, 0);
+			autoCheckItems.plus(QString("@" ESC_WOUND " -%1").arg(ranks), "[B]Mini-med Droids:[b] Add to Wounds recovered on successful check", 1, 0);
+	}
 
-		autoCheckItems.plus("D", "[B]Easy Severity:[b] 1-40% Critical injury, 1-50% Wounds, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.plus("DD", "[B]Average Severity:[b] 41-90% Critical injury, 51-100% Wounds, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.plus("DDD", "[B]Hard Severity:[b] 91-125% Critical injury, 101+% Wounds, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.plus("DDDD", "[B]Easy Severity:[b] 126-150% Critical injury, [B]Cost: Action[b]", 0, 0);
+	// CUSTOM CHECKS -------------------------------------------------
+
+	setup_talent_checks();
+	if (talentChecks.contains(skillKey)) {
+		foreach (CheckItem* item, talentChecks[skillKey].checks) {
+			int ref = autoCheckItems.plus(item->pool, item->desc, item->move, item->strain, item->dpoint);
+			if (item->default_check)
+				checkItem(charac, ref, skillKey, true);
+		}
 	}
-	else if (skillKey == "MECH") { // 2264
-		autoCheckItems.plus("D", "[B]Damage Control (Easy):[b] System strain or hull trauma less than half threshold, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.plus("DD", "[B]Damage Control (Average):[b] System strain or hull trauma less or equal threshold, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.plus("DDD", "[B]Damage Control (Hard):[b] System strain or hull trauma exceeds threshold, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.plus("DD", "[B]Boost Sheilds:[b] On success add 1 to a shield zone, Duration: [SU] less 1 rounds, [B]Cost: Action[b]", 0, 0);
-	}
-	else if (piloting) {
-		autoCheckItems.plus("D", "[B]Gain the Advantage (Easy):[b] Going faster than opponent, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.plus("DD", "[B]Gain the Advantage (Average):[b] Vehicle speed identical, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.plus("DDD", "[B]Gain the Advantage (Hard):[b] Opponent's speed is one higher, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.plus("DDDD", "[B]Gain the Advantage (Daunting):[b] Opponent's speed is 2 or more higher, [B]Cost: Action[b]", 0, 0);
-		autoCheckItems.plus("DD", "[B]Co-Pilot:[b] Each [SU] downgrades difficulty of pilot's next check by 1, [B]Cost: Action[b]", 0, 0);
+
+	// VARIOUS ACTIONS -------------------------------------------------
+
+	switch (skill_id) {
+		case KM_MED:
+			autoCheckItems.plus("D", "[B]Easy Severity:[b] 1-40% Critical injury, 1-50% Wounds, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus("DD", "[B]Average Severity:[b] 41-90% Critical injury, 51-100% Wounds, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus("DDD", "[B]Hard Severity:[b] 91-125% Critical injury, 101+% Wounds, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus("DDDD", "[B]Easy Severity:[b] 126-150% Critical injury, [B]Cost: Action[b]", 0, 0);
+			break;
+		case KM_MECH:
+			autoCheckItems.plus("D", "[B]Damage Control (Easy):[b] System strain or hull trauma less than half threshold, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus("DD", "[B]Damage Control (Average):[b] System strain or hull trauma less or equal threshold, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus("DDD", "[B]Damage Control (Hard):[b] System strain or hull trauma exceeds threshold, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus("DD", "[B]Boost Sheilds:[b] On success add 1 to a shield zone, Duration: [SU] less 1 rounds, [B]Cost: Action[b]", 0, 0);
+			break;
+		case KM_PILOTSP:
+		case KM_PILOTPL:
+			autoCheckItems.plus("D", "[B]Gain the Advantage (Easy):[b] Going faster than opponent, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus("DD", "[B]Gain the Advantage (Average):[b] Vehicle speed identical, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus("DDD", "[B]Gain the Advantage (Hard):[b] Opponent's speed is one higher, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus("DDDD", "[B]Gain the Advantage (Daunting):[b] Opponent's speed is 2 or more higher, [B]Cost: Action[b]", 0, 0);
+			autoCheckItems.plus("DD", "[B]Co-Pilot:[b] Each [SU] downgrades difficulty of pilot's next check by 1, [B]Cost: Action[b]", 0, 0);
+			break;
+		default:
+			break;
 	}
 
 	if (checkLists.contains(skillKey))
@@ -1241,7 +1530,7 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& skillKey
 		checkItem(charac, default_check, skillKey, true);
 }
 
-void CurrentData::exitAutoCheckItems(Character* charac, const QString& skillKey)
+void CurrentData::exitAutoCheckItems(Character* charac, const QString& skillKey, int commit_count)
 {
 	int		strain = 0;
 	QString	consumable;
@@ -1254,6 +1543,11 @@ void CurrentData::exitAutoCheckItems(Character* charac, const QString& skillKey)
 		charac->adjustStrain(strain);
 	if (!consumable.isEmpty())
 		addItem(charac, -1, consumable, QString(), 0);
+	if (commit_count) {
+		QString power;
+		CurrentData::instance->forceCommitted[power + "DURATION"] = commit_count;
+		charac->emitForceCommittedChanged();
+	}
 }
 
 void CurrentData::appendCheckItem(Character* charac, const QString& skillKey, const QString& pool, const QString& desc)
@@ -1274,7 +1568,7 @@ void CurrentData::updateCheckItem(Character* charac, int ref, const QString& ski
 			item->dice = pool;
 			item->description = desc;
 			CheckList::instance.rowCountChanged();
-			checkChecked(charac, skillKey);
+			checkChecked(charac, skillKey, false, NULL);
 			writeCurrentData();
 		}
 	}
@@ -1286,7 +1580,7 @@ void CurrentData::removeCheckItem(Character* charac, int ref, const QString& ski
 		//CheckList::instance.startChanges();
 		checkLists[skillKey].deleteItem(ref);
 		CheckList::instance.rowCountChanged();
-		checkChecked(charac, skillKey);
+		checkChecked(charac, skillKey, false, NULL);
 		writeCurrentData();
 	}
 }
@@ -1299,7 +1593,7 @@ void CurrentData::uncheckAllItem(Character* charac,const QString& skillKey)
 	if (checkLists.contains(skillKey))
 		checkLists[skillKey].checkAll(false);
 	CheckList::instance.rowCountChanged();
-	charac->setChangeDicePool(QString());
+	charac->setChangeDicePool(QString(), false, NULL);
 }
 
 void CurrentData::checkItem(Character* charac, int ref, const QString& skillKey, bool list_setup)
@@ -1329,10 +1623,11 @@ void CurrentData::checkItem(Character* charac, int ref, const QString& skillKey,
 				charac->emitForceCommittedChanged();
 				charac->characteristicsChanged();
 			}
-			CheckList::instance.rowCountChanged();
+			CheckList::instance.dataChanged();
+			//CheckList::instance.rowCountChanged();
 		}
 	}
-	checkChecked(charac, skillKey);
+	checkChecked(charac, skillKey, list_setup, item);
 }
 
 int CurrentData::negativePool()
@@ -1360,7 +1655,7 @@ void CurrentData::setNegativePool(Character* charac, int bit, const QString& ski
 			SpecialSkills::instance.setDataChanged();
 		}
 	}
-	checkChecked(charac, skillKey);
+	checkChecked(charac, skillKey, false, NULL);
 }
 
 void CurrentData::negetiveDefence(int& r, int &m)
@@ -1579,7 +1874,12 @@ QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDa
 
 	if (!itemkey.isEmpty()) {
 		// Add an item to the inventory:
-		ShopItem shop_item = Shop::instance.getItem(itemkey);
+		ShopItem shop_item;
+
+		if (customItems.contains(itemkey))
+			shop_item = customItems[itemkey];
+		else
+			shop_item = Shop::instance.getItem(itemkey);
 
 		if (!count)
 			count = 1;
@@ -1592,7 +1892,7 @@ QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDa
 				amount = -amount;
 		}
 
-		if (shop_item.type == "GEAR")
+		if (shop_item.type == "GEAR" || shop_item.type.isEmpty())
 			list = &gear;
 		else if (shop_item.type == "ARMOR")
 			list = &armor;
@@ -1649,7 +1949,7 @@ QString CurrentData::setInvLogItem(int count, const QDateTime& create, const QDa
 				list->removeItemByUuid(uuid);
 		}
 
-		if (shop_item.type == "GEAR")
+		if (shop_item.type == "GEAR" || shop_item.type.isEmpty())
 			Gear::instance.setRowCountChanged();
 		else if (shop_item.type == "ARMOR")
 			Armor::instance.setRowCountChanged();
@@ -1723,7 +2023,7 @@ void CurrentData::setCheckItem(const QString& skillKey, const QString& pool, con
 	addCheckItem(skillKey, ++iReferenceCounter, pool, desc);
 }
 
-void CurrentData::checkChecked(Character* charac, const QString& skillKey)
+void CurrentData::checkChecked(Character* charac, const QString& skillKey, bool list_setup, CheckListItem* item)
 {
 	QString new_curr_pool;
 
@@ -1755,7 +2055,7 @@ void CurrentData::checkChecked(Character* charac, const QString& skillKey)
 		new_curr_pool += "u";
 	if ((iNegativeCheck & NEG_CHECK_2_UPGRADE) != 0)
 		new_curr_pool += "uu";
-	charac->setChangeDicePool(new_curr_pool);
+	charac->setChangeDicePool(new_curr_pool, list_setup, item);
 }
 
 void CurrentData::addCheckItem(const QString& skillKey, int ref, const QString& pool, const QString& desc)
@@ -2041,9 +2341,9 @@ bool CurrentDataXML::xmlElement(const DatStringBuffer& path, const char* value)
 		iCurrentData->storeItem(iStoreItemUuid, iStoreItemKey, iStoreItemAmount, iStoreItemState, NULL);
 
 	else if (path.endsWith("/CurrentData/CheckList/#open"))
-		iItemSkill.clear();
+		iItemCheckSkill.clear();
 	else if (path.endsWith("/CheckList/Skill/"))
-		iItemSkill = value;
+		iItemCheckSkill = value;
 	else if (path.endsWith("/CheckList/CheckItem/#open")) {
 		iItemPool.clear();
 		iItemDesc.clear();
@@ -2053,7 +2353,7 @@ bool CurrentDataXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/CheckItem/Description/"))
 		iItemDesc = value;
 	else if (path.endsWith("/CheckList/CheckItem/#end"))
-		iCurrentData->setCheckItem(iItemSkill, iItemPool, iItemDesc);
+		iCurrentData->setCheckItem(iItemCheckSkill, iItemPool, iItemDesc);
 
 	else if (path.endsWith("/CustomSkills/Skill/#open")) {
 		iSkillName.clear();
@@ -2212,12 +2512,14 @@ QVariant InventoryLog::getValue(int row, int col)
 	}
 
 	if (item) {
+		InvModItem mod_item;
 		ShopItem shop_item;
-		InvModItem	mod_item;
 
 		if (!item->uuid.isEmpty())
 			mod_item = CurrentData::instance->invMod[item->uuid];
-		if (!item->itemkey.isEmpty())
+		if (CurrentData::instance->customItems.contains(item->uuid))
+			shop_item = CurrentData::instance->customItems[item->uuid];
+		else
 			shop_item = Shop::instance.getItem(item->itemkey);
 
 		switch (col) {
@@ -2228,7 +2530,7 @@ QVariant InventoryLog::getValue(int row, int col)
 			case 2:
 				return item->count;
 			case 3:
-				return shop_item.name;
+				return shop_item.name.isEmpty() ? (item->itemkey.isEmpty() ? item->uuid : item->itemkey) : shop_item.name;
 			case 4:
 				return item->desc;
 			case 5:

@@ -1,11 +1,12 @@
 import QtQuick 2.0
 import "../js/drawing.js" as Draw
 import "../js/constants.js" as Constant
+import "../js/utilities.js" as Util
 
 Rectangle {
 	id: weaponsLine
 	width: parent.width
-	height: row1.height + ((attachmentsVisible && (attachments.length > 0 || notes.length)) ? row2.height : 0)
+	height: row1.height + ((attachmentsVisible && (features.length > 0 || attachments.length > 0 || notes.length)) ? row2.height : 0)
 	color: lineColor
 
 	property var colWidths: adjustedlColWidths
@@ -234,7 +235,9 @@ Rectangle {
 				text: {
 					var result = "";
 
-					if (attachments.length > 0)
+					if (features.length > 0)
+						result = "[U]Features...[u]";
+					else if (attachments.length > 0)
 						result = "[U]Attachments...[u]";
 					else if (notes.length > 0)
 						result = "[U]Notes...[u]";
@@ -261,7 +264,7 @@ Rectangle {
 
 	Row {
 		id: row2
-		visible: attachmentsVisible && (attachments.length > 0 || notes.length > 0)
+		visible: attachmentsVisible && (features.length > 0 || attachments.length > 0 || notes.length > 0)
 		anchors.left: parent.left;
 		anchors.right: parent.right;
 		anchors.bottom: parent.bottom;
@@ -285,13 +288,15 @@ Rectangle {
 				id: attachText
 				width: weaponsLine.width - listIndent*2
 				text: {
-					if (attachments.length > 0) {
-						var result = "[U]Attachments:[u] " + attachments;
-						if (notes.length > 0)
-							result = result + " [B]Notes:[b] " + notes;
-						return result;
-					}
-					return "[U]Notes:[u] " + notes;
+					var result = "";
+
+					if (features.length > 0)
+						result = "[B]Features:[b] " + features;
+					if (attachments.length > 0)
+						result = Util.appendList(result, "[B]Attachments:[b] " + attachments, " ");
+					if (notes.length > 0)
+						result = Util.appendList(result, "[B]Notes:[b] " + notes, " ");
+					return result;
 				}
 			}
 
@@ -305,23 +310,29 @@ Rectangle {
 	{
 		checklist.checkListType = "weapon"
 
+		var desc = "";
+
+		if (features.length > 0)
+			desc = "[B]Features:[b] " + features;
+		if (attachments.length > 0)
+			desc = Util.appendList(desc, "[B]Attachments:[b] " + attachments, " ");
+		if (notes.length > 0)
+			desc = Util.appendList(desc, "[B]Notes:[b] " + notes, " ");
+
 		characterData.itemUuid = uuid;
 		characterData.itemItemKey = itemkey;
 		characterData.itemName = weapon;
 		characterData.itemRange = range;
 		characterData.itemSkill = skill;
 		characterData.itemDamage = damage;
-		characterData.itemCritical = critical;
-		characterData.itemQualities = qualities;
-		characterData.itemAttachments = attachments;
+		characterData.itemCritLevel = critical;
+		characterData.itemQualMag = qualities;
+		characterData.itemAttachDesc = desc;
 		characterData.itemManeuvers = "";
 		characterData.itemStrain = "";
 		characterData.itemCritPlus = critplus;
 		characterData.itemPierce = pierce;
-		characterData.activeSkill = skill;
-		characterData.dicePool = dicePool;
-
-		characterData.showCheckList();
+		characterData.showCheckList(skill, "", "", dicePool);
 		controller.state = "checkout";
 	}
 }

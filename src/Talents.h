@@ -27,7 +27,7 @@
 
 #include <QString>
 
-#include "DatXMLReader.h"
+#include "DatXmlReader.h"
 #include "DataList.h"
 
 #define STR						1
@@ -38,6 +38,22 @@
 #define TALENT_REGULAR			0
 #define TALENT_SPECIES			1
 #define TALENT_CODED			2
+
+#define FP_INFLUENCE			1
+#define FP_ENHANCE				2
+#define FP_FORESEE				3
+#define FP_MOVE					4
+#define FP_MISDIR				5
+#define FP_WARFOR				6
+#define FP_SENSE				7
+#define FP_BIND					8
+#define FP_HEALHARM				9
+#define FP_PROTUNL				10
+#define FP_SUPPRESS				11
+#define FP_FARSIGHT				12
+#define FP_MANIPULATE			13
+#define FP_SEEK					14
+#define FP_BATMED				15
 
 class CharTalent {
 public:
@@ -75,13 +91,14 @@ public:
 	CharTalent& get(const QString& key);
 	QString getLightSaberChar();
 
+	static int forcePower(const QString& key, QString& power);
+
 private:
 	void fillArrays();
 
 	QList<QString> iDisplayNonSpecies;
 	QList<QString> iDisplayNonCoded;
 	static CharTalent iEmpty;
-	static QStringList* iCodedTalents;
 	QStringList iLightSaberChars;
 
 public:
@@ -117,7 +134,7 @@ public:
 	void clear(QString key);
 };
 
-class AllTalents : public QObject, public DatXMLReader {
+class AllTalents : public QObject, public DatXmlReader {
 	Q_OBJECT
 
 public:
@@ -127,6 +144,7 @@ public:
 
 	virtual bool xmlElement(const DatStringBuffer& path, const char* value);
 
+	bool isTalent(const QString& key);
 	Talent getTalent(const QString& key);
 	void addTalent(const Talent& t);
 

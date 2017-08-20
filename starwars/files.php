@@ -20,8 +20,8 @@ if (isset($_POST["uploaded_type"]) && !empty($_FILES["uploaded_file"]["tmp_name"
 		$error = "Characters files must have a .xml extension";
 	else if ($upload_dir == "dsets" && $ext != "zip")
 		$error = "DataSet files must have a .zip extension";
-	else if ($upload_dir == "cdata" && $ext != "tri")
-		$error = "Current Data files must have a .tri extension";
+	else if ($upload_dir == "cdata" && $ext != "xpad")
+		$error = "Current Data files must have a .xpad extension";
 	else {
 		$to_file = $data_path."/".$_SESSION["email_address"]."/".$upload_dir."/".$target_file;
 		if (file_exists($to_file))

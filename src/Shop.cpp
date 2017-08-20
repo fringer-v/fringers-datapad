@@ -76,7 +76,7 @@ void Shop::clear()
 	iSelection.clear();
 }
 
-void Shop::addItem(const ShopItem& item)
+void Shop::addItem(const ShopItem item)
 {
 	iList[item.key] = item;
 	iSortedKeys.clear();
@@ -90,16 +90,16 @@ ShopItem Shop::itemAt(int row)
 	return iList[iSelection[row]];
 }
 
-bool Shop::contains(const QString& key)
+bool Shop::contains(const QString& key) const
 {
 	return !key.isEmpty() && iList.contains(key);
 }
 
-ShopItem Shop::getItem(const QString& key)
+const ShopItem Shop::getItem(const QString& key) const
 {
 	if (contains(key))
 		return iList[key];
-	return ShopItem();
+	return iEmptyItem;
 }
 
 void Shop::search(const QString& search)
@@ -129,7 +129,7 @@ void Shop::search(const QString& search)
 	makeClean();
 }
 
-void Shop::addSortedItem(const ShopItem& item)
+void Shop::addSortedItem(const ShopItem item)
 {
 	for (int i=0; i<iSortedKeys.size(); i++) {
 		ShopItem b = iList[iSortedKeys[i]];

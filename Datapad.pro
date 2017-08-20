@@ -1,5 +1,5 @@
 # To fix the qmake crash:
-# /Users/build/Development/Qt-5.5/5.5/clang_64/bin/qmake -set QMAKEFEATURES ""
+# /Users/build/Development/Qt-5.6/5.6/clang_64/bin/qmake -set QMAKEFEATURES ""
 
 TEMPLATE = app
 
@@ -77,7 +77,8 @@ SOURCES += \
     src/pxml.cc \
     src/DataSet.cpp \
     src/CharacterList.cpp \
-    src/CharCache.cpp
+    src/CharCache.cpp \
+    src/KeyMethods.cpp
 
 RESOURCES += qml.qrc javascript.qrc data.qrc images.qrc
 
@@ -127,4 +128,5 @@ HEADERS += \
     src/pxml.h \
     src/DataSet.h \
     src/CharacterList.h \
-    src/CharCache.h
+    src/CharCache.h \
+    src/KeyMethods.h

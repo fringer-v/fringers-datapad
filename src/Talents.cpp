@@ -30,133 +30,170 @@
 #include "DataAccess.h"
 #include "DatUtil.h"
 #include "Character.h"
+#include "KeyMethods.h"
 
 QPointer<AllTalents> AllTalents::sInstance;
 
 // CharTalentMap -------------------------
 
 CharTalent CharTalentMap::iEmpty;
-QStringList* CharTalentMap::iCodedTalents;
 
 CharTalentMap::CharTalentMap()
 {
-	if (iCodedTalents == NULL)
-		iCodedTalents = new QStringList();
-	iCodedTalents->append("ARM");
-	iCodedTalents->append("ARMIMP");
-	iCodedTalents->append("DEADACC");
-	iCodedTalents->append("DEDI");
-	iCodedTalents->append("GRIT");
-	iCodedTalents->append("JURY");
-	iCodedTalents->append("LETHALBL");
-	iCodedTalents->append("PHYSTRAIN");
-	iCodedTalents->append("SKILLJOCK");
-	iCodedTalents->append("TINK");
-	iCodedTalents->append("TOUGH");
-	iCodedTalents->append("KILL");
-	iCodedTalents->append("INTIM");
-	iCodedTalents->append("CONGENIAL");
-	iCodedTalents->append("TRUEAIM");
-	iCodedTalents->append("QUICKST");
-	iCodedTalents->append("PRECAIM");
-	iCodedTalents->append("TARGBL");
-	iCodedTalents->append("SNIPSHOT");
-	iCodedTalents->append("UNCANREAC");
-	iCodedTalents->append("STRSMART");
-	iCodedTalents->append("INTENSFOC");
-	iCodedTalents->append("SIXSENSE");
-	iCodedTalents->append("FORCERAT");
-	iCodedTalents->append("BAL");
-	iCodedTalents->append("DODGE");
-	iCodedTalents->append("DISARMSMILE");
-	iCodedTalents->append("TOUCH");
-	iCodedTalents->append("INSIGHT");
-	iCodedTalents->append("MASPIL");
-	iCodedTalents->append("FULLTH");
-	iCodedTalents->append("FULLTHIMP");
-	iCodedTalents->append("FULLTHSUP");
-	iCodedTalents->append("SLEIGHTMIND");
-	iCodedTalents->append("HAWKSWOOP");
-	iCodedTalents->append("UNCANSENS");
-	iCodedTalents->append("PARRY");
-	iCodedTalents->append("PARRYIMP");
-	iCodedTalents->append("RAPREA");
-	iCodedTalents->append("REFLECT");
-	iCodedTalents->append("REFLECTIMP");
-	iCodedTalents->append("SABERSW");
-	iCodedTalents->append("RAINDEATH");
-	iCodedTalents->append("ENDUR");
-	iCodedTalents->append("HEAVYHITTER");
-	iCodedTalents->append("BRA");
-	iCodedTalents->append("BURLY");
-	iCodedTalents->append("BAR");
-	iCodedTalents->append("FERSTR");
-	iCodedTalents->append("SENSDANG");
-	iCodedTalents->append("POINTBL");
-	iCodedTalents->append("SIDESTEP");
-	iCodedTalents->append("DEFSTA");
-	iCodedTalents->append("DURA");
-	iCodedTalents->append("SENSEADV");
-	iCodedTalents->append("KEENEYED");
-	iCodedTalents->append("SUPREF");
-	iCodedTalents->append("DEAD");
-	iCodedTalents->append("DEADIMP");
-	iCodedTalents->append("HARDHD");
-	iCodedTalents->append("HARDHDIMP");
-	iCodedTalents->append("RESEARCH");
-	iCodedTalents->append("SORESUTECH");
-	iCodedTalents->append("WELLROUND");
+	// Implemented Talents:
+	KeyMethod::instance.append("BINDBASIC", KM_BINDBASIC);
+	KeyMethod::instance.append("BRI", KM_BRI);
+	KeyMethod::instance.append("INFLUENCEBASIC", KM_INFLUENCEBASIC);
+	KeyMethod::instance.append("INFLUENCECONTROL1", KM_INFLUENCECONTROL1);
+	KeyMethod::instance.append("MISDIRBASIC", KM_MISDIRBASIC);
+	KeyMethod::instance.append("MISDIRCONTROL1", KM_MISDIRCONTROL1);
+	KeyMethod::instance.append("SENSEBASIC", KM_SENSEBASIC);
+	KeyMethod::instance.append("SENSECONTROL2", KM_SENSECONTROL2);
+	KeyMethod::instance.append("DONTSHOOT", KM_DONTSHOOT);
+	KeyMethod::instance.append("FEARSOME", KM_FEARSOME);
+	KeyMethod::instance.append("MOVEBASIC", KM_MOVEBASIC);
+	KeyMethod::instance.append("MOVECONTROL1", KM_MOVECONTROL1);
+	KeyMethod::instance.append("MOVECONTROL2", KM_MOVECONTROL2);
+	KeyMethod::instance.append("MOVECONTROL3", KM_MOVECONTROL3);
+	KeyMethod::instance.append("TECHAPT", KM_TECHAPT);
+	KeyMethod::instance.append("INDIS", KM_INDIS);
+	KeyMethod::instance.append("ENHANCECONT6", KM_ENHANCECONT6);
+	KeyMethod::instance.append("QUICKDR", KM_QUICKDR);
+	KeyMethod::instance.append("TRICK", KM_TRICK);
+	KeyMethod::instance.append("WARFORBASIC", KM_WARFORBASIC);
+	KeyMethod::instance.append("JUSTKID", KM_JUSTKID);
+	KeyMethod::instance.append("HERO", KM_HERO);
+	KeyMethod::instance.append("HEROICRES", KM_HEROICRES);
+	KeyMethod::instance.append("FORCEALLY", KM_FORCEALLY);
+	KeyMethod::instance.append("CRIPV", KM_CRIPV);
+	KeyMethod::instance.append("INTUITEVA", KM_INTUITEVA);
 
-	iCodedTalents->append("SENSECONTROL1");
-	iCodedTalents->append("SENSECONTROL3");
-	iCodedTalents->append("SENSESTRENGTH");
-	iCodedTalents->append("SENSEDURATION");
-	iCodedTalents->append("SENSERANGE");
-	iCodedTalents->append("SENSEMAGNITUDE");
+	// Coded Talents (must be last)	,
+	KeyMethod::instance.append("GALMAP", KM_GALMAP);
+	KeyMethod::instance.append("EXHPORT", KM_EXHPORT);
+	KeyMethod::instance.append("CONF", KM_CONF);
+	KeyMethod::instance.append("DEFTRAIN", KM_DEFTRAIN);
+	KeyMethod::instance.append("COD", KM_COD);
+	KeyMethod::instance.append("BYP", KM_BYP);
+	KeyMethod::instance.append("CONDITIONED", KM_CONDITIONED);
+	KeyMethod::instance.append("ARM", KM_ARM);
+	KeyMethod::instance.append("ARMIMP", KM_ARMIMP);
+	KeyMethod::instance.append("DEADACC", KM_DEADACC);
+	KeyMethod::instance.append("DEDI", KM_DEDI);
+	KeyMethod::instance.append("GRIT", KM_GRIT);
+	KeyMethod::instance.append("JURY", KM_JURY);
+	KeyMethod::instance.append("LETHALBL", KM_LETHALBL);
+	KeyMethod::instance.append("PHYSTRAIN", KM_PHYSTRAIN);
+	KeyMethod::instance.append("SKILLJOCK", KM_SKILLJOCK);
+	KeyMethod::instance.append("TINK", KM_TINK);
+	KeyMethod::instance.append("TOUGH", KM_TOUGH);
+	KeyMethod::instance.append("KILL", KM_KILL);
+	KeyMethod::instance.append("INTIM", KM_INTIM);
+	KeyMethod::instance.append("CONGENIAL", KM_CONGENIAL);
+	KeyMethod::instance.append("TRUEAIM", KM_TRUEAIM);
+	KeyMethod::instance.append("QUICKST", KM_QUICKST);
+	KeyMethod::instance.append("PRECAIM", KM_PRECAIM);
+	KeyMethod::instance.append("TARGBL", KM_TARGBL);
+	KeyMethod::instance.append("SNIPSHOT", KM_SNIPSHOT);
+	KeyMethod::instance.append("UNCANREAC", KM_UNCANREAC);
+	KeyMethod::instance.append("STRSMART", KM_STRSMART);
+	KeyMethod::instance.append("INTENSFOC", KM_INTENSFOC);
+	KeyMethod::instance.append("SIXSENSE", KM_SIXSENSE);
+	KeyMethod::instance.append("FORCERAT", KM_FORCERAT);
+	KeyMethod::instance.append("BAL", KM_BAL);
+	KeyMethod::instance.append("DODGE", KM_DODGE);
+	KeyMethod::instance.append("DISARMSMILE", KM_DISARMSMILE);
+	KeyMethod::instance.append("TOUCH", KM_TOUCH);
+	KeyMethod::instance.append("INSIGHT", KM_INSIGHT);
+	KeyMethod::instance.append("MASPIL", KM_MASPIL);
+	KeyMethod::instance.append("FULLTH", KM_FULLTH);
+	KeyMethod::instance.append("FULLTHIMP", KM_FULLTHIMP);
+	KeyMethod::instance.append("FULLTHSUP", KM_FULLTHSUP);
+	KeyMethod::instance.append("SLEIGHTMIND", KM_SLEIGHTMIND);
+	KeyMethod::instance.append("HAWKSWOOP", KM_HAWKSWOOP);
+	KeyMethod::instance.append("UNCANSENS", KM_UNCANSENS);
+	KeyMethod::instance.append("PARRY", KM_PARRY);
+	KeyMethod::instance.append("PARRYIMP", KM_PARRYIMP);
+	KeyMethod::instance.append("RAPREA", KM_RAPREA);
+	KeyMethod::instance.append("REFLECT", KM_REFLECT);
+	KeyMethod::instance.append("REFLECTIMP", KM_REFLECTIMP);
+	KeyMethod::instance.append("SABERSW", KM_SABERSW);
+	KeyMethod::instance.append("RAINDEATH", KM_RAINDEATH);
+	KeyMethod::instance.append("ENDUR", KM_ENDUR);
+	KeyMethod::instance.append("HEAVYHITTER", KM_HEAVYHITTER);
+	KeyMethod::instance.append("BRA", KM_BRA);
+	KeyMethod::instance.append("BURLY", KM_BURLY);
+	KeyMethod::instance.append("BAR", KM_BAR);
+	KeyMethod::instance.append("FERSTR", KM_FERSTR);
+	KeyMethod::instance.append("SENSDANG", KM_SENSDANG);
+	KeyMethod::instance.append("POINTBL", KM_POINTBL);
+	KeyMethod::instance.append("SIDESTEP", KM_SIDESTEP);
+	KeyMethod::instance.append("DEFSTA", KM_DEFSTA);
+	KeyMethod::instance.append("DURA", KM_DURA);
+	KeyMethod::instance.append("SENSEADV", KM_SENSEADV);
+	KeyMethod::instance.append("KEENEYED", KM_KEENEYED);
+	KeyMethod::instance.append("SUPREF", KM_SUPREF);
+	KeyMethod::instance.append("DEAD", KM_DEAD);
+	KeyMethod::instance.append("DEADIMP", KM_DEADIMP);
+	KeyMethod::instance.append("HARDHD", KM_HARDHD);
+	KeyMethod::instance.append("HARDHDIMP", KM_HARDHDIMP);
+	KeyMethod::instance.append("RESEARCH", KM_RESEARCH);
+	KeyMethod::instance.append("SORESUTECH", KM_SORESUTECH);
+	KeyMethod::instance.append("WELLROUND", KM_WELLROUND);
 
-	iCodedTalents->append("INFLUENCECONTROL1");
-	iCodedTalents->append("INFLUENCECONTROL2");
-	iCodedTalents->append("INFLUENCERANGE");
-	iCodedTalents->append("INFLUENCEMAGNITUDE");
-	iCodedTalents->append("INFLUENCESTRENGTH");
-	iCodedTalents->append("INFLUENCEDURATION");
+	KeyMethod::instance.append("SENSECONTROL1", KM_SENSECONTROL1);
+	KeyMethod::instance.append("SENSECONTROL3", KM_SENSECONTROL3);
+	KeyMethod::instance.append("SENSESTRENGTH", KM_SENSESTRENGTH);
+	KeyMethod::instance.append("SENSEDURATION", KM_SENSEDURATION);
+	KeyMethod::instance.append("SENSERANGE", KM_SENSERANGE);
+	KeyMethod::instance.append("SENSEMAGNITUDE", KM_SENSEMAGNITUDE);
 
-	iCodedTalents->append("ATARU");
+	KeyMethod::instance.append("INFLUENCECONTROL2", KM_INFLUENCECONTROL2);
+	KeyMethod::instance.append("INFLUENCERANGE", KM_INFLUENCERANGE);
+	KeyMethod::instance.append("INFLUENCEMAGNITUDE", KM_INFLUENCEMAGNITUDE);
+	KeyMethod::instance.append("INFLUENCESTRENGTH", KM_INFLUENCESTRENGTH);
+	KeyMethod::instance.append("INFLUENCEDURATION", KM_INFLUENCEDURATION);
 
-	iCodedTalents->append("ENHANCEBASIC");
-	iCodedTalents->append("ENHANCERANGE");
-	iCodedTalents->append("ENHANCECONT0");
-	iCodedTalents->append("ENHANCECONT1");
-	iCodedTalents->append("ENHANCECONT2");
-	iCodedTalents->append("ENHANCECONT3");
-	iCodedTalents->append("ENHANCECONT4");
-	iCodedTalents->append("ENHANCECONT5");
-	//iCodedTalents->append("ENHANCECONT6");
-	iCodedTalents->append("ENHANCECONT7");
-	iCodedTalents->append("ENHANCECONT8");
-	iCodedTalents->append("ENHANCECONT9");
+	KeyMethod::instance.append("ATARU", KM_ATARU);
 
-	iCodedTalents->append("FORSEECONTROL1");
-	iCodedTalents->append("FORSEECONTROL3");
+	KeyMethod::instance.append("ENHANCEBASIC", KM_ENHANCEBASIC);
+	KeyMethod::instance.append("ENHANCERANGE", KM_ENHANCERANGE);
+	KeyMethod::instance.append("ENHANCECONT0", KM_ENHANCECONT0);
+	KeyMethod::instance.append("ENHANCECONT1", KM_ENHANCECONT1);
+	KeyMethod::instance.append("ENHANCECONT2", KM_ENHANCECONT2);
+	KeyMethod::instance.append("ENHANCECONT3", KM_ENHANCECONT3);
+	KeyMethod::instance.append("ENHANCECONT4", KM_ENHANCECONT4);
+	KeyMethod::instance.append("ENHANCECONT5", KM_ENHANCECONT5);
+	//KeyMethod::instance.append("ENHANCECONT6", KM_);
+	KeyMethod::instance.append("ENHANCECONT7", KM_ENHANCECONT7);
+	KeyMethod::instance.append("ENHANCECONT8", KM_ENHANCECONT8);
+	KeyMethod::instance.append("ENHANCECONT9", KM_ENHANCECONT9);
 
-	iCodedTalents->append("MOVEBASIC");
-	iCodedTalents->append("MOVECONTROL1");
-	iCodedTalents->append("MOVECONTROL2");
-	iCodedTalents->append("MOVECONTROL3");
-	iCodedTalents->append("MOVESTRENGTH");
-	iCodedTalents->append("MOVERANGE");
-	iCodedTalents->append("MOVEMAGNITUDE");
+	KeyMethod::instance.append("FORSEECONTROL1", KM_FORSEECONTROL1);
+	KeyMethod::instance.append("FORSEECONTROL3", KM_FORSEECONTROL3);
 
-	iCodedTalents->append("MISDIRRANGE");
-	iCodedTalents->append("MISDIRMAGNITUDE");
-	iCodedTalents->append("MISDIRSTRENGTH");
-	iCodedTalents->append("MISDIRCONTROL3");
-	iCodedTalents->append("MISDIRDURATION");
+	KeyMethod::instance.append("MOVESTRENGTH", KM_MOVESTRENGTH);
+	KeyMethod::instance.append("MOVERANGE", KM_MOVERANGE);
+	KeyMethod::instance.append("MOVEMAGNITUDE", KM_MOVEMAGNITUDE);
 
-	iCodedTalents->append("WARFORRANGE");
-	iCodedTalents->append("WARFORCONTROL1");
-	iCodedTalents->append("WARFORMAGNITUDE");
-	iCodedTalents->append("WARFORCONTROL3");
+	KeyMethod::instance.append("MISDIRRANGE", KM_MISDIRRANGE);
+	KeyMethod::instance.append("MISDIRMAGNITUDE", KM_MISDIRMAGNITUDE);
+	KeyMethod::instance.append("MISDIRSTRENGTH", KM_MISDIRSTRENGTH);
+	KeyMethod::instance.append("MISDIRCONTROL3", KM_MISDIRCONTROL3);
+	KeyMethod::instance.append("MISDIRDURATION", KM_MISDIRDURATION);
+
+	KeyMethod::instance.append("WARFORRANGE", KM_WARFORRANGE);
+	KeyMethod::instance.append("WARFORCONTROL1", KM_WARFORCONTROL1);
+	KeyMethod::instance.append("WARFORMAGNITUDE", KM_WARFORMAGNITUDE);
+	KeyMethod::instance.append("WARFORCONTROL3", KM_WARFORCONTROL3);
+
+	KeyMethod::instance.append("BINDRANGE", KM_BINDRANGE);
+	KeyMethod::instance.append("BINDMAGNITUDE", KM_BINDMAGNITUDE);
+	KeyMethod::instance.append("BINDSTRENGTH", KM_BINDSTRENGTH);
+	KeyMethod::instance.append("BINDCONTROL1", KM_BINDCONTROL1);
+	KeyMethod::instance.append("BINDDURATION", KM_BINDDURATION);
+	KeyMethod::instance.append("BINDCONTROL2", KM_BINDCONTROL2);
+	KeyMethod::instance.append("BINDMASTERY", KM_BINDMASTERY);
 }
 
 int CharTalentMap::size(bool exclude_hidden)
@@ -220,33 +257,89 @@ QString CharTalentMap::magnitude(const QString& key, int ranks)
 	return QString("%1 Target%2").arg(ranks).arg(ranks==1 ? "" : "s");
 }
 
+int CharTalentMap::forcePower(const QString& key, QString& power)
+{
+	if (key.startsWith("INFLUENCE")) {
+		power = "INFLUENCE";
+		return FP_INFLUENCE;
+	}
+	if (key.startsWith("ENHANCE")) {
+		power = "ENHANCE";
+		return FP_ENHANCE;
+	}
+	if (key.startsWith("FORESEE")) {
+		power = "FORESEE";
+		return FP_FORESEE;
+	}
+	if (key.startsWith("MOVE")) {
+		power = "MOVE";
+		return FP_MOVE;
+	}
+	if (key.startsWith("MISDIR")) {
+		power = "MISDIR";
+		return FP_MISDIR;
+	}
+	if (key.startsWith("WARFOR")) {
+		power = "WARFOR";
+		return FP_WARFOR;
+	}
+	if (key.startsWith("SENSE")) {
+		power = "SENSE";
+		return FP_SENSE;
+	}
+	if (key.startsWith("BIND")) {
+		power = "BIND";
+		return FP_BIND;
+	}
+	if (key.startsWith("HEALHARM")) {
+		power = "HEALHARM";
+		return FP_HEALHARM;
+	}
+	if (key.startsWith("PROTUNL")) {
+		power = "PROTUNL";
+		return FP_PROTUNL;
+	}
+	if (key.startsWith("WARFOR")) {
+		power = "WARFOR";
+		return FP_WARFOR;
+	}
+	if (key.startsWith("SUPPRESS")) {
+		power = "SUPPRESS";
+		return FP_SUPPRESS;
+	}
+	if (key.startsWith("FARSIGHT")) {
+		power = "FARSIGHT";
+		return FP_FARSIGHT;
+	}
+	if (key.startsWith("MANIPULATE")) {
+		power = "MANIPULATE";
+		return FP_MANIPULATE;
+	}
+	if (key.startsWith("SEEK")) {
+		power = "SEEK";
+		return FP_SEEK;
+	}
+	if (key.startsWith("BATMED")) {
+		power = "BATMED";
+		return FP_BATMED;
+	}
+	return 0;
+}
+
 QString CharTalentMap::forceUpgrades(const QString& key, int show, int cost)
 {
 	QString power;
 	QString upgrades;
 	QString costs;
 	CharTalent t;
+	int power_id;
 
-	if (key.startsWith("INFLUENCE"))
-		power = "INFLUENCE";
-	else if (key.startsWith("ENHANCE"))
-		power = "ENHANCE";
-	else if (key.startsWith("FORESEE"))
-		power = "FORESEE";
-	else if (key.startsWith("MOVE"))
-		power = "MOVE";
-	else if (key.startsWith("MISDIR"))
-		power = "MISDIR";
-	else if (key.startsWith("WARFOR"))
-		power = "WARFOR";
-	else if (key.startsWith("SENSE"))
-		power = "SENSE";
-
+	power_id = CharTalentMap::forcePower(key, power);
 	if (show & STR) {
 		t = get(power + "STRENGTH");
 		if (t.ranks > 0) {
 			if (power == "INFLUENCE")
-				upgrades = QString("Strain x2").arg(t.ranks);
+				upgrades = "Strain x2";
 			else if (power == "MOVE")
 				upgrades = QString("Silhouette %1").arg(t.ranks);
 			else if (power == "MISDIR")
@@ -292,7 +385,7 @@ void CharTalentMap::clear()
 
 void CharTalentMap::addTalent(CharTalent talent)
 {
-	if (talent.talentType == TALENT_REGULAR && iCodedTalents->contains(talent.key))
+	if (talent.talentType == TALENT_REGULAR && KeyMethod::instance.isCodedTalent(talent.key))
 		talent.talentType = TALENT_CODED;
 	if (charTalentMap.contains(talent.key)) {
 		charTalentMap[talent.key].ranks++;
@@ -513,6 +606,11 @@ bool AllTalents::xmlElement(const DatStringBuffer& path, const char* value)
 	return true;
 }
 
+bool AllTalents::isTalent(const QString& key)
+{
+	return iTalents.contains(key);
+}
+
 Talent AllTalents::getTalent(const QString& key)
 {
 	return iTalents.value(key);
@@ -530,7 +628,7 @@ Talents Talents::instance = Talents();
 
 Talents::Talents() :
 	AbstractDataList(QStringList() << "hidden" << "talent" << "ranks" << "activation"
-		<< "acquisition" << "description")
+		<< "acquisition" << "description" << "talentkey")
 {
 }
 
@@ -560,6 +658,8 @@ QVariant Talents::getValue(int row, int col)
 		case 2:
 			return talent.ranked ? char_talent.ranks : 0;
 		case 3:
+			if (talent.force)
+				return "Action";
 			return talent.activation;
 		case 4:
 			if (talent.force)
@@ -581,14 +681,7 @@ QVariant Talents::getValue(int row, int col)
 
 			DatUtil::addDescription(desc, talent.description, talent.books);
 
-			if (char_talent.key == "INFLUENCEBASIC" || char_talent.key == "MOVEBASIC" ||
-				char_talent.key == "MOVECONTROL1" || char_talent.key == "MOVECONTROL2" ||
-				char_talent.key == "MOVECONTROL3" || char_talent.key == "MOVECONTROL4"
-				)
-				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades("INFLUENCEBASIC"), " [B]Upgrades:[b] ");
-			else if (char_talent.key == "INFLUENCECONTROL1")
-				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades("INFLUENCECONTROL1", RAN | MAG | DUR), " [B]Upgrades:[b] ");
-			else if (char_talent.key == "ENHANCECONT6") {
+			if (char_talent.key == "ENHANCECONT6") {
 				QString	text;
 				QString action = "an Action";
 				QString type = "horizontally";
@@ -604,19 +697,12 @@ QVariant Talents::getValue(int row, int col)
 				desc.clear();
 				DatUtil::addDescription(desc, text, talent.books);
 			}
-			else if (char_talent.key == "MISDIRBASIC") {
-				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades("MISDIRBASIC", RAN | MAG), " [B]Upgrades:[b] ");
-				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades("MISDIRBASIC", STR, 2), ", ");
-			}
-			else if (char_talent.key == "WARFORBASIC") {
-				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades("WARFORBASIC", RAN), " [B]Upgrades:[b] ");
-			}
-			else if (char_talent.key == "SENSEBASIC" || char_talent.key == "SENSECONTROL2") {
-				DatUtil::appendToList(desc, CurrentData::instance->talents.forceUpgrades(char_talent.key, RAN | MAG), " [B]Upgrades:[b] ");
-			}
 
 			return desc;
 		}
+		case 6:
+			return char_talent.key;
+
 	}
 	return QVariant();
 }
