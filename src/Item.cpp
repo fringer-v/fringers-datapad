@@ -57,8 +57,11 @@ void Mod::clear(const QString& k)
 
 QString Mod::modText()
 {
-	if (!miscDesc.isEmpty())
+	if (!miscDesc.isEmpty()) {
+		if (count > 1)
+			return QString("%1 ").arg(count)+miscDesc;
 		return miscDesc;
+	}
 
 	QString mod_desc = ItemDescriptors::instance()->descriptor(key).getModDesc();
 
@@ -209,6 +212,16 @@ void DieModList::addMod(DieMod mod)
 {
 	if (mod.skillKey.isEmpty())
 		mod.skillKey = QString("KEY_%1").arg(rand());
+	if (modMap.contains(mod.skillKey)) {
+		DieMod cmod = modMap[mod.skillKey];
+		mod.boostCount += cmod.boostCount;
+		mod.setbackCount += cmod.setbackCount;
+		mod.forceCount += cmod.forceCount;
+		mod.advantageCount += cmod.advantageCount;
+		mod.threatCount += cmod.threatCount;
+		mod.addSetbackCount += cmod.addSetbackCount;
+		mod.upgradeCount += cmod.upgradeCount;
+	}
 	modMap[mod.skillKey] = mod;
 }
 
@@ -465,6 +478,11 @@ int Item::pierce()
 	if (hasQuality("BREACH"))
 		pierce += getQuality("BREACH").count*10;
 
+	if (CurrentData::instance->isCommitted("SEEKCONTROL1")) {
+		int inc = Character::instance->cunning() + CurrentData::instance->skills["PERC"].ranks;
+		pierce += inc;
+	}
+
 	//if (character->talents.contains("LETHALBL"))
 		//pierce += character->talents["LETHALBL"].ranks;
 
@@ -502,7 +520,7 @@ QString Item::qualities()
 	foreach (Quality qual, shop.qualityList)
 		DatUtil::appendToList(list, qual.quality());
 
-	if (itemkey != "UNARMED" && shop.isMeleeWeapon()) {
+	if (!isUnarmed() && shop.isMeleeWeapon()) {
 		int ranks = CurrentData::instance->talents.ranks("DEFTRAIN");
 		if (ranks > 0) {
 			qual.key = "DEFENSIVE";
@@ -628,12 +646,16 @@ int Item::critTotal()
 			t = st.weaponsCrit;
 	}
 
-	if (t > 0 && hasQuality("CRITSUB")) {
+	if (hasQuality("CRITSUB"))
 		t -= getQuality("CRITSUB").count;
-		if (t <= 0)
-			t = 1;
+
+	if (isUnarmed()) {
+		int ranks = CurrentData::instance->talents.ranks("IRONBODY");
+		t -= ranks;
 	}
 
+	if (t <= 0)
+		t = 1;
 	return t;
 }
 
@@ -727,6 +749,11 @@ QString Item::range()
 	return shopItem().range;
 }
 
+bool Item::isUnarmed()
+{
+	return itemkey == "UNARMED";
+}
+
 void Item::addMod(Mod mod)
 {
 	iModList.addItem(mod);
@@ -793,7 +820,8 @@ Quality Item::getQuality(const QString& qkey)
 int Item::encumbrance()
 {
 	const ShopItem shop = shopItem();
-	return shop.encumbrance;
+	Mod mod = iModList.get("ENCADD");
+	return shop.encumbrance + mod.count * mod.number;
 }
 
 const ShopItem Item::shopItem() const

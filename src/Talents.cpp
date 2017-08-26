@@ -65,10 +65,25 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("HERO", KM_HERO);
 	KeyMethod::instance.append("HEROICRES", KM_HEROICRES);
 	KeyMethod::instance.append("FORCEALLY", KM_FORCEALLY);
-	KeyMethod::instance.append("CRIPV", KM_CRIPV);
 	KeyMethod::instance.append("INTUITEVA", KM_INTUITEVA);
+	KeyMethod::instance.append("NATBLADE", KM_NATBLADE);
+	KeyMethod::instance.append("SEEKBASICPOWER", KM_SEEKBASIC);
+	KeyMethod::instance.append("SEEKCONTROL3", KM_SEEKCONTROL3);
+	KeyMethod::instance.append("SEEKSTRENGTH", KM_SEEKSTRENGTH);
+	KeyMethod::instance.append("SEEKCONTROL1", KM_SEEKCONTROL1);
+	KeyMethod::instance.append("SEEKMASTERY", KM_SEEKMASTERY);
+	KeyMethod::instance.append("SEEKDURATION", KM_SEEKDURATION);
 
-	// Coded Talents (must be last)	,
+	// Coded Talents (must be last),
+	KeyMethod::instance.append("IRONBODY", KM_IRONBODY);
+	KeyMethod::instance.append("ANAT", KM_ANAT);
+	KeyMethod::instance.append("PLAUSDEN", KM_PLAUSDEN);
+	KeyMethod::instance.append("CRIPV", KM_CRIPV);
+	KeyMethod::instance.append("PREYWEAK", KM_PREYWEAK);
+	KeyMethod::instance.append("SEEKCONTROL2", KM_SEEKCONTROL2);
+	KeyMethod::instance.append("SEEKMAGNITUDE", KM_SEEKMAGNITUDE);
+	KeyMethod::instance.append("SARSWEEP", KM_SARSWEEP);
+	KeyMethod::instance.append("MULTOPP", KM_MULTOPP);
 	KeyMethod::instance.append("GALMAP", KM_GALMAP);
 	KeyMethod::instance.append("EXHPORT", KM_EXHPORT);
 	KeyMethod::instance.append("CONF", KM_CONF);
@@ -254,6 +269,8 @@ QString CharTalentMap::magnitude(const QString& key, int ranks)
 		ranks = ranks*Character::instance->presence();
 	else
 		ranks++;
+	if (key.startsWith("SEEK"))
+		return QString("%1 Additional Detail%2").arg(ranks-1).arg(ranks-1==1 ? "" : "s");
 	return QString("%1 Target%2").arg(ranks).arg(ranks==1 ? "" : "s");
 }
 
@@ -564,6 +581,13 @@ bool AllTalents::xmlElement(const DatStringBuffer& path, const char* value)
 		iDieMod.upgradeCount = toInt(value);
 	else if (path.endsWith("/DieModifier/#end"))
 		iTalent.dieModList.addMod(iDieMod);
+
+	// Skill keys:
+	else if (path.endsWith("/SkillKeys/Key/")) {
+		iDieMod.clear();
+		iDieMod.skillKey = value;
+		iTalent.dieModList.addMod(iDieMod);
+	}
 
 	else if (path.endsWith("/SkillChars/SkillChar/CharKey/"))
 		iTalent.lightSaberSkill = value;

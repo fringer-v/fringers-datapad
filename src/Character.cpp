@@ -114,6 +114,12 @@ QString CharSkill::getDicePool(MethodID base_skill_id)
 			else if (current_data->talents.contains("WARFORCONTROL1") > 0)
 				addForceDice++;
 			break;
+		case KM_VIGIL:
+		case KM_PERC:
+			if (current_data->isCommitted("SEEKCONTROL1")) {
+				pool += 'U';
+			}
+			break;
 		default:
 			break;
 	}
@@ -146,8 +152,6 @@ QString CharSkill::getDicePool(MethodID base_skill_id)
 		if (char_talent.key == "DODGE" &&
 			(skill->method_id == KM_DEFM || skill->method_id == KM_DEFR))
 			optionalDowngradeCount += char_talent.ranks;
-		if (char_talent.key == "INTIM" && skill->method_id == KM_COERC)
-			optionalUpgradeCount += char_talent.ranks;
 		if (char_talent.key == "CONF" && base_skill_id == KM_FDISC)
 			optionalReduceDiffCount += char_talent.ranks;
 	}
@@ -650,10 +654,20 @@ QString Character::itemQualMag()
 	MethodID talent_id = KeyMethod::instance.getID(iActiveTalentKey);
 
 	switch (talent_id) {
+		case KM_ENHANCEBASIC:
+		case KM_ENHANCECONT1:
+		case KM_ENHANCECONT2:
+		case KM_ENHANCECONT3:
+		case KM_ENHANCECONT4:
+		case KM_ENHANCECONT5:
+		case KM_ENHANCECONT6: // Control: Force Leap (Horizontal)
+		case KM_ENHANCECONT7:
+		case KM_ENHANCECONT8:
+		case KM_ENHANCECONT9:
+			return "n/a";
 		case KM_BINDBASIC:
 		case KM_INFLUENCEBASIC:
 		case KM_INFLUENCECONTROL1:
-		case KM_ENHANCEBASIC:
 		case KM_MISDIRBASIC:
 		case KM_MISDIRCONTROL1:
 		case KM_SENSEBASIC:
@@ -665,6 +679,21 @@ QString Character::itemQualMag()
 			if (iModItemMagnitude == 0)
 				return "1 Target";
 			return QString("%1 Targets").arg(iModItemMagnitude+1);
+		case KM_SEEKBASIC: {
+			QString val;
+
+			if (iModItemDuration == 0)
+				val = "1 target";
+			else
+				val = QString("%1 targets").arg(iModItemDuration+1);
+			if (iModItemMagnitude == 0)
+				val += ", - Details";
+			else if (iModItemMagnitude == 1)
+				val += ", 1 Detail";
+			else
+				val += QString(", %1 Details").arg(iModItemMagnitude);
+			return val;
+		}
 		default:
 			break;
 	}	
@@ -694,6 +723,14 @@ QString Character::itemPowerStr()
 		case KM_MOVECONTROL2:
 		case KM_MOVECONTROL3:
 			return QString("Effect silhouette %1 or smaller").arg(silhouette+iModItemStrength > 9 ? 9 : silhouette+iModItemStrength);
+		case KM_SEEKBASIC:
+			if (iModItemRange > 0)
+				return "Add [TR] to combat checks vs target";
+			if (iModItemStrength == 0)
+				return "Eliminate 0 Force-based illusions";
+			if (iModItemStrength == 1)
+				return "Eliminate 1 Force-based illusion";
+			return QString("Eliminate %1 Force-based illusions").arg(iModItemStrength);
 		default:
 			break;
 	}
@@ -1009,7 +1046,13 @@ QString Character::showCheckList(QString skill_name, QString skill_key, QString 
 		setitemAttachDesc(desc);
 
 		if (talent.force) {
-			check_list_type = "force";
+			if (talent_key.endsWith("STRENGTH") ||
+				talent_key.endsWith("DURATION") ||
+				talent_key.endsWith("RANGE") ||
+				talent_key.endsWith("MAGNITUDE"))
+				check_list_type = "";
+			else
+				check_list_type = "force";
 
 			switch (talent_id) {
 				case KM_ENHANCEBASIC:
@@ -1041,6 +1084,22 @@ QString Character::showCheckList(QString skill_name, QString skill_key, QString 
 					pool_plus += QString("F").repeated(force() - forceCommitted()) + ".";
 					skill_key = "DISC";
 					break;
+				case KM_SEEKCONTROL1:
+				case KM_SEEKCONTROL3:
+					skill_name = "FORCE";
+					skill_key = "FORCE";
+					pool_plus = QString("F").repeated(force());
+					check_list_type = "force";
+					break;
+				case KM_SEEKMASTERY:
+				case KM_SEEKSTRENGTH:
+				case KM_SEEKDURATION:
+					skill_key = talent_key;
+					talent_key = "SEEKBASICPOWER";
+					dice_pool = QString("F").repeated(force() - forceCommitted()) + ".";
+					check_list_type = "force";
+					break;
+				case KM_SEEKCONTROL2:
 				case KM_ENHANCECONT0:
 					check_list_type = "";
 					break;
@@ -1049,12 +1108,6 @@ QString Character::showCheckList(QString skill_name, QString skill_key, QString 
 					dice_pool = QString("F").repeated(force() - forceCommitted()) + ".";
 					break;
 			}
-
-			if (talent_key.endsWith("STRENGTH") ||
-				talent_key.endsWith("DURATION") ||
-				talent_key.endsWith("RANGE") ||
-				talent_key.endsWith("MAGNITUDE"))
-				check_list_type = "";
 		}
 		else {
 			check_list_type = "talent";
@@ -1079,12 +1132,6 @@ QString Character::showCheckList(QString skill_name, QString skill_key, QString 
 				case KM_TECHAPT:
 					skill_key = "COMP";
 					break;
-				case KM_CONDITIONED:
-					skill_key = DatUtil::betterThan("ATHL", "COORD", this) > 0 ? "ATHL" : "COORD";
-					break;
-				case KM_SLEIGHTMIND:
-					skill_key = "STEAL";
-					break;
 				case KM_REFLECT:
 					skill_key = "DEFR";
 					break;
@@ -1092,13 +1139,12 @@ QString Character::showCheckList(QString skill_name, QString skill_key, QString 
 					skill_key = "FDISC";
 					break;
 				case KM_DEFTRAIN:
+				case KM_PARRY:
+				case KM_PARRYIMP:
 					skill_key = "DEFM";
 					break;
 				case KM_EXHPORT:
 					skill_key = "GUNN";
-					break;
-				case KM_GALMAP:
-					skill_key = "ASTRO";
 					break;
 				case KM_INTIM:
 					skill_key = "COERC";
@@ -1108,20 +1154,34 @@ QString Character::showCheckList(QString skill_name, QString skill_key, QString 
 					skill_key = "FORCE";
 					pool_plus = QString("F").repeated(force() - forceCommitted());
 					break;
-				case KM_GRIT:
-				case KM_INDIS:
-				case KM_QUICKDR:
-				case KM_TRICK:
-				case KM_JUSTKID:
-				case KM_HERO:
-				case KM_HEROICRES:
-				case KM_FORCEALLY:
-				case KM_CRIPV:
-				case KM_DEDI:
-				case KM_DURA:
-					check_list_type = "";
+				case KM_IRONBODY:
+					skill_key = "BR";
+					setItemItemKey("UNARMED");
+					setItemRange("Engaged");
+					setItemCritLevel("4");
+					check_list_type = "weapon";
 					break;
+				//case KM_CONDITIONED:
+				//	skill_key = DatUtil::betterThan("ATHL", "COORD", this) > 0 ? "ATHL" : "COORD";
+				//	break;
+				//case KM_SLEIGHTMIND:
+				//	skill_key = "STEAL";
+				//	break;
+				//case KM_GALMAP:
+				//	skill_key = "ASTRO";
+				//	break;
 				default:
+					if (skill_key.isEmpty()) {
+						foreach (DieMod mod, talent.dieModList.modMap) {
+							if (skill_key.isEmpty())
+								skill_key = mod.skillKey;
+							else if (DatUtil::betterThan(mod.skillKey, skill_key, this) > 0)
+								skill_key = mod.skillKey;
+							break;
+						}
+					}
+					if (skill_key.isEmpty())
+						check_list_type = "";
 					break;
 			}
 		}
@@ -1519,7 +1579,21 @@ int Character::getItemRange(int& range1, int&range2)
 	MethodID talent_id = KeyMethod::instance.getID(iActiveTalentKey);
 	range1 = 0, range2 = -1;
 
+		// see QString Weapons::toRangeText(int range)
 	switch (talent_id) {
+		case KM_ENHANCEBASIC:
+		case KM_ENHANCECONT1:
+		case KM_ENHANCECONT2:
+		case KM_ENHANCECONT4:
+		case KM_ENHANCECONT5:
+		case KM_ENHANCECONT7:
+		case KM_ENHANCECONT8:
+		case KM_ENHANCECONT9:
+			range1 = -40; // Range n/a
+			break;
+		case KM_SEEKBASIC:
+			range1 = -20; // Range Unlimited
+			break;
 		case KM_BINDBASIC:
 		case KM_MISDIRBASIC:
 		case KM_MISDIRCONTROL1:
@@ -1527,6 +1601,8 @@ int Character::getItemRange(int& range1, int&range2)
 		case KM_MOVECONTROL1:
 		case KM_MOVECONTROL2:
 		case KM_MOVECONTROL3:
+		case KM_ENHANCECONT3:
+		case KM_ENHANCECONT6: // Control: Force Leap (Horizontal)
 			range1 = 1;
 			break;
 		case KM_INFLUENCEBASIC:
@@ -1704,7 +1780,7 @@ void Character::inventoryChanged()
 				item.characteristicDelta(mods);
 				if (mdef_ranks > 0) {
 					const ShopItem shop = item.shopItem();
-					if (item.itemkey != "UNARMED" && shop.isMeleeWeapon())
+					if (!item.isUnarmed() && shop.isMeleeWeapon())
 						mods.inc(V_DMELEE, mdef_ranks);
 				}
 			}

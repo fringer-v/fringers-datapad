@@ -881,6 +881,8 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_
 			case KM_MISDIRCONTROL1:
 				magnitude = magnitude * charac->presence();
 				// No break!
+			case KM_SENSEBASIC:
+			case KM_SENSECONTROL2:
 			case KM_INFLUENCEBASIC:
 			case KM_INFLUENCECONTROL1:
 			case KM_MOVEBASIC:
@@ -888,12 +890,57 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_
 			case KM_MOVECONTROL2:
 			case KM_MOVECONTROL3:
 				if (magnitude > 0) {
-					for (int i=0; i<(force_dice+1)/2; i++) {
+					for (int i=0; i<(force_dice+1)/2+2; i++) {
 						ref = autoCheckItems.plus(pips, plurize("[B]Magnitude:[b] Effect %1 additional target", magnitude), 0, 0);
 						autoCheckItems.plusMagnitude(ref, magnitude);
 					}
 				}
 				break;
+			case KM_SEEKBASIC: {
+				CharSkill v_skill = skills["VIGIL"];
+
+				ref = autoCheckItems.plus(".", "[B]Locate:[b] Gain insight into general location or direction of person or object", 0, 0);
+				if (skill_id == KM_SEEKMASTERY || skill_id == KM_SEEKDURATION)
+					checkItem(charac, ref, skillKey, false);
+
+				if (talents.contains("SEEKCONTROL2")) {
+					for (int i=0; i<(force_dice+1)/2+2; i++) {
+						ref = autoCheckItems.plus(".", "[B]Control: Targets:[b] Track 1 additional target", 0, 0);
+						autoCheckItems.plusDuration(ref, 1);
+					}
+				}
+				if (magnitude > 0) {
+					ref = autoCheckItems.plus(".", plurize("[B]Magnitude:[b] Gain %1 additional helpful detail(s) about the location, direction or path", magnitude), 0, 0);
+					autoCheckItems.plusMagnitude(ref, magnitude);
+				}
+				if (talents.contains("SEEKDURATION")) {
+					ref = autoCheckItems.plus("g", "[B]Duration:[b] Commit to track target even when it moves", 0, 0, 0, "", "SEEKDURATION", 1);
+					if (isCommitted("SEEKDURATION")) {
+						Character::instance->setDicePool("F"+Character::instance->dicePool());
+						checkItem(charac, ref, skillKey, true);
+					}
+					else if (skill_id == KM_SEEKDURATION)
+						checkItem(charac, ref, skillKey, false);
+				}
+				autoCheckItems.plus(v_skill.getBasicPool(charac)+"DD", "[B]Illusions:[b] (or vs Discipline), to see through illusions", 0, 0);
+				if (strength > 0) {
+					for (int i=0; i<(force_dice+1)/2+2; i++) {
+						ref = autoCheckItems.plus(".", plurize("[B]Stength:[b] Eliminate %1 Force-based illusion", strength), 0, 0);
+						autoCheckItems.plusStrength(ref, strength);
+						if (i == 0 && skill_id == KM_SEEKSTRENGTH)
+							checkItem(charac, ref, skillKey, false);
+					}
+				}
+
+				if (talents.contains("SEEKMASTERY")) {
+					ref = autoCheckItems.plus("...", "[B]Seek Mastery:[b] Add [TR] to combat checks against target until end of encounter", 0, 0);
+					autoCheckItems.plusRange(ref, 1);
+					if (skill_id == KM_SEEKMASTERY)
+						checkItem(charac, ref, skillKey, false);
+				}
+
+				break;
+			}
 			default:
 				break;
 		}
@@ -1067,6 +1114,9 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_
 
 			if (force > 0 && talents.contains("SABERSW"))
 				autoCheckItems.plus(QString("@" ESC_LINKED " %1").arg(force), QString("[B]Saber Swarm:[b] Attack has linked %1 quality").arg(force), 1, 1);
+
+			if (talents.contains("SARSWEEP"))
+				autoCheckItems.plus("Daa", "[B]Sarlacc Sweep:[b] [AD][AD] may only be use to hit additional engaged targets", 0, 1);
 			break;
 		case KM_DEFM:
 		case KM_DEFR:
@@ -1143,20 +1193,42 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_
 					checkItem(charac, ref, skillKey, true);
 			}
 
+			if (talents.contains("SEEKDURATION")) {
+				ref = autoCheckItems.plus("g", "[B]Seek Duration:[b] Track maving target(s)", 0, 0, 0, "", "SEEKDURATION", 1);
+				if (isCommitted("SEEKDURATION"))
+					checkItem(charac, ref, skillKey, true);
+			}
+
+			if (talents.contains("SEEKCONTROL1")) {
+				ref = autoCheckItems.plus("g", "[B]Seek Skills:[b] Upgrade the ability of Vigilance and Perception checks once", 0, 0, 0, "", "SEEKCONTROL1", 1);
+				if (isCommitted("SEEKCONTROL1"))
+					checkItem(charac, ref, skillKey, true);
+				else if (talent_id == KM_SEEKCONTROL1)
+					checkItem(charac, ref, skillKey, false);
+			}
+
+			if (talents.contains("SEEKCONTROL3")) {
+				int inc = charac->cunning() + skills["PERC"].ranks;
+				ref = autoCheckItems.plus("ggg", QString("[B]Seek Pierce:[b] Attacks gain or increase pierce by %1").arg(inc), 0, 0, 0, "", "SEEKCONTROL3", 3);
+				if (isCommitted("SEEKCONTROL3"))
+					checkItem(charac, ref, skillKey, true);
+				else if (talent_id == KM_SEEKCONTROL3)
+					checkItem(charac, ref, skillKey, false);
+			}
+
 			ranks = talents.ranks("INTUITEVA");
 			if (ranks > 0) {
-				int count = isCommitted("INTUITEVA");
-				if (talent_id == KM_INTUITEVA && count < charac->force()) {
-					count++;
-				}
-				for (int i=0; i<ranks; i++) {
+				int commit_count = isCommitted("INTUITEVA");
+				int force = charac->force();
+				for (int i=0; i<ranks && i<force; i++) {
 					ref = autoCheckItems.plus("g", "[B]Intuitive Evasion:[b] Upgrade combat checks vs vehicle, cost 1 strain per round", 1, 1, 0, "", "INTUITEVA", 1);
-					if (count > 0) {
+					if (i < commit_count)
 						checkItem(charac, ref, skillKey, true);
-						count--;
-					}
+					else if (talent_id == KM_INTUITEVA)
+						checkItem(charac, ref, skillKey, false);
 				}
 			}
+
 			break;
 		}
 		default:
@@ -1240,11 +1312,11 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_
 					autoCheckItems.plus(QString("D").repeated(dif <= 0 ? 1 : dif), QString("[B]Hard Headed (Improved):[b] Perfrom check to reduced straing to %1").arg(charac->strain()-1), 0, 0);
 				}
 			}
-			// No break!
+			// No break
 		case KM_FDISC:
 			ranks = talents.ranks("CONF");
 			if (ranks > 0) {
-				int dc = autoCheckItems.plus(QString("r").repeated(ranks), "[B]Confidence:[b] May descrease difficulty of fear checks", 0, 0);
+				int dc = autoCheckItems.plus(QString("r").repeated(ranks), "[B]Confidence:[b] May decrease difficulty of fear checks", 0, 0);
 				if (skill_id == KM_FDISC)
 					default_check = dc;
 			}
@@ -1271,6 +1343,11 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_
 			if (ranks > 0)
 				autoCheckItems.plus(QString("@-%1 " ESC_DAMAGE).arg(ranks), QString("[B]Conditioned:[b] Reduce damage and strain by %1 from falling").arg(ranks), 0, 0);
 			break;
+		case KM_PERC:
+		case KM_VIGIL:
+			ranks = talents.ranks("KEENEYED");
+			if (ranks > 0)
+				default_check = autoCheckItems.plus(QString("N").repeated(ranks), "[B]Keen Eyed:[b] Reduce any search time by 50%", 0, 0);
 		default:
 			break;
 	}
@@ -1312,6 +1389,7 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_
 	bool combat = false;
 	bool ranged = false;
 	bool gunnery = false;
+	bool using_weapon = !weapon.itemkey.isEmpty() && !weapon.isUnarmed();
 	if (skill_id == KM_RANGHVY || skill_id == KM_RANGLT) {
 		combat = true;
 		ranged = true;
@@ -1346,8 +1424,12 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_
 		if (ranks > 0)
 			autoCheckItems.plus(QString("B").repeated(ranks), "[B]Quick Strike:[b] Add if target has not acted in this encounter yet", 0, 0);
 
-		if (!weapon.itemkey.isEmpty() && weapon.itemkey != "UNARMED" && talents.contains("TARGBL"))
-			autoCheckItems.plus(QString("@" ESC_DAMAGE " +%1").arg(charac->agility()), "[B]Targeted Blow:[b] Add to damage on hit with non-vehicle weapon", 0, 0, 1);
+		if (using_weapon) {
+			if (talents.contains("TARGBL"))
+				autoCheckItems.plus(QString("@" ESC_DAMAGE " +%1").arg(charac->agility()), "[B]Targeted Blow:[b] Add to damage on hit with non-vehicle weapon", 0, 0, 1);
+			if (talents.contains("ANAT"))
+				autoCheckItems.plus(QString("@" ESC_DAMAGE " +%1").arg(charac->intellect()), "[B]Anatomy Lesssons:[b] Add to damage on hit with non-vehicle weapon", 0, 0, 1);
+		}
 
 		ranks = talents.ranks("DISARMSMILE");
 		if (ranks > 0)
@@ -1359,41 +1441,49 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_
 				autoCheckItems.plus("D", "[B]Crippling Blow:[b] If check deals damage, target suffers 1 strain per move for encounter", 0, 0);
 		}
 
-		if (gunnery) {
-			if (talents.contains("DEAD")) {
-				int dam = charac->agility();
-
-				if (!talents.contains("DEADIMP"))
-					dam = (dam + 1) / 2;
-				autoCheckItems.plus(QString("@+%1 " ESC_DAMAGE).arg(dam), "[B]Dead to Rights:[b] Add to one hit with vehicle mounted weapon", 0, 0, 1);
-			}
-
-			if (talents.contains("EXHPORT")) {
-				autoCheckItems.plus("@-1 " ESC_DESTINY, "[B]Exhaust Port:[b] Ignore the effects of Massive", 0, 0, 1);
-			}
-
-		}
-	}
-	if (ranged) {
-		bool extreme_range = weapon.range() == "Extreme";
-		if (!extreme_range) {
-			ranks = talents.ranks("SNIPSHOT");
-			if (ranks > 0) {
-				int ref = autoCheckItems.plus("@" ESC_RANGE " +1", "[B]Sniper Shot:[b] Increase range (and difficulty) of next attack", 1, 0);
-				autoCheckItems.plusRange(ref, 1);
-			}
-		}
-		ranks = talents.ranks("POINTBL");
+		ranks = talents.ranks("PREYWEAK");
 		if (ranks > 0)
-			autoCheckItems.plus(QString("@" ESC_DAMAGE " +%1").arg(ranks), "[B]Point Blank:[b] Engaged or Short range", 0, 0);
-		if (talents.contains("RAINDEATH"))
-			autoCheckItems.plus("@" ESC_AUTOFIRE, "[B]Rain of Death:[b] Ignore increase difficulty due to auto-fire", 1, 0);
-		if (skillKey != "RANGLT") {
-			if (talents.contains("HEAVYHITTER"))
-				autoCheckItems.plus("@" ESC_BREACH " +1", "[B]Heavy Hitter:[b] Once per session use [TR] to add breach property", 1, 0);
-			ranks = talents.ranks("BAR");
+			autoCheckItems.plus(QString("@" ESC_DAMAGE " +%1").arg(ranks), "[B]Prey on the Weak:[b] Add to damage if target is disoriented", 0, 0, 0);
+
+		if (ranged) {
+			bool extreme_range = weapon.range() == "Extreme";
+			if (!extreme_range) {
+				ranks = talents.ranks("SNIPSHOT");
+				if (ranks > 0) {
+					int ref = autoCheckItems.plus("@" ESC_RANGE " +1", "[B]Sniper Shot:[b] Increase range (and difficulty) of next attack", 1, 0);
+					autoCheckItems.plusRange(ref, 1);
+				}
+			}
+			ranks = talents.ranks("POINTBL");
 			if (ranks > 0)
-				autoCheckItems.plus(QString("@" ESC_DAMAGE" +%1").arg(ranks), "[B]Barrage:[b] Long or extreme range", 0, 0);
+				autoCheckItems.plus(QString("@" ESC_DAMAGE " +%1").arg(ranks), "[B]Point Blank:[b] Engaged or Short range", 0, 0);
+			if (talents.contains("RAINDEATH"))
+				autoCheckItems.plus("@" ESC_AUTOFIRE, "[B]Rain of Death:[b] Ignore increase difficulty due to auto-fire", 1, 0);
+			if (skillKey != "RANGLT") {
+				if (talents.contains("HEAVYHITTER"))
+					autoCheckItems.plus("@" ESC_BREACH " +1", "[B]Heavy Hitter:[b] Once per session use [TR] to add breach property", 1, 0);
+				ranks = talents.ranks("BAR");
+				if (ranks > 0)
+					autoCheckItems.plus(QString("@" ESC_DAMAGE" +%1").arg(ranks), "[B]Barrage:[b] Long or extreme range", 0, 0);
+			}
+			if (gunnery) {
+				if (talents.contains("DEAD")) {
+					int dam = charac->agility();
+
+					if (!talents.contains("DEADIMP"))
+						dam = (dam + 1) / 2;
+					autoCheckItems.plus(QString("@+%1 " ESC_DAMAGE).arg(dam), "[B]Dead to Rights:[b] Add to one hit with vehicle mounted weapon", 0, 0, 1);
+				}
+
+				if (talents.contains("EXHPORT")) {
+					autoCheckItems.plus("@-1 " ESC_DESTINY, "[B]Exhaust Port:[b] Ignore the effects of Massive", 0, 0, 1);
+				}
+
+			}
+		}
+		else {
+			if (talents.contains("MULTOPP"))
+				autoCheckItems.plus("B", "[B]Multiple Opponents:[b] When engaged with multiple opponent", 0, 0);
 		}
 	}
 
@@ -1487,6 +1577,7 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_
 
 	// CUSTOM CHECKS -------------------------------------------------
 
+	/*
 	setup_talent_checks();
 	if (talentChecks.contains(skillKey)) {
 		foreach (CheckItem* item, talentChecks[skillKey].checks) {
@@ -1495,6 +1586,7 @@ void CurrentData::setupAutoCheckItems(Character* charac, const QString& /*check_
 				checkItem(charac, ref, skillKey, true);
 		}
 	}
+	*/
 
 	// VARIOUS ACTIONS -------------------------------------------------
 

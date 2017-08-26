@@ -40,7 +40,9 @@
 
 // CharacterXML -------------------------
 
-CharacterXML::CharacterXML(CurrentData* current_data)
+CharacterXML::CharacterXML(CurrentData* current_data) :
+	iIsPC(false),
+	iModUnique(0)
 {
 	iCurrentData = current_data;
 	iSpeciesKey.clear();
@@ -105,15 +107,21 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	//	qDebug() << "XML" << path.getCString() << "VALUE(" << strlen(value) << ")" << "--" << iAttribute << iAttrValue;
 	//else
 	//	qDebug() << "XML" << path.getCString() << value << "--" << iAttribute << iAttrValue;
-
 	if (path.startsWith("/Character/Vehicles/"))
 		// Ignore vehicle info
 		;
-	else if (path.endsWith("/Description/CharName/"))
+	if (path.startsWith("/Character/NPCs/") && iIsPC)
+		// Ignore NPC!
+		;
+	else if (path.endsWith("/Description/CharName/")) {
 		iCurrentData->name = value;
+		iIsPC = true;
+	}
 	else if (path.endsWith("/Adversary/Name/")) {
-		iCurrentData->name = value;							// name
-		iCurrentData->npc = true;
+		if (!iIsPC) {
+			iCurrentData->name = value;							// name
+			iCurrentData->npc = true;
+		}
 	}
 	else if (path.endsWith("/Description/PlayerName/"))
 		iCurrentData->player = value;							// player
@@ -361,63 +369,79 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/CharWeapon/Shown/"))
 		iItem.shown = isTrue(value);	
 
+	else if (path.endsWith("/PurchasedAttachments/CharItemAttachment/#open")) {
+		iModList.clear();
+		iAttachment.clear();
+	}
 	else if (path.endsWith("/PurchasedAttachments/CharItemAttachment/AttachKey/")) {
 		QString attachment_name = ItemAttachments::instance()->attachment(value).name;
 
 		iAttachment = value;
-		iModList.clear();
 		iItem.attachList.append(iAttachment);
 		DatUtil::appendToList(iItem.attachments, QString("[I]%1[i]:").arg(attachment_name), "; ");
 	}
-	else if (path.endsWith("/ItemDescInfo/#open") || path.endsWith("/PurchasedMods/Mod/#open"))
+	else if (path.endsWith("/AllMods/Mod/#open"))
 		iMod.clear();
-	else if (path.endsWith("/ItemDescInfo/Key/") || path.endsWith("/PurchasedMods/Mod/Key/"))
-		iMod.clear(value);
-	else if (path.endsWith("/ItemDescInfo/Count/") || path.endsWith("/PurchasedMods/Mod/Count/"))
+	else if (path.endsWith("/AllMods/Mod/Key/"))
+		iMod.key = value;
+	else if (path.endsWith("/AllMods/Mod/Count/"))
 		iMod.count = toInt(value);
-	else if (path.endsWith("/ItemDescInfo/MiscDesc/") || path.endsWith("/PurchasedMods/Mod/MiscDesc/"))
+	else if (path.endsWith("/AllMods/Mod/MiscDesc/"))
 		iMod.miscDesc = value; //value.trimmed();
-
-	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/#open"))
+	else if (path.endsWith("/AllMods/Mod/DieModifiers/DieModifier/#open"))
 		iDieMod.clear();
-	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/SkillKey/"))
+	else if (path.endsWith("/AllMods/Mod/DieModifiers/DieModifier/SkillKey/"))
 		iDieMod.skillKey = value;
-	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/SkillType/"))
+	else if (path.endsWith("/AllMods/Mod/DieModifiers/DieModifier/SkillType/"))
 		iDieMod.skillKey = strcmp(value, "Knowledge") == 0 ? KNOWLEDGE : NO_SKILL_TYPE;
-	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/BoostCount/"))
+	else if (path.endsWith("/AllMods/Mod/DieModifiers/DieModifier/BoostCount/"))
 		iDieMod.boostCount = toInt(value);
-	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/SetbackCount/"))
+	else if (path.endsWith("/AllMods/Mod/DieModifiers/DieModifier/SetbackCount/"))
 		iDieMod.setbackCount = toInt(value);
-	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/ForceCount/"))
+	else if (path.endsWith("/AllMods/Mod/DieModifiers/DieModifier/ForceCount/"))
 		iDieMod.forceCount = toInt(value);
-	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/AdvantageCount/"))
+	else if (path.endsWith("/AllMods/Mod/DieModifiers/DieModifier/AdvantageCount/"))
 		iDieMod.advantageCount = toInt(value);
-	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/ThreatCount/"))
+	else if (path.endsWith("/AllMods/Mod/DieModifiers/DieModifier/ThreatCount/"))
 		iDieMod.threatCount = toInt(value);
-	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/AddSetbackCount/"))
+	else if (path.endsWith("/AllMods/Mod/DieModifiers/DieModifier/AddSetbackCount/"))
 		iDieMod.addSetbackCount = toInt(value);
-	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/UpgradeAbilityCount/"))
+	else if (path.endsWith("/AllMods/Mod/DieModifiers/DieModifier/UpgradeAbilityCount/"))
 		iDieMod.upgradeCount = toInt(value);
-	else if (path.endsWith("/ItemDescInfo/DieModifiers/DieModifier/#end"))
+	else if (path.endsWith("/AllMods/Mod/DieModifiers/DieModifier/#end"))
 		iItem.dieModList.addMod(iDieMod);
 
-	else if (path.endsWith("/ItemDescInfo/#end") || path.endsWith("/PurchasedMods/Mod/#end")) {
+	else if (path.endsWith("/AllMods/Mod/#end")) {
 		if (iMod.key.isEmpty()) {
-			// Some attachments have no keys, only a description, not good!
-			if (iAttachment == "SETTRIGGER") {
-				if (iMod.miscDesc.contains("[TH]"))
-					iMod.key = "SETTRIGGER_BASE_MOD";
-				else
-					iMod.key = "SETTRIGGER_EXTRA_MOD";
-			}
+			iModUnique++;
+			iMod.key = QString("$SYS_%1").arg(iModUnique);
 		}
 		iModList.addItem(iMod);
 		//iItem.addQualityFromMod(iMod);
 	}
 	else if (path.endsWith("/PurchasedAttachments/CharItemAttachment/#end")) {
+		// Some attachments have no keys, only a description, not good!
+		if (iAttachment == "SETTRIGGER") {
+			ModList new_mod_list;
+			Mod mod;
+
+			for (int i=0; i<iModList.count(); i++) {
+				mod = iModList.itemAt(i);
+				if (mod.key.startsWith("$SYS_")) {
+					if (mod.miscDesc.contains("[TH]"))
+						mod.key = "SETTRIGGER_BASE_MOD";
+					else
+						mod.key = "SETTRIGGER_EXTRA_MOD";
+				}
+				new_mod_list.addItem(mod);
+			}
+			iModList = new_mod_list;
+		}
+
 		iModList.attachments(iItem.attachments);
 		iItem.addMod(iModList);
 	}
+
 	else if (path.endsWith("/CharWeapon/#end")) {
 		if (!iItem.uuid.isEmpty())
 			iCurrentData->weapons.aquireItem(iItem, true);		// weapons
@@ -498,7 +522,11 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 				!iMod.miscDesc.endsWith(";") &&
 				!iMod.miscDesc.endsWith(","))
 				iMod.miscDesc += ".";
-			DatUtil::appendToList(iShopItem.description, iMod.miscDesc, " ");
+
+			QString mod_desc = iMod.miscDesc;
+			if (iMod.count > 1)
+				mod_desc = QString("%1 ").arg(iMod.count)+mod_desc;
+			DatUtil::appendToList(iShopItem.description, mod_desc, " ");
 		}
 	}
 	else if (path.endsWith("/CharWeapon/CustomWeap/#end")) {
@@ -575,8 +603,14 @@ QString ListCharXML::lastChanged()
 
 bool ListCharXML::xmlElement(const DatStringBuffer& path, const char* value)
 {
-	if (path.endsWith("/Description/CharName/"))
+	if (path.endsWith("/Description/CharName/")) {
 		name = value;
+		iIsPC = true;
+	}
+	else if (path.endsWith("/Adversary/Name/")) {
+		if (!iIsPC)
+			name = value;
+	}
 	else if (path.endsWith("/Description/PlayerName/"))
 		player = value;
 	else if (path.endsWith("/Character/LastChanged/"))

@@ -51,6 +51,7 @@ public:
 private:
 	CurrentData*			iCurrentData;
 
+	bool					iIsPC;
 	QString					iSpecialization;
 	QString					iSpecializations;
 	QString					iAttribute;
@@ -71,6 +72,7 @@ private:
 
 	Item					iItem;
 	Mod						iMod;
+	int						iModUnique;
 	QString					iAttachment;
 	ModList					iModList;
 	DieMod					iDieMod;
@@ -80,6 +82,10 @@ private:
 
 class ListCharXML : public DatXmlReader {
 public:
+	ListCharXML() :
+		iIsPC(false) {
+	}
+
 	void load(const QByteArray& data, const QString& file);
 	virtual bool xmlElement(const DatStringBuffer& path, const char* value);
 
@@ -91,7 +97,8 @@ public:
 	QString lastChanged();
 
 private:
-	QString iLastChanged;
+	bool	iIsPC;
+	QString	iLastChanged;
 };
 
 #endif // CREATUREXML_H

@@ -123,7 +123,11 @@ QString Weapons::toRangeText(int range)
 		case 3:
 			return "Long";
 	}
-	if (range < 0)
+	if (range < -30)
+		return "n/a";
+	else if (range < -10)
+		return "Unlimited";
+	else if (range < 0)
 		return "Engaged";
 	return "Extreme";
 }

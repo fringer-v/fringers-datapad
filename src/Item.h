@@ -264,6 +264,7 @@ public:
 	bool isGrenade();
 	bool canBeWorn();
 	QString range();
+	bool isUnarmed();
 
 	void addMod(Mod mod);
 	void addMod(const ModList& mod_list);
