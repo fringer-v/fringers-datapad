@@ -90,10 +90,7 @@ Rectangle {
 				anchors.fill: parent
 				onClicked: {
 					checklist.checkListType = "skill"
-					characterData.itemUuid = "";
-					characterData.itemItemKey = "";
-					characterData.itemName = "";
-					characterData.showCheckList(skill, key, "", dice);
+					characterData.showChecklist(key, "", "");
 					controller.state = "checkout";
 				}
 			}

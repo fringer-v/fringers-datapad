@@ -36,7 +36,7 @@ Rectangle {
 			id: infoLine
 			width: skillCheck.width - 24 - 6
 			infoTitle: "SKILL:"
-			infoText: characterData.activeSkill.toUpperCase()
+			infoText: characterData.skillName.toUpperCase()
 			infoType: "bold,check-item,right,clear2"
 		}
 

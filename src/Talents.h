@@ -30,10 +30,10 @@
 #include "DatXmlReader.h"
 #include "DataList.h"
 
-#define STR						1
-#define RAN						2
-#define MAG						4
-#define DUR						8
+//#define STR						1
+//#define RAN						2
+//#define MAG						4
+//#define DUR						8
 
 #define TALENT_REGULAR			0
 #define TALENT_SPECIES			1
@@ -85,13 +85,12 @@ public:
 	QString range(const QString& key, int ranks);
 	QString duration(const QString& key, int ranks);
 	QString magnitude(const QString& key, int ranks);
-	QString forceUpgrades(const QString& power, int show = (STR | RAN | MAG | DUR), int cost = 1);
 	void addTalent(CharTalent talent);
 	CharTalent& at(int i, bool exclude_hidden = false);
 	CharTalent& get(const QString& key);
 	QString getLightSaberChar();
 
-	static int forcePower(const QString& key, QString& power);
+	static int forcePower(const QString& key, QString& power, QString& base);
 
 private:
 	void fillArrays();
@@ -108,7 +107,7 @@ public:
 class Talent {
 public:
 	QString key;
-	QString name;
+	QString internalName;
 	QString activation;
 	QString description;
 	QString books;
@@ -132,6 +131,7 @@ public:
 	int		burly;
 
 	void clear(QString key);
+	QString name();
 };
 
 class AllTalents : public QObject, public DatXmlReader {

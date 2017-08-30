@@ -46,7 +46,7 @@ Rectangle {
 		onClicked: {
 			var amount_correct = datapadItemDialog.amountCorrect();
 
-			itemItemKey = key;
+			itemKey = key;
 			datapadItemBoxItem.infoText = name;
 			datapadItemBoxPrice.infoText = price + " CR";
 			datapadItemBoxRarity.infoText = rarity;

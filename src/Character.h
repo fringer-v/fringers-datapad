@@ -21,6 +21,14 @@ class Character;
 //#define DEFAULT_HOST	"localhost:8080/starwars"
 #define DEFAULT_HOST	"fringer.space/"
 
+#define RANGE_NA		-1
+#define RANGE_UNLIMITED	-2
+#define RANGE_ENGAGED	0
+#define RANGE_SHORT		1
+#define RANGE_MEDIUM	2
+#define RANGE_LONG		3
+#define RANGE_EXTREME	4
+
 class Character : public QObject
 {
 	Q_OBJECT
@@ -163,25 +171,21 @@ public:
 	Q_PROPERTY(int newXP READ newXP NOTIFY newXPChanged)
 	Q_PROPERTY(int usedXP READ usedXP NOTIFY usedXPChanged)
 
-	Q_PROPERTY(QString activeSkill READ activeSkill WRITE setActiveSkill NOTIFY activeSkillChanged)
+	Q_PROPERTY(QString skillName READ skillName NOTIFY skillNameChanged)
+	Q_PROPERTY(QString talentName READ talentName NOTIFY talentNameChanged)
 	Q_PROPERTY(QString dicePool READ dicePool WRITE setDicePool NOTIFY dicePoolChanged)
 	Q_PROPERTY(int negativePool READ negativePool WRITE setNegativePool NOTIFY negativePoolChanged)
-	Q_PROPERTY(QString itemUuid READ itemUuid WRITE setItemUuid NOTIFY itemUuidChanged)
-	Q_PROPERTY(QString itemItemKey READ itemItemKey WRITE setItemItemKey NOTIFY itemItemKeyChanged) // Key
-	Q_PROPERTY(QString itemName READ itemName WRITE setItemName NOTIFY itemNameChanged) // Name
-	Q_PROPERTY(QString itemRange READ itemRange WRITE setItemRange NOTIFY itemRangeChanged) // Range
-	Q_PROPERTY(QString itemSkill READ itemSkill WRITE setItemSkill NOTIFY itemSkillChanged) // Skill
-	Q_PROPERTY(QString itemDamage READ itemDamage WRITE setItemDamage NOTIFY itemDamageChanged)
-	Q_PROPERTY(QString itemCritLevel READ itemCritLevel WRITE setItemCritLevel NOTIFY itemCritLevelChanged)  // Strength
-	Q_PROPERTY(QString itemQualMag READ itemQualMag WRITE setItemQualMag NOTIFY itemQualMagChanged) // Magnitude
-	Q_PROPERTY(QString itemPowerStr READ itemPowerStr WRITE setItemPowerStr NOTIFY itemPowerStrChanged) // Strength
-	Q_PROPERTY(QString itemDuration READ itemDuration WRITE setItemDuration NOTIFY itemDurationChanged) // Duration
-	Q_PROPERTY(QString itemAttachDesc READ itemAttachDesc WRITE setitemAttachDesc NOTIFY itemAttachDescChanged) //
-	Q_PROPERTY(QString itemManeuvers READ itemManeuvers WRITE setItemManeuvers NOTIFY itemManeuversChanged) // Maneuvers
-	Q_PROPERTY(QString itemStrain READ itemStrain WRITE setItemStrain NOTIFY itemStrainChanged) // Strain
+	Q_PROPERTY(QString itemName READ itemName NOTIFY itemNameChanged) // Name
+	Q_PROPERTY(QString itemRange READ itemRange NOTIFY itemRangeChanged) // Range
+	Q_PROPERTY(QString itemDamage READ itemDamage NOTIFY itemDamageChanged)
+	Q_PROPERTY(QString itemCritLevel READ itemCritLevel NOTIFY itemCritLevelChanged)  // Strength
+	Q_PROPERTY(QString itemQualMag READ itemQualMag NOTIFY itemQualMagChanged) // Magnitude
+	Q_PROPERTY(QString itemPowerStr READ itemPowerStr NOTIFY itemPowerStrChanged) // Strength
+	Q_PROPERTY(QString itemDuration READ itemDuration NOTIFY itemDurationChanged) // Duration
+	Q_PROPERTY(QString itemAttachDesc READ itemAttachDesc NOTIFY itemAttachDescChanged) //
+	Q_PROPERTY(QString itemManeuvers READ itemManeuvers NOTIFY itemManeuversChanged) // Maneuvers
+	Q_PROPERTY(QString itemStrain READ itemStrain NOTIFY itemStrainChanged) // Strain
 
-	Q_PROPERTY(int itemCritPlus READ itemCritPlus WRITE setItemCritPlus NOTIFY itemCritPlusChanged)
-	Q_PROPERTY(int itemPierce READ itemPierce WRITE setItemPierce NOTIFY itemPierceChanged)
 	Q_PROPERTY(int imageProviderCount READ imageProviderCount WRITE setImageProviderCount NOTIFY imageProviderCountChanged)
 
 	int currentWounds() { return CurrentData::instance->wounds; }
@@ -230,19 +234,17 @@ public:
 	int defenseRanged() { return getAttribute(DRANGED); }
 	int defenseMelee() { return getAttribute(DMELEE); }
 	int force() { return getAttribute(FORCE); }
-	int forceCommitted() { return CurrentData::instance->commitCount(); }
+	int forceCommitted() { return CurrentData::instance->forceCommitCount(); }
 	int totalXP() { return getAttribute(XP); }
 	int newXP() { return getAttribute(NEWXP); }
 	int usedXP() { return getAttribute(USEDXP); }
-	QString activeSkill();
-	QString activeSkillKey();
+	QString skillName();
+	QString talentName();
 	QString dicePool();
 	int negativePool();
-	QString itemUuid();
-	QString itemItemKey();
 	QString itemName();
+	void getItemRange(int& range1, int& range2);
 	QString itemRange();
-	QString itemSkill();
 	QString itemDamage();
 	QString itemCritLevel();
 	QString itemQualMag();
@@ -251,8 +253,6 @@ public:
 	QString itemAttachDesc();
 	QString itemManeuvers();
 	QString itemStrain();
-	int itemCritPlus();
-	int itemPierce();
 	int imageProviderCount();
 
 	Q_INVOKABLE void adjustWounds(int delta);
@@ -295,7 +295,7 @@ public:
 	Q_INVOKABLE void showWeaponsAndArmor(); // weapons
 	Q_INVOKABLE void showGear(); // inventory
 	Q_INVOKABLE void showInventory(); // cashout
-	Q_INVOKABLE QString showCheckList(QString skill_name, QString key, QString talent_key, QString dice_pool);
+	Q_INVOKABLE QString showChecklist(QString skill_key, QString talent_key, QString uuid);
 	Q_INVOKABLE void hideCheckList();
 	Q_INVOKABLE void fillCheckList(const QString& check_list_type);
 
@@ -319,24 +319,8 @@ public:
 	Q_INVOKABLE void setCumbValue(int c);
 	Q_INVOKABLE void setCumbThreshold(int c);
 	Q_INVOKABLE void setEncText(const QString& t);
-	Q_INVOKABLE void setActiveSkill(const QString& t);
 	Q_INVOKABLE void setDicePool(const QString& t);
 	Q_INVOKABLE void setNegativePool(int t);
-	Q_INVOKABLE void setItemUuid(const QString& t);
-	Q_INVOKABLE void setItemItemKey(const QString& t);
-	Q_INVOKABLE void setItemName(const QString& t);
-	Q_INVOKABLE void setItemRange(const QString& t);
-	Q_INVOKABLE void setItemSkill(const QString& t);
-	Q_INVOKABLE void setItemDamage(const QString& t);
-	Q_INVOKABLE void setItemCritLevel(const QString& t);
-	Q_INVOKABLE void setItemQualMag(const QString& t);
-	Q_INVOKABLE void setItemPowerStr(const QString& t);
-	Q_INVOKABLE void setItemDuration(const QString& t);
-	Q_INVOKABLE void setitemAttachDesc(const QString& t);
-	Q_INVOKABLE void setItemManeuvers(const QString& t);
-	Q_INVOKABLE void setItemStrain(const QString& t);
-	Q_INVOKABLE void setItemCritPlus(int t);
-	Q_INVOKABLE void setItemPierce(int t);
 	Q_INVOKABLE void setImageProviderCount(int t);
 
 signals:
@@ -392,11 +376,10 @@ signals:
 	void newXPChanged(int value);
 	void usedXPChanged(int value);
 
-	void activeSkillChanged(const QString& value);
+	void skillNameChanged(const QString& value);
+	void talentNameChanged(const QString& value);
 	void dicePoolChanged(const QString& value);
 	void negativePoolChanged(int value);
-	void itemUuidChanged(const QString& value);
-	void itemItemKeyChanged(const QString& value);
 	void itemNameChanged(const QString& value);
 	void itemRangeChanged(const QString& value);
 	void itemSkillChanged(const QString& value);
@@ -409,7 +392,6 @@ signals:
 	void itemManeuversChanged(const QString& value);
 	void itemStrainChanged(const QString& value);
 	void itemCritPlusChanged(int value);
-	void itemPierceChanged(int value);
 	void imageProviderCountChanged(int value);
 
 	void alert(const QString& title, const QString& message);
@@ -417,8 +399,7 @@ signals:
 public:
 	int getAttribute(const QString& val);
 	int setAttributeMods(const CharMods& mods);
-	int getItemRange(int& range1, int&range2);
-	void setChangeDicePool(const QString& t, bool list_setup, CheckListItem* item);
+	void setChangeDicePool(const QString& dice_pool, ChecklistItem* item = NULL, bool list_setup = false);
 	void inventoryChanged();
 	void emitExperienceChanged();
 	void characteristicsChanged();
@@ -430,9 +411,15 @@ public:
 	void emitForceCommittedChanged();
 	void emitCurrentStrainChanged();
 
+	QString getCurrentSkillKey();
+	QString getCurrentTalentKey();
+	QString getForcePool(bool total_force = false);
+	void adjustPoolForCommittedForce(int commit_count);
+
 private:
 	void reload();
 	QString processDownload(const QString& url, const QByteArray& data, const QString& to_dir, QString& err_msg);
+	void setupItem(const QString& uuid);
 
 	// Fixed (Exported) Data:
 	QString iHost;
@@ -449,34 +436,22 @@ private:
 
 	// Attributes used to run the Check List dialog:
 	QString iActiveSkill;
-	QString iActiveSkillKey;
-	QString iActiveTalentKey;
+	QString iCurrentSkillKey;
+	QString iCurrentTalentKey;
 	QString iDicePool;
-	QString iItemUuid;
-	QString iItemItemKey;
-	QString iItemName;
-	QString iItemRange;
-	QString iItemSkill;
-	QString iItemDamage;
-	QString iItemCritLevel;
-	QString iItemQualMag;
-	QString iItemPowerStr;
-	QString iItemDuration;
-	QString iitemAttachDesc;
-	int iItemCritPlus;
-	int iItemPierce;
+	Item iItem;
 
 	// Changes to the Check List dice pool, and other checklist items:
 	QString iChangeDicePool;
-	QString iModDicePool;
+	//QString iModDicePool;
 	int iModItemDamage;
 	int iModItemPierce;
 	int iModItemCrit;
 	int iModItemRange;
-	int iModItemCommit;
 	int iModItemMagnitude;
 	int iModItemStrength;
 	int iModItemDuration;
+	int iModItemExtra;
 
 	// A mod number used to indicate that the image database has changed
 	int iImageProviderCount;

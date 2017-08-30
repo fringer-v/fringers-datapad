@@ -12,7 +12,7 @@ Rectangle {
 	visible: false
 
 	property int itemRef: 0
-	property string itemItemKey: ""
+	property string itemKey: ""
 	property int itemType: 0
 
 	property int margin: 5
@@ -23,10 +23,10 @@ Rectangle {
 		return datapadItemDialog.mapToItem (item_dest.parent, pos_abs.x, pos_abs.y);
 	}
 
-	function editDataPadLine(ref, itemkey, type, count, amount, desc, item, price, rarity)
+	function editDataPadLine(ref, item_key, type, count, amount, desc, item, price, rarity)
 	{
 		itemRef = ref;
-		itemItemKey = itemkey;
+		itemKey = item_key;
 		itemType = type;
 		if (count === 0) {
 			datapadItemDialogNumber.boxText = "";
@@ -45,17 +45,17 @@ Rectangle {
 		datapadItemDialogNumber.focus = true;
 	}
 
-	function newDatapadItem(itemkey, type, item)
+	function newDatapadItem(item_key, type, item)
 	{
 		itemRef = 0;
-		itemItemKey = itemkey;
+		itemKey = item_key;
 		itemType = type;
 		datapadItemDialogNumber.boxText = "";
 		datapadItemDialogAmount.boxText = "";
 		datapadItemDialogDesc.boxText = "";
 		datapadItemBoxItem.infoText = item;
-		datapadItemBoxPrice.infoText = itemkey === "" ? "" : characterData.getPrice(itemkey) + " CR";
-		datapadItemBoxRarity.infoText = itemkey === "" ? "" : characterData.getRarity(itemkey);
+		datapadItemBoxPrice.infoText = item_key === "" ? "" : characterData.getPrice(item_key) + " CR";
+		datapadItemBoxRarity.infoText = item_key === "" ? "" : characterData.getRarity(item_key);
 		searchTextField.text = "";
 		datapadItemDialog.visible = true
 		searchTextField.focus = true;
@@ -152,7 +152,7 @@ Rectangle {
 				amount = 0;
 		}
 
-		var item = itemItemKey.trim();
+		var item = itemKey.trim();
 		var desc = datapadItemDialogDesc.boxText.trim();
 
 		if (item.length !== 0 || desc.length !== 0) {
@@ -279,7 +279,7 @@ Rectangle {
 					height: 40
 					enabled: itemType === 3 || itemType === 5 // ITEM_AMOUNT || ITEM_ADD_ITEM
 					placeHolderText: "Price"
-					format: itemItemKey === "" ? "integer" : "natural"
+					format: itemKey === "" ? "integer" : "natural"
 					name: "amount"
 
 					onDonePressed: datapadClickedOK()
@@ -442,7 +442,7 @@ Rectangle {
 										else {
 											datapadShopList.visible = false;
 											if (text.length == 0) {
-												itemItemKey = "";
+												itemKey = "";
 												datapadItemBoxItem.infoText = "";
 												datapadItemBoxPrice.infoText = "";
 												datapadItemBoxRarity.infoText = "";

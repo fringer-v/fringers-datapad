@@ -47,6 +47,8 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("INFLUENCECONTROL1", KM_INFLUENCECONTROL1);
 	KeyMethod::instance.append("MISDIRBASIC", KM_MISDIRBASIC);
 	KeyMethod::instance.append("MISDIRCONTROL1", KM_MISDIRCONTROL1);
+	KeyMethod::instance.append("MISDIRCONTROL2", KM_MISDIRCONTROL2);
+	KeyMethod::instance.append("MISDIRMASTERY", KM_MISDIRMASTERY);
 	KeyMethod::instance.append("SENSEBASIC", KM_SENSEBASIC);
 	KeyMethod::instance.append("SENSECONTROL2", KM_SENSECONTROL2);
 	KeyMethod::instance.append("DONTSHOOT", KM_DONTSHOOT);
@@ -73,8 +75,14 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("SEEKCONTROL1", KM_SEEKCONTROL1);
 	KeyMethod::instance.append("SEEKMASTERY", KM_SEEKMASTERY);
 	KeyMethod::instance.append("SEEKDURATION", KM_SEEKDURATION);
+	KeyMethod::instance.append("BATMEDBASIC", KM_BATMEDBASIC);
 
 	// Coded Talents (must be last),
+	KeyMethod::instance.append("MASSHAD", KM_MASSHAD);
+	KeyMethod::instance.append("BATMEDCONTROL1", KM_BATMEDCONTROL1);
+	KeyMethod::instance.append("BATMEDCONTROL2", KM_BATMEDCONTROL2);
+	KeyMethod::instance.append("BATMEDMASTERY", KM_BATMEDMASTERY);
+	KeyMethod::instance.append("BATMEDDURATION", KM_BATMEDDURATION);
 	KeyMethod::instance.append("IRONBODY", KM_IRONBODY);
 	KeyMethod::instance.append("ANAT", KM_ANAT);
 	KeyMethod::instance.append("PLAUSDEN", KM_PLAUSDEN);
@@ -274,26 +282,31 @@ QString CharTalentMap::magnitude(const QString& key, int ranks)
 	return QString("%1 Target%2").arg(ranks).arg(ranks==1 ? "" : "s");
 }
 
-int CharTalentMap::forcePower(const QString& key, QString& power)
+int CharTalentMap::forcePower(const QString& key, QString& power, QString& base)
 {
 	if (key.startsWith("INFLUENCE")) {
 		power = "INFLUENCE";
+		base = "Influence";
 		return FP_INFLUENCE;
 	}
 	if (key.startsWith("ENHANCE")) {
 		power = "ENHANCE";
+		base = "Enhance";
 		return FP_ENHANCE;
 	}
 	if (key.startsWith("FORESEE")) {
 		power = "FORESEE";
+		base = "Foresee";
 		return FP_FORESEE;
 	}
 	if (key.startsWith("MOVE")) {
 		power = "MOVE";
+		base = "Move";
 		return FP_MOVE;
 	}
 	if (key.startsWith("MISDIR")) {
 		power = "MISDIR";
+		base = "Misdirect";
 		return FP_MISDIR;
 	}
 	if (key.startsWith("WARFOR")) {
@@ -302,94 +315,55 @@ int CharTalentMap::forcePower(const QString& key, QString& power)
 	}
 	if (key.startsWith("SENSE")) {
 		power = "SENSE";
+		base = "Sense";
 		return FP_SENSE;
 	}
 	if (key.startsWith("BIND")) {
 		power = "BIND";
+		base = "Bind";
 		return FP_BIND;
 	}
 	if (key.startsWith("HEALHARM")) {
 		power = "HEALHARM";
+		base = "Heal/Harm";
 		return FP_HEALHARM;
 	}
 	if (key.startsWith("PROTUNL")) {
 		power = "PROTUNL";
+		base = "Protect/Unleash";
 		return FP_PROTUNL;
 	}
 	if (key.startsWith("WARFOR")) {
 		power = "WARFOR";
+		base = "Warde's Foresight";
 		return FP_WARFOR;
 	}
 	if (key.startsWith("SUPPRESS")) {
 		power = "SUPPRESS";
+		base = "Suppress";
 		return FP_SUPPRESS;
 	}
 	if (key.startsWith("FARSIGHT")) {
 		power = "FARSIGHT";
+		base = "Farsight";
 		return FP_FARSIGHT;
 	}
 	if (key.startsWith("MANIPULATE")) {
 		power = "MANIPULATE";
+		base = "Manipulate";
 		return FP_MANIPULATE;
 	}
 	if (key.startsWith("SEEK")) {
 		power = "SEEK";
+		base = "Seek";
 		return FP_SEEK;
 	}
 	if (key.startsWith("BATMED")) {
 		power = "BATMED";
+		base = "Battle Meditation";
 		return FP_BATMED;
 	}
 	return 0;
-}
-
-QString CharTalentMap::forceUpgrades(const QString& key, int show, int cost)
-{
-	QString power;
-	QString upgrades;
-	QString costs;
-	CharTalent t;
-	int power_id;
-
-	power_id = CharTalentMap::forcePower(key, power);
-	if (show & STR) {
-		t = get(power + "STRENGTH");
-		if (t.ranks > 0) {
-			if (power == "INFLUENCE")
-				upgrades = "Strain x2";
-			else if (power == "MOVE")
-				upgrades = QString("Silhouette %1").arg(t.ranks);
-			else if (power == "MISDIR")
-				upgrades = QString("Silhouette %1").arg(t.ranks+1);
-			else
-				upgrades = QString("Strength +%1").arg(t.ranks);
-		}
-	}
-
-	if (show & RAN) {
-		t = get(power + "RANGE");
-		if (t.ranks > 0)
-			DatUtil::appendToList(costs, range(key, t.ranks), " or ");
-	}
-
-	if (show & MAG) {
-		t = get(power + "MAGNITUDE");
-		if (t.ranks > 0)
-			DatUtil::appendToList(costs, magnitude(key, t.ranks), " or ");
-	}
-
-	if (show & DUR) {
-		t = get(power + "DURATION");
-		if (t.ranks > 0)
-			DatUtil::appendToList(costs, duration(key, t.ranks), " or ");
-	}
-
-	if (!costs.isEmpty())
-		costs = QString("spend %1 for ").arg(DatUtil::repeat("[FP]", cost))+costs;
-
-	DatUtil::appendToList(upgrades, costs, ", ");
-
-	return upgrades;
 }
 
 void CharTalentMap::clear()
@@ -473,7 +447,7 @@ void CharTalentMap::fillArrays()
 void Talent::clear(QString k)
 {
 	key = k;
-	name.clear();
+	internalName.clear();
 	activation.clear();
 	description.clear();
 	books.clear();
@@ -490,6 +464,35 @@ void Talent::clear(QString k)
 	requirementWearingArmor = false;
 	requirementSoakAtLeast = 0;
 	burly = 0;
+}
+
+QString Talent::name()
+{
+	MethodID talent_id = KeyMethod::instance.getID(key);
+	switch (talent_id) {
+		case KM_ENHANCEBASIC:
+			return "Enhance Basic Power: Atheletics";
+
+		case KM_SENSECONTROL2:
+			return "Sense: Read Thoughts";
+
+		case KM_MISDIRCONTROL1:
+			return "Misdirect: Change Appearance";
+		case KM_MISDIRCONTROL2:
+			return "Misdirect: Create Illusion";
+		case KM_MISDIRMASTERY:
+			return "Misdirect Mastery";
+		default:
+			QString power;
+			QString base;
+
+			CharTalentMap::forcePower(key, power, base);
+			if (internalName.startsWith("Control: "))
+				return base + ": " + DatUtil::right(internalName, "Control: ");
+			if (!internalName.startsWith(base))
+				return base + ": " + internalName;
+	}
+	return internalName.isEmpty() ? key : internalName;
 }
 
 // AllTalents -------------------------
@@ -536,7 +539,7 @@ bool AllTalents::xmlElement(const DatStringBuffer& path, const char* value)
 	if (path.endsWith("/Talent/Key/"))
 		iTalent.clear(value);
 	else if (path.endsWith("/Talent/Name/"))
-		iTalent.name = value;
+		iTalent.internalName = value;
 	else if (path.endsWith("/Talent/Description/")) {
 		iTalent.description = value; // value.trimmed();
 		if (iTalent.description.startsWith("Please see page")) {
@@ -614,7 +617,7 @@ bool AllTalents::xmlElement(const DatStringBuffer& path, const char* value)
 		iTalent.force = true;
 	}
 	else if (path.endsWith("/ForceAbility/Name/"))
-		iTalent.name = value;
+		iTalent.internalName = value;
 	else if (path.endsWith("/ForceAbility/Description/")) {
 		iTalent.description = value; // value.trimmed();
 		if (iTalent.description.startsWith("Please see page")) {
@@ -672,13 +675,7 @@ QVariant Talents::getValue(int row, int col)
 		case 0:
 			return char_talent.talentType;
 		case 1:
-			if (char_talent.key == "ENHANCECONT6")
-				return "Enhance: Force Leap";
-			else if (char_talent.key == "SENSECONTROL2")
-				return "Sense: Read Thoughts";
-			else if (char_talent.key == "MISDIRCONTROL1")
-				return "Misdirect: Change Appearance";
-			return talent.name.isEmpty() ? char_talent.key : talent.name;
+			return talent.name();
 		case 2:
 			return talent.ranked ? char_talent.ranks : 0;
 		case 3:

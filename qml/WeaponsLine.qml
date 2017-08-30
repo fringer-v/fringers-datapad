@@ -319,20 +319,7 @@ Rectangle {
 		if (notes.length > 0)
 			desc = Util.appendList(desc, "[B]Notes:[b] " + notes, " ");
 
-		characterData.itemUuid = uuid;
-		characterData.itemItemKey = itemkey;
-		characterData.itemName = weapon;
-		characterData.itemRange = range;
-		characterData.itemSkill = skill;
-		characterData.itemDamage = damage;
-		characterData.itemCritLevel = critical;
-		characterData.itemQualMag = qualities;
-		characterData.itemAttachDesc = desc;
-		characterData.itemManeuvers = "";
-		characterData.itemStrain = "";
-		characterData.itemCritPlus = critplus;
-		characterData.itemPierce = pierce;
-		characterData.showCheckList(skill, "", "", dicePool);
+		characterData.showChecklist("", "", uuid);
 		controller.state = "checkout";
 	}
 }

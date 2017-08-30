@@ -536,11 +536,11 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/AdvAbility/#open"))
 		iTalent.clear(QString());
 	else if (path.endsWith("/AdvAbility/Name/"))
-		iTalent.name = value;
+		iTalent.internalName = value;
 	else if (path.endsWith("/AdvAbility/Description/"))
 		iTalent.description = value;
 	else if (path.endsWith("/AdvAbility/#end")) {
-		if (iTalent.name == "Droid") {
+		if (iTalent.internalName == "Droid") {
 			iSpeciesKey = "DROID";
 			iSubSpeciesKey = "DROIDSUB7";
 			iChoices["DROIDAB"] = "DROIDABSK";
@@ -550,7 +550,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 			iChoices["DROIDAB5"] = "DROIDAB5OP1";
 		}
 		else {
-			iTalent.key = "KEY_"+iTalent.name.toUpper();
+			iTalent.key = "KEY_"+iTalent.internalName.toUpper();
 			iCharTalent.key = iTalent.key;
 			AllTalents::instance()->addTalent(iTalent);
 			iCurrentData->talents.addTalent(iCharTalent);

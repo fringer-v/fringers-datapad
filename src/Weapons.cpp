@@ -110,33 +110,47 @@ QVariant Weapons::getValue(int row, int col)
 	return QVariant();
 }
 
-QString Weapons::toRangeText(int range)
+QString Weapons::toRangeText(int range, bool planetary_scale)
 {
+	if (planetary_scale) {
+		switch (range) {
+			case RANGE_ENGAGED:
+				return "Close";
+			case RANGE_SHORT:
+				return "Short (Planetary)";
+			case RANGE_MEDIUM:
+				return "Medium (Planetary)";
+			case RANGE_LONG:
+				return "Long (Planetary)";
+			case RANGE_EXTREME:
+				return "Extreme (Planetary)";
+		}
+	}
 	// Engaged, short, medium, long, extreme.
 	switch (range) {
-		case 0:
+		case RANGE_NA:
+			return "n/a";
+		case RANGE_UNLIMITED:
+			return "Unlimited";
+		case RANGE_ENGAGED:
 			return "Engaged";
-		case 1:
+		case RANGE_SHORT:
 			return "Short";
-		case 2:
+		case RANGE_MEDIUM:
 			return "Medium";
-		case 3:
+		case RANGE_LONG:
 			return "Long";
+		case RANGE_EXTREME:
+			return "Extreme";
 	}
-	if (range < -30)
-		return "n/a";
-	else if (range < -10)
-		return "Unlimited";
-	else if (range < 0)
-		return "Engaged";
 	return "Extreme";
 }
 
-QString Weapons::toRangeText(int range, int range2)
+QString Weapons::toRangeText(int range1, int range2, bool planetary_scale)
 {
-	if (range2 < 0)
-		return toRangeText(range);
-	return QString("%1 (%2)").arg(toRangeText(range)).arg(toRangeText(range2));
+	if (range2 >= RANGE_ENGAGED)
+		return QString("%1 (%2)").arg(toRangeText(range1, planetary_scale)).arg(toRangeText(range2, planetary_scale));
+	return toRangeText(range1, planetary_scale);
 }
 
 

@@ -10,7 +10,7 @@ Canvas {
 	property string charShortName: ""
 	property real charWidth: 148
 	property int charValue: 6
-	property int charCurrentValue: -1
+	property int charCurrentValue: -1000
 	property real charNameFontSize: 18
 	property real charNameMargin: 2
 	property real charValueFontSize: 40
@@ -37,7 +37,7 @@ Canvas {
 
 		var val = (charValue === 0 ? "-" : charValue.toString());
 		var font_val = charValueFontSize.toString();
-		if (charCurrentValue != -1) {
+		if (charCurrentValue != -1000) {
 			val = charCurrentValue.toString()+"/"+val;
 			font_val = (charValueFontSize*3/4).toString();
 		}

@@ -115,6 +115,9 @@ public:
 	static QString unCapitalize(QString x);
 	static QByteArray toStandardLineEnding(QByteArray& from);
 	static QByteArray toWindowsLineEndings(QByteArray& from);
+	static QString poolText(QString x);
+	static QString poolText(QString x, int arg);
+	static QString unpoolText(QString text);
 
 	static QString addDirChar(QString path);
 	static QString lastNameOfPath(const QString& path);

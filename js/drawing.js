@@ -67,8 +67,10 @@ symbolCodes["[DWNDIFFICULTY"] = 'd'; // Downgrade difficulty (Remove "red")
 symbolCodes["[DD]"] = 'd';
 symbolCodes["[FORCE]"] = 'F';
 symbolCodes["[FO]"] = 'F';
-symbolCodes["[REMFORCE"] = 'g';
-symbolCodes["[RF]"] = 'g';
+symbolCodes["[REMFORCE"] = 'n'; // Black
+symbolCodes["[RF]"] = 'n';
+symbolCodes["[NOFORCE"] = 'g'; // Red
+symbolCodes["[NF]"] = 'g';
 symbolCodes["[FORCEPOINT]"] = '.'; //'.';
 symbolCodes["[FP]"] = '.'; //'.';
 symbolCodes["[RESTRICTED]"] = '=';
@@ -412,7 +414,8 @@ function diceWidth(ctx, height, spacing, dice, pixelSize)
 			case 'C':
 			case 'U':
 			case 'u':
-			case "g":
+			case 'g':
+			case 'n':
 			case 'd':
 			case 'A':
 			case 'D':
@@ -471,7 +474,8 @@ function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 			case 'C':
 			case 'U':
 			case 'u':
-			case "g":
+			case 'g':
+			case 'n':
 			case 'd':
 			case 'A':
 			case 'D':
@@ -518,6 +522,10 @@ function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 				plus(ctx, x + (shape_width - plus_width) / 2, y_mid - plus_width / 2.0, plus_width, 0.5, "orange", "purple");
 				break;
 			case 'g':
+				shape_width = hexagon(ctx, x, y_mid, height, line_width, "black", "white");
+				drawBox(ctx, x + shape_width / 5.0, y_mid - (shape_width / 5.0) / 2.0, shape_width * 3.0 / 5.0, shape_width / 5.0, 0.5, "orange", "red");
+				break;
+			case 'n':
 				shape_width = hexagon(ctx, x, y_mid, height, line_width, "black", "white");
 				drawBox(ctx, x + shape_width / 5.0, y_mid - (shape_width / 5.0) / 2.0, shape_width * 3.0 / 5.0, shape_width / 5.0, 0.5, "grey", "black");
 				break;
@@ -573,7 +581,8 @@ function dice(ctx, x, y, width, height, spacing, dice, pixelSize)
 			case 'C':
 			case 'U':
 			case 'u':
-			case "g":
+			case 'g':
+			case 'n':
 			case 'd':
 			case 'A':
 			case 'D':

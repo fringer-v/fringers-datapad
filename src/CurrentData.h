@@ -63,19 +63,17 @@
 								(((x) & NEG_CHECK_3_PURPLE) ? 3 : 0) + \
 								(((x) & NEG_CHECK_4_PURPLE) ? 4 : 0))
 
-#define ESC_DAMAGE				"\\D\\am\\a\\ge"
-#define ESC_RANGE				"R\\an\\ge"
-#define ESC_COMMIT				"\\Commi\\t"
-#define ESC_BREACH				"\\B\\re\\ach"
+//#define ESC_DAMAGE				"\\D\\am\\a\\ge"
+//#define ESC_RANGE				"R\\an\\ge"
+//#define ESC_BREACH				"\\B\\re\\ach"
 #define ESC_AUTOFIRE			"\\Auto-fi\\re"
 #define ESC_ACTION				"\\A\\c\\tion"
-#define ESC_COMMIT				"\\Commi\\t"
 #define ESC_LINKED				"Linked"
-#define ESC_RANGE				"R\\an\\ge"
 #define ESC_WOUND				"Wound"
 #define ESC_MOVE				"Move"
 #define ESC_CRITS				"\\C\\ri\\t\\s"
 #define ESC_DESTINY				"\\De\\s\\tin\\y"
+#define ESC_SKILL				"\\Skill"
 
 class Character;
 
@@ -299,63 +297,78 @@ public:
 	int rank;
 };
 
-class CheckListItem {
+class ChecklistItem {
 public:
-	CheckListItem() :
+	ChecklistItem() :
 		reference(0),
 		checked(false),
 		reduceStrain(),
 		moveRequired(),
 		consumable(),
 		commitKey(),
-		forceCost(1),
-		commitCount(0),
+		forceCommitCount(0),
+		destinyPointCost(0),
+		plusDamage(0),
+		plusPierce(0),
+		plusCrit(0),
 		plusRange(0),
 		plusMagnitude(0),
 		plusStrength(0),
-		plusDuration(0)
+		plusDuration(0),
+		plusExtra(0)
 	{
+	}
+
+	QString dice() {
+		if (forceCommitCount > 0)
+			return QString("F").repeated(forceCommitCount);
+		return dicePool;
 	}
 
 	int reference;		// < 0 if Added automatically!
 	bool checked;
-	QString dice;
+	QString dicePool;
 	QString description;
 	int reduceStrain;	// Reduce strain by this amount when used /checked
 	int moveRequired;
 	QString consumable;
 	QString commitKey;
-	int forceCost;
-
-	int commitCount;
+	int forceCommitCount;
+	int destinyPointCost;
+	int plusDamage;
+	int plusPierce;
+	int plusCrit;
 	int plusRange;
 	int plusMagnitude;
 	int plusStrength;
 	int plusDuration;
+	int plusExtra;
 };
 
-class CheckListData {
+class ChecklistData {
 public:
 	QString					skillKey;
-	QList<CheckListItem>	items;
+	QList<ChecklistItem>	items;
 
 	void clear();
-	CheckListItem* findItem(int reference);
+	ChecklistItem* findItem(int reference);
 	void checkAll(bool checked);
 	void deleteItem(int reference);
 	QString getCurrentPool();
 	bool hasCustomItem() const;
 	int strainUsed(QString& consumable) const;
 	int movesUsed() const;
-	int plus(const QString& pool, const QString& desc, int move, int strain,
-		int dpoint = 0, const QString& consumable = QString(), const QString& commit_key = QString(), int force_cost = 0);
-	void plusCustom(int ref, const QString& pool, const QString& desc);
+	void appendCustom(int ref, const QString& pool, const QString& desc);
+	int append(ChecklistItem& item);
 
-	void commitCount(int ref, int count);
+	void plusDamage(int ref, int count);
+	void plusPierce(int ref, int count);
+	void plusCrit(int ref, int count);
 	void plusRange(int ref, int count);
 	void plusMagnitude(int ref, int count);
 	void plusStrength(int ref, int count);
 	void plusDuration(int ref, int count);
+	void plusExtra(int ref, int count);
 
 private:
 	int iRefCount;
@@ -446,9 +459,8 @@ public:
 	int stimPacksUsed;
 	int erpsUsed;
 	QList<CustomSkill> customSkills;
-	CheckListData autoCheckItems;
-	QMap<QString, CheckListData> checkLists;
-	QMap<QString, int> forceCommitted;
+	ChecklistData checklistItems;
+	QMap<QString, ChecklistData> checkLists;
 	int dutyRank;
 	QList<ExpLogItem> experienceLog;
 	QMap<QString, ExpLogTotal> experienceTotal; // EXP_TOT_XP, etc.
@@ -486,22 +498,31 @@ public:
 	bool removeItem(Character* charac, int ref);
 	void storeItem(const QString& uuid, const QString& itemkey, int count, int state, Item* item);
 
-	void clearAutoCheckItems(Character* charac, const QString& skillKey);
+	void clearChecklist(Character* charac);
 	QString plurize(const QString& thing, int val);
-	void setupAutoCheckItems(Character* charac, const QString& checktype, const QString& skillKey, const QString& talentKey, const QString& uuid);
-	void exitAutoCheckItems(Character* charac, const QString& skillKey, int commit_count);
-	void appendCheckItem(Character* charac, const QString& skillKey, const QString& pool, const QString& desc);
-	void updateCheckItem(Character* charac, int ref, const QString& skillKey, const QString& pool, const QString& desc);
-	void removeCheckItem(Character* charac, int ref, const QString& skillKey);
-	void uncheckAllItem(Character* charac, const QString& skillKey);
-	void checkItem(Character* charac, int ref, const QString& skillKey, bool list_setup);
+	void setChecklist(Character* charac, QString skillKey, QString talentKey, Item& weapon);
+	void exitChecklist(Character* charac);
+	void appendCheckItem(Character* charac, const QString& pool, const QString& desc);
+	void updateCheckItem(Character* charac, int ref, const QString& pool, const QString& desc);
+	void removeCheckItem(Character* charac, int ref);
+	void uncheckAllItem(Character* charac);
+	int checklistAdd(const QString& pool, const QString& desc, int move, int strain, int dpoint = 0,
+		const QString& consumable = QString(), const QString& commit_key = QString(), int force_cost = 0);
+	void checklistSelected(const QString& pool, const QString& desc);
+	int checklistCommit(int commit_count, const QString& commit_key, const QString& desc, int move = 0, int strain = 0, int duration = 0);
+	int checklistMayCommit(int commit_count, const QString& commit_key, const QString& desc, int duration = 0);
+	int checklistDamage(int damage, const QString& desc, int strain, int dpoint);
+	int checklistAppend(ChecklistItem& item);
+	bool checkItem(Character* charac, int ref, bool list_setup = true);
+	void setupChecklistForce(int commit_count);
 
 	int negativePool();
 	void setNegativePool(Character* charac, int bit, const QString& skillKey);
 	void negetiveDefence(int& r, int &m);
 
-	int commitCount();
+	int forceCommitCount();
 	int isCommitted(const QString& key);
+	int getCommitCount(const QString& key);
 
 	static int expTypeToInt(const char* type);
 	static QString expTypeToString(int type, const QString& key = QString());
@@ -522,13 +543,16 @@ private:
 	QString setInvLogItem(int count, const QDateTime& create, const QDateTime& update, const QString& uuid, const QString& itemkey, const QString& desc, int amount, bool loading);
 	void addInvLogItem(const QDateTime& create, const QDateTime& update, const QString& desc, int amount, int type);
 	void inventoryChanged(Character* charac, const QString& uuid, const QString& itemkey, bool signal);
-	void setCheckItem(const QString& skillKey, const QString& pool, const QString& desc);
-	void addCheckItem(const QString& skillKey, int reference, const QString& pool, const QString& desc);
-	void checkChecked(Character* charac, const QString& skillKey, bool list_setup, CheckListItem* item);
+	void dicePoolChanged(Character* charac, ChecklistItem* item = NULL, bool list_setup = false);
+	QString getCustomChecklistKey(Character* charac);
+	void addCheckItem(const QString& skillKey, const QString& pool, const QString& desc);
 	void writeCurrentData();
 	void changeWounds(int delta);
 	void changeStrain(int delta);
 	void setTemporaryStrain(Character* charac, int value);
+
+	QMap<QString, int> iForceCommitted;
+	int iCommitCountMax;
 
 	CurrentData* iNextInCache;
 	int iNegativeCheck;

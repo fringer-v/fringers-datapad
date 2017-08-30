@@ -44,7 +44,7 @@ Rectangle {
 			InfoLine {
 				width: leftWidth
 				infoTitle: "SKILL:"
-				infoText: characterData.activeSkill
+				infoText: characterData.skillName
 				infoType: "check-item,clear2"
 			}
 

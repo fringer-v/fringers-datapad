@@ -591,6 +591,37 @@ QByteArray DatUtil::toWindowsLineEndings(QByteArray& data)
 	return converted;
 }
 
+QString DatUtil::poolText(QString text)
+{
+	QString result;
+
+	for (int i=0; i<text.size(); i++) {
+		result.append('\\');
+		result.append(text[i].unicode());
+	}
+	return "@"+result;
+}
+
+QString DatUtil::poolText(QString text, int arg)
+{
+	if (arg > 0)
+		return poolText(QString(text).arg("+" + QString::number(arg)));
+	return poolText(QString(text).arg(arg));
+}
+
+QString DatUtil::unpoolText(QString text)
+{
+	QString result;
+
+	for (int i=0; i<text.size(); i++) {
+		QChar ch = text[i];
+
+		if (ch != '\\' && ch != '@')
+			result.append(ch);
+	}
+	return result;
+}
+
 QString DatUtil::addDirChar(QString path)
 {
 	if (!path.endsWith("/"))
@@ -822,6 +853,7 @@ QString DatUtil::normalizeDice(const QString& dice)
 	int upgrade_diff = 0;
 	int downgrade_diff = 0;
 	int pips = 0;
+	int n_count = 0;
 	//int threat = 0;
 	int white = 0;
 	QString additional;
@@ -850,6 +882,7 @@ QString DatUtil::normalizeDice(const QString& dice)
 			case 'F': neg ? white-- : white++; break;
 			case 'g': neg ? white++ : white--; break;
 			case 'r': neg ? purple++ : purple--; break;
+			case 'n': neg ? n_count-- : n_count++; break;
 			case ' ': break;
 			case '-':
 				if (i+1<dice.length()) {
@@ -950,6 +983,18 @@ QString DatUtil::normalizeDice(const QString& dice)
 		}
 	}
 
+	// Will commit takes away whites, adds black with neg
+	// Negative whites are turned into red whites
+	if (n_count > 0) {
+		int w = white;
+
+		white -= n_count;
+		if (n_count > w)
+			n_count = w;
+	}
+	else
+		n_count = -n_count;
+
 	new_dice += QString("P").repeated(yellow);
 	new_dice += QString("A").repeated(green);
 	new_dice += QString("B").repeated(blue);
@@ -957,6 +1002,7 @@ QString DatUtil::normalizeDice(const QString& dice)
 		new_dice += QString("g").repeated(-white);
 	else
 		new_dice += QString("F").repeated(white);
+	new_dice += QString("n").repeated(n_count);
 	if (black < 0)
 		new_dice += QString("N").repeated(-black);
 	if (success > 0)
@@ -977,7 +1023,10 @@ QString DatUtil::normalizeDice(const QString& dice)
 		new_dice += QString("d").repeated(downgrade_diff);
 	new_dice += additional;
 	if (pips > 0) {
-		new_dice += " ➤ ";
+		if (new_dice.isEmpty())
+			new_dice += "= ➤ ";
+		else
+			new_dice += " ➤ ";
 		new_dice += QString(".").repeated(pips);
 	}
 	return new_dice;

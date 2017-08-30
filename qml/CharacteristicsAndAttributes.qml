@@ -40,10 +40,7 @@ Rectangle {
 					charValue: characterData.brawn
 					onClicked: {
 						checklist.checkListType = "skill"
-						characterData.itemUuid = "";
-						characterData.itemItemKey = "";
-						characterData.itemName = "";
-						characterData.showCheckList(charName, "BR", "", Util.repeat("A", charValue));
+						characterData.showChecklist("BR", "", "");
 						controller.state = "checkout";
 					}
 				}
@@ -56,11 +53,7 @@ Rectangle {
 					charValue: characterData.agility
 					onClicked: {
 						checklist.checkListType = "skill"
-						characterData.itemUuid = "";
-						characterData.itemItemKey = "";
-						characterData.itemName = "";
-						characterData.activeSkill = charName;
-						characterData.showCheckList(charName, "AG", "", Util.repeat("A", charValue));
+						characterData.showChecklist("AG", "", "");
 						controller.state = "checkout";
 					}
 				}
@@ -73,10 +66,7 @@ Rectangle {
 					charValue: characterData.intellect
 					onClicked: {
 						checklist.checkListType = "skill"
-						characterData.itemUuid = "";
-						characterData.itemItemKey = "";
-						characterData.itemName = "";
-						characterData.showCheckList(charName, "INT", "", Util.repeat("A", charValue));
+						characterData.showChecklist("INT", "", "");
 						controller.state = "checkout";
 					}
 				}
@@ -89,10 +79,7 @@ Rectangle {
 					charValue: characterData.cunning
 					onClicked: {
 						checklist.checkListType = "skill"
-						characterData.itemUuid = "";
-						characterData.itemItemKey = "";
-						characterData.itemName = "";
-						characterData.showCheckList(charName, "CUN", "", Util.repeat("A", charValue));
+						characterData.showChecklist("CUN", "", "");
 						controller.state = "checkout";
 					}
 				}
@@ -105,10 +92,7 @@ Rectangle {
 					charValue: characterData.willpower
 					onClicked: {
 						checklist.checkListType = "skill"
-						characterData.itemUuid = "";
-						characterData.itemItemKey = "";
-						characterData.itemName = "";
-						characterData.showCheckList(charName, "WIL", "", Util.repeat("A", charValue));
+						characterData.showChecklist("WIL", "", "");
 						controller.state = "checkout";
 					}
 				}
@@ -121,10 +105,7 @@ Rectangle {
 					charValue: characterData.presence
 					onClicked: {
 						checklist.checkListType = "skill"
-						characterData.itemUuid = "";
-						characterData.itemItemKey = "";
-						characterData.itemName = "";
-						characterData.showCheckList(charName, "PR", "", Util.repeat("A", charValue));
+						characterData.showChecklist("PR", "", "");
 						controller.state = "checkout";
 					}
 				}
@@ -194,10 +175,7 @@ Rectangle {
 							width: parent.width/2
 							onClicked: {
 								checklist.checkListType = "skill"
-								characterData.itemItemKey = "";
-								characterData.itemUuid = "";
-								characterData.itemName = "";
-								characterData.showCheckList("", "DEFR", "", "");
+								characterData.showChecklist("DEFR", "", "");
 								controller.state = "checkout";
 							}
 						}
@@ -209,10 +187,7 @@ Rectangle {
 							width: parent.width/2
 							onClicked: {
 								checklist.checkListType = "skill"
-								characterData.itemUuid = "";
-								characterData.itemItemKey = "";
-								characterData.itemName = "";
-								characterData.showCheckList("", "DEFM", "", "");
+								characterData.showChecklist("DEFM", "", "");
 								controller.state = "checkout";
 							}
 						}
@@ -261,14 +236,11 @@ Rectangle {
 						charName: "POINTS"
 						charLineColor: characterData.force > 0 ? "black" : Constant.DARK_GRAY
 						charValue: characterData.force
-						charCurrentValue: characterData.forceCommitted === 0 ? -1 : (characterData.force - characterData.forceCommitted)
+						charCurrentValue: characterData.forceCommitted === 0 ? -1000 : (characterData.force - characterData.forceCommitted)
 						onClicked: {
 							if (characterData.force > 0) {
 								checklist.checkListType = "skill"
-								characterData.itemUuid = "";
-								characterData.itemItemKey = "";
-								characterData.itemName = "";
-								characterData.showCheckList("FORCE", "FORCE", "", Util.repeat("F", characterData.force));
+								characterData.showChecklist("FORCECOMMIT", "", "");
 								controller.state = "checkout";
 							}
 						}

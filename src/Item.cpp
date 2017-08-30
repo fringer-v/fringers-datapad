@@ -74,7 +74,7 @@ QString Mod::modText()
 			Talent talent = AllTalents::instance()->getTalent(key);
 
 			if (!talent.key.isEmpty()) {
-				mod_desc = QString("Talent (%1)").arg(talent.name);
+				mod_desc = QString("Talent (%1)").arg(talent.name());
 			}
 			else {
 				mod_desc = miscDesc;
@@ -409,7 +409,7 @@ QString Item::dicePool()
 	int			remove_setback = 0;
 	QString		pool;
 	const ShopItem shop = shopItem();
-	QString		skillKey = shop.skillKey;
+	QString skillKey = shop.skillKey;
 
 	if (CurrentData::instance->skills.contains(skillKey))
 		skill = CurrentData::instance->skills[skillKey];

@@ -126,7 +126,7 @@ Rectangle {
 	MouseArea {
 		anchors.fill: parent
 		onClicked: {
-			checklist.checkListType = characterData.showCheckList("", "", talentkey, "");
+			checklist.checkListType = characterData.showChecklist("", talentkey, "");
 			if (checklist.checkListType !== "")
 				controller.state = "checkout";
 		}

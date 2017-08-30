@@ -39,8 +39,8 @@ public:
 	virtual int rowCount();
 	virtual QVariant getValue(int row, int col);
 
-	static QString toRangeText(int range);
-	static QString toRangeText(int range, int range2);
+	static QString toRangeText(int range, bool planetary_scale);
+	static QString toRangeText(int range, int range2, bool planetary_scale);
 
 	//virtual QVariant getValue(int row, const char* col);
 };
