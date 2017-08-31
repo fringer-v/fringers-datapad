@@ -53,8 +53,8 @@ Rectangle {
 			InfoLine {
 				width: leftWidth
 				infoTitle: "MANEUVERS:"
-				infoText: "  "+Util.left(characterData.itemManeuvers, "|")
-				infoComment: Util.right(characterData.itemManeuvers, "|")+"  "
+				infoText: "  "+Util.left(characterData.checkManeuvers, "|")
+				infoComment: Util.right(characterData.checkManeuvers, "|")+"  "
 				infoType: "check-item,right,clear"
 			}
 
@@ -63,8 +63,8 @@ Rectangle {
 			InfoLine {
 				width: rightWidth
 				infoTitle: "STRAIN:"
-				infoText: "  "+Util.left(characterData.itemStrain, "|")
-				infoComment: Util.right(characterData.itemStrain, "|")+"  "
+				infoText: "  "+Util.left(characterData.checkStrain, "|")
+				infoComment: Util.right(characterData.checkStrain, "|")+"  "
 				infoType: "check-item,clear"
 			}
 

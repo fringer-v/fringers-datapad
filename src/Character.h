@@ -173,18 +173,18 @@ public:
 
 	Q_PROPERTY(QString skillName READ skillName NOTIFY skillNameChanged)
 	Q_PROPERTY(QString talentName READ talentName NOTIFY talentNameChanged)
+	Q_PROPERTY(QString itemName READ itemName NOTIFY itemNameChanged) // Name
 	Q_PROPERTY(QString dicePool READ dicePool WRITE setDicePool NOTIFY dicePoolChanged)
 	Q_PROPERTY(int negativePool READ negativePool WRITE setNegativePool NOTIFY negativePoolChanged)
-	Q_PROPERTY(QString itemName READ itemName NOTIFY itemNameChanged) // Name
-	Q_PROPERTY(QString itemRange READ itemRange NOTIFY itemRangeChanged) // Range
-	Q_PROPERTY(QString itemDamage READ itemDamage NOTIFY itemDamageChanged)
-	Q_PROPERTY(QString itemCritLevel READ itemCritLevel NOTIFY itemCritLevelChanged)  // Strength
-	Q_PROPERTY(QString itemQualMag READ itemQualMag NOTIFY itemQualMagChanged) // Magnitude
-	Q_PROPERTY(QString itemPowerStr READ itemPowerStr NOTIFY itemPowerStrChanged) // Strength
-	Q_PROPERTY(QString itemDuration READ itemDuration NOTIFY itemDurationChanged) // Duration
-	Q_PROPERTY(QString itemAttachDesc READ itemAttachDesc NOTIFY itemAttachDescChanged) //
-	Q_PROPERTY(QString itemManeuvers READ itemManeuvers NOTIFY itemManeuversChanged) // Maneuvers
-	Q_PROPERTY(QString itemStrain READ itemStrain NOTIFY itemStrainChanged) // Strain
+	Q_PROPERTY(QString checkRange READ checkRange NOTIFY checkRangeChanged) // Range
+	Q_PROPERTY(QString checkDamage READ checkDamage NOTIFY checkDamageChanged)
+	Q_PROPERTY(QString checkCritLevel READ checkCritLevel NOTIFY checkCritLevelChanged)  // Strength
+	Q_PROPERTY(QString checkQualMag READ checkQualMag NOTIFY checkQualMagChanged) // Magnitude
+	Q_PROPERTY(QString checkPowerStr READ checkPowerStr NOTIFY checkPowerStrChanged) // Strength
+	Q_PROPERTY(QString checkDuration READ checkDuration NOTIFY checkDurationChanged) // Duration
+	Q_PROPERTY(QString checkAttachDesc READ checkAttachDesc NOTIFY checkAttachDescChanged) //
+	Q_PROPERTY(QString checkManeuvers READ checkManeuvers NOTIFY checkManeuversChanged) // Maneuvers
+	Q_PROPERTY(QString checkStrain READ checkStrain NOTIFY checkStrainChanged) // Strain
 
 	Q_PROPERTY(int imageProviderCount READ imageProviderCount WRITE setImageProviderCount NOTIFY imageProviderCountChanged)
 
@@ -240,19 +240,19 @@ public:
 	int usedXP() { return getAttribute(USEDXP); }
 	QString skillName();
 	QString talentName();
+	QString itemName();
 	QString dicePool();
 	int negativePool();
-	QString itemName();
 	void getItemRange(int& range1, int& range2);
-	QString itemRange();
-	QString itemDamage();
-	QString itemCritLevel();
-	QString itemQualMag();
-	QString itemPowerStr();
-	QString itemDuration();
-	QString itemAttachDesc();
-	QString itemManeuvers();
-	QString itemStrain();
+	QString checkRange();
+	QString checkDamage();
+	QString checkCritLevel();
+	QString checkQualMag();
+	QString checkPowerStr();
+	QString checkDuration();
+	QString checkAttachDesc();
+	QString checkManeuvers();
+	QString checkStrain();
 	int imageProviderCount();
 
 	Q_INVOKABLE void adjustWounds(int delta);
@@ -378,19 +378,18 @@ signals:
 
 	void skillNameChanged(const QString& value);
 	void talentNameChanged(const QString& value);
+	void itemNameChanged(const QString& value);
 	void dicePoolChanged(const QString& value);
 	void negativePoolChanged(int value);
-	void itemNameChanged(const QString& value);
-	void itemRangeChanged(const QString& value);
-	void itemSkillChanged(const QString& value);
-	void itemDamageChanged(const QString& value);
-	void itemCritLevelChanged(const QString& value);
-	void itemQualMagChanged(const QString& value);
-	void itemPowerStrChanged(const QString& value);
-	void itemDurationChanged(const QString& value);
-	void itemAttachDescChanged(const QString& value);
-	void itemManeuversChanged(const QString& value);
-	void itemStrainChanged(const QString& value);
+	void checkRangeChanged(const QString& value);
+	void checkDamageChanged(const QString& value);
+	void checkCritLevelChanged(const QString& value);
+	void checkQualMagChanged(const QString& value);
+	void checkPowerStrChanged(const QString& value);
+	void checkDurationChanged(const QString& value);
+	void checkAttachDescChanged(const QString& value);
+	void checkManeuversChanged(const QString& value);
+	void checkStrainChanged(const QString& value);
 	void itemCritPlusChanged(int value);
 	void imageProviderCountChanged(int value);
 
@@ -444,14 +443,14 @@ private:
 	// Changes to the Check List dice pool, and other checklist items:
 	QString iChangeDicePool;
 	//QString iModDicePool;
-	int iModItemDamage;
-	int iModItemPierce;
-	int iModItemCrit;
-	int iModItemRange;
-	int iModItemMagnitude;
-	int iModItemStrength;
-	int iModItemDuration;
-	int iModItemExtra;
+	int iChecklistDamage;
+	int iChecklistPierce;
+	int iChecklistCrit;
+	int iChecklistRange;
+	int iChecklistMagnitude;
+	int iChecklistStrength;
+	int iChecklistDuration;
+	int iChecklistExtra;
 
 	// A mod number used to indicate that the image database has changed
 	int iImageProviderCount;

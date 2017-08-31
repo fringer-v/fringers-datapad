@@ -35,14 +35,14 @@ Character::Character(QObject *parent) :
 
 	iChangeDicePool.clear();
 	//iModDicePool.clear();
-	iModItemDamage = 0;
-	iModItemPierce = 0;
-	iModItemCrit = 0;
-	iModItemRange = 0;
-	iModItemMagnitude = 0;
-	iModItemStrength = 0;
-	iModItemDuration = 0;
-	iModItemExtra = 0;
+	iChecklistDamage = 0;
+	iChecklistPierce = 0;
+	iChecklistCrit = 0;
+	iChecklistRange = 0;
+	iChecklistMagnitude = 0;
+	iChecklistStrength = 0;
+	iChecklistDuration = 0;
+	iChecklistExtra = 0;
 
 	iImageProviderCount = 0;
 
@@ -474,14 +474,14 @@ QString Character::itemRange()
 
 	getItemRange(range1, range2); // Initial range
 	if (range1 >= RANGE_ENGAGED) {
-		range1 += iModItemRange;
+		range1 += iChecklistRange;
 		if (range1 < RANGE_ENGAGED)
 			range1 = RANGE_ENGAGED;
 		else if (range1 > RANGE_EXTREME)
 			range1 = RANGE_EXTREME;
 	}
 	if (range2 >= RANGE_ENGAGED) {
-		range2 += iModItemRange;
+		range2 += iChecklistRange;
 		if (range2 < RANGE_ENGAGED)
 			range2 = RANGE_ENGAGED;
 		else if (range2 > RANGE_EXTREME)
@@ -493,7 +493,7 @@ QString Character::itemRange()
 		 talent_id == KM_BATMEDCONTROL1 ||
 		 talent_id == KM_BATMEDCONTROL2 ||
 		 talent_id == KM_BATMEDMASTERY ||
-		 talent_id == KM_BATMEDDURATION) && ((iModItemExtra) & 1) != 0)
+		 talent_id == KM_BATMEDDURATION) && ((iChecklistExtra) & 1) != 0)
 		planetary_scale = true;
 
 	return Weapons::toRangeText(range1, range2, planetary_scale);
@@ -504,7 +504,7 @@ QString Character::itemDamage()
 	QString damage = iItem.damageTotal();
 	int pierce = iItem.pierce();
 
-	if (iModItemDamage) {
+	if (iChecklistDamage) {
 		QString val = damage;
 		QString rig;
 
@@ -518,11 +518,11 @@ QString Character::itemDamage()
 			rig = DatUtil::right(val, "+") + rig;
 		}
 
-		damage = QString("%1%2").arg(val.toInt() + iModItemDamage).arg(rig);
+		damage = QString("%1%2").arg(val.toInt() + iChecklistDamage).arg(rig);
 	}
 
-	if (pierce + iModItemPierce)
-		damage = damage + QString(" ➤ %1").arg(pierce + iModItemPierce);
+	if (pierce + iChecklistPierce)
+		damage = damage + QString(" ➤ %1").arg(pierce + iChecklistPierce);
 
 	return damage;
 }
@@ -533,7 +533,7 @@ QString Character::itemCritLevel()
 	int crit_plus = iItem.critPlus();
 
 	if (!crit_dice.isEmpty() && crit_plus > 0)
-		return crit_dice + QString(" +%1%").arg(crit_plus*10+iModItemCrit);
+		return crit_dice + QString(" +%1%").arg(crit_plus*10+iChecklistCrit);
 	return crit_dice;
 }
 
@@ -575,9 +575,9 @@ QString Character::itemQualMag()
 		case KM_MOVECONTROL1:
 		case KM_MOVECONTROL2:
 		case KM_MOVECONTROL3:
-			if (iModItemMagnitude+1 == 1)
+			if (iChecklistMagnitude+1 == 1)
 				return "1 Target";
-			return QString("%1 Targets").arg(iModItemMagnitude+1);
+			return QString("%1 Targets").arg(iChecklistMagnitude+1);
 		case KM_SEEKBASIC:
 		case KM_SEEKSTRENGTH:
 		case KM_SEEKDURATION:
@@ -585,16 +585,16 @@ QString Character::itemQualMag()
 		{
 			QString val;
 
-			if (iModItemDuration == 0)
+			if (iChecklistDuration == 0)
 				val = "1 target";
 			else
-				val = QString("%1 targets").arg(iModItemDuration+1);
-			if (iModItemMagnitude == 0)
+				val = QString("%1 targets").arg(iChecklistDuration+1);
+			if (iChecklistMagnitude == 0)
 				val += ", - Details";
-			else if (iModItemMagnitude == 1)
+			else if (iChecklistMagnitude == 1)
 				val += ", 1 Detail";
 			else
-				val += QString(", %1 Details").arg(iModItemMagnitude);
+				val += QString(", %1 Details").arg(iChecklistMagnitude);
 			return val;
 		}
 		default:
@@ -613,9 +613,9 @@ QString Character::itemPowerStr()
 		case KM_BINDCONTROL1:
 		case KM_BINDCONTROL2:
 		case KM_BINDMASTERY:
-			if (iModItemStrength == 0)
+			if (iChecklistStrength == 0)
 				return "-";
-			return QString("Disorient target(s) for %1 rounds").arg(iModItemStrength+1);
+			return QString("Disorient target(s) for %1 rounds").arg(iChecklistStrength+1);
 		case KM_INFLUENCEBASIC:
 			if (CurrentData::instance->talents.contains("INFLUENCESTRENGTH"))
 				return QString("Inflict 2 strain");
@@ -631,26 +631,26 @@ QString Character::itemPowerStr()
 		case KM_MOVECONTROL1:
 		case KM_MOVECONTROL2:
 		case KM_MOVECONTROL3:
-			return QString("Effect silhouette %1 or smaller").arg(silhouette+iModItemStrength > 9 ? 9 : silhouette+iModItemStrength);
+			return QString("Effect silhouette %1 or smaller").arg(silhouette+iChecklistStrength > 9 ? 9 : silhouette+iChecklistStrength);
 		case KM_SEEKBASIC:
 		case KM_SEEKSTRENGTH:
 		case KM_SEEKDURATION:
 		case KM_SEEKMASTERY:
-			if (iModItemRange > 0)
+			if (iChecklistRange > 0)
 				return "Add [TR] to combat checks vs target";
-			if (iModItemStrength == 0)
+			if (iChecklistStrength == 0)
 				return "Eliminate 0 Force-based illusions";
-			if (iModItemStrength == 1)
+			if (iChecklistStrength == 1)
 				return "Eliminate 1 Force-based illusion";
-			return QString("Eliminate %1 Force-based illusions").arg(iModItemStrength);
+			return QString("Eliminate %1 Force-based illusions").arg(iChecklistStrength);
 		case KM_BATMEDBASIC:
 		case KM_BATMEDCONTROL1:
 		case KM_BATMEDCONTROL2:
 		case KM_BATMEDMASTERY:
 		case KM_BATMEDDURATION:
 		{
-			QString stars = QString("[SU]").repeated(iModItemStrength+1);
-			if (((iModItemExtra) & 2) != 0)
+			QString stars = QString("[SU]").repeated(iChecklistStrength+1);
+			if (((iChecklistExtra) & 2) != 0)
 				return QString("Add %1 to all checks and boost 1 Skill").arg(stars);
 			return QString("Add %1 to all checks made by targets").arg(stars);
 		}
@@ -673,19 +673,19 @@ QString Character::itemDuration()
 		case KM_BATMEDCONTROL2:
 		case KM_BATMEDMASTERY:
 		case KM_BATMEDDURATION:
-			if (iModItemDuration == 0)
+			if (iChecklistDuration == 0)
 				return "End of user's next turn";
 			return "Sustained until [FO][FO][FO] uncommitted";
 		case KM_INFLUENCECONTROL1:
-			if (iModItemDuration == 0)
+			if (iChecklistDuration == 0)
 				return "1 round or 5 minutes";
-			return QString("%1 rounds or %2 minutes").arg(iModItemDuration+1).arg(iModItemDuration+5);
+			return QString("%1 rounds or %2 minutes").arg(iChecklistDuration+1).arg(iChecklistDuration+5);
 		case KM_MISDIRBASIC:
 		case KM_MISDIRCONTROL1:
 		case KM_MISDIRCONTROL2:
 		case KM_MISDIRMASTERY:
 		case KM_MISDIRDURATION:
-			if (iModItemDuration == 0)
+			if (iChecklistDuration == 0)
 				return "Beginning of user's next turn";
 			return "Sustained until [FO][FO] uncommitted";
 		default:
@@ -955,14 +955,14 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 	QString dice_pool;
 
 	iChangeDicePool.clear();
-	iModItemDamage = 0;
-	iModItemPierce = 0;
-	iModItemCrit = 0;
-	iModItemRange = 0;
-	iModItemMagnitude = 0;
-	iModItemStrength = 0;
-	iModItemDuration = 0;
-	iModItemExtra = 0;
+	iChecklistDamage = 0;
+	iChecklistPierce = 0;
+	iChecklistCrit = 0;
+	iChecklistRange = 0;
+	iChecklistMagnitude = 0;
+	iChecklistStrength = 0;
+	iChecklistDuration = 0;
+	iChecklistExtra = 0;
 
 	if (!talent_key.isEmpty()) {
 		Talent talent = AllTalents::instance()->getTalent(talent_key);
@@ -1401,24 +1401,24 @@ void Character::setChangeDicePool(const QString& dice_pool, ChecklistItem* item,
 
 	if (item) {
 		if (item->checked) {
-			iModItemDamage += item->plusDamage;
-			iModItemPierce += item->plusPierce;
-			iModItemCrit += item->plusCrit;
-			iModItemRange += item->plusRange;
-			iModItemMagnitude += item->plusMagnitude;
-			iModItemStrength += item->plusStrength;
-			iModItemDuration += item->plusDuration;
-			iModItemExtra += item->plusExtra;
+			iChecklistDamage += item->plusDamage;
+			iChecklistPierce += item->plusPierce;
+			iChecklistCrit += item->plusCrit;
+			iChecklistRange += item->plusRange;
+			iChecklistMagnitude += item->plusMagnitude;
+			iChecklistStrength += item->plusStrength;
+			iChecklistDuration += item->plusDuration;
+			iChecklistExtra += item->plusExtra;
 		}
 		else if (!list_setup) {
-			iModItemDamage -= item->plusDamage;
-			iModItemPierce -= item->plusPierce;
-			iModItemCrit -= item->plusCrit;
-			iModItemRange -= item->plusRange;
-			iModItemMagnitude -= item->plusMagnitude;
-			iModItemStrength -= item->plusStrength;
-			iModItemDuration -= item->plusDuration;
-			iModItemExtra -= item->plusExtra;
+			iChecklistDamage -= item->plusDamage;
+			iChecklistPierce -= item->plusPierce;
+			iChecklistCrit -= item->plusCrit;
+			iChecklistRange -= item->plusRange;
+			iChecklistMagnitude -= item->plusMagnitude;
+			iChecklistStrength -= item->plusStrength;
+			iChecklistDuration -= item->plusDuration;
+			iChecklistExtra -= item->plusExtra;
 		}
 	}
 
