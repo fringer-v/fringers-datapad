@@ -63,6 +63,7 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("QUICKDR", KM_QUICKDR);
 	KeyMethod::instance.append("TRICK", KM_TRICK);
 	KeyMethod::instance.append("WARFORBASIC", KM_WARFORBASIC);
+	KeyMethod::instance.append("WARFORCONTROL1", KM_WARFORCONTROL1);
 	KeyMethod::instance.append("JUSTKID", KM_JUSTKID);
 	KeyMethod::instance.append("HERO", KM_HERO);
 	KeyMethod::instance.append("HEROICRES", KM_HEROICRES);
@@ -206,9 +207,10 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("MISDIRDURATION", KM_MISDIRDURATION);
 
 	KeyMethod::instance.append("WARFORRANGE", KM_WARFORRANGE);
-	KeyMethod::instance.append("WARFORCONTROL1", KM_WARFORCONTROL1);
-	KeyMethod::instance.append("WARFORMAGNITUDE", KM_WARFORMAGNITUDE);
+	KeyMethod::instance.append("WARFORCONTROL2", KM_WARFORCONTROL2);
 	KeyMethod::instance.append("WARFORCONTROL3", KM_WARFORCONTROL3);
+	KeyMethod::instance.append("WARFORCONTROL4", KM_WARFORCONTROL4);
+	KeyMethod::instance.append("WARFORMAGNITUDE", KM_WARFORMAGNITUDE);
 
 	KeyMethod::instance.append("BINDRANGE", KM_BINDRANGE);
 	KeyMethod::instance.append("BINDMAGNITUDE", KM_BINDMAGNITUDE);
@@ -308,10 +310,6 @@ int CharTalentMap::forcePower(const QString& key, QString& power, QString& base)
 		power = "MISDIR";
 		base = "Misdirect";
 		return FP_MISDIR;
-	}
-	if (key.startsWith("WARFOR")) {
-		power = "WARFOR";
-		return FP_WARFOR;
 	}
 	if (key.startsWith("SENSE")) {
 		power = "SENSE";
@@ -486,11 +484,12 @@ QString Talent::name()
 			QString power;
 			QString base;
 
-			CharTalentMap::forcePower(key, power, base);
-			if (internalName.startsWith("Control: "))
-				return base + ": " + DatUtil::right(internalName, "Control: ");
-			if (!internalName.startsWith(base))
-				return base + ": " + internalName;
+			if (CharTalentMap::forcePower(key, power, base)) {
+				if (internalName.startsWith("Control: "))
+					return base + ": " + DatUtil::right(internalName, "Control: ");
+				if (!internalName.startsWith(base))
+					return base + ": " + internalName;
+			}
 	}
 	return internalName.isEmpty() ? key : internalName;
 }

@@ -367,6 +367,11 @@ QString Character::talentName()
 	return talent.name();
 }
 
+QString Character::itemName()
+{
+	return iItem.name();
+}
+
 QString Character::dicePool()
 {
 	return DatUtil::normalizeDice(iDicePool + iChangeDicePool);
@@ -375,11 +380,6 @@ QString Character::dicePool()
 int Character::negativePool()
 {
 	return CurrentData::instance->negativePool();
-}
-
-QString Character::itemName()
-{
-	return iItem.name();
 }
 
 void Character::getItemRange(int& range1, int& range2)
@@ -399,6 +399,8 @@ void Character::getItemRange(int& range1, int& range2)
 		case KM_BATMEDDURATION:
 			range1 = RANGE_ENGAGED;
 			break;
+		case KM_WARFORBASIC:
+		case KM_WARFORCONTROL2:
 		case KM_BINDBASIC:
 		case KM_BINDCONTROL1:
 		case KM_BINDCONTROL2:
@@ -467,7 +469,7 @@ void Character::getItemRange(int& range1, int& range2)
 }
 
 // showChecklist() <---- Initialise power
-QString Character::itemRange()
+QString Character::checkRange()
 {
 	MethodID talent_id = KeyMethod::instance.getID(iCurrentTalentKey);
 	int range1, range2;
@@ -499,7 +501,7 @@ QString Character::itemRange()
 	return Weapons::toRangeText(range1, range2, planetary_scale);
 }
 
-QString Character::itemDamage()
+QString Character::checkDamage()
 {
 	QString damage = iItem.damageTotal();
 	int pierce = iItem.pierce();
@@ -527,7 +529,7 @@ QString Character::itemDamage()
 	return damage;
 }
 
-QString Character::itemCritLevel()
+QString Character::checkCritLevel()
 {
 	QString crit_dice = DatUtil::repeat("a", iItem.critTotal());
 	int crit_plus = iItem.critPlus();
@@ -537,7 +539,7 @@ QString Character::itemCritLevel()
 	return crit_dice;
 }
 
-QString Character::itemQualMag()
+QString Character::checkQualMag()
 {
 	MethodID talent_id = KeyMethod::instance.getID(iCurrentTalentKey);
 
@@ -553,6 +555,8 @@ QString Character::itemQualMag()
 		case KM_ENHANCECONT8:
 		case KM_ENHANCECONT9:
 			return "n/a";
+		case KM_WARFORBASIC:
+		case KM_WARFORCONTROL2:
 		case KM_BATMEDBASIC:
 		case KM_BATMEDCONTROL1:
 		case KM_BATMEDCONTROL2:
@@ -603,7 +607,7 @@ QString Character::itemQualMag()
 	return "";
 }
 
-QString Character::itemPowerStr()
+QString Character::checkPowerStr()
 {
 	MethodID talent_id = KeyMethod::instance.getID(iCurrentTalentKey);
 	int silhouette = 0;
@@ -654,13 +658,18 @@ QString Character::itemPowerStr()
 				return QString("Add %1 to all checks and boost 1 Skill").arg(stars);
 			return QString("Add %1 to all checks made by targets").arg(stars);
 		}
+		case KM_WARFORBASIC:
+		case KM_WARFORCONTROL2:
+			if (iChecklistStrength > 0)
+				return QString("Add %1 to next check against target").arg(QString("[BO]").repeated(iChecklistStrength));
+			break;
 		default:
 			break;
 	}
 	return "";
 }
 
-QString Character::itemDuration()
+QString Character::checkDuration()
 {
 	MethodID talent_id = KeyMethod::instance.getID(iCurrentTalentKey);
 	switch (talent_id) {
@@ -688,13 +697,18 @@ QString Character::itemDuration()
 			if (iChecklistDuration == 0)
 				return "Beginning of user's next turn";
 			return "Sustained until [FO][FO] uncommitted";
+		case KM_WARFORBASIC:
+		case KM_WARFORCONTROL2:
+			if (iChecklistDuration > 0)
+				return CurrentData::plurize("Bonuses apply to all checks for %1 round", iChecklistDuration);
+			break;
 		default:
 			break;
 	}
 	return "";
 }
 
-QString Character::itemAttachDesc()
+QString Character::checkAttachDesc()
 {
 	if (!iCurrentTalentKey.isEmpty()) {
 		Talent talent = AllTalents::instance()->getTalent(iCurrentTalentKey);
@@ -706,7 +720,7 @@ QString Character::itemAttachDesc()
 	return iItem.attachments;
 }
 
-QString Character::itemManeuvers()
+QString Character::checkManeuvers()
 {
 	MethodID talent_id = KeyMethod::instance.getID(iCurrentTalentKey);
 	int add_man = 0;
@@ -725,7 +739,7 @@ QString Character::itemManeuvers()
 	return val;
 }
 
-QString Character::itemStrain()
+QString Character::checkStrain()
 {
 	QString cons;
 
@@ -1012,7 +1026,12 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 				case KM_SEEKCONTROL3:
 				case KM_SENSECONTROL1:
 					skill_key = "FORCECOMMIT";
-					check_list_type = "force";
+					break;
+				case KM_WARFORCONTROL1:
+				case KM_WARFORCONTROL3:
+				case KM_WARFORCONTROL4:
+				case KM_WARFORMAGNITUDE:
+					skill_key = "ICOOL";
 					break;
 				case KM_SEEKCONTROL2:
 				case KM_ENHANCECONT0:
@@ -1153,7 +1172,7 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 	iCurrentTalentKey = talent_key;
 	emit skillNameChanged(skillName());
 	emit talentNameChanged(talentName());
-	emit itemAttachDescChanged(itemAttachDesc());
+	emit checkAttachDescChanged(checkAttachDesc());
 
 	CurrentData::instance->clearChecklist(this);
 	CheckList::instance.setRowCountChanged();
@@ -1425,15 +1444,15 @@ void Character::setChangeDicePool(const QString& dice_pool, ChecklistItem* item,
 	emit dicePoolChanged(dicePool());
 	emit negativePoolChanged(negativePool());
 
-	emit itemManeuversChanged(itemManeuvers());
-	emit itemStrainChanged(itemStrain());
+	emit checkManeuversChanged(checkManeuvers());
+	emit checkStrainChanged(checkStrain());
 
-	emit itemDamageChanged(itemDamage());
-	emit itemCritLevelChanged(itemCritLevel());
-	emit itemRangeChanged(itemRange());
-	emit itemQualMagChanged(itemQualMag());
-	emit itemPowerStrChanged(itemPowerStr());
-	emit itemDurationChanged(itemDuration());
+	emit checkDamageChanged(checkDamage());
+	emit checkCritLevelChanged(checkCritLevel());
+	emit checkRangeChanged(checkRange());
+	emit checkQualMagChanged(checkQualMag());
+	emit checkPowerStrChanged(checkPowerStr());
+	emit checkDurationChanged(checkDuration());
 }
 
 void Character::inventoryChanged()
@@ -1838,13 +1857,13 @@ void Character::setupItem(const QString& uuid)
 		iItem = CurrentData::instance->weapons.getItemByUuid(uuid);
 
 		emit itemNameChanged(itemName());
-		emit itemRangeChanged(itemRange());
-		emit itemDamageChanged(itemDamage());
-		emit itemCritLevelChanged(itemCritLevel());
-		emit itemQualMagChanged(itemQualMag());
-		emit itemAttachDescChanged(itemAttachDesc());
-		emit itemManeuversChanged(itemManeuvers());
-		emit itemStrainChanged(itemStrain());
+		emit checkRangeChanged(checkRange());
+		emit checkDamageChanged(checkDamage());
+		emit checkCritLevelChanged(checkCritLevel());
+		emit checkQualMagChanged(checkQualMag());
+		emit checkAttachDescChanged(checkAttachDesc());
+		emit checkManeuversChanged(checkManeuvers());
+		emit checkStrainChanged(checkStrain());
 	}
 }
 

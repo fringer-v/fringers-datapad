@@ -6,7 +6,7 @@ import "../js/utilities.js" as Util
 Rectangle {
 	id: poolItem
 	width: checklist.width - 20
-	height: infoLine.height * 4 + 8 + 24 + (characterData.itemAttachDesc !== "" ? attachmentText.height : 0)
+	height: infoLine.height * 4 + 8 + 24 + (characterData.checkAttachDesc !== "" ? attachmentText.height : 0)
 
 	property int leftWidth: 200
 	property int roghtWidth: 300
@@ -62,8 +62,8 @@ Rectangle {
 			InfoLine {
 				width: roghtWidth
 				infoTitle: "MANEUVERS:"
-				infoText: "  "+Util.left(characterData.itemManeuvers, "|")
-				infoComment: Util.right(characterData.itemManeuvers, "|")+"  "
+				infoText: "  "+Util.left(characterData.checkManeuvers, "|")
+				infoComment: Util.right(characterData.checkManeuvers, "|")+"  "
 				infoType: "check-item,right,clear"
 			}
 		}
@@ -72,7 +72,7 @@ Rectangle {
 			InfoLine {
 				width: leftWidth
 				infoTitle: "RANGE:"
-				infoText: characterData.itemRange
+				infoText: characterData.checkRange
 				infoType: "check-item,clear2"
 			}
 
@@ -81,7 +81,7 @@ Rectangle {
 			InfoLine {
 				width: (poolItem.width - 24 - 6)  - 2*spaceBetween - leftWidth - roghtWidth
 				infoTitle: "CRITICAL:"
-				infoText: characterData.itemCritLevel
+				infoText: characterData.checkCritLevel
 				infoType: "check-item,right,dice,clear"
 			}
 
@@ -90,8 +90,8 @@ Rectangle {
 			InfoLine {
 				width: roghtWidth
 				infoTitle: "STRAIN:"
-				infoText: "  "+Util.left(characterData.itemStrain, "|")
-				infoComment: Util.right(characterData.itemStrain, "|")+"  "
+				infoText: "  "+Util.left(characterData.checkStrain, "|")
+				infoComment: Util.right(characterData.checkStrain, "|")+"  "
 				infoType: "check-item,right,clear"
 			}
 		}
@@ -100,7 +100,7 @@ Rectangle {
 			InfoLine {
 				width: leftWidth
 				infoTitle: "DAMAGE:"
-				infoText: characterData.itemDamage
+				infoText: characterData.checkDamage
 				infoType: "check-item,clear2"
 			}
 
@@ -109,22 +109,22 @@ Rectangle {
 			InfoLine {
 				width: (poolItem.width - 24 - 6)  - 10 - leftWidth
 				infoTitle: "QUALITIES:"
-				infoText: characterData.itemQualMag
+				infoText: characterData.checkQualMag
 				infoType: "check-item,right,clear2"
 			}
 		}
 
 		Vspacer {
 			size: 10
-			visible: characterData.itemAttachDesc !== ""
+			visible: characterData.checkAttachDesc !== ""
 		}
 
 		FlowText {
 			id: attachmentText
 			width: poolItem.width - 35
-			text: characterData.itemAttachDesc
+			text: characterData.checkAttachDesc
 			clearColor: "white"
-			visible: characterData.itemAttachDesc !== ""
+			visible: characterData.checkAttachDesc !== ""
 		}
 	}
 }

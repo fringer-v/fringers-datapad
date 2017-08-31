@@ -63,18 +63,6 @@
 								(((x) & NEG_CHECK_3_PURPLE) ? 3 : 0) + \
 								(((x) & NEG_CHECK_4_PURPLE) ? 4 : 0))
 
-//#define ESC_DAMAGE				"\\D\\am\\a\\ge"
-//#define ESC_RANGE				"R\\an\\ge"
-//#define ESC_BREACH				"\\B\\re\\ach"
-#define ESC_AUTOFIRE			"\\Auto-fi\\re"
-#define ESC_ACTION				"\\A\\c\\tion"
-#define ESC_LINKED				"Linked"
-#define ESC_WOUND				"Wound"
-#define ESC_MOVE				"Move"
-#define ESC_CRITS				"\\C\\ri\\t\\s"
-#define ESC_DESTINY				"\\De\\s\\tin\\y"
-#define ESC_SKILL				"\\Skill"
-
 class Character;
 
 class FindTag : public QObject, public DatXmlReader {
@@ -499,7 +487,7 @@ public:
 	void storeItem(const QString& uuid, const QString& itemkey, int count, int state, Item* item);
 
 	void clearChecklist(Character* charac);
-	QString plurize(const QString& thing, int val);
+	static QString plurize(const QString& thing, int val);
 	void setChecklist(Character* charac, QString skillKey, QString talentKey, Item& weapon);
 	void exitChecklist(Character* charac);
 	void appendCheckItem(Character* charac, const QString& pool, const QString& desc);
