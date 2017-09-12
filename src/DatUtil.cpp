@@ -1034,8 +1034,16 @@ QString DatUtil::normalizeDice(const QString& dice)
 
 int DatUtil::betterThan(const QString& skill1, const QString& skill2, Character* charac)
 {
-	double p1 = CurrentData::instance->skills[skill1].poolRating(charac);
-	double p2 = CurrentData::instance->skills[skill2].poolRating(charac);
+	MethodID skill1_id = KeyMethod::instance.getID(skill1);
+	MethodID skill2_id = KeyMethod::instance.getID(skill2);
+
+	return betterThan(skill1_id, skill2_id, charac);
+}
+
+int DatUtil::betterThan(MethodID skill1, MethodID skill2, Character* charac)
+{
+	double p1 = CurrentData::instance->getCharSkill(skill1).poolRating(charac);
+	double p2 = CurrentData::instance->getCharSkill(skill2).poolRating(charac);
 	return p1 > p2 ? 1 : (p1 < p2 ? -1 : 0);
 }
 

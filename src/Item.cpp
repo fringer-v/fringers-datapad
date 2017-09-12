@@ -349,13 +349,14 @@ QString Item::damageTotal()
 {
 	Character* character = Character::instance;
 	const ShopItem shop = shopItem();
-	int			t;
-	int			oneHitDamage = 0;
-	QString		skillKey = shop.skillKey;
-	int			baseDamage = shop.damage;
-	int			addDamage = shop.addDamage;
+	int t;
+	int oneHitDamage = 0;
+	QString skillKey = shop.skillKey;
+	MethodID skill_id = KeyMethod::instance.getID(shop.skillKey);
+	int baseDamage = shop.damage;
+	int addDamage = shop.addDamage;
 
-	if (baseDamage == 0 && (skillKey == "MELEE" || skillKey == "BRAWL" || skillKey == "LTSABER"))
+	if (baseDamage == 0 && (skill_id == KM_MELEE || skill_id == KM_BRAWL || skill_id == KM_LTSABER))
 		t = character->brawn();
 	else
 		t = baseDamage;
@@ -375,9 +376,9 @@ QString Item::damageTotal()
 
 		if (talent.addDamagePerSkillRank && char_talent.selectedSkills.contains(skillKey)) {
 			if (hasQuality("AUTOFIRE"))
-				oneHitDamage += CurrentData::instance->skills[skillKey].ranks;
+				oneHitDamage += CurrentData::instance->getCharSkill(skill_id).skillRanks();
 			else
-				t += CurrentData::instance->skills[skillKey].ranks;
+				t += CurrentData::instance->getCharSkill(skill_id).skillRanks();
 		}
 
 		if (talent.damageBonusSkills.contains(skillKey))
@@ -401,20 +402,17 @@ QString Item::damageTotal()
 
 QString Item::dicePool()
 {
-	CharSkill	skill;
-	int			accuracy = 0;
-	int			superior = 0;
-	int			setback = 0;
-	int			adv_add = 0;
-	int			remove_setback = 0;
-	QString		pool;
+	CharSkill char_skill;
+	int accuracy = 0;
+	int superior = 0;
+	int setback = 0;
+	int adv_add = 0;
+	int remove_setback = 0;
+	QString pool;
 	const ShopItem shop = shopItem();
-	QString skillKey = shop.skillKey;
+	MethodID skill_id = KeyMethod::instance.getID(shop.skillKey);
 
-	if (CurrentData::instance->skills.contains(skillKey))
-		skill = CurrentData::instance->skills[skillKey];
-	else
-		skill.key = skillKey;
+	char_skill = CurrentData::instance->getCharSkill(skill_id);
 
 	if (hasQuality("ACCURATE"))
 		accuracy = getQuality("ACCURATE").count;
@@ -450,7 +448,7 @@ QString Item::dicePool()
 			remove_setback = 1;
 	}
 
-	pool = skill.getDicePool();
+	pool = char_skill.getDicePool(skill_id);
 
 	return pool + DatUtil::repeat("B", accuracy) + DatUtil::repeat("S", setback) +
 		DatUtil::repeat("N", remove_setback) + DatUtil::repeat("a", superior+adv_add);
@@ -479,7 +477,7 @@ int Item::pierce()
 		pierce += getQuality("BREACH").count*10;
 
 	if (CurrentData::instance->isCommitted("SEEKCONTROL1")) {
-		int inc = Character::instance->cunning() + CurrentData::instance->skills["PERC"].ranks;
+		int inc = Character::instance->cunning() + CurrentData::instance->getCharSkill(KM_PERC).skillRanks();
 		pierce += inc;
 	}
 

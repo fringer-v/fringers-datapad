@@ -67,7 +67,6 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("JUSTKID", KM_JUSTKID);
 	KeyMethod::instance.append("HERO", KM_HERO);
 	KeyMethod::instance.append("HEROICRES", KM_HEROICRES);
-	KeyMethod::instance.append("FORCEALLY", KM_FORCEALLY);
 	KeyMethod::instance.append("INTUITEVA", KM_INTUITEVA);
 	KeyMethod::instance.append("NATBLADE", KM_NATBLADE);
 	KeyMethod::instance.append("SEEKBASICPOWER", KM_SEEKBASIC);
@@ -77,8 +76,33 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("SEEKMASTERY", KM_SEEKMASTERY);
 	KeyMethod::instance.append("SEEKDURATION", KM_SEEKDURATION);
 	KeyMethod::instance.append("BATMEDBASIC", KM_BATMEDBASIC);
+	KeyMethod::instance.append("SUPPRESSBASIC", KM_SUPPRESSBASIC);
+	KeyMethod::instance.append("SUPPRESSCONTROL1", KM_SUPPRESSCONTROL1);
+	KeyMethod::instance.append("SUPPRESSCONTROL2", KM_SUPPRESSCONTROL2);
+	KeyMethod::instance.append("SUPPRESSMASTERY", KM_SUPPRESSMASTERY);
+	KeyMethod::instance.append("FARSIGHTBASIC", KM_FARSIGHTBASIC);
+	KeyMethod::instance.append("FARSIGHTCONTROL1", KM_FARSIGHTCONTROL1);
+	KeyMethod::instance.append("FARSIGHTCONTROL1", KM_FARSIGHTCONTROL1);
+	KeyMethod::instance.append("FARSIGHTCONTROL2", KM_FARSIGHTCONTROL2);
+	KeyMethod::instance.append("FARSIGHTCONTROL5", KM_FARSIGHTCONTROL5);
+	KeyMethod::instance.append("FARSIGHTCONTROL5", KM_FARSIGHTCONTROL5);
+	KeyMethod::instance.append("FARSIGHTCONTROL6", KM_FARSIGHTCONTROL6);
+	KeyMethod::instance.append("FARSIGHTMASTERY", KM_FARSIGHTMASTERY);
+	KeyMethod::instance.append("FORSEEBASIC", KM_FORSEEBASIC);
 
 	// Coded Talents (must be last),
+	KeyMethod::instance.append("NATMYSTIC", KM_NATMYSTIC);
+	KeyMethod::instance.append("FORSEECONTROL1", KM_FORSEECONTROL1);
+	KeyMethod::instance.append("FORSEECONTROL2", KM_FORSEECONTROL2);
+	KeyMethod::instance.append("FORSEECONTROL3", KM_FORSEECONTROL3);
+	KeyMethod::instance.append("FARSIGHTCONTROL3", KM_FARSIGHTCONTROL3);
+	KeyMethod::instance.append("FARSIGHTCONTROL4", KM_FARSIGHTCONTROL4);
+	KeyMethod::instance.append("FORCEALLY", KM_FORCEALLY);
+	KeyMethod::instance.append("FORAG", KM_FORAG);
+	KeyMethod::instance.append("EXTRACK", KM_EXTRACK);
+	KeyMethod::instance.append("NOWYOUSEE", KM_NOWYOUSEE);
+	KeyMethod::instance.append("SUPPRESSDURATION", KM_SUPPRESSDURATION);
+	KeyMethod::instance.append("SUPPRESSCONTROL3", KM_SUPPRESSCONTROL3);
 	KeyMethod::instance.append("MASSHAD", KM_MASSHAD);
 	KeyMethod::instance.append("BATMEDCONTROL1", KM_BATMEDCONTROL1);
 	KeyMethod::instance.append("BATMEDCONTROL2", KM_BATMEDCONTROL2);
@@ -138,6 +162,7 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("UNCANSENS", KM_UNCANSENS);
 	KeyMethod::instance.append("PARRY", KM_PARRY);
 	KeyMethod::instance.append("PARRYIMP", KM_PARRYIMP);
+	KeyMethod::instance.append("UNARMPARRY", KM_UNARMPARRY);
 	KeyMethod::instance.append("RAPREA", KM_RAPREA);
 	KeyMethod::instance.append("REFLECT", KM_REFLECT);
 	KeyMethod::instance.append("REFLECTIMP", KM_REFLECTIMP);
@@ -192,9 +217,6 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("ENHANCECONT7", KM_ENHANCECONT7);
 	KeyMethod::instance.append("ENHANCECONT8", KM_ENHANCECONT8);
 	KeyMethod::instance.append("ENHANCECONT9", KM_ENHANCECONT9);
-
-	KeyMethod::instance.append("FORSEECONTROL1", KM_FORSEECONTROL1);
-	KeyMethod::instance.append("FORSEECONTROL3", KM_FORSEECONTROL3);
 
 	KeyMethod::instance.append("MOVESTRENGTH", KM_MOVESTRENGTH);
 	KeyMethod::instance.append("MOVERANGE", KM_MOVERANGE);
@@ -296,10 +318,10 @@ int CharTalentMap::forcePower(const QString& key, QString& power, QString& base)
 		base = "Enhance";
 		return FP_ENHANCE;
 	}
-	if (key.startsWith("FORESEE")) {
-		power = "FORESEE";
+	if (key.startsWith("FORSEE")) {
+		power = "FORSEE";
 		base = "Foresee";
-		return FP_FORESEE;
+		return FP_FORSEE;
 	}
 	if (key.startsWith("MOVE")) {
 		power = "MOVE";
@@ -625,6 +647,15 @@ bool AllTalents::xmlElement(const DatStringBuffer& path, const char* value)
 		}
 	}
 	else if (path.endsWith("/ForceAbility/#end")) {
+		// "Correct" Daryl's data:
+		if (iTalent.internalName == "Control: Fine Detail")
+			iTalent.key = "FARSIGHTCONTROL6";
+		else if (iTalent.internalName == "Control: Vigilance/Perception")
+			iTalent.key = "FARSIGHTCONTROL3";
+		else if (iTalent.internalName == "Control: 360 Degrees")
+			iTalent.key = "FARSIGHTCONTROL5";
+		else if (iTalent.internalName == "Control: Ongoing Effect")
+			iTalent.key = "FARSIGHTCONTROL4";
 		iTalents[iTalent.key] = iTalent;
 	}
 
@@ -701,6 +732,7 @@ QVariant Talents::getValue(int row, int col)
 
 			DatUtil::addDescription(desc, talent.description, talent.books);
 
+			/*
 			if (char_talent.key == "ENHANCECONT6") {
 				QString	text;
 				QString action = "an Action";
@@ -717,6 +749,7 @@ QVariant Talents::getValue(int row, int col)
 				desc.clear();
 				DatUtil::addDescription(desc, text, talent.books);
 			}
+			*/
 
 			return desc;
 		}

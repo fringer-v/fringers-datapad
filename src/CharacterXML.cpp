@@ -214,8 +214,8 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 		iCharSkill.isCareer = isTrue(value) ? 1 : 0;
 	}
 	else if (path.endsWith("/CharSkill/#end")) {
-		iCharSkill.ranks = iAttrValue;
-		iCurrentData->skills[iCharSkill.key] = iCharSkill; // skills
+		iCharSkill.internalRanks = iAttrValue;
+		iCurrentData->setCharSkill(iCharSkill); // skills
 	}
 
 	else if (path.endsWith("/StartingRanks/"))

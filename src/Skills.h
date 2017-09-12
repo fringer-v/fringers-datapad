@@ -52,8 +52,9 @@ struct Skill {
 	const char* characteristic;
 	int type;
 
-	QString underlyingSkill();
+	//static QString underlyingSkill();
 
+	static Skill* getSkill(MethodID skill_id);
 	static Skill* getSkill(const QString& key);
 	static Skill* getSkillByName(const QString& skill_name);
 };

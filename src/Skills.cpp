@@ -80,6 +80,7 @@ Skill skills[] = {
 	{ KM_UNKNOWN, NULL, NULL, NULL, 0, 0 }
 };
 
+/*
 QString Skill::underlyingSkill()
 {
 	switch (method_id) {
@@ -98,12 +99,18 @@ QString Skill::underlyingSkill()
 	}
 	return key;
 }
+*/
 
 Skill* Skill::getSkill(const QString& key)
 {
 	MethodID method_id = KeyMethod::instance.getID(key);
-	if (KeyMethod::isSkillID(method_id))
-		return &skills[(int) method_id];
+	return getSkill(method_id);
+}
+
+Skill* Skill::getSkill(MethodID skill_id)
+{
+	if (KeyMethod::isSkillID(skill_id))
+		return &skills[(int) skill_id];
 	return NULL;
 }
 
@@ -153,11 +160,7 @@ QVariant Skills::getValue(int row, int col)
 	CharSkill	char_skill;
 	QString		ch;
 
-	if (CurrentData::instance->skills.contains(skill.underlyingSkill()))
-		char_skill = CurrentData::instance->skills[skill.underlyingSkill()];
-	else
-		char_skill.key = skill.key;
-
+	char_skill = CurrentData::instance->getCharSkill(skill.method_id);
 	switch (col) {
 		case 0:
 			return skill.key;
@@ -168,7 +171,7 @@ QVariant Skills::getValue(int row, int col)
 		case 2:
 			return char_skill.isCareer;
 		case 3:
-			return char_skill.ranks;
+			return char_skill.skillRanks();
 		case 4:
 			return char_skill.getDicePool(skill.method_id);
 	}

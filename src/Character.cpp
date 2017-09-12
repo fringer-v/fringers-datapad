@@ -397,6 +397,7 @@ void Character::getItemRange(int& range1, int& range2)
 		case KM_BATMEDCONTROL2:
 		case KM_BATMEDMASTERY:
 		case KM_BATMEDDURATION:
+		case KM_FORSEECONTROL1:
 			range1 = RANGE_ENGAGED;
 			break;
 		case KM_WARFORBASIC:
@@ -416,7 +417,21 @@ void Character::getItemRange(int& range1, int& range2)
 		case KM_MOVECONTROL3:
 		case KM_ENHANCECONT3:
 		case KM_ENHANCECONT6: // Control: Force Leap (Horizontal)
+		case KM_SUPPRESSBASIC:
+		case KM_SUPPRESSDURATION:
+		case KM_SUPPRESSCONTROL2:
+		case KM_SUPPRESSCONTROL3:
+		case KM_SUPPRESSMASTERY:
 			range1 = RANGE_SHORT;
+			break;
+		case KM_FARSIGHTBASIC:
+		case KM_FARSIGHTCONTROL1:
+		case KM_FARSIGHTCONTROL2:
+		case KM_FARSIGHTCONTROL4: // -- ongoing
+		case KM_FARSIGHTCONTROL5:
+		case KM_FARSIGHTCONTROL6:
+		case KM_FARSIGHTMASTERY:
+			range1 = RANGE_MEDIUM;
 			break;
 		case KM_ENHANCEBASIC:
 		case KM_ENHANCECONT1:
@@ -439,8 +454,19 @@ void Character::getItemRange(int& range1, int& range2)
 			range2 = RANGE_ENGAGED;
 			break;
 		default: {
-			if (iItem.uuid.isEmpty())
-				range1 = RANGE_NA;
+			if (iItem.uuid.isEmpty()) {
+				// Skill range?!
+				MethodID skill_id = KeyMethod::instance.getID(iCurrentSkillKey);
+				switch (skill_id) {
+					case KM_ICOOL:
+					case KM_IVIG:
+						range1 = RANGE_ENGAGED;
+						break;
+					default:
+						range1 = RANGE_NA;
+						break;
+				}
+			}
 			else {
 				// Weapon range:
 				QString range = iItem.range();
@@ -579,6 +605,7 @@ QString Character::checkQualMag()
 		case KM_MOVECONTROL1:
 		case KM_MOVECONTROL2:
 		case KM_MOVECONTROL3:
+		case KM_FORSEECONTROL1:
 			if (iChecklistMagnitude+1 == 1)
 				return "1 Target";
 			return QString("%1 Targets").arg(iChecklistMagnitude+1);
@@ -601,6 +628,15 @@ QString Character::checkQualMag()
 				val += QString(", %1 Details").arg(iChecklistMagnitude);
 			return val;
 		}
+		case KM_SUPPRESSBASIC:
+		case KM_SUPPRESSDURATION:
+		case KM_SUPPRESSCONTROL2:
+		case KM_SUPPRESSCONTROL3:
+		case KM_SUPPRESSMASTERY:
+			if ((iChecklistExtra & 1) != 0)
+				return "1 Force User";
+			return "All Allies";
+			break;
 		default:
 			break;
 	}	
@@ -663,6 +699,16 @@ QString Character::checkPowerStr()
 			if (iChecklistStrength > 0)
 				return QString("Add %1 to next check against target").arg(QString("[BO]").repeated(iChecklistStrength));
 			break;
+		case KM_SUPPRESSBASIC:
+		case KM_SUPPRESSDURATION:
+		case KM_SUPPRESSCONTROL2:
+		case KM_SUPPRESSCONTROL3:
+		case KM_SUPPRESSMASTERY:
+			return QString("Add %1 to incoming Force attacks").arg(QString("[FA]").repeated(iChecklistStrength+1));
+		case KM_FORSEEBASIC:
+			if (iChecklistStrength == 0)
+				return "No specific details";
+			return CurrentData::plurize("Pick out %1 specific detail", iChecklistStrength);
 		default:
 			break;
 	}
@@ -682,9 +728,14 @@ QString Character::checkDuration()
 		case KM_BATMEDCONTROL2:
 		case KM_BATMEDMASTERY:
 		case KM_BATMEDDURATION:
+		case KM_SUPPRESSBASIC:
+		case KM_SUPPRESSDURATION:
+		case KM_SUPPRESSCONTROL2:
+		case KM_SUPPRESSCONTROL3:
+		case KM_SUPPRESSMASTERY:
 			if (iChecklistDuration == 0)
 				return "End of user's next turn";
-			return "Sustained until [FO][FO][FO] uncommitted";
+			return QString("Sustained until %1 uncommitted").arg(QString("[FO]").repeated(iChecklistDuration));
 		case KM_INFLUENCECONTROL1:
 			if (iChecklistDuration == 0)
 				return "1 round or 5 minutes";
@@ -702,6 +753,31 @@ QString Character::checkDuration()
 			if (iChecklistDuration > 0)
 				return CurrentData::plurize("Bonuses apply to all checks for %1 round", iChecklistDuration);
 			break;
+		case KM_SEEKBASIC:
+		case KM_SEEKSTRENGTH:
+		case KM_SEEKDURATION:
+		case KM_SEEKMASTERY:
+			if (iChecklistDuration == 0)
+				return "";
+			return QString("Track moving target until %1 uncommitted").arg(QString("[FO]").repeated(iChecklistDuration));
+		case KM_FARSIGHTBASIC:
+		case KM_FARSIGHTCONTROL1:
+		case KM_FARSIGHTCONTROL2:
+		case KM_FARSIGHTCONTROL4: // -- ongoing
+		case KM_FARSIGHTCONTROL5:
+		case KM_FARSIGHTCONTROL6:
+		case KM_FARSIGHTMASTERY: {
+			int cc = CurrentData::instance->getCommitCount("FARSIGHTCONTROL4");
+			if (cc > 0)
+				return QString("Sustained until %1 uncommitted").arg(QString("[FO]").repeated(cc));
+			if (iChecklistDuration == 0)
+				return "1 round or 1 minute";
+			return QString("%1 rounds or %2 minutes").arg(iChecklistDuration+1).arg(iChecklistDuration+1);
+		}
+		case KM_FORSEEBASIC:
+			if (iChecklistDuration == 0)
+				return "1 Day Ahead";
+			return QString("%1 Days Ahead").arg(iChecklistDuration+1);
 		default:
 			break;
 	}
@@ -711,10 +787,27 @@ QString Character::checkDuration()
 QString Character::checkAttachDesc()
 {
 	if (!iCurrentTalentKey.isEmpty()) {
+		MethodID talent_id = KeyMethod::instance.getID(iCurrentTalentKey);
 		Talent talent = AllTalents::instance()->getTalent(iCurrentTalentKey);
-		QString desc;
+		QString desc = talent.description;
+		QString desc2;
 
-		DatUtil::addDescription(desc, talent.description, talent.books);
+		switch (talent_id) {
+			case KM_SUPPRESSBASIC:
+			case KM_SUPPRESSDURATION:
+			case KM_SUPPRESSCONTROL2:
+			case KM_SUPPRESSMASTERY:
+				if (CurrentData::instance->talents.contains("SUPPRESSCONTROL3")) {
+					CharSkill char_skill = CurrentData::instance->getCharSkill(KM_DISC);
+					desc2 = QString("[B]Control:[b] Attacker suffers %1 strain if they use [DA] to generate [FP].").arg(char_skill.skillRanks());
+				}
+				break;
+			case KM_SUPPRESSCONTROL3:
+			default:
+				break;
+		}
+
+		DatUtil::addDescription(desc, desc2, talent.books);
 		return desc;
 	}
 	return iItem.attachments;
@@ -1025,22 +1118,28 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 				case KM_SEEKCONTROL1:
 				case KM_SEEKCONTROL3:
 				case KM_SENSECONTROL1:
+				case KM_SUPPRESSCONTROL1:
 					skill_key = "FORCECOMMIT";
 					break;
 				case KM_WARFORCONTROL1:
 				case KM_WARFORCONTROL3:
 				case KM_WARFORCONTROL4:
 				case KM_WARFORMAGNITUDE:
+				case KM_FORSEECONTROL1:
+				case KM_FORSEECONTROL2:
+				case KM_FORSEECONTROL3:
 					skill_key = "ICOOL";
 					break;
 				case KM_SEEKCONTROL2:
 				case KM_ENHANCECONT0:
+				case KM_FARSIGHTCONTROL3:
 					check_list_type = "";
 					break;
 				// STRENGTH, DURATION, etc, exceptions to the non-clickable rule:
 				case KM_SEEKSTRENGTH:
 				case KM_SEEKDURATION:
 				case KM_BATMEDDURATION:
+				case KM_SUPPRESSDURATION:
 					// no break;
 					check_list_type = "force";
 				default:
@@ -1067,10 +1166,10 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 					break;
 				}
 				case KM_MASSHAD:
-					skill_key = DatUtil::betterThan("STEAL", "SKUL", this) > 0 ? "STEAL" : "SKUL";
+					skill_key = DatUtil::betterThan(KM_STEAL, KM_SKUL, this) > 0 ? "STEAL" : "SKUL";
 					break;
 				case KM_BYP:
-					skill_key = DatUtil::betterThan("COMP", "SKUL", this) > 0 ? "COMP" : "SKUL";
+					skill_key = DatUtil::betterThan(KM_COMP, KM_SKUL, this) > 0 ? "COMP" : "SKUL";
 					break;
 				case KM_COD:
 				case KM_TECHAPT:
@@ -1085,6 +1184,7 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 				case KM_DEFTRAIN:
 				case KM_PARRY:
 				case KM_PARRYIMP:
+				case KM_UNARMPARRY:
 					skill_key = "DEFM";
 					break;
 				case KM_EXHPORT:
@@ -1100,6 +1200,16 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 					skill_key = "BR";
 					uuid = "UNARMED";
 					check_list_type = "weapon";
+					break;
+				case KM_NOWYOUSEE:
+					skill_key = "DECEP";
+					break;
+				case KM_EXTRACK:
+				case KM_FORAG:
+					skill_key = "SURV";
+					break;
+				case KM_RAPREA:
+					skill_key = "ICOOL";
 					break;
 				default:
 					if (skill_key.isEmpty()) {
@@ -1119,7 +1229,7 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 
 	}
 
-	if (dice_pool.isEmpty() && !skill_key.isEmpty()) {
+	if (!skill_key.isEmpty()) {
 		MethodID skill_id = KeyMethod::instance.getID(skill_key);
 		switch (skill_id) {
 			case KM_FORCECOMMIT:
@@ -1144,14 +1254,9 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 				dice_pool = QString("A").repeated(presence());
 				break;
 			default:
-				if (!skill_key.isEmpty()) {
-					CharSkill char_skill;
-
-					if (CurrentData::instance->skills.contains(skill_key))
-						char_skill = CurrentData::instance->skills[skill_key];
-					else
-						char_skill.key = skill_key;
-					dice_pool = char_skill.getDicePool();
+				if (dice_pool.isEmpty()) {
+					CharSkill char_skill = CurrentData::instance->getCharSkill(skill_id);
+					dice_pool = char_skill.getDicePool(skill_id);
 				}
 				break;
 		}

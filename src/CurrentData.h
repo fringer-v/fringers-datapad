@@ -80,7 +80,7 @@ private:
 class CharSkill {
 public:
 	QString key;
-	int		ranks;
+	int		internalRanks;
 	bool	isCareer;
 
 	CharSkill() {
@@ -89,13 +89,14 @@ public:
 
 	void clear(QString k) {
 		key = k;
-		ranks = 0;
+		internalRanks = 0;
 		isCareer = false;
 	}
 
+	int skillRanks();
 	QString getBasicPool(Character* charac);
 	double poolRating(Character* charac);
-	QString getDicePool(MethodID base_skill_id = KM_UNKNOWN);
+	QString getDicePool(MethodID base_skill_id);
 };
 
 class CharItem {
@@ -333,8 +334,15 @@ public:
 	int plusExtra;
 };
 
+typedef enum {
+	PLUS_DURATION,
+	PLUS_MAGNITUDE,
+	PLUS_STRENGTH
+} PlusType;
+
 class ChecklistData {
 public:
+
 	QString					skillKey;
 	QList<ChecklistItem>	items;
 
@@ -418,7 +426,6 @@ public:
 	QString career;
 	QString specializations;
 	QMap<QString, int> attributes;
-	QMap<QString, CharSkill> skills;
 	CharItemList obligations;
 	CharItemList duties;
 	QList<MotMorItem> motivations;
@@ -494,11 +501,16 @@ public:
 	void updateCheckItem(Character* charac, int ref, const QString& pool, const QString& desc);
 	void removeCheckItem(Character* charac, int ref);
 	void uncheckAllItem(Character* charac);
+	void checklistRangeAdd(QString power);
+	void checklistMultiForce(int pip_count, QString desc, QString sin, QString plu, int amount, PlusType type, bool select_one = false);
 	int checklistAdd(const QString& pool, const QString& desc, int move, int strain, int dpoint = 0,
 		const QString& consumable = QString(), const QString& commit_key = QString(), int force_cost = 0);
+	void condChecklistAdd(const QString& talent, const QString& pool, const QString& desc, int move, int strain);
+	void condChecklistAddRanked(const QString& talent, const QString& pool, const QString& desc, int move, int strain);
 	void checklistSelected(const QString& pool, const QString& desc);
-	int checklistCommit(int commit_count, const QString& commit_key, const QString& desc, int move = 0, int strain = 0, int duration = 0);
-	int checklistMayCommit(int commit_count, const QString& commit_key, const QString& desc, int duration = 0);
+	void multiCommit(Character* charac, QString key, QString desc, QString arg, int extra_limit = 1000, bool commit_list = true);
+	int checklistCommit(int commit_count, const QString& commit_key, const QString& desc, int move = 0, int strain = 0, bool commit_list = true);
+	int checklistMayCommit(int commit_count, const QString& commit_key, const QString& desc, int duration = 1000);
 	int checklistDamage(int damage, const QString& desc, int strain, int dpoint);
 	int checklistAppend(ChecklistItem& item);
 	bool checkItem(Character* charac, int ref, bool list_setup = true);
@@ -519,6 +531,9 @@ public:
 	void removeCriticalWound(Character* charac, int ref);
 
 	int nonCommitedForce(Character* charac);
+
+	void setCharSkill(const CharSkill& char_skill);
+	CharSkill getCharSkill(MethodID skill_id);
 
 private:
 	void setCriticalWound(int perc, int type);
@@ -541,6 +556,8 @@ private:
 
 	QMap<QString, int> iForceCommitted;
 	int iCommitCountMax;
+
+	QMap<MethodID, CharSkill> iCharSkills;
 
 	CurrentData* iNextInCache;
 	int iNegativeCheck;

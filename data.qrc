@@ -358,7 +358,6 @@
         <file>resources/Data/Specializations/Gunslinger.xml</file>
         <file>resources/Data/Specializations/Propagandist.xml</file>
         <file>resources/Data/SpecificMotivations.xml</file>
-
         <file>resources/Data/Force Powers/Farsight.xml</file>
         <file>resources/Data/Force Powers/Manipulate.xml</file>
         <file>resources/Data/SigAbilities/Always Get My Mark.xml</file>
@@ -389,5 +388,7 @@
         <file>resources/Data/Species/Muun.xml</file>
         <file>resources/Data/Species/Pantoran.xml</file>
         <file>resources/Data/Species/Quermian.xml</file>
+        <file>resources/Data/Force Powers/Suppress.xml</file>
+        <file>resources/Data/Force Powers/Warde's Foresight.xml</file>
     </qresource>
 </RCC>

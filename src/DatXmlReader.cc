@@ -182,8 +182,8 @@ bool DatXmlReader::addChars(DatStringBuffer* s, size_t size, UniChar *buffer, bo
 
 	for (size_t i=0; i<size; i++) {
 		ch = buffer[i];
-		if (ch > 127)
-			ch = '?';
+		//if (ch > 127)
+		//	ch = '?';
 		//if (to_lower)
 		//	ch = tolower(ch);
 		// Ignore preceeding space:

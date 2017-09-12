@@ -41,7 +41,7 @@
 
 #define FP_INFLUENCE			1
 #define FP_ENHANCE				2
-#define FP_FORESEE				3
+#define FP_FORSEE				3
 #define FP_MOVE					4
 #define FP_MISDIR				5
 #define FP_WARFOR				6

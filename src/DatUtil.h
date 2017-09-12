@@ -29,6 +29,8 @@
 #include <QString>
 #include <QByteArray>
 
+#include "KeyMethods.h"
+
 // Some useful connection Macros:
 #define CONNECT(fobj, ffunc, tobj, tfunc)	\
 	do { \
@@ -137,6 +139,7 @@ public:
 
 	static QString normalizeDice(const QString& dice);
 	static int betterThan(const QString& skill1, const QString& skill2, Character* charac);
+	static int betterThan(MethodID skill1, MethodID skill2, Character* charac);
 	static QString base64(const QString& text);
 	static void yield();
 	static QString pageSummary(QString page_desc);
