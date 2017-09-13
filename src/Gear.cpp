@@ -212,6 +212,30 @@ bool ShopGear::xmlElement(const DatStringBuffer& path, const char* value)
 			}
 		}
 	}
+
+	else if (path.endsWith("/BaseMods/Mod/DieModifiers/DieModifier/#open"))
+		iDieMod.clear();
+	else if (path.endsWith("/BaseMods/Mod/DieModifiers/DieModifier/SkillKey/"))
+		iDieMod.skillKey = value;
+	else if (path.endsWith("/BaseMods/Mod/DieModifiers/DieModifier/SkillType/"))
+		iDieMod.skillKey = strcmp(value, "Knowledge") == 0 ? KNOWLEDGE : NO_SKILL_TYPE;
+	else if (path.endsWith("/BaseMods/Mod/DieModifiers/DieModifier/BoostCount/"))
+		iDieMod.boostCount = toInt(value);
+	else if (path.endsWith("/BaseMods/Mod/DieModifiers/DieModifier/SetbackCount/"))
+		iDieMod.setbackCount = toInt(value);
+	else if (path.endsWith("/BaseMods/Mod/DieModifiers/DieModifier/ForceCount/"))
+		iDieMod.forceCount = toInt(value);
+	else if (path.endsWith("/BaseMods/Mod/DieModifiers/DieModifier/AdvantageCount/"))
+		iDieMod.advantageCount = toInt(value);
+	else if (path.endsWith("/BaseMods/Mod/DieModifiers/DieModifier/ThreatCount/"))
+		iDieMod.threatCount = toInt(value);
+	else if (path.endsWith("/BaseMods/Mod/DieModifiers/DieModifier/AddSetbackCount/"))
+		iDieMod.addSetbackCount = toInt(value);
+	else if (path.endsWith("/BaseMods/Mod/DieModifiers/DieModifier/UpgradeAbilityCount/"))
+		iDieMod.upgradeCount = toInt(value);
+	else if (path.endsWith("/BaseMods/Mod/DieModifiers/DieModifier/#end"))
+		iItem.dieModList.addMod(iDieMod);
+
 	else if (path.endsWith("/BaseMods/Mod/#end")) {
 		if (!iMod.key.isEmpty()) {
 			iItem.modList[iMod.key] = iMod;

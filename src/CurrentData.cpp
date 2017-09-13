@@ -42,20 +42,39 @@ int CurrentData::iReferenceCounter;
 
 int CharSkill::skillRanks()
 {
-	if (key == "PERC") {
-		int ranks = CurrentData::instance->getCommitCount("FARSIGHTCONTROL4") + internalRanks;
-		if (ranks > 5)
-			return 5;
-		return ranks;
-	}
-	return internalRanks;
+	int ranks = internalRanks;
+
+	if (key == "PERC")
+		ranks += CurrentData::instance->getCommitCount("FARSIGHTCONTROL4");
+
+	if (ranks > 5)
+		return 5;
+	return ranks;
+}
+
+int CharSkill::skillAttribute(Character* charac, Skill* skill)
+{
+	QString ch;
+
+	if (!skill)
+		skill = Skill::getSkill(skillID);
+
+	if (!skill)
+		return 0;
+
+	if (!charac)
+		charac = Character::instance;
+
+	ch = skill->characteristic;
+	if (skillID == KM_LTSABER)
+		ch = CurrentData::instance->talents.getLightSaberChar();
+
+	return charac->getAttribute(ch);
 }
 
 QString CharSkill::getBasicPool(Character* charac)
 {
-	Skill* skill = Skill::getSkill(key);
-
-	return DatUtil::getBasicDicePool(skillRanks(), charac->getAttribute(skill->characteristic));
+	return DatUtil::getBasicDicePool(skillRanks(), skillAttribute(charac, Skill::getSkill(skillID)));
 }
 
 double CharSkill::poolRating(Character* charac)
@@ -75,44 +94,41 @@ double CharSkill::poolRating(Character* charac)
 	return (s_ranks * 1.501) + (char_value-s_ranks);
 }
 
-QString CharSkill::getDicePool(MethodID base_skill_id)
+QString CharSkill::getDicePool()
 {
-	Character* character;
+	Character* charac;
 	CurrentData* current_data;
 	Skill* skill;
-	QString ch;
 
-	if (!(character = Character::instance))
+	if (!(charac = Character::instance))
 		return "";
 	if (!(current_data = CurrentData::instance))
 		return "";
 
-	if (base_skill_id == KM_UNKNOWN)
-		base_skill_id = KeyMethod::instance.getID(key);
-	if (!(skill = Skill::getSkill(base_skill_id)))
+	if (!(skill = Skill::getSkill(skillID)))
 		return "EE";
-
-	ch = skill->characteristic;
-	if (skill->method_id == KM_LTSABER)
-		ch = current_data->talents.getLightSaberChar();
 
 	QString pool;
 	int boostCount = 0;
 	int setbackCount = 0;
 	int addForceDice = 0;
 	int optionalRemoveSetback = 0;
-	int optionalUpgradeCount = 0;
+	int optionalDowngradeDiff = 0;
 	int optionalDowngradeCount = 0;
 	int optionalBoost = 0;
 	int optionalReduceDiffCount = 0;
+	int optionalPlusAbility = 0;
+	int optionalUpgrade = 0;
 	int threatCount = 0;
 	bool defr = false;
 	bool defm = false;
+	int skill_ranks = skillRanks();
+	int skill_attribute = skillAttribute(charac, skill);
 
-	switch (skill->method_id) {
+	switch (skillID) {
 		case KM_DEFM:
 			defm = true;
-			pool = DatUtil::repeat("S", character->defenseMelee());
+			pool = DatUtil::repeat("S", charac->defenseMelee());
 			if (current_data->isCommitted("SENSECONTROL1")) {
 				optionalDowngradeCount++;
 				if (current_data->talents.contains("SENSESTRENGTH"))
@@ -122,7 +138,7 @@ QString CharSkill::getDicePool(MethodID base_skill_id)
 			break;
 		case KM_DEFR:
 			defr = true;
-			pool = DatUtil::repeat("S", character->defenseRanged());
+			pool = DatUtil::repeat("S", charac->defenseRanged());
 			if (current_data->isCommitted("SENSECONTROL1")) {
 				optionalDowngradeCount++;
 				if (current_data->talents.contains("SENSESTRENGTH"))
@@ -131,7 +147,7 @@ QString CharSkill::getDicePool(MethodID base_skill_id)
 			threatCount = current_data->getCommitCount("MISDIRCONTROL3");
 			break;
 		default:
-			pool = DatUtil::getBasicDicePool(skillRanks(), character->getAttribute(skill ? ch : 0));
+			pool = DatUtil::getBasicDicePool(skill_ranks, skill_attribute);
 			if (skill->type == COMBAT) {
 				if (current_data->isCommitted("SENSECONTROL3"))
 					pool += "UU";
@@ -139,7 +155,7 @@ QString CharSkill::getDicePool(MethodID base_skill_id)
 			break;
 	}
 
-	switch (skill->method_id) {
+	switch (skillID) {
 		case KM_REC:
 			if (current_data->talents.contains("BAL"))
 				addForceDice++;
@@ -158,6 +174,18 @@ QString CharSkill::getDicePool(MethodID base_skill_id)
 			}
 			if (current_data->talents.contains("FARSIGHTCONTROL3") > 0)
 				addForceDice++;
+			break;
+		case KM_PILOTPL:
+		case KM_PILOTSP:
+			if (current_data->gear.equipped("CYAVIONCAAF2")) {
+				if (skill_ranks > 0) {
+					if (skill_ranks > skill_attribute)
+						optionalPlusAbility++;
+					else
+						optionalUpgrade++;
+					skill_ranks++;
+				}
+			}
 			break;
 		default:
 			break;
@@ -183,38 +211,49 @@ QString CharSkill::getDicePool(MethodID base_skill_id)
 			}
 		}
 
-		if (char_talent.key == "INTIM" && skill->method_id == KM_COERC)
-			optionalUpgradeCount += char_talent.ranks;
+		if (char_talent.key == "INTIM" && skillID == KM_COERC)
+			optionalDowngradeDiff += char_talent.ranks;
 		if (char_talent.key == "CONGENIAL" &&
-			(skill->method_id == KM_CHARM || skill->method_id == KM_NEG))
-			optionalUpgradeCount += char_talent.ranks;
+			(skillID == KM_CHARM || skillID == KM_NEG))
+			optionalDowngradeDiff += char_talent.ranks;
 		if (char_talent.key == "DODGE" &&
-			(skill->method_id == KM_DEFM || skill->method_id == KM_DEFR))
+			(skillID == KM_DEFM || skillID == KM_DEFR))
 			optionalDowngradeCount += char_talent.ranks;
-		if (char_talent.key == "CONF" && base_skill_id == KM_FDISC)
+		if (char_talent.key == "CONF" && skillID == KM_FDISC)
 			optionalReduceDiffCount += char_talent.ranks;
 	}
 
 	for (int i = 0; i<current_data->armor.rowCount(); i++) {
 		Item item = current_data->armor.itemAt(i);
 		if (item.equipped()) {
-			if (item.dieModList.contains(key)) {
-				DieMod mod = item.dieModList.get(key);
-				pool += DatUtil::repeat("B", mod.boostCount);
-				pool += DatUtil::repeat("N", mod.setbackCount);
-				addForceDice += mod.forceCount;
-				pool += DatUtil::repeat("a", mod.advantageCount);
-				pool += DatUtil::repeat("t", mod.threatCount);
-				pool += DatUtil::repeat("U", mod.upgradeCount);
-			}
+			pool += item.getDieMods(key, addForceDice);
 			if (item.hasQuality(key)) {
 				Quality qual = item.getQuality(key);
-				pool += DatUtil::repeat("U", qual.count);
+				// Adds a rank (not a straight upgrade!
+				if (skill_ranks > skill_attribute)
+					pool += DatUtil::repeat("A", qual.count);
+				else
+					pool += DatUtil::repeat("U", qual.count);
 			}
 		}
 	}
 
-	switch (skill->method_id) {
+	for (int i = 0; i<current_data->gear.rowCount(); i++) {
+		Item item = current_data->gear.itemAt(i);
+		if (item.equipped() && item.itemkey != "CYAVIONCAAF2") {
+			pool += item.getDieMods(key, addForceDice);
+			if (item.hasQuality(key)) {
+				Quality qual = item.getQuality(key);
+				// Adds a rank (not a straight upgrade!
+				if (skill_ranks > skill_attribute)
+					pool += DatUtil::repeat("A", qual.count);
+				else
+					pool += DatUtil::repeat("U", qual.count);
+			}
+		}
+	}
+
+	switch (skillID) {
 		case KM_CHARM:
 		case KM_COERC:
 			if (current_data->gear.equipped("EXPJEWELRY"))
@@ -240,17 +279,19 @@ QString CharSkill::getDicePool(MethodID base_skill_id)
 			pool = "|"+QString("D").repeated(m)+"|" + pool;
 	}
 
-	if (addForceDice + optionalRemoveSetback + optionalUpgradeCount +
-		optionalDowngradeCount + optionalBoost + optionalReduceDiffCount) {
+	if (addForceDice + optionalRemoveSetback + optionalDowngradeDiff + optionalUpgrade +
+		optionalDowngradeCount + optionalBoost + optionalReduceDiffCount + optionalPlusAbility) {
 		QString opt;
 		// Mark the optional dice
 		// Optional dice are just an indicator that something else
 		// can be added to the pool
+		opt += DatUtil::repeat("A", optionalPlusAbility);
+		opt += DatUtil::repeat("U", optionalUpgrade);
 		opt += DatUtil::repeat("B", optionalBoost);
 		if (addForceDice > 0)
 			opt += Character::instance->getForcePool();
 		opt += DatUtil::repeat("N", optionalRemoveSetback);
-		opt += DatUtil::repeat("d", optionalUpgradeCount);
+		opt += DatUtil::repeat("d", optionalDowngradeDiff);
 		opt += DatUtil::repeat("u", optionalDowngradeCount);
 		opt += DatUtil::repeat("r", optionalReduceDiffCount);
 		pool += "|"+opt+"|"; // These will be hidden in the display
@@ -1343,9 +1384,10 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 			checklistAdd(disc_skill.getBasicPool(charac), "[B]Opposed Check:[b] vs Discipline, if target is a PC or important NPC", 0, 0);
 		}
 
-		if (talent.force && (!skill || skill->type != SPECIAL))
+		if (talent.force && (!skill || skill->type != SPECIAL)) {
 			condChecklistAdd("FORCEALLY", DatUtil::poolText("+1 Move"), "[B]The Force Is My Ally:[b] Do action as a maneuver once per session", 1, 2);
 			condChecklistAdd("NATMYSTIC", DatUtil::poolText("+Reroll"), "[B]Natural Mystic:[b] Once per session, may reroll 1 Force check", 0, 0);
+		}
 	}
 
 	// FORCE POWER ITEMS -------------------------------------------------
@@ -1372,8 +1414,7 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 				checklistSelected(force_pool, "[B]Balance:[b] Gain +1 Strain per [FP]");
 			break;
 		case KM_ATHL:
-			if (talents.contains("NIKTOSP2OC2OP1"))
-				checklistAdd("B", "[B]Climbing Claws:[b] Add when climbing trees and other surfaces their claws can pierce", 0, 0);
+			condChecklistAdd("NIKTOSP2OC2OP1", "B", "[B]Climbing Claws:[b] Add when climbing trees and other surfaces their claws can pierce", 0, 0);
 			if (have_force && talents.contains("ENHANCEBASIC"))
 				checklistSelected(force_pool, "[B]Enhance:[b] Spend [FP] to gain [SU] or [AD]");
 			break;
@@ -1440,6 +1481,8 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 		case KM_PERC:
 			if (talents.contains("FARSIGHTCONTROL3"))
 				checklistSelected(force_pool, "[B]Farsight:[b] Add [SU] or [AD] per [FP] spent");
+
+			condChecklistAddRanked("KEENEYED", "N", "[B]Keen Eyed:[b] Reduce any search time by 50%", 0, 0);
 			break;
 		case KM_STEAL:
 			condChecklistAddRanked("SLEIGHTMIND", "B", "[B]Sleight of Mind:[b] Add if opposition is not immune to Force powers", 0, 0);
@@ -1451,8 +1494,7 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 			if (have_force && talents.contains("SABERSW"))
 				checklistAdd(DatUtil::poolText("Linked %1", force), QString("[B]Saber Swarm:[b] Attack has linked %1 quality").arg(force), 1, 1);
 
-			if (talents.contains("SARSWEEP"))
-				checklistAdd("Daa", "[B]Sarlacc Sweep:[b] [AD][AD] may only be use to hit additional engaged targets", 0, 1);
+			condChecklistAdd("SARSWEEP", "Daa", "[B]Sarlacc Sweep:[b] [AD][AD] may only be use to hit additional engaged targets", 0, 1);
 			break;
 		case KM_DEFM:
 		case KM_DEFR:
@@ -1508,7 +1550,7 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 			if (talents.contains("SUPPRESSDURATION"))
 				checklistCommit(1, "SEEKDURATION", "[B]Suppress Duration:[b] Sustain ongoing Suppress effects on each target in range");
 
-			multiCommit(charac, "SUPPRESSCONTROL1", "[B]Suppress Control:[b] Remove %1 from incomming force checks", "[FP]");
+			multiCommit(charac, "SUPPRESSCONTROL1", "[B]Suppress Control:[b] Remove %1 from incoming force checks", "[FP]");
 
 			multiCommit(charac, "FARSIGHTCONTROL4", "[B]Farsight: Ongoing Effect:[b] Sustain Farsight effects and increase ranks in Perception by %1", QString(), 5 - getCharSkill(KM_PERC).internalRanks);
 
@@ -1530,9 +1572,10 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 
 	switch (skill_id) {
 		case KM_COERC:
-			for (int i=0; i<talents.ranks("INTIM"); i++) {
+			ranks = talents.ranks("INTIM");
+			for (int i=0; i<ranks; i++) {
 				ref = checklistAdd("d", "[B]Intimidating:[b] Downgrade the difficulty of the check", 0, 1);
-				if (talent_id == KM_INTIM)
+				if (i == 0 && talent_id == KM_INTIM)
 					checkItem(charac, ref);
 			}
 			break;
@@ -1570,9 +1613,6 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 					}
 				}
 
-				for (int i=0; i<talents.ranks("DEFSTA"); i++)
-					checklistAdd("u", "[B]Defensive Stance:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
-
 				setNegativePool(charac, iNegMelee, skillKey);
 			}
 			else {
@@ -1587,29 +1627,35 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 						checkItem(charac, ref);
 				}
 
-				for (int i=0; i<talents.ranks("SIDESTEP"); i++)
-					checklistAdd("u", "[B]Side Step:[b] Perform during turn, duration: 1 round", i == 0 ? 1 : 0, 1);
-
 				setNegativePool(charac, iNegRanged, skillKey);
 			}
 
-			if (talents.contains("SENSEADV")) {
-				checklistAdd("SS", "[B]Sense Advantage:[b] Add to NPC check, once per session", 0, 0);
+			if (talents.contains("HERO"))
+				checklistAdd(DatUtil::poolText("Ignor Crit"), "[B]Heroic Fortitude:[b] Ignore crits on Brawn/Agility until end of encounter", 0, 0, 1);
+
+			if (talents.contains("HEROICRES")) {
+				ranks = getCharSkill(KM_RESIL).skillRanks();
+				checklistAdd(DatUtil::poolText("Soak %1", ranks), "[B]Heroic Resilience:[b] After hit but before damage increase soak", 0, 0, 1);
 			}
+
+			condChecklistAdd("SENSEADV", "SS", "[B]Sense Advantage:[b] Add to NPC check, once per session", 0, 0);
 			break;
 		case KM_PILOTSP:
-			if (talents.contains("MASPIL"))
-				checklistAdd(DatUtil::poolText("+1 Action"), QString("[B]Master Pilot:[b] Once per round, perform Action as Manuever"), 1, 2);
+			condChecklistAdd("MASPIL", DatUtil::poolText("+1 Action"), QString("[B]Master Pilot:[b] Once per round, perform Action as Manuever"), 1, 2);
 			break;
 		case KM_DISC:
 			ranks = talents.ranks("HARDHD");
 			if (ranks > 0) {
 				int dif = 4-ranks;
 
-				checklistAdd(QString("D").repeated(dif <= 0 ? 1 : dif), "[B]Hard Headed:[b] Perform check to remove staggered or disoriented effect", 0, 0);
+				ref = checklistAdd(QString("D").repeated(dif <= 0 ? 1 : dif), "[B]Hard Headed:[b] Perform check to remove staggered or disoriented effect", 0, 0);
+				if (talent_id == KM_HARDHD)
+					checkItem(charac, ref);
 				if (talents.contains("HARDHDIMP")) {
 					dif = 6-ranks;
-					checklistAdd(QString("D").repeated(dif <= 0 ? 1 : dif), QString("[B]Hard Headed (Improved):[b] Perfrom check to reduced straing to %1").arg(charac->strain()-1), 0, 0);
+					ref = checklistAdd(QString("D").repeated(dif <= 0 ? 1 : dif), QString("[B]Hard Headed (Improved):[b] Perform check to reduce strain to %1").arg(charac->strain()-1), 0, 0);
+					if (talent_id == KM_HARDHDIMP)
+						checkItem(charac, ref);
 				}
 			}
 			// No break
@@ -1634,9 +1680,8 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 			if (ranks > 0)
 				checklistDamage(-ranks, QString("[B]Conditioned:[b] Reduce damage and strain by %1 from falling").arg(ranks), 0, 0);
 			break;
-		case KM_PERC:
 		case KM_VIGIL:
-			condChecklistAddRanked("KEENEYED", "N", "[B]Keen Eyed:[b] Reduce any search time by 50%", 0, 0);
+			condChecklistAdd("INTERJECT", "DD", "[B]Interjection:[b] Add [SU]/[FA] equal to [SU] and [AD]/[TH] equal to [AD] to a social check", 0, 3);
 			break;
 		case KM_DECEP:
 			condChecklistAdd("NOWYOUSEE", "DDD", QString("[B]Now You See Me:[b] Once per session, cause %1 NPC(s) within Medium range to forget PC").arg(charac->cunning()), 0, 0);
@@ -1648,11 +1693,7 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 	switch (skill_id) {
 		case KM_STEAL:
 		case KM_SKUL:
-			if (talents.contains("MASSHAD")) {
-				ref = checklistAdd("r", "[B]Master of Shadows:[b] Once per round decrease difficulty", 0, 2);
-				if (talent_id == KM_MASSHAD)
-					checkItem(charac, ref);
-			}
+			condChecklistAdd("MASSHAD", "r", "[B]Master of Shadows:[b] Once per round decrease difficulty", 0, 2);
 			break;
 		case KM_CHARM:
 			condChecklistAdd("DONTSHOOT", "DDD", "[B]Don't Shoot!:[b] Once per session, cannot be attacked unless attack, Duration: Encounter", 0, 0);
@@ -1766,11 +1807,10 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 			ranks = talents.ranks("POINTBL");
 			if (ranks > 0)
 				checklistDamage(ranks, "[B]Point Blank:[b] Engaged or Short range", 0, 0);
-			if (talents.contains("RAINDEATH"))
-				checklistAdd("r", "[B]Rain of Death:[b] Ignore increase difficulty due to auto-fire", 1, 0);
+			condChecklistAdd("RAINDEATH", "r", "[B]Rain of Death:[b] Ignore increase difficulty due to auto-fire", 1, 0);
 			if (skillKey != "RANGLT") {
 				if (talents.contains("HEAVYHITTER")) {
-					ref = checklistAdd("Breach +1", "[B]Heavy Hitter:[b] Once per session use [TR] to add breach property", 1, 0);
+					ref = checklistAdd(DatUtil::poolText("Breach +1"), "[B]Heavy Hitter:[b] Once per session use [TR] to add breach property", 1, 0);
 					checklistItems.plusPierce(ref, 10);
 				}
 				ranks = talents.ranks("BAR");
@@ -1789,23 +1829,28 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 				if (talents.contains("EXHPORT")) {
 					checklistAdd(DatUtil::poolText("-Crit Increase"), "[B]Exhaust Port:[b] Ignore the effects of Massive", 0, 0, 1);
 				}
-
 			}
 		}
 		else {
-			if (talents.contains("MULTOPP"))
-				checklistAdd("B", "[B]Multiple Opponents:[b] When engaged with multiple opponent", 0, 0);
+			condChecklistAdd("MULTOPP", "B", "[B]Multiple Opponents:[b] When engaged with multiple opponent", 0, 0);
 		}
 		if (close) {
-			if (talents.contains("PRECSTR"))
-				checklistAdd(DatUtil::poolText("Inflict ")+"D \\C\\r\\i\\t", "[B]Precision Strike:[b] Inflict an Easy ([DI]) Critical hit on success", 0, 1);
+			condChecklistAdd("PRECSTR", DatUtil::poolText("Inflict ")+"D \\C\\r\\i\\t", "[B]Precision Strike:[b] Inflict an Easy ([DI]) Critical hit on success", 0, 1);
+
+			if (skill_id != KM_LTSABER) {
+				ranks = talents.ranks("FRENZ");
+				for (int i=0; i<ranks; i++) {
+					ref = checklistAdd("U", "[B]Frenzied Attack:[b] Upgrade Melee or Brawl attacks", 0, 1);
+					if (i == 0 && talent_id == KM_FRENZ)
+						checkItem(charac, ref);
+				}
+
+				condChecklistAdd("NATBRAW", DatUtil::poolText("+Reroll"), "[B]Natural Brawler:[b] Once per session, reroll a Brawl or Melee attack", 0, 0);
+			}
 		}
 	}
 
 	// GENERALLY APPLICABLE -------------------------------------------------
-
-	for (int i=0; i<talents.ranks("BRA"); i++)
-		checklistAdd("N", "[B]Brace:[b] Remove [SE] if due to any environmental effects, Duration: 1 Round", i == 0 ? 1 : 0, 0);
 
 	if (!skill || skill->type != SPECIAL) {
 		if (skill_id != KM_DEFM && skill_id != KM_DEFR && skill_id != KM_FORCECOMMIT && talents.contains("INTENSFOC"))
@@ -1818,6 +1863,42 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 	if (talents.contains("SENSDANG")) {
 		if (skill_id != KM_DEFM && skill_id != KM_DEFR && skill_id != KM_FORCECOMMIT)
 			checklistAdd("NN", "[B]Sense Danger:[b] May be used once per session", 0, 0);
+	}
+
+	if (skill_id != KM_FORCECOMMIT) {
+		if (skill_id != KM_DEFR) {
+			for (int i=0; i<talents.ranks("DEFSTA"); i++) {
+				if (skill_id == KM_DEFM && talent_id != KM_DEFSTA)
+					checklistAdd("u", "[B]Defensive Stance:[b] If performed during your turn, duration: 1 round", 0, 0);
+				else {
+					ref = checklistAdd(talent_id == KM_DEFSTA ? "u" : DatUtil::poolText("Upg. M. Def"), "[B]Defensive Stance:[b] Upgrade incoming Melee attacks for 1 round", i == 0 ? 1 : 0, 1);
+					if (i == 0 && talent_id == KM_DEFSTA)
+						checkItem(charac, ref);
+				}
+			}
+		}
+
+		if (skill_id != KM_DEFM) {
+			for (int i=0; i<talents.ranks("SIDESTEP"); i++) {
+				if (skill_id == KM_DEFR && talent_id != KM_SIDESTEP)
+					checklistAdd("u", "[B]Side Step:[b] If performed during your turn, duration: 1 round", 0, 0);
+				else {
+					ref = checklistAdd(talent_id == KM_SIDESTEP ? "u" : DatUtil::poolText("Upg. R. Def"), "[B]Side Step:[b] Upgrade incoming Ranged attacks for 1 round", i == 0 ? 1 : 0, 1);
+					if (i == 0 && talent_id == KM_SIDESTEP)
+						checkItem(charac, ref);
+				}
+			}
+		}
+
+		for (int i=0; i<talents.ranks("BRA"); i++) {
+			if (skill_id == KM_RESIL && talent_id != KM_BRA)
+				checklistAdd("N", "[B]Brace:[b] If performed during your turn, duration: 1 round", 0, 0);
+			else {
+				ref = checklistAdd(talent_id == KM_BRA ? "N" : DatUtil::poolText("Rem. Setback"), "[B]Brace:[b] Remove [SE] if due to any environmental effects, Duration: 1 Round", i == 0 ? 1 : 0, 0);
+				if (i == 0 && talent_id == KM_BRA)
+					checkItem(charac, ref);
+			}
+		}
 	}
 
 	// EQUIPMENT BASED MODS -------------------------------------------------
@@ -1872,23 +1953,40 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 			checklistAdd("NN", "[B]Hunting Googles:[b] Concealment, darkness, fog and mist", 0, 0);
 	}
 
-	if (skill_id == KM_MED) {
-		if (gear.equipped("MEDPAC"))
-			checklistSelected("B", "[B]Medpac:[b] Add to all Medicine checks when equipped");
+	switch (skill_id) {
+		case KM_MED:
+			if (gear.equipped("MEDPAC"))
+				checklistSelected("B", "[B]Medpac:[b] Add to all Medicine checks when equipped");
 
-		if (gear.carriedQuantity("MEDAIDPATCH") > 0)
-			checklistAdd("sa", "[B]Med-Aid Patch:[b] Maximum usage 1 per check, [B]Cost: 1x Med-Aid Patch[b]", 0, 0, 0, "MEDAIDPATCH");
+			if (gear.carriedQuantity("MEDAIDPATCH") > 0)
+				checklistAdd("sa", "[B]Med-Aid Patch:[b] Maximum usage 1 per check, [B]Cost: 1x Med-Aid Patch[b]", 0, 0, 0, "MEDAIDPATCH");
 
-		if (gear.equipped("BLOODSCAN"))
-			checklistAdd("aa", "[B]Blood Scanner:[b] After use, add to next Medicine check, [B]Cost: Action[b]", 0, 0);
+			if (gear.equipped("BLOODSCAN"))
+				checklistAdd("aa", "[B]Blood Scanner:[b] After use, add to next Medicine check, [B]Cost: Action[b]", 0, 0);
 
-		ranks = talents.ranks("SURG");
-		if (ranks > 0)
-			checklistAdd(DatUtil::poolText("Wounds -%1", ranks), "[B]Surgeon:[b] Add to Wounds recovered on successful check", 0, 0);
+			ranks = talents.ranks("SURG");
+			if (ranks > 0)
+				checklistAdd(DatUtil::poolText("Wounds -%1", ranks), "[B]Surgeon:[b] Add to Wounds recovered on successful check", 0, 0);
 
-		ranks = gear.carriedQuantity("DROIDMINIMED");
-		if (ranks > 0)
-			checklistAdd(DatUtil::poolText("Wounds -%1", ranks), "[B]Mini-med Droids:[b] Add to Wounds recovered on successful check", 1, 0);
+			ranks = gear.carriedQuantity("DROIDMINIMED");
+			if (ranks > 0)
+				checklistAdd(DatUtil::poolText("Wounds -%1", ranks), "[B]Mini-med Droids:[b] Add to Wounds recovered on successful check", 1, 0);
+			break;
+		case KM_PILOTSP:
+		case KM_PILOTPL:
+			if (gear.equipped("CYAVIONCAAF2")) {
+				CharSkill char_skill = getCharSkill(skill_id);
+				int skill_ranks = char_skill.skillRanks();
+				int skill_attribute = char_skill.skillAttribute(charac, skill);
+				if (skill_ranks > 0) {
+					ref = checklistAdd(skill_ranks > skill_attribute ? "A" : "U", "[B]CAAF-2 Avionics Interface:[b] Add if vehicle can be interfaced", 0, 0);
+					if (skill_id == KM_PILOTSP)
+						checkItem(charac, ref); // Space is autocheck, not Planet because not all vehicles can be interfaced
+				}
+			}
+			break;
+	default:
+			break;
 	}
 
 	// VARIOUS ACTIONS -------------------------------------------------
@@ -2368,6 +2466,7 @@ void CurrentData::setCharSkill(const CharSkill& char_skill)
 CharSkill CurrentData::getCharSkill(MethodID skill_id)
 {
 	MethodID int_skill_id = skill_id;
+	CharSkill char_skill;
 
 	switch (skill_id) {
 		case KM_ICOOL:
@@ -2389,10 +2488,13 @@ CharSkill CurrentData::getCharSkill(MethodID skill_id)
 			break;
 	}
 
-	if (iCharSkills.contains(int_skill_id))
-		return iCharSkills[int_skill_id];
+	if (iCharSkills.contains(int_skill_id)) {
+		char_skill = iCharSkills[int_skill_id];
+		char_skill.skillID = skill_id;
+		char_skill.intSkillID = int_skill_id;
+	}
 
-	return CharSkill();
+	return char_skill;
 }
 
 void CurrentData::setCriticalWound(int perc, int type)

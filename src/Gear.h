@@ -55,6 +55,7 @@ public:
 private:
 	// Used to parse XML:
 	Mod			iMod;
+	DieMod		iDieMod;
 	ShopItem	iItem;
 };
 

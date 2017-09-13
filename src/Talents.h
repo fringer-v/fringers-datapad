@@ -128,7 +128,6 @@ public:
 	bool	hasRequirement;
 	bool	requirementWearingArmor;
 	int		requirementSoakAtLeast;
-	int		burly;
 
 	void clear(QString key);
 	QString name();

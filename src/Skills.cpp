@@ -173,7 +173,7 @@ QVariant Skills::getValue(int row, int col)
 		case 3:
 			return char_skill.skillRanks();
 		case 4:
-			return char_skill.getDicePool(skill.method_id);
+			return char_skill.getDicePool();
 	}
 	return QVariant();
 }

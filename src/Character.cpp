@@ -1176,6 +1176,7 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 					skill_key = "COMP";
 					break;
 				case KM_REFLECT:
+				case KM_SIDESTEP:
 					skill_key = "DEFR";
 					break;
 				case KM_CONF:
@@ -1185,6 +1186,7 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 				case KM_PARRY:
 				case KM_PARRYIMP:
 				case KM_UNARMPARRY:
+				case KM_DEFSTA:
 					skill_key = "DEFM";
 					break;
 				case KM_EXHPORT:
@@ -1210,6 +1212,21 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 					break;
 				case KM_RAPREA:
 					skill_key = "ICOOL";
+					break;
+				case KM_BRA:
+					skill_key = "RESIL";
+					break;
+				case KM_FERSTR:
+				case KM_FRENZ:
+				case KM_NATBRAW:
+					skill_key = "BRAWL";
+					break;
+				case KM_HARDHD:
+				case KM_HARDHDIMP:
+					skill_key = "DISC";
+					break;
+				case KM_INTERJECT:
+					skill_key = "VIGIL";
 					break;
 				default:
 					if (skill_key.isEmpty()) {
@@ -1256,7 +1273,7 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 			default:
 				if (dice_pool.isEmpty()) {
 					CharSkill char_skill = CurrentData::instance->getCharSkill(skill_id);
-					dice_pool = char_skill.getDicePool(skill_id);
+					dice_pool = char_skill.getDicePool();
 				}
 				break;
 		}
@@ -1576,13 +1593,9 @@ void Character::inventoryChanged()
 	int burly = 0;
 	int val;
 	CurrentData* current_data = CurrentData::instance;
+	CharTalent& char_talent = current_data->talents.get("BURLY");
 
-	if (current_data->talents.contains("BURLY")) {
-		CharTalent& ch_talent = current_data->talents.get("BURLY");
-		Talent talent = AllTalents::instance()->getTalent("BURLY");
-
-		burly = ch_talent.ranks * talent.burly;
-	}
+	burly = char_talent.ranks;
 
 	if (current_data->gear.equipped(ShopGear::grenBandKey))
 		grenade_bandolier = true;

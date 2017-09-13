@@ -89,9 +89,12 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("FARSIGHTCONTROL6", KM_FARSIGHTCONTROL6);
 	KeyMethod::instance.append("FARSIGHTMASTERY", KM_FARSIGHTMASTERY);
 	KeyMethod::instance.append("FORSEEBASIC", KM_FORSEEBASIC);
+	KeyMethod::instance.append("INTERJECT", KM_INTERJECT);
 
-	// Coded Talents (must be last),
+	// Coded Talents (must be last)
+	KeyMethod::instance.append("FRENZ", KM_FRENZ);
 	KeyMethod::instance.append("NATMYSTIC", KM_NATMYSTIC);
+	KeyMethod::instance.append("NATBRAW", KM_NATBRAW);
 	KeyMethod::instance.append("FORSEECONTROL1", KM_FORSEECONTROL1);
 	KeyMethod::instance.append("FORSEECONTROL2", KM_FORSEECONTROL2);
 	KeyMethod::instance.append("FORSEECONTROL3", KM_FORSEECONTROL3);
@@ -483,7 +486,7 @@ void Talent::clear(QString k)
 	defenseMelee = 0;
 	requirementWearingArmor = false;
 	requirementSoakAtLeast = 0;
-	burly = 0;
+	//burly = 0;
 }
 
 QString Talent::name()
@@ -629,8 +632,8 @@ bool AllTalents::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/Attributes/Requirement/SoakAtLeast/"))
 		iTalent.requirementSoakAtLeast = toInt(value);
 
-	else if (path.endsWith("/ItemChange/EncumChange/"))
-		iTalent.burly = toInt(value) * -1;
+	//else if (path.endsWith("/ItemChange/EncumChange/"))
+	//	iTalent.burly = toInt(value) * -1;
 
 	// Force abilities:
 	else if (path.endsWith("/ForceAbility/Key/")) {

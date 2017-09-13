@@ -188,6 +188,8 @@ void ShopWeapons::end()
 	item.range = "Engaged";
 	item.critical = 5;
 	item.skillKey = "BRAWL";
+
+	// Disorient 1, Knockdown, Stun Setting
 	q.clear("DISORIENT");
 	q.count = 1;
 	item.qualityList[q.key] = q;
@@ -195,7 +197,20 @@ void ShopWeapons::end()
 	item.qualityList[q.key] = q;
 	q.clear("STUNSETTING");
 	item.qualityList[q.key] = q;
-	// Disorient 1, Knockdown, Stun Setting
+
+	Shop::instance.addItem(item);
+
+	// Add innate arc welder:
+	item.clear("INNATE0");
+	item.name = "Arc Welder";
+	item.damage = 3;
+	item.range = "Engaged";
+	item.critical = 0;
+	item.skillKey = "MELEE";
+	// Stun Damage
+	q.clear("STUNDAMAGE");
+	item.qualityList[q.key] = q;
+
 	Shop::instance.addItem(item);
 }
 

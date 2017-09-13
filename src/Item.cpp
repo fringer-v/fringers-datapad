@@ -225,6 +225,31 @@ void DieModList::addMod(DieMod mod)
 	modMap[mod.skillKey] = mod;
 }
 
+void DieModList::addModList(DieModList& mod_list)
+{
+	foreach (DieMod mod, mod_list.modMap) {
+		addMod(mod);
+	}
+}
+
+QString DieModList::getDieMods(const QString& skill_key, int& add_force_dice) const
+{
+	QString pool = "";
+
+	if (modMap.contains(skill_key)) {
+		DieMod mod = modMap[skill_key];
+		pool += QString("B").repeated(mod.boostCount);
+		pool += QString("N").repeated(mod.setbackCount);
+		pool += QString("a").repeated(mod.advantageCount);
+		pool += QString("t").repeated(mod.threatCount);
+		pool += QString("U").repeated(mod.upgradeCount);
+		if (mod.advantageCount > 0)
+			qDebug() << "----" << mod.advantageCount;
+		add_force_dice += mod.forceCount;
+	}
+	return pool;
+}
+
 // ModList ----------------------------------------
 
 void ModList::clear()
@@ -448,7 +473,7 @@ QString Item::dicePool()
 			remove_setback = 1;
 	}
 
-	pool = char_skill.getDicePool(skill_id);
+	pool = char_skill.getDicePool();
 
 	return pool + DatUtil::repeat("B", accuracy) + DatUtil::repeat("S", setback) +
 		DatUtil::repeat("N", remove_setback) + DatUtil::repeat("a", superior+adv_add);
@@ -632,12 +657,15 @@ void Item::characteristicDelta(CharMods& mods)
 int Item::critTotal()
 {
 	const ShopItem shop = shopItem();
-	int			t;
+	int t;
 
 	if (hasQuality("CRITSET"))
 		t = getQuality("CRITSET").count;
-	else
+	else {
 		t = shop.critical;
+		if (t == 0)
+			return 0;
+	}
 
 	foreach (SpeciesTalent st, CurrentData::instance->speciesTalents) {
 		if (st.weaponsCrit && st.damageBonusSkill == shop.skillKey && t > st.weaponsCrit)
@@ -819,7 +847,19 @@ int Item::encumbrance()
 {
 	const ShopItem shop = shopItem();
 	Mod mod = iModList.get("ENCADD");
-	return shop.encumbrance + mod.count * mod.number;
+
+	int enc = shop.encumbrance + mod.count * mod.number;
+	if (enc > 0 && shop.type == "ARMOR" && hasQuality("SUPERIOR"))
+		enc--;
+	return enc;
+}
+
+QString Item::getDieMods(const QString& skill_key, int& add_force_dice) const
+{
+	const ShopItem shop = shopItem();
+	QString pool = dieModList.getDieMods(skill_key, add_force_dice);
+	pool += shop.dieModList.getDieMods(skill_key, add_force_dice);
+	return pool;
 }
 
 const ShopItem Item::shopItem() const

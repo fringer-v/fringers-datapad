@@ -106,9 +106,11 @@ Rectangle {
 		id: knowledgeSkills
 	}
 
+	/*
 	DatCustomSkillsList {
 		id: customSkills
 	}
+	*/
 
 	DatSpecialSkillsList {
 		id: specialSkills

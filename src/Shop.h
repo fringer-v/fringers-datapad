@@ -48,6 +48,7 @@ public:
 	int gearType;
 	QMap<QString, Mod> modList;
 	QMap<QString, Quality> qualityList;
+	DieModList dieModList;
 
 	ShopItem() {
 		clear(QString());
@@ -73,6 +74,7 @@ public:
 		gearType = 0;
 		modList.clear();
 		qualityList.clear();
+		dieModList.clear();
 	}
 
 	bool isMeleeWeapon() const {

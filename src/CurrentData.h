@@ -79,9 +79,11 @@ private:
 
 class CharSkill {
 public:
-	QString key;
-	int		internalRanks;
-	bool	isCareer;
+	QString key; // same is intSkillID
+	MethodID skillID; // e.g. ICOOL, IVIG, REC, FDISC
+	MethodID intSkillID; // e.g COOL, VIGIL, COOL, DISC
+	int internalRanks;
+	bool isCareer;
 
 	CharSkill() {
 		clear("");
@@ -94,9 +96,10 @@ public:
 	}
 
 	int skillRanks();
+	int skillAttribute(Character* charac, Skill* skill);
 	QString getBasicPool(Character* charac);
 	double poolRating(Character* charac);
-	QString getDicePool(MethodID base_skill_id);
+	QString getDicePool();
 };
 
 class CharItem {

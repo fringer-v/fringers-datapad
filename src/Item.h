@@ -119,6 +119,8 @@ public:
 	bool contains(const QString& skill);
 	DieMod get(const QString& key);
 	void addMod(DieMod mod);
+	void addModList(DieModList& mod_list);
+	QString getDieMods(const QString& skill_key, int& add_force_dice) const;
 
 	QMap<QString, DieMod> modMap;
 };
@@ -275,6 +277,8 @@ public:
 	Quality getQuality(const QString& key);
 
 	int encumbrance();
+
+	QString getDieMods(const QString& skill_key, int& add_force_dice) const;
 
 	const ShopItem shopItem() const;
 
