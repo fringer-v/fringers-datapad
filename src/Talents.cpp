@@ -92,6 +92,9 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("INTERJECT", KM_INTERJECT);
 
 	// Coded Talents (must be last)
+	KeyMethod::instance.append("SORRYMESS", KM_SORRYMESS);
+	KeyMethod::instance.append("GUNSBLAZING", KM_GUNSBLAZING);
+	KeyMethod::instance.append("CALLEM", KM_CALLEM);
 	KeyMethod::instance.append("FRENZ", KM_FRENZ);
 	KeyMethod::instance.append("NATMYSTIC", KM_NATMYSTIC);
 	KeyMethod::instance.append("NATBRAW", KM_NATBRAW);

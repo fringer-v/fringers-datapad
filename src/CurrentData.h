@@ -91,6 +91,8 @@ public:
 
 	void clear(QString k) {
 		key = k;
+		skillID = KM_UNKNOWN;
+		intSkillID = KM_UNKNOWN;
 		internalRanks = 0;
 		isCareer = false;
 	}
@@ -303,6 +305,7 @@ public:
 		plusDamage(0),
 		plusPierce(0),
 		plusCrit(0),
+		plusCritRating(0),
 		plusRange(0),
 		plusMagnitude(0),
 		plusStrength(0),
@@ -330,6 +333,7 @@ public:
 	int plusDamage;
 	int plusPierce;
 	int plusCrit;
+	int plusCritRating;
 	int plusRange;
 	int plusMagnitude;
 	int plusStrength;
@@ -363,6 +367,7 @@ public:
 	void plusDamage(int ref, int count);
 	void plusPierce(int ref, int count);
 	void plusCrit(int ref, int count);
+	void plusCritRating(int ref, int count);
 	void plusRange(int ref, int count);
 	void plusMagnitude(int ref, int count);
 	void plusStrength(int ref, int count);

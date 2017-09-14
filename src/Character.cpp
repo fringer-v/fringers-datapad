@@ -38,6 +38,7 @@ Character::Character(QObject *parent) :
 	iChecklistDamage = 0;
 	iChecklistPierce = 0;
 	iChecklistCrit = 0;
+	iChecklistCritRating = 0;
 	iChecklistRange = 0;
 	iChecklistMagnitude = 0;
 	iChecklistStrength = 0;
@@ -557,7 +558,14 @@ QString Character::checkDamage()
 
 QString Character::checkCritLevel()
 {
-	QString crit_dice = DatUtil::repeat("a", iItem.critTotal());
+	int crit_tot = iItem.critTotal();
+	if (crit_tot > 0) {
+		crit_tot += iChecklistCritRating;
+		if (crit_tot < 1)
+			crit_tot = 1;
+	}
+
+	QString crit_dice = DatUtil::repeat("a", crit_tot);
 	int crit_plus = iItem.critPlus();
 
 	if (!crit_dice.isEmpty() && crit_plus > 0)
@@ -692,6 +700,8 @@ QString Character::checkPowerStr()
 			QString stars = QString("[SU]").repeated(iChecklistStrength+1);
 			if (((iChecklistExtra) & 2) != 0)
 				return QString("Add %1 to all checks and boost 1 Skill").arg(stars);
+			else if (((iChecklistExtra) & 4) != 0)
+				return QString("Add %1 to all checks and force orders").arg(stars);
 			return QString("Add %1 to all checks made by targets").arg(stars);
 		}
 		case KM_WARFORBASIC:
@@ -1065,6 +1075,7 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 	iChecklistDamage = 0;
 	iChecklistPierce = 0;
 	iChecklistCrit = 0;
+	iChecklistCritRating = 0;
 	iChecklistRange = 0;
 	iChecklistMagnitude = 0;
 	iChecklistStrength = 0;
@@ -1545,6 +1556,7 @@ void Character::setChangeDicePool(const QString& dice_pool, ChecklistItem* item,
 			iChecklistDamage += item->plusDamage;
 			iChecklistPierce += item->plusPierce;
 			iChecklistCrit += item->plusCrit;
+			iChecklistCritRating += item->plusCritRating;
 			iChecklistRange += item->plusRange;
 			iChecklistMagnitude += item->plusMagnitude;
 			iChecklistStrength += item->plusStrength;
@@ -1555,6 +1567,7 @@ void Character::setChangeDicePool(const QString& dice_pool, ChecklistItem* item,
 			iChecklistDamage -= item->plusDamage;
 			iChecklistPierce -= item->plusPierce;
 			iChecklistCrit -= item->plusCrit;
+			iChecklistCritRating -= item->plusCritRating;
 			iChecklistRange -= item->plusRange;
 			iChecklistMagnitude -= item->plusMagnitude;
 			iChecklistStrength -= item->plusStrength;

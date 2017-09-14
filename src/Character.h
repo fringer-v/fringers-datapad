@@ -446,6 +446,7 @@ private:
 	int iChecklistDamage;
 	int iChecklistPierce;
 	int iChecklistCrit;
+	int iChecklistCritRating;
 	int iChecklistRange;
 	int iChecklistMagnitude;
 	int iChecklistStrength;

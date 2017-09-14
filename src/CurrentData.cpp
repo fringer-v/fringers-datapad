@@ -105,8 +105,9 @@ QString CharSkill::getDicePool()
 	if (!(current_data = CurrentData::instance))
 		return "";
 
-	if (!(skill = Skill::getSkill(skillID)))
+	if (!(skill = Skill::getSkill(skillID))) {
 		return "EE";
+	}
 
 	QString pool;
 	int boostCount = 0;
@@ -484,6 +485,13 @@ void ChecklistData::plusCrit(int ref, int count)
 	ChecklistItem* item;
 	if ((item = findItem(ref)))
 		item->plusCrit = count;
+}
+
+void ChecklistData::plusCritRating(int ref, int count)
+{
+	ChecklistItem* item;
+	if ((item = findItem(ref)))
+		item->plusCritRating = count;
 }
 
 void ChecklistData::plusRange(int ref, int count)
@@ -1323,16 +1331,18 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 						checkItem(charac, ref);
 				}
 				if (talents.contains("BATMEDCONTROL2")) {
-					ref = checklistAdd(DatUtil::poolText("+Range"), "[B]Planetary Scale:[b] Change range of power to planetary scale", 0, 4);
+					ref = checklistAdd(DatUtil::poolText("Planetary"), "[B]Planetary Scale:[b] Change range of power to planetary scale", 0, 4);
 					checklistItems.plusExtra(ref, 1);
 					if (talent_id == KM_BATMEDCONTROL2)
 						checkItem(charac, ref);
 				}
 				if (talents.contains("BATMEDMASTERY")) {
-					ref = checklistAdd(DatUtil::poolText("+Skill"), "[B]Mastery:[b] Targets count as having same ranks in one skill as", 0, 0);
+					ref = checklistAdd(DatUtil::poolText("No ")+"z \\U\\s\\e\\d", "[B]Mastery:[b] Targets count as having same ranks in one skill as target with most ranks", 0, 0);
 					checklistItems.plusExtra(ref, 2);
 					if (talent_id == KM_BATMEDMASTERY)
 						checkItem(charac, ref);
+					ref = checklistAdd(DatUtil::poolText("")+"z \\U\\s\\e\\d", "[B]Mastery:[b] Targets must make a [DI] Discipline check to resist orders given by the user", 0, 0);
+					checklistItems.plusExtra(ref, 4);
 				}
 				if (duration > 0)
 					checklistMayCommit(3, "BATMEDDURATION", "[B]Duration:[b] Commit to sustain effects of power on each target while it remains in range", 3);
@@ -1749,6 +1759,11 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 	}
 
 	if (combat) {
+		if (talents.contains("SORRYMESS")) {
+			ref = checklistAdd(DatUtil::poolText("Crit -")+"a", "[B]Sorry About The Mess:[b] If the target has not acted yet in the encounter", 0, 0);
+			checklistItems.plusCritRating(ref, -1);
+		}
+
 		// Aim skills:
 		ranks = talents.ranks("TRUEAIM");
 		if (ranged && ranks > 0)
@@ -1756,11 +1771,26 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 		else
 			checklistAdd("B", "[B]Aim:[b] Use a maneuver to aim", 1, 0);
 		checklistAdd("B", "[B]Aim Twice:[b] Use a second maneuver to aim longer", 1, 0);
+
 		if (ranged && ranks > 0)
 			checklistAdd("SS" + QString("U").repeated(ranks), "[B]Called Shot (True Aim):[b] Once per round, use a True Aim to call a shot", 1, 0);
 		else
 			checklistAdd("SS", "[B]Called Shot:[b] Use a maneuver to call a shot by aiming", 1, 0);
-		checklistAdd("N", "[B]Called Shot (2x Aim):[b] Use a 2nd maneuver to aim longer on a called shot", 1, 0);
+		if (talents.contains("CALLEM"))
+			checklistAdd("NN", "[B]Call 'Em:[b] Remove the penalty due to a called shot", 0, 0);
+		else
+			checklistAdd("N", "[B]Called Shot (2x Aim):[b] Use a 2nd maneuver to aim longer on a called shot", 1, 0);
+
+		if (close || skill_id == KM_RANGLT) {
+			checklistAdd("D", "[B]Two-Weapon Attack:[b] Spend [AD][AD] in order to trigger a hit with the second weapon", 0, 0);
+			if (skill_id == KM_RANGLT)
+				condChecklistAdd("GUNSBLAZING", "r", "[B]Guns Blazing:[b] Ignore increase difficulty of a two-weapon attack", 0, 2);
+		}
+
+		if (weapon.hasQuality("AUTOFIRE")) {
+			checklistAdd("D", "[B]Use Auto-fire:[b] Spend [AD][AD] in order to trigger another hit with the weapon", 0, 0);
+			condChecklistAdd("RAINDEATH", "r", "[B]Rain of Death:[b] Ignore increase difficulty due to auto-fire", 1, 0);
+		}
 
 		for (int i=0; i<talents.ranks("PRECAIM"); i++) {
 			checklistAdd("N", "[B]Precise Aim:[b] Decrease apponents defense", i ? 0 : 1, 1);
@@ -1807,10 +1837,9 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 			ranks = talents.ranks("POINTBL");
 			if (ranks > 0)
 				checklistDamage(ranks, "[B]Point Blank:[b] Engaged or Short range", 0, 0);
-			condChecklistAdd("RAINDEATH", "r", "[B]Rain of Death:[b] Ignore increase difficulty due to auto-fire", 1, 0);
 			if (skillKey != "RANGLT") {
 				if (talents.contains("HEAVYHITTER")) {
-					ref = checklistAdd(DatUtil::poolText("Breach +1"), "[B]Heavy Hitter:[b] Once per session use [TR] to add breach property", 1, 0);
+					ref = checklistAdd(DatUtil::poolText("+Breach"), "[B]Heavy Hitter:[b] Once per session use [TR] to add breach property", 1, 0);
 					checklistItems.plusPierce(ref, 10);
 				}
 				ranks = talents.ranks("BAR");
@@ -1871,7 +1900,7 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 				if (skill_id == KM_DEFM && talent_id != KM_DEFSTA)
 					checklistAdd("u", "[B]Defensive Stance:[b] If performed during your turn, duration: 1 round", 0, 0);
 				else {
-					ref = checklistAdd(talent_id == KM_DEFSTA ? "u" : DatUtil::poolText("Upg. M. Def"), "[B]Defensive Stance:[b] Upgrade incoming Melee attacks for 1 round", i == 0 ? 1 : 0, 1);
+					ref = checklistAdd(talent_id == KM_DEFSTA ? "u" : DatUtil::poolText("Defence +")+"u", "[B]Defensive Stance:[b] Upgrade incoming Melee attacks for 1 round", i == 0 ? 1 : 0, 1);
 					if (i == 0 && talent_id == KM_DEFSTA)
 						checkItem(charac, ref);
 				}
@@ -1883,19 +1912,21 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 				if (skill_id == KM_DEFR && talent_id != KM_SIDESTEP)
 					checklistAdd("u", "[B]Side Step:[b] If performed during your turn, duration: 1 round", 0, 0);
 				else {
-					ref = checklistAdd(talent_id == KM_SIDESTEP ? "u" : DatUtil::poolText("Upg. R. Def"), "[B]Side Step:[b] Upgrade incoming Ranged attacks for 1 round", i == 0 ? 1 : 0, 1);
+					ref = checklistAdd(talent_id == KM_SIDESTEP ? "u" : DatUtil::poolText("Defence +")+"u", "[B]Side Step:[b] Upgrade incoming Ranged attacks for 1 round", i == 0 ? 1 : 0, 1);
 					if (i == 0 && talent_id == KM_SIDESTEP)
 						checkItem(charac, ref);
 				}
 			}
 		}
 
-		for (int i=0; i<talents.ranks("BRA"); i++) {
+		ranks = talents.ranks("BRA");
+		if (ranks > 0) {
 			if (skill_id == KM_RESIL && talent_id != KM_BRA)
-				checklistAdd("N", "[B]Brace:[b] If performed during your turn, duration: 1 round", 0, 0);
+				checklistAdd(QString("N").repeated(ranks), "[B]Brace:[b] If performed during your turn, duration: 1 round", 0, 0);
 			else {
-				ref = checklistAdd(talent_id == KM_BRA ? "N" : DatUtil::poolText("Rem. Setback"), "[B]Brace:[b] Remove [SE] if due to any environmental effects, Duration: 1 Round", i == 0 ? 1 : 0, 0);
-				if (i == 0 && talent_id == KM_BRA)
+				ref = checklistAdd(talent_id == KM_BRA ? QString("N").repeated(ranks) : DatUtil::poolText("Resilience +", -ranks)+QString("N").repeated(ranks),
+					"[B]Brace:[b] Remove [SE] if due to any environmental effects, Duration: 1 Round", 1, 0);
+				if (talent_id == KM_BRA)
 					checkItem(charac, ref);
 			}
 		}
@@ -1966,11 +1997,11 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 
 			ranks = talents.ranks("SURG");
 			if (ranks > 0)
-				checklistAdd(DatUtil::poolText("Wounds -%1", ranks), "[B]Surgeon:[b] Add to Wounds recovered on successful check", 0, 0);
+				checklistAdd(DatUtil::poolText("Wounds %1", -ranks), "[B]Surgeon:[b] Add to Wounds recovered on successful check", 0, 0);
 
 			ranks = gear.carriedQuantity("DROIDMINIMED");
 			if (ranks > 0)
-				checklistAdd(DatUtil::poolText("Wounds -%1", ranks), "[B]Mini-med Droids:[b] Add to Wounds recovered on successful check", 1, 0);
+				checklistAdd(DatUtil::poolText("Wounds %1", -ranks), "[B]Mini-med Droids:[b] Add to Wounds recovered on successful check", 1, 0);
 			break;
 		case KM_PILOTSP:
 		case KM_PILOTPL:
@@ -1985,7 +2016,7 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 				}
 			}
 			break;
-	default:
+		default:
 			break;
 	}
 
@@ -2488,11 +2519,11 @@ CharSkill CurrentData::getCharSkill(MethodID skill_id)
 			break;
 	}
 
-	if (iCharSkills.contains(int_skill_id)) {
+	if (iCharSkills.contains(int_skill_id))
 		char_skill = iCharSkills[int_skill_id];
-		char_skill.skillID = skill_id;
-		char_skill.intSkillID = int_skill_id;
-	}
+
+	char_skill.skillID = skill_id;
+	char_skill.intSkillID = int_skill_id;
 
 	return char_skill;
 }
