@@ -515,7 +515,7 @@ public:
 		const QString& consumable = QString(), const QString& commit_key = QString(), int force_cost = 0);
 	void condChecklistAdd(const QString& talent, const QString& pool, const QString& desc, int move, int strain);
 	void condChecklistAddRanked(const QString& talent, const QString& pool, const QString& desc, int move, int strain);
-	void checklistSelected(const QString& pool, const QString& desc);
+	void checklistSelected(const QString& pool, const QString& desc, bool selected = true);
 	void multiCommit(Character* charac, QString key, QString desc, QString arg, int extra_limit = 1000, bool commit_list = true);
 	int checklistCommit(int commit_count, const QString& commit_key, const QString& desc, int move = 0, int strain = 0, bool commit_list = true);
 	int checklistMayCommit(int commit_count, const QString& commit_key, const QString& desc, int duration = 1000);
@@ -537,8 +537,6 @@ public:
 
 	void addCriticalWound(Character* charac, int perc, int type);
 	void removeCriticalWound(Character* charac, int ref);
-
-	int nonCommitedForce(Character* charac);
 
 	void setCharSkill(const CharSkill& char_skill);
 	CharSkill getCharSkill(MethodID skill_id);

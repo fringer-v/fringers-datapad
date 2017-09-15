@@ -90,8 +90,10 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("FARSIGHTMASTERY", KM_FARSIGHTMASTERY);
 	KeyMethod::instance.append("FORSEEBASIC", KM_FORSEEBASIC);
 	KeyMethod::instance.append("INTERJECT", KM_INTERJECT);
+	KeyMethod::instance.append("FLDCOMM", KM_FLDCOMM);
 
 	// Coded Talents (must be last)
+	KeyMethod::instance.append("FLDCOMMIMP", KM_FLDCOMMIMP);
 	KeyMethod::instance.append("SORRYMESS", KM_SORRYMESS);
 	KeyMethod::instance.append("GUNSBLAZING", KM_GUNSBLAZING);
 	KeyMethod::instance.append("CALLEM", KM_CALLEM);

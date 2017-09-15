@@ -1403,8 +1403,8 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 	// FORCE POWER ITEMS -------------------------------------------------
 
 	bool have_force = charac->force() > 0;
-	int force = nonCommitedForce(charac);
-	QString force_pool = charac->getForcePool();
+	int force = charac->forceUncommitted();
+	QString force_pool = charac->getForcePool(true);
 
 	switch (skill_id) {
 		case KM_CHARM:
@@ -1452,9 +1452,18 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 		case KM_ICOOL:
 		case KM_IVIG:
 			if (have_force) {
-				bool have_foresee = false;
+				bool foresee_selected = false;
 				if (talents.contains("FORSEECONTROL1")) {
 					QString text = "[B]Foresee:[b] Spend [FP] to gain [SU]";
+
+					if (talents.contains("FORSEECONTROL2"))
+						text += ", tagets increase defense by 2 for first round";
+
+					foresee_selected = !(talent_id == KM_WARFORCONTROL1 ||
+						talent_id == KM_WARFORCONTROL3 ||
+						talent_id == KM_WARFORCONTROL4 ||
+						talent_id == KM_WARFORMAGNITUDE);
+					checklistSelected(force_pool, text, foresee_selected);
 
 					if (talent_id != KM_FORSEECONTROL1)
 						checklistRangeAdd("FORSEE");
@@ -1462,20 +1471,16 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 					int magnitude = talents.get("FORSEEMAGNITUDE").ranks;
 					checklistMultiForce(1, "[B]Foreesee Magnitude:[b] Effect %1 additional %2", "target", "targets", magnitude, PLUS_MAGNITUDE);
 
-					if (talents.contains("KM_FORSEECONTROL2"))
-						text += ", tagets increase defense by 2 for first round";
+					condChecklistAdd("FORSEECONTROL3", ".", "[B]Foresee Manuever:[b] Targets may take free manuever before the first round", 0, 0);
 
-					condChecklistAdd("KM_FORSEECONTROL3", ".", "[B]Foresee Manuever:[b] Targets may take free manuever before the first round", 0, 0);
-
-					have_foresee = true;
 				}
 				if (talents.contains("WARFORCONTROL1")) {
 					if (talents.contains("WARFORMAGNITUDE"))
-						checklistSelected(force_pool, "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to self or ally's first check this encounter");
+						checklistSelected(force_pool, "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to self or ally's first check this encounter", !foresee_selected);
 					else if (talents.contains("WARFORCONTROL3"))
-						checklistSelected(force_pool, "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to first check this encounter");
+						checklistSelected(force_pool, "[B]Warde's Foresight:[b] Add [SU] or [AD] per [FP] spent to first check this encounter", !foresee_selected);
 					else
-						checklistSelected(force_pool, "[B]Warde's Foresight:[b] Add [SU] per [FP] spent to first check this encounter");
+						checklistSelected(force_pool, "[B]Warde's Foresight:[b] Add [SU] per [FP] spent to first check this encounter", !foresee_selected);
 				}
 				ranks = talents.ranks("WARFORDURATION");
 				if (ranks > 0) {
@@ -1581,6 +1586,14 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 	// showChecklist() <---- Initialise power
 
 	switch (skill_id) {
+		case KM_LEAD: {
+			int pr = charac->presence();
+			if (talents.contains("FLDCOMMIMP"))
+				pr *= 2;
+			condChecklistAdd("FLDCOMM", "DD", QString("[B]Field Commander:[b] %1 allies spend 1 Strain to make a manuever").arg(pr), 0, 0);
+			condChecklistAdd("FLDCOMMIMP", DatUtil::poolText("Spend ")+"x", "[B]Field Commander (Improved):[b] 1 ally can spend 1 Strain and perform a free action", 0, 0);
+			break;
+		}
 		case KM_COERC:
 			ranks = talents.ranks("INTIM");
 			for (int i=0; i<ranks; i++) {
@@ -2211,14 +2224,15 @@ void CurrentData::condChecklistAddRanked(const QString& talent, const QString& p
 	}
 }
 
-void CurrentData::checklistSelected(const QString& pool, const QString& desc)
+void CurrentData::checklistSelected(const QString& pool, const QString& desc, bool selected)
 {
 	ChecklistItem item;
 
 	item.dicePool = pool;
 	item.description = desc;
 	int ref = checklistAppend(item);
-	checkItem(Character::instance, ref);
+	if (selected && pool != "=" && !pool.isEmpty())
+		checkItem(Character::instance, ref);
 }
 
 void CurrentData::multiCommit(Character* charac, QString key, QString desc, QString arg, int extra_limit,  bool commit_list)
@@ -2481,11 +2495,6 @@ void CurrentData::removeCriticalWound(Character* charac, int ref)
 	if (charac)
 		InjuryList::instance.rowCountChanged();
 	writeCurrentData();
-}
-
-int CurrentData::nonCommitedForce(Character* charac)
-{
-	return charac->force() - forceCommitCount();
 }
 
 void CurrentData::setCharSkill(const CharSkill& char_skill)

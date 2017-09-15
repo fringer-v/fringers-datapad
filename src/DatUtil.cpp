@@ -853,7 +853,7 @@ QString DatUtil::normalizeDice(const QString& dice)
 	int upgrade_diff = 0;
 	int downgrade_diff = 0;
 	int pips = 0;
-	int n_count = 0;
+	int white_black_dash = 0;
 	//int threat = 0;
 	int white = 0;
 	QString additional;
@@ -882,7 +882,7 @@ QString DatUtil::normalizeDice(const QString& dice)
 			case 'F': neg ? white-- : white++; break;
 			case 'g': neg ? white++ : white--; break;
 			case 'r': neg ? purple++ : purple--; break;
-			case 'n': neg ? n_count-- : n_count++; break;
+			case 'n': neg ? white_black_dash-- : white_black_dash++; break;
 			case ' ': break;
 			case '-':
 				if (i+1<dice.length()) {
@@ -985,24 +985,33 @@ QString DatUtil::normalizeDice(const QString& dice)
 
 	// Will commit takes away whites, adds black with neg
 	// Negative whites are turned into red whites
-	if (n_count > 0) {
+	if (white_black_dash > 0) {
 		int w = white;
 
-		white -= n_count;
-		if (n_count > w)
-			n_count = w;
+		white -= white_black_dash;
+		if (white_black_dash > w)
+			white_black_dash = w;
 	}
 	else
-		n_count = -n_count;
+		white_black_dash = -white_black_dash;
+	int white_red_dash = 0;
+	if (white < 0) {
+		// Make negative whites, white with red dash:
+		white_red_dash = -white;
+		white = 0;
+	}
+	int force_uncommitted = Character::instance->forceUncommitted();
+	if (force_uncommitted >= 0 && white > force_uncommitted) {
+		white -= force_uncommitted;
+		white_red_dash += force_uncommitted;
+	}
 
 	new_dice += QString("P").repeated(yellow);
 	new_dice += QString("A").repeated(green);
 	new_dice += QString("B").repeated(blue);
-	if (white < 0)
-		new_dice += QString("g").repeated(-white);
-	else
-		new_dice += QString("F").repeated(white);
-	new_dice += QString("n").repeated(n_count);
+	new_dice += QString("F").repeated(white);
+	new_dice += QString("n").repeated(white_black_dash);
+	new_dice += QString("g").repeated(white_red_dash);
 	if (black < 0)
 		new_dice += QString("N").repeated(-black);
 	if (success > 0)
@@ -1023,12 +1032,13 @@ QString DatUtil::normalizeDice(const QString& dice)
 		new_dice += QString("d").repeated(downgrade_diff);
 	new_dice += additional;
 	if (pips > 0) {
-		if (new_dice.isEmpty())
-			new_dice += "= ➤ ";
+		if (white <= 0)
+			new_dice = QString("=") + " ➤ ";
 		else
 			new_dice += " ➤ ";
 		new_dice += QString(".").repeated(pips);
 	}
+//qDebug() << "-----" << dice << "------>" << new_dice;
 	return new_dice;
 }
 

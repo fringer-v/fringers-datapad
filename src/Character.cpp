@@ -646,7 +646,7 @@ QString Character::checkQualMag()
 			return "All Allies";
 			break;
 		default:
-			break;
+			return iItem.qualities();
 	}	
 	return "";
 }
@@ -1238,6 +1238,12 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 					break;
 				case KM_INTERJECT:
 					skill_key = "VIGIL";
+					break;
+				case KM_BAL:
+					skill_key = "REC";
+					break;
+				case KM_FLDCOMM:
+					skill_key = "LEAD";
 					break;
 				default:
 					if (skill_key.isEmpty()) {
@@ -1846,18 +1852,20 @@ QString Character::getCurrentTalentKey()
 	return iCurrentTalentKey;
 }
 
-QString Character::getForcePool(bool total_force)
+QString Character::getForcePool(bool check_list)
 {
 	int f = force();
 	int u = forceCommitted();
 
-	if (total_force)
-		return QString("F").repeated(f);
-	if (f == u)
-		return "";
-	if (f > u)
-		return QString("F").repeated(f-u);
-	return QString("g").repeated(u-f);
+	if (f <= u) {
+		if (check_list)
+			return "=";
+		if (f == u)
+			return "";
+		return QString("g").repeated(u-f);
+	}
+
+	return QString("F").repeated(f-u);
 }
 
 void Character::adjustPoolForCommittedForce(int commit_count)

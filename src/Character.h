@@ -235,6 +235,7 @@ public:
 	int defenseMelee() { return getAttribute(DMELEE); }
 	int force() { return getAttribute(FORCE); }
 	int forceCommitted() { return CurrentData::instance->forceCommitCount(); }
+	int forceUncommitted() { return force() - CurrentData::instance->forceCommitCount(); }
 	int totalXP() { return getAttribute(XP); }
 	int newXP() { return getAttribute(NEWXP); }
 	int usedXP() { return getAttribute(USEDXP); }
@@ -412,7 +413,7 @@ public:
 
 	QString getCurrentSkillKey();
 	QString getCurrentTalentKey();
-	QString getForcePool(bool total_force = false);
+	QString getForcePool(bool check_list = false);
 	void adjustPoolForCommittedForce(int commit_count);
 
 private:
