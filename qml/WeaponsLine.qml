@@ -228,10 +228,7 @@ Rectangle {
 				id: specialText
 				anchors.verticalCenter: parent.verticalCenter
 				width: parent.width
-				//font.pixelSize: descFontSize
-				//font.family: "Arial"
-				//horizontalAlignment: Text.AlignLeft
-				//wrapMode: Text.Wrap
+				clearColor: lineColor
 				text: {
 					var result = "";
 
@@ -293,9 +290,9 @@ Rectangle {
 					if (features.length > 0)
 						result = "[B]Features:[b] " + features;
 					if (attachments.length > 0)
-						result = Util.appendList(result, "[B]Attachments:[b] " + attachments, " ");
+						result = Util.makeList(result, "[B]Attachments:[b] " + attachments, ",");
 					if (notes.length > 0)
-						result = Util.appendList(result, "[B]Notes:[b] " + notes, " ");
+						result = Util.makeList(result, "[B]Notes:[b] " + notes, ",");
 					return result;
 				}
 			}

@@ -93,6 +93,7 @@ CharTalentMap::CharTalentMap()
 	KeyMethod::instance.append("FLDCOMM", KM_FLDCOMM);
 
 	// Coded Talents (must be last)
+	KeyMethod::instance.append("MASLEAD", KM_MASLEAD);
 	KeyMethod::instance.append("FLDCOMMIMP", KM_FLDCOMMIMP);
 	KeyMethod::instance.append("SORRYMESS", KM_SORRYMESS);
 	KeyMethod::instance.append("GUNSBLAZING", KM_GUNSBLAZING);
@@ -408,7 +409,7 @@ void CharTalentMap::addTalent(CharTalent talent)
 		talent.talentType = TALENT_CODED;
 	if (charTalentMap.contains(talent.key)) {
 		charTalentMap[talent.key].ranks++;
-		DatUtil::appendToList(charTalentMap[talent.key].aquisition, talent.aquisition, ", ");
+		DatUtil::makeList(charTalentMap[talent.key].aquisition, talent.aquisition, ",");
 	}
 	else {
 		charTalentMap[talent.key] = talent;
@@ -588,7 +589,7 @@ bool AllTalents::xmlElement(const DatStringBuffer& path, const char* value)
 	else if (path.endsWith("/Damage/Bonus/"))
 		iTalent.damageBonus = toInt(value);
 	else if (path.endsWith("/Damage/Skills/Key/"))
-		DatUtil::appendToList(iTalent.damageBonusSkills, value, ",");
+		DatUtil::makeList(iTalent.damageBonusSkills, value, ",");
 
 	// Die modifiers
 	else if (path.endsWith("/DieModifier/#open"))

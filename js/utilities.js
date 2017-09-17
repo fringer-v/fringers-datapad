@@ -55,6 +55,22 @@ function appendList(list, toadd, delim)
 	return toadd;
 }
 
+function makeList(list, item, delim)
+{
+	list = list.trim();
+	item = item.trim();
+	if (item.length === 0)
+		return list;
+	if (list.length === 0)
+		return item;
+
+	if (!list.endsWith(".") &&
+		!list.endsWith(";") &&
+		!list.endsWith(","))
+		list += delim;
+	return list + " " + item;
+}
+
 function repeat(pattern, count) {
 	var result = '';
 

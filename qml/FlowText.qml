@@ -22,10 +22,10 @@ Rectangle {
 	property bool clip: false
 	property int vMargin: 0
 	property int hMargin: 0
-	property string text: ""
 	property int whichIndex: 0
 	property string clearColor: ""
 	property int shiftText: 0
+	property string text: ""
 
 	// Private:
 	property int pixelRatio: Screen.devicePixelRatio

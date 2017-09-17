@@ -378,7 +378,7 @@ bool CharacterXML::xmlElement(const DatStringBuffer& path, const char* value)
 
 		iAttachment = value;
 		iItem.attachList.append(iAttachment);
-		DatUtil::appendToList(iItem.attachments, QString("[I]%1[i]:").arg(attachment_name), "; ");
+		DatUtil::makeList(iItem.attachments, QString("[I]%1[i]:").arg(attachment_name), ";");
 	}
 	else if (path.endsWith("/AllMods/Mod/#open"))
 		iMod.clear();

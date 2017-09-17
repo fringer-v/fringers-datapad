@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import "../js/drawing.js" as Draw
 import "../js/constants.js" as Constant
+import "../js/utilities.js" as Util
 
 Rectangle {
 	id: armorLine
@@ -167,13 +168,17 @@ Rectangle {
 				id: specialText
 				anchors.verticalCenter: parent.verticalCenter
 				width: parent.width
-				//text: features
+				clearColor: lineColor
 				text: {
-					if (attachments.length === 0)
-						return features;
-					if (features.length === 0)
-						return "[U]Attachments...[u]";
-					return features + ", [U]Attachments...[u]";
+					var result = features;
+
+					if (qualities.length > 0)
+						result = Util.makeList(result, "[B]Qualities:[b] " + qualities, ",");
+
+					if (attachments.length > 0)
+						result = Util.makeList(result, "[U]Attachments...[u]", ",");
+
+					return result;
 				}
 			}
 

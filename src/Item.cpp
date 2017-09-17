@@ -145,6 +145,24 @@ void QualityList::addItem(Quality qual)
 	}
 }
 
+void QualityList::addQualities(const QMap<QString, Quality>& qual_map)
+{
+	foreach (Quality qual, qual_map)
+		addItem(qual);
+}
+
+QString QualityList::toString()
+{
+	QString list;
+
+	for (int i=0; i<iModMap.count(); i++) {
+		DatUtil::appendToList(list, iModMap[iOrder[i]].quality());
+	}
+
+	return list;
+}
+
+
 /*
 void QualityList::addMod(Mod mod)
 {
@@ -243,8 +261,6 @@ QString DieModList::getDieMods(const QString& skill_key, int& add_force_dice) co
 		pool += QString("a").repeated(mod.advantageCount);
 		pool += QString("t").repeated(mod.threatCount);
 		pool += QString("U").repeated(mod.upgradeCount);
-		if (mod.advantageCount > 0)
-			qDebug() << "----" << mod.advantageCount;
 		add_force_dice += mod.forceCount;
 	}
 	return pool;
@@ -506,6 +522,13 @@ int Item::pierce()
 		pierce += inc;
 	}
 
+	if (CurrentData::instance->gear.equipped("IRONFIST")) {
+		const ShopItem shop = shopItem();
+		if (shop.skillKey == "BRAWL") {
+			pierce += Character::instance->force();
+		}
+	}
+
 	//if (character->talents.contains("LETHALBL"))
 		//pierce += character->talents["LETHALBL"].ranks;
 
@@ -528,31 +551,47 @@ int Item::cumbersome(int burly)
 
 QString Item::qualities()
 {
-	QString list;
+	QualityList quality_list;
 	Quality qual;
+
+	const ShopItem shop = shopItem();
+	quality_list.addQualities(shop.qualityList);
 
 	for (int i=0; i<iModList.count(); i++) {
 		Mod mod = iModList.itemAt(i);
 
 		qual.key = mod.key;
 		qual.count = mod.count * mod.number;
-		DatUtil::appendToList(list, qual.quality());
+		quality_list.addItem(qual);
 	}
 
-	const ShopItem shop = shopItem();
-	foreach (Quality qual, shop.qualityList)
-		DatUtil::appendToList(list, qual.quality());
 
 	if (!isUnarmed() && shop.isMeleeWeapon()) {
 		int ranks = CurrentData::instance->talents.ranks("DEFTRAIN");
 		if (ranks > 0) {
 			qual.key = "DEFENSIVE";
 			qual.count = ranks;
-			DatUtil::appendToList(list, qual.quality());
+			quality_list.addItem(qual);
 		}
 	}
 
-	return list;
+	if (CurrentData::instance->gear.equipped("IRONFIST")) {
+		int ranks = Character::instance->force();
+		if (ranks > 0) {
+			if (shop.type == "ARMOR" || itemkey == "UNARMED") {
+				qual.key = "CORTOSIS";
+				qual.count = 0;
+				quality_list.addItem(qual);
+			}
+			if (shop.skillKey == "BRAWL") {
+				qual.key = "PIERCE";
+				qual.count = ranks;
+				quality_list.addItem(qual);
+			}
+		}
+	}
+
+	return quality_list.toString();
 }
 
 QString Item::features()
@@ -564,14 +603,8 @@ QString Item::features()
 	foreach (Mod mod, shop.modList)
 		m.addItem(mod);
 
-	for (int i=0; i<m.count(); i++) {
-		QString desc = m.itemAt(i).modText();
-		if (!desc.endsWith(".") &&
-			!desc.endsWith(";") &&
-			!desc.endsWith(","))
-			desc += ",";
-		DatUtil::appendToList(list, desc, " ");
-	}
+	for (int i=0; i<m.count(); i++)
+		DatUtil::makeList(list, m.itemAt(i).modText());
 
 	return list;
 }

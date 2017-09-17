@@ -1169,7 +1169,6 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 					break;
 				case KM_DONTSHOOT:
 					skill_key = "CHARM";
-					pool_plus = "DDD";
 					break;
 				case KM_FEARSOME: {
 					int ranks = CurrentData::instance->talents.get("FEARSOME").ranks;
@@ -1243,6 +1242,7 @@ QString Character::showChecklist(QString skill_key, QString talent_key, QString 
 					skill_key = "REC";
 					break;
 				case KM_FLDCOMM:
+				case KM_MASLEAD:
 					skill_key = "LEAD";
 					break;
 				default:
@@ -1801,6 +1801,7 @@ void Character::emitExperienceChanged()
 void Character::characteristicsChanged()
 {
 	Weapons::instance.setDataChanged();
+	Armor::instance.setDataChanged();
 	GeneralSkills::instance.setDataChanged();
 	CombatSkills::instance.setDataChanged();
 	KnowledgeSkills::instance.setDataChanged();

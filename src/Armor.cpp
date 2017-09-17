@@ -36,7 +36,7 @@
 
 Armor Armor::instance = Armor(QStringList() << "uuid" << "itemkey" << "armor" << "quantity" << "stored" << "soak"
 							  << "mdef" << "rdef" << "encumbrance" << "carry_state" << "retricted" << "features"
-							  << "attachments" << "notes");
+							  << "attachments" << "notes" << "qualities");
 
 Armor::Armor(QStringList columns) :
 	AbstractDataList(columns)
@@ -82,11 +82,13 @@ QVariant Armor::getValue(int row, int col)
 		case 10: // retricted
 			return item.restricted();
 		case 11: // features
-			return QVariant(item.features());
+			return item.features();
 		case 12: // attachments
 			return item.attachments;
 		case 13: // notes
 			return item.notes;
+		case 14: // qualities
+			return item.qualities();
 	}
 	return QVariant();
 }

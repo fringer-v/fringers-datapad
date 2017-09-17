@@ -1592,6 +1592,7 @@ void CurrentData::setChecklist(Character* charac, QString skillKey, QString tale
 				pr *= 2;
 			condChecklistAdd("FLDCOMM", "DD", QString("[B]Field Commander:[b] %1 allies spend 1 Strain to make a manuever").arg(pr), 0, 0);
 			condChecklistAdd("FLDCOMMIMP", DatUtil::poolText("Spend ")+"x", "[B]Field Commander (Improved):[b] 1 ally can spend 1 Strain and perform a free action", 0, 0);
+			condChecklistAdd("MASLEAD", "r", "[B]Master Leader:[b] Once per round, reduce check to a minimum of Easy ([DI])", 0, 2);
 			break;
 		}
 		case KM_COERC:

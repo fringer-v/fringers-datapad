@@ -99,6 +99,7 @@ public:
 	static bool isValidLine(QByteArray line, bool& empty_line, bool& last_line);
 	static bool lineAttributes(QByteArray line, QString &name, QString &value);
 	static void appendToList(QString& list, const QString& item, const QString& delim = ", ");
+	static void makeList(QString& list, QString item, const QString& delim = ",");
 	static void appendT(QString& list, const QString& item, const QString& delim = ", ");
 	static QString repeat(const QString& list, int count);
 

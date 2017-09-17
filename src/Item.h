@@ -89,6 +89,8 @@ public:
 	Quality itemAt(int i);
 	Quality get(const QString& key);
 	void addItem(Quality qual);
+	void addQualities(const QMap<QString, Quality>& qual_map);
+	QString toString();
 	//void addMod(Mod mod);
 
 private:

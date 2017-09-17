@@ -540,6 +540,23 @@ void DatUtil::appendToList(QString& list, const QString& item, const QString& de
 	}
 }
 
+void DatUtil::makeList(QString& list, QString item, const QString& delim)
+{
+	item = item.trimmed();
+	if (item.isEmpty())
+		return;
+	if (list.isEmpty()) {
+		list = item;
+		return;
+	}
+
+	if (!list.endsWith(".") &&
+		!list.endsWith(";") &&
+		!list.endsWith(","))
+		list += delim;
+	list += " " + item;
+}
+
 QString DatUtil::repeat(const QString& v, int count)
 {
 	QString str;
