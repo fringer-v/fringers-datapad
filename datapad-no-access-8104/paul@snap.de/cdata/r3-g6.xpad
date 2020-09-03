@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CurrentData>
+ <Wounds>0</Wounds>
+ <Strain>7</Strain>
+ <Conflict>0</Conflict>
+ <StimPacksUsed>0</StimPacksUsed>
+ <ErpsUsed>0</ErpsUsed>
+ <WoundHistory></WoundHistory>
+ <StrainHistory>1 2 3 4 5 6 7</StrainHistory>
+ <ConflictHistory></ConflictHistory>
+ <WoundDelta>0</WoundDelta>
+ <StrainDelta>0</StrainDelta>
+ <Injuries>
+ </Injuries>
+ <Experience>
+ </Experience>
+ <Inventory>
+ </Inventory>
+ <Storage>
+  <StoreItem><Uuid>2652307b-d735-4e00-9ebc-fab4cedcdee3</Uuid><Key>BLASTRIFHVY</Key><State>3</State></StoreItem>
+  <StoreItem><Uuid>e681266c-59c5-439e-966e-852a12d1ffae</Uuid><Key>BLASTHVYREP</Key><State>2</State></StoreItem>
+ </Storage>
+ <CustomSkills>
+ </CustomSkills>
+</CurrentData>

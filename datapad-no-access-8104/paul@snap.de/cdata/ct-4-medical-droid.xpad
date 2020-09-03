@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CurrentData>
+ <Wounds>0</Wounds>
+ <Strain>0</Strain>
+ <Conflict>0</Conflict>
+ <StimPacksUsed>0</StimPacksUsed>
+ <ErpsUsed>0</ErpsUsed>
+ <WoundHistory></WoundHistory>
+ <StrainHistory></StrainHistory>
+ <ConflictHistory></ConflictHistory>
+ <WoundDelta>0</WoundDelta>
+ <StrainDelta>0</StrainDelta>
+ <Injuries>
+ </Injuries>
+ <Experience>
+ </Experience>
+ <Inventory>
+  <Item><Description>[B]Original Total Credits[b]</Description></Item>
+  <Item><Count>1</Count><Key>411HOLDOUT</Key></Item>
+  <Item><Count>-1</Count><Key>411HOLDOUT</Key></Item>
+  <Item><Count>1</Count><Key>STIMPACK</Key></Item>
+  <Item><Count>4</Count><Key>STIMPACK</Key></Item>
+  <Item><Count>4</Count><Key>KEY_SYNTHFLESH APPLICATOR</Key></Item>
+  <Item><Count>1</Count><Key>KEY_SYNTHFLESH APPLICATOR</Key></Item>
+  <Item><Count>1</Count><Key>BLOODSCAN</Key><Amount>-400</Amount></Item>
+  <Item><Count>20</Count><Key>MEDAIDPATCH</Key><Amount>-400</Amount></Item>
+  <Item><Count>5</Count><Key>DROIDMINIMED</Key></Item>
+  <Item><Count>-1</Count><Key>MEDAIDPATCH</Key></Item>
+ </Inventory>
+ <Storage>
+  <StoreItem><Key>411HOLDOUT</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>BLOODSCAN</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>DROIDMINIMED</Key><Amount>0</Amount><State>2</State></StoreItem>
+  <StoreItem><Key>MEDAIDPATCH</Key><Amount>18</Amount><State>2</State></StoreItem>
+ </Storage>
+ <CustomSkills>
+ </CustomSkills>
+</CurrentData>

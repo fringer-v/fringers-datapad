@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.3
 import QtQuick.Window 2.0
 import "../js/drawing.js" as Draw
 import "../js/constants.js" as Constant

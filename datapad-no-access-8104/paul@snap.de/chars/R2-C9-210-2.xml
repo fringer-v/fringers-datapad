@@ -1,0 +1,2508 @@
+<?xml version="1.0"?>
+<Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LastChanged>2015-03-28T10:32:45.82</LastChanged>
+  <NotPersisted>false</NotPersisted>
+  <FileName>Char4.xml</FileName>
+  <Name />
+  <Key>621976b6-2a04-448a-9e65-77ee56bd4870</Key>
+  <Description>
+    <CharName>R2-C9</CharName>
+    <PlayerName>NPC</PlayerName>
+    <Gender>Male</Gender>
+    <Age>40</Age>
+    <Height>0.96</Height>
+    <Build />
+    <Hair />
+    <Eyes />
+    <OtherFeatures />
+    <Campaign />
+  </Description>
+  <Characteristics>
+    <CharCharacteristic>
+      <Key>BR</Key>
+      <Name>Brawn</Name>
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>false</ForSkills>
+        <ForChars>true</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>1</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+    </CharCharacteristic>
+    <CharCharacteristic>
+      <Key>AG</Key>
+      <Name>Agility</Name>
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>false</ForSkills>
+        <ForChars>true</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>1</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+    </CharCharacteristic>
+    <CharCharacteristic>
+      <Key>INT</Key>
+      <Name>Intellect</Name>
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>false</ForSkills>
+        <ForChars>true</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>1</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>1</CyberRanks>
+        <PurchasedRanks>1</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+    </CharCharacteristic>
+    <CharCharacteristic>
+      <Key>CUN</Key>
+      <Name>Cunning</Name>
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>false</ForSkills>
+        <ForChars>true</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>1</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>1</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+    </CharCharacteristic>
+    <CharCharacteristic>
+      <Key>WIL</Key>
+      <Name>Willpower</Name>
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>false</ForSkills>
+        <ForChars>true</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>1</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+    </CharCharacteristic>
+    <CharCharacteristic>
+      <Key>PR</Key>
+      <Name>Presence</Name>
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>false</ForSkills>
+        <ForChars>true</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>1</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+    </CharCharacteristic>
+  </Characteristics>
+  <Motivations />
+  <Specializations>
+    <CharSpecialization>
+      <Key>MECHANIC</Key>
+      <Name>Mechanic</Name>
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <isStartingSpec>true</isStartingSpec>
+      <isCareerSpec>true</isCareerSpec>
+      <Talents>
+        <CharTalent>
+          <Key>GEARHD</Key>
+          <Col>0</Col>
+          <Row>0</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>TOUGH</Key>
+          <Col>1</Col>
+          <Row>0</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>FINETUN</Key>
+          <Col>2</Col>
+          <Row>0</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>SOLREP</Key>
+          <Col>3</Col>
+          <Row>0</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>REDUNSYS</Key>
+          <Col>0</Col>
+          <Row>1</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>SOLREP</Key>
+          <Col>1</Col>
+          <Row>1</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>GEARHD</Key>
+          <Col>2</Col>
+          <Row>1</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>GRIT</Key>
+          <Col>3</Col>
+          <Row>1</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>SOLREP</Key>
+          <Col>0</Col>
+          <Row>2</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>ENDUR</Key>
+          <Col>1</Col>
+          <Row>2</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>BADM</Key>
+          <Col>2</Col>
+          <Row>2</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>TOUGH</Key>
+          <Col>3</Col>
+          <Row>2</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>CONT</Key>
+          <Col>0</Col>
+          <Row>3</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>SOLREP</Key>
+          <Col>1</Col>
+          <Row>3</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>FINETUN</Key>
+          <Col>2</Col>
+          <Row>3</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>HARDHD</Key>
+          <Col>3</Col>
+          <Row>3</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>NATTIN</Key>
+          <Col>0</Col>
+          <Row>4</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>HOLDTOG</Key>
+          <Col>1</Col>
+          <Row>4</Row>
+          <Purchased>false</Purchased>
+          <Free>true</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>DEDI</Key>
+          <Col>2</Col>
+          <Row>4</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>HARDHDIMP</Key>
+          <Col>3</Col>
+          <Row>4</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+      </Talents>
+    </CharSpecialization>
+    <CharSpecialization>
+      <Key>R7UPGRADES</Key>
+      <Name>R7 Upgrades</Name>
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <isStartingSpec>false</isStartingSpec>
+      <isCareerSpec>false</isCareerSpec>
+      <Talents>
+        <CharTalent>
+          <Key>SOLREP</Key>
+          <Col>0</Col>
+          <Row>0</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>HOLDTOG</Key>
+          <Col>1</Col>
+          <Row>0</Row>
+          <Purchased>true</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>RAPREA</Key>
+          <Col>2</Col>
+          <Row>0</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>GALMAP</Key>
+          <Col>3</Col>
+          <Row>0</Row>
+          <Purchased>true</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>KNOWSCH</Key>
+          <Col>0</Col>
+          <Row>1</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>COMMPRES</Key>
+          <Col>1</Col>
+          <Row>1</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>GRIT</Key>
+          <Col>2</Col>
+          <Row>1</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>FAMSUNS</Key>
+          <Col>3</Col>
+          <Row>1</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>SOLREP</Key>
+          <Col>0</Col>
+          <Row>2</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>COM</Key>
+          <Col>1</Col>
+          <Row>2</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>RAPREA</Key>
+          <Col>2</Col>
+          <Row>2</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>GALMAP</Key>
+          <Col>3</Col>
+          <Row>2</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>COM</Key>
+          <Col>0</Col>
+          <Row>3</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>COMMPRES</Key>
+          <Col>1</Col>
+          <Row>3</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>GRIT</Key>
+          <Col>2</Col>
+          <Row>3</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>MASSTAR</Key>
+          <Col>3</Col>
+          <Row>3</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>SOLREP</Key>
+          <Col>0</Col>
+          <Row>4</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>FIRECON</Key>
+          <Col>1</Col>
+          <Row>4</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>DEDI</Key>
+          <Col>2</Col>
+          <Row>4</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+        <CharTalent>
+          <Key>GALMAP</Key>
+          <Col>3</Col>
+          <Row>4</Row>
+          <Purchased>false</Purchased>
+          <Free>false</Free>
+          <Ranks>0</Ranks>
+          <BonusChars />
+          <Sources />
+          <CareerSkills />
+          <SelectedSkills />
+        </CharTalent>
+      </Talents>
+    </CharSpecialization>
+  </Specializations>
+  <ForcePowers />
+  <SigAbilities />
+  <Skills>
+    <CharSkill>
+      <Key>ASTRO</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>3</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>ATHL</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>BRAWL</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>CHARM</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>COERC</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>COMP</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>3</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>COOL</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>2</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>COORD</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>CORE</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>DECEP</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>DISC</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>EDU</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>GUNN</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>LEAD</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>LTSABER</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>LORE</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>MECH</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>3</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>MED</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>MELEE</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>NEG</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>OUT</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>PERC</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>PILOTPL</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>PILOTSP</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>2</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>RANGHVY</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>RANGLT</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>RESIL</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>SKUL</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>true</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>STEAL</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>SW</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>SURV</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>UND</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>VIGIL</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>XEN</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+    <CharSkill>
+      <Key>WARF</Key>
+      <Name />
+      <Description />
+      <Source />
+      <Sources />
+      <Custom>Base</Custom>
+      <Rank>
+        <ForSkills>true</ForSkills>
+        <ForChars>false</ForChars>
+        <StartingRanks>0</StartingRanks>
+        <SpeciesRanks>0</SpeciesRanks>
+        <CareerRanks>0</CareerRanks>
+        <TalentRanks>0</TalentRanks>
+        <ObligationRanks>0</ObligationRanks>
+        <DutyRanks>0</DutyRanks>
+        <AttachRanks>0</AttachRanks>
+        <ItemRanks>0</ItemRanks>
+        <CyberRanks>0</CyberRanks>
+        <PurchasedRanks>0</PurchasedRanks>
+        <CharRanks>0</CharRanks>
+        <InjuryRanks>0</InjuryRanks>
+        <NonCareerRanks>0</NonCareerRanks>
+        <DefWeaponRanks>0</DefWeaponRanks>
+        <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+      </Rank>
+      <isCareer>false</isCareer>
+      <CharKeyOverride />
+    </CharSkill>
+  </Skills>
+  <ObOptions>
+    <StartingSize>5</StartingSize>
+    <Plus5XP>false</Plus5XP>
+    <Plus10XP>false</Plus10XP>
+    <Plus1000Cr>false</Plus1000Cr>
+    <Plus2500Cr>false</Plus2500Cr>
+  </ObOptions>
+  <Obligations />
+  <DutOptions>
+    <StartingSize>5</StartingSize>
+    <Plus5XP>false</Plus5XP>
+    <Plus10XP>false</Plus10XP>
+    <Plus1000Cr>false</Plus1000Cr>
+    <Plus2500Cr>false</Plus2500Cr>
+  </DutOptions>
+  <Duties />
+  <Experience>
+    <ExperienceRanks>
+      <ForSkills>false</ForSkills>
+      <ForChars>false</ForChars>
+      <StartingRanks>0</StartingRanks>
+      <SpeciesRanks>175</SpeciesRanks>
+      <CareerRanks>0</CareerRanks>
+      <TalentRanks>0</TalentRanks>
+      <ObligationRanks>0</ObligationRanks>
+      <DutyRanks>0</DutyRanks>
+      <AttachRanks>0</AttachRanks>
+      <ItemRanks>0</ItemRanks>
+      <CyberRanks>0</CyberRanks>
+      <PurchasedRanks>35</PurchasedRanks>
+      <CharRanks>0</CharRanks>
+      <InjuryRanks>0</InjuryRanks>
+      <NonCareerRanks>0</NonCareerRanks>
+      <DefWeaponRanks>0</DefWeaponRanks>
+      <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+    </ExperienceRanks>
+    <UsedExperience>200</UsedExperience>
+  </Experience>
+  <Attributes>
+    <SoakValue>
+      <ForSkills>false</ForSkills>
+      <ForChars>false</ForChars>
+      <StartingRanks>1</StartingRanks>
+      <SpeciesRanks>0</SpeciesRanks>
+      <CareerRanks>0</CareerRanks>
+      <TalentRanks>1</TalentRanks>
+      <ObligationRanks>0</ObligationRanks>
+      <DutyRanks>0</DutyRanks>
+      <AttachRanks>0</AttachRanks>
+      <ItemRanks>0</ItemRanks>
+      <CyberRanks>0</CyberRanks>
+      <PurchasedRanks>2</PurchasedRanks>
+      <CharRanks>0</CharRanks>
+      <InjuryRanks>0</InjuryRanks>
+      <NonCareerRanks>0</NonCareerRanks>
+      <DefWeaponRanks>0</DefWeaponRanks>
+      <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+    </SoakValue>
+    <WoundThreshold>
+      <ForSkills>false</ForSkills>
+      <ForChars>false</ForChars>
+      <StartingRanks>1</StartingRanks>
+      <SpeciesRanks>10</SpeciesRanks>
+      <CareerRanks>0</CareerRanks>
+      <TalentRanks>0</TalentRanks>
+      <ObligationRanks>0</ObligationRanks>
+      <DutyRanks>0</DutyRanks>
+      <AttachRanks>0</AttachRanks>
+      <ItemRanks>0</ItemRanks>
+      <CyberRanks>0</CyberRanks>
+      <PurchasedRanks>0</PurchasedRanks>
+      <CharRanks>0</CharRanks>
+      <InjuryRanks>0</InjuryRanks>
+      <NonCareerRanks>0</NonCareerRanks>
+      <DefWeaponRanks>0</DefWeaponRanks>
+      <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+    </WoundThreshold>
+    <StrainThreshold>
+      <ForSkills>false</ForSkills>
+      <ForChars>false</ForChars>
+      <StartingRanks>1</StartingRanks>
+      <SpeciesRanks>10</SpeciesRanks>
+      <CareerRanks>0</CareerRanks>
+      <TalentRanks>0</TalentRanks>
+      <ObligationRanks>0</ObligationRanks>
+      <DutyRanks>0</DutyRanks>
+      <AttachRanks>0</AttachRanks>
+      <ItemRanks>0</ItemRanks>
+      <CyberRanks>0</CyberRanks>
+      <PurchasedRanks>0</PurchasedRanks>
+      <CharRanks>0</CharRanks>
+      <InjuryRanks>0</InjuryRanks>
+      <NonCareerRanks>0</NonCareerRanks>
+      <DefWeaponRanks>0</DefWeaponRanks>
+      <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+    </StrainThreshold>
+    <DefenseRanged>
+      <ForSkills>false</ForSkills>
+      <ForChars>false</ForChars>
+      <StartingRanks>0</StartingRanks>
+      <SpeciesRanks>0</SpeciesRanks>
+      <CareerRanks>0</CareerRanks>
+      <TalentRanks>0</TalentRanks>
+      <ObligationRanks>0</ObligationRanks>
+      <DutyRanks>0</DutyRanks>
+      <AttachRanks>0</AttachRanks>
+      <ItemRanks>0</ItemRanks>
+      <CyberRanks>0</CyberRanks>
+      <PurchasedRanks>0</PurchasedRanks>
+      <CharRanks>0</CharRanks>
+      <InjuryRanks>0</InjuryRanks>
+      <NonCareerRanks>0</NonCareerRanks>
+      <DefWeaponRanks>0</DefWeaponRanks>
+      <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+    </DefenseRanged>
+    <DefenseMelee>
+      <ForSkills>false</ForSkills>
+      <ForChars>false</ForChars>
+      <StartingRanks>0</StartingRanks>
+      <SpeciesRanks>0</SpeciesRanks>
+      <CareerRanks>0</CareerRanks>
+      <TalentRanks>0</TalentRanks>
+      <ObligationRanks>0</ObligationRanks>
+      <DutyRanks>0</DutyRanks>
+      <AttachRanks>0</AttachRanks>
+      <ItemRanks>0</ItemRanks>
+      <CyberRanks>0</CyberRanks>
+      <PurchasedRanks>0</PurchasedRanks>
+      <CharRanks>0</CharRanks>
+      <InjuryRanks>0</InjuryRanks>
+      <NonCareerRanks>0</NonCareerRanks>
+      <DefWeaponRanks>0</DefWeaponRanks>
+      <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+    </DefenseMelee>
+    <ForceRating>
+      <ForSkills>false</ForSkills>
+      <ForChars>false</ForChars>
+      <StartingRanks>0</StartingRanks>
+      <SpeciesRanks>0</SpeciesRanks>
+      <CareerRanks>0</CareerRanks>
+      <TalentRanks>0</TalentRanks>
+      <ObligationRanks>0</ObligationRanks>
+      <DutyRanks>0</DutyRanks>
+      <AttachRanks>0</AttachRanks>
+      <ItemRanks>0</ItemRanks>
+      <CyberRanks>0</CyberRanks>
+      <PurchasedRanks>0</PurchasedRanks>
+      <CharRanks>0</CharRanks>
+      <InjuryRanks>0</InjuryRanks>
+      <NonCareerRanks>0</NonCareerRanks>
+      <DefWeaponRanks>0</DefWeaponRanks>
+      <DefWeaponAttachRanks>0</DefWeaponAttachRanks>
+    </ForceRating>
+  </Attributes>
+  <Species>
+    <SpeciesKey>DROID</SpeciesKey>
+    <SubSpeciesKey>DROIDSUB6</SubSpeciesKey>
+    <SelectedOptions>
+      <CharOption>
+        <ChoiceKey>DROIDAB</ChoiceKey>
+        <OptionKey>DROIDABSK</OptionKey>
+        <StartingChars>
+          <Brawn>1</Brawn>
+          <Agility>1</Agility>
+          <Intellect>1</Intellect>
+          <Cunning>1</Cunning>
+          <Willpower>1</Willpower>
+          <Presence>1</Presence>
+          <Requirement>
+            <WearingArmor>false</WearingArmor>
+            <Career>false</Career>
+            <Specialization>false</Specialization>
+            <NonCareer>false</NonCareer>
+            <SoakAtLeast>0</SoakAtLeast>
+          </Requirement>
+        </StartingChars>
+        <StartingAttribs>
+          <WoundThreshold>0</WoundThreshold>
+          <StrainThreshold>0</StrainThreshold>
+          <DefenseRanged>0</DefenseRanged>
+          <DefenseMelee>0</DefenseMelee>
+          <SoakValue>0</SoakValue>
+          <Experience>0</Experience>
+          <ForceRating>0</ForceRating>
+          <Requirement>
+            <WearingArmor>false</WearingArmor>
+            <Career>false</Career>
+            <Specialization>false</Specialization>
+            <NonCareer>false</NonCareer>
+            <SoakAtLeast>0</SoakAtLeast>
+          </Requirement>
+        </StartingAttribs>
+        <StartingSkillTraining>
+          <SkillTraining>
+            <SkillCount>2</SkillCount>
+            <Requirement>
+              <WearingArmor>false</WearingArmor>
+              <Career>true</Career>
+              <Specialization>false</Specialization>
+              <NonCareer>false</NonCareer>
+              <SoakAtLeast>0</SoakAtLeast>
+            </Requirement>
+          </SkillTraining>
+          <SkillTraining>
+            <SkillCount>1</SkillCount>
+            <Requirement>
+              <WearingArmor>false</WearingArmor>
+              <Career>false</Career>
+              <Specialization>true</Specialization>
+              <NonCareer>false</NonCareer>
+              <SoakAtLeast>0</SoakAtLeast>
+            </Requirement>
+          </SkillTraining>
+        </StartingSkillTraining>
+        <SkillModifiers />
+        <TalentModifiers />
+        <DieModifiers />
+      </CharOption>
+      <CharOption>
+        <ChoiceKey>DROIDAB2</ChoiceKey>
+        <OptionKey>DROIDAB2OP1</OptionKey>
+        <StartingChars>
+          <Brawn>1</Brawn>
+          <Agility>1</Agility>
+          <Intellect>1</Intellect>
+          <Cunning>1</Cunning>
+          <Willpower>1</Willpower>
+          <Presence>1</Presence>
+          <Requirement>
+            <WearingArmor>false</WearingArmor>
+            <Career>false</Career>
+            <Specialization>false</Specialization>
+            <NonCareer>false</NonCareer>
+            <SoakAtLeast>0</SoakAtLeast>
+          </Requirement>
+        </StartingChars>
+        <StartingAttribs>
+          <WoundThreshold>0</WoundThreshold>
+          <StrainThreshold>0</StrainThreshold>
+          <DefenseRanged>0</DefenseRanged>
+          <DefenseMelee>0</DefenseMelee>
+          <SoakValue>0</SoakValue>
+          <Experience>0</Experience>
+          <ForceRating>0</ForceRating>
+          <Requirement>
+            <WearingArmor>false</WearingArmor>
+            <Career>false</Career>
+            <Specialization>false</Specialization>
+            <NonCareer>false</NonCareer>
+            <SoakAtLeast>0</SoakAtLeast>
+          </Requirement>
+        </StartingAttribs>
+        <StartingSkillTraining />
+        <SkillModifiers />
+        <TalentModifiers />
+        <DieModifiers />
+      </CharOption>
+      <CharOption>
+        <ChoiceKey>DROIDAB3</ChoiceKey>
+        <OptionKey>DROIDAB3OP1</OptionKey>
+        <StartingChars>
+          <Brawn>1</Brawn>
+          <Agility>1</Agility>
+          <Intellect>1</Intellect>
+          <Cunning>1</Cunning>
+          <Willpower>1</Willpower>
+          <Presence>1</Presence>
+          <Requirement>
+            <WearingArmor>false</WearingArmor>
+            <Career>false</Career>
+            <Specialization>false</Specialization>
+            <NonCareer>false</NonCareer>
+            <SoakAtLeast>0</SoakAtLeast>
+          </Requirement>
+        </StartingChars>
+        <StartingAttribs>
+          <WoundThreshold>0</WoundThreshold>
+          <StrainThreshold>0</StrainThreshold>
+          <DefenseRanged>0</DefenseRanged>
+          <DefenseMelee>0</DefenseMelee>
+          <SoakValue>0</SoakValue>
+          <Experience>0</Experience>
+          <ForceRating>0</ForceRating>
+          <Requirement>
+            <WearingArmor>false</WearingArmor>
+            <Career>false</Career>
+            <Specialization>false</Specialization>
+            <NonCareer>false</NonCareer>
+            <SoakAtLeast>0</SoakAtLeast>
+          </Requirement>
+        </StartingAttribs>
+        <StartingSkillTraining />
+        <SkillModifiers />
+        <TalentModifiers />
+        <DieModifiers />
+      </CharOption>
+      <CharOption>
+        <ChoiceKey>DROIDAB4</ChoiceKey>
+        <OptionKey>DROIDAB4OP1</OptionKey>
+        <StartingChars>
+          <Brawn>1</Brawn>
+          <Agility>1</Agility>
+          <Intellect>1</Intellect>
+          <Cunning>1</Cunning>
+          <Willpower>1</Willpower>
+          <Presence>1</Presence>
+          <Requirement>
+            <WearingArmor>false</WearingArmor>
+            <Career>false</Career>
+            <Specialization>false</Specialization>
+            <NonCareer>false</NonCareer>
+            <SoakAtLeast>0</SoakAtLeast>
+          </Requirement>
+        </StartingChars>
+        <StartingAttribs>
+          <WoundThreshold>0</WoundThreshold>
+          <StrainThreshold>0</StrainThreshold>
+          <DefenseRanged>0</DefenseRanged>
+          <DefenseMelee>0</DefenseMelee>
+          <SoakValue>0</SoakValue>
+          <Experience>0</Experience>
+          <ForceRating>0</ForceRating>
+          <Requirement>
+            <WearingArmor>false</WearingArmor>
+            <Career>false</Career>
+            <Specialization>false</Specialization>
+            <NonCareer>false</NonCareer>
+            <SoakAtLeast>0</SoakAtLeast>
+          </Requirement>
+        </StartingAttribs>
+        <StartingSkillTraining />
+        <SkillModifiers />
+        <TalentModifiers />
+        <DieModifiers />
+      </CharOption>
+      <CharOption>
+        <ChoiceKey>DROIDAB5</ChoiceKey>
+        <OptionKey>DROIDAB5OP1</OptionKey>
+        <StartingChars>
+          <Brawn>1</Brawn>
+          <Agility>1</Agility>
+          <Intellect>1</Intellect>
+          <Cunning>1</Cunning>
+          <Willpower>1</Willpower>
+          <Presence>1</Presence>
+          <Requirement>
+            <WearingArmor>false</WearingArmor>
+            <Career>false</Career>
+            <Specialization>false</Specialization>
+            <NonCareer>false</NonCareer>
+            <SoakAtLeast>0</SoakAtLeast>
+          </Requirement>
+        </StartingChars>
+        <StartingAttribs>
+          <WoundThreshold>0</WoundThreshold>
+          <StrainThreshold>0</StrainThreshold>
+          <DefenseRanged>0</DefenseRanged>
+          <DefenseMelee>0</DefenseMelee>
+          <SoakValue>0</SoakValue>
+          <Experience>0</Experience>
+          <ForceRating>0</ForceRating>
+          <Requirement>
+            <WearingArmor>false</WearingArmor>
+            <Career>false</Career>
+            <Specialization>false</Specialization>
+            <NonCareer>false</NonCareer>
+            <SoakAtLeast>0</SoakAtLeast>
+          </Requirement>
+        </StartingAttribs>
+        <StartingSkillTraining />
+        <SkillModifiers />
+        <TalentModifiers />
+        <DieModifiers />
+      </CharOption>
+    </SelectedOptions>
+    <NonCareerSkills />
+  </Species>
+  <Career>
+    <CareerKey>TECHNICIAN</CareerKey>
+    <StartingSpecKey>MECHANIC</StartingSpecKey>
+    <CareerSkills />
+    <CareerSpecSkills />
+  </Career>
+  <Class>
+    <ClassKey>LOW</ClassKey>
+  </Class>
+  <Hook>
+    <HookKey>OPP</HookKey>
+  </Hook>
+  <Weapons>
+    <CharWeapon>
+      <ItemKey>PROTONGRNAD</ItemKey>
+      <Key>5d69b002-3f29-452f-a62a-1839ebb51812</Key>
+      <Equipped>false</Equipped>
+      <Held>false</Held>
+      <Count>20</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+      <TwoWeaponSets />
+      <Shown>false</Shown>
+      <Innate>false</Innate>
+    </CharWeapon>
+    <CharWeapon>
+      <ItemKey />
+      <Key>INNATE0</Key>
+      <Equipped>false</Equipped>
+      <Held>false</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+      <TwoWeaponSets />
+      <Shown>true</Shown>
+      <Innate>true</Innate>
+    </CharWeapon>
+    <CharWeapon>
+      <ItemKey />
+      <Key>UNARMED</Key>
+      <Equipped>false</Equipped>
+      <Held>false</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+      <TwoWeaponSets />
+      <Shown>true</Shown>
+      <Innate>true</Innate>
+    </CharWeapon>
+  </Weapons>
+  <Armor>
+    <CharArmor>
+      <ItemKey>LAM</ItemKey>
+      <Key>a8d8a9dc-f849-417e-9001-545c96444229</Key>
+      <Equipped>true</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments>
+        <CharItemAttachment>
+          <AttachKey>MULTICOMLINK</AttachKey>
+          <PurchasedMods />
+          <BaseMods>
+            <ItemDescInfo>
+              <Key />
+              <Count>1</Count>
+              <Index>0</Index>
+              <MiscDesc>A long range comlink is integrated into helmet.</MiscDesc>
+              <DefZone />
+              <QualReplace>false</QualReplace>
+              <SkillIsCareer>false</SkillIsCareer>
+              <SkillIsRanked>false</SkillIsRanked>
+              <VehicleWeaponUpgrades />
+              <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
+              <DieModifiers />
+            </ItemDescInfo>
+          </BaseMods>
+        </CharItemAttachment>
+        <CharItemAttachment>
+          <AttachKey>INTSCAN</AttachKey>
+          <PurchasedMods />
+          <BaseMods>
+            <ItemDescInfo>
+              <Key />
+              <Count>1</Count>
+              <Index>0</Index>
+              <MiscDesc>Built-in general purpose scanner</MiscDesc>
+              <DefZone />
+              <QualReplace>false</QualReplace>
+              <SkillIsCareer>false</SkillIsCareer>
+              <SkillIsRanked>false</SkillIsRanked>
+              <VehicleWeaponUpgrades />
+              <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
+              <DieModifiers />
+            </ItemDescInfo>
+            <ItemDescInfo>
+              <Key />
+              <Count>1</Count>
+              <Index>0</Index>
+              <MiscDesc>Adds [BOOST] to Perception checks to detect movement or hidden enemies.</MiscDesc>
+              <DefZone />
+              <QualReplace>false</QualReplace>
+              <SkillIsCareer>false</SkillIsCareer>
+              <SkillIsRanked>false</SkillIsRanked>
+              <VehicleWeaponUpgrades />
+              <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
+              <DieModifiers />
+            </ItemDescInfo>
+          </BaseMods>
+        </CharItemAttachment>
+      </PurchasedAttachments>
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharArmor>
+  </Armor>
+  <Gear>
+    <CharGear>
+      <ItemKey>TOOLKIT</ItemKey>
+      <Key>fca52b61-2086-4be8-84bf-ae9db1eda6a0</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>MODPACK</ItemKey>
+      <Key>216337ac-c664-44e0-ab70-9127026c335a</Key>
+      <Equipped>true</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments>
+        <CharItemAttachment>
+          <AttachKey>MODBKACCPOUCH</AttachKey>
+          <PurchasedMods>
+            <Mod>
+              <Key>ENCTADD</Key>
+              <Count>1</Count>
+              <Index>0</Index>
+              <MiscDesc />
+              <DefZone />
+              <QualReplace>false</QualReplace>
+              <SkillIsCareer>false</SkillIsCareer>
+              <SkillIsRanked>false</SkillIsRanked>
+              <VehicleWeaponUpgrades />
+              <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
+              <DieModifiers />
+            </Mod>
+            <Mod>
+              <Key>ENCTADD</Key>
+              <Count>1</Count>
+              <Index>1</Index>
+              <MiscDesc />
+              <DefZone />
+              <QualReplace>false</QualReplace>
+              <SkillIsCareer>false</SkillIsCareer>
+              <SkillIsRanked>false</SkillIsRanked>
+              <VehicleWeaponUpgrades />
+              <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
+              <DieModifiers />
+            </Mod>
+          </PurchasedMods>
+          <BaseMods>
+            <ItemDescInfo>
+              <Key>ENCTADD</Key>
+              <Count>1</Count>
+              <Index>0</Index>
+              <MiscDesc />
+              <DefZone />
+              <QualReplace>false</QualReplace>
+              <SkillIsCareer>false</SkillIsCareer>
+              <SkillIsRanked>false</SkillIsRanked>
+              <VehicleWeaponUpgrades />
+              <SelectedVehicleWeaponIndex>-1</SelectedVehicleWeaponIndex>
+              <DieModifiers />
+            </ItemDescInfo>
+          </BaseMods>
+        </CharItemAttachment>
+      </PurchasedAttachments>
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>ERP</ItemKey>
+      <Key>49386f06-fc52-4c46-925e-1bfa2b619f4b</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>4</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>USERGEAR2</ItemKey>
+      <Key>845065e3-fa10-4606-80a3-23c3ffefc4a7</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>RESBOLT</ItemKey>
+      <Key>63fe28c8-d2c3-472f-98b6-270b36b201f1</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>2</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>UTILBELT</ItemKey>
+      <Key>811e4adf-ac34-41e3-9a01-5568aa9452b9</Key>
+      <Equipped>true</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>FUSLANT</ItemKey>
+      <Key>960342c5-7cf1-43df-8d78-8f3e9d851803</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>COMMJAM</ItemKey>
+      <Key>0146ba47-9a93-41e7-bf69-6979cd3e1f47</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>RECONREM</ItemKey>
+      <Key>38022e7b-dfab-41cc-b646-ad2d47bf9881</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>WORKMAN</ItemKey>
+      <Key>49e6164e-8567-4346-8fb2-79d0c8cf4554</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>LOADBEAR</ItemKey>
+      <Key>13d32591-3f9e-40d4-92e4-29f2d4fbfe71</Key>
+      <Equipped>true</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>DATABRBO</ItemKey>
+      <Key>afcd2ac1-349a-4e69-8881-af2d5088d719</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>COMLINKH</ItemKey>
+      <Key>6f10b86c-c034-405e-b37d-70120b55e713</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>STIMPACK</ItemKey>
+      <Key>f81031da-d4df-491e-afc6-66281f2351c0</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>10</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>CYBRAIN</ItemKey>
+      <Key>324e140f-afd4-4808-8ac5-a7d894ccedaa</Key>
+      <Equipped>true</Equipped>
+      <Held>true</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>STAG</ItemKey>
+      <Key>e3432612-da7d-49f9-990b-5dcf0739ab7a</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>4</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>COMMSCRAM</ItemKey>
+      <Key>aaff1936-3eb9-4a95-a171-f50c40cc40a6</Key>
+      <Equipped>false</Equipped>
+      <Held>true</Held>
+      <Count>5</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>ENCRYPWHIS</ItemKey>
+      <Key>179f3bd5-79f1-453c-ab17-db79187de11a</Key>
+      <Equipped>false</Equipped>
+      <Held>false</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>RECONREM</ItemKey>
+      <Key>174d489c-a00b-40a5-9239-09db78160924</Key>
+      <Equipped>false</Equipped>
+      <Held>false</Held>
+      <Count>2</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+    <CharGear>
+      <ItemKey>MEDPAC</ItemKey>
+      <Key>8e1e02cc-2820-4911-92b4-946d7b66f7b9</Key>
+      <Equipped>false</Equipped>
+      <Held>false</Held>
+      <Count>1</Count>
+      <PurchasedAttachments />
+      <AddlHP>0</AddlHP>
+      <Notes />
+      <Rename />
+    </CharGear>
+  </Gear>
+  <Vehicles />
+  <Story />
+  <Credits>500</Credits>
+  <Morality>
+    <Options>
+      <Option>None</Option>
+    </Options>
+    <MoralityPairs />
+    <ModifiedMorality>0</ModifiedMorality>
+    <MoralityValue>50</MoralityValue>
+  </Morality>
+  <Grants>
+    <UseGrants>false</UseGrants>
+    <FreeFR>false</FreeFR>
+  </Grants>
+  <Rigger>
+    <VehicleKey />
+    <WeaponIndex>-1</WeaponIndex>
+    <custRigger>
+      <ChooseVehicle>false</ChooseVehicle>
+      <SilhouetteBase>0</SilhouetteBase>
+      <SilhouetteAdd>0</SilhouetteAdd>
+      <BaseMods />
+      <ChooseWeapon>false</ChooseWeapon>
+      <WeaponMods />
+    </custRigger>
+    <MaxSilhouette>0</MaxSilhouette>
+  </Rigger>
+  <UseGrants>false</UseGrants>
+  <Portrait>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</Portrait>
+  <AutoRecalc>true</AutoRecalc>
+</Character>

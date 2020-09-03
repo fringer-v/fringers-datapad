@@ -1,6 +1,6 @@
-import QtQuick 2.0
-import QtQuick.Controls 1.2
-import QtQuick.Dialogs 1.2
+import QtQuick 2.3
+import QtQuick.Controls 1.3
+import QtQuick.Dialogs 1.3
 import "../js/drawing.js" as Draw
 import "../js/constants.js" as Constant
 import space.fringer.datapad 1.0

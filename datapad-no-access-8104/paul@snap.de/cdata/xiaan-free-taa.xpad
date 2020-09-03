@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CurrentData>
+ <Wounds>0</Wounds>
+ <Strain>4</Strain>
+ <Conflict>0</Conflict>
+ <StimPacksUsed>0</StimPacksUsed>
+ <ErpsUsed>0</ErpsUsed>
+ <WoundHistory>0 0 0 2 0 2 0 0 0 3 0</WoundHistory>
+ <StrainHistory>15 16 17 0 2 0 2 0 2 4</StrainHistory>
+ <ConflictHistory>-2 +2 -2 +5 +2 -15 +8</ConflictHistory>
+ <WoundDelta>0</WoundDelta>
+ <StrainDelta>0</StrainDelta>
+ <Locked>1</Locked>
+ <HideAutoTalents>1</HideAutoTalents>
+ <Injuries>
+ </Injuries>
+ <Experience>
+ </Experience>
+ <Inventory>
+ </Inventory>
+ <Storage>
+  <StoreItem><Key>ACTIVATORDVILONG</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>ANTIGRAVCHUTESAV</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>BLASTPISDR45</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>ERP</Key><Amount>6</Amount><State>0</State></StoreItem>
+  <StoreItem><Key>GLOPGRND</Key><Amount>1</Amount><State>2</State></StoreItem>
+  <StoreItem><Key>HNTGOGGLE</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>MODEL38</Key><Amount>0</Amount><State>1</State></StoreItem>
+  <StoreItem><Key>PLASGREND</Key><Amount>8</Amount><State>2</State></StoreItem>
+  <StoreItem><Key>PROTONGRNAD</Key><Amount>8</Amount><State>2</State></StoreItem>
+  <StoreItem><Key>R82JUMP</Key><Amount>0</Amount><State>2</State></StoreItem>
+  <StoreItem><Key>STIMPACK</Key><Amount>13</Amount><State>0</State></StoreItem>
+  <StoreItem><Key>STUNGR</Key><Amount>8</Amount><State>0</State></StoreItem>
+  <StoreItem><Key>SYNSK</Key><Amount>0</Amount><State>1</State></StoreItem>
+  <StoreItem><Key>USERWEAP4</Key><Amount>0</Amount><State>3</State></StoreItem>
+ </Storage>
+ <CheckList>
+  <Skill>AGILITY</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>BRAWL</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>GUNN</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>LTSABER</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>MELEE</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>RANGHVY</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>RANGLT</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CustomSkills>
+ </CustomSkills>
+</CurrentData>

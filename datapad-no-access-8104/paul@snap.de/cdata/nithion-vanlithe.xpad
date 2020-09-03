@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CurrentData>
+ <Wounds>4</Wounds>
+ <Strain>2</Strain>
+ <Conflict>2</Conflict>
+ <StimPacksUsed>1</StimPacksUsed>
+ <ErpsUsed>0</ErpsUsed>
+ <WoundHistory>8 11 10 5 0 2 6 4 9 4</WoundHistory>
+ <StrainHistory>5 6 4 0 1 3 4 2 1 4 2</StrainHistory>
+ <ConflictHistory>+2</ConflictHistory>
+ <WoundDelta>0</WoundDelta>
+ <StrainDelta>0</StrainDelta>
+ <Injuries>
+  <Injury><Percent>17</Percent><Type>0</Type></Injury>
+ </Injuries>
+ <Experience>
+  <XP><Type>MORALITY</Type><Create>2017-05-25T20:48:19Z</Create><Description>Original Total</Description><Amount>50</Amount></XP>
+  <XP><Type>MORALITY</Type><Create>2017-05-25T20:48:19Z</Create><Description></Description><Amount>12</Amount></XP>
+ </Experience>
+ <Inventory>
+  <Item><Create>2017-05-25T21:12:03Z</Create><Description>[B]Original Total Credits[b]</Description><Amount>1342</Amount></Item>
+  <Item><Count>7</Count><Create>2017-05-25T21:12:03Z</Create><Key>STIMPACK</Key></Item>
+ </Inventory>
+ <Storage>
+  <StoreItem><Key>STIMPACK</Key><Amount>4</Amount></StoreItem>
+  <StoreItem><Key>STUNGR</Key><Amount>6</Amount><State>2</State></StoreItem>
+ </Storage>
+ <CustomSkills>
+ </CustomSkills>
+</CurrentData>

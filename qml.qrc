@@ -104,5 +104,6 @@
         <file>qml/ExperienceDialog.qml</file>
         <file>qml/ForceCheck.qml</file>
         <file>qml/TalentCheck.qml</file>
+        <file>qml/Popup.qml</file>
     </qresource>
 </RCC>

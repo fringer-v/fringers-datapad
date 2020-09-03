@@ -21,7 +21,7 @@ android {
 	LIBS += -lz
 }
 macx {
-	LIBS += /usr/local/lib/libz.a
+	LIBS += -lz
 }
 
 ios {
@@ -130,3 +130,5 @@ HEADERS += \
     src/CharacterList.h \
     src/CharCache.h \
     src/KeyMethods.h
+
+DISTFILES +=

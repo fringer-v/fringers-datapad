@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CurrentData>
+ <Wounds>0</Wounds>
+ <Strain>1</Strain>
+ <Conflict>4</Conflict>
+ <StimPacksUsed>0</StimPacksUsed>
+ <ErpsUsed>0</ErpsUsed>
+ <WoundHistory>13 6 3 0 3 0 3 0 2 0</WoundHistory>
+ <StrainHistory>0 1 2 3 0 1 2 0 1 2 1</StrainHistory>
+ <ConflictHistory>+2 -5 +1 -1 +1 +1 +2</ConflictHistory>
+ <WoundDelta>0</WoundDelta>
+ <StrainDelta>0</StrainDelta>
+ <Injuries>
+ </Injuries>
+ <Experience>
+  <XP><Type>MORALITY</Type><Create>2016-11-26T09:54:49Z</Create><Description>Original Total</Description><Amount>70</Amount></XP>
+  <XP><Type>MORALITY</Type><Create>2016-11-26T09:54:49Z</Create><Description></Description><Amount>3</Amount></XP>
+  <XP><Type>MORALITY</Type><Create>2016-12-26T12:59:42Z</Create><Description></Description><Amount>14</Amount></XP>
+  <XP><Type>MORALITY</Type><Create>2017-01-02T23:29:40Z</Create><Description></Description><Amount>7</Amount></XP>
+  <XP><Type>MORALITY</Type><Create>2017-06-24T17:11:50Z</Create><Description></Description><Amount>-6</Amount></XP>
+  <XP><Type>MORALITY</Type><Create>2017-12-09T11:57:16Z</Create><Description></Description><Amount>-2</Amount></XP>
+  <XP><Type>MORALITY</Type><Create>2018-01-27T14:10:23Z</Create><Description></Description><Amount>2</Amount></XP>
+  <XP><Type>MORALITY</Type><Create>2018-01-27T17:34:53Z</Create><Description></Description><Amount>4</Amount></XP>
+ </Experience>
+ <Inventory>
+  <Item><Description>[B]Original Total Credits[b]</Description><Amount>108637</Amount></Item>
+  <Item><Count>1</Count><Key>BMWEAPTEMP2</Key></Item>
+  <Item><Count>20</Count><Key>STIMPACK</Key></Item>
+  <Item><Count>-1</Count><Key>STIMPACK</Key></Item>
+  <Item><Count>-1</Count><Key>STIMPACK</Key></Item>
+  <Item><Count>-1</Count><Key>STIMPACK</Key></Item>
+  <Item><Count>10</Count><Key>ERP</Key></Item>
+  <Item><Count>-1</Count><Key>ERP</Key></Item>
+  <Item><Count>1</Count><Create>2016-11-05T11:39:41Z</Create><Key>NOBREG</Key></Item>
+  <Item><Count>1</Count><Create>2016-11-05T21:15:48Z</Create><Key>GUNGATL</Key></Item>
+  <Item><Count>1</Count><Create>2016-11-05T21:16:36Z</Create><Key>LONGBOW</Key></Item>
+  <Item><Count>1</Count><Create>2016-11-05T21:19:45Z</Create><Key>GUNGPES</Key></Item>
+  <Item><Count>1</Count><Create>2016-11-26T09:52:10Z</Create><Key>PAD</Key></Item>
+  <Item><Count>-1</Count><Create>2016-11-26T09:54:17Z</Create><Key>ERP</Key></Item>
+  <Item><Count>1</Count><Create>2016-11-26T10:04:10Z</Create><Key>GUNGPOLE</Key></Item>
+  <Item><Count>5</Count><Create>2016-11-26T10:06:33Z</Create><Key>GUNGPLAS</Key></Item>
+  <Item><Count>1</Count><Create>2016-11-26T12:04:17Z</Create><Key>FRAGGR</Key></Item>
+  <Item><Count>1</Count><Create>2016-11-26T12:04:50Z</Create><Key>FRAGGR</Key></Item>
+  <Item><Count>1</Count><Create>2016-11-26T12:10:03Z</Create><Key>BLASTRIF</Key></Item>
+  <Item><Count>-1</Count><Create>2017-05-22T16:09:37Z</Create><Key>LONGBOW</Key></Item>
+  <Item><Count>-1</Count><Create>2017-05-22T16:09:43Z</Create><Key>GUNGATL</Key></Item>
+  <Item><Count>-1</Count><Create>2017-05-22T16:09:48Z</Create><Key>GUNGPOLE</Key></Item>
+  <Item><Count>-1</Count><Create>2017-05-22T16:09:54Z</Create><Key>GUNGPES</Key></Item>
+  <Item><Count>-1</Count><Create>2017-05-22T16:10:11Z</Create><Key>BLASTRIF</Key></Item>
+  <Item><Count>-5</Count><Create>2017-06-22T16:52:49Z</Create><Key>GUNGPLAS</Key></Item>
+  <Item><Count>10</Count><Create>2017-06-22T16:53:21Z</Create><Key>PLASGREND</Key></Item>
+  <Item><Count>-1</Count><Create>2017-06-22T16:53:21Z</Create><Key>PLASGREND</Key></Item>
+ </Inventory>
+ <Storage>
+  <StoreItem><Uuid>8b63ee16-c14c-4044-8d99-c4d3426109a2</Uuid><Key>PROTECTOR</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>ACTIVATORDVILONG</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>ANTIGRAVCHUTESAV</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>BIND</Key><Amount>0</Amount><State>1</State></StoreItem>
+  <StoreItem><Key>BLASTPISDR45</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>CERESTAB</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>COMMSCRAM</Key><Amount>0</Amount><State>1</State></StoreItem>
+  <StoreItem><Key>EBIN</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>ERP</Key><Amount>6</Amount></StoreItem>
+  <StoreItem><Key>EXPJEWELRY</Key><Amount>0</Amount><State>1</State></StoreItem>
+  <StoreItem><Key>GLOPGRND</Key><Amount>1</Amount><State>1</State></StoreItem>
+  <StoreItem><Key>GUNGPES</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>GUNGPOLE</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>HNTGOGGLE</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>LONGBOW</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>MODEL38</Key><Amount>0</Amount><State>1</State></StoreItem>
+  <StoreItem><Key>PLASGREND</Key><Amount>7</Amount><State>2</State></StoreItem>
+  <StoreItem><Key>PROTONGRNAD</Key><Amount>9</Amount></StoreItem>
+  <StoreItem><Key>R82JUMP</Key><Amount>0</Amount><State>1</State></StoreItem>
+  <StoreItem><Key>RELOAD</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>SABACC</Key><Amount>0</Amount><State>1</State></StoreItem>
+  <StoreItem><Key>SCANG</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>STIMPACK</Key><Amount>12</Amount></StoreItem>
+  <StoreItem><Key>STUNGR</Key><Amount>8</Amount></StoreItem>
+  <StoreItem><Key>SYNSK</Key><Amount>0</Amount><State>1</State></StoreItem>
+  <StoreItem><Key>VIBKN</Key><Amount>0</Amount><State>1</State></StoreItem>
+  <StoreItem><Uuid>bc9ef4e5-c246-401f-b09b-a4c3b1146eb7</Uuid><Key>MOUNTARMOR</Key><Amount>0</Amount><State>1</State></StoreItem>
+ </Storage>
+ <CheckList>
+  <Skill>AGILITY</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>BRAWL</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>GUNN</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>LTSABER</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>MELEE</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>RANGHVY</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CheckList>
+  <Skill>RANGLT</Skill>
+  <CheckItem><DicePool>B</DicePool><Description>Skill requires use of arm and agility</Description></CheckItem>
+ </CheckList>
+ <CustomSkills>
+ </CustomSkills>
+</CurrentData>

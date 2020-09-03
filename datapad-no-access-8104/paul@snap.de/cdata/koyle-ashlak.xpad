@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CurrentData>
+ <Wounds>0</Wounds>
+ <Strain>1</Strain>
+ <Conflict>0</Conflict>
+ <StimPacksUsed>0</StimPacksUsed>
+ <ErpsUsed>0</ErpsUsed>
+ <WoundHistory></WoundHistory>
+ <StrainHistory>24 4 8 12 16 18 21 1</StrainHistory>
+ <ConflictHistory></ConflictHistory>
+ <WoundDelta>0</WoundDelta>
+ <StrainDelta>0</StrainDelta>
+ <Injuries>
+ </Injuries>
+ <Experience>
+ </Experience>
+ <Inventory>
+  <Item><Create>2017-09-16T17:03:48Z</Create><Description>[B]Original Total Credits[b]</Description><Amount>16000</Amount></Item>
+  <Item><Count>1</Count><Create>2017-09-16T17:03:48Z</Create><Key>LAM</Key></Item>
+ </Inventory>
+ <Storage>
+  <StoreItem><Key>HOLOCRONWARDE</Key><Amount>0</Amount><State>3</State></StoreItem>
+  <StoreItem><Key>IRONFIST</Key><State>1</State></StoreItem>
+ </Storage>
+ <CustomSkills>
+ </CustomSkills>
+</CurrentData>

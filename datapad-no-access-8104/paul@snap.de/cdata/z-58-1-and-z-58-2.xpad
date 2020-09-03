@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CurrentData>
+ <Wounds>0</Wounds>
+ <Strain>0</Strain>
+ <Conflict>0</Conflict>
+ <StimPacksUsed>0</StimPacksUsed>
+ <ErpsUsed>0</ErpsUsed>
+ <WoundHistory></WoundHistory>
+ <StrainHistory></StrainHistory>
+ <ConflictHistory></ConflictHistory>
+ <WoundDelta>0</WoundDelta>
+ <StrainDelta>0</StrainDelta>
+ <Injuries>
+ </Injuries>
+ <Experience>
+ </Experience>
+ <Inventory>
+  <Item><Create>2016-11-03T12:49:40Z</Create><Description>[B]Original Total Credits[b]</Description></Item>
+  <Item><Create>2016-11-03T12:49:40Z</Create><Update>2016-11-03T12:56:01Z</Update><Description>sdaasdasdasd</Description><Amount>2000</Amount></Item>
+  <Item><Count>5</Count><Create>2016-11-03T12:54:16Z</Create><Update>2016-11-03T12:56:19Z</Update><Key>STIMPACK</Key><Amount>-125</Amount></Item>
+ </Inventory>
+ <Storage>
+  <StoreItem><Key>SNARELAUNCHER</Key><Amount>0</Amount><State>3</State></StoreItem>
+ </Storage>
+ <CustomSkills>
+ </CustomSkills>
+</CurrentData>

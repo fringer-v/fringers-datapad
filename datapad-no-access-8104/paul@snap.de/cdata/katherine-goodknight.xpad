@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CurrentData>
+ <Wounds>0</Wounds>
+ <Strain>0</Strain>
+ <Conflict>0</Conflict>
+ <StimPacksUsed>0</StimPacksUsed>
+ <ErpsUsed>0</ErpsUsed>
+ <WoundHistory>1 0</WoundHistory>
+ <StrainHistory>1 3 0 1 2 0 2 3 0 2 0</StrainHistory>
+ <ConflictHistory></ConflictHistory>
+ <WoundDelta>0</WoundDelta>
+ <StrainDelta>0</StrainDelta>
+ <Injuries>
+ </Injuries>
+ <Experience>
+ </Experience>
+ <Inventory>
+  <Item><Create>2018-03-30T11:21:06Z</Create><Description>[B]Original Total Credits[b]</Description><Amount>9000</Amount></Item>
+  <Item><Create>2018-03-30T11:21:06Z</Create><Update>2018-03-30T11:21:15Z</Update><Description>Initial equipment</Description><Amount>-8995</Amount></Item>
+  <Item><Count>1</Count><Create>2018-03-30T16:22:30Z</Create><Key>BACKPACK</Key></Item>
+  <Item><Count>1</Count><Create>2018-03-31T09:27:04Z</Create><Key>DATASPIKE</Key></Item>
+  <Item><Count>-1</Count><Create>2018-03-31T09:27:04Z</Create><Key>DATASPIKE</Key></Item>
+  <Item><Count>5</Count><Create>2018-03-31T11:08:16Z</Create><Key>STIMPACK</Key></Item>
+  <Item><Count>3</Count><Create>2018-03-31T15:26:32Z</Create><Key>MEDAIDPATCH</Key></Item>
+  <Item><Count>-1</Count><Create>2018-03-31T15:26:32Z</Create><Key>MEDAIDPATCH</Key></Item>
+  <Item><Count>-1</Count><Create>2018-03-31T15:26:54Z</Create><Key>STIMPACK</Key></Item>
+  <Item><Count>-1</Count><Create>2018-03-31T19:32:25Z</Create><Key>MEDAIDPATCH</Key></Item>
+  <Item><Count>1</Count><Create>2018-03-31T19:38:13Z</Create><Key>FRAGGR</Key></Item>
+ </Inventory>
+ <Storage>
+  <StoreItem><Key>DATASPIKE</Key><State>1</State></StoreItem>
+ </Storage>
+ <CustomSkills>
+ </CustomSkills>
+</CurrentData>

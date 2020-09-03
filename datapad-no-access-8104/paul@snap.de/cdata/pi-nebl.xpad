@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CurrentData>
+ <Wounds>0</Wounds>
+ <Strain>2</Strain>
+ <Conflict>0</Conflict>
+ <StimPacksUsed>0</StimPacksUsed>
+ <ErpsUsed>0</ErpsUsed>
+ <WoundHistory></WoundHistory>
+ <StrainHistory>2</StrainHistory>
+ <ConflictHistory></ConflictHistory>
+ <WoundDelta>0</WoundDelta>
+ <StrainDelta>0</StrainDelta>
+ <Injuries>
+ </Injuries>
+ <Experience>
+ </Experience>
+ <Inventory>
+  <Item><Description>[B]Original Total Credits[b]</Description><Amount>500</Amount></Item>
+  <Item><Count>1</Count><Key>UTILITYVEST</Key></Item>
+ </Inventory>
+ <Storage>
+  <StoreItem><Key>CRASHSUIT</Key><Amount>0</Amount><State>1</State></StoreItem>
+ </Storage>
+ <CheckList>
+  <Skill>COOL</Skill>
+  <CheckItem><DicePool>PaB</DicePool><Description>This tlkjlkj ljlkjlk lkjlkj lkjlkj lkjlk lkjlkj lkjlkj lkjlkj lkjlkj lkjh kjh kjh kjh kjh kjh ljkh lkjh lkjh lkjh lkj</Description></CheckItem>
+  <CheckItem><DicePool>dBA</DicePool><Description>asdf asdfasdf asdfasdf asdf</Description></CheckItem>
+ </CheckList>
+ <CustomSkills>
+ </CustomSkills>
+</CurrentData>

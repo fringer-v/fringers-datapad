@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CurrentData>
+ <Wounds>0</Wounds>
+ <Strain>15</Strain>
+ <Conflict>0</Conflict>
+ <StimPacksUsed>0</StimPacksUsed>
+ <ErpsUsed>0</ErpsUsed>
+ <WoundHistory></WoundHistory>
+ <StrainHistory>2 5 8 11 12 15</StrainHistory>
+ <ConflictHistory></ConflictHistory>
+ <WoundDelta>0</WoundDelta>
+ <StrainDelta>0</StrainDelta>
+ <Injuries>
+ </Injuries>
+ <Experience>
+ </Experience>
+ <Inventory>
+ </Inventory>
+ <Storage>
+ </Storage>
+ <CheckList>
+  <Skill>COOL</Skill>
+  <CheckItem><DicePool>Fdu</DicePool><Description>dfghdgf</Description></CheckItem>
+ </CheckList>
+ <CustomSkills>
+ </CustomSkills>
+</CurrentData>
