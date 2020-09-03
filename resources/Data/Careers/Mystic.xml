@@ -17,6 +17,9 @@ Please see page 78 of the Force and Destiny Core Rulebook for details.</Descript
     <Key>ADVISOR</Key>
     <Key>MAKASHI</Key>
     <Key>SEER</Key>
+    <Key>ALCHEMIST</Key>
+    <Key>MAGUS</Key>
+    <Key>PROPHET</Key>
   </Specializations>
   <Attributes>
     <WoundThreshold>0</WoundThreshold>

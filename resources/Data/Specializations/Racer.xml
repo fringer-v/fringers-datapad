@@ -82,10 +82,10 @@ Please see page 26 of the Endless Vigil Sourcebook for details.</Description>
           <Left>true</Left>
           <Right>true</Right>
           <Up>true</Up>
-          <Down>true</Down>
         </Direction>
         <Direction>
           <Left>true</Left>
+          <Down>true</Down>
         </Direction>
       </Directions>
     </TalentRow>
@@ -110,11 +110,11 @@ Please see page 26 of the Endless Vigil Sourcebook for details.</Description>
         <Direction>
           <Left>true</Left>
           <Right>true</Right>
-          <Up>true</Up>
           <Down>true</Down>
         </Direction>
         <Direction>
           <Left>true</Left>
+          <Up>true</Up>
         </Direction>
       </Directions>
     </TalentRow>

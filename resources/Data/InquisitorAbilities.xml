@@ -44,7 +44,7 @@
   <InquisitorAbility>
     <Name>Imperial Valor</Name>
     <Description>
-      Int Inquisitor may perform a maneuver to cause all ranged attacks targeting him to instead hit one ally or helpless enemy he is engaged with until the beginning of his next turn.
+      The Inquisitor may perform a maneuver to cause all ranged attacks targeting him to instead hit one ally or helpless enemy he is engaged with until the beginning of his next turn.
     </Description>
   </InquisitorAbility>
   <InquisitorAbility>

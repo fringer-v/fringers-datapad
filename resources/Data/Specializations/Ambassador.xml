@@ -145,9 +145,11 @@
         <Direction>
           <Up>true</Up>
           <Left>true</Left>
+          <Right>true</Right>
         </Direction>
         <Direction>
           <Up>true</Up>
+          <Left>true</Left>
         </Direction>
       </Directions>
     </TalentRow>

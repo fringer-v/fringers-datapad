@@ -2357,4 +2357,513 @@
     <Source Page="37">No Disintegrations</Source>
     <Motivation>Code</Motivation>
   </SpecificMotivation>
+
+  <!-- Disciples of Harmony-->
+
+  <SpecificMotivation>
+    <Key>GROWTH1</Key>
+    <Name>Force Connection</Name>
+    <Description>
+      [H4]Force Connection[h4]
+      Please see page 32 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="32">Disciples of Harmony</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>GROWTH2</Key>
+    <Name>Friendship</Name>
+    <Description>
+      [H4]Friendship[h4]
+      Please see page 32 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="32">Disciples of Harmony</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>GROWTH3</Key>
+    <Name>Hope</Name>
+    <Description>
+      [H4]Hope[h4]
+      Please see page 32 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="32">Disciples of Harmony</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>GROWTH4</Key>
+    <Name>The Jedi Order</Name>
+    <Description>
+      [H4]The Jedi Order[h4]
+      Please see page 32 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="32">Disciples of Harmony</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>GROWTH5</Key>
+    <Name>Life</Name>
+    <Description>
+      [H4]Life[h4]
+      Please see page 32 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="32">Disciples of Harmony</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>GROWTH6</Key>
+    <Name>Allies</Name>
+    <Description>
+      [H4]Allies[h4]
+      Please see page 32 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="32">Disciples of Harmony</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>GROWTH7</Key>
+    <Name>Community</Name>
+    <Description>
+      [H4]Community[h4]
+      Please see page 32 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="32">Disciples of Harmony</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>GROWTH8</Key>
+    <Name>Knowledge</Name>
+    <Description>
+      [H4]Knowledge[h4]
+      Please see page 32 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="32">Disciples of Harmony</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>GROWTH9</Key>
+    <Name>Wisdom/Experience</Name>
+    <Description>
+      [H4]Wisdom/Experience[h4]
+      Please see page 32 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="32">Disciples of Harmony</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>GROWTH10</Key>
+    <Name>Apprentice</Name>
+    <Description>
+      [H4]Apprentice[h4]
+      Please see page 32 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="32">Disciples of Harmony</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+
+  <!-- Improvements -->
+
+  <SpecificMotivation>
+    <Key>IMPROVE1</Key>
+    <Name>Accuracy</Name>
+    <Description>
+      [H4]Accuracy[h4]
+      Please see page 32 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="32">Fully Operational</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>IMPROVE2</Key>
+    <Name>Challenge</Name>
+    <Description>
+      [H4]Challenge[h4]
+      Please see page 32 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="32">Fully Operational</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>IMPROVE3</Key>
+    <Name>Lethality</Name>
+    <Description>
+      [H4]Lethality[h4]
+      Please see page 32 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="32">Fully Operational</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>IMPROVE4</Key>
+    <Name>Aesthetics</Name>
+    <Description>
+      [H4]Aesthetics[h4]
+      Please see page 32 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="32">Fully Operational</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>IMPROVE5</Key>
+    <Name>Reliability</Name>
+    <Description>
+      [H4]Reliability[h4]
+      Please see page 32 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="32">Fully Operational</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>IMPROVE6</Key>
+    <Name>Flexibility</Name>
+    <Description>
+      [H4]Flexibility[h4]
+      Please see page 32 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="32">Fully Operational</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>IMPROVE7</Key>
+    <Name>Durability</Name>
+    <Description>
+      [H4]Durability[h4]
+      Please see page 32 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="32">Fully Operational</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>IMPROVE8</Key>
+    <Name>Makeshift</Name>
+    <Description>
+      [H4]Makeshift[h4]
+      Please see page 32 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="32">Fully Operational</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>IMPROVE9</Key>
+    <Name>Simplicity</Name>
+    <Description>
+      [H4]Simplicity[h4]
+      Please see page 32 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="32">Fully Operational</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>IMPROVE10</Key>
+    <Name>Efficiency</Name>
+    <Description>
+      [H4]Efficiency[h4]
+      Please see page 32 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="32">Fully Operational</Source>
+    <Motivation>Growth</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>MYSTERY1</Key>
+    <Name>Death</Name>
+    <Description>
+      [H4]Death[h4]
+      Please see page 35 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="35">Unlimited Power</Source>
+    <Motivation>Mysteries</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>MYSTERY2</Key>
+    <Name>The Force</Name>
+    <Description>
+      [H4]Theh Force[h4]
+      Please see page 35 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="35">Unlimited Power</Source>
+    <Motivation>Mysteries</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>MYSTERY3</Key>
+    <Name>Destiny and Fate</Name>
+    <Description>
+      [H4]Destiny and Fate[h4]
+      Please see page 35 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="35">Unlimited Power</Source>
+    <Motivation>Mysteries</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>MYSTERY4</Key>
+    <Name>Happiness</Name>
+    <Description>
+      [H4]Happiness[h4]
+      Please see page 35 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="35">Unlimited Power</Source>
+    <Motivation>Mysteries</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>MYSTERY5</Key>
+    <Name>Balance</Name>
+    <Description>
+      [H4]Balance[h4]
+      Please see page 35 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="35">Unlimited Power</Source>
+    <Motivation>Mysteries</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>MYSTERY6</Key>
+    <Name>Suffering</Name>
+    <Description>
+      [H4]Suffering[h4]
+      Please see page 35 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="35">Unlimited Power</Source>
+    <Motivation>Mysteries</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>MYSTERY7</Key>
+    <Name>The Jedi</Name>
+    <Description>
+      [H4]The Jedi[h4]
+      Please see page 35 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="35">Unlimited Power</Source>
+    <Motivation>Mysteries</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>MYSTERY8</Key>
+    <Name>Other Force Traditions</Name>
+    <Description>
+      [H4]Other Force Traditions[h4]
+      Please see page 35 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="35">Unlimited Power</Source>
+    <Motivation>Mysteries</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>MYSTERY9</Key>
+    <Name>The Dark Side of the Force</Name>
+    <Description>
+      [H4]The Dark Side of the Force[h4]
+      Please see page 35 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="35">Unlimited Power</Source>
+    <Motivation>Mysteries</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>MYSTERY10</Key>
+    <Name>Life</Name>
+    <Description>
+      [H4]Life[h4]
+      Please see page 35 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="35">Unlimited Power</Source>
+    <Motivation>Mysteries</Motivation>
+  </SpecificMotivation>
+
+  <SpecificMotivation>
+    <Key>CHALLENGE1</Key>
+    <Name>Liberation</Name>
+    <Description>
+      [H4]Liberation[h4]
+      Please see page 32 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="32">Knights of Fate</Source>
+    <Motivation>Challenges</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CHALLENGE2</Key>
+    <Name>Birthright</Name>
+    <Description>
+      [H4]Birthright[h4]
+      Please see page 32 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="32">Knights of Fate</Source>
+    <Motivation>Challenges</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CHALLENGE3</Key>
+    <Name>Perfection</Name>
+    <Description>
+      [H4]Perfection[h4]
+      Please see page 32 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="32">Knights of Fate</Source>
+    <Motivation>Challenges</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CHALLENGE4</Key>
+    <Name>Meaning</Name>
+    <Description>
+      [H4]Meaning[h4]
+      Please see page 32 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="32">Knights of Fate</Source>
+    <Motivation>Challenges</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CHALLENGE5</Key>
+    <Name>Acceptance</Name>
+    <Description>
+      [H4]Acceptance[h4]
+      Please see page 32 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="32">Knights of Fate</Source>
+    <Motivation>Challenges</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CHALLENGE6</Key>
+    <Name>Legacy</Name>
+    <Description>
+      [H4]Legacy[h4]
+      Please see page 32 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="32">Knights of Fate</Source>
+    <Motivation>Challenges</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CHALLENGE7</Key>
+    <Name>Recognition</Name>
+    <Description>
+      [H4]Recognition[h4]
+      Please see page 32 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="32">Knights of Fate</Source>
+    <Motivation>Challenges</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CHALLENGE8</Key>
+    <Name>Worthy Opponent</Name>
+    <Description>
+      [H4]Worth Opponent[h4]
+      Please see page 32 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="32">Knights of Fate</Source>
+    <Motivation>Challenges</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CHALLENGE9</Key>
+    <Name>Martial Mastery</Name>
+    <Description>
+      [H4]Martial Mastery[h4]
+      Please see page 32 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="32">Knights of Fate</Source>
+    <Motivation>Challenges</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>CHALLENGE10</Key>
+    <Name>Superiority</Name>
+    <Description>
+      [H4]Superiority[h4]
+      Please see page 32 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="32">Knights of Fate</Source>
+    <Motivation>Challenges</Motivation>
+  </SpecificMotivation>
+
+
+  <SpecificMotivation>
+    <Key>SECRET1</Key>
+    <Name>Falsification</Name>
+    <Description>
+      [H4]Falsification[h4]
+      Please see page 32 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="32">Cyphers and Masks</Source>
+    <Motivation>Secrets</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>SECRET2</Key>
+    <Name>Detection</Name>
+    <Description>
+      [H4]Detection[h4]
+      Please see page 32 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="32">Cyphers and Masks</Source>
+    <Motivation>Secrets</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>SECRET3</Key>
+    <Name>Extraction</Name>
+    <Description>
+      [H4]Extraction[h4]
+      Please see page 32 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="32">Cyphers and Masks</Source>
+    <Motivation>Secrets</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>SECRET4</Key>
+    <Name>Classification</Name>
+    <Description>
+      [H4]Classification[h4]
+      Please see page 32 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="32">Cyphers and Masks</Source>
+    <Motivation>Secrets</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>SECRET5</Key>
+    <Name>Analysis</Name>
+    <Description>
+      [H4]Analysis[h4]
+      Please see page 32 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="32">Cyphers and Masks</Source>
+    <Motivation>Secrets</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>SECRET6</Key>
+    <Name>Security</Name>
+    <Description>
+      [H4]Security[h4]
+      Please see page 32 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="32">Cyphers and Masks</Source>
+    <Motivation>Secrets</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>SECRET7</Key>
+    <Name>Revelation</Name>
+    <Description>
+      [H4]Revelation[h4]
+      Please see page 32 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="32">Cyphers and Masks</Source>
+    <Motivation>Secrets</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>SECRET8</Key>
+    <Name>Tracking</Name>
+    <Description>
+      [H4]Tracking[h4]
+      Please see page 32 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="32">Cyphers and Masks</Source>
+    <Motivation>Secrets</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>SECRET9</Key>
+    <Name>Preservation</Name>
+    <Description>
+      [H4]Preservation[h4]
+      Please see page 32 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="32">Cyphers and Masks</Source>
+    <Motivation>Secrets</Motivation>
+  </SpecificMotivation>
+  <SpecificMotivation>
+    <Key>SECRET10</Key>
+    <Name>Retrieval</Name>
+    <Description>
+      [H4]Retrieval[h4]
+      Please see page 32 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="32">Cyphers and Masks</Source>
+    <Motivation>Secrets</Motivation>
+  </SpecificMotivation>
 </SpecificMotivations>

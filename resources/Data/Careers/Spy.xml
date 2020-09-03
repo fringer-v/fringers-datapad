@@ -21,5 +21,8 @@
     <Key>SCOUT</Key>
     <Key>INFILTRATOR</Key>
     <Key>SLICER</Key>
+    <Key>COURIER</Key>
+    <Key>INTERROGATOR</Key>
+    <Key>SLEEPERAGENT</Key>
   </Specializations>
 </Career>

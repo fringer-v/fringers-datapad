@@ -23,6 +23,18 @@
         <Name>Endless Vigil</Name>
         <WeakKey>DEFIANCE</WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey>RECKLESSNESS</WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -38,6 +50,14 @@
     <Pairs>
       <MoralityPair>
         <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
     </Pairs>
@@ -56,6 +76,18 @@
       <MoralityPair>
         <Name>Keeping the Peace</Name>
         <WeakKey>INDECISION</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey>INDECISION</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey>FEAR</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey>FEAR</WeakKey>
       </MoralityPair>
     </Pairs>
   </Morality>
@@ -76,6 +108,18 @@
       </MoralityPair>
       <MoralityPair>
         <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
     </Pairs>
@@ -104,6 +148,18 @@
         <Name>Endless Vigil</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -126,6 +182,18 @@
         <Name>Endless Vigil</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -141,6 +209,10 @@
     <Pairs>
       <MoralityPair>
         <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
     </Pairs>
@@ -168,6 +240,18 @@
         <Name>Endless Vigil</Name>
         <WeakKey>WEARINESS</WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey>NAIVETE</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -189,6 +273,14 @@
         <Name>Endless Vigil</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -196,9 +288,12 @@
     <Name>Assertiveness</Name>
     <Description>
       [H4]Assertiveness (Strength)[h4]
-      Please see page 17 of the Savage Spirits Sourcebook for details.
+      Please see page 17 of the Savage Spirits Sourcebook, or page 16 of the Knights of Fate Sourcebook, for details.
     </Description>
-    <Source Page="17">Savage Spirits</Source>
+    <Sources>
+      <Source Page="17">Savage Spirits</Source>
+      <Source Page="16">Knights of Fate</Source>
+    </Sources>
     <Type>Strength</Type>
     <WeakKey>OBSTINACY</WeakKey>
     <Pairs>
@@ -208,6 +303,18 @@
       </MoralityPair>
       <MoralityPair>
         <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
     </Pairs>
@@ -232,6 +339,14 @@
         <Name>Endless Vigil</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -248,6 +363,10 @@
       <MoralityPair>
         <Name>Savage Spirits</Name>
         <WeakKey>DISDAIN</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
       </MoralityPair>
     </Pairs>
   </Morality>
@@ -268,6 +387,18 @@
       </MoralityPair>
       <MoralityPair>
         <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey>OBSTINATENESS</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
     </Pairs>
@@ -295,6 +426,18 @@
         <Name>Endless Vigil</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey>IMPATIENCE</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -311,6 +454,18 @@
       <MoralityPair>
         <Name>Savage Spirits</Name>
         <WeakKey>MERCILESSNESS</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey>JUDGING</WeakKey>
       </MoralityPair>
     </Pairs>
   </Morality>
@@ -337,6 +492,18 @@
         <Name>Endless Vigil</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey>INTOLERANCE</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey>COLDNESS</WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey>REPRESSION</WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -356,6 +523,18 @@
       </MoralityPair>
       <MoralityPair>
         <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
     </Pairs>
@@ -379,6 +558,18 @@
         <Name>Savage Spirits</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -398,6 +589,18 @@
       </MoralityPair>
       <MoralityPair>
         <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
     </Pairs>
@@ -421,6 +624,14 @@
         <Name>Savage Spirits</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
   <Morality>
@@ -440,6 +651,18 @@
       </MoralityPair>
       <MoralityPair>
         <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
     </Pairs>
@@ -463,8 +686,557 @@
         <Name>Savage Spirits</Name>
         <WeakKey></WeakKey>
       </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
     </Pairs>
   </Morality>
+  <Morality>
+    <Key>REASON</Key>
+    <Name>Reason</Name>
+    <Description>
+      [H4]Reason (Strength)[h4]
+      Please see page 15 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="15">Disciples of Harmony</Source>
+    <Type>Strength</Type>
+    <WeakKey>APATHYW</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>CLEVER</Key>
+    <Name>Cleverness</Name>
+    <Description>
+      [H4]Cleverness (Strength)[h4]
+      Please see page 15 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="15">Disciples of Harmony</Source>
+    <Type>Strength</Type>
+    <WeakKey>SOPH</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>PATIENT</Key>
+    <Name>Patience</Name>
+    <Description>
+      [H4]Patience (Strength)[h4]
+      Please see page 15 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="15">Disciples of Harmony</Source>
+    <Type>Strength</Type>
+    <WeakKey>CONDES</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>CHARITY</Key>
+    <Name>Charity</Name>
+    <Description>
+      [H4]Charity (Strength)[h4]
+      Please see page 15 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="15">Disciples of Harmony</Source>
+    <Type>Strength</Type>
+    <WeakKey>MARTYR</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Unlimited Power</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>CERTAINTY</Key>
+    <Name>Certainty</Name>
+    <Description>
+      [H4]Certainty (Strength)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Strength</Type>
+    <WeakKey>EGOISM</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>CLARITY</Key>
+    <Name>Clarity</Name>
+    <Description>
+      [H4]Clarity (Strength)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Strength</Type>
+    <WeakKey>CONFUSION</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>HUMILITY</Key>
+    <Name>Humility</Name>
+    <Description>
+      [H4]Humility (Strength)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Strength</Type>
+    <WeakKey>WORTHLESSNESS</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>WELLNESS</Key>
+    <Name>Wellness</Name>
+    <Description>
+      [H4]Wellness (Strength)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Strength</Type>
+    <WeakKey>RIGID</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>JOY</Key>
+    <Name>Joy</Name>
+    <Description>
+      [H4]Joy (Strength)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Strength</Type>
+    <WeakKey>ANTIPATHY</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>FONDNESS</Key>
+    <Name>Fondness</Name>
+    <Description>
+      [H4]Fondness (Strength)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Strength</Type>
+    <WeakKey>DEMANDING</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Knights of Fate</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>CONFIDENCE</Key>
+    <Name>Confidence</Name>
+    <Description>
+      [H4]Confidence (Strength)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Strength</Type>
+    <WeakKey>ARROGANCE</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>CAMARADERIE</Key>
+    <Name>Camaraderie</Name>
+    <Description>
+      [H4]Camaraderie (Strength)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Strength</Type>
+    <WeakKey>CONFORMITY</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>CONVICTION</Key>
+    <Name>Conviction</Name>
+    <Description>
+      [H4]Conviction (Strength)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Strength</Type>
+    <WeakKey>OBSTINACY</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>HONOR</Key>
+    <Name>Honor</Name>
+    <Description>
+      [H4]Honor (Strength)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Strength</Type>
+    <WeakKey>VANITY</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+
+  <Morality>
+    <Key>CONSIDERATION</Key>
+    <Name>Consideration</Name>
+    <Description>
+      [H4]Consideration (Strength)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Strength</Type>
+    <WeakKey>HESITANCY</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>SYMPATHY</Key>
+    <Name>Sympathy</Name>
+    <Description>
+      [H4]Sympathy (Strength)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Strength</Type>
+    <WeakKey>DESPERATION</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+  <Morality>
+    <Key>IDEALISM</Key>
+    <Name>Idealism</Name>
+    <Description>
+      [H4]Idealism (Strength)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Strength</Type>
+    <WeakKey>NAIVETY</WeakKey>
+    <Pairs>
+      <MoralityPair>
+        <Name>Keeping the Peace</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Savage Spirits</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Endless Vigil</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+      <MoralityPair>
+        <Name>Disciples of Harmony</Name>
+        <WeakKey></WeakKey>
+      </MoralityPair>
+    </Pairs>
+  </Morality>
+
+
+
 
   <!-- Weaknesses -->
   <Morality>
@@ -752,9 +1524,12 @@
     <Name>Vanity</Name>
     <Description>
       [H4]Vanity (Weakness)[h4]
-      Please see page 17 of the Endless Vigil Sourcebook for details.
+      Please see page 17 of the Endless Vigil Sourcebook, and page 16 of the Knights of Fate Sourcebook, for details.
     </Description>
-    <Source Page="17">Endless Vigil</Source>
+    <Sources>
+      <Source Page="17">Endless Vigil</Source>
+      <Source Page="16">Knights of Fate</Source>
+    </Sources>
     <Type>Weakness</Type>
   </Morality>
   <Morality>
@@ -777,4 +1552,175 @@
     <Source Page="17">Endless Vigil</Source>
     <Type>Weakness</Type>
   </Morality>
+  <Morality>
+    <Key>APATHYW</Key>
+    <Name>Apathy</Name>
+    <Description>
+      [H4]Apathy (Weakness)[h4]
+      Please see page 15 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="15">Disciples of Harmony</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>SOPH</Key>
+    <Name>Sophism</Name>
+    <Description>
+      [H4]Sophism (Weakness)[h4]
+      Please see page 15 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="15">Disciples of Harmony</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>CONDES</Key>
+    <Name>Condescension</Name>
+    <Description>
+      [H4]Condescension (Weakness)[h4]
+      Please see page 15 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="15">Disciples of Harmony</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>MARTYR</Key>
+    <Name>Martyrdom</Name>
+    <Description>
+      [H4]Martyrdom (Weakness)[h4]
+      Please see page 15 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="15">Disciples of Harmony</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>SORROW</Key>
+    <Name>Sorrow</Name>
+    <Description>
+      [H4]Sorrow (Weakness)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>EGOISM</Key>
+    <Name>Egoism</Name>
+    <Description>
+      [H4]Egoism (Weakness)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>CONFUSION</Key>
+    <Name>Confusion</Name>
+    <Description>
+      [H4]Confusion (Weakness)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>WORTHLESSNESS</Key>
+    <Name>Worthlessness</Name>
+    <Description>
+      [H4]Worthlessness (Weakness)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>RIGID</Key>
+    <Name>Rigid</Name>
+    <Description>
+      [H4]Rigid (Weakness)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>ANTIPATHY</Key>
+    <Name>Antipathy</Name>
+    <Description>
+      [H4]Antipathy (Weakness)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>DEMANDING</Key>
+    <Name>Demanding</Name>
+    <Description>
+      [H4]Demanding (Weakness)[h4]
+      Please see page 17 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="17">Unlimited Power</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>REPRESSION</Key>
+    <Name>Repression</Name>
+    <Description>
+      [H4]Repression (Weakness)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>CONFORMITY</Key>
+    <Name>Conformity</Name>
+    <Description>
+      [H4]Conformity (Weakness)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>JUDGING</Key>
+    <Name>Judging</Name>
+    <Description>
+      [H4]Judging (Weakness)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>HESITANCY</Key>
+    <Name>Hesitancy</Name>
+    <Description>
+      [H4]Hesitancy (Weakness)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>DESPERATION</Key>
+    <Name>Desperation</Name>
+    <Description>
+      [H4]Desperation (Weakness)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Weakness</Type>
+  </Morality>
+  <Morality>
+    <Key>NAIVETY</Key>
+    <Name>Naivety</Name>
+    <Description>
+      [H4]Naivety (Weakness)[h4]
+      Please see page 16 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="16">Knights of Fate</Source>
+    <Type>Weakness</Type>
+  </Morality>
+
 </Moralities>

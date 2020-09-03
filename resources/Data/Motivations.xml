@@ -541,4 +541,109 @@
       <Key>CODESCORE</Key>
     </SpecificMotivations>
   </Motivation>
+  <Motivation>
+    <Key>GROWTH</Key>
+    <Name>Growth</Name>
+    <Description>
+      [H4]Growth[h4]
+      Please see page 31 of the Disciples of Harmony Sourcebook for details.
+    </Description>
+    <Source Page="31">Disciples of Harmony</Source>
+    <SpecificMotivations>
+      <Key>GROWTH1</Key>
+      <Key>GROWTH2</Key>
+      <Key>GROWTH3</Key>
+      <Key>GROWTH4</Key>
+      <Key>GROWTH5</Key>
+      <Key>GROWTH6</Key>
+      <Key>GROWTH7</Key>
+      <Key>GROWTH8</Key>
+      <Key>GROWTH9</Key>
+      <Key>GROWTH10</Key>
+    </SpecificMotivations>
+  </Motivation>
+  <Motivation>
+    <Key>IMPROVE</Key>
+    <Name>Improvements</Name>
+    <Description>
+      [H4]Improvements[h4]
+      Please see page 31 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="31">Fully Operational</Source>
+    <SpecificMotivations>
+      <Key>IMPROVE1</Key>
+      <Key>IMPROVE2</Key>
+      <Key>IMPROVE3</Key>
+      <Key>IMPROVE4</Key>
+      <Key>IMPROVE5</Key>
+      <Key>IMPROVE6</Key>
+      <Key>IMPROVE7</Key>
+      <Key>IMPROVE8</Key>
+      <Key>IMPROVE9</Key>
+      <Key>IMPROVE10</Key>
+    </SpecificMotivations>
+  </Motivation>
+  <Motivation>
+    <Key>MYSTERY</Key>
+    <Name>Mysteries</Name>
+    <Description>
+      [H4]Mysteries[h4]
+      Please see page 34 of the Unlimited Power Sourcebook for details.
+    </Description>
+    <Source Page="34">Unlimited Power</Source>
+    <SpecificMotivations>
+      <Key>MYSTERY1</Key>
+      <Key>MYSTERY2</Key>
+      <Key>MYSTERY3</Key>
+      <Key>MYSTERY4</Key>
+      <Key>MYSTERY5</Key>
+      <Key>MYSTERY6</Key>
+      <Key>MYSTERY7</Key>
+      <Key>MYSTERY8</Key>
+      <Key>MYSTERY9</Key>
+      <Key>MYSTERY10</Key>
+    </SpecificMotivations>
+  </Motivation>
+  <Motivation>
+    <Key>CHALLENGE</Key>
+    <Name>Challenges</Name>
+    <Description>
+      [H4]Challenges[h4]
+      Please see page 32 of the Knights of Fate Sourcebook for details.
+    </Description>
+    <Source Page="32">Knights of Fate</Source>
+    <SpecificMotivations>
+      <Key>CHALLENGE1</Key>
+      <Key>CHALLENGE2</Key>
+      <Key>CHALLENGE3</Key>
+      <Key>CHALLENGE4</Key>
+      <Key>CHALLENGE5</Key>
+      <Key>CHALLENGE6</Key>
+      <Key>CHALLENGE7</Key>
+      <Key>CHALLENGE8</Key>
+      <Key>CHALLENGE9</Key>
+      <Key>CHALLENGE10</Key>
+    </SpecificMotivations>
+  </Motivation>
+  <Motivation>
+    <Key>SECRET</Key>
+    <Name>Secrets</Name>
+    <Description>
+      [H4]Secrets[h4]
+      Please see page 32 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="32">Cyphers and Masks</Source>
+    <SpecificMotivations>
+      <Key>SECRET1</Key>
+      <Key>SECRET2</Key>
+      <Key>SECRET3</Key>
+      <Key>SECRET4</Key>
+      <Key>SECRET5</Key>
+      <Key>SECRET6</Key>
+      <Key>SECRET7</Key>
+      <Key>SECRET8</Key>
+      <Key>SECRET9</Key>
+      <Key>SECRET10</Key>
+    </SpecificMotivations>
+  </Motivation>
 </Motivations>

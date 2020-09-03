@@ -1760,4 +1760,119 @@
     </Cost>
     <Options />
   </BaseUpgrade>
+  <BaseUpgrade>
+    <Key>CIVREFITHANG</Key>
+    <Name>Civilian Refit:  Hidden Hanger</Name>
+    <Description>
+      [H4]Civilian Refit:  Hidden Hanger[h4]
+      Please see page 75 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="75">Fully Operational</Source>
+    <PurchaseCount>2</PurchaseCount>
+    <MonthlyProfit>0</MonthlyProfit>
+    <ProfitPerPC>false</ProfitPerPC>
+    <CivilianRefit>true</CivilianRefit>
+    <Cost>
+      <Credits>600</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <Options />
+  </BaseUpgrade>
+  <BaseUpgrade>
+    <Key>CIVREFITINFIRM</Key>
+    <Name>Civilian Refit:  Infirmary</Name>
+    <Description>
+      [H4]Civilian Refit:  Infirmary[h4]
+      Please see page 75 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="75">Fully Operational</Source>
+    <PurchaseCount>3</PurchaseCount>
+    <MonthlyProfit>0</MonthlyProfit>
+    <ProfitPerPC>false</ProfitPerPC>
+    <CivilianRefit>true</CivilianRefit>
+    <Cost>
+      <Credits>2400</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <Options />
+  </BaseUpgrade>
+  <BaseUpgrade>
+    <Key>CIVREFITREPAIR</Key>
+    <Name>Civilian Refit:  Repair Room</Name>
+    <Description>
+      [H4]Civilian Refit:  Repair Room[h4]
+      Please see page 75 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="75">Fully Operational</Source>
+    <PurchaseCount>1</PurchaseCount>
+    <MonthlyProfit>0</MonthlyProfit>
+    <ProfitPerPC>false</ProfitPerPC>
+    <CivilianRefit>true</CivilianRefit>
+    <Cost>
+      <Credits>350</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <Options />
+  </BaseUpgrade>
+  <BaseUpgrade>
+    <Key>CIVREFITSEC</Key>
+    <Name>Civilian Refit:  Security Upgrades</Name>
+    <Description>
+      [H4]Civilian Refit:  Security Upgrades[h4]
+      Please see page 75 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="75">Fully Operational</Source>
+    <PurchaseCount>5</PurchaseCount>
+    <MonthlyProfit>0</MonthlyProfit>
+    <ProfitPerPC>false</ProfitPerPC>
+    <CivilianRefit>true</CivilianRefit>
+    <Cost>
+      <Credits>2250</Credits>
+      <Obligation>0</Obligation>
+    </Cost>
+    <Options>
+      <Option>
+        <Key>CIVREFITSEC1</Key>
+        <Name>Better Locks</Name>
+        <Description>
+          Exterior doors gain better locks that can only
+          be opened with an electronic key, an [B]Average ([DI][DI]) Computers check[b], or a [B]Hard ([DI][DI][DI]) Skulduggery check[b].
+        </Description>
+        <PurchaseCount>1</PurchaseCount>
+      </Option>
+      <Option>
+        <Key>CIVREFITSEC2</Key>
+        <Name>Reinforced Structure</Name>
+        <Description>
+          Structure of the facility is reinforced, giving it armor value of 1.
+        </Description>
+        <PurchaseCount>1</PurchaseCount>
+      </Option>
+      <Option>
+        <Key>CIVREFITSEC3</Key>
+        <Name>Baffled Walls</Name>
+        <Description>
+          Facility's walls are fitted with scanner baffles and sound deadening insulation.  All checks to detect
+          life signs, movement, sounds, and other activity are increased once.
+        </Description>
+        <PurchaseCount>1</PurchaseCount>
+      </Option>
+      <Option>
+        <Key>CIVREFITSEC4</Key>
+        <Name>Security Cameras</Name>
+        <Description>
+          Facilty gains security cameras that can be monitored throughout the facility.
+        </Description>
+        <PurchaseCount>1</PurchaseCount>
+      </Option>
+      <Option>
+        <Key>CIVREFITSEC5</Key>
+        <Name>Disguised Entrance</Name>
+        <Description>
+          Facility's entrance is only detectable with a [B]Hard ([DI][DI][DI]) Perception check[b].
+        </Description>
+        <PurchaseCount>1</PurchaseCount>
+      </Option>
+    </Options>
+  </BaseUpgrade>
 </BaseUpgrades>

@@ -1136,5 +1136,373 @@
     <Power>Manipulate</Power>
   </ForceAbility>
 
+  <ForceAbility>
+    <Key>IMBUEBASIC</Key>
+    <Name>Imbue Basic Power</Name>
+    <Description>Please see page 37 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="37">Disciples of Harmony</Source>
+    <Power>Imbue</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>IMBUESTRENGTH</Key>
+    <Name>Strength</Name>
+    <Description>Please see page 37 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="37">Disciples of Harmony</Source>
+    <Power>Imbue</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>IMBUECONTROL1</Key>
+    <Name>Control: Skill Ranks</Name>
+    <Description>Please see page 37 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="37">Disciples of Harmony</Source>
+    <Power>Imbue</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>IMBUERANGE</Key>
+    <Name>Range</Name>
+    <Description>Please see page 37 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="37">Disciples of Harmony</Source>
+    <Power>Imbue</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>IMBUEMASTERY</Key>
+    <Name>Mastery</Name>
+    <Description>Please see page 37 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="37">Disciples of Harmony</Source>
+    <Power>Imbue</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>IMBUEDURATION</Key>
+    <Name>Duration</Name>
+    <Description>Please see page 37 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="37">Disciples of Harmony</Source>
+    <Power>Imbue</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>IMBUEDURATION2</Key>
+    <Name>Duration</Name>
+    <Description>Please see page 37 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="37">Disciples of Harmony</Source>
+    <Power>Imbue</Power>
+  </ForceAbility>
+
+  <ForceAbility>
+    <Key>EBBFLOWBASIC</Key>
+    <Name>Ebb/Flow Basic Power</Name>
+    <Description>Please see page 39 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="39">Disciples of Harmony</Source>
+    <Power>Ebb/Flow</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>EBBFLOWMAGNITUDE</Key>
+    <Name>Magnitude</Name>
+    <Description>Please see page 39 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="39">Disciples of Harmony</Source>
+    <Power>Ebb/Flow</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>EBBFLOWRANGE</Key>
+    <Name>Range</Name>
+    <Description>Please see page 39 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="39">Disciples of Harmony</Source>
+    <Power>Ebb/Flow</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>EBBFLOWSTRENGTH</Key>
+    <Name>Strength: Strain</Name>
+    <Description>Please see page 39 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="39">Disciples of Harmony</Source>
+    <Power>Ebb/Flow</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>EBBFLOWSTRENGTH2</Key>
+    <Name>Strength: Threat/Advantage</Name>
+    <Description>Please see page 39 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="39">Disciples of Harmony</Source>
+    <Power>Ebb/Flow</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>EBBFLOWSTRENGTH3</Key>
+    <Name>Strength: Failure/Success</Name>
+    <Description>Please see page 39 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="39">Disciples of Harmony</Source>
+    <Power>Ebb/Flow</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>EBBFLOWCONTROL1</Key>
+    <Name>Control: Question</Name>
+    <Description>Please see page 39 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="39">Disciples of Harmony</Source>
+    <Power>Ebb/Flow</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>EBBFLOWCONTROL2</Key>
+    <Name>Control: Threat/Advantage</Name>
+    <Description>Please see page 39 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="39">Disciples of Harmony</Source>
+    <Power>Ebb/Flow</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>EBBFLOWCONTROL3</Key>
+    <Name>Control: Failure/Success</Name>
+    <Description>Please see page 39 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="39">Disciples of Harmony</Source>
+    <Power>Ebb/Flow</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>EBBFLOWCONTROL4</Key>
+    <Name>Control: Skill Checks</Name>
+    <Description>Please see page 39 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="39">Disciples of Harmony</Source>
+    <Power>Ebb/Flow</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>EBBFLOWCONTROL5</Key>
+    <Name>Mastery</Name>
+    <Description>Please see page 39 of the Disciples of Harmony Sourcebook for details.</Description>
+    <Source Page="39">Disciples of Harmony</Source>
+    <Power>Ebb/Flow</Power>
+  </ForceAbility>
+
+
+  <ForceAbility>
+    <Key>CONJUREBASIC</Key>
+    <Name>Conjure Basic Power</Name>
+    <Description>Please see page 40 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="40">Unlimited Power</Source>
+    <Power>Conjure</Power>
+    <WeaponModifiers>
+      <WeaponModifier>
+        <Unarmed>false</Unarmed>
+        <UnarmedName>Basic Conjured Melee Weapon</UnarmedName>
+        <SkillKey>MELEE</SkillKey>
+        <DamageAdd>3</DamageAdd>
+        <Crit>3</Crit>
+        <RangeValue>wrEngaged</RangeValue>
+        <Qualities>
+          <Quality>
+            <Key>CORTOSIS</Key>
+          </Quality>
+        </Qualities>
+        <BaseMods>
+          <Mod>
+            <MiscDesc>This conjured weapon disipates at the end of the Force user's next turn</MiscDesc>
+          </Mod>
+        </BaseMods>
+      </WeaponModifier>
+      <WeaponModifier>
+        <Unarmed>false</Unarmed>
+        <UnarmedName>Basic Conjured Brawl Weapon</UnarmedName>
+        <SkillKey>BRAWL</SkillKey>
+        <DamageAdd>3</DamageAdd>
+        <Crit>3</Crit>
+        <RangeValue>wrEngaged</RangeValue>
+        <Qualities>
+          <Quality>
+            <Key>CORTOSIS</Key>
+          </Quality>
+        </Qualities>
+        <BaseMods>
+          <Mod>
+            <MiscDesc>This conjured weapon disipates at the end of the Force user's next turn</MiscDesc>
+          </Mod>
+        </BaseMods>
+      </WeaponModifier>
+    </WeaponModifiers>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>CONJUREDURATION</Key>
+    <Name>Duration</Name>
+    <Description>Please see page 40 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="40">Unlimited Power</Source>
+    <Power>Conjure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>CONJURENUMBER</Key>
+    <Name>Number</Name>
+    <Description>Please see page 40 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="40">Unlimited Power</Source>
+    <Power>Conjure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>CONJUREMAGNITUDE</Key>
+    <Name>Magnitude</Name>
+    <Description>Please see page 40 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="40">Unlimited Power</Source>
+    <Power>Conjure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>CONJURECONTROL1</Key>
+    <Name>Control: Defense Qualities</Name>
+    <Description>Please see page 40 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="40">Unlimited Power</Source>
+    <Power>Conjure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>CONJURECONTROL2</Key>
+    <Name>Control: Offense Qualities</Name>
+    <Description>Please see page 40 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="40">Unlimited Power</Source>
+    <Power>Conjure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>CONJURERANGE</Key>
+    <Name>Range</Name>
+    <Description>Please see page 40 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="40">Unlimited Power</Source>
+    <Power>Conjure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>CONJUREMASTERY</Key>
+    <Name>Mastery</Name>
+    <Description>Please see page 40 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="40">Unlimited Power</Source>
+    <Power>Conjure</Power>
+  </ForceAbility>
+
+
+  <ForceAbility>
+    <Key>ALTERBASIC</Key>
+    <Name>Alter Basic Power</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ALTERCONTROL1</Key>
+    <Name>Control: Survival</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ALTERRANGE</Key>
+    <Name>Range</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ALTERCONTROL2</Key>
+    <Name>Control: Concealment</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ALTERCONTROL3</Key>
+    <Name>Control: Animal Senses</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ALTERCONTROL4</Key>
+    <Name>Control: Firm Terrain</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ALTERDURATION</Key>
+    <Name>Duration</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ALTERSTRENGTH</Key>
+    <Name>Strength</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ALTERCONTROL5</Key>
+    <Name>Control: Impassible Terrain</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ALTERCONTROL6</Key>
+    <Name>Control: Corrosive Atmosphere</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ALTERCONTROL7</Key>
+    <Name>Control: Upgrade Difficulty</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ALTERMASTERY</Key>
+    <Name>Mastery</Name>
+    <Description>Please see page 42 of the Unlimited Power Sourcebook for details.</Description>
+    <Source Page="42">Unlimited Power</Source>
+    <Power>Alter</Power>
+  </ForceAbility>
+
+  
+    <ForceAbility>
+    <Key>ENDUREBASIC</Key>
+    <Name>Endure Basic Power</Name>
+    <Description>Please see page 36 of the Knights of Fate Sourcebook for details.</Description>
+    <Source Page="36">Knights of Fate</Source>
+    <Power>Endure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ENDURESTRENGTH1</Key>
+    <Name>Strength - Increase Severity</Name>
+    <Description>Please see page 36 of the Knights of Fate Sourcebook for details.</Description>
+    <Source Page="36">Knights of Fate</Source>
+    <Power>Endure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ENDURECONTROL</Key>
+    <Name>Control - Additional Injuries</Name>
+    <Description>Please see page 36 of the Knights of Fate Sourcebook for details.</Description>
+    <Source Page="36">Knights of Fate</Source>
+    <Power>Endure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ENDUREDURATION</Key>
+    <Name>Duration</Name>
+    <Description>Please see page 36 of the Knights of Fate Sourcebook for details.</Description>
+    <Source Page="36">Knights of Fate</Source>
+    <Power>Endure</Power>
+  </ForceAbility>
+    <ForceAbility>
+    <Key>ENDUREMAGNITUDE</Key>
+    <Name>Magnitude</Name>
+    <Description>Please see page 36 of the Knights of Fate Sourcebook for details.</Description>
+    <Source Page="36">Knights of Fate</Source>
+    <Power>Endure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ENDURESTRENGTH2</Key>
+    <Name>Strength - Ignore Death</Name>
+    <Description>Please see page 36 of the Knights of Fate Sourcebook for details.</Description>
+    <Source Page="36">Knights of Fate</Source>
+    <Power>Endure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ENDURERANGE</Key>
+    <Name>Range</Name>
+    <Description>Please see page 36 of the Knights of Fate Sourcebook for details.</Description>
+    <Source Page="36">Knights of Fate</Source>
+    <Power>Endure</Power>
+  </ForceAbility>
+  <ForceAbility>
+    <Key>ENDUREMASTERY</Key>
+    <Name>Mastery</Name>
+    <Description>Please see page 36 of the Knights of Fate Sourcebook for details.</Description>
+    <Source Page="36">Knights of Fate</Source>
+    <Power>Endure</Power>
+  </ForceAbility>
+
 
 </ForceAbilities>

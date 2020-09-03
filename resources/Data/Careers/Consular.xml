@@ -17,6 +17,9 @@ Please see page 66 of the Force and Destiny Core Rulebook for details.</Descript
     <Key>HEALER</Key>
     <Key>NIMAN</Key>
     <Key>SAGE</Key>
+    <Key>ARBITER</Key>
+    <Key>ASCETIC</Key>
+    <Key>TEACHER</Key>
   </Specializations>
   <Attributes>
     <WoundThreshold>0</WoundThreshold>

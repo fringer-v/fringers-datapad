@@ -17,6 +17,9 @@ Please see page 96 of the Force and Destiny Core Rulebook for details.</Descript
     <Key>AGGRES</Key>
     <Key>SHIICHO</Key>
     <Key>STARACE</Key>
+    <Key>COLOSSUS</Key>
+    <Key>JUYO</Key>
+    <Key>STEELHAND</Key>
   </Specializations>
   <Attributes>
     <WoundThreshold>0</WoundThreshold>

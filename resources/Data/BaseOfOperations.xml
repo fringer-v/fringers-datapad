@@ -26,6 +26,10 @@
       <Key>HOMEINF</Key>
       <Key>HOMEMECHGAR</Key>
       <Key>HOMELANDBAY</Key>
+      <Key>CIVREFITHANG</Key>
+      <Key>CIVREFITINFIRM</Key>
+      <Key>CIVREFITREPAIR</Key>
+      <Key>CIVREFITSEC</Key>
     </AvailableUpgrades>
   </BaseOfOperation>
   <BaseOfOperation>
@@ -53,6 +57,10 @@
       <Key>BUSORDERS</Key>
       <Key>BUSWHOLE</Key>
       <Key>BUSLIC</Key>
+      <Key>CIVREFITHANG</Key>
+      <Key>CIVREFITINFIRM</Key>
+      <Key>CIVREFITREPAIR</Key>
+      <Key>CIVREFITSEC</Key>
     </AvailableUpgrades>
   </BaseOfOperation>
   <BaseOfOperation>
@@ -212,6 +220,10 @@
       <Key>WORKRECLAM</Key>
       <Key>WORKRES</Key>
       <Key>WORKSPARE</Key>
+      <Key>CIVREFITHANG</Key>
+      <Key>CIVREFITINFIRM</Key>
+      <Key>CIVREFITREPAIR</Key>
+      <Key>CIVREFITSEC</Key>
     </AvailableUpgrades>
   </BaseOfOperation>
   <BaseOfOperation>
@@ -241,6 +253,10 @@
       <Key>WORKRES</Key>
       <Key>WORKSPARE</Key>
       <Key>WORKLOWGRAV</Key>
+      <Key>CIVREFITHANG</Key>
+      <Key>CIVREFITINFIRM</Key>
+      <Key>CIVREFITREPAIR</Key>
+      <Key>CIVREFITSEC</Key>
     </AvailableUpgrades>
   </BaseOfOperation>
   <BaseOfOperation>
@@ -269,6 +285,10 @@
       <Key>WORKRECLAM</Key>
       <Key>WORKRES</Key>
       <Key>WORKSPARE</Key>
+      <Key>CIVREFITHANG</Key>
+      <Key>CIVREFITINFIRM</Key>
+      <Key>CIVREFITREPAIR</Key>
+      <Key>CIVREFITSEC</Key>
     </AvailableUpgrades>
     <BuiltInUpgrades>
       <Key>WORKHOME</Key>
@@ -299,6 +319,10 @@
       <Key>WORKRECLAM</Key>
       <Key>WORKRES</Key>
       <Key>WORKSPARE</Key>
+      <Key>CIVREFITHANG</Key>
+      <Key>CIVREFITINFIRM</Key>
+      <Key>CIVREFITREPAIR</Key>
+      <Key>CIVREFITSEC</Key>
     </AvailableUpgrades>
     <BuiltInUpgrades>
       <Key>WORKSPACE</Key>

@@ -224,9 +224,201 @@
     <Name>Psychological Warfare</Name>
     <Description>
       [H4]Psychological Warfare[h4]
-      See page 17 of the Forged in Battle Sourcebook for details.
+      See page 17 of the Forged in Battle Sourcebook, and page 17 of the Cyphers and Masks Sourcebook, for details.
     </Description>
-    <Source Page="17">Forged in Battle</Source>
+    <Sources>
+      <Source Page="17">Forged in Battle</Source>
+      <Source Page="17">Cyphers and Masks</Source>
+    </Sources>
+  </Duty>
+  <Duty>
+    <Key>CHEMBIO</Key>
+    <Name>Chemical/Biological Analysis</Name>
+    <Description>
+      [H4]Chemical/Biological Analysis[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>CIVOUT</Key>
+    <Name>Civilian Outreach</Name>
+    <Description>
+      [H4]Civilian Outreach[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>DISREL</Key>
+    <Name>Disaster Relief</Name>
+    <Description>
+      [H4]Disaster Relief[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>ENVMANIP</Key>
+    <Name>Environmental Manipulation</Name>
+    <Description>
+      [H4]Environmental Manipulation[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>FIELDTRAIN</Key>
+    <Name>Field Training</Name>
+    <Description>
+      [H4]Field Training[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>MUNITIONS</Key>
+    <Name>Munitions</Name>
+    <Description>
+      [H4]Munitions[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>RANDD</Key>
+    <Name>Research and Development</Name>
+    <Description>
+      [H4]Research and Development[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>SURVEYENEMY</Key>
+    <Name>Surveying the Enemy</Name>
+    <Description>
+      [H4]Surveying the Enemy[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>SIEGEENG</Key>
+    <Name>Siege Engineering</Name>
+    <Description>
+      [H4]Siege Engineering[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>TESTING</Key>
+    <Name>Testing</Name>
+    <Description>
+      [H4]Testing[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>TRANSPORT</Key>
+    <Name>Transportation</Name>
+    <Description>
+      [H4]Transportation[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>RESCUEREC</Key>
+    <Name>Rescue and Recovery/Evac</Name>
+    <Description>
+      [H4]Rescue and Recovery/Evac[h4]
+      See page 17 of the Fully Operational Sourcebook for details.
+    </Description>
+    <Source Page="17">Fully Operational</Source>
+  </Duty>
+  <Duty>
+    <Key>COMM</Key>
+    <Name>Communications</Name>
+    <Description>
+      [H4]Communications[h4]
+      See page 17 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="17">Cyphers and Masks</Source>
+  </Duty>
+  <Duty>
+    <Key>ANTIISB</Key>
+    <Name>Anti-ISB Efforts</Name>
+    <Description>
+      [H4]Anti-ISB Efforts[h4]
+      See page 17 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="17">Cyphers and Masks</Source>
+  </Duty>
+  <Duty>
+    <Key>COUNTERMEAS</Key>
+    <Name>Countermeasures</Name>
+    <Description>
+      [H4]Countermeasures[h4]
+      See page 17 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="17">Cyphers and Masks</Source>
+  </Duty>
+  <Duty>
+    <Key>DOUBLEAGENT</Key>
+    <Name>Double Agent Recruitment</Name>
+    <Description>
+      [H4]Double Agent Recruitment[h4]
+      See page 17 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="17">Cyphers and Masks</Source>
+  </Duty>
+  <Duty>
+    <Key>DROIDRETASK</Key>
+    <Name>Droid Retasking</Name>
+    <Description>
+      [H4]Droid Retasking[h4]
+      See page 17 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="17">Cyphers and Masks</Source>
+  </Duty>
+  <Duty>
+    <Key>INTERORESIST</Key>
+    <Name>Interrogation Resistance</Name>
+    <Description>
+      [H4]Interrogation Resistance[h4]
+      See page 17 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="17">Cyphers and Masks</Source>
+  </Duty>
+  <Duty>
+    <Key>LEGENDCRAFT</Key>
+    <Name>Legend Crafting</Name>
+    <Description>
+      [H4]Legend Crafting[h4]
+      See page 17 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="17">Cyphers and Masks</Source>
+  </Duty>
+  <Duty>
+    <Key>TACTINSIGHT</Key>
+    <Name>Tactical Insight</Name>
+    <Description>
+      [H4]Tactical Insight[h4]
+      See page 17 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="17">Cyphers and Masks</Source>
+  </Duty>
+  <Duty>
+    <Key>WETWORK</Key>
+    <Name>Wetwork</Name>
+    <Description>
+      [H4]Wetwork[h4]
+      See page 17 of the Cyphers and Masks Sourcebook for details.
+    </Description>
+    <Source Page="17">Cyphers and Masks</Source>
   </Duty>
 
 

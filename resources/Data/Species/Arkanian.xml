@@ -77,7 +77,7 @@
     slightly different dialect gradually emerged, emphasizing words of submission and 
     forgetting those of victory or the desire to challenge.
   </Description>
-  <Source>Unofficial Species Menagerie</Source>
+  <Source Page="16">Disciples of Harmony</Source>
   <StartingChars>
     <Brawn>2</Brawn>
     <Agility>2</Agility>
@@ -93,7 +93,7 @@
   </StartingAttrs>
   <SkillModifiers>
     <SkillModifier>
-      <Key>COERC</Key>
+      <Key>MED</Key>
       <RankStart>1</RankStart>
       <RankLimit>2</RankLimit>
     </SkillModifier>
@@ -101,19 +101,12 @@
   <OptionChoices>
     <OptionChoice>
       <Key>ARKANOC</Key>
-      <Name>Knowledge</Name>
+      <Name>Environmental</Name>
       <Options>
         <Option>
           <Key>ARKANOC1</Key>
-          <Name>Intellectual</Name>
-          <Description>Arkanians receive a [BOOST]
-          when making all knowledge skill checks.</Description>
-          <DieModifiers>
-            <DieModifier>
-              <SkillType>Knowledge</SkillType>
-              <BoostCount>1</BoostCount>
-            </DieModifier>
-          </DieModifiers>
+          <Name>Dark Vision</Name>
+          <Description>Arkanians remove up to [SE][SE] due to darkness when making skill checks.</Description>
         </Option>
       </Options>
     </OptionChoice>

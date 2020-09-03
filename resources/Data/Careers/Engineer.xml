@@ -21,5 +21,8 @@
     <Key>MECHANIC</Key>
     <Key>SABOTEUR</Key>
     <Key>SCIENTIST</Key>
+    <Key>DROIDSPEC</Key>
+    <Key>SHIPWRIGHT</Key>
+    <Key>SAPPER</Key>
   </Specializations>
 </Career>
