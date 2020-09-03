@@ -1,6 +1,6 @@
-import QtQuick 2.0
-import QtQuick.Controls 1.2
-import QtQuick.Dialogs 1.2
+import QtQuick 2.3
+import QtQuick.Controls 1.3
+import QtQuick.Dialogs 1.3
 import "../js/drawing.js" as Draw
 import "../js/constants.js" as Constant
 
@@ -220,9 +220,11 @@ Rectangle {
 					width: parent.width
 					anchors.top: parent.top
 					wrapMode: Text.Wrap
+					font.pixelSize: 16
+					font.family: "Arial"
 					horizontalAlignment: Text.AlignHCenter
 					text: "If you have no login, go to <u>http://fringer.space</u> where you can register an account. "+
-						"Created your character sheet using <i>OggDude's Star Wars Character Generator</i>, "+
+						"Create your character sheet using <i>OggDude's Star Wars Character Generator</i>, "+
 						"and upload it to the web-site. Then enter your login details here. After clicking " +
 						"\"Sync with Server Now\" you will be able to view your chararacer in this App."
 				}
@@ -239,7 +241,7 @@ Rectangle {
 				Column {
 					CheckBox {
 						id: hideTalentsCheckbox
-						text: "Hide Talents that are automatically added to a Checklist or summed"
+						text: "Hide Talents that appear in checklists or statistics"
 						checked: hideTalents
 						onCheckedChanged: characterData.hideCodedTalents = (checked ? 1 : 0)
 					}
@@ -249,6 +251,8 @@ Rectangle {
 					Text {
 						width: auto_talent.width
 						wrapMode: Text.Wrap
+						font.pixelSize: 16
+						font.family: "Arial"
 						horizontalAlignment: Text.AlignHCenter
 						text: "A Checklist is displayed when you, for example, click on a Skill. The Checklists help "+
 							"you to remember what Talents may apply in a situtation. Some Talents are added "+
@@ -274,9 +278,10 @@ Rectangle {
 			id: versionText
 			anchors.verticalCenter: parent.verticalCenter
 			anchors.horizontalCenter: parent.horizontalCenter
+			font.pixelSize: 14
 			font.family: "Arial"
 			color: "darkgray"
-			text: "Fringer's Datapad 1.0.14, compatible with Oggdude's SWCharGen 2.2.0.0"
+			text: "Fringer's Datapad 1.0.15, compatible with Oggdude's SWCharGen 2.2.1.1"
 		}
 	}
 
